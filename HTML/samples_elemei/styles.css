@@ -1,0 +1,1209 @@
+/*
+	clearing CSS
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+blockquote {
+margin-left: 40px;
+margin-right: 40px;
+}
+
+sub, sup {
+font-size: .83em;
+vertical-align: super;
+}
+
+sub {
+vertical-align: sub;
+}
+
+em {
+font-style: italic;
+font-weight: normal;
+}
+
+strong {
+font-weight: bold;
+}
+
+ul li {
+list-style-type: bullet;
+margin-left: 2em;
+}
+
+ol li {
+list-style-type: decimal;
+margin-left: 2em;
+}
+
+/* ---------------------- index template -------------------------- */
+
+
+html, body {
+background: #DEDEDE;
+color: #626262;
+font-size: 14px;
+line-height: 1.3em;
+font-family: Verdana, Tahoma, Arial CE, Sans-Serif;
+}
+
+
+#winix_container {
+width: 909px;
+margin: 10px auto 33px auto;
+background: white url('a2.gif') repeat-y right top;
+}
+
+
+#winix_containerfull {
+background: white;
+padding: 2em;
+overflow: hidden;
+}
+
+
+#winix_contentleft {
+margin: 20px 30px 0 50px;
+width: 150px;
+float: left;
+}
+
+
+* html #winix_contentleft  {
+margin-left: 25px;
+}
+
+
+#winix_contentleft h2 {
+margin-top: 0;
+}
+
+
+#winix_contentleft h2.next {
+margin-top: 1.2em;
+}
+
+
+.winix_menu {
+list-style-type: none;
+margin: 0;
+}
+
+
+.winix_menu li {
+width: 150px;
+padding: 0 12px 2px 0;
+line-height: 1.5;
+}
+
+
+.winix_menu li a {
+text-decoration: none;
+color: #666666;
+}
+
+
+.winix_menu li a:hover, .winix_menu li a:focus {
+text-decoration: none;
+background: black;
+color: white;
+}
+
+
+#winix_contentright {
+min-height: 400px;
+width: 600px;
+float: left;
+margin: 20px 0 40px 0;
+padding-right: 30px;
+}
+
+
+* html #winix_contentright {
+height: 400px;
+}
+
+
+#winix_contentfull {
+min-height: 400px;
+width: 840px;
+margin: 20px 0 40px 0;
+padding: 30px;
+}
+
+
+* html #winix_contentfull {
+height: 400px;
+}
+
+
+#winix_header {
+height: 130px;
+background: url('a1.gif') no-repeat right top;
+overflow: hidden;
+}
+
+
+#winix_login {
+width: 240px;
+float: right;
+margin-top: 20px;
+}
+
+
+#winix_login legend {
+width: 0;
+height: 0;
+overflow: hidden;
+display: none;
+}
+
+
+#winix_login .edit {
+border: #848484 1px solid;
+width: 80px;
+font-size: 0.8em;
+line-height: 1;
+}
+
+
+#winix_login .submit {
+background: white;
+font-size: 0.8em;
+border: 0;
+}
+
+
+#winix_login p {
+font-size: 0.7em;
+margin: 0.6em 0 0.6em 0;
+}
+
+
+#winix_login .remember {
+margin: 0 0.5em 0 0;
+vertical-align: middle;
+}
+
+
+#winix_logged {
+width: 280px;
+float: right;
+margin-top: 20px;
+font-size: 0.8em;
+text-align: right;
+padding-right: 30px;
+}
+
+#winix_header #winix_logo {
+display: block;
+float: left;
+margin: 20px 0 5px 20px;
+}
+
+* html #winix_header #winix_logo {
+margin-left: 10px;
+}
+
+#winix_current_dir {
+list-style-type: none;
+margin: 20px 0 0 10px;
+overflow: hidden;
+float: left;
+}
+
+
+#winix_current_dir li {
+display: block;
+float: left;
+}
+
+
+#winix_current_dir a {
+text-decoration: none;
+color: #666666;
+font-size: 1em;
+}
+
+
+#winix_current_dir a:focus, #winix_current_dir a:hover {
+color: white;
+background: black;
+}
+
+
+#winix_footer {
+clear: both;
+height: 40px;
+background: url('b.gif') no-repeat left bottom;
+}
+
+
+#winix_menu_bottom {
+font-size: 0.8em;
+list-style-type: none;
+margin: 0 auto 0 auto;
+display: block;
+text-align: center;
+}
+
+
+#winix_menu_bottom li {
+display: inline;
+margin-right: 15px;
+padding-right: 15px;
+border-right: 1px solid #626262;
+}
+
+
+#winix_menu_bottom li.last {
+margin-right: 0;
+padding-right: 0;
+border-right: none;
+}
+
+
+#winix_menu_bottom li a {
+text-decoration: none;
+color: #666666;
+}
+
+
+#winix_menu_bottom li a:hover, #winix_menu_bottom li a:focus {
+text-decoration: none;
+color: white;
+background: black;
+}
+
+
+
+/* ---------------------- content -------------------------- */
+
+
+h1 {
+font-size: 1.8em;
+margin: 0 0 1em 0;
+color: #FF8700;
+font-weight: normal;
+}
+
+
+h1.withinfo {
+margin: 0 0 0 0;
+}
+
+
+h1.next {
+margin-top: 1.2em;
+}
+
+
+h2 {
+font-size: 1.2em;
+margin: 1.2em 0 0.8em 0;
+color: #FF8700;
+font-weight: normal;
+}
+
+
+h2.withinfo {
+margin: 1.2em 0 0.2em 0;
+}
+
+
+h3 {
+font-size: 1.1em;
+margin: 1.2em 0 0.8em 0;
+color: #FF8700;
+font-weight: normal;
+}
+
+
+a {
+color: #065A8B;
+text-decoration: none;
+}
+
+
+a:hover, a:focus {
+background: #065A8B;
+color: white;
+text-decoration: none;
+}
+
+
+p {
+margin: 1em 0 1em 0;
+line-height: 1.5em;
+}
+
+
+p.withnext {
+margin: 1em 0 0 0;
+width: 520px;
+}
+
+
+p.iteminfo {
+font-size: 0.7em;
+color: #AAAAAA;
+margin: 0.4em 0 1.8em 0;
+}
+
+
+p.itemtabinfo {
+font-size: 0.7em;
+color: #AAAAAA;
+margin: 0 0 1em 0;
+padding: 0.5em 0 0 0;
+}
+
+
+p.itemtabinfo2 {
+font-size: 0.7em;
+color: #AAAAAA;
+margin: 0 0 1em 0;
+padding: 1.5em 0 0 0;
+}
+
+
+.error {
+color: red;
+font-weight: bold;
+}
+
+
+cite {
+font-style: normal;
+}
+
+
+ul {
+line-height: 1.49em;
+list-style-type: none;
+}
+
+
+ul.a li {
+margin: 0.7em 0 0.7em 2em;
+list-style-type: disc;
+}
+
+
+ol {
+margin-left: 2.5em;
+}
+
+
+dt {
+margin: 1em 0 0 0;
+font-weight: bold;
+}
+
+
+dd {
+margin: 0 0 1em 0;
+}
+
+
+#additem legend {
+display: none;
+}
+
+
+#additem .edit {
+margin: 0.3em 0 0.3em 0;
+padding: 0.2em;
+border: 1px solid #dedede;
+display: block;
+width: 530px;
+}
+
+#additem .editshort {
+margin: 0.3em 0 0.3em 0;
+padding: 0.2em;
+border: 1px solid #dedede;
+display: block;
+width: 250px;
+}
+
+#additem .check {
+vertical-align: middle;
+}
+
+
+#additem label {
+vertical-align: top;
+margin: 0.3em 0 0.3em 0;
+padding: 0.2em;
+display: block;
+}
+
+
+
+#additem select {
+border: 1px solid #dedede;
+width: 100px;
+margin: 0.3em 0 0.3em 0;
+}
+
+
+#additem select.contenttype {
+width: 150px;
+}
+
+
+#additem select.template {
+width: 200px;
+}
+
+
+#additem .privileges {
+margin: 0.5em 0 0.5em 0;
+border: 1px solid #dedede;
+display: block;
+width: 100px;
+}
+
+
+#additem .multitext {
+margin: 0.5em 0 0.5em 0;
+border: 1px solid #dedede;
+display: block;
+width: 530px;
+}
+
+#additem .multitextfull {
+margin: 0.5em 0 0.5em 0;
+border: 1px solid #dedede;
+display: block;
+width: 630px;
+}
+
+
+#additem .submit {
+margin: 1.5em 0 0.5em 0;
+display: block;
+width: 10em;
+padding: 0.2em;
+}
+
+
+table {
+margin-left: 3em;
+}
+
+table tr.roweven {
+background: #F8F8F8;
+}
+
+table tr.rowodd {
+}
+
+table th {
+font-weight: bold;
+padding-right: 2em;
+}
+
+table td {
+padding-right: 2em;
+}
+
+
+table.tablea {
+border: none;
+}
+
+table.tablea th, table.tablea td {
+border: none;
+}
+
+
+table.tableb {
+border: none;
+}
+
+table.tableb th {
+border: none;
+border-bottom: 1px solid #AEAEAE;
+}
+
+table.tableb td {
+border: none;
+}
+
+
+
+
+table.tablec {
+border: none;
+border: 1px solid #AEAEAE;
+}
+
+table.tablec th {
+border: none;
+border-bottom: 1px solid #AEAEAE;
+border-left: 1px dotted #AEAEAE;
+border-right: 1px dotted #AEAEAE;
+}
+
+table.tablec td {
+border: none;
+border-left: 1px dotted #AEAEAE;
+border-right: 1px dotted #AEAEAE;
+}
+
+
+
+table {
+margin: 0.5em 0 1em 0;
+border-collapse: collapse;
+}
+
+
+table tr th {
+border: 1px solid #CCCCCC;
+padding: 0.3em 1em 0.3em 1em;
+font-weight: bold;
+text-align: center;
+white-space: nowrap;
+}
+
+
+table tr td {
+border: 1px solid #CCCCCC;
+padding: 0.3em 1em 0.3em 1em;
+font-weight: normal;
+text-align: left;
+}
+
+
+table.who {
+font-size: 0.8em;
+}
+
+
+table.withoutborder th {
+border: 0;
+padding: 0 1em 0 0;
+text-align: left;
+font-weight: bold;
+vertical-align: middle;
+}
+
+table.withoutborder td {
+border: 0;
+padding: 0 1em 0 0;
+vertical-align: middle;
+}
+
+
+div.itemoptions {
+clear: both;
+border-top: 1px solid #D1D1E1;
+padding: 1em;
+margin: 5em 0 1em 0;
+}
+
+
+div.itemoptions h2 {
+margin-top: 0;
+font-size: 1.1em;
+}
+
+
+ul.itemmenu {
+overflow: hidden;
+margin: 1em 0 2em 0;
+display: block;
+}
+
+
+/* ie6 has some problems */
+* html ul.itemmenu {
+overflow: visible;
+height: 1em;
+}
+
+
+ul.itemmenu  li {
+display: block;
+margin-right: 2em;
+font-size: 0.8em;
+line-height: 1.8em;
+}
+
+
+em {
+font-style: normal;
+font-weight: bold;
+}
+
+
+div.threadbox {
+padding: 0.2em 1em 1em 1em;
+}
+
+
+div.threadboxcolor {
+background: #F4F4F4;
+border-radius: 8px;
+-moz-border-radius: 8px;
+-webkit-border-radius: 8px;
+}
+
+
+div.threadbox a.threadedit {
+margin: 0.5em 0 0 0;
+float: right;
+font-size: 0.8em;
+}
+
+
+table.forum {
+border: 1px solid #D1D1E1;
+}
+
+
+table.forum th {
+border: 1px solid #D1D1E1;
+}
+
+
+table.forum td {
+border: 1px solid #D1D1E1;
+}
+
+table.forum a {
+display: block;
+padding: 0 4px 0 4px;
+}
+
+
+.smallfont {
+font-size: 0.7em;
+}
+
+
+table.tickettab {
+border: 1px solid #D1D1E1;
+}
+
+
+table.tickettab th {
+font-weight: bold;
+}
+
+
+table.tickettab th, table.tickettab td {
+text-align: center;
+border: 0;
+font-size: 0.7em;
+border: 1px solid #D1D1E1;
+vertical-align: middle;
+}
+
+table.tickettab td.tickettabtitle {
+font-size: 1em;
+text-align: left;
+padding: 0 4px 0 4px;
+}
+
+table.tickettab a {
+display: block;
+padding: 0 4px 0 4px;
+}
+
+table.ticket {
+margin: 1em 0 1em 0;
+}
+
+
+table.ticket th {
+text-align: left;
+font-weight: normal;
+padding: 0 1em 0 0;
+}
+
+
+table.ticket th, table.ticket td {
+border: 0;
+vertical-align: middle;
+}
+
+
+table.ticket input {
+margin: 0.3em 0 0.3em 0;
+padding: 0.2em;
+border: 1px solid #dedede;
+display: block;
+width: 100px;
+}
+
+
+div.ticketinfo {
+background: #FFFED5;
+padding: 2em;
+border: 1px dotted #AFAFAF;
+}
+
+
+div.ticketinfo table th {
+text-align: left;
+border: 0;
+padding: 0 1em 0 0;
+}
+
+
+div.ticketinfo table td {
+border: 0;
+}
+
+
+div.ticketinfo p.edit {
+font-size: 0.8em;
+text-align: right;
+float: right;
+}
+
+
+div#winix_ls_browse_leftcolumn {
+float: left;
+width: 30%;
+margin: 0 2em 1em 1em;
+}
+
+div#winix_ls_browse_leftcolumn li {
+margin: 0;
+padding: 0;
+list-style-type: none;
+list-style-image: none;
+background: none;
+}
+
+div#winix_ls_browse_leftcolumn a {
+text-decoration: none;
+outline-style: none;
+}
+
+div#winix_ls_browse_leftcolumn a:hover, div#winix_ls_browse_leftcolumn a:focus {
+text-decoration: underline;
+}
+
+div#winix_ls_browse_rightcolumn {
+float: left;
+width: 60%;
+}
+
+div#winix_ls_browse_rightcolumn li {
+display: block;
+float: left;
+margin: 0 1em 1em 0;
+padding: 0;
+list-style-type: none;
+list-style-image: none;
+background: none;
+}
+
+div#winix_ls_browse_rightcolumn li a img {
+padding: 3px;
+}
+
+div#winix_ls_browse_rightcolumn li a:focus {
+outline-style: none;
+}
+
+div#winix_ls_browse_rightcolumn li a:hover img, div#winix_ls_browse_rightcolumn li a:focus img {
+border: 1px solid black;
+padding: 2px;
+}
+
+
+
+strong {
+font-weight: bold;
+}
+
+img.catimage {
+max-width: 600px;
+}
+
+pre.nowinixbreak {
+display: inline;
+white-space: normal;
+}
+
+
+
+/*
+	from bbcode
+*/
+
+span.bbitalic {
+font-style: italic;
+}
+
+
+span.bbunderline {
+text-decoration: underline;
+}
+
+
+span.bbstrike {
+text-decoration: line-through;
+}
+
+
+div.bbquote {
+display: block;
+padding: 0.5em;
+margin: 0.5em 0 1em 0;
+border: 1px solid #C3C3C3;
+background: #F0F0F0;
+}
+
+div.bbquote span.bbquotewho {
+font-size: 0.8em;
+color: #BABABA;
+}
+
+code.bbcode {
+display: block;
+background-color: #fafafa;
+padding: 1em;
+font-size: 0.8em;
+}
+
+
+ul.bblist  {
+margin-left: 2em;
+}
+
+
+ul.bblist li {
+list-style-type: disc;
+}
+
+span.bbcolyellow {
+color: yellow;
+}
+
+span.bbcolred {
+color: red;
+}
+
+span.bbcolgreen {
+color: green;
+}
+
+span.bbcolblue {
+color: blue;
+}
+
+span.bbcolbrown {
+color: brown;
+}
+
+span.bbcolblack {
+color: black;
+}
+
+
+
+ul.galleryimages li {
+display: block;
+float: left;
+margin: 0 0 6px 10px;
+background: none;
+}
+
+ul.galleryimages a, ul.galleryimages a:hover, ul.galleryimages a:focus, ul.galleryimages a:active {
+background: none; 
+}
+
+ul.galleryimages img { 
+background: none; 
+}
+
+table.mountpoints {
+
+}
+
+table.mountpoints th {
+font-weight: bold;
+white-space: normal;
+text-align: center;
+}
+
+table.slog th, table.slog td {
+border: 0;
+}
+
+td.slogerror {
+background: red;
+color: white;
+}
+
+td.slogwarning {
+background: #7373FF;
+color: white;
+}
+
+td.sloginfo {
+background: #F0F0F0;
+color: black;
+}
+
+ul#sortable li{
+list-style-type: none;
+display: block;
+padding: 0.2em 1em 0.2em 1em;
+border: 1px solid #D3D3D3;
+background: #EDEDED;
+margin: 0.3em 0 0.3em 0;
+}
+
+ul#sortable input{
+width: 30px;
+margin: 0 10px 0 0;
+}
+
+ul#sortable img {
+height: 50px;
+}
+
+
+div#fileupload {
+font-size: 11px;
+/* warning: file upload "add file" button doesn't want to work for small fonts in Firefox */
+}
+
+div#fileupload table, div#fileupload th, div#fileupload td {
+border: none;
+}
+
+
+
+
+#winix_header {
+height: 140px;
+}
+
+
+#winix_header #winix_logo {
+display: block;
+float: left;
+width: 100px;
+padding: 100px 0 0 0;
+height: 0;
+overflow: hidden;
+background: url('/ttmathlogo.png') no-repeat left top;
+margin: 34px 0 0 46px;
+}
+
+* html #winix_header #winix_logo {
+margin-left: 23px;
+}
+
+
+#winix_header #winix_logo:focus {
+border-bottom: 2px solid black;
+}
+
+
+#winix_current_dir {
+margin: 112px 0 0 0;
+}
+
+#winix_current_dir li {
+margin: 0;
+padding: 0;
+background: none;
+}
+
+#winix_current_dir a {
+font-size: 0.8em;
+}
+
+
+
+
+
+
+table {
+border: none 0;
+}
+
+ul {
+margin: 1em 0 1em 0;
+padding-bottom: 1em;
+}
+
+ul.technicallimitation li {
+list-style-position: inside;
+}
+
+p {
+margin: 1em 0 1em 0;
+}
+
+
+
+fieldset {
+margin: 1em 0 1em 0;
+padding: 0;
+border: 0;
+}
+
+legend {
+margin: 0 0 1em 0;
+}
+
+.editcalc {
+width: 600px;
+border: 1px solid black;
+padding: 4px;
+margin-bottom: 1em;
+}
+
+.formonline label {
+display: block;
+margin: 0.4em 0 0.4em 0;
+font-size: 0.8em;
+cursor:pointer;
+padding-left: 1em;
+}
+
+
+.formonline .radio {
+cursor:pointer;
+vertical-align: middle;
+margin-right: 0.5em;
+}
+
+
+.formonline .submit {
+margin: 1em 0 1em 0;
+border: 1px solid black;
+width: 8em;
+}
+
+div.calculatorinfo {
+}
+
+.functions {
+float: left;
+margin-right: 30px;
+font-size: 0.8em;
+}
+
+.operators {
+float: left;
+margin-right: 30px;
+font-size: 0.8em;
+}
+
+.variables {
+float: left;
+font-size: 0.8em;
+}
+
+.functions li {
+list-style-position: inside;
+}
+
+.operators li {
+list-style-position: inside;
+}
+
+.variables li {
+list-style-position: inside;
+}
+
+
+.currentstatus li {
+list-style-type: none;
+}
+
+ul.changelog li.date {
+list-style-type: none;
+font-size: 1.2em;
+margin: 1em 0 0.5em 0;
+}
+
+ul.changelog li {
+list-style-position: outside;
+list-style-type: circle;
+margin: 0 0 0 3em;
+}
+
+.code {
+background-color: #fafafa;
+border: 1px dashed #3674AE;
+padding: 1em;
+}
+
+.code pre {
+margin-left: 2em;
+
+}
+
+.code p {
+margin: 1em 0 0.1em 0.1em;
+}
+
+p.result {
+font-weight: bold;
+}
+

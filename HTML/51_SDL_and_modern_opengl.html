@@ -1,0 +1,533 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head>
+
+
+
+    
+
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta name="KEYWORDS" content="C++ SDL 2 Tutorial 2D Windows Linux Mac modern OpenGL 3 4">
+        <meta name="DESCRIPTION" content="Make modern shader based OpenGL programs in SDL 2">
+
+        <title>Lazy Foo' Productions - SDL and Modern OpenGL</title>
+
+        <link rel="stylesheet" type="text/css" href="51_SDL_and_modern_opengl_elemei/lazy.css">
+
+    <style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head><body data-twttr-rendered="true">
+
+        <div class="header">
+
+<h1 style="border-bottom: 0px none; margin-bottom: 0px; padding-bottom: 0px;">Lazy Foo' Productions</h1>
+<div class="nav">
+<a class="nav" href="http://forums.libsdl.org/">SDL Forums</a>
+<a class="nav" href="http://lazyfoo.net/tutorials/SDL/index.php">SDL Tutorials</a>
+<a class="nav" href="http://lazyfoo.net/articles/index.php">Articles</a>
+<a class="nav" href="http://lazyfoo.net/tutorials/OpenGL/index.php">OpenGL Tutorials</a>
+<a class="nav" href="http://www.opengl.org/discussion_boards/forum.php">OpenGL Forums</a>
+<div class="ads">
+<script src="51_SDL_and_modern_opengl_elemei/cbgapi.loaded_2"></script><script src="51_SDL_and_modern_opengl_elemei/cbgapi.loaded_1"></script><script src="51_SDL_and_modern_opengl_elemei/cbgapi.loaded_0"></script><script src="51_SDL_and_modern_opengl_elemei/widgets.js" id="twitter-wjs"></script><script src="51_SDL_and_modern_opengl_elemei/sdk.js" id="facebook-jssdk"></script><script src="51_SDL_and_modern_opengl_elemei/ga.js" type="text/javascript"></script><script src="51_SDL_and_modern_opengl_elemei/ca-pub-5880704953225255.js" type="text/javascript"></script><script type="text/javascript"><!--
+google_ad_client = "pub-5880704953225255";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = "6699CC";
+google_color_bg = "003366";
+google_color_link = "FFFFFF";
+google_color_url = "AECCEB";
+google_color_text = "AECCEB";
+//--></script>
+<script type="text/javascript" src="51_SDL_and_modern_opengl_elemei/show_ads.js">
+</script><ins id="aswift_0_expand" style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 60px; position: relative; visibility: visible; width: 468px; background-color: transparent;"><ins id="aswift_0_anchor" style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 60px; position: relative; visibility: visible; width: 468px; background-color: transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="60" scrolling="no" width="468"></iframe></ins></ins>
+</div><a class="nav" href="http://lazyfoo.net/index.php">News</a>
+<a class="nav" href="http://lazyfoo.net/faq.php">FAQs</a>
+<a class="nav" href="http://lazyfoo.net/games/index.php">Games</a>
+<a class="nav" href="http://lazyfoo.net/contact.php">Contact</a>
+<a class="nav" href="http://lazyfoo.net/donate.php">Donations</a>
+
+</div><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32350292-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><div style="text-align: center;">Now celebrating Lazy Foo' Productions' 10<sub>dec</sub> year anniversary!</div>
+
+<!--Init facebook-->
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0pt; width: 0pt;"><div></div></div><div style="position: absolute; top: -10000px; height: 0pt; width: 0pt;"><div><iframe src="51_SDL_and_modern_opengl_elemei/FX-Xf5fQjUk.html" style="border: medium none ;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0" scrolling="no"></iframe><iframe src="51_SDL_and_modern_opengl_elemei/FX-Xf5fQjUk_002.html" style="border: medium none ;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0" scrolling="no"></iframe></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!--Init twitter-->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!--Init google+-->
+<script gapi_processed="true" src="51_SDL_and_modern_opengl_elemei/plusone.js"></script>
+</div>        
+        <div class="content">
+
+            <div class="tutPreface"><h1 class="tutHead">SDL and Modern OpenGL</h1>
+            <div class="tutImg"><img src="51_SDL_and_modern_opengl_elemei/preview.png"></div>
+            <h6>Last Updated 6/02/14</h6>
+With OpenGL 3 there was a massive overhaul that made everything shader
+based. In this tutorial we'll be rendering a quad using core modern
+OpenGL. </div>
+
+
+
+<div class="tutCode">//Using SDL, SDL OpenGL, GLEW, standard IO, and strings
+#include &lt;SDL.h&gt;
+#include &lt;gl\glew.h&gt;
+#include &lt;SDL_opengl.h&gt;
+#include &lt;gl\glu.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string&gt;
+</div>
+
+<div class="tutText">
+For this tutorial we'll be using the <a class="tutLink" href="http://glew.sourceforge.net/">Open<b>GL</b> <b>E</b>xtension <b>W</b>rangler</a>.
+Certain operating systems like windows
+only support a limited amount of OpenGL by default. Using GLEW you can
+get the latest functionality. If you use GLEW, make sure to include the
+GLEW header before any OpenGL
+headers.<br>
+<br>
+GLEW is an extension library and if you can set up any of the SDL extension libraries you can set up GLEW.
+</div>
+
+
+<div class="tutCode">//Shader loading utility programs
+void printProgramLog( GLuint program );
+void printShaderLog( GLuint shader );
+</div>
+
+<div class="tutText">
+Here are some custom functions we're making to report any errors when making our shader programs.
+</div>
+
+
+<div class="tutCode">//Graphics program
+GLuint gProgramID = 0;
+GLint gVertexPos2DLocation = -1;
+GLuint gVBO = 0;
+GLuint gIBO = 0;
+</div>
+
+<div class="tutText">
+The way modern OpenGL works is that we create shader programs
+(gProgramID) that process vertex attributes like positions
+(gVertexPos2DLocation). We put vertices in
+<b>V</b>ertex <b>B</b>uffer <b>O</b>bjects (gVBO) and specify the order in which to draw them using <b>I</b>ndex <b>B</b>uffer <b>O</b>bjects.
+</div>
+
+
+<div class="tutCode">        //Use OpenGL 3.1 core
+        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, 3 );
+        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, 1 );
+        SDL_GL_SetAttribute( SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE );
+</div>
+
+<div class="tutText">Here we're initializing for a version 3.1 core
+context. 3.1 core gets rid off all the old functionality. We specify
+the major and minor version like before and make it a core
+context by setting the profile mask to core.
+</div>
+
+
+
+<div class="tutCode">            //Create context
+            gContext = SDL_GL_CreateContext( gWindow );
+            if( gContext == NULL )
+            {
+                printf( "OpenGL context could not be created! SDL Error: %s\n", SDL_GetError() );
+                success = false;
+            }
+            else
+            {
+                //Initialize GLEW
+                glewExperimental = GL_TRUE; 
+                GLenum glewError = glewInit();
+                if( glewError != GLEW_OK )
+                {
+                    printf( "Error initializing GLEW! %s\n", glewGetErrorString( glewError ) );
+                }
+
+                //Use Vsync
+                if( SDL_GL_SetSwapInterval( 1 ) &lt; 0 )
+                {
+                    printf( "Warning: Unable to set VSync! SDL Error: %s\n", SDL_GetError() );
+                }
+
+                //Initialize OpenGL
+                if( !initGL() )
+                {
+                    printf( "Unable to initialize OpenGL!\n" );
+                    success = false;
+                }
+            }
+</div>
+
+<div class="tutText">After we create our context we initialize GLEW.
+Since we want the latest features, we have to set glewExperimental to
+true. After that we call glewInit() to initialize GLEW.
+</div>
+
+
+<div class="tutCode">bool initGL()
+{
+    //Success flag
+    bool success = true;
+
+    //Generate program
+    gProgramID = glCreateProgram();
+</div>
+
+<div class="tutText">
+In our initialization function we're going to create our shader program to render with along with the VBO and IBO data.<br>
+<br>If you've never worked with OpenGL shaders, this function is
+probably going to go over your head. It's OK because this tutorial is
+about how to use SDL's 3.0+ context controls, not
+so much the detail about how OpenGL 3.0+ works. Just try to get a
+general idea on how a shader works.
+</div>
+
+
+<div class="tutCode">    //Create vertex shader
+    GLuint vertexShader = glCreateShader( GL_VERTEX_SHADER );
+
+    //Get vertex source
+    const GLchar* vertexShaderSource[] =
+    {
+        "#version 130\nin vec2 LVertexPos2D; void main() { gl_Position = vec4( LVertexPos2D.x, LVertexPos2D.y, 0, 1 ); }"
+    };
+
+    //Set vertex source
+    glShaderSource( vertexShader, 1, vertexShaderSource, NULL );
+
+    //Compile vertex source
+    glCompileShader( vertexShader );
+
+    //Check vertex shader for errors
+    GLint vShaderCompiled = GL_FALSE;
+    glGetShaderiv( vertexShader, GL_COMPILE_STATUS, &amp;vShaderCompiled );
+    if( vShaderCompiled != GL_TRUE )
+    {
+        printf( "Unable to compile vertex shader %d!\n", vertexShader );
+        printShaderLog( vertexShader );
+        success = false;
+    }
+</div>
+
+<div class="tutText">Here we are loading a vertex shader from an in
+code source. If the vertex shader failed to load and compile we use our
+log printing function to spit out there error.
+</div>
+
+
+<div class="tutCode">    else
+    {
+        //Attach vertex shader to program
+        glAttachShader( gProgramID, vertexShader );
+
+
+        //Create fragment shader
+        GLuint fragmentShader = glCreateShader( GL_FRAGMENT_SHADER );
+
+        //Get fragment source
+        const GLchar* fragmentShaderSource[] =
+        {
+            "#version 130\nout vec4 LFragment; void main() { LFragment = vec4( 1.0, 1.0, 1.0, 1.0 ); }"
+        };
+
+        //Set fragment source
+        glShaderSource( fragmentShader, 1, fragmentShaderSource, NULL );
+
+        //Compile fragment source
+        glCompileShader( fragmentShader );
+
+        //Check fragment shader for errors
+        GLint fShaderCompiled = GL_FALSE;
+        glGetShaderiv( fragmentShader, GL_COMPILE_STATUS, &amp;fShaderCompiled );
+        if( fShaderCompiled != GL_TRUE )
+        {
+            printf( "Unable to compile fragment shader %d!\n", fragmentShader );
+            printShaderLog( fragmentShader );
+            success = false;
+        }
+</div>
+
+<div class="tutText">
+If the vertex shader loaded successfully we attach it to the program and then compile the fragment shader.
+</div>
+
+
+<div class="tutCode">        else
+        {
+            //Attach fragment shader to program
+            glAttachShader( gProgramID, fragmentShader );
+
+
+            //Link program
+            glLinkProgram( gProgramID );
+
+            //Check for errors
+            GLint programSuccess = GL_TRUE;
+            glGetProgramiv( gProgramID, GL_LINK_STATUS, &amp;programSuccess );
+            if( programSuccess != GL_TRUE )
+            {
+                printf( "Error linking program %d!\n", gProgramID );
+                printProgramLog( gProgramID );
+                success = false;
+            }
+</div>
+
+<div class="tutText">
+If the fragment shader compiled, we attach it to the shader program and link it.
+</div>
+
+
+
+<div class="tutCode">            else
+            {
+                //Get vertex attribute location
+                gVertexPos2DLocation = glGetAttribLocation( gProgramID, "LVertexPos2D" );
+                if( gVertexPos2DLocation == -1 )
+                {
+                    printf( "LVertexPos2D is not a valid glsl program variable!\n" );
+                    success = false;
+                }
+</div>
+
+<div class="tutText">
+If the program linked successfully we then get the attribute from the shader program so we can send it vertex data.
+</div>
+
+
+<div class="tutCode">                else
+                {
+                    //Initialize clear color
+                    glClearColor( 0.f, 0.f, 0.f, 1.f );
+
+                    //VBO data
+                    GLfloat vertexData[] =
+                    {
+                        -0.5f, -0.5f,
+                         0.5f, -0.5f,
+                         0.5f,  0.5f,
+                        -0.5f,  0.5f
+                    };
+
+                    //IBO data
+                    GLuint indexData[] = { 0, 1, 2, 3 };
+
+                    //Create VBO
+                    glGenBuffers( 1, &amp;gVBO );
+                    glBindBuffer( GL_ARRAY_BUFFER, gVBO );
+                    glBufferData( GL_ARRAY_BUFFER, 2 * 4 * sizeof(GLfloat), vertexData, GL_STATIC_DRAW );
+
+                    //Create IBO
+                    glGenBuffers( 1, &amp;gIBO );
+                    glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, gIBO );
+                    glBufferData( GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), indexData, GL_STATIC_DRAW );
+                }
+            }
+        }
+    }
+    
+    return success;
+}
+</div>
+
+<div class="tutText">After we get the shader program working, we create
+the VBO and IBO. As you can see, the VBO has the same positions as the
+quad from the last tutorial.
+</div>
+
+
+<div class="tutCode">void printProgramLog( GLuint program )
+{
+    //Make sure name is shader
+    if( glIsProgram( program ) )
+    {
+        //Program log length
+        int infoLogLength = 0;
+        int maxLength = infoLogLength;
+        
+        //Get info string length
+        glGetProgramiv( program, GL_INFO_LOG_LENGTH, &amp;maxLength );
+        
+        //Allocate string
+        char* infoLog = new char[ maxLength ];
+        
+        //Get info log
+        glGetProgramInfoLog( program, maxLength, &amp;infoLogLength, infoLog );
+        if( infoLogLength &gt; 0 )
+        {
+            //Print Log
+            printf( "%s\n", infoLog );
+        }
+        
+        //Deallocate string
+        delete[] infoLog;
+    }
+    else
+    {
+        printf( "Name %d is not a program\n", program );
+    }
+}
+
+void printShaderLog( GLuint shader )
+{
+    //Make sure name is shader
+    if( glIsShader( shader ) )
+    {
+        //Shader log length
+        int infoLogLength = 0;
+        int maxLength = infoLogLength;
+        
+        //Get info string length
+        glGetShaderiv( shader, GL_INFO_LOG_LENGTH, &amp;maxLength );
+        
+        //Allocate string
+        char* infoLog = new char[ maxLength ];
+        
+        //Get info log
+        glGetShaderInfoLog( shader, maxLength, &amp;infoLogLength, infoLog );
+        if( infoLogLength &gt; 0 )
+        {
+            //Print Log
+            printf( "%s\n", infoLog );
+        }
+
+        //Deallocate string
+        delete[] infoLog;
+    }
+    else
+    {
+        printf( "Name %d is not a shader\n", shader );
+    }
+}
+</div>
+
+<div class="tutText">
+Here are our log printing functions. These grab the shader log from the given shader or program and spit it out to the console.
+</div>
+
+
+<div class="tutCode">void render()
+{
+    //Clear color buffer
+    glClear( GL_COLOR_BUFFER_BIT );
+    
+    //Render quad
+    if( gRenderQuad )
+    {
+        //Bind program
+        glUseProgram( gProgramID );
+
+        //Enable vertex position
+        glEnableVertexAttribArray( gVertexPos2DLocation );
+
+        //Set vertex data
+        glBindBuffer( GL_ARRAY_BUFFER, gVBO );
+        glVertexAttribPointer( gVertexPos2DLocation, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(GLfloat), NULL );
+
+        //Set index data and render
+        glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, gIBO );
+        glDrawElements( GL_TRIANGLE_FAN, 4, GL_UNSIGNED_INT, NULL );
+
+        //Disable vertex position
+        glDisableVertexAttribArray( gVertexPos2DLocation );
+
+        //Unbind program
+        glUseProgram( NULL );
+    }
+}
+</div>
+
+<div class="tutText">In our rendering function, we bind our shader
+program, enable vertex positions, bind the VBO, set the data offset,
+bind the IBO, and draw the quad as triangle fan. Once we're done
+we disable the vertex attribute and unbind the program.<br>
+<br>
+Again this tutorial is more for people with some OpenGL experience that
+want to know how to switch over to core functionality. The fact is that
+this code will work with an OpenGL 2.1
+context as well as a 3.0 context. Core OpenGL just removes OpenGL calls
+that don't reflect modern hardware.<br>
+<br>
+If you want to learn more about modern opengl, I have <a class="tutLink" href="http://lazyfoo.net/tutorials/OpenGL/index.php#Hello%20GLSL">OpenGL shader tutorials</a> too.
+
+</div>
+
+            <div class="tutFooter">
+            Download the media and source code for this tutorial <a class="tutLink" href="http://lazyfoo.net/tutorials/SDL/51_SDL_and_modern_opengl/51_SDL_and_modern_opengl.zip">here</a>.<br>
+            <br>
+            <a class="leftNav" href="http://lazyfoo.net/tutorials/SDL/index.php#SDL%20and%20Modern%20OpenGL">Back to SDL Tutorials</a><br>
+            </div>
+
+        </div>
+
+        <div class="footer">
+
+<div style="text-align: center;">
+<!--Facebook-->
+<span fb-iframe-plugin-query="app_id=&amp;href=http%3A%2F%2Flazyfoo.net%2F&amp;locale=en_US&amp;sdk=joey&amp;type=button_count" fb-xfbml-state="rendered" style="line-height: 10px;" class="fb-share-button fb_iframe_widget" data-href="http://lazyfoo.net/" data-type="button_count"><span style="overflow: hidden; vertical-align: top; width: 0px; height: 0px;"><iframe src="51_SDL_and_modern_opengl_elemei/share_button.html" style="border: medium none ; visibility: visible; width: 0px; height: 0px;" title="fb:share_button Facebook Social Plugin" allowtransparency="true" name="f723f227dae3e" frameborder="0" height="1000px" scrolling="no" width="1000px"></iframe></span></span>
+
+<!--Google+-->
+<div id="___plus_0" style="border-style: none; margin: 0pt; padding: 0pt; background: transparent none repeat scroll 0% 0%; text-indent: 0pt; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 109px; height: 20px;"><iframe title="+Megosztás" data-gapiattached="true" src="51_SDL_and_modern_opengl_elemei/sharebutton.html" name="I0_1408457033503" id="I0_1408457033503" vspace="0" tabindex="0" style="border-style: none; margin: 0px; position: static; top: 0pt; width: 109px; left: 0pt; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div>
+
+<!--Twitter-->
+<iframe style="width: 110px; height: 20px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" src="51_SDL_and_modern_opengl_elemei/tweet_button.html" allowtransparency="true" id="twitter-widget-0" frameborder="0" scrolling="no"></iframe>
+
+</div>
+<div class="nav">
+<a class="nav" href="http://forums.libsdl.org/">SDL Forums</a>
+<a class="nav" href="http://lazyfoo.net/tutorials/SDL/index.php">SDL Tutorials</a>
+<a class="nav" href="http://lazyfoo.net/articles/index.php">Articles</a>
+<a class="nav" href="http://lazyfoo.net/tutorials/OpenGL/index.php">OpenGL Tutorials</a>
+<a class="nav" href="http://www.opengl.org/discussion_boards/forum.php">OpenGL Forums</a>
+<div class="ads">
+<script type="text/javascript"><!--
+google_ad_client = "pub-5880704953225255";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = "6699CC";
+google_color_bg = "003366";
+google_color_link = "FFFFFF";
+google_color_url = "AECCEB";
+google_color_text = "AECCEB";
+//--></script>
+<script type="text/javascript" src="51_SDL_and_modern_opengl_elemei/show_ads.js">
+</script><ins id="aswift_1_expand" style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 60px; position: relative; visibility: visible; width: 468px; background-color: transparent;"><ins id="aswift_1_anchor" style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 60px; position: relative; visibility: visible; width: 468px; background-color: transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="60" scrolling="no" width="468"></iframe></ins></ins>
+</div><a class="nav" href="http://lazyfoo.net/index.php">News</a>
+<a class="nav" href="http://lazyfoo.net/faq.php">FAQs</a>
+<a class="nav" href="http://lazyfoo.net/games/index.php">Games</a>
+<a class="nav" href="http://lazyfoo.net/contact.php">Contact</a>
+<a class="nav" href="http://lazyfoo.net/donate.php">Donations</a>
+
+</div>
+<h6>
+Copyright Lazy Foo' Productions 2004-2014
+</h6>
+
+</div>
+    <iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="51_SDL_and_modern_opengl_elemei/postmessageRelay.html" id="oauth2relay1303558359" name="oauth2relay1303558359"></iframe></body><iframe src="" style="display: none;"></iframe></html>

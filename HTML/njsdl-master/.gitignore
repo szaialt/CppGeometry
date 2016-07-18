@@ -1,0 +1,17 @@
+build/
+release/
+doc/
+*.o
+*.obj
+*.idb
+*.pdb
+*.exp
+*.manifest
+*.lib
+.settings
+.classpath
+.project
+.cproject
+*~
+target/
+

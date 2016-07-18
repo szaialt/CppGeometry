@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html><head>
+
+
+	<title>AdZeile</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+	function u(s){var CH="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/:()[]{}";var d="";var length=CH.length;for(var i=0;i<s.length;i++){var c=s.charAt(i);if(c=='.'){var hexValue=s.charAt(i+1)+s.charAt(i+2);var decValue=parseInt("0x"+hexValue);d+=String.fromCharCode(decValue);i+=2;}else{var ix=CH.indexOf(c);if(ix==-1)return s;var ni=ix-20;if(ni<0)ni=ni+(length-1);d+=CH.charAt(ni);}}window.open(d,"_blank");};
+	
+	window.onload = init;
+	var slideInterval;
+	var slideInterval2;
+	var firstOff = true;
+	function init() {
+		setSlideInterval();
+		document.getElementById("panels").onmouseover = clearSlideInterval;
+		document.getElementById("panels").onmouseout = setSlideInterval
+	};
+	function clearSlideInterval() {
+		clearInterval(slideInterval)
+		clearInterval(slideInterval2)
+	}
+	function setSlideInterval() {
+		clearInterval(slideInterval);
+		slideInterval = setInterval("slide()", 4000)
+
+		clearInterval(slideInterval2);
+		slideInterval2 = setInterval("slide2()", 2000)
+	}
+	function slide() {
+		var activePanel = document.getElementById("activePanel");
+		var nextPanel = nextSibling(activePanel);
+		if (Boolean(nextPanel) == false) nextPanel = document.getElementById("panels").getElementsByTagName("div")[0];
+		activePanel.removeAttribute("id");
+		activePanel.setAttribute("style", "display:none");
+		nextPanel.setAttribute("id", "activePanel");
+		nextPanel.setAttribute("style", "display:block")
+	};
+	function nextSibling(el) {
+		while ((el = el.nextSibling) && el.nodeType != 1);
+		return el
+	};
+	
+	function slide2() {
+		var divs = getElementsByClass("vm_sw", null, null);
+		firstOff = ! firstOff;
+		for ( var d = 0; d < divs.length; ++d )
+		{
+			divs[d].style.display = ( ( (d & 1) ==  0 ) ^ firstOff ) ? "inline-block" : "none"; 
+		}
+	};
+	function getElementsByClass(searchClass,node,tag) {
+		var classElements = new Array();
+		if ( node == null )
+			node = document;
+		if ( tag == null )
+			tag = '*';
+		var els = node.getElementsByTagName(tag);
+		var elsLen = els.length;
+		var pattern = new RegExp("(^|\\s)"+searchClass+"(\\s|$)");
+		for (i = 0, j = 0; i < elsLen; i++) {
+			if ( pattern.test(els[i].className) ) {
+				classElements[j] = els[i];
+				j++;
+			}
+		}
+		return classElements;
+	};
+	
+	
+	
+	
+</script>
+<style type="text/css">
+	.vm_sItem{border: 1px solid white;}.vm_sItem:hover{border: 1px solid #DDDCDC;}
+
+	.vm_btn{display: inline-block;text-decoration:none;font-family: Arial,Helvetica,sans-serif;font-weight:bold;margin-top:5px;}
+	.vm_btn span{height:100%;display:block;float:left;color:white;cursor:pointer;}
+	.vm_btn span.btnF{margin:0 5px;}
+	.vm_btn-forward span.btnC {background:#084767;border-top:1px solid #063249;border-bottom:1px solid #063249;}
+	.vm_btn-forward:hover span.btnC {background:#0D6B9B;}
+	.vm_btn-forward span.btnR {width:5px;padding:0 6px;border:1px solid #DD9714;background:#FEAC0F;color:white;font-weight:bold;text-decoration:none;font-size:24px;line-height:14px;width:auto;}
+	.vm_btn-forward span.btnR{-moz-border-radius:0 3px 3px 0;-webkit-border-radius:0 3px 3px 0;border-radius:0 3px 3px 0;border-left:none;}
+	.vm_btn-forward span.btnC{border-left:1px solid #063249;-moz-border-radius:3px 0 0 3px;-webkit-border-radius:3px 0 0 3px;border-radius:3px 0 0 3px;}
+	.vm_btn-forward:hover span.btnR{background:#F8c465;}
+	.vm_btn-forward-mid {height:28px;}
+	.vm_btn-forward-mid>span {line-height:25px;font-size:12px;height:25px;}
+	.vm_btn-forward-mid span.btnR{padding:0 8px;line-height:20px;}
+	.vm_btn-forward-mid span.btnF{margin:0 4px;}
+	
+	.vm_btnS{display: inline-block;text-decoration:none;font-family: Arial,Helvetica,sans-serif;font-weight:bold;margin-top:5px;}
+	.vm_btnS span{height:100%;display:block;float:left;color:white;cursor:pointer;}
+	.vm_btnS span.btnF{margin:0 5px;}
+	.vm_btn-forwardS span.btnC {background:#084767;border-top:1px solid #063249;border-bottom:1px solid #063249;}
+	.vm_btn-forwardS:hover span.btnC {background:#0D6B9B;}
+	.vm_btn-forwardS span.btnR {width:5px;padding:0 6px;border:1px solid #DD9714;background:#FEAC0F;color:white;font-weight:bold;text-decoration:none;font-size:24px;line-height:14px;width:auto;}
+	.vm_btn-forwardS span.btnR{-moz-border-radius:0 3px 3px 0;-webkit-border-radius:0 3px 3px 0;border-radius:0 3px 3px 0;border-left:none;}
+	.vm_btn-forwardS span.btnC{border-left:1px solid #063249;-moz-border-radius:3px 0 0 3px;-webkit-border-radius:3px 0 0 3px;border-radius:3px 0 0 3px;}
+	.vm_btn-forwardS:hover span.btnR{background:#F8c465;}
+	.vm_btn-forward-midS {height:28px;}
+	.vm_btn-forward-midS>span {line-height:25px;font-size:12px;height:25px;}
+	.vm_btn-forward-midS span.btnR{padding:0 6px;line-height:20px;}
+	.vm_btn-forward-midS span.btnF{margin:0 4px;}
+</style>
+</head><body style="background-color: white;">
+	<div id="panels">
+	    <div id="activePanel" style="display: block;"><div class="vm_sItem" style="padding: 0pt; overflow: hidden; float: left; height: 176px; width: 156px; margin-top: 10px; background-color: rgb(255, 255, 255); margin-bottom: 5px; text-align: center; display: block; color: rgb(49, 49, 49); font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: normal; line-height: normal; cursor: pointer;" onclick="u('BNNJonnuxTyCFy.2EFuxyHTyCFy.2ExynuxTyCFynLyxCLywN.3Fux.3Dg.26uxN.3Di.26CM.3Dl.26N.3D7IJ5vF(B.2De.26Cx.3Dgkjmjjelh.26L.3DBNNJ.25gU.25fZ.25fZMwBuvvS.2Exy.25fZFQDAF.2DyRuGJFy.2DvuMy.25fZ');" title="Base London Crescendo Suede, Sneaker, braun">
+	<span style="display: block; margin-top: 2px; padding-bottom: 2px; position: relative; width: auto;">
+		<span style="margin: 0pt; padding: 0pt;">
+			<img src="adzeile_data/base-london-crescendo-suede-sneaker-braun-376966184-0-150-00.jpg" alt="Base London Crescendo Suede, Sneaker, braun" height="97" width="97">
+		</span>
+				<span style="margin: 0pt; padding: 0pt; background: rgb(170, 0, 0) none repeat scroll 0pt 0pt; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; display: block; height: 30px; left: 12px; position: absolute; top: 2px; width: 30px;">
+			<span style="margin: 0pt; padding: 8px 0pt 0pt 1px; color: rgb(255, 255, 255); display: block; font-weight: bold; font-size: 12px; height: auto; width: auto; white-space: nowrap;">-40%</span>
+		</span>
+
+	</span>
+	<div style="margin: 4px 0pt; overflow: hidden; color: rgb(28, 76, 124); height: 29px; display: block; padding-left: 10px; text-align: center; width: 90%;">
+		<span style="margin: 0pt; padding: 0pt; text-decoration: underline; display: inline; height: auto; width: auto;">Base London Crescendo Suede, Sneaker, braun<br></span>
+	</div>
+	<div style="display: inline-block;" class="vm_sw vm_btn vm_btn-forward vm_btn-forward-mid">
+		<span class="btnC">
+			<span class="btnF">Jetzt ansehen</span>
+		</span>
+		<span class="btnR">›</span>
+	</div>
+	<div class="vm_sw" style="display: none;">
+		<div style="margin: 4px 0pt; overflow: hidden; font-size: 14px; font-weight: bold; height: 14px; white-space: nowrap; display: block; padding-left: 10px; text-align: center; width: 90%; color: rgb(153, 0, 0);">
+		<span style="margin: 0pt; padding: 0pt; color: rgb(49, 49, 49); font-size: 12px; text-decoration: line-through; white-space: nowrap; display: inline; height: auto; width: auto;">99,95&nbsp;€</span>&nbsp;59,95&nbsp;€
+	</div>
+
+	<div style="margin: 0pt; overflow: hidden; display: block; padding-left: 10px; text-align: center; width: 90%; color: rgb(106, 104, 97); font-size: 10px; font-style: italic; height: 13px; line-height: 13px; white-space: nowrap;">
+		zzgl. Versand
+	</div>
+	</div>
+</div>
+<div class="vm_sItem" style="padding: 0pt; overflow: hidden; float: left; height: 176px; width: 156px; margin-top: 10px; background-color: rgb(255, 255, 255); margin-bottom: 5px; text-align: center; display: block; color: rgb(49, 49, 49); font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: normal; line-height: normal; cursor: pointer;" onclick="u('BNNJonnuxTyCFy.2EFuxyHTyCFy.2ExynuxTyCFynLyxCLywN.3Fux.3Dg.26uxN.3Di.26CM.3Dl.26N.3D7IJ5vF(B.2De.26Cx.3Dgmldggmdf.26L.3DBNNJ.25gU.25fZ.25fZMwBuvvS.2Exy.25fZFQDAF.2DyRuGJFy.2DvuMy.25fZ');" title="TechFit Base Short Tight">
+	<span style="display: block; margin-top: 2px; padding-bottom: 2px; position: relative; width: auto;">
+		<span style="margin: 0pt; padding: 0pt;">
+			<img src="adzeile_data/techfit-base-short-tight-398033902-0-150-00.jpg" alt="TechFit Base Short Tight" height="97" width="97">
+		</span>
+		
+	</span>
+	<div style="margin: 4px 0pt; overflow: hidden; color: rgb(28, 76, 124); height: 29px; display: block; padding-left: 10px; text-align: center; width: 90%;">
+		<span style="margin: 0pt; padding: 0pt; text-decoration: underline; display: inline; height: auto; width: auto;">TechFit Base Short Tight<br></span>
+	</div>
+	<div style="display: inline-block;" class="vm_sw vm_btn vm_btn-forward vm_btn-forward-mid">
+		<span class="btnC">
+			<span class="btnF">Jetzt ansehen</span>
+		</span>
+		<span class="btnR">›</span>
+	</div>
+	<div class="vm_sw" style="display: none;">
+		<div style="margin: 4px 0pt; overflow: hidden; font-size: 14px; font-weight: bold; height: 14px; white-space: nowrap; display: block; padding-left: 10px; text-align: center; width: 90%; color: rgb(0, 0, 0);">
+		19,90&nbsp;€
+	</div>	
+
+	<div style="margin: 0pt; overflow: hidden; display: block; padding-left: 10px; text-align: center; width: 90%; color: rgb(106, 104, 97); font-size: 10px; font-style: italic; height: 13px; line-height: 13px; white-space: nowrap;">
+		zzgl. Versand
+	</div>
+	</div>
+</div>
+<div class="vm_sItem" style="padding: 0pt; overflow: hidden; float: left; height: 176px; width: 156px; margin-top: 10px; background-color: rgb(255, 255, 255); margin-bottom: 5px; text-align: center; display: block; color: rgb(49, 49, 49); font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: normal; line-height: normal; cursor: pointer;" onclick="u('BNNJonnuxTyCFy.2EFuxyHTyCFy.2ExynuxTyCFynLyxCLywN.3Fux.3Dg.26uxN.3Di.26CM.3Dl.26N.3D7IJ5vF(B.2De.26Cx.3Dgmlghkdjd.26L.3DBNNJ.25gU.25fZ.25fZMwBuvvS.2Exy.25fZFQDAF.2DyRuGJFy.2DvuMy.25fZ');" title="METABO 605053000 Bandsäge BAS 505 Precision DNB">
+	<span style="display: block; margin-top: 2px; padding-bottom: 2px; position: relative; width: auto;">
+		<span style="margin: 0pt; padding: 0pt;">
+			<img src="adzeile_data/metabo-605053000-bandsaege-bas-505-precision-dnb-398347060-0.jpg" alt="METABO 605053000 Bandsäge BAS 505 Precision DNB" height="97" width="97">
+		</span>
+		
+	</span>
+	<div style="margin: 4px 0pt; overflow: hidden; color: rgb(28, 76, 124); height: 29px; display: block; padding-left: 10px; text-align: center; width: 90%;">
+		<span style="margin: 0pt; padding: 0pt; text-decoration: underline; display: inline; height: auto; width: auto;">METABO 605053000 Bandsäge BAS 505 Precision DNB<br></span>
+	</div>
+	<div style="display: inline-block;" class="vm_sw vm_btn vm_btn-forward vm_btn-forward-mid">
+		<span class="btnC">
+			<span class="btnF">Jetzt ansehen</span>
+		</span>
+		<span class="btnR">›</span>
+	</div>
+	<div class="vm_sw" style="display: none;">
+		<div style="margin: 4px 0pt; overflow: hidden; font-size: 14px; font-weight: bold; height: 14px; white-space: nowrap; display: block; padding-left: 10px; text-align: center; width: 90%; color: rgb(0, 0, 0);">
+		1813,46&nbsp;€
+	</div>	
+
+	<div style="margin: 0pt; overflow: hidden; display: block; padding-left: 10px; text-align: center; width: 90%; color: rgb(106, 104, 97); font-size: 10px; font-style: italic; height: 13px; line-height: 13px; white-space: nowrap;">
+		versandkostenfrei
+	</div>
+	</div>
+</div>
+</div><div style="display: none;"><div class="vm_sItem" style="padding: 0pt; overflow: hidden; float: left; height: 176px; width: 156px; margin-top: 10px; background-color: rgb(255, 255, 255); margin-bottom: 5px; text-align: center; display: block; color: rgb(49, 49, 49); font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: normal; line-height: normal; cursor: pointer;" onclick="u('BNNJonnuxTyCFy.2EFuxyHTyCFy.2ExynuxTyCFynLyxCLywN.3Fux.3Dg.26uxN.3Di.26CM.3Dl.26N.3D7IJ5vF(B.2De.26Cx.3Dgmlgifhmd.26L.3DBNNJ.25gU.25fZ.25fZMwBuvvS.2Exy.25fZFQDAF.2DyRuGJFy.2DvuMy.25fZ');" title="METABO 90025100 Bandsäge BAS 260 Swift">
+	<span style="display: block; margin-top: 2px; padding-bottom: 2px; position: relative; width: auto;">
+		<span style="margin: 0pt; padding: 0pt;">
+			<img src="adzeile_data/metabo-90025100-bandsaege-bas-260-swift-398352490-0-150-00.jpg" alt="METABO 90025100 Bandsäge BAS 260 Swift" height="97" width="97">
+		</span>
+		
+	</span>
+	<div style="margin: 4px 0pt; overflow: hidden; color: rgb(28, 76, 124); height: 29px; display: block; padding-left: 10px; text-align: center; width: 90%;">
+		<span style="margin: 0pt; padding: 0pt; text-decoration: underline; display: inline; height: auto; width: auto;">METABO 90025100 Bandsäge BAS 260 Swift<br></span>
+	</div>
+	<div style="display: inline-block;" class="vm_sw vm_btn vm_btn-forward vm_btn-forward-mid">
+		<span class="btnC">
+			<span class="btnF">Jetzt ansehen</span>
+		</span>
+		<span class="btnR">›</span>
+	</div>
+	<div class="vm_sw" style="display: none;">
+		<div style="margin: 4px 0pt; overflow: hidden; font-size: 14px; font-weight: bold; height: 14px; white-space: nowrap; display: block; padding-left: 10px; text-align: center; width: 90%; color: rgb(0, 0, 0);">
+		284,23&nbsp;€
+	</div>	
+
+	<div style="margin: 0pt; overflow: hidden; display: block; padding-left: 10px; text-align: center; width: 90%; color: rgb(106, 104, 97); font-size: 10px; font-style: italic; height: 13px; line-height: 13px; white-space: nowrap;">
+		versandkostenfrei
+	</div>
+	</div>
+</div>
+<div class="vm_sItem" style="padding: 0pt; overflow: hidden; float: left; height: 176px; width: 156px; margin-top: 10px; background-color: rgb(255, 255, 255); margin-bottom: 5px; text-align: center; display: block; color: rgb(49, 49, 49); font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: normal; line-height: normal; cursor: pointer;" onclick="u('BNNJonnuxTyCFy.2EFuxyHTyCFy.2ExynuxTyCFynLyxCLywN.3Fux.3Dg.26uxN.3Di.26CM.3Dl.26N.3D7IJ5vF(B.2De.26Cx.3Dgmlgifkdj.26L.3DBNNJ.25gU.25fZ.25fZMwBuvvS.2Exy.25fZFQDAF.2DyRuGJFy.2DvuMy.25fZ');" title="METABO 90317100 Bandsäge BAS 317 Precision DNB">
+	<span style="display: block; margin-top: 2px; padding-bottom: 2px; position: relative; width: auto;">
+		<span style="margin: 0pt; padding: 0pt;">
+			<img src="adzeile_data/metabo-90317100-bandsaege-bas-317-precision-dnb-398352706-0-.jpg" alt="METABO 90317100 Bandsäge BAS 317 Precision DNB" height="97" width="97">
+		</span>
+		
+	</span>
+	<div style="margin: 4px 0pt; overflow: hidden; color: rgb(28, 76, 124); height: 29px; display: block; padding-left: 10px; text-align: center; width: 90%;">
+		<span style="margin: 0pt; padding: 0pt; text-decoration: underline; display: inline; height: auto; width: auto;">METABO 90317100 Bandsäge BAS 317 Precision DNB<br></span>
+	</div>
+	<div style="display: inline-block;" class="vm_sw vm_btn vm_btn-forward vm_btn-forward-mid">
+		<span class="btnC">
+			<span class="btnF">Jetzt ansehen</span>
+		</span>
+		<span class="btnR">›</span>
+	</div>
+	<div class="vm_sw" style="display: none;">
+		<div style="margin: 4px 0pt; overflow: hidden; font-size: 14px; font-weight: bold; height: 14px; white-space: nowrap; display: block; padding-left: 10px; text-align: center; width: 90%; color: rgb(0, 0, 0);">
+		657,99&nbsp;€
+	</div>	
+
+	<div style="margin: 0pt; overflow: hidden; display: block; padding-left: 10px; text-align: center; width: 90%; color: rgb(106, 104, 97); font-size: 10px; font-style: italic; height: 13px; line-height: 13px; white-space: nowrap;">
+		versandkostenfrei
+	</div>
+	</div>
+</div>
+<div class="vm_sItem" style="padding: 0pt; overflow: hidden; float: left; height: 176px; width: 156px; margin-top: 10px; background-color: rgb(255, 255, 255); margin-bottom: 5px; text-align: center; display: block; color: rgb(49, 49, 49); font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: normal; line-height: normal; cursor: pointer;" onclick="u('BNNJonnuxTyCFy.2EFuxyHTyCFy.2ExynuxTyCFynLyxCLywN.3Fux.3Dg.26uxN.3Di.26CM.3Dl.26N.3D7IJ5vF(B.2De.26Cx.3Dgielhjkif.26L.3DBNNJ.25gU.25fZ.25fZMwBuvvS.2Exy.25fZFQDAF.2DyRuGJFy.2DvuMy.25fZ');" title="adidas TechFit Base Short Tight S-46">
+	<span style="display: block; margin-top: 2px; padding-bottom: 2px; position: relative; width: auto;">
+		<span style="margin: 0pt; padding: 0pt;">
+			<img src="adzeile_data/adidas-techfit-base-short-tight-s-46-351846752-0-150-00.jpg" alt="adidas TechFit Base Short Tight S-46" height="97" width="97">
+		</span>
+		
+	</span>
+	<div style="margin: 4px 0pt; overflow: hidden; color: rgb(28, 76, 124); height: 29px; display: block; padding-left: 10px; text-align: center; width: 90%;">
+		<span style="margin: 0pt; padding: 0pt; text-decoration: underline; display: inline; height: auto; width: auto;">adidas TechFit Base Short Tight S-46<br></span>
+	</div>
+	<div style="display: inline-block;" class="vm_sw vm_btn vm_btn-forward vm_btn-forward-mid">
+		<span class="btnC">
+			<span class="btnF">Jetzt ansehen</span>
+		</span>
+		<span class="btnR">›</span>
+	</div>
+	<div class="vm_sw" style="display: none;">
+		<div style="margin: 4px 0pt; overflow: hidden; font-size: 14px; font-weight: bold; height: 14px; white-space: nowrap; display: block; padding-left: 10px; text-align: center; width: 90%; color: rgb(0, 0, 0);">
+		19,90&nbsp;€
+	</div>	
+
+	<div style="margin: 0pt; overflow: hidden; display: block; padding-left: 10px; text-align: center; width: 90%; color: rgb(106, 104, 97); font-size: 10px; font-style: italic; height: 13px; line-height: 13px; white-space: nowrap;">
+		zzgl. Versand
+	</div>
+	</div>
+</div>
+</div>
+	</div>
+</body></html>

@@ -1,0 +1,484 @@
+<!DOCTYPE HTML>
+<html slick-uniqueid="3" dir="ltr" lang="en-GB"><head>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- base href="http://cms.ferzkopp.net/index.php/software/13-sdl-gfx" -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="author" content="Super User">
+  <meta name="description" content="ferzkopp homepage">
+  <meta name="generator" content="Joomla! - Open Source Content Management">
+  <title>SDL_gfx / SDL2_gfx</title>
+  <link href="http://cms.ferzkopp.net/index.php/software/13-sdl-gfx" rel="canonical">
+  <link href="http://cms.ferzkopp.net/templates/js_wright/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="13-sdl-gfx_elemei/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="13-sdl-gfx_elemei/bootstrap-responsive.css" type="text/css">
+  <link rel="stylesheet" href="13-sdl-gfx_elemei/bootstrap-extended.css" type="text/css">
+  <link rel="stylesheet" href="13-sdl-gfx_elemei/modal.css" type="text/css">
+  <script src="13-sdl-gfx_elemei/jquery.js" type="text/javascript"></script>
+  <script src="13-sdl-gfx_elemei/jquery-noconflict.js" type="text/javascript"></script>
+  <script src="13-sdl-gfx_elemei/jquery-migrate.js" type="text/javascript"></script>
+  <script src="13-sdl-gfx_elemei/caption.js" type="text/javascript"></script>
+  <script src="13-sdl-gfx_elemei/bootstrap.js" type="text/javascript"></script>
+  <script src="13-sdl-gfx_elemei/mootools-core.js" type="text/javascript"></script>
+  <script src="13-sdl-gfx_elemei/core.js" type="text/javascript"></script>
+  <script src="13-sdl-gfx_elemei/mootools-more.js" type="text/javascript"></script>
+  <script src="13-sdl-gfx_elemei/modal.js" type="text/javascript"></script>
+  <script type="text/javascript">
+jQuery(window).on('load',  function() {
+				new JCaption('img.caption');
+			});
+		jQuery(function($) {
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($('a.modal').get(), {
+				parse: 'rel'
+			});
+		});
+jQuery(document).ready(function(){
+	jQuery('.hasTooltip').tooltip({"html": true,"container": "body"});
+});
+  </script>
+
+
+</head><body class="is_firefox v_3  responsive b_jdefault h_jdefault id_108 rev_3.1.3.13">
+        
+	<div style="min-height: 60px;" class="wrapper-toolbar">
+				<nav id="toolbar">
+					<div class="navbar navbar-fixed-top navbar-inverse">
+						<div class="navbar-inner">
+							<div class="container-fluid">
+					            <a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#nav-toolbar">
+						            <span class="icon-bar"></span>
+						            <span class="icon-bar"></span>
+						            <span class="icon-bar"></span>
+					            </a>
+					            <div class="nav-collapse" id="nav-toolbar">
+									 <ul class="nav menu">
+<li class="item-101"><a href="http://cms.ferzkopp.net/">Home</a></li><li class="item-107"><a href="http://cms.ferzkopp.net/index.php/personal">Personal</a></li><li class="item-108 current active"><a href="http://cms.ferzkopp.net/index.php/software">Software</a></li><li class="item-109"><a href="http://cms.ferzkopp.net/index.php/science">Science</a></li><li class="item-110"><a href="http://cms.ferzkopp.net/index.php/media-art">Media Art</a></li><li class="item-115"><a href="http://cms.ferzkopp.net/index.php/business">Business</a></li><li class="item-111 deeper dropdown parent"><a href="http://cms.ferzkopp.net/index.php/links">Links<b class="caret"></b></a><ul class="nav-child unstyled small dropdown-menu"><li class="item-112"><a href="http://cms.ferzkopp.net/index.php/links/personal">Personal</a></li><li class="item-113"><a href="http://cms.ferzkopp.net/index.php/links/bookmarks">Bookmarks</a></li></ul></li><li class="item-114"><a href="http://cms.ferzkopp.net/index.php/search">Search</a></li></ul>
+
+
+<div class="customfloat-right text-right">
+	<h3><span style="color: rgb(192, 192, 192);">ferzkopp.net</span></h3></div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+        <div class="container-fluid">
+        
+        <header id="header">
+        	<div class="row-fluid clearfix">
+        		<div id="logo" class="span6"><a href="http://cms.ferzkopp.net/" class="image"><h2>ferzkopp</h2><img src="13-sdl-gfx_elemei/website-top.jpg" alt="" title=""></a></div>
+        		<div class="clear"></div>
+        	</div>
+        </header>
+                
+                
+                        <div id="main-content" class="row-fluid">
+            
+            
+            
+            <section class="span12" id="main">
+                                
+                <div id="above-content">
+                    		<div class="moduletable">
+					
+<ul class="breadcrumb">
+	<li class="active"><span data-original-title="You are here: " class="divider icon-map-marker hasTooltip" title=""></span></li><li><a href="http://cms.ferzkopp.net/" class="pathway">Home</a><span class="divider"><i class="icon-caret-right"></i></span></li><li><a href="http://cms.ferzkopp.net/index.php/software" class="pathway">Software</a><span class="divider"><i class="icon-caret-right"></i></span></li><li class="active"><span>SDL_gfx / SDL2_gfx</span></li></ul>
+		</div>
+	
+                </div>
+                            	            	
+            	<div id="system-message-container">
+	</div>
+<div class="item-page">
+	
+	
+
+					<div class="page-header">
+				<h2>
+															<a href="http://cms.ferzkopp.net/index.php/software/13-sdl-gfx"> SDL_gfx / SDL2_gfx</a>
+									</h2>
+				</div>
+			
+
+					<div class="btn-group pull-right icons-actions">   			<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <span class="icon-cog"></span> <span class="caret"></span> </a>
+						<ul class="dropdown-menu actions">
+								<li class="print-icon"> <a href="http://cms.ferzkopp.net/index.php/software/13-sdl-gfx?tmpl=component&amp;print=1&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><span class="icon-print"></span>&nbsp;Print&nbsp;</a> </li>
+												<li class="email-icon"> <a href="http://cms.ferzkopp.net/index.php/component/mailto/?tmpl=component&amp;template=js_wright&amp;link=037792e2bf350ebfefe32b6917981485cd8956d7" title="Email" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><span class="icon-envelope"></span> Email</a> </li>
+											</ul>
+		</div>
+			
+
+
+			<div class="article-info muted">
+			<dl class="article-info">
+			<dt class="article-info-term">Details</dt>
+
+													<dd class="category-name">
+					<i class="icon-folder-close"></i> 																<span class="hidden-phone">Category: <a href="http://cms.ferzkopp.net/index.php/software">Software</a></span>						<span class="visible-phone"><a href="http://cms.ferzkopp.net/index.php/software">Software</a></span>									</dd>
+			
+							<dd class="published">
+					<span class="icon-calendar"></span>
+						<span class="hidden-phone">Published: 08 February 2014</span>						<span class="visible-phone">08 February 2014</span>				</dd>
+			
+											
+									<dd class="hits">
+						<span class="icon-eye-open"></span>
+						<span class="hidden-phone">Hits: 21274</span>						<span class="visible-phone">21274</span>					</dd>
+										</dl>
+		</div>
+	
+			
+			
+		
+	
+					
+
+			<p>SDL
+graphics drawing primitives and other support functions wrapped up in
+an addon library for the Simple Direct Media (SDL) cross-platform API
+layer.</p>
+ 
+<h1>SDL2_gfx Library</h1>
+<h3>SDL2 graphics drawing primitives and other support functions</h3>
+<p>Latest Version (Ver 1.0.1 - Sun Jun 15 2014)</p>
+<p><a title="SDL2_gfx-1.0.1.tar.gz" href="http://www.ferzkopp.net/Software/SDL2_gfx/SDL2_gfx-1.0.1.tar.gz" target="_blank">SDL2_gfx-1.0.1.tar.gz</a> (<a title="SDL2_gfx-1.0.1.zip" href="http://www.ferzkopp.net/Software/SDL2_gfx/SDL2_gfx-1.0.1.zip" target="_blank">.zip</a>) (or on <a href="https://sourceforge.net/projects/sdl2gfx/" target="_self">SourceForge</a>)</p>
+<h3>Older versions</h3>
+<p><a title="SDL2_gfx-1.0.0.tar.gz" href="http://www.ferzkopp.net/Software/SDL2_gfx/SDL2_gfx-1.0.0.tar.gz" target="_blank">SDL2_gfx-1.0.0.tar.gz</a></p>
+<h3>Documentation</h3>
+<p><a href="http://www.ferzkopp.net/Software/SDL2_gfx/Docs/html/index.html">Doxygen generated API documentation</a></p>
+<p>&nbsp;</p>
+<p>(c) A. Schiffler, aschiffler [at] ferzkopp.net 2012-2014, licensed under the <a href="http://en.wikipedia.org/wiki/Zlib_License" target="_blank">zlib license</a></p>
+<h1>SDL_gfx Library</h1>
+<h3>SDL graphics drawing primitives and other support functions</h3>
+<div>The SDL_gfx library evolved out of the <em>SDL_gfxPrimitives</em> code which provided basic drawing routines such as lines, circles or polygons and <em>SDL_rotozoom</em> which implemented a interpolating rotozoomer for SDL surfaces.
+<p>The current components of the SDL_gfx library are:</p>
+<ul>
+<li>Graphic Primitives (SDL_gfxPrimitves.h)</li>
+<li>Rotozoomer (SDL_rotozoom.h)</li>
+<li>Framerate control (SDL_framerate.h)</li>
+<li>MMX image filters (SDL_imageFilter.h)</li>
+<li>Custom Blit functions (SDL_gfxBlitFunc.h)</li>
+</ul>
+<p>The library is backwards compatible to the above mentioned code. Its is written in plain C and can be used in C++ code.</p>
+<p>(c) A. Schiffler, aschiffler [at] ferzkopp.net 1999-2013, licensed under the <a href="http://en.wikipedia.org/wiki/Zlib_License" target="_blank">zlib license</a></p>
+</div>
+<h3>Screenshots</h3>
+<table border="0">
+<tbody>
+<tr>
+<td><a href="http://www.ferzkopp.net/Software/SDL_gfx-2.0/Screenshots/SDL_gfxPrimitives.jpg" target="_blank"><img style="margin: 5px; width: 64px;" src="13-sdl-gfx_elemei/SDL_gfxPrimitives-thumb.jpg" alt="" height="48" width="64"></a></td>
+<td><a href="http://www.ferzkopp.net/Software/SDL_gfx-2.0/Screenshots/SDL_rotozoom.jpg" target="_blank"><img style="margin: 5px; width: 64px;" src="13-sdl-gfx_elemei/SDL_rotozoom-thumb.jpg" alt="" height="48" width="64"></a></td>
+</tr>
+<tr>
+<td>SDL_gfxPrimitives</td>
+<td>SDL_rotozoom</td>
+</tr>
+</tbody>
+</table>
+<div>&nbsp;</div>
+<h3>Documentation</h3>
+<p>&nbsp;</p>
+<p><a href="http://www.ferzkopp.net/Software/SDL_gfx-2.0/Docs/html/index.html">Overview and doxygen generated API documentation</a></p>
+<p>&nbsp;</p>
+<h3>Downloads</h3>
+<p>Latest Version (Ver 2.0.25 - Sun Oct 28 2013)</p>
+<p><a title="SDL_gfx-2.0.25.tar.gz" href="http://www.ferzkopp.net/Software/SDL_gfx-2.0/SDL_gfx-2.0.25.tar.gz" target="_blank">SDL_gfx-2.0.25.tar.gz</a> (or on <a href="https://sourceforge.net/projects/sdlgfx/files/" target="_self">SourceForge</a>)</p>
+<p><em>see changelog below</em></p>
+<p>&nbsp;</p>
+<p>Current Development Version via SVN</p>
+<p><em><a title="Sourceforge SDL_gfx" href="https://sourceforge.net/projects/sdlgfx/">https://sourceforge.net/projects/sdlgfx/</a><br> </em></p>
+<p>&nbsp;</p>
+<p>Older Releases</p>
+<p><a title="SDL_gfx-2.0.24.tar.gz" href="http://www.ferzkopp.net/Software/SDL_gfx-2.0/SDL_gfx-2.0.24.tar.gz" target="_blank">SDL_gfx-2.0.24.tar.gz</a></p>
+<p>&nbsp;</p>
+<h3>Supported Platforms</h3>
+<div>The library compiles and is tested for a Linux target (gcc
+compiler) and a Win32 target (VisualC, xmingw32 cross-compiler) as well
+as BeOS and MacOS X PowerBuilder See README for VC and PowerBuilder
+compile information. When using the cross-compiler (available on the
+author's homepage), the build process generates .DLLs. You can use the
+command line 'LIB.EXE' tool to generate VC6 compatible .LIB files for
+linking purposes.</div>
+<h3>Language Interfaces<br><br></h3>
+<p>SDL_gfx has been integrated with the following language interfaces:</p>
+<ul>
+<li><a href="http://www.freepascal-meets-sdl.net/">Pascal</a>: http://www.freepascal-meets-sdl.net</li>
+<li><a href="http://sdl.perl.org/">Perl</a>: http://sdl.perl.org</li>
+<li><a href="http://www.pygame.org/">Python</a>: http://www.pygame.org</li>
+<li><a href="http://cs-sdl.sourceforge.net/">C#</a>: http://cs-sdl.sourceforge.net</li>
+<li><a href="http://www.egsl.retrogamecoding.org/" target="_blank">Lua</a>: http://www.egsl.retrogamecoding.org</li>
+</ul>
+<h3>Notes on Graphics Primitives</h3>
+<div>Care has been taken so that all routines are fully alpha-aware and
+can blend any primitive onto the target surface if ALPHA&lt;255.
+Surface depths supported are 1,2,3 and 4 bytes per pixel. Surface
+locking is implemented in each routine and the library should work well
+with hardware accelerated surfaces. Currently, The following
+Anti-Aliased drawing primitives are available:
+<ul>
+<li>AA-line</li>
+<li>AA-circle</li>
+<li>AA-ellipse</li>
+<li>AA-polygon (not filled)</li>
+</ul>
+<br>
+<h4>[[[ Interface ]]]</h4>
+<pre><span style="color: rgb(128, 0, 0);">NOTE: This section of the webpage may be out of date. </span></pre>
+<pre><span style="color: rgb(128, 0, 0);">Please check README in archive and .h files for up-to-date interface information.</span></pre>
+<pre>Note: all ___Color routines expect the color to be in format 0xRRGGBBAA </pre>
+<pre>Pixel </pre>
+<pre>int pixelColor(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Uint32 color);<br>int pixelRGBA(SDL_Surface * dst, Sint16 x, Sint16 y, Uint8 r,<br>Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>Horizontal line </pre>
+<pre>int hlineColor(SDL_Surface * dst, Sint16 x1, Sint16 x2,<br>Sint16 y, Uint32 color);<br>int hlineRGBA(SDL_Surface * dst, Sint16 x1, Sint16 x2,<br>Sint16 y, Uint8 r, Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>Vertical line </pre>
+<pre>int vlineColor(SDL_Surface * dst, Sint16 x, Sint16 y1,<br>Sint16 y2, Uint32 color);<br>int vlineRGBA(SDL_Surface * dst, Sint16 x, Sint16 y1,<br>Sint16 y2, Uint8 r, Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>Rectangle </pre>
+<pre>int rectangleColor(SDL_Surface * dst, Sint16 x1, Sint16 y1,<br>Sint16 x2, Sint16 y2, Uint32 color);<br>int rectangleRGBA(SDL_Surface * dst, Sint16 x1, Sint16 y1,<br>Sint16 x2, Sint16 y2, Uint8 r, Uint8 g,<br>Uint8 b, Uint8 a);<br>Filled rectangle (Box) <br>int boxColor(SDL_Surface * dst, Sint16 x1, Sint16 y1,<br>Sint16 x2, Sint16 y2, Uint32 color);<br>int boxRGBA(SDL_Surface * dst, Sint16 x1, Sint16 y1, Sint16 x2,<br>Sint16 y2, Uint8 r, Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>Line </pre>
+<pre>int lineColor(SDL_Surface * dst, Sint16 x1, Sint16 y1,<br>Sint16 x2, Sint16 y2, Uint32 color);<br>int lineRGBA(SDL_Surface * dst, Sint16 x1, Sint16 y1,<br>Sint16 x2, Sint16 y2, Uint8 r, Uint8 g, Uint8 b,<br>Uint8 a);</pre>
+<pre>AA Line </pre>
+<pre>int aalineColor(SDL_Surface * dst, Sint16 x1, Sint16 y1,<br>Sint16 x2, Sint16 y2, Uint32 color);<br>int aalineRGBA(SDL_Surface * dst, Sint16 x1, Sint16 y1,<br>Sint16 x2, Sint16 y2, Uint8 r, Uint8 g, Uint8 b,<br>Uint8 a);</pre>
+<pre>Circle </pre>
+<pre>int circleColor(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Sint16 r, Uint32 color);<br>int circleRGBA(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Sint16 rad, Uint8 r, Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>AA Circle </pre>
+<pre>int aacircleColor(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Sint16 r, Uint32 color);<br>int aacircleRGBA(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Sint16 rad, Uint8 r, Uint8 g, Uint8 b,<br>Uint8 a);</pre>
+<pre>Filled Circle </pre>
+<pre>int filledCircleColor(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Sint16 r, Uint32 color);<br>int filledCircleRGBA(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Sint16 rad, Uint8 r, Uint8 g, Uint8 b,<br>Uint8 a);</pre>
+<pre>Ellipse </pre>
+<pre>int ellipseColor(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Sint16 rx, Sint16 ry, Uint32 color);<br>int ellipseRGBA(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Sint16 rx, Sint16 ry, Uint8 r, Uint8 g,<br>Uint8 b, Uint8 a);</pre>
+<pre>AA Ellipse </pre>
+<pre>int aaellipseColor(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Sint16 rx, Sint16 ry, Uint32 color);<br>int aaellipseRGBA(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Sint16 rx, Sint16 ry, Uint8 r, Uint8 g,<br>Uint8 b, Uint8 a);</pre>
+<pre>Filled Ellipse </pre>
+<pre>int filledEllipseColor(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Sint16 rx, Sint16 ry, Uint32 color);<br>int filledEllipseRGBA(SDL_Surface * dst, Sint16 x, Sint16 y,<br>Sint16 rx, Sint16 ry, Uint8 r, Uint8 g,<br>Uint8 b, Uint8 a);</pre>
+<pre>Arc</pre>
+<pre>int arcColor(SDL_Surface * dst, Sint16 x, Sint16 y, <br>Sint16 r, Sint16 start, Sint16 end, Uint32 color);<br>int arcRGBA(SDL_Surface * dst, Sint16 x, Sint16 y, <br>Sint16 rad, Sint16 start, Sint16 end, Uint8 r, Uint8 g, Uint8 b, Uint8 a); </pre>
+<pre>Pie </pre>
+<pre>int pieColor(SDL_Surface * dst, Sint16 x, Sint16 y, Sint16 rad,<br>Sint16 start, Sint16 end, Uint32 color);<br>int pieRGBA(SDL_Surface * dst, Sint16 x, Sint16 y, Sint16 rad,<br>Sint16 start, Sint16 end, Uint8 r, Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>Filled Pie </pre>
+<pre>int filledPieColor(SDL_Surface * dst, Sint16 x, Sint16 y, Sint16 rad,<br>Sint16 start, Sint16 end, Uint32 color);<br>int filledPieRGBA(SDL_Surface * dst, Sint16 x, Sint16 y, Sint16 rad,<br>Sint16 start, Sint16 end, Uint8 r, Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>Trigon </pre>
+<pre>int trigonColor(SDL_Surface * dst, Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2, <br>Sint16 x3, Sint16 y3, Uint32 color);<br>int trigonRGBA(SDL_Surface * dst, Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2, <br>Sint16 x3, Sint16 y3,<br>Uint8 r, Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>AA-Trigon</pre>
+<pre>int aatrigonColor(SDL_Surface * dst, Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2,<br>Sint16 x3, Sint16 y3, Uint32 color);<br>int aatrigonRGBA(SDL_Surface * dst,  Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2,<br>Sint16 x3, Sint16 y3,<br>Uint8 r, Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>Filled Trigon</pre>
+<pre>int filledTrigonColor(SDL_Surface * dst, Sint16 x1, Sint16 y1, Sint16 x2,<br>Sint16 y2, Sint16 x3, Sint16 y3, int color);<br>int filledTrigonRGBA(SDL_Surface * dst, Sint16 x1, Sint16 y1, Sint16 x2,<br>Sint16 y2, Sint16 x3, Sint16 y3,<br>Uint8 r, Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>Polygon </pre>
+<pre>int polygonColor(SDL_Surface * dst, Sint16 * vx, Sint16 * vy,<br>int n, Uint32 color);<br>int polygonRGBA(SDL_Surface * dst, Sint16 * vx, Sint16 * vy,<br>int n, Uint8 r, Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>AA-Polygon </pre>
+<pre>int aapolygonColor(SDL_Surface * dst, Sint16 * vx, Sint16 * vy,<br>int n, Uint32 color);<br>int aapolygonRGBA(SDL_Surface * dst, Sint16 * vx, Sint16 * vy,<br>int n, Uint8 r, Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>Filled Polygon </pre>
+<pre>int filledPolygonColor(SDL_Surface * dst, Sint16 * vx,<br>Sint16 * vy, int n, int color);<br>int filledPolygonRGBA(SDL_Surface * dst, Sint16 * vx,<br>Sint16 * vy, int n, Uint8 r, Uint8 g,<br>Uint8 b, Uint8 a);</pre>
+<pre>Textured Polygon </pre>
+<pre>int texturedPolygon(SDL_Surface * dst, Sint16 * vx, Sint16 * vy, int n, <br>SDL_Surface *texture, int texture_dx, int texture_dy);</pre>
+<pre>Bezier Curve</pre>
+<pre>int bezierColor(SDL_Surface * dst, Sint16 * vx, <br>Sint16 * vy, int n, int s, Uint32 color);<br>int bezierRGBA(SDL_Surface * dst, Sint16 * vx, Sint16 * vy,<br>int n, int s, Uint8 r, Uint8 g, Uint8 b, Uint8 a);</pre>
+<pre>Note: s is the number of steps to render. <br><br>Rounded Rectangle<br><br>int roundedRectangleColor(SDL_Surface * dst, Sint16 x1, Sint16 y1, <br>                Sint16 x2, Sint16 y2, Sint16 rad, Uint32 color);<br>int roundedRectangleRGBA(SDL_Surface * dst, Sint16 x1, Sint16 y1,<br>                Sint16 x2, Sint16 y2, Sint16 rad, <br>                Uint8 r, Uint8 g, Uint8 b, Uint8 a);<br><br>Rounded Box<br><br>int roundedBoxColor(SDL_Surface * dst, Sint16 x1, Sint16 y1, <br>                Sint16 x2, Sint16 y2, Sint16 rad, Uint32 color);<br>int roundedBoxRGBA(SDL_Surface * dst, Sint16 x1, Sint16 y1, <br>                Sint16 x2, Sint16 y2, Sint16 rad, <br>                Uint8 r, Uint8 g, Uint8 b, Uint8 a);<br><br>Thick Line<br>int thickLineColor(SDL_Surface * dst, Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2, <br>                Uint8 width, Uint32 color);<br>int thickLineRGBA(SDL_Surface * dst, Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2,<br>                Uint8 width, Uint8 r, Uint8 g, Uint8 b, Uint8 a);<br><br></pre>
+<pre>Characters/Strings </pre>
+<pre>int characterColor(SDL_Surface * dst, Sint16 x, Sint16 y,<br>char c, Uint32 color);<br>int characterRGBA(SDL_Surface * dst, Sint16 x, Sint16 y,<br>char c, Uint8 r, Uint8 g, Uint8 b, Uint8 a);<br>int stringColor(SDL_Surface * dst, Sint16 x, Sint16 y, char *c,<br>Uint32 color);<br>int stringRGBA(SDL_Surface * dst, Sint16 x, Sint16 y, char *c,<br>Uint8 r, Uint8 g, Uint8 b, Uint8 a);<br>void gfxPrimitivesSetFont(unsigned char *fontdata, int cw, int ch);</pre>
+<pre>Note: Several font definitions are included. </pre>
+</div>
+<h3>Notes on Rotozoomer</h3>
+<div>The rotozoom without interpolation code should be fast enough even
+for some realtime effects if the CPU is fast or bitmaps small. With
+interpolation the routines are typically used for pre-rendering stuff
+in higher quality (i.e. smoothing) - that's also a reason why the API
+differs from SDL_BlitRect() and creates a new target surface each time
+rotozoom is called. The final rendering speed is dependent on the
+target surface size as it is beeing xy-scanned when rendering the new
+surface.
+<p>Note also that the smoothing toggle is dependent on the input
+surface bit depth. 8bit surfaces will never be smoothed - only 32bit
+surfaces will.</p>
+<p>Note that surfaces of other bit depth then 8 and 32 will be
+converted on the fly to a 32bit surface using a blit into a temporary
+surface. This impacts performance somewhat.</p>
+<p>&nbsp;</p>
+<h4>[[[ Interface ]]]</h4>
+<pre>SDL_Surface * rotozoomSurface (SDL_Surface *src, double angle, double zoom, int smooth);</pre>
+<pre>Rotates and zoomes a 32bit or 8bit 'src' surface to newly created 'dst' surface.<br>'angle' is the rotation in degrees. 'zoom' a scaling factor. If 'smooth' is 1<br>then the destination 32bit surface is anti-aliased. If the surface is not 8bit<br>or 32bit RGBA/ABGR it will be converted into a 32bit RGBA format on the fly.</pre>
+<pre>SDL_Surface * rotozoomSurfaceXY (SDL_Surface *src, double angle, double zoomx,<br>double zoomy, int smooth);</pre>
+<pre>Rotates and zoomes a 32bit or 8bit 'src' surface to newly created 'dst' surface.<br>'angle' is the rotation in degrees. 'zoomx' and 'zoomy' are scaling factors that<br>can also be negative. In this case the corresponding axis is flipped.  If 'smooth' <br>is 1 then the destination 32bit surface is anti-aliased. If the surface is not 8bit<br>or 32bit RGBA/ABGR it will be converted into a 32bit RGBA format on the fly.<br>Note: Flipping currently only works with antialiasing turned off.</pre>
+<pre>SDL_Surface * zoomSurface (SDL_Surface *src, double zoomx, double zoomy, int smooth);</pre>
+<pre>Zoomes a 32bit or 8bit 'src' surface to newly created 'dst' surface.<br>'zoomx' and 'zoomy' are scaling factors for width and height. If 'smooth' is 1<br>then the destination 32bit surface is anti-aliased. If the surface is not 8bit<br>or 32bit RGBA/ABGR it will be converted into a 32bit RGBA format on the fly.<br>Smoothing (interpolation) flags work only on 32bit surfaces:<br>#define SMOOTHING_OFF		0<br>#define SMOOTHING_ON		1</pre>
+</div>
+<div>SDL_Surface *shrinkSurface(SDL_Surface *src, int factorx, int factory);</div>
+<div>Shrinks a 32bit or 8bit 'src' surface ti a newly created 'dst' surface.<br> 'factorx' and 'factory' are the shrinking ratios (i.e. 2=1/2 the size,<br> 3=1/3 the size, etc.) The destination surface is antialiased by averaging<br> the source box RGBA or Y information. If the surface is not 8bit<br> or 32bit RGBA/ABGR it will be converted into a 32bit RGBA format on the fly.</div>
+<h3>Notes on framerate functions</h3>
+<p>The framerate functions are used to insert delays into the graphics loop to maintain a constant framerate.</p>
+<p>The implementation is more sophisticated that the usual</p>
+<pre>	SDL_Delay(1000/FPS);</pre>
+<p>call since these functions keep track of the desired game time per
+frame for a linearly interpolated sequence of future timing points of
+each frame. This is done to avoid rounding errors from the inherent
+instability in the delay generation and application - i.e. the 100th
+frame of a game running at 50Hz will be accurately 2.00sec after the
+1st frame (if the machine can keep up with the drawing). See also the
+diagram for more details on this.</p>
+<p>&nbsp;</p>
+<table border="0">
+<tbody>
+<tr>
+<td><a href="http://cms.ferzkopp.net/%7Easchiffler/Software/SDL_gfx-2.0/framerate.png" target="_blank"><img style="width: 50px;" src="13-sdl-gfx_elemei/framerate-thumb.html" alt="Framerate Calc. Diagram Thumbnail" height="54" width="50" border="0"></a></td>
+</tr>
+<tr>
+<td>Framerate Calc. Diagram</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4>[[[ Interface ]]]</h4>
+<pre>The functions return 0 or value for sucess and -1 for error. All functions<br>use a pointer to a framerate-manager variable to operate.</pre>
+<pre>void SDL_initFramerate(FPSmanager * manager);</pre>
+<pre>Initialize the framerate manager, set default framerate of 30Hz and<br>reset delay interpolation.</pre>
+<pre>int SDL_setFramerate(FPSmanager * manager, int rate);</pre>
+<pre>Set a new framerate for the manager and reset delay interpolation.</pre>
+<pre>int SDL_getFramerate(FPSmanager * manager);</pre>
+<pre>Get the currently set framerate of the manager.</pre>
+<pre>void SDL_framerateDelay(FPSmanager * manager);</pre>
+<pre>Generate a delay to accomodate currently set framerate. Call once in the<br>graphics/rendering loop. If the computer cannot keep up with the rate (i.e.<br>drawing too slow), the delay is zero and the delay interpolation is reset.</pre>
+<p>&nbsp;</p>
+<h3>Notes on imageFilter functions</h3>
+<div>The imagefilter functions are a collection of MMX optimized
+routines that operate on continuous buffers of bytes - typically
+greyscale images from framegrabbers and such - performing functions
+such as image addition and binarization. All functions (almost .. not
+the the convolution routines) have a C implementation that is
+automatically used on systems without MMX capabilities.
+<p>The compiler flag -DUSE_MMX toggles the conditional compile of MMX assembly.<br>An assembler must be installed (i.e. "nasm").</p>
+<h4>[[[ Interface ]]]</h4>
+<pre>Comments:                                                                           <br>1.) MMX functions work best if all data blocks are aligned on a 32 bytes boundary. <br>2.) Data that is not within an 8 byte boundary is processed using the C routine.   <br>3.) Convolution routines do not have C routines at this time.                      <br>4.) All routines return 0 for OK and -1 for error.</pre>
+<pre>Detect MMX capability in CPU<br>int SDL_imageFilterMMXdetect(void);</pre>
+<pre>Force use of MMX off (or turn possible use back on)</pre>
+<pre>void SDL_imageFilterMMXoff(void);<br>void SDL_imageFilterMMXon(void);</pre>
+<pre>SDL_imageFilterAdd: D = saturation255(S1 + S2)<br>int SDL_imageFilterAdd (unsigned char *Src1, unsigned char *Src2,<br>unsigned char *Dest, int length);<br>SDL_imageFilterMean: D = S1/2 + S2/2<br>int SDL_imageFilterMean(unsigned char *Src1, unsigned char *Src2,<br>unsigned char *Dest, int length);<br>SDL_imageFilterSub: D = saturation0(S1 - S2)<br>int SDL_imageFilterSub(unsigned char *Src1, unsigned char *Src2,<br>unsigned char *Dest, int length);<br>SDL_imageFilterAbsDiff: D = | S1 - S2 |<br>int SDL_imageFilterAbsDiff(unsigned char *Src1, unsigned char *Src2,<br>unsigned char *Dest, int length);<br>SDL_imageFilterMult: D = saturation(S1 * S2)<br>int SDL_imageFilterMult(unsigned char *Src1, unsigned char *Src2,<br>unsigned char *Dest, int length);<br>SDL_imageFilterMultNor: D = S1 * S2   (non-MMX)<br>int SDL_imageFilterMultNor(unsigned char *Src1, unsigned char *Src2,<br>unsigned char *Dest, int length);<br>SDL_imageFilterMultDivby2: D = saturation255(S1/2 * S2)<br>int SDL_imageFilterMultDivby2(unsigned char *Src1, unsigned char *Src2,<br>unsigned char *Dest, int length);<br>SDL_imageFilterMultDivby4: D = saturation255(S1/2 * S2/2)<br>int SDL_imageFilterMultDivby4(unsigned char *Src1, unsigned char *Src2,<br>unsigned char *Dest, int length);<br>SDL_imageFilterBitAnd: D = S1 &amp; S2<br>int SDL_imageFilterBitAnd(unsigned char *Src1, unsigned char *Src2,<br>unsigned char *Dest, int length);<br>SDL_imageFilterBitOr: D = S1 | S2<br>int SDL_imageFilterBitOr(unsigned char *Src1, unsigned char *Src2,<br>unsigned char *Dest, int length);<br>SDL_imageFilterDiv: D = S1 / S2   (non-MMX)<br>int SDL_imageFilterDiv(unsigned char *Src1, unsigned char *Src2,<br>unsigned char *Dest, int length);<br>SDL_imageFilterBitNegation: D = !S<br>int SDL_imageFilterBitNegation(unsigned char *Src1, unsigned char *Dest,<br>int length);<br>SDL_imageFilterAddByte: D = saturation255(S + C)<br>int SDL_imageFilterAddByte(unsigned char *Src1, unsigned char *Dest,<br>int length, unsigned char C);<br>SDL_imageFilterAddByteToHalf: D = saturation255(S/2 + C)<br>int SDL_imageFilterAddByteToHalf(unsigned char *Src1, unsigned char *Dest,<br>int length, unsigned char C);<br>SDL_imageFilterSubByte: D = saturation0(S - C)<br>int SDL_imageFilterSubByte(unsigned char *Src1, unsigned char *Dest,<br>int length, unsigned char C);<br>SDL_imageFilterShiftRight: D = saturation0(S &gt;&gt; N)<br>int SDL_imageFilterShiftRight(unsigned char *Src1, unsigned char *Dest,<br>int length, unsigned char N);<br>SDL_imageFilterMultByByte: D = saturation255(S * C)<br>int SDL_imageFilterMultByByte(unsigned char *Src1, unsigned char *Dest,<br>int length, unsigned char C);<br>SDL_imageFilterShiftRightAndMultByByte: D = saturation255((S &gt;&gt; N) * C)<br>int SDL_imageFilterShiftRightAndMultByByte(unsigned char *Src1,<br>unsigned char *Dest, int length, unsigned char N, unsigned char C);<br>SDL_imageFilterShiftLeftByte: D = (S &lt;&lt; N)<br>int SDL_imageFilterShiftLeftByte(unsigned char *Src1, unsigned char *Dest,<br>int length, unsigned char N);<br>SDL_imageFilterShiftLeft: D = saturation255(S &lt;&lt; N)<br>int SDL_imageFilterShiftLeft(unsigned char *Src1, unsigned char *Dest,<br>int length, unsigned char N);<br>SDL_imageFilterBinarizeUsingThreshold: D = S &gt;= T ? 255:0<br>int SDL_imageFilterBinarizeUsingThreshold(unsigned char *Src1,<br>unsigned char *Dest, int length, unsigned char T);<br>SDL_imageFilterClipToRange: D = (S &gt;= Tmin) &amp; (S &lt;= Tmax) 255:0<br>int SDL_imageFilterClipToRange(unsigned char *Src1, unsigned char *Dest,<br>int length, unsigned char Tmin, unsigned char Tmax);<br>SDL_imageFilterNormalizeLinear: D = saturation255((Nmax - Nmin)/<br>(Cmax - Cmin)*(S - Cmin) + Nmin)<br>int SDL_imageFilterNormalizeLinear(unsigned char *Src1, unsigned char *Dest,<br>int length, int Cmin, int Cmax, int Nmin, int Nmax);<br>!!! NO C-ROUTINE FOR THESE FUNCTIONS YET !!! <br>SDL_imageFilterConvolveKernel3x3Divide: Dij = saturation0and255( ... )<br>int SDL_imageFilterConvolveKernel3x3Divide(unsigned char *Src,<br>unsigned char *Dest, int rows, int columns,<br>signed short *Kernel, unsigned char Divisor);<br>SDL_imageFilterConvolveKernel5x5Divide: Dij = saturation0and255( ... )<br>int SDL_imageFilterConvolveKernel5x5Divide(unsigned char *Src,<br>unsigned char *Dest, int rows, int columns,<br>signed short *Kernel, unsigned char Divisor);<br>SDL_imageFilterConvolveKernel7x7Divide: Dij = saturation0and255( ... )<br>int SDL_imageFilterConvolveKernel7x7Divide(unsigned char *Src,<br>unsigned char *Dest, int rows, int columns,<br>signed short *Kernel, unsigned char Divisor);<br>SDL_imageFilterConvolveKernel9x9Divide: Dij = saturation0and255( ... )<br>int SDL_imageFilterConvolveKernel9x9Divide(unsigned char *Src,<br>unsigned char *Dest, int rows, int columns,<br>signed short *Kernel, unsigned char Divisor);<br>SDL_imageFilterConvolveKernel3x3ShiftRight: Dij = saturation0and255( ... )<br>int SDL_imageFilterConvolveKernel3x3ShiftRight(unsigned char *Src,<br>unsigned char *Dest, int rows, int columns,<br>signed short *Kernel, unsigned char NRightShift);<br>SDL_imageFilterConvolveKernel5x5ShiftRight: Dij = saturation0and255( ... )<br>int SDL_imageFilterConvolveKernel5x5ShiftRight(unsigned char *Src,<br>unsigned char *Dest, int rows, int columns,<br>signed short *Kernel, unsigned char NRightShift);<br>SDL_imageFilterConvolveKernel7x7ShiftRight: Dij = saturation0and255( ... )<br>int SDL_imageFilterConvolveKernel7x7ShiftRight(unsigned char *Src,<br>unsigned char *Dest, int rows, int columns,<br>signed short *Kernel, unsigned char NRightShift);<br>SDL_imageFilterConvolveKernel9x9ShiftRight: Dij = saturation0and255( ... )<br>int SDL_imageFilterConvolveKernel9x9ShiftRight(unsigned char *Src,<br>unsigned char *Dest, int rows, int columns,<br>signed short *Kernel, unsigned char NRightShift);<br>SDL_imageFilterSobelX: Dij = saturation255( ... )<br>int SDL_imageFilterSobelX(unsigned char *Src, unsigned char *Dest,<br>int rows, int columns);<br>SDL_imageFilterSobelXShiftRight: Dij = saturation255( ... )<br>int SDL_imageFilterSobelXShiftRight(unsigned char *Src,<br>unsigned char *Dest, int rows, int columns, <br>unsigned char NRightShift);<br>Align/restore stack to 32 byte boundary -- Functionality untested! --<br>void SDL_imageFilterAlignStack(void);<br>void SDL_imageFilterRestoreStack(void);</pre>
+</div>
+<h3>Installation and Test</h3>
+<div><br>To compile the library your need the SDL 1.2 installed from
+source or installed with the 'devel' RPM package. For example on
+Mandriva, run:<br> urpmi libSDL1.2-devel<br><br>Then run<br> ./autogen.sh (optional)<br> ./configure<br> make<br> make install<br> ldconfig<br><br>to
+compile and install the library. The default location for the
+installation is /usr/local/lib and /usr/local/include. The libary path
+might need to be added to the file<br> /etc/ld.so.conf<br><br>Run the shell script 'nodebug.sh' before make, to patch the makefile for optimized compilation:<br> ./autogen.sh (optional)<br> ./configure<br> ./nodebug.sh<br> make<br> make install<br> ldconfig<br><br>Check the folder "Other Builds" for alternative makefiles.<br><br><span style="text-decoration: underline;">No-MMX</span><br><br>To build without MMX code enabled (i.e. PPC or for AMD64 architecture<br>which is missing pusha/popa):<br> ./configure --disable-mmx<br> make<br> make install<br>i.e. to build on MacOSX 10.3+ use:<br> ./configure --disable-mmx &amp;&amp; make</div>
+<div><span style="text-decoration: underline;">Windows VC8/9</span></div>
+<div>The SDL_gfx_VS2010.sln will open VS2010 including express versions
+and expects an installation of SDL-1.2.15 in a directory along SDL_gfx.</div>
+<div>(The old VS2008 .sln is also still included but is not up-to-date wrt to file paths.)</div>
+<div><span style="text-decoration: underline;">Windows (VC6/7)</span><br><br>See folder Other Builds.<br><br>To create a Windows DLL using VisualC6:<br> unzip -a VisualC6.zip<br> vcvars32.bat<br> copy VisualC/makefile<br> nmake<br>or<br> unzip -a VisualC7.zip<br>and open the project file.</div>
+<div><br><span style="text-decoration: underline;">Windows (VC7/8/9)<br></span><br>See folder Visual C.<br><br>Open project file and review README.<br><br><span style="text-decoration: underline;">Windows (CE)</span><br><br>See folder Other Builds.<br><br>May need workaround for missing lrint.<br><br><span style="text-decoration: underline;">Cross-Compilation</span><br><br>To build using mingw32 on Win32, check the makefile contained in mingw.zip<br><br>To create a Windows DLL using the xmingw32 cross-compiler:<br> cross-configure<br> cross-make<br> cross-make install<br><br>Make sure the -DBUILD_DLL is used (and only then) when creating the DLLs.<br>Make sure -DWIN32 is used when compiling the sources (creating or using<br>the DLLs.<br><br>Specify the path to your cross-compiled 'sdl-config', and invoke<br>'./configure' with the '--host' and '--build' arguments. For example,<br>to cross-compile a .DLL from GNU/Linux:<br><br>SDL_CONFIG=/usr/local/cross-tools/i386-mingw32msvc/bin/sdl-config \<br> ./configure --host=i586-mingw32msvc --build=i686-pc-linux-gnu<br>make<br>make install<br><br><span style="text-decoration: underline;">QNX</span><br><br>To build on QNX6, patch first using:<br> patch -p0 &lt;QNX.diff<br><br><span style="text-decoration: underline;">OSX</span><br>
+<p>To build on MacOS X with Project Builder, follow these steps:</p>
+<ul>
+<li>Update your developer tools to the lastest version (December 2002 as of this revision).</li>
+<li>Install the SDL Developers framework for Mac OS X.</li>
+<li>Download the latest SDL_gfx source distribution and extract the archive in a convenient location.</li>
+<li>Extract the included OSX-PB.tgz archive into the top directory of
+the SDL_gfx distribution (from step 3). This will create a PB that
+contains the project files.</li>
+<li>The project has targets for the SDL_gfx framework and the four test
+programs. All can be built using the 'deployment' or 'development'
+build styles.</li>
+</ul>
+</div>
+<p>A newer version for MaxOS X is included in the OSX-PB-XCode.zip
+archive. The updated version uses relative pathnames where appropriate,
+and pointers to the standard installation location of SDL. However, it
+may require XCode in order to be used.</p>
+<h3>Test Programs</h3>
+<p>Change to the ./Test directory and run<br> ./configure<br> make<br>to create several test programs for the libraries functions. This requires<br>the library to be compiled and installed.<br><br>See the source code .c files for some sample code and implementation hints.<br><br></p>
+<h3><span class="caption">Build Prep</span></h3>
+<p>Run autogen.sh or manually<br><br>aclocal --force<br>libtoolize --force --copy<br>autoreconf -fvi</p>
+<h3>Change Log</h3>
+<div>
+<pre>Ver 2.0.25 - Sun, Oct 27, 2013  3:08:15 PM<br>* Added patch for 32- and 64-bit GCC-compiled MMX support<br>  (contributed by Sylvain Beucler, backported from SDL2_gfx)<br>* Fixed bug in _aaline when x1&gt;x2 and dy==0 (found by Yannick<br>  Guesnet - thanks!)<br>* Updated documentation.<br>* Fixed header in SDL_gfxBlitFunc.h (reported by Jaders77 on<br>  sourceforge - thanks!)<br><br>Ver 2.0.24 - Sun, Jul 22, 2012  9:27:29 AM<br>* Removed some missed LGPL references<br>* Fixed thick line swap bug (patch contributed by Thien-Thi)<br>  and added accuracy test for thick line<br>* Improved interface to SDL_framerateDelay (idea contributed by<br>  Neil)<br>* Fixed dramerate modules dependency on SDL_GetTicks returning a<br>  value &gt;0 (issue report contributed by Douglas)<br>* Fixed 32bpp blending function for BGRA (thanks for the test code<br>  and contributing a fix sabbetts/Jay)<br>* Updated VS2010 solution file to use SDL-1.2 sources<br>* Fix for pixel blend routine (patch contributes by Mitjia)<br><br>Ver 2.0.23 - Sat Dec  3 22:55:04 PST 2011<br>* Updated sources to resolve some splint (static code analysis)<br>  issues<br>* Updates for OpenSDK (WinCE6/ARM) build target (patch contributed<br>  itsnotabigtruck)<br>* Added OSX Xcode3+ template files to Other Builds collection<br>  (contributed by Vasyl)<br>* Added various fixes and improvements contributed by folks on <br>  sourceforge (thanks contributors).<br>* Switched library and test code to zlib license.<br><br>Ver 2.0.22 - Sat Sep 11 23:26:42 EDT 2010<br>* Fixed line width calculation for normal and textured polygons<br>  (patch contributed by Daniel (SupSuper)<br>* Fixed version setup in configure.in<br>* Added rounded rectangle and rounded box primitives<br>* Updated test program for roundedbox + left/right-click support<br>* Fixed pie calculation (line-case detection, end-angle clipping)<br>* Updated DLL_EXPORT handling and added WIN64 test<br>  (patch contributed by tigerfishdaisy)<br>* Added thick line primitive based on Murphy's algorithm<br><br>Ver 2.0.21 - Thu May 27 21:14:37 PDT 2010<br>* Add VC9 project files, source code formatting, fix compiler<br>  warnings, move VC8 project files, remove leftover autoconf/m4 files<br>* Move static transfer lookup array from .h to .c<br>  (patch contributed by Zbigniew Holdys)<br>* Add support for VC++ compiler/MASM assembly with active USE_MMX<br>  (contributed by Markus Hossner)<br>* Added Haiku build support in configure.in<br>  (contributed by Scott McCreary)<br>* Added helper function that multiplies the alpha channel in<br>  a 32bit surface (contributed by Zbigniew Holdys)<br>* Disable MMX for 64bit platforms due to lack of support for<br>  pusha/popa (contributed by Olivier Boudeville)<br>* Update all library functions for doxygen markup. Add doxygen<br>  configuration file.<br>* Added font rotation support and updated TestFonts sample<br>* Fixed rotate90 for 0 degree case<br>  (contributed by Chris Allport)<br>* Updated TestRotozoom with rotate90 case and message display<br>* Added support for SDL 1.3<br>* Added doxygen generated documentation.<br><br>Ver 2.0.20 - Wed Sep 23 18:42:02 PDT 2009<br>* Fix for 1-pixel postponement with 8bit scaling <br>* Updates to headers and configure to allow for cross-compiling <br>  to DLL (not just static .a) and fixes for compiling on Windows <br>  using autotools<br>* Added Visual CE Project to Other Builds<br>* Added Symbian and Windows 64bit fix for lrint function.<br><br>Ver 2.0.19 - Mon Apr 20 22:56:59 PDT 2009<br>* gcc43 compiler patch for asm code in image filters <br>as per http://bugs.gentoo.org/219621 (Peter Alfredsen)<br>* off-by-one hline patch for 1byte indexed surfaces (Manuel Lausch)<br>* update acinclude.m4 from SDL-1.2 and moved # serial in file<br>* applied patch to add pkg-config support for SDL_gfx (Luca Bigliardi)<br>* changed configure.in INTERFACE_AGE and BINARY_AGE based on Debian<br>build feedback (Barry deFreese)<br>* fixed zoom XY-flip code and made it available for all modes in<br>zoom and rotations<br>* fixed edge issue on interpolated rotozoom modes<br>* updated TestRotozoom custom test mode, added delay parameter, added<br>tests which include flipping, included negative rotation<br>* update libtool files<br>* updated Makefile.mingw (Jan Leike) </pre>
+<pre>Ver 2.0.18 - Sun Dec 21 08:38:20 PST 2008<br>* libtool update for dependencies<br>* MSVC C89 variable hoisting to enable MSVC compile (sweetlilmre)<br>* addition of VC9 (Visual Studio 2008) project file (sweetlilmre)<br>* update to MinGW make file (Sergio Padrino, sweetlilmre)<br>* fix uninitialised variables in _putPixelAlpha() (Paul Pedriana)<br>* reverted to original alpha routine in _putPixelAlpha() as new one was causing issues in 16bbp<br>new routine #define has been renamed to EXPERIMENTAL_ALPHA_PIXEL_ROUTINE<br>original is now DEFAULT_ALPHA_PIXEL_ROUTINE<br>* added colorkey handling patch to rotozoom (Sergio Padrino)<br>* downgraded optimization to -O for asm compatibility with gcc4 </pre>
+<pre>Ver 2.0.17 - Sun Jun  1 15:39:38 EDT 2008<br>* hline/vline clipping and swap-logic fixed<br>* clipping box dimension check added and clipping-checks optimized<br>* TestFonts program updated<br>* Updated documentation on cross-compilation, AMD64<br>* Fixed circleColor overdraw<br>* Added arcColor routine<br>* Added polygonColorMT and polygonTextureMT routines<br>* Updated 32bit alpha blending routine </pre>
+<pre>Ver 2.0.16 - Mon Feb  5 19:03:31 AST 2007<br>* updated config.sub to newer version <br>* added custom RGBA blitter function that sets/maintains target alpha<br>* added setAlpha function that sets alpha values in 32bit surfaces<br>* added TextGfxBlit testprogram for new functions<br>* Fixed C++ type in .h files (thanks Olivier)<br>* Update some text in README and .spec file<br>* Removed broken Uint filter routines from test program<br>* "Cosmetic" changes to test programs and Automake.am </pre>
+<pre> Ver 2.0.15 - Fri Dec 22 08:44:31 AST 2006<br>* bugfixes in 32bit _putPixelAlpha/filledRectAlpha (thanks CISC)<br>* various bugfixes in return value generation and return (thanks CISC)<br>* lock font-surface before using it (thanks CISC)<br>* fix some breakage in non-MMX filter routines (thanks CISC)<br>* fix typo in TestABGR (thanks CISC)<br>* fix double buffer flipping in Tets programs (thanks CISC)<br>* fixed microversion in .h<br>* fixed texturePolygon inverted bug<br>* fixed wrong surface use in test 21 of TestRotozoom</pre>
+<pre>Ver 2.0.14 - Tue Dec 19 08:49:02 AST 2006<br>* added texturedPolygon routine to library (thanks Jees)<br>* changed iterator condition in aaellipse to add some overdraw to smooth circle<br>* added ShrinkImage routine to rotozoom code<br>* added TestABGR Test program (bug in SDL_gfx or SDL??)<br>* improved TestImageFilter program (bug in Uint filters)<br>* changed .so versioning from .so.13.0.0 to .so.0.0.14<br>(best is to remove all old libs before installing)<br>* added updated MacOSX ProjectBuilder file (thanks Brian)<br>* added info on MacOSX 10.3 build<br>* added mingw (on cygwin) makefile (thanks Brian)<br>* added Dev-Cpp makefile (thanks Sebastian)<br>* removed some unused variables from gfx and rotozoom code (thanks Thi)<br>* fixed a non-critical typecast mistake (thanks Thi)<br>* converted all C++ comments to C comments in SDL_imageFilter </pre>
+<pre>Ver 2.0.13 - Tue Dec 21 08:41:25 EST 2004<br>* changed include back to "SDL.h"<br>* compile fixes for OSX fink  (thanks (Michael)<br>* compile fixes for gcc3.4 (thanks Dries)<br>* support vertical and horizontal flipping of axis in new <br>rotozoomSurfaceXY function (thanks Victor)<br>* updated TestRotozoom program <br>Ver 2.0.12 - Mon Aug 30 09:04:11 EDT 2004<br>* piecolor naming fix<br>* primitive API change to 'filledPie'<br>* introduction of some const variables<br>Ver 2.0.11 - Thu May 13 09:42:34 EDT 2004<br>* added pieRGBA/pieColor primitive (non filled pie)<br>* added QNX6 build patch<br>* use $(includedir)/SDL to automake setup<br>* updated README<br>* added 2x2 box &amp; pie tests<br>* added dynamic font setup routine<br>* added sample font files to the Fonts directory<br>* added font test program<br>* string routines changed to use const char<br>* fixed TestRotozoom clear color bug<br>Ver 2.0.10 - Thu Dec 11 09:40:08 EST 2003<br>* updated "missing" script to newer version to avoid build errors<br>* fixed filled polygon int32 overflow error in calculation<br>* updated RPM spec file for new website path<br>* added micro version number to .h file<br>Ver 2.0.9 - Mon Oct 27 10:03:18 EST 2003<br>* Fixed "filled-box width too small by 1 bug" for A=255<br>* Wrong versioning in .h file<br>Ver 2.0.8 - Wed Jul 16 16:18:13 EDT 2003<br>* Modified filledPolygon drawing<br>(The edges of a filled polygon and a polyline were <br>reported to not intersect correctly. With this fix, the<br>edges do still do not intersect 100% due to the difference<br>in the algorithms. But now a polygon will never draw <br>outside of the area enclosed by a polyline.)<br>Ver 2.0.7 - Sun Jun  8 08:17:38 EDT 2003<br>* Added MacOS X Project Builder code<br>* changed SDL include to <br>* added bezier curve <br>Ver 2.0.6 - Sat May 25 15:12:17 EDT 2002<br>* Fixed clipping code for most primitives<br>* Added clipping code for character<br>* Added VC7 project file<br>Ver 2.0.5 - n/a<br>* Removed some unused code<br>Ver 2.0.4 - Sat Feb  9 22:09:45 EST 2002<br>* Fixed rectangle drawing bug on edges for A&lt;255<br>* Added trigons (triangles) as wrapper calls to polygon.<br>Ver 2.0.3 - Sat Jan 26 10:06:16 EST 2002<br>* Zipped VisualC directory to avoid EOL problems.<br>* Fixed aalineColor call (y2 parameter was y1).<br>* Fixed rotozoom bug that caused black or undefined pixels on edges.<br>Ver 2.0.2 - Sat Jan 19 21:41:28 EST 2002<br>* Removed dependency from GL libraries during compile.<br>* Added VisualC makefile.<br>Ver 2.0 - Sat Dec 29 16:27:57 EST 2001<br>* Initial release of SDL_gfx based on SDL_gfxPrimitives and SDL_rotozoom<br>code.<br>* Added framerate code and testprogram.<br>* Added imageFilters code and testprogram.<br>* New distribution: source code, README, configure system etc.<br>Previous versions<br>=================<br>SDL_gfxPrimitives:<br>------------------<br>Ver 1.5 - Mon Jul  2 11:27:40 EDT 2001<br>* New alpha blending code for factor 4 speedups if a&lt;255 on all functions.<br>* Modified include file for W32 DLL support.<br>* Added VC6 project files for DLL and static library building.<br>* Added simple AA-circle/-ellipse routine - quality needs improvement.<br>* Removed 32bit shift on 64bit number from aaline for better portability<br>across platforms.<br>* Removed a couple more compiler warnings (i.e. purely cosmetic fix).<br>Ver 1.4 - Sun Jun  3 11:52:07 EDT 2001<br>* Fixed hline, vline and rectangle clipping and result codes.<br>* Fixed AA-line arithmetic (was alpha subtraction, should be alpha ratio).<br>* More caching on fonts for speedups.<br>* More pointer checks in several places.<br>* New special cases for ellipses for rx=0/ry=0.<br>* Same sanity checks for circles/ellipses.<br>* Same return code for polygon/filledpolygon.<br>Ver 1.3 - Thu May 31 12:41:35 EDT 2001<br>* Minor cleanups and fixes (gcc -Wall is your friend).<br>Ver 1.2 again - Thu Apr  5 07:50:57 EDT 2001<br>* Fixed lineRGBA and aalineRGBA calls (had coordinate-passing mixed up twice,<br>thanks Lion for pointing this out)<br>Ver 1.2 - Wed Apr  4 08:32:42 EDT 2001<br>* Changed to a dual, you-have-the-choice(TM) licencing system <br>to accomodate GPL developments using SDL_gfxPrimitives.<br>* Some minor fixes (thanks Karl).<br>* All routines return proper result code now.<br>* Clipping for aaline, circle and ellipse.<br>Ver 1.1 - Thu Mar 22 15:28:27 EST 2001<br>* Added code for Alpha=255 pixel drawing through direct memory writes to all routines<br>resulting in a much faster performance (factor 5 to 20) for non transparent pixels.<br>* New test and benchmark program with better info and nicer look.<br>* More info in README. Proper licence file. Comment cleanup.<br>Ver 1.0 - Fri Mar 16 08:38:07 EST 2001<br>* Initial release<br>SDL_rotozoom:<br>-------------<br>Ver 1.6 - Mon Nov 19 21:19:26 EST 2001<br>* Added interpolation to alpha channel (simplifies code)<br>* Ran the sourcecode through 'indent' for better readability<br>Ver 1.5 - Sat Jul  7 13:02:07 EDT 2001<br>* Added project files (VisualC.zip) and modifications for VC project building.<br>* Fixed old versioning in configure.in file.<br>* Fixed LICENSE file and LGPL source reference.<br>Ver 1.4 - Mon Jun  4 12:15:31 EDT 2001<br>* Removed SDL_SoftStretch call again in favour of an internal zoom routine.<br>* Added new zoomSurface() function with seperate X and Y zoom factors.<br>Ver 1.3 - Thu May 31 08:37:36 EDT 2001<br>* Modified code to handle RGBA or ABGR source surfaces transparently.<br>* More error checking, source surface locking.<br>* Slighly expanded test program with event handling.<br>Ver 1.2 - Wed May 30 18:18:05 EDT 2001<br>* Fixed the completely broken 32bit routine's pointer arithmetic.<br>* Uses SDL_SoftStretch in certain cases (angle=0, smooth=0).<br>* Convert source surface on the fly if not 8/32bit.<br>* Added license file - was empty before (duh).<br>Ver 1.1 - Wed May 23 15:04:42 EDT 2001<br>* Added automake/autoconf scripts and testprogram.<br>Ver 1.0 - Fri Mar 16 08:16:06 EST 2001<br>* Initial release</pre>
+<p>&nbsp;</p>
+</div>
+<h3>Thanks</h3>
+<div>This library was used in the <em>AppWares Development Group</em>'s IMP product and thanks goes out out to them for supporting this project.
+<p>&nbsp;</p>
+</div>
+<h3>Contributors</h3>
+<div>
+<p>* Fix for filledbox by Ingo van Lil, inguin at gmx.de - thanks Ingo.</p>
+<p>* Non-alpha line drawing code adapted from routine by Pete Shinners, pete at shinners.org - thanks Pete.</p>
+<p>* More fixes by Karl Bartel, karlb at gmx.net - thanks Karl.</p>
+<p>* Much testing and suggestions for fixes from Danny van Bruggen, danny at froukepc.dhs.org - thanks Danny.</p>
+<p>* AA-circle/-ellipse code idea from Stephane Magnenat, nct at wg0.ysagoon.com - thanks Stephane.</p>
+<p>* Faster blending routines contributed by Anders Lindström, cal at swipnet.se - thanks Anders.</p>
+<p>* VisualC makefile contributed by Danny van Bruggen, danny at froukepc.dhs.org - thanks Danny.</p>
+<p>* VisualC7 project file contributed by James Turk, jturk at conceptofzero.com - thanks James.</p>
+<p>* Project Builder package contributed by Thomas Tongue, TTongue at imagiware.com - Thanks Thomas.</p>
+<p>* Fix for filledPolygon contributed by Kentaro Fukuchi fukuchi at is.titech.ac.jp - Thanks Kentaro.</p>
+<p>* QNX6 patch contributed by Mike Gorchak, mike at malva.ua - Thanks Mike.</p>
+<p>* Pie idea contributed by Eike Lange, eike.lange at uni-essen.de - Thanks Eike.</p>
+<p>* Dynamic font setup by Todor Prokopov, koprok at dir.bg - Thanks Todor.</p>
+<p>* Horizontal/Vertical flipping code by Victor (Haypo) Stinner, victor.stinner at haypocalc.com - Thanks Victor.</p>
+<p>* OSX build fixes by Michael Wybrow, mjwybrow at cs.mu.oz.au - Thanks Michael.</p>
+<p>* gcc3.4 build fixes by Dries Verachtert, dries at ulyssis.org - Thanks Dries.</p>
+<p>* Updated OSX build by Brian Rice, water451 at gmail.com - Thanks Brian.<br> <br> * aaellipse issues pointed out by Marco Wertz, marco.wertz at gmx.de - Thanks Marco.<br> <br> * texturedPolygon idea and code by Kees Jongenburger, kees.jongenburger at gmail.com - Thanks Kees.</p>
+<p>* Several bugfixes contributed by Sigborn Skjaeret, cisc at broadpark.no - Thanks CISC.</p>
+<div>
+<div>
+<p>* Syntax error for C++ found by Olivier Boudeville, olivier.boudeville at online.fr - Thanks Olivier.</p>
+<p>* hline/vline clipping fixes found by Daniel Roggen, droggen at
+gmail.com and Mikael Thieme, mikael.thieme at his.se - Thanks
+Daniel+Mikael.<br> <br> * rotozoom fix for big-endian machines (i.e. PPC)by Julian Mayer, julianmayer at mac.com - Thanks Julian.<br> <br> * Cross-compilation notes contributed by Sylvain Beucler, beuc at beuc.net - Thanks Sylvain.<br> <br> * Fix duplicate pixel renders in circleColor contributed by David Raber, lotharstar at gmail.com - Thanks David.<br> <br> * New arcColor (and arcRGBA) routine contributed by David Raber, lotharstar at gmail.com - Thanks David.<br> <br> * Idea for polygonColorMT and texturePolygonMT routines for multithreaded operation contributed by "unknown" - Thanks!</p>
+<p>* Multiple patches applied and repackaged version 2.0.18 by Paul,
+sweetlilmre at gmail.com - Thanks Paul and other contributors of
+patches.</p>
+<p>* Change to avoid gcc4 compiler warnings contributed by Thien-Thi Nguyen, ttn at gnuvola.org - thanks Thi. <br> <br> * hline 1bpp off-by-one patch contributed by Manuel Lausch, mail at manuellausch.de - Thanks Manuel.<br> <br> * pkg-config support contributed by Luca Bigliardi, shammash at artha.org - thanks Luca.<br> <br> * Updated mingw Makefile contributed by Jan Leike, jan dot leike at gmx dot net - thanks Jan.<br> <br> * Rotozoom debugging help by Jeff Wilges, heff at ifup dot us - thanks Jeff.<br> <br> * Build updates provided by Barry deFreese, bdefreese at debian dot org - thanks Barry.</p>
+</div>
+</div>
+<p>* Fix for 1-pixel postponement with 8bit scaling by Sylvain Beucler, beuc at beuc dot net - thanks Sylvain.<br><br>*
+Updates to headers and configure to allow for cross-compiling to DLL
+(not just static .a) and fixes for compiling on Windows using autotools
+by Sylvain Beucler, beuc at beuc dot net - thanks Sylvain.<br><br>* Added Visual CE Project to Builds. Contributed by vrichomme at smartmobili dot com - thanks.<br><br>* Added Symbian and Windows 64bit fix with lrint function by Rene Dudfield, renesd at gmail dot com - thanks Rene.</p>
+<p>* Fixes for Rotate90 0-degree case by Chris Allport, chris dot allport at gmail dot com - thanks Chris.<br><br>* Fixed for Win32 build support defines by tigerfishdaisy (SF) - thanks Tiger Tiger.</p>
+<p>* Patch for OpenSDK contributed by itsnotabigtruck at ovi dot com - thanks<br> IsNotABigTruck.<br><br>* OSX Xcode 3+ template ZIP contributed by marabus at meta dot ua - thanks Vasyl.<br><br>* Memory leak/error check patch for zoomSurface contributed by RodolfoRG - thanks Rodolfo.<br><br>* Zoom scaling factor rounding bugfix patch contributed by Wander Lairson Costa - thanks Wander.<br><br>* Suggestions for speed improvements contributed by inkyankes - thanks.</p>
+<p>* Suggestions for speed improvements contributed by inkyankes - thanks.<br><br>* Pixel blend routine patches contributed by mitja at lxnav dot com -<br> thanks Mitja.</p>
+<p>* ImageFilter patches contributed by beuc at beuc dot net - thanks Sylvain.<br><br>* Bug reports contributed by Yannick dot Guesnet at univ-rouen dot fr -<br> thanks Yannick.<br><br></p>
+</div>
+
+	<ul class="pager pagenav">
+	<li class="previous">
+		<a href="http://cms.ferzkopp.net/index.php/software/14-asciireflector" rel="prev">&lt; Prev</a>
+	</li>
+	<li class="next">
+		<a href="http://cms.ferzkopp.net/index.php/software/12-sdl-bgrab" rel="next">Next &gt;</a>
+	</li>
+</ul>
+					
+
+	 </div>
+
+                            </section>
+            
+            
+        </div>
+                
+    </div>
+
+    
+    <div class="wrapper-footer">
+	    <footer class="footer" id="footer">
+
+            
+	    	 <div class="container-fluid footer-content">
+	    						<a class="joomlashack" href="http://www.joomlashack.com/professional-joomla-templates">Joomla Template: by JoomlaShack</a>
+<script src="13-sdl-gfx_elemei/utils.js" type="text/javascript"></script>
+
+			</div>
+	    </footer>
+    </div>
+
+<div tabindex="-1" style="z-index: 65555; opacity: 0;" aria-hidden="true" id="sbox-overlay"></div><div class="shadow" style="z-index: 65557;" aria-hidden="true" role="dialog" id="sbox-window"><div style="opacity: 0;" id="sbox-content"></div><a aria-controls="sbox-window" role="button" href="#" id="sbox-btn-close"></a></div></body></html>

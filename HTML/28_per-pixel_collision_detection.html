@@ -1,0 +1,488 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head>
+
+
+
+    
+
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta name="KEYWORDS" content="C++ SDL 2 Tutorial 2D Windows Linux Mac Per-pixel collision detection">
+        <meta name="DESCRIPTION" content="Check for collision SDL 2">
+
+        <title>Lazy Foo' Productions - Per-pixel Collision Detection</title>
+
+        <link rel="stylesheet" type="text/css" href="28_per-pixel_collision_detection_elemei/lazy.css">
+
+    <style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head><body data-twttr-rendered="true">
+
+        <div class="header">
+
+<h1 style="border-bottom: 0px none; margin-bottom: 0px; padding-bottom: 0px;">Lazy Foo' Productions</h1>
+<div class="nav">
+<a class="nav" href="http://forums.libsdl.org/">SDL Forums</a>
+<a class="nav" href="http://lazyfoo.net/tutorials/SDL/index.php">SDL Tutorials</a>
+<a class="nav" href="http://lazyfoo.net/articles/index.php">Articles</a>
+<a class="nav" href="http://lazyfoo.net/tutorials/OpenGL/index.php">OpenGL Tutorials</a>
+<a class="nav" href="http://www.opengl.org/discussion_boards/forum.php">OpenGL Forums</a>
+<div class="ads">
+<script src="28_per-pixel_collision_detection_elemei/cbgapi.loaded_2"></script><script src="28_per-pixel_collision_detection_elemei/cbgapi.loaded_1"></script><script src="28_per-pixel_collision_detection_elemei/cbgapi.loaded_0"></script><script src="28_per-pixel_collision_detection_elemei/widgets.js" id="twitter-wjs"></script><script src="28_per-pixel_collision_detection_elemei/sdk.js" id="facebook-jssdk"></script><script src="28_per-pixel_collision_detection_elemei/ga.js" type="text/javascript"></script><script src="28_per-pixel_collision_detection_elemei/ca-pub-5880704953225255.js" type="text/javascript"></script><script type="text/javascript"><!--
+google_ad_client = "pub-5880704953225255";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = "6699CC";
+google_color_bg = "003366";
+google_color_link = "FFFFFF";
+google_color_url = "AECCEB";
+google_color_text = "AECCEB";
+//--></script>
+<script type="text/javascript" src="28_per-pixel_collision_detection_elemei/show_ads.js">
+</script><ins id="aswift_0_expand" style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 60px; position: relative; visibility: visible; width: 468px; background-color: transparent;"><ins id="aswift_0_anchor" style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 60px; position: relative; visibility: visible; width: 468px; background-color: transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="60" scrolling="no" width="468"></iframe></ins></ins>
+</div><a class="nav" href="http://lazyfoo.net/index.php">News</a>
+<a class="nav" href="http://lazyfoo.net/faq.php">FAQs</a>
+<a class="nav" href="http://lazyfoo.net/games/index.php">Games</a>
+<a class="nav" href="http://lazyfoo.net/contact.php">Contact</a>
+<a class="nav" href="http://lazyfoo.net/donate.php">Donations</a>
+
+</div><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32350292-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><div style="text-align: center;">Now celebrating Lazy Foo' Productions' 10<sub>dec</sub> year anniversary!</div>
+
+<!--Init facebook-->
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0pt; width: 0pt;"><div></div></div><div style="position: absolute; top: -10000px; height: 0pt; width: 0pt;"><div><iframe src="28_per-pixel_collision_detection_elemei/FX-Xf5fQjUk.html" style="border: medium none ;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0" scrolling="no"></iframe><iframe src="28_per-pixel_collision_detection_elemei/FX-Xf5fQjUk_002.html" style="border: medium none ;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0" scrolling="no"></iframe></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!--Init twitter-->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!--Init google+-->
+<script gapi_processed="true" src="28_per-pixel_collision_detection_elemei/plusone.js"></script>
+</div>        
+        <div class="content">
+
+            <div class="tutPreface"><h1 class="tutHead">Per-pixel Collision Detection</h1>
+            <div class="tutImg"><img src="28_per-pixel_collision_detection_elemei/preview.png"></div>
+            <h6>Last Updated 3/30/14</h6>
+            Once you know how to <a href="http://lazyfoo.net/tutorials/SDL/27_collision_detection/index.php" class="tutLink">check collision between two rectangles</a>, you can check collision between any two
+            images since all images are made out of rectangles.
+            </div>
+
+<div class="tutText">
+Everything can be made out of rectangles in a video game, even this dot:<br>
+<div class="tutImg"><img src="28_per-pixel_collision_detection_elemei/normal.jpg"></div><br>
+<br>
+Don't see it? Let's zoom in:
+<div class="tutImg"><img src="28_per-pixel_collision_detection_elemei/big.jpg"></div><br>
+<br>
+Still don't see it? How about now:
+<div class="tutImg"><img src="28_per-pixel_collision_detection_elemei/highlight.jpg"></div><br>
+<br>
+Images are made out of pixels which are squares which are rectangles.
+To do per-pixel collision detection all we have to do is have each
+object have a set of box colliders and check
+collision of one set of collision boxes against another like so:<br>
+<div class="tutImg"><img src="28_per-pixel_collision_detection_elemei/scan.gif"></div>
+</div>
+
+
+<div class="tutCode">//The dot that will move around on the screen
+class Dot
+{
+    public:
+        //The dimensions of the dot
+        static const int DOT_WIDTH = 20;
+        static const int DOT_HEIGHT = 20;
+
+        //Maximum axis velocity of the dot
+        static const int DOT_VEL = 1;
+
+        //Initializes the variables
+        Dot( int x, int y );
+
+        //Takes key presses and adjusts the dot's velocity
+        void handleEvent( SDL_Event&amp; e );
+
+        //Moves the dot and checks collision
+        void move( std::vector&lt;SDL_Rect&gt;&amp; otherColliders );
+
+        //Shows the dot on the screen
+        void render();
+
+        //Gets the collision boxes
+        std::vector&lt;SDL_Rect&gt;&amp; getColliders();
+
+    private:
+        //The X and Y offsets of the dot
+        int mPosX, mPosY;
+
+        //The velocity of the dot
+        int mVelX, mVelY;
+        
+        //Dot's collision boxes
+        std::vector&lt;SDL_Rect&gt; mColliders;
+
+        //Moves the collision boxes relative to the dot's offset
+        void shiftColliders();
+};
+</div>
+
+<div class="tutText">
+Here is our dot now with per-pixel collision detection. Its velocity is
+reduced to 1 pixel per frame to make the collision easier to see. The
+move function now takes in a vector
+of collision boxes so we can check two sets against each other. Since
+we're going to have two dots colliding, we need to be able to get the
+colliders so we have a function for
+that.<br>
+<br>
+Instead of having a single collision box, we have a vector of
+colliders. We also have an internal function to shift the colliders to
+match the position of the dot.
+</div>
+
+
+<div class="tutCode">//Starts up SDL and creates window
+bool init();
+
+//Loads media
+bool loadMedia();
+
+//Frees media and shuts down SDL
+void close();
+
+//Box set collision detector
+bool checkCollision( std::vector<sdl_rect>&amp; a, std::vector<sdl_rect>&amp; b );
+</sdl_rect></sdl_rect></div>
+
+<div class="tutText">
+Here we have our new collision detector that checks sets of collision boxes against each other.
+</div>
+
+
+<div class="tutCode">Dot::Dot( int x, int y )
+{
+    //Initialize the offsets
+    mPosX = x;
+    mPosY = y;
+
+    //Create the necessary SDL_Rects
+    mColliders.resize( 11 );
+
+    //Initialize the velocity
+    mVelX = 0;
+    mVelY = 0;
+
+    //Initialize the collision boxes' width and height
+    mColliders[ 0 ].w = 6;
+    mColliders[ 0 ].h = 1;
+
+    mColliders[ 1 ].w = 10;
+    mColliders[ 1 ].h = 1;
+
+    mColliders[ 2 ].w = 14;
+    mColliders[ 2 ].h = 1;
+
+    mColliders[ 3 ].w = 16;
+    mColliders[ 3 ].h = 2;
+
+    mColliders[ 4 ].w = 18;
+    mColliders[ 4 ].h = 2;
+
+    mColliders[ 5 ].w = 20;
+    mColliders[ 5 ].h = 6;
+
+    mColliders[ 6 ].w = 18;
+    mColliders[ 6 ].h = 2;
+
+    mColliders[ 7 ].w = 16;
+    mColliders[ 7 ].h = 2;
+
+    mColliders[ 8 ].w = 14;
+    mColliders[ 8 ].h = 1;
+
+    mColliders[ 9 ].w = 10;
+    mColliders[ 9 ].h = 1;
+
+    mColliders[ 10 ].w = 6;
+    mColliders[ 10 ].h = 1;
+
+    //Initialize colliders relative to position
+    shiftColliders();
+}
+</div>
+
+<div class="tutText">Just like before, we have to set the collider
+dimensions in the constructor. Only difference here is that we have
+multiple collision boxes to set.
+</div>
+
+<div class="tutCode">void Dot::move( std::vector<sdl_rect>&amp; otherColliders )
+{
+    //Move the dot left or right
+    mPosX += mVelX;
+    shiftColliders();
+
+    //If the dot collided or went too far to the left or right
+    if( ( mPosX &lt; 0 ) || ( mPosX + DOT_WIDTH &gt; SCREEN_WIDTH ) || checkCollision( mColliders, otherColliders ) )
+    {
+        //Move back
+        mPosX -= mVelX;
+        shiftColliders();
+    }
+
+    //Move the dot up or down
+    mPosY += mVelY;
+    shiftColliders();
+
+    //If the dot collided or went too far up or down
+    if( ( mPosY &lt; 0 ) || ( mPosY + DOT_HEIGHT &gt; SCREEN_HEIGHT ) || checkCollision( mColliders, otherColliders ) )
+    {
+        //Move back
+        mPosY -= mVelY;
+        shiftColliders();
+    }
+}
+</sdl_rect></div>
+
+<div class="tutText">This functions pretty much the same as before.
+Whenever we move the dot, we move the collider(s) with it. After we
+move the dot, we check if it went off screen or hit something. If
+it did, we move the dot back and move its colliders with it.
+</div>
+
+<div class="tutCode">void Dot::shiftColliders()
+{
+    //The row offset
+    int r = 0;
+
+    //Go through the dot's collision boxes
+    for( int set = 0; set &lt; mColliders.size(); ++set )
+    {
+        //Center the collision box
+        mColliders[ set ].x = mPosX + ( DOT_WIDTH - mColliders[ set ].w ) / 2;
+
+        //Set the collision box at its row offset
+        mColliders[ set ].y = mPosY + r;
+
+        //Move the row offset down the height of the collision box
+        r += mColliders[ set ].h;
+    }
+}
+
+std::vector<sdl_rect>&amp; Dot::getColliders()
+{
+    return mColliders;
+}
+</sdl_rect></div>
+
+<div class="tutText">Don't worry too much about how shiftColliders
+works. It's a short hand way of mColliders[ 0 ].x = ..., mColliders[ 1
+].x = ..., etc and it works for this specific case. For your own
+per-pixel objects you'll have your own placing functions.<br>
+<br>
+And after shiftColliders, have an accessor function to get the colliders.
+</div>
+
+
+<div class="tutCode">bool checkCollision( std::vector<sdl_rect>&amp; a, std::vector<sdl_rect>&amp; b )
+{
+    //The sides of the rectangles
+    int leftA, leftB;
+    int rightA, rightB;
+    int topA, topB;
+    int bottomA, bottomB;
+
+    //Go through the A boxes
+    for( int Abox = 0; Abox &lt; a.size(); Abox++ )
+    {
+        //Calculate the sides of rect A
+        leftA = a[ Abox ].x;
+        rightA = a[ Abox ].x + a[ Abox ].w;
+        topA = a[ Abox ].y;
+        bottomA = a[ Abox ].y + a[ Abox ].h;
+</sdl_rect></sdl_rect></div>
+
+<div class="tutText">
+Here in our collision detection function, we have a for loop that
+calculates the top/bottom/left/right of each collision box in object a.
+</div>
+
+
+
+<div class="tutCode"> //Go through the B boxes for( int Bbox = 0; Bbox
+&lt; b.size(); Bbox++ ) { //Calculate the sides of rect B leftB = b[
+Bbox ].x; rightB = b[ Bbox ].x + b[ Bbox ].w; topB = b[ Bbox ].y;
+bottomB = b[ Bbox ].y + b[ Bbox ].h; //If no sides from A are outside
+of B if( ( ( bottomA &lt;= topB ) || ( topA &gt;= bottomB ) || ( rightA
+&lt;= leftB ) || ( leftA &gt;= rightB ) ) == false ) { //A collision is
+detected return true; } } } //If neither set of collision boxes touched
+return false;
+}
+</div>
+
+<div class="tutText">We then check calculate the top/bottom/left/right
+of each collision box in object b. We then check if there is no
+separating axis. If this no separating axis, we return true. If we
+get through both sets without a collision, we return false.
+</div>
+
+
+<div class="tutCode">            //Main loop flag
+            bool quit = false;
+
+            //Event handler
+            SDL_Event e;
+
+            //The dot that will be moving around on the screen
+            Dot dot( 0, 0 );
+            
+            //The dot that will be collided against
+            Dot otherDot( SCREEN_WIDTH / 4, SCREEN_HEIGHT / 4 );
+</div>
+
+<div class="tutText">
+Before we go into the main loop we declare our dot and the other dot we'll be colliding against.
+</div>
+
+
+<div class="tutCode">            //While application is running
+            while( !quit )
+            {
+                //Handle events on queue
+                while( SDL_PollEvent( &amp;e ) != 0 )
+                {
+                    //User requests quit
+                    if( e.type == SDL_QUIT )
+                    {
+                        quit = true;
+                    }
+
+                    //Handle input for the dot
+                    dot.handleEvent( e );
+                }
+
+                //Move the dot and check collision
+                dot.move( otherDot.getColliders() );
+
+                //Clear screen
+                SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
+                SDL_RenderClear( gRenderer );
+                
+                //Render dots
+                dot.render();
+                otherDot.render();
+
+                //Update screen
+                SDL_RenderPresent( gRenderer );
+            }
+</div>
+
+<div class="tutText">Once again in the main loop we handle events for
+the dot, move with collision check for the dot, and then finally we
+render our objects.
+</div>
+
+
+<div class="tutText">A questions I get asked a lot is how to make a
+function that loads an image and auto generates the set of collision
+boxes for per pixel collision detection. The answer is simple:<br>
+<br>
+Don't.<br>
+<br>
+In most games, you don't want 100% accuracy. The more collision boxes
+you have the more collision checks you have and the slower it is. What
+most games go for is close enough, like
+in Street Fighter:<div class="tutImg"><img src="28_per-pixel_collision_detection_elemei/street_fighter.png"></div><br>
+<br>
+The results are not pixel perfect but they are close enough.<br>
+<br>
+Also there's one optimization we could have done here. We could have
+had a bounding box for the dot that encapsulates all the other
+collision boxes and then checks that one first
+before getting to the per-pixel collison boxes. This does add one more
+collision detection, but since it is much more likely that two objects
+do not collide it will more likely save
+us additional collision detection. In games, this is usually done with
+a tree structure that has different levels of detail to allow for early
+outs to prevent unneeded checks at the
+per-pixel level. Like in previous tutorials, tree structures are
+outside the scope of these tutorials.
+</div>
+
+            <div class="tutFooter">
+            Download the media and source code for this tutorial <a class="tutLink" href="http://lazyfoo.net/tutorials/SDL/28_per-pixel_collision_detection/28_per-pixel_collision_detection.zip">here</a>.<br>
+            <br>
+            <a class="leftNav" href="http://lazyfoo.net/tutorials/SDL/index.php#Per-pixel%20Collision%20Detection">Back to SDL Tutorials</a><br>
+            </div>
+
+        </div>
+
+        <div class="footer">
+
+<div style="text-align: center;">
+<!--Facebook-->
+<span style="line-height: 10px;" class="fb-share-button" data-href="http://lazyfoo.net/" data-type="button_count"></span>
+
+<!--Google+-->
+<div id="___plus_0" style="border-style: none; margin: 0pt; padding: 0pt; background: transparent none repeat scroll 0% 0%; text-indent: 0pt; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 109px; height: 20px;"><iframe title="+Megosztás" data-gapiattached="true" src="28_per-pixel_collision_detection_elemei/sharebutton.html" name="I0_1408456030036" id="I0_1408456030036" vspace="0" tabindex="0" style="border-style: none; margin: 0px; position: static; top: 0pt; width: 109px; left: 0pt; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div>
+
+<!--Twitter-->
+<iframe style="width: 110px; height: 20px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" src="28_per-pixel_collision_detection_elemei/tweet_button.html" allowtransparency="true" id="twitter-widget-0" frameborder="0" scrolling="no"></iframe>
+
+</div>
+<div class="nav">
+<a class="nav" href="http://forums.libsdl.org/">SDL Forums</a>
+<a class="nav" href="http://lazyfoo.net/tutorials/SDL/index.php">SDL Tutorials</a>
+<a class="nav" href="http://lazyfoo.net/articles/index.php">Articles</a>
+<a class="nav" href="http://lazyfoo.net/tutorials/OpenGL/index.php">OpenGL Tutorials</a>
+<a class="nav" href="http://www.opengl.org/discussion_boards/forum.php">OpenGL Forums</a>
+<div class="ads">
+<script type="text/javascript"><!--
+google_ad_client = "pub-5880704953225255";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = "6699CC";
+google_color_bg = "003366";
+google_color_link = "FFFFFF";
+google_color_url = "AECCEB";
+google_color_text = "AECCEB";
+//--></script>
+<script type="text/javascript" src="28_per-pixel_collision_detection_elemei/show_ads.js">
+</script><ins id="aswift_1_expand" style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 60px; position: relative; visibility: visible; width: 468px; background-color: transparent;"><ins id="aswift_1_anchor" style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 60px; position: relative; visibility: visible; width: 468px; background-color: transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="60" scrolling="no" width="468"></iframe></ins></ins>
+</div><a class="nav" href="http://lazyfoo.net/index.php">News</a>
+<a class="nav" href="http://lazyfoo.net/faq.php">FAQs</a>
+<a class="nav" href="http://lazyfoo.net/games/index.php">Games</a>
+<a class="nav" href="http://lazyfoo.net/contact.php">Contact</a>
+<a class="nav" href="http://lazyfoo.net/donate.php">Donations</a>
+
+</div>
+<h6>
+Copyright Lazy Foo' Productions 2004-2014
+</h6>
+
+</div>
+    <iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="28_per-pixel_collision_detection_elemei/postmessageRelay.html" id="oauth2relay770590824" name="oauth2relay770590824"></iframe></body><iframe src="" style="display: none;"></iframe></html>

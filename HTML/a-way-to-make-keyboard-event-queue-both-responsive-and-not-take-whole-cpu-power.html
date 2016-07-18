@@ -1,0 +1,2164 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+    
+    <title>c++ - A way to make keyboard event queue both responsive and not take whole CPU power - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="og:title" content="A way to make keyboard event queue both responsive and not take whole CPU power">
+    <meta name="og:description" content="I am making an Sdl game, it's 2d shooter. I am using SDL to import surfaces and OpenGL to draw them on the screen (doing so because it works way faster than just SDL). I've got two threads running,...">
+    <meta name="og:url" content="http://stackoverflow.com/questions/9845491/a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power">
+    <link rel="canonical" href="http://stackoverflow.com/questions/9845491/a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power">
+
+    
+    
+    <script src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/quant.js"></script><script src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/beacon.js"></script><script src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/analytics.js"></script><script src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/ados.js" type="text/javascript"></script><script src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/ados_002.js" type="text/javascript"></script><script src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/jquery.js"></script>
+    <script src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'A way to make keyboard event queue both responsive and not take whole CPU power'" href="http://stackoverflow.com/feeds/question/9845491">
+    <script>
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:12,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:9845491});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '9845491');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1408718213,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"d313afe8cee3bf80df3db350c8dd001f","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"055a220273ad","js/moderator.en.js":"eacc3f340c48","js/full-anon.en.js":"70e7f54660a8","js/full.en.js":"9d65da3b8789","js/wmd.en.js":"0eeb1eff16fa","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"6a619d3310d0","js/help.en.js":"e7027b95c535","js/tageditor.en.js":"51d012a65199","js/tageditornew.en.js":"01817d520b4d","js/inline-tag-editing.en.js":"ea666f1bc7d0","js/revisions.en.js":"989c474e85a9","js/review.en.js":"b45f441b02fe","js/tagsuggestions.en.js":"97867e3c2def","js/post-validation.en.js":"6e22bc663fb6","js/explore-qlist.en.js":"8b8b631bd679","js/events.en.js":"a528312f1072","js/keyboard-shortcuts.en.js":"fea1dd4595da"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/adFeedback.js" type="text/javascript"></script><link href="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/adFeedback.css" rel="stylesheet"><script src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/full-anon.js"></script><script src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/post-validation.js"></script><script src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/prettify-full.js"></script><link rel="stylesheet" type="text/css" href="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/sidebar.css"></head><body class="question-page new-topbar" itemscope="" itemtype="http://schema.org/QAPage">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f9845491%2fa-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f9845491%2fa-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 131 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f9845491%2fa-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f9845491%2fa-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" value="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+Stack Overflow is a question and answer site for professional and
+enthusiast programmers. It's 100% free, no registration required. </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://stackoverflow.com/questions/9845491/a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power" class="question-hyperlink">A way to make keyboard event queue both responsive and not take whole CPU power</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="9845491" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1860081856",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1860081856"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjI5MTEsImNoIjoxMTc4LCJjciI6NTkyMiwiZGkiOiI3ZDI5OGM3MDhjZmY0YzRkYjI4ZDdiMGJkODUwMTMyYiIsImRtIjoxLCJmYyI6MTAxODcsImZsIjo3NDcyLCJpcCI6IjE0NS4yMzYuMTk3LjE4NiIsImt3IjoiYysrLHdpbmRvd3Msc2RsLGV2ZW50LWxvb3AiLCJudyI6MjIsInBjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cDovL3d3dy5nb29nbGUuY29tL3NlYXJjaD9xPWMrKytub3QrcmVhY3QrU0RMX0tFWURPV04mb2U9dXRmLTgmcmxzPW9yZy5tb3ppbGxhOmh1LUhVOnVub2ZmaWNpYWwmY2xpZW50PWljZXdlYXNlbC1hJm9xPWMrKytub3QrcmVhY3QrU0RMX0tFWURPV04mZ3NfbD1oZWlybG9vbS1zZXJwLjMuLi4xNjQ2MjkxLjE2NDY3ODYuMC4xNjQ3NjE3LjQuNC4wLjAuMC4wLjExOC4yNjQuMmoyLjQuMC4uLi4wLi4uMWFjLjEuMzQuaGVpcmxvb20tc2VycC4uMi4yLjQ1Lk1ZR0JVMlpJZkI0Iiwic3QiOjgyNzcsInVrIjoiZGRmMjg0ZTI4YjkwNDY3MTk5NGM5Zjg5MzEzMWU0NzkiLCJ6biI6NDMsInRzIjoxNDA4NzE4MjE0NTU3LCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tLyJ9&amp;s=4IAmW9SjxTxBEFki96h_wHpp82c" rel="nofollow" target="_blank" title=""><img src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/bee37138e0414d6f99d68ae55955c4fa.png" title="" alt="" height="90" width="728" border="0"></a><img src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/i.gif" style="position: absolute;" height="0px" width="0px" border="0"><div class="adzerk-vote-controls" style="display: block; opacity: 1;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display: none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="9845491" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I am
+making an Sdl game, it's 2d shooter. I am using SDL to import surfaces
+and OpenGL to draw them on the screen (doing so because it works way
+faster than just SDL). I've got two threads running, one for processing
+stuff and rendering, and another one for input. Basically, the
+processing one is taking 1-2% of my CPU, while the input loop takes 25%
+(on quad-core, so it's 1 full core). I tried doing SDL_Delay(1) before
+each <code>while (SDL_PollEvent(&amp;keyevent))</code> and it works!
+Reduces CPU load to 3% for whole process. However, there's a nasty side
+effect. The whole program input is handicapped: it doesn't detect all
+of the key pressed, and for example, to make the character move, it
+sometimes takes up to 3 seconds of bashing keyboard for it to react. </p>
+
+<p>I've also tried solving it by using <code>SDL_PeepEvent()</code> and <code>SDL_WaitEvent()</code>, however, it's causing the same (very long!) delay.</p>
+
+<p>Event loop code:</p>
+
+<pre style="" class="lang-cpp prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> </span><span class="typ">GameWorld</span><span class="pun">::</span><span class="typ">Movement</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    SDL_Event keyevent</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">bool</span><span class="pln"> x1</span><span class="pun">,</span><span class="pln"> x2</span><span class="pun">,</span><span class="pln"> y1</span><span class="pun">,</span><span class="pln"> y2</span><span class="pun">,</span><span class="pln"> z1</span><span class="pun">,</span><span class="pln"> z2</span><span class="pun">,</span><span class="pln"> z3</span><span class="pun">,</span><span class="pln"> m</span><span class="pun">;</span><span class="pln">         </span><span class="com">// Booleans to determine the</span><span class="pln">
+    x1 </span><span class="pun">=</span><span class="pln"> x2 </span><span class="pun">=</span><span class="pln"> y1 </span><span class="pun">=</span><span class="pln"> y2 </span><span class="pun">=</span><span class="pln"> z1 </span><span class="pun">=</span><span class="pln"> z2 </span><span class="pun">=</span><span class="pln"> z3 </span><span class="pun">=</span><span class="pln"> m </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">   </span><span class="com">// movement direction</span><span class="pln">
+    SDL_EnableKeyRepeat</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">SDL_PollEvent</span><span class="pun">(&amp;</span><span class="pln">keyevent</span><span class="pun">))</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">switch</span><span class="pun">(</span><span class="pln">keyevent</span><span class="pun">.</span><span class="pln">type</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">case</span><span class="pln"> SDL_KEYDOWN</span><span class="pun">:</span><span class="pln">
+                </span><span class="kwd">switch</span><span class="pun">(</span><span class="pln">keyevent</span><span class="pun">.</span><span class="pln">key</span><span class="pun">.</span><span class="pln">keysym</span><span class="pun">.</span><span class="pln">sym</span><span class="pun">)</span><span class="pln">
+                </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">case</span><span class="pln"> SDLK_LEFT</span><span class="pun">:</span><span class="pln">
+                    x1 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+                    x2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">case</span><span class="pln"> SDLK_RIGHT</span><span class="pun">:</span><span class="pln">
+                    x1 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                    x2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">case</span><span class="pln"> SDLK_UP</span><span class="pun">:</span><span class="pln">
+                    y1 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+                    y2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">case</span><span class="pln"> SDLK_DOWN</span><span class="pun">:</span><span class="pln">
+                    y1 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                    y2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">default</span><span class="pun">:</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">case</span><span class="pln"> SDL_KEYUP</span><span class="pun">:</span><span class="pln">
+                </span><span class="kwd">switch</span><span class="pun">(</span><span class="pln">keyevent</span><span class="pun">.</span><span class="pln">key</span><span class="pun">.</span><span class="pln">keysym</span><span class="pun">.</span><span class="pln">sym</span><span class="pun">)</span><span class="pln">
+                </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">case</span><span class="pln"> SDLK_LEFT</span><span class="pun">:</span><span class="pln">
+                    x1 </span><span class="pun">=</span><span class="pln"> x2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">case</span><span class="pln"> SDLK_RIGHT</span><span class="pun">:</span><span class="pln">
+                    x1 </span><span class="pun">=</span><span class="pln"> x2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">case</span><span class="pln"> SDLK_UP</span><span class="pun">:</span><span class="pln">
+                    y1 </span><span class="pun">=</span><span class="pln"> y2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">case</span><span class="pln"> SDLK_DOWN</span><span class="pun">:</span><span class="pln">
+                    y1 </span><span class="pun">=</span><span class="pln"> y2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">default</span><span class="pun">:</span><span class="pln">
+                    </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">case</span><span class="pln"> SDL_QUIT</span><span class="pun">:</span><span class="pln">
+                </span><span class="typ">PrintToFile</span><span class="pun">(</span><span class="str">"The game was closed manually.\n"</span><span class="pun">);</span><span class="pln">
+                </span><span class="typ">CleanUp</span><span class="pun">();</span><span class="pln">
+                </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">default</span><span class="pun">:</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        m </span><span class="pun">=</span><span class="pln"> x1 </span><span class="pun">||</span><span class="pln"> x2 </span><span class="pun">||</span><span class="pln"> y1 </span><span class="pun">||</span><span class="pln"> y2</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">m</span><span class="pun">)</span><span class="pln">   </span><span class="com">// if any button is pushed down, calculate the movement</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">        </span><span class="com">// direction and assign it to the player</span><span class="pln">
+            z1 </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">x1 </span><span class="pun">||</span><span class="pln"> x2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">y1 </span><span class="pun">||</span><span class="pln"> y2</span><span class="pun">);</span><span class="pln">
+            z2 </span><span class="pun">=</span><span class="pln"> </span><span class="pun">!</span><span class="pln">x1 </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">x2 </span><span class="pun">||</span><span class="pln"> y2</span><span class="pun">);</span><span class="pln">
+            z3 </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">y1 </span><span class="pun">&amp;&amp;</span><span class="pln"> x1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">y2 </span><span class="pun">&amp;&amp;</span><span class="pln"> x2</span><span class="pun">);</span><span class="pln">
+            </span><span class="typ">MainSurvivor</span><span class="pun">-&gt;</span><span class="typ">SetMovementDirection</span><span class="pun">(</span><span class="lit">4</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> z1 </span><span class="pun">+</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> z2 </span><span class="pun">+</span><span class="pln"> z3</span><span class="pun">);</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">else</span><span class="pln">    </span><span class="com">// if no button is pushed down, reset the direction</span><span class="pln">
+            </span><span class="typ">MainSurvivor</span><span class="pun">-&gt;</span><span class="typ">SetMovementDirection</span><span class="pun">(-</span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Code for calculation/render loop:</p>
+
+<pre style="" class="lang-cpp prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> </span><span class="typ">GameWorld</span><span class="pun">::</span><span class="typ">GenerateCycles</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">int</span><span class="pln"> </span><span class="typ">Iterator</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">time_t</span><span class="pln"> start</span><span class="pun">;</span><span class="pln">   
+    SDL_Event event</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="typ">Render</span><span class="pun">();</span><span class="pln">
+    _beginthread</span><span class="pun">(</span><span class="typ">MovementThread</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+            </span><span class="com">// I know I check this in input loop, but if I comment</span><span class="pln">
+        SDL_PollEvent</span><span class="pun">(&amp;</span><span class="pln">event</span><span class="pun">);</span><span class="pln">   </span><span class="com">// out it from here, that loop cannot</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">event</span><span class="pun">.</span><span class="pln">type </span><span class="pun">==</span><span class="pln"> SDL_QUIT</span><span class="pun">)</span><span class="pln">  </span><span class="com">// see any of the events (???)!</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">PrintToFile</span><span class="pun">(</span><span class="str">"The game was closed manually.\n"</span><span class="pun">);</span><span class="pln">
+            </span><span class="typ">CleanUp</span><span class="pun">();</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">                            </span><span class="com">// It never closes through here though</span><span class="pln">
+
+        start </span><span class="pun">=</span><span class="pln"> clock</span><span class="pun">();</span><span class="pln">
+        </span><span class="typ">Iterator</span><span class="pun">++;</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Iterator</span><span class="pln"> </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="lit">232792560</span><span class="pun">)</span><span class="pln">
+            </span><span class="typ">Iterator</span><span class="pln"> </span><span class="pun">%=</span><span class="pln"> </span><span class="lit">232792560</span><span class="pun">;</span><span class="pln">
+        </span><span class="typ">MainSurvivor</span><span class="pun">-&gt;</span><span class="typ">MyTurn</span><span class="pun">(</span><span class="typ">Iterator</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">unsigned</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">Survivors</span><span class="pun">.</span><span class="pln">size</span><span class="pun">();</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">Survivors</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]-&gt;</span><span class="typ">MyTurn</span><span class="pun">(</span><span class="typ">Iterator</span><span class="pun">);</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Survivors</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]-&gt;</span><span class="typ">GetDiedAt</span><span class="pun">()</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="typ">Survivors</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]-&gt;</span><span class="typ">GetDiedAt</span><span class="pun">()</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="lit">25</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> clock</span><span class="pun">())</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">delete</span><span class="pln"> </span><span class="typ">Survivors</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">
+                </span><span class="typ">Survivors</span><span class="pun">.</span><span class="pln">erase</span><span class="pun">(</span><span class="typ">Survivors</span><span class="pun">.</span><span class="pln">begin</span><span class="pun">()</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="lit">5</span><span class="pun">);</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Survivors</span><span class="pun">.</span><span class="pln">size</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+            </span><span class="typ">SpawnSurvivors</span><span class="pun">();</span><span class="pln">
+
+        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">int</span><span class="pun">(</span><span class="typ">Zombies</span><span class="pun">.</span><span class="pln">size</span><span class="pun">());</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">Zombies</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]-&gt;</span><span class="typ">MyTurn</span><span class="pun">(</span><span class="typ">Iterator</span><span class="pun">);</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Zombies</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]-&gt;</span><span class="typ">GetType</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="typ">Zombies</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]-&gt;</span><span class="typ">GetDiedAt</span><span class="pun">()</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="lit">25</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">Iterator</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+                </span><span class="kwd">delete</span><span class="pln"> </span><span class="typ">Zombies</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln">
+                </span><span class="typ">Zombies</span><span class="pun">.</span><span class="pln">erase</span><span class="pun">(</span><span class="typ">Zombies</span><span class="pun">.</span><span class="pln">begin</span><span class="pun">()</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> i</span><span class="pun">);</span><span class="pln">
+                i</span><span class="pun">--;</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Zombies</span><span class="pun">.</span><span class="pln">size</span><span class="pun">()</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">3</span><span class="pun">)</span><span class="pln">
+            </span><span class="typ">SpawnZombies</span><span class="pun">();</span><span class="pln">
+
+            </span><span class="com">// No need to render every cycle, gameplay is slow</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Iterator</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+            </span><span class="typ">Render</span><span class="pun">();</span><span class="pln">
+
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Interval</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> clock</span><span class="pun">()</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> start </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+            SDL_Delay</span><span class="pun">(</span><span class="typ">Interval</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> clock</span><span class="pun">()</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="typ">int</span><span class="pun">(</span><span class="pln">start</span><span class="pun">));</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Does anyone have any ideas?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/c%2b%2b" class="post-tag js-gps-track" title="show questions tagged 'c++'" rel="tag">c++</a> <a href="http://stackoverflow.com/questions/tagged/windows" class="post-tag js-gps-track" title="show questions tagged 'windows'" rel="tag">windows</a> <a href="http://stackoverflow.com/questions/tagged/sdl" class="post-tag js-gps-track" title="show questions tagged 'sdl'" rel="tag">sdl</a> <a href="http://stackoverflow.com/questions/tagged/event-loop" class="post-tag js-gps-track" title="show questions tagged 'event-loop'" rel="tag">event-loop</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/9845491" title="short permalink to this question" class="short-link" id="link-post-9845491">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/9845491/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/9845491/revisions" title="show all edits to this post">edited <span title="2012-09-14 10:23:15Z" class="relativetime">Sep 14 '12 at 10:23</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/106224/boltclock"><div class="gravatar-wrapper-32"><img src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/a2d818d801ce38a33807f68fdd92043a.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/106224/boltclock">BoltClock</a><span class="mod-flair" title="moderator">♦</span><br>
+        <span class="reputation-score" title="reputation score 249088" dir="ltr">249k</span><span title="50 gold badges"><span class="badge1"></span><span class="badgecount">50</span></span><span title="605 silver badges"><span class="badge2"></span><span class="badgecount">605</span></span><span title="808 bronze badges"><span class="badge3"></span><span class="badgecount">808</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2012-03-23 19:37:38Z" class="relativetime">Mar 23 '12 at 19:37</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1289007/sunius"><div class="gravatar-wrapper-32"><img src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/c09a0c0e9587d8bc02473752e16e0490.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1289007/sunius">Sunius</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">117</span><span title="13 bronze badges"><span class="badge3"></span><span class="badgecount">13</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-9845491" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="7" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-12547808" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You definitely need the delay, but probably less of it.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1103705/enobayram" title="1799 reputation" class="comment-user">enobayram</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12547808_9845491"><span title="2012-03-23 19:41:18Z" class="relativetime-clean">Mar 23 '12 at 19:41</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12547981" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Are
+you checking that you're not receiving tons of spurious SDL events? try
+logging that loop and see if you're getting tons of garbage. also, if
+using an 0x compliant compiler, std::this_thread::yield() should do it.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1110687/stdorgnldave" title="2745 reputation" class="comment-user">std''OrgnlDave</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12547981_9845491"><span title="2012-03-23 19:49:45Z" class="relativetime-clean">Mar 23 '12 at 19:49</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12548049" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Is
+there any tool to make it stop for less than 1 milisecond? Also, how do
+I used std::this_thread::yield() and what does it do? Is visual studio
+considered 0x compliant compiler?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1289007/sunius" title="117 reputation" class="comment-user owner">Sunius</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12548049_9845491"><span title="2012-03-23 19:53:05Z" class="relativetime-clean">Mar 23 '12 at 19:53</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12548152" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">As an aside, you shouldn’t use <code>SDL_Delay()</code>
+for frame timing. It’s better (and simpler) to run at a variable rate,
+performing updates based on how long the last frame took to update and
+render, i.e., <code>(SDL_GetTicks() - last_update) / 1000.0</code>.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/246886/jon-purdy" title="19788 reputation" class="comment-user">Jon Purdy</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12548152_9845491"><span title="2012-03-23 19:58:44Z" class="relativetime-clean">Mar 23 '12 at 19:58</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12548229" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><code>if (Interval - clock() + start &gt; 0) SDL_Delay(Interval - clock() + int(start));</code>
+does that, doesn't it? Interval is the time I want between each cycle
+(it's 50 ms in current implementation), and clock() is same as
+SDL_GetTicks() (afaik), and start is when the frame started rendering.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1289007/sunius" title="117 reputation" class="comment-user owner">Sunius</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12548229_9845491"><span title="2012-03-23 20:03:09Z" class="relativetime-clean">Mar 23 '12 at 20:03</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-9845491" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link " title="expand to show all comments on this post, or add one of your own" href="#" onclick="">show <b>7</b> more comments</a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								4 Answers
+                                <span style="display: none;" itemprop="answerCount">4</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/9845491/a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/9845491/a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/9845491/a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="9846422"></a>
+<div id="answer-9846422" class="answer" data-answerid="9846422" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="9846422" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I'm not really experienced with SDL or game programming, but here are some random ideas:</p>
+
+<h2>Reacting on state changes</h2>
+
+<p>Your code:</p>
+
+<pre style="" class="lang-cpp prettyprint prettyprinted"><code><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">SDL_PollEvent</span><span class="pun">(&amp;</span><span class="pln">keyevent</span><span class="pun">))</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">switch</span><span class="pun">(</span><span class="pln">keyevent</span><span class="pun">.</span><span class="pln">type</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="com">// code to set keyboard state</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="com">// code to calculate movement according to keyboard state</span><span class="pln">
+    </span><span class="com">// then act on that movement</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>This means that no matter the fact nothing is happening on your keyboard, you are calculating and setting data.</p>
+
+<p>If setting the data is expensive (hint: synchronized data), then it will cost you even more.</p>
+
+<h2>SDL_WaitEvent : measuring state</h2>
+
+<p>You must wait for an event to happen, instead of the spinning you wrote which causes 100% usage of one processor.</p>
+
+<p>Here's a variation of the event loop I wrote for a test at home:</p>
+
+<pre style="" class="lang-cpp prettyprint prettyprinted"><code><span class="kwd">while</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="com">// message processing loop</span><span class="pln">
+    </span><span class="pun">::</span><span class="pln">SDL_Event event </span><span class="pun">;</span><span class="pln">
+
+    </span><span class="pun">::</span><span class="pln">SDL_WaitEvent</span><span class="pun">(&amp;</span><span class="pln">event</span><span class="pun">)</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> </span><span class="com">// THIS IS WHAT IS MISSING IN YOUR CODE</span><span class="pln">
+
+    </span><span class="kwd">do</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">switch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">event</span><span class="pun">.</span><span class="pln">type</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="com">// etc.</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pun">(::</span><span class="pln">SDL_PollEvent</span><span class="pun">(&amp;</span><span class="pln">event</span><span class="pun">))</span><span class="pln"> </span><span class="pun">;</span><span class="pln">
+
+    </span><span class="com">// re-draw the internal buffer</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">-&gt;</span><span class="pln">m_isRedrawingRequired </span><span class="pun">||</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">-&gt;</span><span class="pln">m_isRedrawingForcedRequired</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="com">// redrawing code</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">this</span><span class="pun">-&gt;</span><span class="pln">m_isRedrawingRequired </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pln"> </span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">this</span><span class="pun">-&gt;</span><span class="pln">m_isRedrawingForcedRequired </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pln"> </span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Note : This was single threaded. I'll speak about threads later.</p>
+
+<p>Note 2 : The point about the the two "m_isRedrawing..." boolean is
+to force redrawing when one of those booleans are true, and when the
+timer asks the question. Usually, there is no redrawing.</p>
+
+<p>The difference between my code and yours is that at no moment you let the thread "wait".</p>
+
+<h2>Keyboard events</h2>
+
+<p>There is a problem, I guess, with your handling of keyboard events.</p>
+
+<p>Your code:</p>
+
+<pre style="" class="lang-cpp prettyprint prettyprinted"><code><span class="pln">        </span><span class="kwd">case</span><span class="pln"> SDL_KEYDOWN</span><span class="pun">:</span><span class="pln">
+            </span><span class="kwd">switch</span><span class="pun">(</span><span class="pln">keyevent</span><span class="pun">.</span><span class="pln">key</span><span class="pun">.</span><span class="pln">keysym</span><span class="pun">.</span><span class="pln">sym</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">case</span><span class="pln"> SDLK_LEFT</span><span class="pun">:</span><span class="pln">
+                x1 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+                x2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">case</span><span class="pln"> SDLK_RIGHT</span><span class="pun">:</span><span class="pln">
+                x1 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                x2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="com">// etc.</span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+        </span><span class="kwd">case</span><span class="pln"> SDL_KEYUP</span><span class="pun">:</span><span class="pln">
+            </span><span class="kwd">switch</span><span class="pun">(</span><span class="pln">keyevent</span><span class="pun">.</span><span class="pln">key</span><span class="pun">.</span><span class="pln">keysym</span><span class="pun">.</span><span class="pln">sym</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">case</span><span class="pln"> SDLK_LEFT</span><span class="pun">:</span><span class="pln">
+                x1 </span><span class="pun">=</span><span class="pln"> x2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">case</span><span class="pln"> SDLK_RIGHT</span><span class="pun">:</span><span class="pln">
+                x1 </span><span class="pun">=</span><span class="pln"> x2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+                </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+            </span><span class="com">// etc.</span><span class="pln">
+            </span><span class="pun">}</span></code></pre>
+
+<p>Let's say You press LEFT, and then RIGHT, then unpress LEFT. What I'd expect is:</p>
+
+<ol>
+<li>press LEFT : the character goes left</li>
+<li>press RIGHT : the character stops (as both LEFT and RIGHT are pressed)</li>
+<li>unpress LEFT : the character goes right, because RIGHT is still pressed</li>
+</ol>
+
+<p>In your case, you have:</p>
+
+<ol>
+<li>press LEFT : the character goes left</li>
+<li>press RIGHT : the character goes right (as now LEFT is ignored, with x1 = 0)</li>
+<li>unpress LEFT : the character stops (because you unset both x1 and x2.), despite the fact RIGHT is still pressed</li>
+</ol>
+
+<p>You're doing it wrong, because:</p>
+
+<ol>
+<li>You're reacting immdiately to an event, instead of using a timer to react to a situation every nth millisecond</li>
+<li>you are mixing events together.</li>
+</ol>
+
+<p>I'll find the link later, but what you should do is have an array of boolean states for pressed keys. Something like:</p>
+
+<pre style="" class="lang-cpp prettyprint prettyprinted"><code><span class="com">// C++ specialized vector&lt;bool&gt; is silly, but...</span><span class="pln">
+std</span><span class="pun">::</span><span class="typ">vector</span><span class="str">&lt;bool&gt;</span><span class="pln"> m_aKeyIsPressed </span><span class="pun">;</span></code></pre>
+
+<p>You initialize it with the size of available keys:</p>
+
+<pre style="" class="lang-cpp prettyprint prettyprinted"><code><span class="pln">m_aKeyIsPressed</span><span class="pun">(</span><span class="pln">SDLK_LAST</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">)</span></code></pre>
+
+<p>Then, on key up event:</p>
+
+<pre style="" class="lang-cpp prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> </span><span class="typ">MyContext</span><span class="pun">::</span><span class="pln">onKeyUp</span><span class="pun">(</span><span class="kwd">const</span><span class="pln"> SDL_KeyboardEvent </span><span class="pun">&amp;</span><span class="pln"> p_oEvent</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">this</span><span class="pun">-&gt;</span><span class="pln">m_aKeyIsPressed</span><span class="pun">[</span><span class="pln">p_oEvent</span><span class="pun">.</span><span class="pln">keysym</span><span class="pun">.</span><span class="pln">sym</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pln"> </span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>and on key down:</p>
+
+<pre style="" class="lang-cpp prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> </span><span class="typ">MyContext</span><span class="pun">::</span><span class="pln">onKeyDown</span><span class="pun">(</span><span class="kwd">const</span><span class="pln"> SDL_KeyboardEvent </span><span class="pun">&amp;</span><span class="pln"> p_oEvent</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">this</span><span class="pun">-&gt;</span><span class="pln">m_aKeyIsPressed</span><span class="pun">[</span><span class="pln">p_oEvent</span><span class="pun">.</span><span class="pln">keysym</span><span class="pun">.</span><span class="pln">sym</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pln"> </span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>This way, when you check at regular intervals (and the <i>when you check</i> part is important), you know the exact instantaneous state of the keyboard, and you can react to it.</p>
+
+<h2>Threads</h2>
+
+<p>Threads are cool but then, you must know exactly what you are dealing with.</p>
+
+<p>For example, the event loop thread calls the following method:</p>
+
+<pre style="" class="lang-cpp prettyprint prettyprinted"><code><span class="typ">MainSurvivor</span><span class="pun">-&gt;</span><span class="typ">SetMovementDirection</span></code></pre>
+
+<p>The resolution (rendering) thread calls the following method:</p>
+
+<pre style="" class="lang-cpp prettyprint prettyprinted"><code><span class="typ">MainSurvivor</span><span class="pun">-&gt;</span><span class="typ">MyTurn</span><span class="pun">(</span><span class="typ">Iterator</span><span class="pun">);</span></code></pre>
+
+<p>Seriously, are you sharing data between two different threads?</p>
+
+<p>If you are (and I know you are), then you have either:</p>
+
+<ol>
+<li>if you didn't synchronize the accesses, a data coherence problem
+because of processor caches. Put it simply, there's no guarantee one
+data set by one thread will be seen as "changed" by the other in a
+reasonable time.</li>
+<li>if you did synchronize the accesses (with a mutex, atomic variable,
+etc.), then you have a performance hit because you are (for example)
+locking/unlocking a mutex at least once per thread per loop iteration.</li>
+</ol>
+
+<p>What I would do instead is communicate the change from one thread to
+another (via a message to a synchronized queue, for example).</p>
+
+<p>Anyway, threading is an heavy issue, so you should familiarize with the concept before mixing it with SDL and OpenGL. <a href="http://herbsutter.com/">Herb Sutter's blog</a> is a marvelous collection of articles on threads.</p>
+
+<p>What you should do is:</p>
+
+<ol>
+<li>Try to write the thing in one thread, using events, posted messages, and timers.</li>
+<li>If you find performance issues, then move the event or the drawing
+thread elsewhere, but continue to work with events, posted messages,
+and timers to communicate</li>
+</ol>
+
+<h2>P.S.: What's wrong with your booleans?</h2>
+
+<p>You're obviously using C++ (e.g. <code>void GameWorld::Movement()</code>), so using 1 or 0 instead of <code>true</code> or <code>false</code> will not make your code clearer or faster.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/9846422" title="short permalink to this answer" class="short-link" id="link-post-9846422">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/9846422/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-03-23 20:59:37Z" class="relativetime">Mar 23 '12 at 20:59</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/14089/paercebal"><div class="gravatar-wrapper-32"><img src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/6e5508b29d6d964efbd50701ceb23a5a.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/14089/paercebal">paercebal</a><br>
+        <span class="reputation-score" title="reputation score 39341" dir="ltr">39.3k</span><span title="23 gold badges"><span class="badge1"></span><span class="badgecount">23</span></span><span title="85 silver badges"><span class="badge2"></span><span class="badgecount">85</span></span><span title="126 bronze badges"><span class="badge3"></span><span class="badgecount">126</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-9846422" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-12549552" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thanks
+for all the input! There's still so much I have to learn I guess! :)
+I've already rearranged everything in one thread, and I'm already
+thinking about remaking movement scheme. Though, I am wondering, would
+that momentary key-down check be any good? I mean, what if I press the
+button when it's calculating another thing? I thought queue was
+supposed to take care for that? About my booleans: heh, that's how I'm
+used to use them. Been working on digital logic for some time, and
+there's no true or false there, only 1 and 0 :)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1289007/sunius" title="117 reputation" class="comment-user owner">Sunius</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12549552_9846422"><span title="2012-03-23 21:19:03Z" class="relativetime-clean">Mar 23 '12 at 21:19</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12571652" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Sunius : <code>would that momentary key-down check be any good? I mean, what if I press the button when it's calculating another thing?</code>
+it's already what happens in GUI on Windows, and unless the program is
+badly written, you don't see the difference, do you? The important
+thing is that when the key will be pressed, I guess the code will be
+interrupted to post a "key pressed" message, then the code will resume,
+with your "key pressed" message in the queue, waiting to be handled.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/14089/paercebal" title="39341 reputation" class="comment-user">paercebal</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12571652_9846422"><span title="2012-03-25 15:03:27Z" class="relativetime-clean">Mar 25 '12 at 15:03</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12571677" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Sunius
+: As for the booleans, do yourself a favor: use true/false. Every
+advanced language have that (even C99 ended to have some kind of
+boolean thing), and those values are strongly typed. For example, the
+compiler will consider <code>0</code> and <code>1</code> to be integers, so in some cases (function overloading, for example), using <code>0</code> or <code>1</code>
+will not have the result you expect. You're coding in C++, so make sure
+your code is strongly typed, and don't use integers instead of booleans
+for boolean logic... :-) ...</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/14089/paercebal" title="39341 reputation" class="comment-user">paercebal</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12571677_9846422"><span title="2012-03-25 15:06:12Z" class="relativetime-clean">Mar 25 '12 at 15:06</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-9846422" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1368919435",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1368919435"><a href="http://engine.adzerk.net/r?e=eyJhdiI6Njc2MjEsImF0Ijo0LCJjbSI6MTI4Njk1LCJjaCI6MTE3OCwiY3IiOjM3NDEyOCwiZGkiOiJjZDA5MGMxZWRiZmE0ZTJiOTM4ZGMwNDQzZGZlOGQ2NCIsImRtIjoxLCJmYyI6NDU5ODg4LCJmbCI6MjM1NjEyLCJpcCI6IjE0NS4yMzYuMTk3LjE4NiIsImt3IjoiYysrLHdpbmRvd3Msc2RsLGV2ZW50LWxvb3AiLCJtayI6IndpbmRvd3MiLCJudyI6MjIsInBjIjo0LjIsInByIjo3NjUsInJ0IjoyLCJyZiI6Imh0dHA6Ly93d3cuZ29vZ2xlLmNvbS9zZWFyY2g_cT1jKysrbm90K3JlYWN0K1NETF9LRVlET1dOJm9lPXV0Zi04JnJscz1vcmcubW96aWxsYTpodS1IVTp1bm9mZmljaWFsJmNsaWVudD1pY2V3ZWFzZWwtYSZvcT1jKysrbm90K3JlYWN0K1NETF9LRVlET1dOJmdzX2w9aGVpcmxvb20tc2VycC4zLi4uMTY0NjI5MS4xNjQ2Nzg2LjAuMTY0NzYxNy40LjQuMC4wLjAuMC4xMTguMjY0LjJqMi40LjAuLi4uMC4uLjFhYy4xLjM0LmhlaXJsb29tLXNlcnAuLjIuMi40NS5NWUdCVTJaSWZCNCIsInN0Ijo4Mjc3LCJ1ayI6ImRkZjI4NGUyOGI5MDQ2NzE5OTRjOWY4OTMxMzFlNDc5Iiwiem4iOjQ0LCJ0cyI6MTQwODcxODIxNDU2NywidXIiOiJodHRwczovL3NvZnR3YXJlLmludGVsLmNvbS9lbi11cy93aW5kb3dzP3V0bV9zb3VyY2U9U3RhY2sgT3ZlcmZsb3cmdXRtX21lZGl1bT1CYW5uZXIgQWQgTWlkcGFnZSZ1dG1fY29udGVudD1DYWZmZWxsaSAxJnV0bV9jYW1wYWlnbj1BU01PIC0gV2luZG93cyBTdGFjayBPdmVyZmxvdyJ9&amp;s=KmlcRR_f8jqJobH4dwfp5lFDApc" rel="nofollow" target="_blank" title=""><img src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/8cebaa945d01449a85debb2a87848708.png" title="" alt="" height="90" width="728" border="0"></a><img src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/i_003.gif" style="position: absolute;" height="0px" width="0px" border="0"><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display: none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+  
+<a name="9845903"></a>
+<div id="answer-9845903" class="answer" data-answerid="9845903" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="9845903" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>If you initialized SDL on <code>GameWorld::GenerateCycles()</code>'s thread and <code>MovementThread</code> is calling <code>GameWorld::Movement()</code> then <a href="http://www.libsdl.org/docs/html/thread.html" rel="nofollow">you have a problem</a>: </p>
+
+<blockquote>
+  <ul>
+  <li>Don't call SDL video/event functions from separate threads</li>
+  </ul>
+</blockquote>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/9845903" title="short permalink to this answer" class="short-link" id="link-post-9845903">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/9845903/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-03-23 20:09:54Z" class="relativetime">Mar 23 '12 at 20:09</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/44729/genpfault"><div class="gravatar-wrapper-32"><img src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/5c8fc02a881af739969e39d7982d2b6c.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/44729/genpfault">genpfault</a><br>
+        <span class="reputation-score" title="reputation score 29027" dir="ltr">29k</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="23 silver badges"><span class="badge2"></span><span class="badgecount">23</span></span><span title="51 bronze badges"><span class="badge3"></span><span class="badgecount">51</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-9845903" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-12548577" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Any suggestions then how to make it responsive without multithreading?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1289007/sunius" title="117 reputation" class="comment-user owner">Sunius</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12548577_9845903"><span title="2012-03-23 20:21:14Z" class="relativetime-clean">Mar 23 '12 at 20:21</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12548702" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Just the standard <code>while(true) { pollInput(); handleInput(); doGraphics(); SDL_Delay(1); }</code></span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/44729/genpfault" title="29027 reputation" class="comment-user">genpfault</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12548702_9845903"><span title="2012-03-23 20:26:57Z" class="relativetime-clean">Mar 23 '12 at 20:26</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12548900" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I'll try that :)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1289007/sunius" title="117 reputation" class="comment-user owner">Sunius</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12548900_9845903"><span title="2012-03-23 20:38:12Z" class="relativetime-clean">Mar 23 '12 at 20:38</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12549151" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Okay,
+I guess I figured it out! I made variables x1, x2, y1, y2 as private
+variables of GameWorld class, so they don't get lost between calls
+(they're storing player's velocity information). Also, I reduced the
+cycle interval ten times (to 10 ms), and it's running super responsive!
+CPU is hovering at 3-4% as well. Thanks!</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1289007/sunius" title="117 reputation" class="comment-user owner">Sunius</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12549151_9845903"><span title="2012-03-23 20:52:27Z" class="relativetime-clean">Mar 23 '12 at 20:52</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-9845903" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="9845524"></a>
+<div id="answer-9845524" class="answer" data-answerid="9845524" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="9845524" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Have you tried using something like <code>usleep(50000)</code> instead of <code>delay(1)</code>?</p>
+
+<p>This would make your thread sleep for 50 msecs between polling the
+queue, or equivalently, you would check the queue 20 times per second.</p>
+
+<p>Also, what platform is this on: Linux, Windows?</p>
+
+<p>On Windows you may not have <code>usleep()</code>, but you can try <code>select()</code> as follows:</p>
+
+<pre style="" class="lang-cpp prettyprint prettyprinted"><code><span class="kwd">struct</span><span class="pln"> timeval tv</span><span class="pun">;</span><span class="pln">
+tv</span><span class="pun">.</span><span class="pln">tv_sec </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+tv</span><span class="pun">.</span><span class="pln">tv_usec </span><span class="pun">=</span><span class="pln"> </span><span class="lit">50000</span><span class="pun">;</span><span class="pln">
+select</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> NULL</span><span class="pun">,</span><span class="pln"> NULL</span><span class="pun">,</span><span class="pln"> NULL</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">tv</span><span class="pun">);</span></code></pre>
+
+<p>Another suggestion is to try polling in a tight loop until it stops
+returning events. Once no events are pending, proceed with sleeping for
+50 msecs between polls until it starts returning events again.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/9845524" title="short permalink to this answer" class="short-link" id="link-post-9845524">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/9845524/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/9845524/revisions" title="show all edits to this post">edited <span title="2012-03-23 19:57:58Z" class="relativetime">Mar 23 '12 at 19:57</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-03-23 19:40:55Z" class="relativetime">Mar 23 '12 at 19:40</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1257977/george-skoptsov"><div class="gravatar-wrapper-32"><img src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/7d0e01f87dd64bde732880e654064e0e.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1257977/george-skoptsov">George Skoptsov</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">2,322</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="26 bronze badges"><span class="badge3"></span><span class="badgecount">26</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-9845524" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="2" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-12547961" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I'm
+on Windows 7, I guess usleep doesn't work for Windows, right? I am
+using Visual Studio 2010. By the way, SDL_Delay(1) is supposed to hold
+for 1 milisecond, but it seems way longer than that (thousand times
+longer).</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1289007/sunius" title="117 reputation" class="comment-user owner">Sunius</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12547961_9845524"><span title="2012-03-23 19:48:52Z" class="relativetime-clean">Mar 23 '12 at 19:48</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12548063" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">1,000 times longer would be one second.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/265530/jonathan-grynspan" title="31961 reputation" class="comment-user">Jonathan Grynspan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12548063_9845524"><span title="2012-03-23 19:53:59Z" class="relativetime-clean">Mar 23 '12 at 19:53</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12548070" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Yes, and it seems like three.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1289007/sunius" title="117 reputation" class="comment-user owner">Sunius</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12548070_9845524"><span title="2012-03-23 19:54:13Z" class="relativetime-clean">Mar 23 '12 at 19:54</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12548493" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><a href="http://img845.imageshack.us/img845/4877/cpuusageselect.png" rel="nofollow">img845.imageshack.us/img845/4877/cpuusageselect.png</a> Select doesn't seem to do anything :/</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1289007/sunius" title="117 reputation" class="comment-user owner">Sunius</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12548493_9845524"><span title="2012-03-23 20:16:37Z" class="relativetime-clean">Mar 23 '12 at 20:16</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-12548679" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Sunius; you need to set <code>tv</code> every time you're in the loop, not just once before.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1257977/george-skoptsov" title="2322 reputation" class="comment-user">George Skoptsov</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12548679_9845524"><span title="2012-03-23 20:26:09Z" class="relativetime-clean">Mar 23 '12 at 20:26</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-9845524" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link " title="expand to show all comments on this post, or add one of your own" href="#" onclick="">show <b>2</b> more comments</a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="9845843"></a>
+<div id="answer-9845843" class="answer" data-answerid="9845843" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="9845843" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I'd suggest looking into SDL_EventFilter and the related functions.
+It's not a polling queue input method, so it doesn't require stalling,
+although, if I remember correctly, it doesn't happen on the main
+thread, which may be exactly what you need for performance, but might
+complicate the code.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/9845843" title="short permalink to this answer" class="short-link" id="link-post-9845843">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/9845843/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-03-23 20:05:55Z" class="relativetime">Mar 23 '12 at 20:05</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/646471/oddity0x0"><div class="gravatar-wrapper-32"><img src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/a1972660e6c2be7450233faae49b169f.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/646471/oddity0x0">Oddity0x0</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">71</span><span title="3 bronze badges"><span class="badge3"></span><span class="badgecount">3</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-9845843" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-9845843" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/9845491/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="9845491" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height: 24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="d313afe8cee3bf80df3db350c8dd001f" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f9845491%2fa-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display: none;" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f9845491%2fa-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged 'c++'" rel="tag">c++</a> <a href="http://stackoverflow.com/questions/tagged/windows" class="post-tag" title="show questions tagged 'windows'" rel="tag">windows</a> <a href="http://stackoverflow.com/questions/tagged/sdl" class="post-tag" title="show questions tagged 'sdl'" rel="tag">sdl</a> <a href="http://stackoverflow.com/questions/tagged/event-loop" class="post-tag" title="show questions tagged 'event-loop'" rel="tag">event-loop</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px;">
+			                    <p class="label-key" title="2012-03-23 19:37:38Z"><b>2 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px;">
+			                    <p class="label-key">
+			                        <b>1080 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px;">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/9845491/a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power?lastactivity" class="lastactivity-link" title="2012-09-14 10:23:15Z">1 year ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1047155103",[17,2221]).setZone(45) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1047155103"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImNtIjo4NDcsImNoIjoxMTc4LCJjciI6OTMzNCwiZGkiOiI1MzYyNmI1YzcyODU0MTcwOTA4NzA1NzdjNjI4ODg5NCIsImRtIjoxLCJmYyI6NDM5NDYxLCJmbCI6MjIzMDgyLCJpcCI6IjE0NS4yMzYuMTk3LjE4NiIsImt3IjoiYysrLHdpbmRvd3Msc2RsLGV2ZW50LWxvb3AiLCJudyI6MjIsInBjIjowLCJwciI6MTU2OCwicnQiOjEsInJmIjoiaHR0cDovL3d3dy5nb29nbGUuY29tL3NlYXJjaD9xPWMrKytub3QrcmVhY3QrU0RMX0tFWURPV04mb2U9dXRmLTgmcmxzPW9yZy5tb3ppbGxhOmh1LUhVOnVub2ZmaWNpYWwmY2xpZW50PWljZXdlYXNlbC1hJm9xPWMrKytub3QrcmVhY3QrU0RMX0tFWURPV04mZ3NfbD1oZWlybG9vbS1zZXJwLjMuLi4xNjQ2MjkxLjE2NDY3ODYuMC4xNjQ3NjE3LjQuNC4wLjAuMC4wLjExOC4yNjQuMmoyLjQuMC4uLi4wLi4uMWFjLjEuMzQuaGVpcmxvb20tc2VycC4uMi4yLjQ1Lk1ZR0JVMlpJZkI0Iiwic3QiOjgyNzcsInVrIjoiZGRmMjg0ZTI4YjkwNDY3MTk5NGM5Zjg5MzEzMWU0NzkiLCJ6biI6NDUsInRzIjoxNDA4NzE4MjE0NTY4LCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tLyJ9&amp;s=c4zGoz4VRxGgy8pgvVFuhgy_z1k" rel="nofollow" target="_blank" title=""><img src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/db5df4870e4e4b6cbf42727fd434701a.jpg" title="" alt="" height="250" width="220" border="0"></a><img src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/i_002.gif" style="position: absolute;" height="0px" width="0px" border="0"><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display: none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>  
+        <div class=" orange looking tagged" id="hireme">  <a href="http://careers.stackoverflow.com/?a=2LAw8&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-small-sidebar-orange-looking" class="top" target="_blank"> <span>Looking for a job?</span> </a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/61512/mid-senior-net-developers-fejleszt%C5%91ket-keres%C3%BCnk-allwin-informatika?a=4ZLfKYRbpL&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-small-sidebar-orange-looking" target="_blank" title="Mid/Senior .NET developers (fejlesztőket keresünk) at ALLWIN Informatika. Click to learn more."> <span class="title">Mid/Senior .NET developers (fejlesztőket keresünk)</span> <span class="company">ALLWIN Informatika</span> <span class="location">Budapest, Hungary</span> <span class="post-tag">.net</span> <span class="post-tag">asp.net</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/58600/software-engineer-ndn-inc?a=4L5ZOkJRwm&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-small-sidebar-orange-looking" target="_blank" title="Software Engineer at NDN. Click to learn more."> <span class="title">Software Engineer</span> <span class="company">NDN</span> <span class="location">Atlanta, GA</span> <span class="post-tag">php</span> <span class="post-tag">python</span> </a> </li> </ul> <img alt="" class="impression" src="a-way-to-make-keyboard-event-queue-both-responsive-and-not-take-whole-cpu-power_elemei/4ZLfKYRbpL-4L5ZOkJRwm-2LAw8.gif" style="display: none;"></div>
+			  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/327476?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/327476/sdl-event-keydown-behavior-problem?rq=1" class="question-hyperlink">SDL_event KEYDOWN behavior problem</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/2557664?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/2557664/sdl-doesnt-detect-arrow-keys?rq=1" class="question-hyperlink">SDL doesn't detect Arrow Keys</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/8196435?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/8196435/c-sdl-program-terminates-immediately?rq=1" class="question-hyperlink">C++ SDL program terminates immediately</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9527749?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/9527749/cant-compile-this-sdl-lesson?rq=1" class="question-hyperlink">Can't compile this SDL LESSON…:/</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/10436484?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/10436484/c-weird-function-pointer-behaviour?rq=1" class="question-hyperlink">C++ Weird function pointer behaviour</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/16247891?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/16247891/sdl-key-blocking-and-ghosting?rq=1" class="question-hyperlink">SDL Key blocking and ghosting</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/17698113?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/17698113/c-how-to-make-velocity-equal-in-all-directions?rq=1" class="question-hyperlink">C++ how to make velocity equal in all directions?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/20653552?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">-1
+    </div>
+</a><a href="http://stackoverflow.com/questions/20653552/sdl-event-cant-get-the-sprite-to-move-down-or-right?rq=1" class="question-hyperlink">SDL Event - can't get the sprite to move down or right</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/22699345?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/22699345/cant-set-bool-solid-to-only-some-tiles?rq=1" class="question-hyperlink">Can't set 'bool solid' to only some tiles</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/23719657?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/23719657/sdl-arrow-key-events-malfunctioning?rq=1" class="question-hyperlink">SDL arrow key events malfunctioning</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/254106/how-to-design-an-interface-where-things-need-to-be-called-in-a-specific-sequenc" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to design an interface, where things need to be called in a specific sequence?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/65936/downsides-to-using-https" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Downsides to using HTTPS
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/905673/what-is-the-expected-value-of-the-number-of-circles-formed" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the expected value of the number of circles formed?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/36613/given-r-and-n-find-first-n-numbers-of-x-where-moving-first-digit-of-x-to-last-g" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Given r and n, find first n numbers of x where moving first digit of x to last gives x/r = y
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/60716/stl-queue-implementation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    STL Queue Implementation
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="http://movies.stackexchange.com/questions/24040/the-longest-gap-between-a-movie-and-its-sequel" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    The longest gap between a movie and its sequel
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/32681/how-can-i-overcome-my-significant-disadvantages-in-the-labour-market" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I overcome my (significant) disadvantages in the labour market?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-tridion" title="Tridion Stack Exchange"></div><a href="http://tridion.stackexchange.com/questions/7626/can-i-develop-for-sdl-tridion-2013-with-visual-studio-2005" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:485 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I develop for SDL Tridion 2013 with Visual Studio 2005?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/27377/why-does-research-cost-so-much-money" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does research cost so much money?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/904702/whats-wrong-with-solving-absolute-value-equations-in-this-way" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What's wrong with solving absolute value equations in this way?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-magento" title="Magento Stack Exchange"></div><a href="http://magento.stackexchange.com/questions/33184/how-to-get-core-config-data-using-magento-soap-api" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:479 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to Get core_config_data using Magento soap api?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gamedev" title="Game Development Stack Exchange"></div><a href="http://gamedev.stackexchange.com/questions/82247/how-to-avoid-movement-speed-stacking-when-multiple-keys-are-pressed" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:53 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to avoid movement speed stacking when multiple keys are pressed?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/132096/why-is-this-the-volume-flow-rate-per-unit-area" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is this the volume flow rate per unit area?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-music" title="Musical Practice &amp; Performance Stack Exchange"></div><a href="http://music.stackexchange.com/questions/23062/is-it-possible-to-learn-theory-without-sight-reading" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it possible to learn theory without sight reading?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/192050/my-personal-opinion-is-is-it-always-pointless-to-use-the-words-personal-a" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    "My personal opinion is..." Is it always pointless to use the words "personal" and "personally"?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/126031/pcb-pads-with-holes-but-with-different-nets-on-top-and-bottom-sides" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    PCB, pads with holes but with different nets on top and bottom sides
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-biology" title="Biology Stack Exchange"></div><a href="http://biology.stackexchange.com/questions/20657/could-humans-survive-without-consuming-life" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:375 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Could humans survive without consuming life?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/36384/find-the-smoothest-number" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Find the Smoothest Number
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-islam" title="Islam Stack Exchange"></div><a href="http://islam.stackexchange.com/questions/17099/does-allah-commit-shirk" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:455 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does Allah commit shirk?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/35540/strange-knob-on-airplanes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Strange knob on airplanes?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/46476/how-to-roleplay-languages-that-none-of-the-player-characters-know" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to roleplay languages that none of the player characters know?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/905938/determine-the-cardinal-of-the-following-infinite-set" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Determine the cardinal of the following infinite set?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/32687/how-can-i-deal-with-senior-colleagues-constantly-getting-my-name-wrong" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I deal with senior colleagues constantly getting my name wrong?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/27493/how-much-time-does-a-professor-have-to-do-research-on-his-own" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How much time does a professor have to do research on his own?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/9845491" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/9845491/ivc/ed56');});
+</script>
+<noscript>
+    <div><img src="/posts/9845491/ivc/ed56" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display: none;" id="prettify-lang">lang-cpp</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.8.21.1791
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+<div id="noscript-warning">Stack Overflow works best with JavaScript
+enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif"
+alt="" class="dno"></div> </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('c%2b%2b,windows,sdl,event-loop');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|c++|windows|sdl|event-loop|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    </body></html>

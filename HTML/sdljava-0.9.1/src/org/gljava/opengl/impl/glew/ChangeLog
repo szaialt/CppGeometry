@@ -1,0 +1,5 @@
+2005-01-29  Ivan Z. Ganza  <ivan_ganza@yahoo.com>
+
+	* GlewImpl.java (Repository): implement gluLookAt, gluPerspective
+	and gluOrtho2D
+

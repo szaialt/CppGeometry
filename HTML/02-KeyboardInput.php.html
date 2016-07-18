@@ -1,0 +1,785 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+	
+	
+		<meta http-equiv="Content-type" content="text/html; charset=ISO-8859-1">
+	
+<meta name="keywords" content="zeus CMD, zeuscmd, zeus, grant james, tutorials, game programming, programming, 
+	development, opengl, opengl es, opengles, directx, c++, win32, java, photoshop, 3dsmax, 3D studio max, vb, vb.net, visual basic.net,
+	html, 3d modelling, 3d graphics, 3d, grant, james">
+
+<meta name="Revisit-After" content="3 Days">
+<meta name="Author" content="Grant James - ZEUS">
+
+<link rel="shortcut icon" href="http://www.zeuscmd.com/favicon.ico">				
+		<meta name="description" content="This is the website of Grant James (ZEUS) This website is dedicated to bring you tutorials on c++, win32, java, photoshop, 3dsmax,
+		visual basic.net, xhtml, php, directx and opengl. My projects, 3D modelling and graphics are also placed here. How can messages from the keyboard be processed using GLUT?">
+	
+		<title>ZeusCMD - Design and Development Tutorials : GLUT Programming Tutorials - Keyboard Input</title>
+		
+		<script src="02-KeyboardInput.php_elemei/ca-pub-9343781277077947.js" type="text/javascript"></script><script type="text/javascript" src="02-KeyboardInput.php_elemei/popup.js"></script>
+		
+		<link rel="Stylesheet" type="text/css" href="02-KeyboardInput.php_elemei/style.css">
+		
+	</head><body>
+	
+		<script src="02-KeyboardInput.php_elemei/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-147280-1";
+urchinTracker();
+</script>
+	<script type="text/javascript" src="02-KeyboardInput.php_elemei/externalLinks.js"></script>
+
+<table cellpadding="0" cellspacing="0"><tbody><tr><td><a id="top"></a></td></tr></tbody></table>
+<table style="table-layout: fixed;" class="header" summary="Heading" width="100%" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td id="usersOnline">
+			
+
+		</td>	
+		<td style="background: transparent url(../../images/headerfill.jpg) repeat-x scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">
+		</td>
+	</tr>
+</tbody></table>		
+		<table summary="Main Table" cellpadding="20" cellspacing="20">
+			<tbody><tr>
+				<td class="mainFrame">
+					
+					<img src="02-KeyboardInput.php_elemei/menu.jpg" alt="Menu"><br>
+					
+<div style="padding: 5px;">
+	<table style="width: 100%;" summary="Menu Table" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td class="mainMenu">
+				<a href="http://www.zeuscmd.com/index.php" onclick="javascript:toggle(1); return false;">Home</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="subMenu">
+				<a href="http://www.zeuscmd.com/index.php">Latest News</a><br>
+				<a href="http://www.zeuscmd.com/news/archive.php">Archive</a><br>
+			</td>
+		</tr>
+		<tr>
+			<td class="mainMenu">
+				<a href="http://www.zeuscmd.com/tutorials/index.php" onclick="javascript:toggle(2); return false;">Tutorials</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="subMenu">
+				<a href="http://www.zeuscmd.com/tutorials/cplusplus/index.php">C++</a>
+				<a class="nounderline" href="http://www.zeuscmd.com/tutorials/cplusplus/index2.php">2</a>
+				<a class="nounderline" href="http://www.zeuscmd.com/tutorials/cplusplus/index3.php">3</a>
+				<a class="nounderline" href="http://www.zeuscmd.com/tutorials/cplusplus/index4.php">4</a>
+				<br>
+				<a href="http://www.zeuscmd.com/tutorials/win32/index.php">Win32</a><br>
+				<a href="http://www.zeuscmd.com/tutorials/java/index.php">Java</a><br>
+				<a href="http://www.zeuscmd.com/tutorials/opengl/index.php">OpenGL</a><br>
+				<a href="http://www.zeuscmd.com/tutorials/glut/index.php">GLUT</a><br>
+				<a href="http://www.zeuscmd.com/tutorials/opengles/index.php">OpenGL ES</a>
+				<a class="nounderline" href="http://www.zeuscmd.com/tutorials/opengles/index2.php">2</a>
+				<a class="nounderline" href="http://www.zeuscmd.com/tutorials/opengles/index3.php">3</a>
+				<a class="nounderline" href="http://www.zeuscmd.com/tutorials/opengles/index4.php">4</a>
+				<br>
+				<a href="http://www.zeuscmd.com/tutorials/directx/index.php">DirectX</a><br>
+				<a href="http://www.zeuscmd.com/tutorials/vbnet/index.php">VB.NET</a><br>
+				<a href="http://www.zeuscmd.com/tutorials/html/index.php">HTML</a><br>
+				<a href="http://www.zeuscmd.com/tutorials/photoshop/index.php">Photoshop</a><br>
+				<a href="http://www.zeuscmd.com/tutorials/3dsmax/index.php">3dsmax</a><br>
+			</td>
+		</tr>
+		<tr>
+			<td class="mainMenu">
+				<a href="http://www.zeuscmd.com/forums/index.php">Forums</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="mainMenu">
+				<a href="http://www.zeuscmd.com/projects/index.php">Projects</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="mainMenu">
+				<a href="http://www.zeuscmd.com/modelling/index.php">Modelling</a>
+			</td>
+		</tr>								
+		<tr>
+			<td class="mainMenu">
+				<a href="http://www.zeuscmd.com/links/index.php">Links</a>
+			</td>
+		</tr>								
+		<tr>
+			<td class="mainMenu">
+				<a href="http://www.zeuscmd.com/aboutus/grantjames.php">About Us</a>
+			</td>
+		</tr>								
+		<tr>
+			<td class="mainMenu">
+				<a href="http://www.zeuscmd.com/contact/index.php">Contact</a>
+			</td>
+		</tr>								
+		<tr>
+			<td class="mainMenu">
+				<a href="http://www.zeuscmd.com/search/index.php">Search</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="subMenuHeading">
+				Recent Tutorials
+			</td>
+		</tr>
+								<tr>
+							<td class="subMenuHeading">
+								<a href="http://www.zeuscmd.com/tutorials/cplusplus/index.php">C / C++</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="subMenuSmallText">
+										»&nbsp;<a href="http://www.zeuscmd.com/tutorials/cplusplus/47-Constructors.php">Constructors</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/cplusplus/48-Destructors.php">Destructors</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/cplusplus/49-AccessSpecifiers.php">Access Spec.</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/cplusplus/50-GettersAndSetters.php">Getters &amp; Setters</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/cplusplus/51-ThisPointer.php">This Pointer</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/cplusplus/52-CopyConstructors.php">Copy Constructors</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/cplusplus/53-OperatorOverloading.php">Oper. Overloading</a><br>
+												</div>
+							</td>
+						</tr>
+											<tr>
+							<td class="subMenuHeading">
+								<a href="http://www.zeuscmd.com/tutorials/win32/index.php">Win32</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="subMenuSmallText">
+										»&nbsp;<a href="http://www.zeuscmd.com/tutorials/win32/02-SettingUpYourEnvironment.php">Setting Up Env.</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/win32/03-WinMainFunction.php">WinMain Function</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/win32/04-MessageBoxes.php">Message Boxes</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/win32/05-CreatingWindows.php">Creating Windows</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/win32/06-MessageLoop.php">Message Loop</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/win32/07-KeyboardInput.php">Keyboard Input</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/win32/08-MouseInput.php">Mouse Input</a><br>
+												</div>
+							</td>
+						</tr>
+											<tr>
+							<td class="subMenuHeading">
+								<a href="http://www.zeuscmd.com/tutorials/opengl/index.php">OpenGL</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="subMenuSmallText">
+										»&nbsp;<a href="http://www.zeuscmd.com/tutorials/opengl/11-Depth.php">Depth</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/opengl/12-Perspective.php">Perspective</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/opengl/13-SolidShapes.php">Solid Shapes</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/opengl/14-BackfaceCulling.php">Backface Culling</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/opengl/15-PolygonOffset.php">Polygon Offset</a><br>
+												</div>
+							</td>
+						</tr>
+											<tr>
+							<td class="subMenuHeading">
+								<a href="http://www.zeuscmd.com/tutorials/opengles/index.php">OpenGL ES</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="subMenuSmallText">
+										»&nbsp;<a href="http://www.zeuscmd.com/tutorials/opengles/21-WavingFlag.php">Waving Flag</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/opengles/22-Fog.php">Fog</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/opengles/23-Masking.php">Masking</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/opengles/24-UncompressedTGAs.php">Uncomp. TGAs</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/opengles/25-Reflections.php">Reflections</a><br>
+												</div>
+							</td>
+						</tr>
+											<tr>
+							<td class="subMenuHeading">
+								<a href="http://www.zeuscmd.com/tutorials/glut/index.php">GLUT</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="subMenuSmallText">
+										»&nbsp;<a href="http://www.zeuscmd.com/tutorials/glut/01-GLUTWindow.php">GLUT Window</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/glut/02-KeyboardInput.php">Keyboard Input</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/glut/03-MouseInput.php">Mouse Input</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/glut/04-RenderingAndAnimation.php">Rend. &amp; Anim.</a><br>
+									»&nbsp;<a href="http://www.zeuscmd.com/tutorials/glut/05-Fullscreen.php">Fullscreen</a><br>
+								</div>
+			</td>
+		</tr>
+	</tbody></table>
+</div>					
+				</td>
+				
+				<td class="mainFrame" style="width: 100%;">
+				
+					<table summary="Header" border="0" cellpadding="0" cellspacing="0">
+						<tbody><tr>
+							<td><img class="header" src="02-KeyboardInput.php_elemei/header.jpg" alt="GLUT Tutorials"></td>
+							<td class="frameHeader"></td>
+						</tr>
+					</tbody></table>
+					
+					<br>
+					
+					<table summary="Keyboard Input">
+						<tbody><tr>
+							<td>
+								<img src="02-KeyboardInput.php_elemei/opengl.gif" alt="GLUT">
+							</td>
+							<td style="width: 100%;">
+								<h2>Keyboard Input</h2>
+								<hr>
+							</td>
+						</tr>
+					</tbody></table>
+					
+					<br>
+					<p id="crumbs">
+						<a href="http://www.zeuscmd.com/tutorials/index.php">Tutorials</a> &gt; <a href="http://www.zeuscmd.com/tutorials/glut/index.php">GLUT</a> &gt; Keyboard&nbsp;Input					</p>
+					
+												<table id="viewSource" summary="View Source">
+								<tbody><tr>
+									<td><a href="javascript:popup('source/02-KeyboardInput.php',%20570,%20375,%20535,%20325,%20true);" style="font-size: 10px;">View Full Source</a></td>
+								</tr>
+							</tbody></table>
+								
+<h3>Introduction</h3>
+<p>
+	<img style="border: 1px solid black;" class="imgright" src="02-KeyboardInput.php_elemei/02-KeyboardInput.gif" alt="Keyboard Input">
+	Most of your OpenGL applications will require interaction through some sort of input device.
+	This will generally be the keyboard or the mouse. This tutorial will deal with how
+	to capture and process messages from the keyboard.
+</p>
+
+<p>
+	As all operating systems deal with keyboard input differently, <span class="important">GLUT</span> provides
+	a simple set of functions to allow for cross-platform development.
+</p>
+
+<p>
+	This tutorial is built upon the <a href="http://www.zeuscmd.com/tutorials/glut/01-GLUTWindow.php">previous tutorial</a>. GLUT recognizes
+	<span class="important">2</span> kinds of keys. <span class="info">Normal</span> keys
+	and <span class="important">special</span> keys. The <span class="info">special</span>
+	keys can be represented with the prefix <span class="macro">GLUT_KEY_*</span> and are shown
+	below.
+</p>
+
+<p style="padding-left: 40px;">
+	<span class="macro">GLUT_KEY_F1</span> to <span class="macro">GLUT_KEY_F12</span><br>
+	<span class="macro">GLUT_KEY_LEFT</span><br>
+	<span class="macro">GLUT_KEY_UP</span><br>
+	<span class="macro">GLUT_KEY_RIGHT</span><br>
+	<span class="macro">GLUT_KEY_DOWN</span><br>
+	<span class="macro">GLUT_KEY_PAGE_UP</span><br>
+	<span class="macro">GLUT_KEY_PAGE_DOWN</span><br>
+	<span class="macro">GLUT_KEY_HOME</span><br>
+	<span class="macro">GLUT_KEY_END</span><br>
+	<span class="macro">GLUT_KEY_INSERT</span>
+</p>
+
+<p>
+	We will discuss how to capture presses of both <span class="info">normal</span> 
+	and <span class="info">special</span> keys.
+</p>
+		
+<p>
+	Contents of <span class="important">main.cpp</span> :
+</p>
+
+<hr>
+
+<pre class="code"><span class="include">#include</span> &lt;<span class="important">iostream</span>&gt;
+<span class="include">#include</span> &lt;<span class="important">GL/glut.h</span>&gt;
+
+<span class="keyword">using namespace</span> <span class="type">std</span>;
+</pre>
+
+<p>
+	Our first change is the addition of a <span class="important">boolean</span> variable.
+	When holding down a key, this will determine if we only get one event per key pressed or
+	if successive events are triggered while the key is being held down.
+</p>
+
+<pre class="code"><span class="type">bool</span> ignoreRepeats = <span class="keyword">false</span>;
+</pre>
+
+<p>
+	No initialization is needed for this tutorial and nothing is being displayed.
+</p>
+
+<pre class="code"><span class="type">bool</span> init()
+{
+	<span class="keyword">return true</span>;
+}
+
+<span class="type">void</span> display()
+{
+
+}
+</pre>
+
+<p>
+	To capture messages from the keyboard, we need to have a <span class="info">keyboard</span> function.
+	This function must accept <span class="important">3</span> parameters. The first being
+	an <span class="type">unsigned char</span> representing the key that has been pressed and
+	the second and third representing the position of the mouse when the key was pressed.
+</p>
+
+<pre class="code"><span class="type">void</span> keyboard(<span class="type">unsigned char</span> key, <span class="type">int</span> x, <span class="type">int</span> y)
+{
+</pre>
+
+<p>
+	The <span class="info">key</span> variable can contain any <span class="important">ascii</span> value
+	corresponding to a key such as <span class="string">'d'</span> or <span class="string">'E'</span>.
+	A separate function will be used to capture <span class="info">special</span> keys but
+	you may be wondering about other keys. How are the backspace, enter, escape and delete
+	keys captured? These keys can actually be represented by <span class="important">ascii</span>
+	values and are therefore capture within our <span class="info">normal</span> keyboard
+	function. These ascii values are shown below&nbsp;:
+</p>
+
+<pre class="code">	<span class="keyword">switch</span>(key)
+	{
+	<span class="comment">// Backspace</span>
+	<span class="keyword">case</span> 8 :
+		<b>cout</b> &lt;&lt; <span class="string">"Pressed Backspace"</span> &lt;&lt; <b>endl</b>;
+		<span class="keyword">break</span>;
+
+	<span class="comment">// Enter</span>
+	<span class="keyword">case</span> 13 :
+		<b>cout</b> &lt;&lt; <span class="string">"Pressed Enter"</span> &lt;&lt; <b>endl</b>;
+		break;
+
+	<span class="comment">// Escape</span>
+	<span class="keyword">case</span> 27 :
+		<b>cout</b> &lt;&lt; <span class="string">"Pressed Escape"</span> &lt;&lt; <b>endl</b>;
+		<span class="keyword">break</span>;
+
+	<span class="comment">// Delete</span>
+	<span class="keyword">case</span> 127 :
+		<b>cout</b> &lt;&lt; <span class="string">"Pressed Delete"</span> &lt;&lt; <b>endl</b>;
+		<span class="keyword">break</span>;
+</pre>
+
+<p>
+	For any other key pressed, we simply output the key along with the position at which
+	it was pressed. Note that capturing the lowercase version of a character is not the same
+	as capturing the uppercase equivalent ie. <span class="string">'r'</span> is different to <span class="string">'R'</span>.
+</p>
+
+<pre class="code">	<span class="keyword">default</span> : 
+		<b>cout</b> &lt;&lt; <span class="string">"Pressed key : "</span> &lt;&lt; (<span class="type">char</span>)key 
+			&lt;&lt; <span class="string">" at position : ("</span>
+			&lt;&lt; x &lt;&lt; <span class="string">","</span> &lt;&lt; y &lt;&lt; <span class="string">")"</span> &lt;&lt; <b>endl</b>;
+		<span class="keyword">break</span>;
+	}
+</pre>
+
+<p>
+	Another useful feature is that of keyboard <span class="important">modifiers</span>. These
+	are the <span class="info">ctrl</span>, <span class="info">shift</span> and 
+	<span class="info">alt</span> keys and can be held along with any other key. To retrieve
+	these <span class="important">modifiers</span>, the function
+	<b>glutGetModifiers</b> is called. This function returns an <span class="important">int</span>
+	which determines the <span class="important">modifiers</span> that have been held. Note
+	that the <b>glutGetModifiers</b> function can only be called within a main
+	input function such as the keyboard, special keyboard and mouse functions.
+</p>
+
+<pre class="code">	<span class="type">int</span> mod = <b>glutGetModifiers</b>();
+</pre>
+
+<p>
+	We check to see if any modifiers have been held and print out the result. Note that this
+	method will not tell us if multiple <span class="important">modifiers</span> have
+	been held. This will be shown later in the tutorial.
+</p>
+
+<pre class="code">	<span class="keyword">switch</span>(mod)
+	{
+	<span class="keyword">case</span> <span class="macro">GLUT_ACTIVE_CTRL</span> :
+		<b>cout</b> &lt;&lt; <span class="string">"Ctrl Held"</span> &lt;&lt; <b>endl</b>; <span class="keyword">break</span>;
+	<span class="keyword">case</span> <span class="macro">GLUT_ACTIVE_SHIFT</span> :
+		<b>cout</b> &lt;&lt; <span class="string">"Shift Held"</span> &lt;&lt; <b>endl</b>; <span class="keyword">break</span>;
+	<span class="keyword">case</span> <span class="macro">GLUT_ACTIVE_ALT</span> :
+		<b>cout</b> &lt;&lt; <span class="string">"Alt Held"</span> &lt;&lt; <b>endl</b>; <span class="keyword">break</span>;
+	}
+}
+</pre>
+
+<p>
+	Another function which may be useful is the function for determining when a key is lifted.
+	The parameters of this function are the same as the function above. We print a short
+	message when the <span class="string">'a'</span> key is lifted. Try holding in the
+	<span class="string">'a'</span> key and notice how the message is only displayed upon
+	releasing it.
+</p>
+
+<pre class="code"><span class="type">void</span> keyboardup(<span class="type">unsigned char</span> key, <span class="type">int</span> x, <span class="type">int</span> y)
+{
+	<span class="keyword">if</span> (key == <span class="string">'a'</span>)
+		<b>cout</b> &lt;&lt; <span class="string">"a key lifted"</span> &lt;&lt; <b>endl</b>;
+}
+</pre>
+
+<p>
+	We will now explain how to capture <span class="info">special</span> keys. A
+	<span class="info">special</span> keyboard function needs to be created accepting
+	the same parameters except that the <span class="info">key</span> parameter
+	is an <span class="type">int</span> rather than an <span class="type">unsigned char</span>.
+</p>
+
+<pre class="code"><span class="type">void</span> special(<span class="type">int</span> key, <span class="type">int</span> x, <span class="type">int</span> y)
+{
+	<span class="keyword">switch</span>(key)
+	{
+</pre>
+
+<p>
+	The <span class="important">2</span> case labels below print out a result if 
+	either the <span class="info">F2</span> or <span class="info">up arrow</span>
+	key is pressed.
+</p>
+
+<pre class="code">	<span class="keyword">case</span> <span class="macro">GLUT_KEY_F2</span> :
+		<b>cout</b> &lt;&lt; <span class="string">"Pressed F2"</span> &lt;&lt; <b>endl</b>;
+		<span class="keyword">break</span>;
+
+	<span class="keyword">case</span> <span class="macro">GLUT_KEY_UP</span> :
+		<b>cout</b> &lt;&lt; <span class="string">"Pressed Up"</span> &lt;&lt; <b>endl</b>;
+		<span class="keyword">break</span>;
+</pre>
+
+<p>
+	The next key we are going to capture is the <span class="info">insert</span> key
+	but this time we are going to make use of <span class="important">modifiers</span>.
+</p>
+
+<pre class="code">	<span class="keyword">case</span> <span class="macro">GLUT_KEY_INSERT</span> :
+	{
+		<span class="type">int</span> modifiers = <b>glutGetModifiers</b>();
+</pre>
+
+<p>
+	The result of <b>glutGetModifiers</b> consists of a number of bits indicating which
+	modifiers have been held. These modifiers can be <span class="important">OR</span>ed together by using
+	the <span class="important">OR</span>(|) operator. This can be shown below.
+</p>
+
+<pre class="code">		<span class="keyword">if</span> (
+			modifiers == 
+			(<span class="macro">GLUT_ACTIVE_CTRL</span> | <span class="macro">GLUT_ACTIVE_ALT</span>))
+		{
+			<b>cout</b> &lt;&lt; <span class="string">"Pressed Insert "</span> &lt;&lt;
+				<span class="string">"with only Ctrl and Alt"</span> &lt;&lt; <b>endl</b>;
+		}
+</pre>
+
+<p>
+	The above approach will cause a message to be displayed if <b>ONLY</b> 
+	the <span class="info">ctrl</span> and <span class="info">alt</span> keys
+	have been held.
+</p>
+
+<p>
+	If we do not mind if other keys are held in addition, we can use the <span class="important">AND</span>(&amp;)
+	operator as shown below. Here you can hold down all <span class="important">3</span>
+	modifiers and the message will still be displayed.
+</p>
+
+<pre class="code">		<span class="keyword">else if</span> (modifiers &amp; <span class="macro">GLUT_ACTIVE_CTRL</span> &amp;&amp;
+			modifiers &amp; <span class="macro">GLUT_ACTIVE_ALT</span>)
+		{
+			<b>cout</b> &lt;&lt; <span class="string">"Pressed Insert "</span> &lt;&lt;
+			<span class="string">"with Ctrl and Alt"</span> &lt;&lt; <b>endl</b>;
+		}
+
+		<span class="keyword">break</span>;
+	}
+</pre>
+
+<p>
+	If you hold down a key, you will notice that text continues to be written to the console.
+	This is because key repeats are enabled by default. This means that events are constantly
+	triggered while holding down a key. This may not be desirable. You can get around
+	this by making a call to the <b>glutIgnoreKeyRepeat</b> function. This function accepts
+	one <span class="important">boolean</span> value indicating whether to ignore key
+	repeats or not. Below we enable and disable this feature by pressing the
+	<span class="info">F1</span> key.
+	After enabling ignoring of key repeats, you will find that you
+	can hold a key and only one message is displayed.
+</p>
+
+<pre class="code">	<span class="keyword">case</span> <span class="macro">GLUT_KEY_F1</span> :
+		ignoreRepeats = !ignoreRepeats;
+		<b>glutIgnoreKeyRepeat</b>(ignoreRepeats);
+		
+		<span class="keyword">if</span> (ignoreRepeats)
+			<b>cout</b> &lt;&lt; <span class="string">"Repeates disabled"</span> &lt;&lt; <b>endl</b>;
+		<span class="keyword">else</span>
+			<b>cout</b> &lt;&lt; <span class="string">"Repeats enabled"</span> &lt;&lt; <b>endl</b>;
+
+		<span class="keyword">break</span>;
+
+	}
+}
+
+<span class="type">int</span> main(<span class="type">int</span> argc, <span class="type">char *</span>argv[])
+{
+	<b>glutInit</b>(<b>&amp;</b>argc, argv);
+
+	<b>glutInitWindowPosition</b>(200, 200);
+	<b>glutInitWindowSize</b>(200, 200);
+
+	<b>glutCreateWindow</b>(<span class="string">"02 - Keyboard Input"</span>);
+
+	<b>glutDisplayFunc</b>(display);
+</pre>
+
+<p>
+	Now that we have created these functions, we need to let <span class="important">GLUT</span>
+	know about them. This is achieved in the same way as we did for the <span class="info">display</span>
+	function.
+</p>
+
+<p>
+	<span class="important">4</span> of the functions that can be called are&nbsp;:
+</p>
+
+<p style="padding-left: 40px;">
+	<b>glutKeyboardFunc</b><br>
+	<b>glutKeyboardUpFunc</b><br>
+	<b>glutSpecialFunc</b><br>
+	<b>glutSpecialUpFunc</b>
+</p>
+
+<p>
+	Below, we call the <span class="important">3</span> functions corresponding to the
+	functions that we have provided.
+</p>
+
+<pre class="code">	<b>glutKeyboardFunc</b>(keyboard);
+	<b>glutKeyboardUpFunc</b>(keyboardup);
+	<b>glutSpecialFunc</b>(special);
+
+	<span class="keyword">if</span> (!init())
+		<span class="keyword">return</span> 1;
+
+	<b>glutMainLoop</b>();
+
+	<span class="keyword">return</span> 0;
+}
+</pre>
+
+<hr>
+
+<p>
+	A number of actions can be taken in this
+	program. Try pressing a number of keys including the backspace, enter, delete and
+	escape keys. Also try pressing a character key with and without a shift. You can
+	see that uppercase and lowercase characters are treated differently. Pressing <span class="info">F2</span>
+	or the <span class="info">up arrow</span> will provide an example of <span class="info">special</span>
+	key processing. 
+</p>
+
+<p>
+	Try pressing <span class="info">insert</span> while holding <span class="info">ctrl</span>
+	and <span class="info">alt</span>. Once this has been done, try the same action but this time
+	with <span class="info">shift</span> key. Notice the different messages that are displayed.
+	A final test can also be to press <span class="info">F1</span> thus ignoring key repeats.
+	Once this has been achieved, try holding a key and notice how only one message is displayed.
+</p>
+
+<p>
+	Well done. You should now have a thorough knowledge of how to capture keyboard presses
+	using <span class="important">GLUT</span>. 
+</p>
+
+					<p>
+						Please let me know of any comments you may have : <a href="http://www.zeuscmd.com/contact/index.php">Contact Me</a>
+					</p>
+
+												<table class="code" summary="Source Downloads" cellspacing="10">
+								<tbody><tr>
+									<td>Source&nbsp;Files&nbsp;: </td>
+									<td><a href="http://www.zeuscmd.com/tutorials/glut/files/vstudio/02-KeyboardInput.zip"><img class="border" src="02-KeyboardInput.php_elemei/vstudio.gif" alt="Visual Studio"></a></td>
+									<td><a href="http://www.zeuscmd.com/tutorials/glut/files/devc++/02-KeyboardInput.zip"><img class="border" src="02-KeyboardInput.php_elemei/dev-c.html" alt="Dev-C++"></a></td>
+									<td><a href="http://www.zeuscmd.com/tutorials/glut/files/unix/02-KeyboardInput.tar.gz"><img class="border" src="02-KeyboardInput.php_elemei/linux.gif" alt="Unix / Linux"></a></td>
+									<td style="width: 100%;"></td>
+								</tr>
+							</tbody></table>
+						
+					<hr>
+					
+					<table style="width: 100%;" summary="Next / Previous Tutorial">
+						<tbody><tr>
+							<td class="nextprev" align="left">
+							<a href="http://www.zeuscmd.com/tutorials/glut/01-GLUTWindow.php">&lt; Tutorial 01 - GLUT Window</a>							</td>
+							<td class="nextprev" align="right">
+							<a href="http://www.zeuscmd.com/tutorials/glut/03-MouseInput.php">Tutorial 03 - Mouse Input &gt;</a>							</td>
+						</tr>
+					</tbody></table>
+					
+					<p class="smallText">
+						<a href="#top">Back to Top</a>
+					</p>
+					
+					<br>
+					<p class="smallText">
+						All Rights Reserved, © Zeus Communication, Multimedia &amp; Development 2004-2005
+					</p>
+					<p class="smallText">
+						Read the <a href="http://www.zeuscmd.com/disclaimer/index.php">Disclaimer</a>
+					</p>
+								
+				</td>
+				
+				<td class="mainFrame">
+				
+					
+<table summary="Header" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td><img class="header" src="02-KeyboardInput.php_elemei/titles.jpg" alt="Links"></td>
+		<td class="frameHeader"></td>
+	</tr>
+</tbody></table>
+
+		<table style="margin: 0pt auto 10px;" summary="Google Ads Table" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td style="margin: 0px; padding: 0px; background: rgb(153, 170, 204) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;" align="center">
+					<script type="text/javascript"><!--
+					google_ad_client = "pub-9343781277077947";
+					google_ad_width = 120;
+					google_ad_height = 90;
+					google_ad_format = "120x90_0ads_al_s";
+					google_ad_channel ="9358613960";
+					google_color_border = "2D5893";
+					google_color_bg = "99AACC";
+					google_color_link = "000000";
+					google_color_url = "000099";
+					google_color_text = "003366";
+					//--></script>
+					<script type="text/javascript" src="02-KeyboardInput.php_elemei/show_ads.js">
+					</script><ins id="aswift_0_expand" style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 120px; background-color: transparent;"><ins id="aswift_0_anchor" style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 120px; background-color: transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="90" scrolling="no" width="120"></iframe></ins></ins>			
+					<script type="text/javascript"><!--
+					google_ad_client = "pub-9343781277077947";
+					google_ad_width = 120;
+					google_ad_height = 600;
+					google_ad_format = "120x600_as";
+					google_ad_type = "text_image";
+					google_ad_channel ="8343250595";
+					google_color_border = "2D5893";
+					google_color_bg = "99AACC";
+					google_color_link = "000000";
+					google_color_url = "000099";
+					google_color_text = "003366";
+					//--></script>
+					<script type="text/javascript" src="02-KeyboardInput.php_elemei/show_ads.js">
+					</script><ins id="aswift_1_expand" style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 600px; position: relative; visibility: visible; width: 120px; background-color: transparent;"><ins id="aswift_1_anchor" style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 600px; position: relative; visibility: visible; width: 120px; background-color: transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="600" scrolling="no" width="120"></iframe></ins></ins>
+				</td>
+			</tr>
+		</tbody></table>
+	<table class="sideBox" summary="Books" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="sideDashedEntry">
+			What tutorial would you like to see next?<br><br>
+			<form class="voteForm" id="voteForm" action="../../vote/processVote.php" method="post">
+				<table class="centerTable" summary="Vote Table" cellpadding="0" cellspacing="0">
+				
+									<tbody><tr>
+														<td><input name="poll" value="13" type="radio"></td>
+								<td>C / C++</td>
+												</tr>
+										<tr>
+														<td><input name="poll" value="14" type="radio"></td>
+								<td>Win32</td>
+												</tr>
+										<tr>
+														<td><input name="poll" value="15" type="radio"></td>
+								<td>Java</td>
+												</tr>
+										<tr>
+														<td><input name="poll" value="16" type="radio"></td>
+								<td>C#</td>
+												</tr>
+										<tr>
+														<td><input name="poll" value="17" type="radio"></td>
+								<td>OpenGL</td>
+												</tr>
+										<tr>
+														<td><input name="poll" value="18" type="radio"></td>
+								<td>OpenGL ES</td>
+												</tr>
+										<tr>
+														<td><input name="poll" value="19" type="radio"></td>
+								<td>DirectX</td>
+												</tr>
+										<tr>
+														<td><input name="poll" value="20" type="radio"></td>
+								<td>VB.NET</td>
+												</tr>
+										<tr>
+														<td><input name="poll" value="21" type="radio"></td>
+								<td>XHTML</td>
+												</tr>
+										<tr>
+														<td><input name="poll" value="22" type="radio"></td>
+								<td>PHP</td>
+												</tr>
+										<tr>
+														<td><input name="poll" value="23" type="radio"></td>
+								<td>Photoshop</td>
+												</tr>
+										<tr>
+														<td><input name="poll" value="24" type="radio"></td>
+								<td>3dsmax</td>
+												</tr>
+											<tr>
+							<td colspan="2" style="text-align: center;">
+								<br>
+								<input class="voteButton" value="Vote" type="submit">
+								<input name="return" value="/zeuscmd/tutorials/glut/02-KeyboardInput.php" type="hidden">
+							</td>
+						</tr>
+									</tbody></table>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<br>
+			Useful Books :
+			<br><br>
+			<a target="_blank" href="http://www.amazon.com/exec/obidos/ASIN/0761533303/Zeus%20CMD-20/104-3275308-6769548?creative=125581&amp;camp=2321&amp;link_code=as1" rel="external"><img style="border: 1px solid black;" src="02-KeyboardInput.php_elemei/cover.jpg" alt="OpenGL Game Programming"></a>
+		</td>
+	</tr>
+				<tr>
+				<td align="center">
+					<br>
+				      <a target="_blank" href="http://validator.w3.org/check?uri=referer" rel="external">
+					      <img class="noBorder" src="02-KeyboardInput.php_elemei/valid-xhtml11.png" alt="Valid XHTML 1.1!" height="31" width="88">
+				      </a>
+				</td>
+			</tr>
+			<tr>
+		<td>
+			<b>Link to ZeusCMD</b>
+			<a href="http://www.zeuscmd.com/downloads/zeuscmdlink.zip"><img style="border: 1px solid black;" src="02-KeyboardInput.php_elemei/zeuscmdlogo.gif" alt="Link to ZeusCMD"></a>
+		</td>
+	</tr>
+</tbody></table>
+					
+				</td>
+			</tr>
+		</tbody></table>
+		
+	</body></html>

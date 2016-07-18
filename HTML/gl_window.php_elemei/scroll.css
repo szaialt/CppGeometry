@@ -1,0 +1,21 @@
+
+
+BODY
+{
+  scrollbar-face-color:#000000;
+  scrollbar-arrow-color:white;
+  scrollbar-track-color:#FFFFFF;
+  scrollbar-shadow-color:white;
+  scrollbar-highlight-color:white;
+  scrollbar-3dlight-color:white;
+  scrollbar-darkshadow-Color:'';
+}
+
+p.dotted {border-style: dotted}
+p.dashed {border-style: dashed}
+p.solid {border-style: solid}
+p.double {border-style: double}
+p.groove {border-style: groove}
+p.ridge {border-style: ridge}
+p.inset {border-style: inset}
+p.outset {border-style: outset}

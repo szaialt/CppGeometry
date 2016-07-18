@@ -1,0 +1,1730 @@
+<!DOCTYPE HTML>
+<html style="margin-top: 100px;" prefix="og: http://ogp.me/ns#" class="js no-flexbox no-touch no-hashchange no-history draganddrop rgba hsla no-multiplebgs no-backgroundsize borderimage borderradius boxshadow textshadow opacity no-cssanimations csscolumns no-cssgradients no-cssreflections csstransforms no-csstransforms3d no-csstransitions fontface generatedcontent video audio applicationcache" lang="fr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script async="true" src="faire-des-rotations-avec-sdl-gfx_elemei/whap.js"></script><script src="faire-des-rotations-avec-sdl-gfx_elemei/ga.js" type="text/javascript"></script><script charset="UTF-8" src="faire-des-rotations-avec-sdl-gfx_elemei/get_002" type="text/javascript"></script><script charset="UTF-8" src="faire-des-rotations-avec-sdl-gfx_elemei/get" type="text/javascript"></script><style>article,aside,figcaption,figure,footer,header,hgroup,nav,section{display:block}mark{background:#FF0;color:#000}</style>
+
+    
+    
+
+
+
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="fr" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="fr" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="fr" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if gt IE 7]> <html class="no-js ie oldie" lang="fr" prefix="og: http://ogp.me/ns#"> <![endif]-->
+
+ <!--<![endif]-->
+    
+
+        <style id="matchmediajs-test" type="text/css">@media only screen and (min-width: 992px){ #matchmediajs-test { width: 1px; } }</style><script type="text/javascript" src="faire-des-rotations-avec-sdl-gfx_elemei/8075.js"></script><script src="faire-des-rotations-avec-sdl-gfx_elemei/gpt.js" type="text/javascript"></script><script src="faire-des-rotations-avec-sdl-gfx_elemei/cse.js" type="text/javascript"></script><script type="text/javascript">
+            var App = {};
+            App.startTime = (new Date()).getTime();
+            App.flashMessages = [];
+
+            var _sf_startpt = App.startTime;
+        </script>
+
+        <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o?o:n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({D5DuLP:[function(t,n){function e(t,n){var e=r[t];return e?e.apply(this,n):(o[t]||(o[t]=[]),void o[t].push(n))}var r={},o={};n.exports=e,e.queues=o,e.handlers=r},{}],handle:[function(t,n){n.exports=t("D5DuLP")},{}],G9z0Bl:[function(t,n){function e(){var t=l.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&p&&p.body){l.proto="https"===f.split(":")[0]||t.sslForHttp?"https://":"http://",i("mark",["onload",a()]);var n=p.createElement("script");n.src=l.proto+t.agent,p.body.appendChild(n)}}function r(){"complete"===p.readyState&&o()}function o(){i("mark",["domContent",a()])}function a(){return(new Date).getTime()}var i=t("handle"),u=window,p=u.document,s="addEventListener",c="attachEvent",f=(""+location).split("?")[0],l=n.exports={offset:a(),origin:f,features:[]};p[s]?(p[s]("DOMContentLoaded",o,!1),u[s]("load",e,!1)):(p[c]("onreadystatechange",r),u[c]("onload",e)),i("mark",["firstbyte",a()])},{handle:"D5DuLP"}],loader:[function(t,n){n.exports=t("G9z0Bl")},{}]},{},["G9z0Bl"]);</script>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="application-name" content="OpenClassrooms">
+        <meta name="msapplication-TileColor" content="#002D40">
+        <meta name="msapplication-TileImage" content="/bundles/common/images/928bd40a-9507-4495-977d-ace7d554190b.png">
+
+        
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+                    <link href="faire-des-rotations-avec-sdl-gfx_elemei/master.css" type="text/css" rel="stylesheet" media="all">
+        
+                <link href="faire-des-rotations-avec-sdl-gfx_elemei/master-2.css" type="text/css" rel="stylesheet" media="all">
+        
+                <link href="faire-des-rotations-avec-sdl-gfx_elemei/main.css" type="text/css" rel="stylesheet" media="all">
+    
+        <script src="faire-des-rotations-avec-sdl-gfx_elemei/jquery.js"></script>
+                <script>window.jQuery || document.write('<script src="/bundles/common/js/SdZ/lib/jquery-1.10.1.js">\x3C/script>')</script>
+
+                <script type="text/javascript" src="faire-des-rotations-avec-sdl-gfx_elemei/modernizr.js"></script>
+        
+        <link rel="shortcut icon" href="http://fr.openclassrooms.com/favicon.ico?dfd25acf4w32b">
+
+            
+<meta property="og:locale" content="fr_FR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Découvrez le cours &quot;Faire des rotations avec SDL_gfx&quot; sur @OpenClassrooms.">
+<meta property="og:url" content="/informatique/cours/faire-des-rotations-avec-sdl-gfx">
+<meta property="og:site_name" content="OpenClassrooms">
+<meta property="”og:image”" content="”http://uploads.siteduzero.com/icones/36001_37000/36750.png”">
+            
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@openclassrooms">
+<meta name="twitter:title" content="Découvrez le cours &quot;Faire des rotations avec SDL_gfx&quot; sur @OpenClassrooms.">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="http://uploads.siteduzero.com/icones/36001_37000/36750.png">
+
+        
+                
+        <script type="text/javascript">
+  (function() {
+    var cx = '014616277910456467192:89xygm8tdzq';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+        <title>Faire des rotations avec SDL_gfx</title>
+
+        <!-- inlined top javascript block -->
+
+        <script type="text/javascript">
+
+            
+            App.user = {
+                
+                
+                
+                isPremium: false
+            }
+
+            App.preferences = {
+                assetVersion: 'dfd25acf4w32b'
+
+                                            };
+
+            App.preferences.modules = {
+                'smiley': {
+                    basePath: '/bundles/common/images/smiley/'
+                }
+            };
+
+            
+                var googletag = googletag || {};
+                googletag.cmd = googletag.cmd || [];
+                (function() {
+                var gads = document.createElement('script');
+                gads.async = true;
+                gads.type = 'text/javascript';
+                var useSSL = 'https:' == document.location.protocol;
+                gads.src = (useSSL ? 'https:' : 'http:') +
+                '//www.googletagservices.com/tag/js/gpt.js';
+                var node = document.getElementsByTagName('script')[0];
+                node.parentNode.insertBefore(gads, node);
+                    })();
+
+                googletag.cmd.push(function() {
+                        if (window.innerWidth >= 728)
+    {
+        googletag.defineSlot('/1017495/megabann_tutoriels_header_728x90px', [728, 90], 'div-gpt-ad-1350977194635-9').addService(googletag.pubads());
+        googletag.defineSlot('/1017495/megabann_tutoriels_footer_728x90px', [[605, 100], [728, 90]], 'div-gpt-ad-1350977194635-8').addService(googletag.pubads());
+    }
+    else
+    {
+        googletag.defineSlot('/1017495/bann_mobile_tutoriels_footer_320x50px', [320, 50], 'div-gpt-ad-1350977284180-8').addService(googletag.pubads());
+        googletag.defineSlot('/1017495/bann_mobile_tutoriels_header_320x50px', [320, 50], 'div-gpt-ad-1350977284180-9').addService(googletag.pubads());
+    }
+
+
+                    googletag.pubads().setTargeting("userType", "0");
+
+                                                                                            googletag.pubads().setTargeting("category", "1");
+                    
+                    
+                    googletag.pubads().enableSingleRequest();
+                    googletag.enableServices();
+                });
+                    </script><script type="text/javascript" src="faire-des-rotations-avec-sdl-gfx_elemei/jsapi"></script>
+        <!-- inlined top javascript block end -->
+
+        <script></script>
+
+    <link rel="stylesheet" href="faire-des-rotations-avec-sdl-gfx_elemei/defaultfr.css" type="text/css"><link rel="stylesheet" href="faire-des-rotations-avec-sdl-gfx_elemei/default.css" type="text/css"><script src="faire-des-rotations-avec-sdl-gfx_elemei/defaultfr.js" type="text/javascript"></script><script src="faire-des-rotations-avec-sdl-gfx_elemei/search.js" type="text/javascript"></script><script src="faire-des-rotations-avec-sdl-gfx_elemei/pubads_impl_47.js" type="text/javascript"></script><style id="ayads-style" type="text/css">body{cursor:default;background-position:center top !important;background-repeat:no-repeat !important;background-image:none;background-color:#FFFFFF !important;background-attachment:scroll !important;margin-left:auto !important;margin-right:auto !important;margin-top:211px !important;max-width:960px}html{background-image:none !important;background-color:transparent !important;cursor:pointer}body{background-image:url("http://ads.ayads.co/delivery/image-4377.jpg") !important;background-size:1421px auto !important}</style><style type="text/css">
+.gsc-control-cse {
+font-family: Arial, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-control-cse .gsc-table-result {
+font-family: Arial, sans-serif;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+border-color: #D9D9D9;
+}
+input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+border-color: #797979;
+background-color: #797979;
+background-image: none;
+filter: none;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #CCCCCC;
+background-color: #FFFFFF;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-color: #CCCCCC;
+border-bottom-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+border-color: #CCCCCC;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #1155CC;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #1155CC;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #1155CC;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #1155CC;
+}
+.gsc-cursor-page {
+color: #1155CC;
+}
+a.gsc-trailing-more-results:link {
+color: #1155CC;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #333333;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #009933;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #009933;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #FFFFFF;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #CCCCCC;
+background-color: #FFFFFF;
+color: #1155CC;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #CCCCCC;
+background-color: #FFFFFF;
+color: #1155CC;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+border-color: #F6F6F6;
+background-color: #F6F6F6;
+}
+.gsc-completion-title {
+color: #1155CC;
+}
+.gsc-completion-snippet {
+color: #333333;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #1155CC;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #1155CC;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #1155CC;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #1155CC;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right * {
+color: #333333;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #009933;
+}
+</style><style type="text/css">.ob-tcolor{color:#555} .ob-lcolor{color:rgb(233, 83, 37)} .ob-bgtcolor{background-color:#555} .item-link-container:hover .ob-tcolor{border-color:#555}</style><link media="all" href="faire-des-rotations-avec-sdl-gfx_elemei/widget005.css" type="text/css" rel="stylesheet"><style type="text/css">.fancybox-margin{margin-right:16px;}</style></head><body class="oc-body    ayads-skin"><div id="ayads-html"><style>#oc-header{position:absolute !important;top:0 !important;left:0 !important;right:0 !important;width:100% !important}
+#mainHeader,#mainContent{background:#FFF !important}
+#mainContent{width:100% !important;margin-top:-14px !important}
+#oc-footer{position:absolute !important;left:0 !important;right:0 !important;width:100% !important}
+.adBan,#fixedNav a{display:none !important}
+.tag-header:before{left:-3px !important;right:-2px !important}
+.advertise{display:none !important}
+.oc-body main{margin:0 auto !important}
+body>.inset{background:#FFF !important}
+body:before {
+content:' ' !important;
+position:absolute !important;
+background:#FFF !important;
+width:960px !important;
+height:1000px !important;
+z-index:-1 !important;
+ !important}</style>
+<script>
+$('html').css('margin-top',jQuery('#oc-header').height()+'px');
+$(document.body).addClass('ayads-skin');
+</script></div>
+        <!--[if lt IE 9]>
+            <div class="deprecated-ie">
+                <p>The Internet Explorer version you are using is too old, please &lt;a target=&#039;_blank&#039;  href=&#039;http://windows.microsoft.com/fr-fr/internet-explorer/download-ie/&#039;&gt;upgrade&lt;/a&gt;.</p>
+            </div>
+        <![endif]-->
+
+        <section id="oc-header" class="no-padding">
+    <div class="centered clearfix">
+        <a href="http://fr.openclassrooms.com/" class="oc-logo" title="OpenClassrooms.com"></a>
+
+        <a id="top-menu-switch" class="menu-open-button">
+            <i class="icon-menu"></i>
+        </a>
+
+        <div class="header-inner">
+
+            <header>
+                <span class="header-topline">
+            Envie de concevoir un site web de qualité professionnelle ? Découvrez <a href="http://fr.openclassrooms.com/informatique/cours/developpez-votre-site-web-avec-le-framework-symfony2?utm_source=SiteWeb-OC&amp;utm_medium=Phrase-header&amp;utm_campaign=Header-CoursSymfony2">Symfony2</a> ! Les <a href="http://fr.openclassrooms.com/informatique/cours/developpez-votre-site-web-avec-le-framework-symfony2?utm_source=SiteWeb-OC&amp;utm_medium=Phrase-header&amp;utm_campaign=Header-CoursSymfony2">pré-inscriptions</a> sont ouvertes.
+    </span>
+
+                <div class="language dropdown small">
+                    <a href="#">French</a>
+
+                    <div class="dropdown-menu">
+                        <ul class="dropdown-menu-items">
+                            <li class="dropdown-menu-item"><a href="#">French</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <nav role="navigation">
+                <div class="menu-nav">
+                    <ul class="menu-nav-items primary-nav">
+                        <li class="menu-nav-item courses">
+                            <div class="dropdown">
+                                <a href="http://fr.openclassrooms.com/cours">Courses</a>
+
+                                <div class="dropdown-menu">
+                                    
+
+    
+<ul class="dropdown-menu-items">
+
+    <li class="dropdown-menu-item " data-name="informatique">
+        <a href="http://fr.openclassrooms.com/informatique/cours">Informatique</a>
+    </li>
+    <li class="dropdown-menu-item " data-name="sciences">
+        <a href="http://fr.openclassrooms.com/sciences/cours">Sciences</a>
+    </li>
+    <li class="dropdown-menu-item " data-name="entreprise">
+        <a href="http://fr.openclassrooms.com/entreprise/cours">Entreprise</a>
+    </li>
+
+    <li class="dropdown-menu-item "><a href="http://fr.openclassrooms.com/certifications"><i class="icon-badge"></i> Certificates</a></li>
+
+    <li class="dropdown-menu-item"><a href="http://fr.openclassrooms.com/tutoriels/carte-des-connaissances" title="Knowledge map"><i class="icon-map"></i>Map</a></li>
+
+    <li class="dropdown-menu-item"><a href="http://fr.openclassrooms.com/courses/create"><i class="icon-write"></i> Create a course</a></li>
+
+
+    
+
+    
+</ul>
+
+
+    <div class="dropdown-submenu informatique">
+        <div class="courses-list-container clearfix">
+                            <ul>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/2d/cours">
+                            2D
+                            <span>(28)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/ada/cours">
+                            Ada
+                            <span>(2)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/blackberry/cours">
+                            BlackBerry
+                            <span>(1)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/c/cours">
+                            C
+                            <span>(39)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/c-2/cours">
+                            C#
+                            <span>(18)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/c-1/cours">
+                            C++
+                            <span>(29)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/cao/cours">
+                            CAO
+                            <span>(2)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/css/cours">
+                            CSS
+                            <span>(35)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/graphisme/cours">
+                            Graphisme
+                            <span>(48)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/html/cours">
+                            HTML
+                            <span>(39)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/java/cours">
+                            Java
+                            <span>(14)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/java-ee/cours">
+                            Java EE
+                            <span>(2)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/javascript/cours">
+                            Javascript
+                            <span>(33)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/jquery/cours">
+                            jQuery
+                            <span>(5)</span>
+                        </a>
+                    </li>
+                                </ul>
+                            <ul>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/latex/cours">
+                            LaTeX
+                            <span>(5)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/linux/cours">
+                            Linux
+                            <span>(50)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/mac-os/cours">
+                            Mac OS
+                            <span>(7)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/mysql/cours">
+                            MySQL
+                            <span>(16)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/node-js/cours">
+                            Node.js
+                            <span>(2)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/perl/cours">
+                            Perl
+                            <span>(2)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/photoshop/cours">
+                            Photoshop
+                            <span>(12)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/php/cours">
+                            PHP
+                            <span>(111)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/poo/cours">
+                            POO
+                            <span>(4)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/python/cours">
+                            Python
+                            <span>(17)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/reseaux/cours">
+                            Réseaux
+                            <span>(14)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/seo/cours">
+                            SEO
+                            <span>(4)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/symfony/cours">
+                            Symfony
+                            <span>(1)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/unix/cours">
+                            Unix
+                            <span>(1)</span>
+                        </a>
+                    </li>
+                                </ul>
+                            <ul>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/vb-net/cours">
+                            VB.Net
+                            <span>(1)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/windows/cours">
+                            Windows
+                            <span>(28)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/windows-phone/cours">
+                            Windows Phone
+                            <span>(2)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/word/cours">
+                            Word
+                            <span>(4)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/informatique/xml/cours">
+                            XML
+                            <span>(9)</span>
+                        </a>
+                    </li>
+                                </ul>
+            
+                            <ul>
+                    <li>
+                        <a href="http://fr.openclassrooms.com/developpeurs-c-est-l-ete">Microsoft Virtual Academy</a>
+                    </li>
+                </ul>
+                    </div>
+
+        <a class="all-courses-link oc-btn orange-alt-btn" href="http://fr.openclassrooms.com/informatique/cours">
+            See all courses
+        </a>
+    </div>
+    <div class="dropdown-submenu sciences">
+        <div class="courses-list-container clearfix">
+                            <ul>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/sciences/chimie/cours">
+                            Chimie
+                            <span>(2)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/sciences/electronique/cours">
+                            Électronique
+                            <span>(2)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/sciences/mathematiques/cours">
+                            Mathématiques
+                            <span>(16)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/sciences/physique/cours">
+                            Physique
+                            <span>(4)</span>
+                        </a>
+                    </li>
+                                </ul>
+            
+                    </div>
+
+        <a class="all-courses-link oc-btn orange-alt-btn" href="http://fr.openclassrooms.com/sciences/cours">
+            See all courses
+        </a>
+    </div>
+    <div class="dropdown-submenu entreprise">
+        <div class="courses-list-container clearfix">
+                            <ul>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/entreprise/communication/cours">
+                            Communication
+                            <span>(3)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/entreprise/entrepreneuriat/cours">
+                            Entrepreneuriat
+                            <span>(3)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/entreprise/finance/cours">
+                            Finance
+                            <span>(2)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/entreprise/humanitaire/cours">
+                            Humanitaire
+                            <span>(1)</span>
+                        </a>
+                    </li>
+                                    <li>
+                        <a href="http://fr.openclassrooms.com/entreprise/marketing/cours">
+                            Marketing
+                            <span>(2)</span>
+                        </a>
+                    </li>
+                                </ul>
+            
+                    </div>
+
+        <a class="all-courses-link oc-btn orange-alt-btn" href="http://fr.openclassrooms.com/entreprise/cours">
+            See all courses
+        </a>
+    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-nav-item forums">
+                            <a href="http://fr.openclassrooms.com/forum/">Forums</a>
+                        </li>
+                        <li class="menu-nav-item shop">
+                            <a href="http://boutique.fr.openclassrooms.com/boutique.html">Bookstore</a>
+                        </li>
+                        <li class="menu-nav-item school">
+                            <a href="http://fr.openclassrooms.com/etudes/">Studies</a>
+                        </li>
+                        <li class="menu-nav-item job">
+                            <a href="http://fr.openclassrooms.com/emploi">Careers</a>
+                        </li>
+                        <li class="menu-nav-item plus">
+                            <div class="dropdown">
+                                <a href="#" class="js-more-item"><i class="icon-plus"></i></a>
+
+                                <div class="dropdown-menu">
+                                    <ul class="dropdown-menu-items">
+                                        <li class="dropdown-menu-item">
+                                            <a href="http://fr.openclassrooms.com/developpeurs-c-est-l-ete">Développeurs c'est l'été</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                                                                <div class="icons-container">
+                            <ul class="menu-nav-items menu-connection">
+                                <li class="menu-nav-item avatar-item">
+                                    <div class="avatar">
+                                        <img alt="Photo" src="faire-des-rotations-avec-sdl-gfx_elemei/avatar_defaut.png">
+                                    </div>
+                                </li>
+                                <li class="menu-nav-item  premium-item">
+                                    <a class="premium oc-btn nowrap" href="http://fr.openclassrooms.com/premium/?utm_source=SiteWeb-OC&amp;utm_medium=Lien-DevenezPremium&amp;utm_campaign=Invite"><i class="icon-star"></i><span><span>Become a Premium member</span></span></a>                                </li>
+                                <li class="menu-nav-item connection">
+                                    <a class="login oc-btn dark-btn smaller" href="http://fr.openclassrooms.com/login">
+                                        Sign in
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                                        
+                                        <div class="menu-nav-widget search-form-container">
+                        <form class="form search-form js-autocomplete-course-search" action="/recherche/" method="get">
+
+                            <div class="input-group flat smaller collapsed">
+                                <input autocomplete="off" data-option_source="/components/courses/search?title=&lt;%= term %&gt;" placeholder="Search" name="search" type="search">
+
+                                <span class="input-group-button">
+                                    <button type="submit" class="oc-btn orange-alt-btn flat only-icon">
+                                        <i class="main-icon icon-search"></i>
+                                        <i class="indicator icon-spinner icon-spin"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    
+                                        <div class="autocomplete-search js-autocomplete-course-search-results"></div>
+
+
+
+                </div>
+            </nav>
+        </div>
+    </div>
+</section>
+
+                <script type="text/javascript" src="faire-des-rotations-avec-sdl-gfx_elemei/ajs.php"></script>
+
+                            
+        
+            <section class="inset no-padding">
+        <div class="centered">
+            <nav class="breadcrumb" role="navigation">
+                <ul class="breadcrumbtrail">
+                                                                        <li class="home" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                                                            <a href="http://fr.openclassrooms.com/" itemprop="url">
+                                <span itemprop="title">Accueil</span>
+                            </a>
+                                                                            <div class="arrow-right"></div>
+                                                </li>
+                                                                        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                                                            <a href="http://fr.openclassrooms.com/informatique/cours" itemprop="url">
+                                <span itemprop="title">Informatique</span>
+                            </a>
+                                                                            <div class="arrow-right"></div>
+                                                </li>
+                                                                        <li class="current" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                                                            Faire des rotations avec SDL_gfx
+                                                                        </li>
+                                    </ul>
+            </nav>
+        </div>
+    </section>
+
+
+                 
+    
+    <section class="advertise">
+        <div id="add-container-1350977194635-9">
+
+            
+            <!--
+                <div id="div-gpt-ad-1350977194635-9" class="megaban"></div>
+
+                                    <div id="div-gpt-ad-1350977284180-9" class="miniban"></div>
+                
+                <script type='text/javascript'>
+                    (function () {
+                        var mobileAdd = '1350977284180-9',
+                            add = '1350977194635-9';
+
+                        if (mobileAdd && window.innerWidth <= 728) {
+
+                            googletag.cmd.push(function() {
+                                googletag.display('div-gpt-ad-' + mobileAdd);
+                            });
+
+                        } else {
+
+                            googletag.cmd.push(function() {
+                                googletag.display('div-gpt-ad-' + add);
+                            });
+
+                        }
+                    })();
+                </script>
+            -->
+        </div>
+                <script type="text/javascript">
+            !document.getElementById('ayads-style')&&Array.prototype.slice.call(document.getElementById('add-container-1350977194635-9').childNodes).some(function(n){if(n.nodeType===8)document.write(n.nodeValue);});
+        </script>
+
+    </section>
+
+                    <!-- navigationTabs -->
+            <section class="alt-section no-padding no-border">
+                <div class="centered">
+                    <ul id="secondMenu" class="nav-tabs">
+                                            </ul>
+                </div>
+            </section>
+            <!-- END navigationTabs -->
+        
+        <main class="claire clearfix" role="main">
+                            <section class="alt-section course-header ">
+        <div id="popin-formats-availables" class="popin popin--course-formats-availables">
+    <i class="popin__close-button icon-close js-close-button"></i>
+    <div>
+                    <a href="http://fr.openclassrooms.com/informatique/cours/faire-des-rotations-avec-sdl-gfx">
+                <i class="icon-desktop"></i>
+            </a>
+        
+        
+        
+        
+        
+            </div>
+
+            <p>
+            Ce cours est visible gratuitement en ligne.
+        </p>
+    
+    
+    
+    
+    
+    
+
+    <a class="oc-btn orange-alt-btn js-close-button" href="">J'ai tout compris !</a>
+</div>
+<div class="centered">
+    <div class="row">
+        <div class="col12">
+                            <a href="http://fr.openclassrooms.com/informatique/cours/faire-des-rotations-avec-sdl-gfx"><img alt="Faire des rotations avec SDL_gfx" src="faire-des-rotations-avec-sdl-gfx_elemei/36750.png" class="course-header__image"></a>
+                        <div class="course-header__info">
+                <a href="http://fr.openclassrooms.com/informatique/cours/faire-des-rotations-avec-sdl-gfx">
+                    <h1>Faire des rotations avec SDL_gfx</h1>
+                </a>
+                                    <span class="visible-l">Mis à jour le mercredi 30 octobre 2013</span>
+                            </div>
+        </div>
+    </div>
+</div>
+<div class="course-header__details-container">
+    <div class="centered">
+        <div class="row">
+            <div class="col12">
+                <div class="course-header__details">
+                    <ul data-widget="courseFormatsBar" data-option_popinselector="#popin-formats-availables" class="course-header__formats js-course-formats-bar">
+                        <li class="course-header__format-available js-tooltip" title="Ce cours est visible gratuitement en ligne.">
+                            <a href="http://fr.openclassrooms.com/informatique/cours/faire-des-rotations-avec-sdl-gfx">
+                                <i class="icon-desktop"></i>
+                            </a>
+                        </li>
+
+                                                                                                    <li class=" js-tooltip" title="Ce cours n'est pas encore en vidéo.">
+                            <span>
+                                <i class="icon-video"></i>
+                            </span>
+                        </li>
+
+                        <li class=" js-tooltip" title="Ce cours n'existe pas encore en livre papier.">
+                            <a href="">
+                                <i class="icon-book"></i>
+                            </a>
+                        </li>
+
+                        <li class=" js-tooltip" title="Ce cours n'existe pas encore en eBook.">
+                            <a href="">
+                                <i class="icon-ebook"></i>
+                            </a>
+                        </li>
+
+                        <li class=" js-tooltip" title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.">
+                            <a href="#" data-popin-selector="#popin-certifying" class="js-popin-activator">
+                                <i class="icon-badge"></i>
+                            </a>
+                        </li>
+
+                        <li class=" js-tooltip" title="Ce cours n'est pas encore diplômant et ne vous permet pas d'obtenir des crédits universitaires européens (ECTS).">
+                            <span>
+                                <i class="icon-hat"></i>
+                            </span>
+                        </li>
+                    </ul>
+                                            <ul class="course-header__icon">
+                                                                                        <li><i class="icon-level"></i>Moyen</li>
+                                                    </ul>
+                    
+                                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+
+        <section class="relative js-sidebar-container">
+        <div class="centered static">
+    <div class="row js-desktop-sticky-container">
+        <div class="col9 col8-s col__small-padding--right">
+            <section>
+                <section data-subscription-url="" class="course-content js-course-container js-smilize js-course-content">
+                    <p id="r-1109696" data-claire-element-id="1112761">Bonjour à tous. :D</p><p id="r-1109697" data-claire-element-id="1112762">Bienvenue dans ce mini-tuto où vous allez apprendre à faire des rotations sur des surfaces grâce à... SDL_gfx. :o</p><aside id="r-1109699" data-claire-element-id="1112764" data-claire-semantic="information"><p id="r-1109698" data-claire-element-id="1112763">Ce
+tuto nécessite que vous connaissiez un peu la SDL. Donc ça ne sert à
+rien d'essayer de comprendre ce tuto si vous n'avez pas une petite
+connaissance de cette bibliothèque graphique. Si vous ne connaissez pas
+la SDL, vous pouvez suivre les cours de M@teo21 <a href="http://www.siteduzero.com/tuto-3-8-0-apprenez-a-programmer-en-c-c.html#part_1544">ici</a>.</p></aside><p id="r-1109700" data-claire-element-id="1112765">Bon, commençons...</p><h2 id="r-1109703" data-claire-element-id="1112768">C'est quoi SDL_gfx ?</h2><p id="r-1109701" data-claire-element-id="1112766">SDL_gfx est une bibliothèque qui nécessite que la SDL soit installée.<br> Vous en avez sûrement déjà entendu parler dans les cours de M@teo21, je pense au chapitre <a href="http://www.siteduzero.com/tuto-3-5432-1-afficher-des-images.html#ss_part_3">SDL_image</a> ou <a href="http://www.siteduzero.com/tuto-3-7420-1-ecrire-du-texte-avec-sdl_ttf.html">SDL_ttf</a>.</p><p id="r-1109702" data-claire-element-id="1112767">SDL_gfx
+sert à faire des rotations mais aussi des figures géométriques, filtrer
+des images, gérer le temps de rafraîchissement de l'écran, etc...<br> Mais nous, ce qui nous intéresse, c'est la rotation, alors au boulot ! :pirate:</p><h2 id="r-1109747" data-claire-element-id="1112812">Installation de SDL_gfx</h2><h3 id="r-1109714" data-claire-element-id="1112779">Téléchargement</h3><p id="r-1109704" data-claire-element-id="1112769">Tout d'abord, il faut télécharger le fichier zip de SDL_gfx <a href="http://www.aaroncox.net/tutorials/2dtutorials/sdlshapes.html">ici</a><em>(merci à <a href="http://www.siteduzero.com/membres-294-56104.html">transfear</a> pour le lien)</em>.</p><p id="r-1109705" data-claire-element-id="1112770">Quand vous arriverez sur la page, cliquez sur <strong>"Click here"</strong> dans le paragraphe <strong>"Setting Up SDL_gfx in Visual Studio .NET 2003"</strong>.</p><aside id="r-1109707" data-claire-element-id="1112772" data-claire-semantic="information"><p id="r-1109706" data-claire-element-id="1112771">Ce
+que vous avez téléchargé est un fichier zip contenant SDL_gfx déjà
+compilé. Normalement, on aurait dû télécharger les sources sur le site
+officiel et les compiler, mais je ne sais pas le faire. C'est donc
+beaucoup plus pratique pour moi et pour vous de télécharger ce zip.</p></aside><p id="r-1109708" data-claire-element-id="1112773">C'est téléchargé ? Bon maintenant, il faut décompresser ce zip.</p><p id="r-1109709" data-claire-element-id="1112774">Voici comment faire :</p><p id="r-1109710" data-claire-element-id="1112775">Faites un clic droit sur le fichier et cliquez sur <strong>"Extraire tout..."</strong>, ensuite laissez-vous guider par l'assistant d'extraction qui va vous décompresser ça en moins de deux.</p><p id="r-1109711" data-claire-element-id="1112776">Maintenant que vous avez décompressé le fichier, allez dans le dossier issu de la décompression.</p><p id="r-1109712" data-claire-element-id="1112777">Dans le dossier <strong>lib</strong> se trouvent les fichiers <strong>sdlgfx.dll</strong> et <strong>sdlgfx.lib</strong>.<br> Dans le dossier <strong>include</strong> se trouvent les fichiers d'en-tête ou <strong>headers (*.h)</strong>.</p><p id="r-1109713" data-claire-element-id="1112778">Nous aurons besoin de ces fichiers pour l'installation...</p><h3 id="r-1109728" data-claire-element-id="1112793">Installation sous Code::Blocks</h3><p id="r-1109715" data-claire-element-id="1112780">Je vous rappelle les fichiers dont nous avons besoin :</p><ul id="r-1109722" data-claire-element-id="1112787"><li id="r-1109717" data-claire-element-id="1112782"><p id="r-1109716" data-claire-element-id="1112781"><strong>sdlgfx.dll</strong> : placez ce fichier dans le dossier de votre projet ;</p></li><li id="r-1109719" data-claire-element-id="1112784"><p id="r-1109718" data-claire-element-id="1112783"><strong>sdlgfx.lib</strong> : ce fichier va dans le dossier <strong>"C:\Program Files\CodeBlocks\mingw32\lib"</strong> ;</p></li><li id="r-1109721" data-claire-element-id="1112786"><p id="r-1109720" data-claire-element-id="1112785">et les <strong>headers (*.h)</strong> : ils vont dans le dossier <strong>"C:\Program Files\CodeBlocks\mingw32\include\SDL"</strong>.</p></li></ul><p id="r-1109723" data-claire-element-id="1112788">OK ! Les fichiers sont bien placés !</p><p id="r-1109724" data-claire-element-id="1112789">Maintenant il faut... configurer votre projet pour utiliser SDL_gfx.</p><p id="r-1109725" data-claire-element-id="1112790">Créez
+d'abord votre projet si ce n'est pas déjà fait, en configurant comme
+pour un projet SDL normal. Si vous ne vous souvenez plus comment faire,
+rendez-vous <a href="http://www.siteduzero.com/tuto-3-5252-1-installation-de-la-sdl.html#ss_part_3">ici</a>.</p><p id="r-1109726" data-claire-element-id="1112791">Puis sous Code::Blocks, allez dans le menu <strong>"Projects"</strong>, <strong>"Build options"</strong>.<br> Dans l'onglet <strong>"Linker"</strong>, cliquez sur le bouton <strong>"Add"</strong> et indiquez où se trouve le fichier <strong>"sdlgfx.lib"</strong>.<br> Si on vous demande <strong>"Keep as a relative path ?"</strong>, répondez <strong>Non</strong>.</p><p id="r-1109727" data-claire-element-id="1112792">C'est bon, l'installation sous Code::Blocks est terminée.</p><h3 id="r-1109746" data-claire-element-id="1112811">Installation sous Visual Studio</h3><p id="r-1109729" data-claire-element-id="1112794">Pour Visual, voici la démarche :magicien: :</p><ul id="r-1109740" data-claire-element-id="1112805"><li id="r-1109731" data-claire-element-id="1112796"><p id="r-1109730" data-claire-element-id="1112795">Allez dans le <strong>dossier de Visual</strong> (chez moi : "C:\Program Files\Microsoft Visual Studio 9.0").</p></li><li id="r-1109733" data-claire-element-id="1112798"><p id="r-1109732" data-claire-element-id="1112797">Ensuite allez dans le dossier <strong>VC</strong>.</p></li><li id="r-1109735" data-claire-element-id="1112800"><p id="r-1109734" data-claire-element-id="1112799">Mettez <strong>sdlgfx.lib</strong> dans le dossier <strong>lib</strong>.</p></li><li id="r-1109737" data-claire-element-id="1112802"><p id="r-1109736" data-claire-element-id="1112801">Allez dans le dossier include et mettez les <strong>headers (*.h)</strong> dans le dossier SDL.</p></li><li id="r-1109739" data-claire-element-id="1112804"><p id="r-1109738" data-claire-element-id="1112803">Et évidemment, <strong>sdlgfx.dll</strong> dans le dossier de votre projet. ;)</p></li></ul><p id="r-1109741" data-claire-element-id="1112806">Pour configurer Visual pour SDL_gfx, cliquez sur le menu <strong>"Projet"</strong>, puis sur <strong>"Propriété <em>nom du projet</em>"</strong>, puis allez dans <strong>"Editeur de liens"</strong>, puis sur <strong>"Entrée"</strong> et dans dépendances supplémentaire mettez <strong>sdlgfx.lib</strong> en plus des autres .lib.</p><p id="r-1109742" data-claire-element-id="1112807">Voilà vous avez SDL_gfx pour Visual Studio. :)</p><p id="r-1109743" data-claire-element-id="1112808"><em>( merci Dark Patate )</em></p><div id="r-1109745" data-claire-element-id="1112810"><p id="r-1109744" data-claire-element-id="1112809">( merci <a href="http://www.siteduzero.com/membres-294-27919.html">Dark Patate</a> )</p></div><h2 id="r-1109799" data-claire-element-id="1112864">Faire une rotation</h2><p id="r-1109748" data-claire-element-id="1112813">On entre maintenant dans la partie la plus intéressante. :)</p><aside id="r-1109750" data-claire-element-id="1112815" data-claire-semantic="warning"><p id="r-1109749" data-claire-element-id="1112814">Surtout n'oubliez pas de mettre le fichier sdlgfx.dll dans le dossier de votre <br> projet !</p></aside><p id="r-1109751" data-claire-element-id="1112816">Tout d'abord, le main.c devrait ressembler à ça :</p><pre id="r-1109752" data-claire-element-id="1112817"><code data-claire-semantic="c">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;SDL/SDL.h&gt;
+ 
+int main(int argc, char *argv[])
+{
+    SDL_Surface *ecran = NULL;
+    SDL_Event event;
+    int continuer = 1;
+ 
+    SDL_Init(SDL_INIT_VIDEO);
+ 
+    ecran = SDL_SetVideoMode(500, 500, 32, SDL_HWSURFACE);
+    SDL_WM_SetCaption("Faire des rotations avec SDL_gfx", NULL);
+ 
+    while(continuer)
+    {
+        SDL_PollEvent(&amp;event);
+        switch(event.type)
+        {
+            case SDL_QUIT:
+                continuer = 0;
+                break;
+        }
+ 
+        SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran-&gt;format, 255, 255, 255));
+        SDL_Flip(ecran);
+    }
+ 
+    SDL_FreeSurface(ecran);    
+    SDL_Quit();
+ 
+    return EXIT_SUCCESS;
+}
+</code></pre><p id="r-1109753" data-claire-element-id="1112818">La première chose à faire c'est d'inclure le fichier header :</p><pre id="r-1109754" data-claire-element-id="1112819"><code data-claire-semantic="c">#include &lt;SDL/SDL_rotozoom.h&gt;
+</code></pre><div id="r-1109756" data-claire-element-id="1112821" data-claire-semantic="question"><p id="r-1109755" data-claire-element-id="1112820">Mais il me semble que j'ai copié 5 fichiers header ? Non ?</p></div><p id="r-1109757" data-claire-element-id="1112822">Oui
+c'est vrai. Mais comme je l'ai déjà dit dans la première partie,
+SDL_gfx ne sert pas qu'à faire des rotations et dans notre cas, nous
+n'avons besoin que de <strong>SDL_rotozoom.h</strong>.</p><p id="r-1109758" data-claire-element-id="1112823">Maintenant regardons le prototype de la fonction permettant de faire une rotation :</p><pre id="r-1109759" data-claire-element-id="1112824"><code data-claire-semantic="c">SDL_Surface * rotozoomSurface (SDL_Surface *src, double angle, double zoom, int smooth);
+</code></pre><p id="r-1109760" data-claire-element-id="1112825">Le premier argument est en fait le nom de la surface à modifier.<br> Le deuxième est l'angle de rotation.<br> Le troisième est le zoom à appliquer sur la surface.</p><div id="r-1109762" data-claire-element-id="1112827" data-claire-semantic="question"><p id="r-1109761" data-claire-element-id="1112826">Hein ! Mais qu'est-ce que le zoom vient faire ici ?</p></div><p id="r-1109763" data-claire-element-id="1112828">Eh bien cette fonction permet de faire une rotation mais aussi un zoom.<br>
+C'est vrai que ce n'est pas terrible comme fonctionnement, mais il doit
+sûrement y avoir une raison. Si vous ne voulez pas faire de zoom,
+mettez <strong>1.0</strong>.</p><p id="r-1109764" data-claire-element-id="1112829">Et enfin le quatrième argument sert à lisser la surface tournée, comme ça c'est plus joli. :) <br> Mettez <strong>1</strong> pour lisser, sinon mettez <strong>0</strong>.</p><p id="r-1109765" data-claire-element-id="1112830">Maintenant qu'on a tout expliqué, voilà le code complet :</p><pre id="r-1109766" data-claire-element-id="1112831"><code data-claire-semantic="c">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;SDL/SDL.h&gt;
+#include &lt;SDL/SDL_rotozoom.h&gt;
+ 
+#define TEMPS       30 // Le temps qu'il y a entre chaque augmentation de l'angle.
+ 
+int main(int argc, char *argv[])
+{
+    SDL_Surface *ecran = NULL, *image = NULL, *rotation = NULL;
+    SDL_Rect rect;
+    SDL_Event event;
+    double angle = 0;
+ 
+    int continuer = 1;
+    int tempsPrecedent = 0, tempsActuel = 0;
+ 
+    SDL_Init(SDL_INIT_VIDEO);
+ 
+    ecran = SDL_SetVideoMode(500, 500, 32, SDL_HWSURFACE);
+    SDL_WM_SetCaption("Faire des rotations avec SDL_gfx", NULL);
+ 
+    image = SDL_LoadBMP("image.bmp");
+ 
+    rect.x =  150;
+    rect.y =  150;
+ 
+    while(continuer)
+    {
+        SDL_PollEvent(&amp;event);
+        switch(event.type)
+        {
+            case SDL_QUIT:
+                continuer = 0;
+                break;
+        }
+ 
+        tempsActuel = SDL_GetTicks();
+        if (tempsActuel - tempsPrecedent &gt; TEMPS)
+        {
+            angle += 2; //On augmente l'angle pour que l'image tourne sur elle-même.
+ 
+            tempsPrecedent = tempsActuel;
+        }
+        else
+        {
+            SDL_Delay(TEMPS - (tempsActuel - tempsPrecedent));
+        }
+ 
+ 
+        SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran-&gt;format, 255, 255, 255));
+ 
+        rotation = rotozoomSurface(image, angle, 1.0, 1); //On transforme la surface image.
+ 
+        SDL_BlitSurface(rotation , NULL, ecran, &amp;rect); //On affiche la rotation de la surface image.
+        SDL_FreeSurface(rotation); //On efface la surface rotation car on va la redéfinir dans la prochaine boucle. Si on ne le fait pas, cela crée une fuite de mémoire. 
+ 
+        SDL_Flip(ecran);
+    }
+ 
+    SDL_FreeSurface(ecran);
+    SDL_FreeSurface(image);
+    SDL_Quit();
+ 
+    return EXIT_SUCCESS;
+}
+</code></pre><p id="r-1109767" data-claire-element-id="1112832">Surtout n'oubliez pas d'ajouter une image dans le dossier de votre projet. ;)</p><aside id="r-1109769" data-claire-element-id="1112834" data-claire-semantic="information"><p id="r-1109768" data-claire-element-id="1112833">J'ai
+mis ici le code qui permet de gérer le temps qu'il y a entre chaque
+augmentation de l'angle, cela permet de gérer la vitesse de rotation.
+M@teo21 en a parlé <a href="http://www.siteduzero.com/tuto-3-6996-1-maitrisez-le-temps.html">ici</a>.</p></aside><p id="r-1109770" data-claire-element-id="1112835">Maintenant vous pouvez compiler et lancer votre programme.</p><aside id="r-1109772" data-claire-element-id="1112837" data-claire-semantic="error"><p id="r-1109771" data-claire-element-id="1112836">Quand je lance mon programme, l'image bouge en même temps qu'elle tourne !!!</p></aside><p id="r-1109773" data-claire-element-id="1112838">Ah
+oui, j'ai oublié de vous dire : quand nous plaçons notre image, sa
+taille change à cause de la rotation ce qui la fait bouger.</p><div id="r-1109775" data-claire-element-id="1112840" data-claire-semantic="question"><p id="r-1109774" data-claire-element-id="1112839">La surface rotation change de taille ?</p></div><p id="r-1109776" data-claire-element-id="1112841">Oui, regardez ceci pour comprendre :</p><figure id="r-1109779" data-claire-element-id="1112844"><img id="r-1109777" data-claire-element-id="1112842" src="faire-des-rotations-avec-sdl-gfx_elemei/48535.jpg" alt="erreurRotation1"></figure><p id="r-1109780" data-claire-element-id="1112845">Ici on a fait une rotation, donc la taille de la surface a changé.</p><p id="r-1109781" data-claire-element-id="1112846">En revanche ici, l'image n'est pas tournée, donc la surface garde sa taille normale :</p><figure id="r-1109784" data-claire-element-id="1112849"><img id="r-1109782" data-claire-element-id="1112847" src="faire-des-rotations-avec-sdl-gfx_elemei/48536.jpg" alt="erreurRotation2"></figure><p id="r-1109785" data-claire-element-id="1112850">Donc il faut placer notre image en fonction de sa taille.</p><p id="r-1109786" data-claire-element-id="1112851">Voici le code :</p><pre id="r-1109787" data-claire-element-id="1112852"><code data-claire-semantic="c">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;SDL/SDL.h&gt;
+#include &lt;SDL/SDL_rotozoom.h&gt;
+ 
+#define TEMPS       30 // Le temps qu'il y a entre chaque augmentation de l'angle.
+ 
+int main(int argc, char *argv[])
+{
+    SDL_Surface *ecran = NULL, *image = NULL, *rotation = NULL;
+    SDL_Rect rect;
+    SDL_Event event;
+    double angle = 0;
+ 
+    int continuer = 1;
+    int tempsPrecedent = 0, tempsActuel = 0;
+ 
+    SDL_Init(SDL_INIT_VIDEO);
+ 
+    ecran = SDL_SetVideoMode(500, 500, 32, SDL_HWSURFACE);
+    SDL_WM_SetCaption("Faire des rotations avec SDL_gfx", NULL);
+ 
+    image = SDL_LoadBMP("image.bmp");
+ 
+    while(continuer)
+    {
+        SDL_PollEvent(&amp;event);
+        switch(event.type)
+        {
+            case SDL_QUIT:
+                continuer = 0;
+                break;
+        }
+ 
+        tempsActuel = SDL_GetTicks();
+        if (tempsActuel - tempsPrecedent &gt; TEMPS)
+        {
+            angle += 2; //On augmente l'angle pour que l'image tourne sur elle-même.
+ 
+            tempsPrecedent = tempsActuel;
+        }
+        else
+        {
+            SDL_Delay(TEMPS - (tempsActuel - tempsPrecedent));
+        }
+ 
+        SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran-&gt;format, 255, 255, 255));
+ 
+        rotation = rotozoomSurface(image, angle, 1.0, 1); //On transforme la surface image.
+ 
+        //On positionne l'image en fonction de sa taille.
+        rect.x =  200 - rotation-&gt;w / 2;
+        rect.y =  200 - rotation-&gt;h / 2;
+ 
+        SDL_BlitSurface(rotation , NULL, ecran, &amp;rect); //On affiche la rotation de la surface image.
+        SDL_FreeSurface(rotation); //On efface rotation car on va la redéfinir dans la prochaine boucle. Si on ne le fait pas, cela crée une fuite de mémoire. 
+ 
+        SDL_Flip(ecran);
+    }
+ 
+    SDL_FreeSurface(ecran);
+    SDL_FreeSurface(image);
+    SDL_Quit();
+ 
+    return EXIT_SUCCESS;
+}
+</code></pre><p id="r-1109788" data-claire-element-id="1112853">Et voilà ! On a réussi à faire notre rotation. Alors, des questions ?</p><div id="r-1109790" data-claire-element-id="1112855" data-claire-semantic="question"><p id="r-1109789" data-claire-element-id="1112854">Euh...
+oui. Dans la fonction rotozoomSurface, est-ce qu'on n'aurait pas pu
+mettre "image = rotozoomSurface(image, angle, 1.0, 1);" ?</p></div><p id="r-1109791" data-claire-element-id="1112856">C'est
+une très bonne question. En fait oui, normalement on aurait pu le
+faire, mais on ne peut pas à cause du zoom parce que si à chaque fois
+on refait un zoom sur la même surface, alors l'image va gRANDIR jusqu'à
+l'infini, voilà pourquoi.<br> Quand dans la fonction on met <strong>1.0</strong>, c'est pour agrandir l'image à sa taille normale. Si on met <strong>0</strong>, l'image ne s'affiche pas, car on ne fait pas de zoom.</p><h4 id="r-1109793" data-claire-element-id="1112858">Un petit exercice</h4><p id="r-1109792" data-claire-element-id="1112857">Maintenant
+on pourrait ajouter un petit gadget dans notre programme pour que vous
+vous rendiez compte de ce que l'on peut faire d'intéressant avec
+SDL_gfx.<br> Par exemple, ça serait bien que l'image bouge avec la
+souris. Et pour faire encore mieux, on pourrait aussi ajouter un effet
+de zoom.</p><h4 id="r-1109798" data-claire-element-id="1112863">Correction :magicien: :</h4><pre id="r-1109794" data-claire-element-id="1112859"><code data-claire-semantic="c">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;SDL/SDL.h&gt;
+#include &lt;SDL/SDL_rotozoom.h&gt;
+ 
+#define TEMPS       30 // Le temps qu'il y a entre chaque augmentation de l'angle.
+ 
+int main(int argc, char *argv[])
+{
+    SDL_Surface *ecran = NULL, *image = NULL, *rotation = NULL;
+    SDL_Rect rect;
+    SDL_Event event;
+    double angle = 0;
+    double zoom = 1;
+    int sens = 1;
+ 
+    int continuer = 1;
+    int tempsPrecedent = 0, tempsActuel = 0;
+ 
+    SDL_Init(SDL_INIT_VIDEO);
+ 
+    ecran = SDL_SetVideoMode(500, 500, 32, SDL_HWSURFACE);
+    SDL_WM_SetCaption("Faire des rotations avec SDL_gfx", NULL);
+ 
+    image = SDL_LoadBMP("image.bmp");
+ 
+    while(continuer)
+    {
+        SDL_PollEvent(&amp;event);
+        switch(event.type)
+        {
+            case SDL_QUIT:
+                continuer = 0;
+                break;
+        }
+ 
+        tempsActuel = SDL_GetTicks();
+        if (tempsActuel - tempsPrecedent &gt; TEMPS)
+        {
+            angle += 2; //On augmente l'angle pour que l'image tourne sur elle-même.
+ 
+            tempsPrecedent = tempsActuel;
+        }
+        else
+        {
+            SDL_Delay(TEMPS - (tempsActuel - tempsPrecedent));
+        }
+ 
+        SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran-&gt;format, 255, 255, 255));
+ 
+        rotation = rotozoomSurface(image, angle, zoom, 0); //On transforme la surface image.
+        
+        //On repositionne l'image en fonction de sa taille.
+        rect.x =  event.button.x - rotation-&gt;w / 2;
+        rect.y =  event.button.y - rotation-&gt;h / 2;
+ 
+        SDL_BlitSurface(rotation , NULL, ecran, &amp;rect); //On affiche la rotation de la surface image.
+        SDL_FreeSurface(rotation); //On efface la surface rotation car on va la redéfinir dans la prochaine boucle. Si on ne le fait pas, cela crée une fuite de mémoire. 
+ 
+        if(zoom &gt;= 2){sens = 0;}
+        else if(zoom &lt;= 0.5){sens = 1;}
+ 
+        if(sens == 0){zoom -= 0.02;}
+        else{zoom += 0.02;}
+ 
+        SDL_Flip(ecran);
+    }
+ 
+    SDL_FreeSurface(ecran);
+    SDL_FreeSurface(image);
+    SDL_Quit();
+ 
+    return EXIT_SUCCESS;
+}
+</code></pre><p id="r-1109795" data-claire-element-id="1112860">Voilà, c'est fini. :D</p><p id="r-1109796" data-claire-element-id="1112861">Maintenant vous savez faire des rotations !<br> Et donc grâce à cela, vous allez pouvoir réaliser plein de super trucs.</p><p id="r-1109797" data-claire-element-id="1112862">Bonne programmation ! :)</p>
+                </section>
+
+                
+
+                                                    <ul class="list-tags">
+                        <li>
+                            Thématiques du cours :
+                            <a href="http://fr.openclassrooms.com/informatique/programmation/cours">Programmation</a> <a href="http://fr.openclassrooms.com/informatique/sdl/cours">SDL</a>                         </li>
+                    </ul>
+                            </section>
+        </div>
+
+        
+
+
+        <div id="popin-course-manual" class="popin popin--course-schema">
+   <i class="popin__close-button icon-close js-close-button"></i>
+   <h1>déroulement d'un cours</h1>
+    <div class="popin__content">
+        <ul class="no-decoration">
+            <li>
+                <p class="popin--course-schema__illustration">
+                    <span class="popin--course-schema__bullet">
+                        1
+                    </span>
+                    <i class="icon-test"></i>
+                    <i class="icon-video2"></i>
+                </p>
+                <p>
+                                            Dès aujourd'hui, vous avez accès au contenu pédagogique et aux exercices du cours.
+                                    </p>
+            </li>
+            <li>
+                <p class="popin--course-schema__illustration">
+                    <i class="icon-j"></i>
+                    <span class="popin--course-schema__bullet">
+                        2
+                    </span>
+                </p>
+                <p>
+Vous progressez dans le cours semaine par semaine. Une partie du cours
+correspond à une semaine de travail de votre part. </p>
+            </li>
+            <li>
+                <p class="popin--course-schema__illustration">
+                    <i class="icon-chronometer"></i>
+                    <span class="popin--course-schema__bullet popin--course-schema__bullet--important">
+                        !
+                    </span>
+                </p>
+                <p>
+Les exercices doivent être réalisés en une semaine. La date limite vous
+sera annoncée au démarrage de chaque nouvelle partie. Les exercices
+sont indispensables pour obtenir votre certification. </p>
+            </li>
+            <li>
+                <p class="popin--course-schema__illustration">
+                    <i class="icon-badge"></i>
+                    <span class="popin--course-schema__bullet">
+                        3
+                    </span>
+                </p>
+                <p>
+À l'issue du cours, vous recevrez vos résultats par e-mail. Votre
+certificat de réussite vous sera également transmis si vous êtes membre
+<a href="http://fr.openclassrooms.com/premium/">Premium</a> et que vous avez au moins 70% de bonnes réponses.
+                </p>
+            </li>
+        </ul>
+
+        <img class="popin--course-schema__arrow-right" src="faire-des-rotations-avec-sdl-gfx_elemei/popin-course-arrow-right.png" alt="">
+        <img class="popin--course-schema__arrow-red" src="faire-des-rotations-avec-sdl-gfx_elemei/popin-course-arrow-red-left.png" alt="">
+        <img class="popin--course-schema__arrow-left" src="faire-des-rotations-avec-sdl-gfx_elemei/popin-course-arrow-left.png" alt="">
+
+    </div>
+
+    <div class="popin__actions">
+        <a class="oc-btn orange-alt-btn js-close-button" href="#">J'ai tout compris !</a>
+    </div>
+
+</div>
+    </div>
+</div>
+    </section>
+
+    <section class="alt-section">
+        <div class="centered">
+            <div class="row">
+            <div class="col8 course-bottom__category">
+            <h2 class="highlighted">
+                L'auteur
+            </h2>
+            <div>
+                                <a href="http://fr.openclassrooms.com/membres/clement-s-58959" class="no-underlined" rel="author">
+                    <div class="course-bottom__text-illustrated">
+                        <span data-author="Clément.S" style="background-image: url(http://uploads.siteduzero.com/files/277001_278000/277124.png);"></span>
+                        <h4>Clément.S</h4>
+                                            </div>
+                </a>
+                            </div>
+        </div>
+    
+    
+    </div>
+        </div>
+    </section>
+
+        <div id="popin-certifying" class="popin" data-popin-title="Pour pouvoir obtenir votre certificat de réussite, &lt;a href='/premium/'&gt;&lt;i class='icon-star'&gt;&lt;/i&gt; devenez Premium&lt;/a&gt; !">
+        <i class="popin__close-button icon-close js-close-button"></i>
+        <img alt="Exemple de certificat de réussite" src="faire-des-rotations-avec-sdl-gfx_elemei/certif.jpg">
+    </div>
+
+    <div id="popin-not-certifying-yet" class="popin" data-popin-title="Ce cours n'est pas encore certifiant.
+            Retrouvez &lt;a href='/certifications'&gt;tous nos cours certifiants&lt;/a&gt;.
+                            &lt;a href='/premium/'&gt;&lt;i class='icon-star'&gt;&lt;/i&gt; Devenez Premium&lt;/a&gt;
+                    ">
+        <img alt="Exemple de certificat de réussite" src="faire-des-rotations-avec-sdl-gfx_elemei/certif.jpg">
+    </div>
+
+                 
+    
+    <section class="advertise">
+        <div id="add-container-1350977194635-8">
+
+            
+            <!--
+                <div id="div-gpt-ad-1350977194635-8" class="megaban"></div>
+
+                                    <div id="div-gpt-ad-1350977284180-8" class="miniban"></div>
+                
+                <script type='text/javascript'>
+                    (function () {
+                        var mobileAdd = '1350977284180-8',
+                            add = '1350977194635-8';
+
+                        if (mobileAdd && window.innerWidth <= 728) {
+
+                            googletag.cmd.push(function() {
+                                googletag.display('div-gpt-ad-' + mobileAdd);
+                            });
+
+                        } else {
+
+                            googletag.cmd.push(function() {
+                                googletag.display('div-gpt-ad-' + add);
+                            });
+
+                        }
+                    })();
+                </script>
+            -->
+        </div>
+                <script type="text/javascript">
+            !document.getElementById('ayads-style')&&Array.prototype.slice.call(document.getElementById('add-container-1350977194635-8').childNodes).some(function(n){if(n.nodeType===8)document.write(n.nodeValue);});
+        </script>
+
+    </section>
+    <div class="centered">
+    <div class="outbrain-content">
+        <div style="display: none;" id="ob_holder"><iframe src="faire-des-rotations-avec-sdl-gfx_elemei/comScore.html" style="display: none; width: 1px; height: 1px;" id="ob_iframe"></iframe></div><div id="outbrain_widget_0" data-dynload="" data-os="linux i686" data-browser="firefox" data-ob-mark="true" class="OUTBRAIN" data-src="/informatique/cours/faire-des-rotations-avec-sdl-gfx" data-widget-id="AR_1" data-ob-template="siteduzero"><div class="ob_box_cont AR_1">
+</div></div>
+        <div id="outbrain_widget_1" data-dynload="" data-os="linux i686" data-browser="firefox" data-ob-mark="true" class="OUTBRAIN" data-src="/informatique/cours/faire-des-rotations-avec-sdl-gfx" data-widget-id="AR_2" data-ob-template="siteduzero"><div class="ob_strip_container AR_2">
+	<span class="ob_empty"><wbr></span>
+<style type="text/css">
+.voterDiv .ob_bctrl{display:none;}
+.ob_pdesc IMG{border:none;}
+.AR_2 .ob_what{direction:ltr;text-align:right;clear:both;padding:5px 10px 0px;}
+.AR_2 .ob_what a{color:#999;font-size:10px;font-family:arial;text-decoration: none;}
+.AR_2 .ob_what.ob-hover:hover a{text-decoration: underline;}
+.AR_2 .ob_clear{clear:both;}
+.AR_2 .ob_amelia,
+.AR_2 .ob_logo,
+.AR_2 .ob_text_logo
+{display:inline-block;vertical-align:text-bottom;padding:0px 5px;box-sizing:content-box;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;}
+.AR_2 .ob_amelia{background:url('http://widgets.outbrain.com/images/widgetIcons/ob_logo_16x16.png') no-repeat center top;width:16px;height:16px;margin-bottom:-2px;}
+.AR_2 .ob_logo{background:url('http://widgets.outbrain.com/images/widgetIcons/ob_logo_67x12.png') no-repeat center top;width:67px;height:12px;}
+.AR_2 .ob_text_logo{background:url('http://widgets.outbrain.com/images/widgetIcons/ob_text_logo_66x23.png') no-repeat center top;width:66px;height:23px;}
+.AR_2:hover .ob_amelia,
+.AR_2:hover .ob_logo,
+.AR_2:hover .ob_text_logo{background-position:center bottom;}
+	.AR_2 .ob_container{width:100%;position:relative;overflow:hidden;}
+.AR_2 .strip-img{width:178px;height:110px;border:none !important;margin:0px !important;display:block;padding:0px !important;}
+.AR_2 .item-link-container{text-decoration:none;}
+.AR_2 .strip-rec-link-title{font-size:13px;font-weight:normal;line-height:16px;}
+.AR_2 .strip-rec-link-source{font-size:12px;line-height:16px}
+.AR_2 .strip-like{padding-bottom:4px;font-size:14px;line-height:16px;height:20px;font-weight:bold;}
+.AR_2 .item-container a,.AR_2 .item-container a:hover,.AR_2 .item-container a:visited{border:medium none;text-decoration:none;}
+.AR_2 .ob_video{border:medium none;position:absolute;top:5px;left:5px}
+.AR_2 .ob-rec-link-img{position:relative;}
+.AR_2 .wbr:before {content: \"\200B\"}
+.AR_2 .ob_container_recs{width:100%;position:absolute;}
+.AR_2 .ob_container_recs A{display:inline;direction:ltr;text-align:left;}
+.AR_2 .ob-text-content A{width:100%;padding:0px 0px;}
+.AR_2 .ob-text-content{padding-top:6px;}
+.AR_2 .item-container A.ob-text-content{display:block;}
+.AR_2 .ob_container_recs .item-container{float:left;direction:ltr;width:180px;margin-bottom:300px;padding-right:15px;}
+.AR_2 .ob_container_recs .ob-last{padding-right:0px;}
+.AR_2 .ob_container_shadow_outer{position:static;width:100%;}
+.AR_2 .ob_container_shadow .item-container-shadow{position:static;overflow-x:hidden;width:0px;float:left;direction:ltr;}
+.AR_2 .ob_container_shadow .item-container{width:180px;visibility:hidden;float:left}
+	</style>
+<style type="text/css" class="ob-custom-css">
+body .AR_2 .strip-rec-link-title {
+  color: #03638B;
+  font-size: 14px;
+  font-weight: bold;
+}
+.AR_2 .strip-rec-link-source {
+  color: rgba(105, 105, 105, 0.5);
+  font-size: 14px;
+  line-height: 16px;
+}
+.AR_2 {
+  background: none repeat scroll 0 0 #F8F8F4;
+  padding: 10px;
+}
+.AR_2 .ob_empty {
+  display: none;
+}
+body .AR_2 .ob_org_header {
+  color: #2D2A29;
+  display: block;
+  font-family: 'Source Sans Pro',sans-serif;
+  font-size: 23px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.AR_2 .item-link-container:hover .strip-rec-link-title {
+    text-decoration: underline;
+}
+.AR_2 .ob_what {
+  clear: both;
+  direction: ltr;
+  padding: 0 !important;
+  text-align: right;
+}
+.AR_2 .ob_what a {
+  color: #999999;
+  font-family: arial;
+  font-size: 12px;
+  text-decoration: none;
+}
+.AR_2 .ob_video {
+  border: medium none;
+  left: 68px;
+  position: absolute;
+  top: 40px;
+}
+</style>
+	<span class="ob_org_header">
+Vous aimerez aussi :
+</span>		    <div class="ob_container">
+	<div class="ob_container_recs">
+                        <a class="item-link-container ob-odd" href="http://conseils-eco.com/top-5-des-meilleurs-placements-bancaires/" data-redirect="http://paid.outbrain.com/network/redir?key=525cb7aff17a9b9b9d4aa2078ae2bb28&amp;rdid=616726536&amp;type=ONT_d/NA_ch2&amp;in-site=false&amp;idx=0&amp;pc_id=23854556&amp;req_id=220579fdefa3ff137dedd75e6143591a&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=1&amp;wid=101&amp;imgType=0&amp;adsCats=1702,1704,1703&amp;refPub=3313&amp;scp=false&amp;reqIdx=1&amp;fcapElementId=43912&amp;origSrc=5038551&amp;did=766095523&amp;uuid=ca121ec3-a08a-495b-94b6-5d5655323648" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_blank" rel="nofollow">
+    <div class="item-container ob-recIdx-0  item-container-ad ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img style="" onload="this.style.visibility=''" title="Les 5 placements bancaires les plus avantageux" class="strip-img" alt="Les 5 placements bancaires les plus avantageux" src="faire-des-rotations-avec-sdl-gfx_elemei/pqSRP-kKk-178x110.jpg" onerror="outbrain.imageError(this)" height="110" width="178">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Les 5 placements bancaires les plus avantageux</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Conseils Eco)</span></span>    </div>
+    </div>
+        </div>
+</a>                    <a class="item-link-container ob-even" href="http://www.lefigaro.fr/vox/politique/2014/08/25/31001-20140825ARTFIG00197-la-dissolution-derniere-cartouche-de-hollande.php" data-redirect="http://paid.outbrain.com/network/redir?key=ec4d25847f7d09db6a8b883330832ead&amp;rdid=616726536&amp;type=ONT_d/NA_ch2&amp;in-site=false&amp;idx=1&amp;pc_id=27896971&amp;req_id=220579fdefa3ff137dedd75e6143591a&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=1&amp;wid=101&amp;imgType=0&amp;adsCats=1708,-1,-1&amp;refPub=3313&amp;scp=false&amp;reqIdx=1&amp;fcapElementId=45628&amp;origSrc=5038551&amp;did=826210319&amp;uuid=ca121ec3-a08a-495b-94b6-5d5655323648" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_blank" rel="nofollow">
+    <div class="item-container ob-recIdx-1  item-container-ad ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img style="" onload="this.style.visibility=''" title="La dissolution, dernière cartouche de Hollande" class="strip-img" alt="La dissolution, dernière cartouche de Hollande" src="faire-des-rotations-avec-sdl-gfx_elemei/tuh2t-kKk-178x110.jpg" onerror="outbrain.imageError(this)" height="110" width="178">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">La dissolution, dernière cartouche de Hollande</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Le Figaro)</span></span>    </div>
+    </div>
+        </div>
+</a>                    <a class="item-link-container ob-odd" href="http://fr.openclassrooms.com/entreprise/cours/simplifiez-vos-reunions-grace-au-doodling" data-redirect="http://traffic.outbrain.com/network/redir?key=b81417dbc00e6a4df06db818420298fb&amp;rdid=616726536&amp;type=SYLD_/NA_ch2&amp;in-site=true&amp;idx=2&amp;req_id=220579fdefa3ff137dedd75e6143591a&amp;agent=blog_JS_rec&amp;recMode=11&amp;reqType=1&amp;wid=101&amp;imgType=2&amp;refPub=3313&amp;scp=false&amp;reqIdx=1&amp;origSrc=5038551&amp;did=806187653&amp;uuid=ca121ec3-a08a-495b-94b6-5d5655323648" onclick="" onmousedown="outbrain.recClicked(event,this);" target="_self" rel="">
+    <div class="item-container ob-recIdx-2    ob-last ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img style="" onload="this.style.visibility=''" title="Simplifiez vos réunions grâce au Doodling Inscription au Cours déroulement d'un cours" class="strip-img" alt="Simplifiez vos réunions grâce au Doodling Inscription au Cours déroulement d'un cours" src="faire-des-rotations-avec-sdl-gfx_elemei/sYgEf-kKk-178x110.jpg" onerror="outbrain.imageError(this)" height="110" width="178">
+    </div>
+<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Simplifiez vos réunions grâce au Doodling Inscription au Cours déroulement d'un…</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(OpenClassrooms)</span></span>    </div>
+    </div>
+        </div>
+</a>            </div>
+<div class="ob_container_shadow_outer">
+    <div class="ob_container_shadow">
+                                    <div class="item-container-shadow ob-recIdx-0   ob-odd">
+    <div class="item-container ob-recIdx-0  item-container-ad ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img style="" onload="this.style.visibility=''" title="Les 5 placements bancaires les plus avantageux" class="strip-img" alt="Les 5 placements bancaires les plus avantageux" src="faire-des-rotations-avec-sdl-gfx_elemei/pqSRP-kKk-178x110.jpg" onerror="outbrain.imageError(this)" height="110" width="178">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Les 5 placements bancaires les plus avantageux</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Conseils Eco)</span></span>    </div>
+    </div>
+        </div>
+</div>                            <div class="item-container-shadow ob-recIdx-1  ob-even">
+    <div class="item-container ob-recIdx-1  item-container-ad ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img style="" onload="this.style.visibility=''" title="La dissolution, dernière cartouche de Hollande" class="strip-img" alt="La dissolution, dernière cartouche de Hollande" src="faire-des-rotations-avec-sdl-gfx_elemei/tuh2t-kKk-178x110.jpg" onerror="outbrain.imageError(this)" height="110" width="178">
+    </div>
+	<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">La dissolution, dernière cartouche de Hollande</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(Le Figaro)</span></span>    </div>
+    </div>
+        </div>
+</div>                            <div class="item-container-shadow ob-recIdx-2   ob-odd">
+    <div class="item-container ob-recIdx-2    ob-last ">
+        <div class="ob-rec-link-img ob-tcolor">
+    <img style="" onload="this.style.visibility=''" title="Simplifiez vos réunions grâce au Doodling Inscription au Cours déroulement d'un cours" class="strip-img" alt="Simplifiez vos réunions grâce au Doodling Inscription au Cours déroulement d'un cours" src="faire-des-rotations-avec-sdl-gfx_elemei/sYgEf-kKk-178x110.jpg" onerror="outbrain.imageError(this)" height="110" width="178">
+    </div>
+<div class="ob-text-content">
+            <div class="strip-rec-link-title ob-tcolor">Simplifiez vos réunions grâce au Doodling Inscription au Cours déroulement d'un…</div>
+        <div class="strip-rec-link-source ob-lcolor">
+        <span class="ob_source"> <span class="rec-src-link">(OpenClassrooms)</span></span>    </div>
+    </div>
+        </div>
+</div>                        </div>
+</div>	</div>
+				<div class="ob_what">
+	
+	<a href="#" onmousedown="" onclick="OBR.extern.callWhatIs('http://www.outbrain.com/what-is/default/fr','',-1,-1,true ,null);return false">
+		Recommandé par <span class="ob_amelia" title="Outbrain"></span>
+	</a>
+</div>
+	
+</div></div>
+    </div>
+</div>
+<script type="text/javascript" async="async" src="faire-des-rotations-avec-sdl-gfx_elemei/outbrain.js"></script>
+        </main>
+
+        <footer id="oc-footer" role="contentinfo">
+    <div class="centered">
+                            
+        <section class="footer-stats">
+    <h4>Right now on OpenClassrooms</h4>
+    <div class="row">
+        <ul>
+            <li class="col3">
+                <span class="iconed-text small">
+                    <i class="icon-profil"></i>
+                                                                6 750 online visitors
+                                    </span>
+            </li>
+
+            <li class="col3">
+                <span class="iconed-text small">
+                    <i class="icon-desktop"></i>
+                                                                One visitor on this page!
+                                    </span>
+            </li>
+
+            <li class="col6">
+                <span class="iconed-text small">
+                    <i class="icon-message"></i>
+                                                                7 840 543 forum messages
+                                    </span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+        <section class="footer-connect">
+            <h4>Keep in touch with OpenClassrooms</h4>
+
+            <div class="row">
+                <div class="col2">
+                    <form action="/newsletter/inscription" method="post">
+                        <div class="input-group">
+                            <input name="Welcome[email]" placeholder="Email" type="email">
+                            <span class="input-group-button">
+                                <button type="submit" class="oc-btn orange-btn">OK</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col2">
+                    <a href="http://www.facebook.com/openclassrooms" target="_blank" class="facebook-btn oc-btn nowrap">
+                        <i class="icon-large icon-facebook"></i> <span>Facebook</span>
+                    </a>
+                </div>
+
+                <div class="col2">
+                    <a href="https://twitter.com/openclassrooms" target="_blank" class="twitter-btn oc-btn nowrap">
+                        <i class="icon-large icon-twitter"></i> <span>Twitter</span>
+                    </a>
+                </div>
+
+                <div class="col2">
+                    <a href="https://www.youtube.com/user/TheOpenClassrooms" target="_blank" class="google-btn oc-btn nowrap">
+                        <i class="icon-large icon-youtube-play"></i> <span>Youtube</span>
+                    </a>
+                </div>
+
+                <div class="col2">
+                    <a href="https://plus.google.com/114947954177424605935/posts" target="_blank" class="google-btn oc-btn nowrap">
+                        <i class="icon-large icon-google"></i> <span>Google</span>
+                    </a>
+                </div>
+
+                <div class="col2">
+                    <a href="http://instagram.com/openclassrooms" target="_blank" class="instagram-btn oc-btn nowrap">
+                        <i class="icon-large icon-instagram"></i> <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="footer-menu">
+            <div class="menu-nav small">
+                <ul class="menu-nav-items">
+                    <li class="menu-nav-item"><a href="http://fr.openclassrooms.com/conditions-generales-utilisation">Terms and Conditions</a></li>
+                    <li class="menu-nav-item"><a href="http://fr.openclassrooms.com/p/roadmap">Roadmap</a></li>
+                    <li class="menu-nav-item"><a href="http://fr.openclassrooms.com/emploi/entreprises/openclassrooms">Jobs</a></li>
+                    <li class="menu-nav-item"><a href="http://fr.openclassrooms.com/qui-sommes-nous">About us</a></li>
+                    <li class="menu-nav-item"><a href="http://fr.openclassrooms.com/publicite">Advertising</a></li>
+                    <li class="menu-nav-item"><a href="http://www.simple-it.fr/blog/" target="_blank">Blog</a></li>
+                                    </ul>
+            </div>
+        </section>
+
+    </div>
+        
+                <script type="text/javascript">
+            setTimeout(function(){var a=document.createElement("script");
+            var b=document.getElementsByTagName("script")[0];
+            a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/8075.js?"+Math.floor(new Date().getTime()/3600000);
+            a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+        </script>
+            
+</footer>
+
+        <!-- loaded javascript block -->
+
+                
+            
+                <script type="text/javascript" src="faire-des-rotations-avec-sdl-gfx_elemei/main.js"></script>
+
+            
+        
+
+            <script type="text/javascript" src="faire-des-rotations-avec-sdl-gfx_elemei/courseView.js"></script>
+    
+    <script type="text/javascript">
+    var addthis_config = {
+        "ui_email_from": 'contact@openclassrooms.com',
+        "ui_email_title": 'Cours "Faire des rotations avec SDL_gfx" sur OpenClassrooms',
+        "ui_email_subject": 'Cours "Faire des rotations avec SDL_gfx" sur OpenClassrooms',
+        'title': 'Découvrez le cours "Faire des rotations avec SDL_gfx" sur @OpenClassrooms.',
+        "ui_email_note": 'Découvrez le cours "Faire des rotations avec SDL_gfx" sur OpenClassrooms.',
+        "data_track_addressbar": false
+    };
+</script>
+<script type="text/javascript" src="faire-des-rotations-avec-sdl-gfx_elemei/addthis_widget.js"></script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe style="border: 0pt none ; height: 1px; width: 1px; position: absolute; z-index: 100000; left: 0pt; top: 0pt;" title="AddThis utility frame" id="_atssh53"></iframe></div><script src="faire-des-rotations-avec-sdl-gfx_elemei/core153.js" type="text/javascript"></script>
+
+
+        
+        <!-- loaded javascript block -->
+
+                
+                                                
+        <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19807070-2']);
+
+                
+    _gaq.push(['_setCustomVar',5,'Type de visiteur', 'Non connecte', 3]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' :'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>        <script>
+    function _eStat_Whap_loaded_func()
+    { eStatWhap.serial("800000000037"); eStatWhap.send(); }
+
+    (function()
+    { var myscript = document.createElement('script'); myscript.src = "http://w.estat.com/js/whap.js"; myscript.setAttribute('async', 'true'); var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(myscript, s); }
+            )();
+</script>
+
+        
+        
+    
+    
+    <div style="position: absolute;">
+    <script type="text/javascript" src="faire-des-rotations-avec-sdl-gfx_elemei/a"></script>
+</div>
+        <script type="text/javascript">
+            var _sf_async_config = { uid: 48329, domain: 'openclassrooms.com', useCanonical: true };
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                    document.body.appendChild(e);
+                };
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ?
+                        loadChartbeat : function() {oldonload(); loadChartbeat();};
+            })();
+        </script>
+
+        
+
+        <!-- inlined javascript block -->
+
+        <script type="text/javascript">
+            
+            
+            if (App.modules) {
+                App.modules.startAll();
+            }
+        </script>
+
+        <!-- inlined javascript block end -->
+
+        
+        
+                        
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","licenseKey":"61cf5b59c4","applicationID":"1775040","transactionName":"MQNXbUNYDURXBRJQCghJdkxCTQxaGQkFZgYKB1xLVGYAWEMUFVw6BQlAS0JcPFRZExRKADkQXFxG","queueTime":0,"applicationTime":250,"ttGuid":"","agentToken":"","atts":"HURUGwtCHko=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-411.min.js"}</script><script src="faire-des-rotations-avec-sdl-gfx_elemei/nr-411.js"></script><script src="faire-des-rotations-avec-sdl-gfx_elemei/chartbeat.js" type="text/javascript" language="javascript"></script><script src="faire-des-rotations-avec-sdl-gfx_elemei/61cf5b59c4" type="text/javascript"></script></body></html>

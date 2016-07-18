@@ -1,0 +1,3411 @@
+<!DOCTYPE HTML>
+<html><head>
+
+
+<title>Draw a filled Rectangle using OpenGL - CodeProject</title><link type="text/css" rel="stylesheet" href="Draw-a-filled-Rectangle_elemei/Main.css">
+<style type="text/css">
+div.grippie { background:#eee url(//dj9okeyxktdvd.cloudfront.net/images/gripH.png) no-repeat scroll center 2px;
+border-color:#ddd;
+border-style:solid;
+border-width:0pt 1px 1px;
+cursor:s-resize;
+height:9px;
+overflow:hidden;
+}
+.resizable-control textarea {
+display:block;
+margin-bottom:0pt;
+width:95%;
+height: 20%;
+}
+
+</style>
+
+<link type="text/css" rel="stylesheet" href="Draw-a-filled-Rectangle_elemei/Main.css">
+<style type="text/css">
+div.grippie { background:#eee url(//dj9okeyxktdvd.cloudfront.net/images/gripH.png) no-repeat scroll center 2px;
+border-color:#ddd;
+border-style:solid;
+border-width:0pt 1px 1px;
+cursor:s-resize;
+height:9px;
+overflow:hidden;
+}
+.resizable-control textarea {
+display:block;
+margin-bottom:0pt;
+width:95%;
+height: 20%;
+}
+
+</style>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Description" content="Free source code and tutorials for Software developers and Architects.; Updated: 16 Jun 2013">
+<meta name="Keywords" content="Free source code, tutorials">
+<meta name="Author" content="CodeProject">
+<meta name="Rating" content="General">
+<meta name="Robots" content="index, follow, NOODP">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+
+<link rel="dns-prefetch" href="http://ajax.googleapis.com/"> 
+<link rel="canonical" href="http://www.codeproject.com/Questions/226294/Draw-a-filled-Rectangle">
+
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All Topics" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Android" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=22">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - iOS" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=25">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C++" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=2">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C#" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=3">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Web" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=23">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="http://www.codeproject.com/webservices/LoungeRSS.aspx">
+<link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="http://www.codeproject.com/info/OpenSearch.xml">
+
+	<!-- base -->
+	<link rel="icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/ico">
+<link rel="shortcut icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/ico">
+<link rel="icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/gif">
+<link rel="icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/png">
+<link rel="apple-touch-icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/png">
+<script type="text/javascript" language="Javascript" src="Draw-a-filled-Rectangle_elemei/jquery.js"></script><script type="text/javascript">//<![CDATA[
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='/script/JS/jquery-1.6.2.min.js' type='text/javascript' %3E%3C/script%3E"));
+}//]]></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+function defrm () { /* thanks twitter */ document.write = ''; window.top.location = window.self.location;  setTimeout(function() { document.body.innerHTML = ''; }, 0);  window.self.onload = function(evt) { document.body.innerHTML = ''; }; }if (window.top !== window.self) {  try {  if (window.top.location.host) { /* will throw */ } else { defrm(); /* chrome */ }  } catch (ex) { defrm(); /* everyone else */ } }if (typeof(DemoUrl)!='undefined')   document.write(unescape('%3Cme')+'ta http'+'-equiv="re'+'fresh"                  con'+'tent="1;url='+DemoUrl+unescape('"%3CE'));
+function _dmBootstrap(file) { var _dma = document.createElement('script');  _dma.type = 'text/javascript'; _dma.async = true;  _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined')  _dmBootstrap('cdn1.developermedia.com/a.min.js?dt=2.8.141008.1');}
+(function () { _dmBootstrap('cdn1.developermedia.com/a.min.js?dt=2.8.141008.1'); setTimeout(_dmFollowup, 2000);})();
+
+//]]>
+</script><script src="Draw-a-filled-Rectangle_elemei/a.js" type="text/javascript"></script>
+<link rel="icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/ico">
+<link rel="shortcut icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/ico">
+<script type="text/javascript" language="Javascript" src="Draw-a-filled-Rectangle_elemei/jquery.js"></script><script type="text/javascript">//<![CDATA[
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='/script/JS/jquery-1.6.2.min.js' type='text/javascript' %3E%3C/script%3E"));
+}//]]></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+function defrm () { /* thanks twitter */ document.write = ''; window.top.location = window.self.location;  setTimeout(function() { document.body.innerHTML = ''; }, 0);  window.self.onload = function(evt) { document.body.innerHTML = ''; }; }if (window.top !== window.self) {  try {  if (window.top.location.host) { /* will throw */ } else { defrm(); /* chrome */ }  } catch (ex) { defrm(); /* everyone else */ } }if (typeof(DemoUrl)!='undefined')   document.write(unescape('%3Cme')+'ta http'+'-equiv="re'+'fresh"                  con'+'tent="1;url='+DemoUrl+unescape('"%3CE'));
+function _dmBootstrap(file) { var _dma = document.createElement('script');  _dma.type = 'text/javascript'; _dma.async = true;  _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined')  _dmBootstrap('cdn1.developermedia.com/a.min.js?dt=2.8.141008.1');}
+(function () { _dmBootstrap('cdn1.developermedia.com/a.min.js?dt=2.8.141008.1'); setTimeout(_dmFollowup, 2000);})();
+
+//]]>
+</script><script src="Draw-a-filled-Rectangle_elemei/a.js" type="text/javascript"></script>
+
+
+
+
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-1735123-1']);
+	_gaq.push(['_trackPageview']);
+	_gaq.push(['_setDomainName', 'www.codeproject.com']);
+	_gaq.push(['_setSessionTimeout', '1200']); 
+
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})(); 
+</script><script src="Draw-a-filled-Rectangle_elemei/ga.js" type="text/javascript"></script>
+
+<meta itemprop="bestRating" content="5"><meta itemprop="worstRating" content="1"><meta itemprop="bestRating" content="5"><meta itemprop="worstRating" content="1"></head><body class="firefox firefox3">
+
+<a class="access-link" href="#Main"><img alt="Click here to Skip to main content" src="Draw-a-filled-Rectangle_elemei/t.gif"></a>
+
+
+
+<div class="page-background">
+
+
+
+	<table id="ctl00_ctl00_Bn" style="width: 100%; height: 135px;" class="banner fixed" cellpadding="0" cellspacing="0">
+	<tbody><tr valign="bottom">
+		<td class="blank-background" style="height: 31px;">&nbsp;</td>
+		<td class="blank-background" rowspan="3" style="width: 250px; height: 135px;"><a href="http://www.codeproject.com/"><img id="ctl00_ctl00_Logo" tabindex="1" title="CodeProject" src="Draw-a-filled-Rectangle_elemei/logo250x135.gif" alt="Home" style="border-width: 0px; height: 135px; width: 250px;"></a></td>
+		<td class="blank-background align-right" style="width: 728px; height: 31px;">
+
+<div class="container memberbar clearfix">
+
+	<div id="ctl00_ctl00_MemberMenu_GenInfo" class="float-left">10,927,760 members (62,092 online)</div>
+
+	<div class="float-left">
+		
+	</div>
+
+	<div class="float-right">
+
+		
+
+		
+
+		
+
+			<script type="text/javascript">//<!--
+			function doSubmit(secure)
+			{
+				if (secure)
+					document.subForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f226294%2fDraw-a-filled-Rectangle"
+				else
+					document.subForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f226294%2fDraw-a-filled-Rectangle"
+				document.subForm.submit();
+				return true;
+			}//-->
+			</script>
+
+			<a name="SignUp"></a>
+			<span class="member-signin tooltip">
+				<span><a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f226294%2fDraw-a-filled-Rectangle">Sign in</a></span>
+
+				<div class="tooltip-flyout">
+					<form name="subForm" id="subForm" action="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f226294%2fDraw-a-filled-Rectangle" method="post" class="tight">
+
+						
+						<input id="FormName" name="FormName" value="MenuBarForm" type="hidden">
+
+						<div>Email</div>
+						<div><input class="small-text" name="Email" id="Email" type="email"></div>
+						<div>Password</div>
+						<div><input class="small-text" name="Password" id="Password" type="password"></div>
+						<div class="action">
+							
+<script type="text/javascript">
+function Join(){
+ var url = 'http://www.codeproject.com/script/Membership/Modify.aspx?meml=' + document.subForm.Email.value;
+ document.location.href=url;return false;
+}
+document.write('<input type="button" class="create"   onclick="return Join();" value="Join"');
+document.write('<input type="hidden" name="fld_quicksign"   value="true" />');
+</script><input class="create" onclick="return Join();" value="Join" type="button"><input name="fld_quicksign" value="true" type="hidden">
+							<input value="Sign in" class="signin" onclick="return doSubmit(false);" type="submit">
+						</div>
+
+						<div class="container">
+							
+							&nbsp;
+							<a id="ctl00_ctl00_MemberMenu_SendPassword" class="forgot float-right" href="http://www.codeproject.com/script/Membership/SendPassword.aspx?rp=%2fQuestions%2f226294%2fDraw-a-filled-Rectangle">Forgot your password?</a>
+						</div>
+					</form>
+
+					<hr class="divider-dark">
+
+					Sign in using <a class="oauth" title="Sign in using Facebook" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Facebook"><img src="Draw-a-filled-Rectangle_elemei/facebook.png" style="border: 0pt none ; vertical-align: middle; padding-right: 3px;"></a>
+<a class="oauth" title="Sign in using Google" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Google"><img src="Draw-a-filled-Rectangle_elemei/google-plus.png" style="border: 0pt none ; vertical-align: middle; padding-right: 3px;"></a>
+<a class="oauth" title="Sign in using Linkedin" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=LinkedIn"><img src="Draw-a-filled-Rectangle_elemei/linkedin.png" style="border: 0pt none ; vertical-align: middle; padding-right: 3px;"></a>
+
+				</div>
+		
+	</span></div>
+</div></td>
+		<td class="blank-background" style="height: 31px;">&nbsp;</td>
+	</tr>
+	<tr valign="middle">
+		<td class="theme1-background" style="height: 94px;">&nbsp;</td>
+		<td class="theme1-background ad"><div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="ros" data-tags="VC6, OpenGL,pos_top"><noscript><a
+href="http://ad.doubleclick.net/N6839/jump/lqm.codeproject.site/ros;sz=728x90;ord=635487013957507358?"><img
+src="http://ad.doubleclick.net/N6839/ad/lqm.codeproject.site/ros;sz=728x90;ord=635487013957507358?"
+width="728px" height="90px" /></a></noscript></div></td>
+		<td class="theme1-background" style="height: 94px;">&nbsp;</td>
+	</tr>
+	<tr valign="top">
+		<td style="height: 14px;"></td>
+		<td style="height: 14px;" class="blank-background"></td>
+		<td style="height: 14px;"></td>
+	</tr>
+</tbody></table>
+
+
+	
+	<div id="ctl00_ctl00_TPR" class="sub-headerbar fixed">
+	<table class="extended" cellpadding="0" cellspacing="0"><tbody><tr><td nowrap="nowrap">
+		
+
+<div class="navbar clearfix">
+<ul class="navmenu openable">
+
+<li><a id="ctl00_ctl00_TopNavBar_Home" href="http://www.codeproject.com/">home</a>
+
+
+</li><li class=""><a id="ctl00_ctl00_TopNavBar_Art" class="down" href="http://www.codeproject.com/script/Articles/Latest.aspx">articles</a>
+
+	<ul>
+		<li class=""><a id="ctl00_ctl00_TopNavBar_ArtTopicList" class="fly" onmouseover="navBarMenu.ShowMap(this, 'ctl00_ctl00_TopNavBar_MapFlyout');" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Chapters and Sections<span class="has-submenu">&gt;</span></a><ul id="ctl00_ctl00_TopNavBar_MapFlyout">
+			<li>
+				<div id="siteMap">
+					<img src="Draw-a-filled-Rectangle_elemei/animated.gif" alt="loading" style="margin: 150px; width: 100px; height: 100px;">
+				</div>
+			</li>
+			</ul>
+		</li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtSearch" class="fly break" href="http://www.codeproject.com/search.aspx">Search</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtLatestArts" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=1,3,7">Latest Articles</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtLatestTips" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=6">Latest Tips/Tricks</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtTop" class="fly" href="http://www.codeproject.com/script/Articles/TopArticles.aspx?ta_so=5">Top Articles</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtBeginner" class="fly" href="http://www.codeproject.com/search.aspx?aidlst=152&amp;sa_us=True">Beginner Articles</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtBlogArticles" class="fly break" href="http://www.codeproject.com/script/Articles/BlogArticleList.aspx">Technical Blogs</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtGuide" class="fly" href="http://www.codeproject.com/info/Submit.aspx">Posting/Update Guidelines</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtHelpForum" class="fly" href="http://www.codeproject.com/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtCompetition" class="fly break" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1">Article Competition</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtPostArticle" class="fly highlight1" href="http://www.codeproject.com/script/Articles/Submit.aspx">
+			<img src="Draw-a-filled-Rectangle_elemei/write13.png" height="13px" width="13px"> Submit an article or tip
+			</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtPostBlog" class="fly highlight2" href="http://www.codeproject.com/script/Articles/BlogFeed.aspx">
+			<img src="Draw-a-filled-Rectangle_elemei/write13.png" height="13px" width="13px"> Post your Blog
+			</a></li>		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class=""><a id="ctl00_ctl00_TopNavBar_Answers" class=" selected" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">quick answers</a>
+	<ul>
+		
+
+		<li><a id="ctl00_ctl00_TopNavBar_QAAsk" class="fly highlight2" href="http://www.codeproject.com/Questions/ask.aspx"><img src="Draw-a-filled-Rectangle_elemei/write13.png" height="13px" width="13px"> Ask a Question</a></li>
+
+		
+		<li><a id="ctl00_ctl00_TopNavBar_QAUnanswered" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_QALatest" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">View All Questions...</a></li>
+		
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=81" style="padding-left: 30px;">C# questions</a></li>
+			
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=85" style="padding-left: 30px;">ASP.NET questions</a></li>
+			
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=842" style="padding-left: 30px;">VB.NET questions</a></li>
+			
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=87" style="padding-left: 30px;">Javascript questions</a></li>
+			
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=93" style="padding-left: 30px;">SQL questions</a></li>
+			
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class=""><a id="ctl00_ctl00_TopNavBar_Forums" href="http://www.codeproject.com/script/Forums/List.aspx">discussions</a>
+
+	<ul>
+		<li><a id="ctl00_ctl00_TopNavBar_MessageBoardsAll" class="fly" href="http://www.codeproject.com/script/Forums/List.aspx">All Message Boards...</a></li>
+		<li class=""><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1580997/Application-Lifecycle.aspx">Application Lifecycle<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/1533717/Running-a-Business.aspx">Running a Business</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3304/Work-Training-Issues.aspx">Work &amp; Training Issues</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/369270/Design-and-Architecture.aspx">Design and Architecture</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/12076/ASP-NET.aspx">ASP.NET</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1580226/JavaScript.aspx">JavaScript</a>
+</li>
+<li class=""><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1647/C-Cplusplus-MFC.aspx">C / C++ / MFC<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/4486/ATL-WTL-STL.aspx">ATL /  WTL / STL</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1827459/Adobe-Technologies.aspx">Adobe Technologies</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1649/Csharp.aspx">C#</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1627782/Free-Tools.aspx">Free Tools</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1827460/Objective-C.aspx">Objective-C</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1832431/Ruby-On-Rails.aspx">Ruby On Rails</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1725/Database.aspx">Database</a>
+</li>
+<li class=""><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/186301/Hardware-Devices.aspx">Hardware &amp; Devices<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/1644/System-Admin.aspx">System Admin</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1606152/Hosting-and-Servers.aspx">Hosting and Servers</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1643/Java.aspx">Java</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1650/NET-Framework.aspx">.NET Framework</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1848626/Android.aspx">Android</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/13695/Mobile.aspx">Mobile</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1540733/Sharepoint.aspx">Sharepoint</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1004257/Silverlight-WPF.aspx">Silverlight / WPF</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1646/Visual-Basic.aspx">Visual Basic</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1640/Web-Development.aspx">Web Development</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/suggestions.aspx">Site Bugs / Suggestions</a>
+</li>
+
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+<li class=""><a id="ctl00_ctl00_TopNavBar_Features" href="http://www.codeproject.com/Feature/">features</a>
+
+	<ul>
+		<li><a id="ctl00_ctl00_TopNavBar_Comps" class="fly" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1&amp;awsac=true">Competitions</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_News" class="fly" href="http://www.codeproject.com/script/News/List.aspx">News</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Insider" class="fly" href="http://www.codeproject.com/Feature/Insider/">The Insider Newsletter</a></li>
+    	<li><a id="ctl00_ctl00_TopNavBar_DailyBuild" class="fly" href="http://www.codeproject.com/Feature/DailyBuild">The Daily Build Newsletter</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Newsletters" class="fly" href="http://www.codeproject.com/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Surveys" class="fly" href="http://www.codeproject.com/script/Surveys/List.aspx">Surveys</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Showcase" class="fly" href="http://www.codeproject.com/KB/showcase/">Product Showcase</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Research" class="fly" href="http://www.codeproject.com/script/ResearchLibrary/Index.aspx">Research Library</a></li>
+
+		<li><a id="ctl00_ctl00_TopNavBar_Stuff" class="fly" href="http://www.codeproject.com/Info/Stuff.aspx">CodeProject Stuff</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+<li class=""><a id="ctl00_ctl00_TopNavBar_Lounge" href="http://www.codeproject.com/Lounge.aspx">community</a>
+
+	<ul>
+		<li><a id="ctl00_ctl00_TopNavBar_WhosWho" class="fly" href="http://www.codeproject.com/script/Membership/Profiles.aspx">Who's Who</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_MVPs" class="fly break" href="http://www.codeproject.com/script/Awards/MVPWinners.aspx">Most Valuable Professionals</a></li>
+		
+
+		<li><a id="ctl00_ctl00_TopNavBar_LoungeLnk" class="fly highlight2" href="http://www.codeproject.com/Lounge.aspx">The Lounge &nbsp;</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_InsiderLnk" class="fly" href="http://www.codeproject.com/Insider.aspx">The Insider News</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_WeirdWonderful" class="fly" href="http://www.codeproject.com/Feature/WeirdAndWonderful.aspx">The Weird &amp; The Wonderful</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_SoapBoxLnk" class="fly" href="http://www.codeproject.com/Forums/1536756/The-Soapbox.aspx">The Soapbox</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_PRLnk" class="fly break" href="http://www.codeproject.com/Forums/1738007/Press-Releases.aspx">Press Releases</a></li>
+
+		
+		<li class=""><a class="fly" href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">Non-English Language
+			<span class="has-submenu">&gt;</span></a>
+		<ul>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">General Indian Topics</a></li>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580230/Chinese.aspx">General Chinese Topics</a></li>
+		</ul>
+		</li><li class="last"></li>
+		
+	</ul>
+
+</li>
+
+
+<li class="" style="margin-left: 20px;"><a id="ctl00_ctl00_TopNavBar_Help" href="http://www.codeproject.com/KB/FAQs/">help</a>
+
+	<ul>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpWhatIs" class="fly" href="http://www.codeproject.com/info/guide.aspx">What is 'CodeProject'?</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpGeneral" class="fly break" href="http://www.codeproject.com/KB/FAQs/">General FAQ</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpPostQuestion" class="fly break highlight2" href="http://www.codeproject.com/Questions/ask.aspx">Ask a Question</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpBugs" class="fly" href="http://www.codeproject.com/suggestions.aspx">Bugs and Suggestions</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpArticles" class="fly" href="http://www.codeproject.com/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpSiteMap" class="fly" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Site Map</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpAdvertise" class="fly" href="http://developermedia.com/">Advertise with us</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpJobs" class="fly" href="http://www.codeproject.com/info/Jobs/">Employment Opportunities</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpAboutUs" class="fly" href="http://www.codeproject.com/info/about.aspx">About Us</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+</ul>
+
+</div>
+	</td><td align="right">
+		
+
+<div class="searchbar">
+
+<form method="get" action="/search.aspx" name="Search" class="tight">
+
+
+<table class="search" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><input tabindex="2" class="search highlight" id="sb_tb" value="opengl draw rectangle" name="q"></td><td><input src="Draw-a-filled-Rectangle_elemei/search.gif" type="image"></td></tr></tbody></table>
+
+<div class="hover-container">
+	<div style="display: none;" id="SearchFilter" class="search-advanced small-text align-left">
+	<b>Search within:<br></b>
+		
+		<input id="sb_kw" name="sbo" value="kw" type="radio"><label for="sb_kw">Articles</label><br>
+<input id="sb_qa" name="sbo" value="qa" checked="checked" type="radio"><label for="sb_qa">Quick Answers</label><br>
+<input id="sb_fm" name="sbo" value="fm" type="radio"><label for="sb_fm">Messages</label><br>
+
+
+		
+		<div id="ctl00_ctl00_SearchBarCtrl_UseSavedFilters" class="padded-top"><input id="usf" name="usf" type="checkbox"><label for="usf">Use my saved <a target="_blank" href="https://www.codeproject.com/script/Membership/Modify.aspx#contentfilter">content filters</a></label><input id="usfc" name="usfc" value="false" type="hidden"></div>
+
+		
+		
+	</div>
+</div>
+</form>
+
+</div>
+	</td></tr></tbody></table>
+	<div class="sub-headerbar-divider"></div>
+	</div>		
+	
+
+	<div id="C" class="container-content-wrap fixed"> 
+	<div class="container-content">
+
+		<div class="container-breadcrumb">
+		
+		</div>
+
+		
+		
+		
+
+		<div id="ctl00_ctl00_ContentPane" class="container-main ">
+
+			
+
+				<div style="min-height: 600px;">
+					<a name="Main"></a>
+
+					
+					<!-- Main Page Contents Start -->
+					
+
+					
+					
+			
+					
+
+
+<form name="aspnetForm" method="post">
+<div>
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="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" type="hidden">
+</div>
+
+
+<script src="Draw-a-filled-Rectangle_elemei/WebResource.axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="47897F27" type="hidden">
+	<input name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="SfNP2GgOk46gG3WAXbIoovQt157KH+NnlkkJNYkr8EZG7/tHVE9w/BOCqJty29vbsar7O6BIlf9GjJ7MG/XSkRzMg4CulenYIKc0VY/FGDP01LMRk7KsRpAnEgHc40ThNCF0ODE/LXAtP8cAaFzZLzC+w9FSlIygKbJhbo3eZ66Bb5bK4t1li4JJp5bgFR6ZgRNx9QK/gh+w+o46p7vEql4yDxeTPKzKkkl2spd6nhFJBYRl7WaF1Vx1kHWfpYKBdKgQiNhJh4uOSiCGdfXkOAgtIsrEftyL0+FcOcLQbeztKC4reVb3DeGIkYGjgyJAQusf5fNjaA09gx0WX9W+vOvHVP7XZC48uZGEYx4NCdUcVDw7ghlW8G+leBJGajpaEULPiQ/3q0wsOZJLyNqGkvZYM9MeAYsikCIBHVLnU0TBHkmsF2Ao6zr7zTnn1dWeISgD+y6JnrPGAgPn/pN6y3wVfNzruqx287yH0UI4Iu3FyJLXew8TKQeiOl9g9TeiZVeucG8u8K+iOr7aKlPebf+R8qRaMSHPduBTR4IA6v2ShjEEWI0g7zd+RisVT7oSgQs4rhVh0Vmk9W5HxNnstTVH2qKwT1z54zf9hkWfIadkTAvbrXBqjgVIQAU+YqTnLr0mg2ebj+8vgRYxz1WKSM6A4/ojoceDCEa11t6Bb/GgVf9m64z152WqqNWH+d3BJYwZZq/Mq7qjqBaWwWxPIpEPVscGbb4FE4wKNzTYlSqE5AUVu/QdeSTwkMec2nd+x17dFapl+elK6uVfuzTqqE/ibogrZuCqJMTmc/9vlgishPiB/yTGtFPVlfyntvRsESQrcEodUBDhGLxkD9fYRmMnNDiXIRmhErSY2VyssD3q3isukaLoovjaDnmZfy2f81VfnaBJzSM2X3q62ylnUCp2Mvw3e21Z6xvjbyqOEvc47RB95FeDeReA9wWujHh0f4rIsCr7Rvxi+Xw41o+Ryu22lHQIN5FKBsKabYkQcqjVqih0pqcRHbnqLdALOqegxjVBFw==" type="hidden">
+</div>
+
+<div id="Q" class="container-entry container-question">
+
+<div id="T" class="text fixed">
+	
+	<div class="clearfix">
+		
+		<div id="ctl00_ctl00_MC_QARow" class="mainlinks">
+			<a id="ctl00_ctl00_MC_AskQ" class="button float-left compose" href="http://www.codeproject.com/Questions/ask.aspx">Ask a Question</a>
+			<div class="float-right" style="padding: 6px 130px 0pt 0pt;">
+				<a id="ctl00_ctl00_MC_Latest" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">All Questions</a>
+				<a id="ctl00_ctl00_MC_Unansw" href="http://www.codeproject.com/script/Answers/List.aspx?tab=unanswered">All Unanswered</a> 
+				
+				<a id="ctl00_ctl00_MC_Help" class="faq" href="http://www.codeproject.com/KB/FAQs/QuickAnswersFAQ.aspx">FAQ</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="contentdiv">
+	
+	<!-- Main Page Contents Start -->
+	
+
+<script type="text/javascript">
+function ConfirmDelete() { return window.confirm("Are you sure you want to delete this item?"); }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<a name="_articleTop"></a>
+
+
+<div class="float-right" style="width: 150px;">
+	
+<div class="nav-links">
+	
+	<a id="ctl00_ctl00_MC_AMC_NextPrev_NextLink" title="Next" class="next" rel="nofollow" href="http://www.codeproject.com/script/Answers/PrevNextLookup.aspx?aid=226294&amp;arn=0&amp;at=4">Next</a>
+</div>
+</div>
+
+<div class="question">
+
+
+<div class="header">
+	<a id="ctl00_ctl00_MC_AMC_TitleLink" class="header tight padded-top" href="http://www.codeproject.com/Questions/226294/Draw-a-filled-Rectangle"><h1 id="ctl00_ctl00_MC_AMC_ItemTitle">Draw a filled Rectangle using OpenGL</h1></a>
+</div>
+
+<div id="CC" class="container-content">
+
+	
+	<div class="container-question clearfix extended">
+
+		<div class="rate-group">
+
+			
+			<div class="rate-item">
+				<div id="ctl00_ctl00_MC_AMC_RatePost_RateItemWrapper" class="small-text" name="RateItem_226294">
+
+	<table class="small-text" width="100%" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td id="ctl00_ctl00_MC_AMC_RatePost_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loaderImg" alt="loading..." src="Draw-a-filled-Rectangle_elemei/animated_loading_blue.gif" style="display: none;" height="16px" width="16px"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space: nowrap;" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				<td id="ctl00_ctl00_MC_AMC_RatePost_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				<td id="ctl00_ctl00_MC_AMC_RatePost_StartForm" nowrap="nowrap" align="right"><img class="align-middle" src="Draw-a-filled-Rectangle_elemei/thmbdn.png" alt="bad" height="16px" width="16px"></td>
+
+				<td id="ctl00_ctl00_MC_AMC_RatePost_VoteFormDiv" class="nowrap rating-stars-voter-medium">
+					
+
+<table class="content float-left" cellpadding="0" cellspacing="0"> 
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		
+
+		<span id="ctl00_ctl00_MC_AMC_RatePost_ItemRating_VI">
+		<div title="Rating = 0.00 (No votes)" class="rating-stars-medium">
+	<img src="Draw-a-filled-Rectangle_elemei/stars-empty-md.png" height="16" width="80">
+</div>
+		</span>
+
+		
+	</td>
+	
+	
+</tr>
+
+</tbody></table>
+
+
+					<span style="display: none;" id="ctl00_ctl00_MC_AMC_RatePost_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL"><input style="display: none;" id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_0" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="1" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_1" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="2" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_2" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="3" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_3" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="4" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_4" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="5" type="radio"></span> 
+
+						
+					<div class="rating-star-block"><a title="vote 1" class="star outline" rating="1" href="#">vote 1</a><a title="vote 2" class="star outline" rating="2" href="#">vote 2</a><a title="vote 3" class="star outline" rating="3" href="#">vote 3</a><a title="vote 4" class="star outline" rating="4" href="#">vote 4</a><a title="vote 5" class="star outline" rating="5" href="#">vote 5</a></div></span>
+
+				</td>
+
+				<td id="ctl00_ctl00_MC_AMC_RatePost_EndForm" align="left"><img class="align-middle" src="Draw-a-filled-Rectangle_elemei/thmbup.png" alt="good" height="16px" width="16px"></td>
+
+				<td style="padding-left: 5px;">	
+					<input style="display: none;" name="ctl00$ctl00$MC$AMC$RatePost$SubmitRateBtn" value="Vote!" id="ctl00_ctl00_MC_AMC_RatePost_SubmitRateBtn" class="button" type="submit">
+				</td>
+			</tr>
+			</tbody></table>
+			
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		
+        <div id="ctl00_ctl00_MC_AMC_RatePost_RSU" class="rating-comment align-left float-right">
+            <div class="padded">
+            Please <a id="ctl00_ctl00_MC_AMC_RatePost_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f226294%2fDraw-a-filled-Rectangle">Sign up or sign in</a> to vote.
+            </div>
+        </div>
+	</div>
+</div>
+			</div>
+
+			
+			<div id="ctl00_ctl00_MC_AMC_CurRat" class="float-right" style="margin-top: 3px; width: 100px;" name="CurRat_226294">
+				
+					
+			</div>
+
+		</div>
+
+		
+		<div class="small-text tags">
+			<span id="ctl00_ctl00_MC_AMC_TagsListCtrl_TagWrp" class="medium-text">
+	
+	<span id="ctl00_ctl00_MC_AMC_TagsListCtrl_TagLabel" class="bold">See more:</span>
+	
+	<span id="ctl00_ctl00_MC_AMC_TagsListCtrl_VisibleTags"><span class="t"><a href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;tags=4">VC6</a></span> <span class="t"><a href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;tags=113">OpenGL</a></span> </span> 
+
+	
+	
+</span>
+
+		</div>
+
+		<div style="margin-top: 25px;">
+			I want to draw a filled rectangle in vC6 using OPENGL..<br>
+pls help me with this
+		</div>
+	</div>
+
+	
+</div>
+
+<div class="qa-info clearfix">
+	<div class="small-text commands float-right">
+	
+		
+		
+	</div>	
+
+	
+	<div class="column">
+		<strong>Posted</strong> 15-Jul-11 0:41am
+<div class="member-rep-container">
+	<a id="ctl00_ctl00_MC_AMC_QuestionAuthorRepInfo_MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=7939136">Sona from kerala</a><span id="ctl00_ctl00_MC_AMC_QuestionAuthorRepInfo_TotalPoints" title="Total reputation points" class="member-rep-box bronze">473</span>
+</div>
+
+	</div>
+
+	
+	
+	<div class="column" style="margin-left: 10px;">
+		<strong>Edited</strong> 15-Jul-11 1:32am
+<div class="member-rep-container">
+	<a id="ctl00_ctl00_MC_AMC_QuestionEditorRepInfo_MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=1778670">CPallini</a><span id="ctl00_ctl00_MC_AMC_QuestionEditorRepInfo_TotalPoints" title="Total reputation points" class="member-rep-box platinum bold">321.9K</span>
+</div>
+
+	</div>
+
+	
+	<div class="version"><a href="http://www.codeproject.com/script/Articles/ListVersions.aspx?aid=226294">v2</a></div>
+	
+</div>
+
+   
+
+
+<div class="spaced padded-top">
+	<a name="anchorTarget" id="ctl00_ctl00_MC_AMC_AddChild1" class="button large anchorLink" href="#NewEntryGroup">Add a Solution</a>
+</div>
+
+
+<a id="ctl00_ctl00_MC_AMC_QuestionComments_ContainerPermalink" class="CommentAnchor" name="cmt2_226294_2"></a>
+
+<div id="ctl00_ctl00_MC_AMC_QuestionComments_CommentContainer" class="container-comments" objectref="2_226294_2" pagenumber="0" pagesize="0" boldmemberid="7939136" modifystatus="False">	 
+
+	
+	
+
+	
+	<div name="CP-CommentList" class="comment-list">
+		
+	</div> 
+
+	 
+	
+
+	  
+
+</div> 
+
+
+</div>
+
+
+
+
+<div class="QATopPager">
+	
+</div>
+
+
+<div class="answer-list-header row">
+    <div class="float-left">
+        <h2 id="ctl00_ctl00_MC_AMC_AnswerCount" class="tight">3 solutions</h2>
+    </div>
+    <div class="float-right" style="margin-top: 15px;">
+	    <ul class="ui-tabs-nav ui-helper-reset ui-corner-all clearfix">
+	<li id="ctl00_ctl00_MC_AMC_TabsCtrl_TabsRpt_ctl01_LI" class="ui-corner-top ui-tabs-selected">
+		<a id="ctl00_ctl00_MC_AMC_TabsCtrl_TabsRpt_ctl01_TL" title="Best rated answers" class="ui-corner-top">
+			<span>Top Rated</span>
+		</a>
+		
+	</li>
+
+	<li id="ctl00_ctl00_MC_AMC_TabsCtrl_TabsRpt_ctl02_LI" class="ui-corner-top ">
+		<a id="ctl00_ctl00_MC_AMC_TabsCtrl_TabsRpt_ctl02_TL" title="Newest answers posted to this question" class="ui-corner-top" href="http://www.codeproject.com/Questions/226294/Draw-a-filled-Rectangle?tab=mostrecent">
+			<span>Most Recent</span>
+		</a>
+		
+	</li>
+</ul>
+
+    </div>
+</div>
+
+<div class="ui-tabs-panel tight">
+	
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_AnswerGroup" class="answer-row answer first">
+
+
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Header" class="header container">
+
+	
+	
+	<div class="rate-group">
+
+		<div class="rate-item">
+			<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateItemWrapper" class="small-text" name="RateItem_226299">
+
+	<table class="small-text" width="100%" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loaderImg" alt="loading..." src="Draw-a-filled-Rectangle_elemei/animated_loading_blue.gif" style="display: none;" height="16px" width="16px"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space: nowrap;" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_StartForm" nowrap="nowrap" align="right"><img class="align-middle" src="Draw-a-filled-Rectangle_elemei/thmbdn.png" alt="bad" height="16px" width="16px"></td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteFormDiv" class="nowrap rating-stars-voter-medium">
+					
+
+<table class="content float-left" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating" cellpadding="0" cellspacing="0"> 
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		
+			 
+			
+		
+
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_ItemRating_VI">
+		<div title="Rating = 5.00 (2 votes)" class="nowrap rating-stars-medium" style="height: 18px; width: 80px; position: relative;">
+	<div class="clipped align-left float-left" style="height: 16px; width: 80px;">
+		<img src="Draw-a-filled-Rectangle_elemei/stars-fill-md.png" style="border-width: 0px;">
+	</div><div class="clipped" style="height: 16px; width: 0px; position: relative;">
+		<img src="Draw-a-filled-Rectangle_elemei/stars-empty-md.png" style="border-width: 0px; position: absolute; top: 0pt; right: 0pt;">
+	</div>
+</div>
+		</span>
+
+		
+	</td>
+	
+	
+</tr>
+
+</tbody></table>
+
+
+					<span style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_0" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="1" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_1" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="2" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_2" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="3" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_3" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="4" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_4" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="5" type="radio"></span> 
+
+						
+						<div class="speech-bubble-container-up-right" style="width: 200px; margin-top: 24px; right: -90px; top: 6px;">
+							<div class="speech-bubble-up">
+								<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_Histogram">
+
+</div><img id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_Loading" class="align-middle" src="Draw-a-filled-Rectangle_elemei/animated_loading.gif" style="border-width: 0px;">
+							</div>
+							<div class="speech-bubble-pointer-up">
+								<div class="speech-bubble-pointer-up-inner"></div>
+							</div>
+						</div>
+						
+					<div class="rating-star-block"><a title="vote 1" class="star outline" rating="1" href="#">vote 1</a><a title="vote 2" class="star outline" rating="2" href="#">vote 2</a><a title="vote 3" class="star outline" rating="3" href="#">vote 3</a><a title="vote 4" class="star outline" rating="4" href="#">vote 4</a><a title="vote 5" class="star outline" rating="5" href="#">vote 5</a></div></span>
+
+				</td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_EndForm" align="left"><img class="align-middle" src="Draw-a-filled-Rectangle_elemei/thmbup.png" alt="good" height="16px" width="16px"></td>
+
+				<td style="padding-left: 5px;">	
+					<input style="display: none;" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$SubmitRateBtn" value="Vote!" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_SubmitRateBtn" class="button" type="submit">
+				</td>
+			</tr>
+			</tbody></table>
+			
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		
+        <div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU" class="rating-comment align-left float-right">
+            <div class="padded">
+            Please <a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f226294%2fDraw-a-filled-Rectangle">Sign up or sign in</a> to vote.
+            </div>
+        </div>
+	</div>
+</div>
+		</div>
+
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CurRat" class="align-right float-right" style="display: inline-block; margin-top: 3px; width: 100px;" name="CurRat_226299">
+			
+			
+		</div>
+	</div>
+	
+
+	
+	<h2 id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Title" class="float-left" style="margin: -10px 0pt 0pt 5px;">Solution 1</h2><a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Heading" name="answer1"></a>
+
+	
+	<div class="float-left" style="margin: 3px 0pt 0pt 20px;">
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Accept" title="Mark this solution as an accepted solution." class="button safe" style="display: none;">Accept&nbsp;Solution</a>
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Unaccept" title="Revoke accepted solution designation." class="button unsafe" style="display: none;">Reject&nbsp;Solution</a>
+	</div>
+
+	<p id="AcceptError" class="error" style="display: none;"></p>
+		
+	
+	
+</div>
+
+
+<div class="text">This is such a common requirement for OpenGL that they have provided the <code>glRect</code> that does exactly this. Microsoft have provided several <a href="http://msdn.microsoft.com/en-us/library/dd374025%28v=vs.85%29.aspx">versions of this function</a>[<a href="http://msdn.microsoft.com/en-us/library/dd374025%28v=vs.85%29.aspx" target="_blank" title="New Window">^</a>] that take different data types to specify the bounds of the rectangle.</div>
+
+<div></div>
+
+<div class="qa-info clearfix">
+	
+	<div class="float-right commands small-text">
+
+		
+		&nbsp;
+		<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Permalink" rel="nofollow" href="http://www.codeproject.com/Answers/226299/Draw-a-filled-Rectangle">Permalink</a>
+		&nbsp;
+		 
+
+		
+
+		
+		
+		
+	</div>
+	
+	
+	<div class="meta-data">
+		<b>Posted</b> 15-Jul-11 0:50am
+		
+<div class="member-rep-container">
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_AuthorRepInfo_MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=213147">Pete O'Hanlon</a><span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_AuthorRepInfo_TotalPoints" title="Total reputation points" class="member-rep-box platinum bold">559.8K</span>
+</div>
+
+	</div>
+
+	
+	
+
+	
+	
+
+	
+	
+</div>
+
+   
+
+<div style="clear: both;"></div>
+
+
+<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_ContainerPermalink" class="CommentAnchor" name="cmt2_226299_1"></a>
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_ComHdr" class="comment-header">Comments</div>
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentContainer" class="container-comments" objectref="2_226299_1" pagenumber="0" pagesize="0" boldmemberid="213147" modifystatus="False">	 
+
+	
+	
+
+	
+	<div name="CP-CommentList" class="comment-list">
+		
+
+
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl00_CR_CommentItem" class="comment-item clearfix hover-row first" commentid="130693">
+
+	<div class="comment-author"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1778670" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl00_CR_MemberLink">CPallini</a><a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl00_CR_Anchor" name="cmt130693"></a>
+		 at <span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl00_CR_DatePosted">15-Jul-11 7:29am</span> 
+		
+	</div>
+	<div class="comment-commands">
+		&nbsp; &nbsp; 
+		
+	
+		<div class="float-right">
+			
+			
+
+			
+
+			
+		</div>
+
+	</div>	
+	<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl00_CR_CommentContent" class="comment-content">OK, but...<i>Please</i> see my answer<br>
+:-)</div>
+
+
+	<div id="EditDialogPlaceholder"></div>
+	<div id="ReplyDialogPlaceholder"></div>
+
+</div>
+
+	
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl01_CR_CommentItem" class="comment-item clearfix hover-row mine" commentid="130709" style="padding-left: 16px;">
+
+	<div class="comment-author"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=213147" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl01_CR_MemberLink">Pete O'Hanlon</a><a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl01_CR_Anchor" name="cmt130709"></a>
+		 at <span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl01_CR_DatePosted">15-Jul-11 8:10am</span> 
+		
+	</div>
+	<div class="comment-commands">
+		&nbsp; &nbsp; 
+		
+	
+		<div class="float-right">
+			
+			
+
+			
+
+			
+		</div>
+
+	</div>	
+	<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl01_CR_CommentContent" class="comment-content">lol</div>
+
+
+	<div id="EditDialogPlaceholder"></div>
+	<div id="ReplyDialogPlaceholder"></div>
+
+</div>
+
+	
+
+
+
+	</div> 
+
+	 
+	
+
+	  
+
+</div> 
+
+
+</div>
+
+
+
+
+
+	
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_AnswerGroup" class="answer-row answer">
+
+
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Header" class="header container">
+
+	
+	
+	<div class="rate-group">
+
+		<div class="rate-item">
+			<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateItemWrapper" class="small-text" name="RateItem_226437">
+
+	<table class="small-text" width="100%" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loaderImg" alt="loading..." src="Draw-a-filled-Rectangle_elemei/animated_loading_blue.gif" style="display: none;" height="16px" width="16px"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space: nowrap;" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_StartForm" nowrap="nowrap" align="right"><img class="align-middle" src="Draw-a-filled-Rectangle_elemei/thmbdn.png" alt="bad" height="16px" width="16px"></td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteFormDiv" class="nowrap rating-stars-voter-medium">
+					
+
+<table class="content float-left" cellpadding="0" cellspacing="0"> 
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		
+
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_ItemRating_VI">
+		<div title="Rating = 0.00 (No votes)" class="rating-stars-medium">
+	<img src="Draw-a-filled-Rectangle_elemei/stars-empty-md.png" height="16" width="80">
+</div>
+		</span>
+
+		
+	</td>
+	
+	
+</tr>
+
+</tbody></table>
+
+
+					<span style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_0" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="1" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_1" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="2" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_2" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="3" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_3" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="4" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_4" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="5" type="radio"></span> 
+
+						
+					<div class="rating-star-block"><a title="vote 1" class="star outline" rating="1" href="#">vote 1</a><a title="vote 2" class="star outline" rating="2" href="#">vote 2</a><a title="vote 3" class="star outline" rating="3" href="#">vote 3</a><a title="vote 4" class="star outline" rating="4" href="#">vote 4</a><a title="vote 5" class="star outline" rating="5" href="#">vote 5</a></div></span>
+
+				</td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_EndForm" align="left"><img class="align-middle" src="Draw-a-filled-Rectangle_elemei/thmbup.png" alt="good" height="16px" width="16px"></td>
+
+				<td style="padding-left: 5px;">	
+					<input style="display: none;" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$SubmitRateBtn" value="Vote!" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_SubmitRateBtn" class="button" type="submit">
+				</td>
+			</tr>
+			</tbody></table>
+			
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		
+        <div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU" class="rating-comment align-left float-right">
+            <div class="padded">
+            Please <a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f226294%2fDraw-a-filled-Rectangle">Sign up or sign in</a> to vote.
+            </div>
+        </div>
+	</div>
+</div>
+		</div>
+
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CurRat" class="align-right float-right" style="display: inline-block; margin-top: 3px; width: 100px;" name="CurRat_226437">
+			
+			
+		</div>
+	</div>
+	
+
+	
+	<h2 id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Title" class="float-left" style="margin: -10px 0pt 0pt 5px;">Solution 2</h2><a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Heading" name="answer2"></a>
+
+	
+	<div class="float-left" style="margin: 3px 0pt 0pt 20px;">
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Accept" title="Mark this solution as an accepted solution." class="button safe" style="display: none;">Accept&nbsp;Solution</a>
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Unaccept" title="Revoke accepted solution designation." class="button unsafe" style="display: none;">Reject&nbsp;Solution</a>
+	</div>
+
+	<p id="AcceptError" class="error" style="display: none;"></p>
+		
+	
+	
+</div>
+
+
+<div class="text">Using GLUT, the following code will do this:<br>
+(you may need to aquire glut or freeglut to be able to compile this.
+The alternative, just using a frame/dialog based app and your own code
+to setup the window, process the keys, handle idle times, handle
+resizing etc, etc is quite long-winded. glut or freeGlut are a much
+easier learning curve)<br>
+This code could be trimmed further, though will be left as an exercise to the reader..<br>
+&nbsp;<br>
+<div style="display: block;" width="100%" id="premain0" class="pre-action-link"><img preid="0" style="cursor: pointer;" src="Draw-a-filled-Rectangle_elemei/minus.gif" id="preimg0" height="9" width="9"><span preid="0" style="cursor: pointer; margin-bottom: 0pt;" id="precollapse0"> Collapse</span><span> | </span><a preid="0" href="#">Copy Code</a></div><pre style="margin-top: 0pt;" id="pre0" lang="cs">#include &lt;GL/glut.h&gt;
+#include &lt;stdlib.h&gt;
+&nbsp;
+<span class="code-comment">/*</span><span class="code-comment"> GLUT callback Handlers */</span>
+<span class="code-keyword">static</span> <span class="code-keyword">void</span> resize(<span class="code-keyword">int</span> width, <span class="code-keyword">int</span> height)
+{
+    <span class="code-keyword">const</span> <span class="code-keyword">float</span> ar = (<span class="code-keyword">float</span>) width / (<span class="code-keyword">float</span>) height;
+&nbsp;
+    glViewport(<span class="code-digit">0</span>, <span class="code-digit">0</span>, width, height);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glFrustum(-ar, ar, -1.<span class="code-digit">0</span>, <span class="code-digit">1</span>.<span class="code-digit">0</span>, <span class="code-digit">2</span>.<span class="code-digit">0</span>, <span class="code-digit">100</span>.<span class="code-digit">0</span>);
+&nbsp;
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity() ;
+}
+&nbsp;
+<span class="code-keyword">static</span> <span class="code-keyword">void</span> display(<span class="code-keyword">void</span>)
+{
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+&nbsp;
+    glBegin(GL_QUADS);
+        glColor3d(<span class="code-digit">1</span>,<span class="code-digit">0</span>,<span class="code-digit">0</span>);
+        glVertex3f(-1,-1,-10);
+        glColor3d(<span class="code-digit">1</span>,<span class="code-digit">1</span>,<span class="code-digit">0</span>);
+        glVertex3f(<span class="code-digit">1</span>,-1,-10);
+        glColor3d(<span class="code-digit">1</span>,<span class="code-digit">1</span>,<span class="code-digit">1</span>);
+        glVertex3f(<span class="code-digit">1</span>,<span class="code-digit">1</span>,-10);
+        glColor3d(<span class="code-digit">0</span>,<span class="code-digit">1</span>,<span class="code-digit">1</span>);
+        glVertex3f(-1,<span class="code-digit">1</span>,-10);
+    glEnd();
+    glutSwapBuffers();
+}
+&nbsp;
+
+<span class="code-keyword">static</span> <span class="code-keyword">void</span> key(unsigned <span class="code-keyword">char</span> key, <span class="code-keyword">int</span> x, <span class="code-keyword">int</span> y)
+{
+    <span class="code-keyword">switch</span> (key)
+    {
+        <span class="code-keyword">case</span> <span class="code-digit">27</span> :
+        <span class="code-keyword">case</span> <span class="code-string">'</span><span class="code-string">q'</span>:
+            exit(<span class="code-digit">0</span>);
+            <span class="code-keyword">break</span>;
+    }
+    glutPostRedisplay();
+}
+&nbsp;
+<span class="code-keyword">static</span> <span class="code-keyword">void</span> idle(<span class="code-keyword">void</span>)
+{
+    glutPostRedisplay();
+}
+&nbsp;
+<span class="code-comment">/*</span><span class="code-comment"> Program entry point */</span>
+<span class="code-keyword">int</span> main(<span class="code-keyword">int</span> argc, <span class="code-keyword">char</span> *argv[])
+{
+    glutInit(&amp;argc, argv);
+    glutInitWindowSize(<span class="code-digit">640</span>,<span class="code-digit">480</span>);
+    glutInitWindowPosition(<span class="code-digit">10</span>,<span class="code-digit">10</span>);
+    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
+&nbsp;
+    glutCreateWindow(<span class="code-string">"</span><span class="code-string">GLUT quadPoly"</span>);
+&nbsp;
+    glutReshapeFunc(resize);
+    glutDisplayFunc(display);
+    glutKeyboardFunc(key);
+    glutIdleFunc(idle);
+&nbsp;
+    glClearColor(<span class="code-digit">0</span>,<span class="code-digit">0</span>,<span class="code-digit">0</span>,<span class="code-digit">0</span>);
+&nbsp;
+    glutMainLoop();
+&nbsp;
+    <span class="code-keyword">return</span> EXIT_SUCCESS;
+}</pre>
+&nbsp;<br>
+A few tutes - <a href="http://www.codecolony.de/OpenGL/">http://www.codecolony.de/OpenGL/</a>[<a href="http://www.codecolony.de/OpenGL/" target="_blank" title="New Window">^</a>]<br>
+I would have recomended NEHE's openGL tutes too, though I seem unable
+to access them for some period now. Perhaps you could access a
+google-cached version of the page<br>
+&nbsp;<br>
+Here's another page with a go-to-whoa! set of tutes. My apologies for the title of the site. <a href="http://mindfuck.de-brauwer.be/articles.php">OpenGl tutes</a>[<a href="http://mindfuck.de-brauwer.be/articles.php" target="_blank" title="New Window">^</a>]<br>
+&nbsp;<br>
+Look for the Red Book, the Blue Book or the Orange Book (start with the red one)<br>
+There's also a number of articles here on CP for that. Curiously
+enough, the search term "openGL tute" run through google brings up<br>
+&nbsp;<br>
+[EDIT:] It seems that Nehe's site was suffering database problems,
+though is now back online. I highly reccomend his series of 48 tutes.
+Start at the beginning and work your way through them. GLAUX is rather
+old in the tooth now, though is mostly used for image-loading routines.
+Just get a bmp or tga loader and you'll be able to do without it for
+the most part. <a href="http://nehe.gamedev.net/">NEHE openGL tutes</a>[<a href="http://nehe.gamedev.net/" target="_blank" title="New Window">^</a>]</div>
+
+<div></div>
+
+<div class="qa-info clearfix">
+	
+	<div class="float-right commands small-text">
+
+		
+		&nbsp;
+		<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Permalink" rel="nofollow" href="http://www.codeproject.com/Answers/226437/Draw-a-filled-Rectangle-using-OpenGL">Permalink</a>
+		&nbsp;
+		 
+
+		
+
+		
+		
+		
+	</div>
+	
+	
+	<div class="meta-data">
+		<b>Posted</b> 15-Jul-11 5:04am
+		
+<div class="member-rep-container">
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_AuthorRepInfo_MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=3311273">enhzflep</a><span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_AuthorRepInfo_TotalPoints" title="Total reputation points" class="member-rep-box platinum bold">37.7K</span>
+</div>
+
+	</div>
+
+	
+	
+	<div class="meta-data" style="margin-left: 15px;">
+		<b>Edited</b> 15-Jul-11 7:36am
+	</div>
+	
+
+	
+	<div class="version"><a href="http://www.codeproject.com/script/Articles/ListVersions.aspx?aid=226437">v2</a></div>
+
+	
+	
+</div>
+
+   
+
+<div style="clear: both;"></div>
+
+
+<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_ContainerPermalink" class="CommentAnchor" name="cmt2_226437_2"></a>
+
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentContainer" class="container-comments" objectref="2_226437_2" pagenumber="0" pagesize="0" boldmemberid="3311273" modifystatus="False">	 
+
+	
+	
+
+	
+	<div name="CP-CommentList" class="comment-list">
+		
+	</div> 
+
+	 
+	
+
+	  
+
+</div> 
+
+
+</div>
+
+
+
+
+
+	
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_AnswerGroup" class="answer-row answer">
+
+
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_Header" class="header container">
+
+	
+	
+	<div class="rate-group">
+
+		<div class="rate-item">
+			<div id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_RateItemWrapper" class="small-text" name="RateItem_607389">
+
+	<table class="small-text" width="100%" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loaderImg" alt="loading..." src="Draw-a-filled-Rectangle_elemei/animated_loading_blue.gif" style="display: none;" height="16px" width="16px"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space: nowrap;" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_StartForm" nowrap="nowrap" align="right"><img class="align-middle" src="Draw-a-filled-Rectangle_elemei/thmbdn.png" alt="bad" height="16px" width="16px"></td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_VoteFormDiv" class="nowrap rating-stars-voter-medium">
+					
+
+<table class="content float-left" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating" cellpadding="0" cellspacing="0"> 
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		
+			 
+			
+		
+
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_ItemRating_VI">
+		<div title="Rating = 1.00 (2 votes)" class="nowrap rating-stars-medium" style="height: 18px; width: 80px; position: relative;">
+	<div class="clipped align-left float-left" style="height: 16px; width: 16px;">
+		<img src="Draw-a-filled-Rectangle_elemei/stars-fill-md.png" style="border-width: 0px;">
+	</div><div class="clipped" style="height: 16px; width: 64px; position: relative;">
+		<img src="Draw-a-filled-Rectangle_elemei/stars-empty-md.png" style="border-width: 0px; position: absolute; top: 0pt; right: 0pt;">
+	</div>
+</div>
+		</span>
+
+		
+	</td>
+	
+	
+</tr>
+
+</tbody></table>
+
+
+					<span style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_VoteRBL"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_VoteRBL_0" name="ctl00$ctl00$MC$AMC$Answers$ctl02$A$RatePost$VoteRBL" value="1" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_VoteRBL_1" name="ctl00$ctl00$MC$AMC$Answers$ctl02$A$RatePost$VoteRBL" value="2" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_VoteRBL_2" name="ctl00$ctl00$MC$AMC$Answers$ctl02$A$RatePost$VoteRBL" value="3" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_VoteRBL_3" name="ctl00$ctl00$MC$AMC$Answers$ctl02$A$RatePost$VoteRBL" value="4" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_VoteRBL_4" name="ctl00$ctl00$MC$AMC$Answers$ctl02$A$RatePost$VoteRBL" value="5" type="radio"></span> 
+
+						
+						<div class="speech-bubble-container-up-right" style="width: 200px; margin-top: 24px; right: -90px; top: 6px;">
+							<div class="speech-bubble-up">
+								<div id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_Histogram">
+
+</div><img id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_Loading" class="align-middle" src="Draw-a-filled-Rectangle_elemei/animated_loading.gif" style="border-width: 0px;">
+							</div>
+							<div class="speech-bubble-pointer-up">
+								<div class="speech-bubble-pointer-up-inner"></div>
+							</div>
+						</div>
+						
+					<div class="rating-star-block"><a title="vote 1" class="star outline" rating="1" href="#">vote 1</a><a title="vote 2" class="star outline" rating="2" href="#">vote 2</a><a title="vote 3" class="star outline" rating="3" href="#">vote 3</a><a title="vote 4" class="star outline" rating="4" href="#">vote 4</a><a title="vote 5" class="star outline" rating="5" href="#">vote 5</a></div></span>
+
+				</td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_EndForm" align="left"><img class="align-middle" src="Draw-a-filled-Rectangle_elemei/thmbup.png" alt="good" height="16px" width="16px"></td>
+
+				<td style="padding-left: 5px;">	
+					<input style="display: none;" name="ctl00$ctl00$MC$AMC$Answers$ctl02$A$RatePost$SubmitRateBtn" value="Vote!" id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_SubmitRateBtn" class="button" type="submit">
+				</td>
+			</tr>
+			</tbody></table>
+			
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		
+        <div id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_RSU" class="rating-comment align-left float-right">
+            <div class="padded">
+            Please <a id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f226294%2fDraw-a-filled-Rectangle">Sign up or sign in</a> to vote.
+            </div>
+        </div>
+	</div>
+</div>
+		</div>
+
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_CurRat" class="align-right float-right" style="display: inline-block; margin-top: 3px; width: 100px;" name="CurRat_607389">
+			
+			
+		</div>
+	</div>
+	
+
+	
+	<h2 id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_Title" class="float-left" style="margin: -10px 0pt 0pt 5px;">Solution 3</h2><a id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_Heading" name="answer3"></a>
+
+	
+	<div class="float-left" style="margin: 3px 0pt 0pt 20px;">
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_Accept" title="Mark this solution as an accepted solution." class="button safe" style="display: none;">Accept&nbsp;Solution</a>
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_Unaccept" title="Revoke accepted solution designation." class="button unsafe" style="display: none;">Reject&nbsp;Solution</a>
+	</div>
+
+	<p id="AcceptError" class="error" style="display: none;"></p>
+		
+	
+	
+</div>
+
+
+<div class="text">I'm years late to the party, but since this is the first google result, I thought it'd be best to have a no hassle solution.<br>
+&nbsp;<br>
+For just a solid red rectangle (in my version, x, y, w(idth), and h(eight) variables are assumed to exist. YMMV):<br>
+<div style="display: block;" width="100%" id="premain1" class="pre-action-link"><img preid="1" style="cursor: pointer;" src="Draw-a-filled-Rectangle_elemei/minus.gif" id="preimg1" height="9" width="9"><span preid="1" style="cursor: pointer; margin-bottom: 0pt;" id="precollapse1"> Collapse</span><span> | </span><a preid="1" href="#">Copy Code</a></div><pre style="margin-top: 0pt;" id="pre1" lang="c++"><span class="code-keyword">unsigned</span> <span class="code-keyword">int</span> rgba = 0xff0000ff; <span class="code-comment">//</span><span class="code-comment"> red, no alpha
+</span>glBegin(GL_QUADS);
+glColor4f(((rgba&gt;&gt;<span class="code-digit">24</span>)&amp;0xff)/255.0f,
+          ((rgba&gt;&gt;<span class="code-digit">16</span>)&amp;0xff)/255.0f, 
+          ((rgba&gt;&gt;<span class="code-digit">8</span>)&amp;0xff)/255.0f,
+          (rgba&amp;0xff)/255.0f);
+glVertex3f(x,y,<span class="code-digit">0</span>);
+glVertex3f(x+w,y,<span class="code-digit">0</span>);
+glVertex3f(x+w,y+h,<span class="code-digit">0</span>);
+glVertex3f(x,y+h,<span class="code-digit">0</span>);
+glEnd();
+glColor4f(<span class="code-digit">1</span>, <span class="code-digit">1</span>, <span class="code-digit">1</span>, <span class="code-digit">1</span>);</pre>
+&nbsp;<br>
+The third line will allow any color in an 0xRRGGBBAA format.<br>
+The last line exists purely so your color change doesn't leak into subsequent renders. (it will)</div>
+
+<div></div>
+
+<div class="qa-info clearfix">
+	
+	<div class="float-right commands small-text">
+
+		
+		&nbsp;
+		<a id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_Permalink" rel="nofollow" href="http://www.codeproject.com/Answers/607389/DrawplusaplusfilledplusRectangleplususingplusOpenG">Permalink</a>
+		&nbsp;
+		 
+
+		
+
+		
+		
+		
+	</div>
+	
+	
+	<div class="meta-data">
+		<b>Posted</b> 16-Jun-13 13:29pm
+		
+<div class="member-rep-container">
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_AuthorRepInfo_MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=986186">sarysa</a><span id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_AuthorRepInfo_TotalPoints" title="Total reputation points" class="member-rep-box bronze">107</span>
+</div>
+
+	</div>
+
+	
+	
+	<div class="meta-data" style="margin-left: 15px;">
+		<b>Edited</b> 16-Jun-13 13:30pm
+	</div>
+	
+
+	
+	<div class="version"><a href="http://www.codeproject.com/script/Articles/ListVersions.aspx?aid=607389">v2</a></div>
+
+	
+	
+</div>
+
+   
+
+<div style="clear: both;"></div>
+
+
+<a id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_CommentCtrlObj_ContainerPermalink" class="CommentAnchor" name="cmt2_607389_2"></a>
+
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl02_A_CommentCtrlObj_CommentContainer" class="container-comments" objectref="2_607389_2" pagenumber="0" pagesize="0" boldmemberid="986186" modifystatus="False">	 
+
+	
+	
+
+	
+	<div name="CP-CommentList" class="comment-list">
+		
+	</div> 
+
+	 
+	
+
+	  
+
+</div> 
+
+
+</div>
+
+
+
+
+
+	
+</div>
+
+
+
+		
+
+<div class="padded-top">
+<a style="display: none;" id="ctl00_ctl00_MC_AMC_AddChild2" class="button large" href="http://www.codeproject.com/Questions/226294/answer.aspx">Add a Solution</a>
+</div>
+
+
+
+
+<div id="NewEntryGroup" class="container" style="">
+	
+
+<div id="PostEntryContainer" class="AnswersPost">
+
+
+<h2 id="ctl00_ctl00_MC_AMC_PostEntryObj_NewEntryHeading" class="contrast1-color">Add your solution here</h2>
+
+
+<input name="ctl00$ctl00$MC$AMC$PostEntryObj$CustomValidationHook" id="ctl00_ctl00_MC_AMC_PostEntryObj_CustomValidationHook" style="display: none;" type="text">
+
+
+
+
+
+
+
+<div id="ctl00_ctl00_MC_AMC_PostEntryObj_ValidationSummary1" class="error callout" style="color: Red; display: none;">
+
+</div>
+
+
+
+<div class="container-post new-message">
+
+	<div class="inline">
+
+		
+		<p id="AjaxSubmitErrors" class="error callout" style="display: none;">
+
+		
+		
+
+		<a name="PostContent"></a>
+		
+		
+		
+
+		
+		</p><div>
+			
+
+<div id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_FormatBar"><button class="toolbar" onclick="ToggleWrapSelection('b');return false;" title="Wrap the Selected Text in HTML bold Tags"><b>&nbsp;B&nbsp;</b></button>
+<button class="toolbar" onclick="ToggleWrapSelection('i');return false;" title="Wrap the Selected Text in HTML Italic Tags"><i>&nbsp;I&nbsp;</i></button>
+<button class="toolbar" onclick="ToggleWrapSelection('u');return false;" title="Wrap the Selected Text in HTML Underline Tags">&nbsp;<u>U</u>&nbsp;</button>
+<button class="toolbar" onclick="ToggleWrapSelection('strike');return false;" title="Wrap the Selected Text in HTML strike through Tags"><strike>&nbsp;S&nbsp;</strike></button>
+<button class="toolbar" onclick="ToggleWrapSelection('small');return false;" title="Wrap the Selected Text in HTML small Tags"><small>small</small></button>
+<button class="toolbar" onclick="ToggleWrapSelection('big');return false;" title="Wrap the Selected Text in HTML big Tags">BIG</button>
+<span class="tooltip"><button class="toolbar" onclick="ToggleWrapSelection('pre');return false;" title="Wrap the Selected Text in 'pre' Tags: For separate source code blocks"><tt style="background-color: rgb(251, 237, 187);">code</tt></button>
+<div class="tooltip-flyout small-text" style="width: 135px ! important;"><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;text&quot;')">Plain Text</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;c++&quot;')">C++</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;CSS&quot;')">CSS</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;c#&quot;')">C#</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;Delphi&quot;')">Delphi / Pascal</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;F#&quot;')">F#</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;HTML&quot;')">HTML / XML / ASP</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;java&quot;')">Java</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;Javascript&quot;')">Javascript</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;objc&quot;')">Objective-C</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;SQL&quot;')">SQL</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;Perl&quot;')">Perl</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;PHP&quot;')">PHP</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;Python&quot;')">Python</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;vb&quot;')">VB</a></div><div class="list-item"><a href="#" onclick="return ToggleWrapSelection('pre','lang=&quot;xml&quot;')">XML</a></div></div></span><button class="toolbar" onclick="ToggleWrapSelection('code');return false;" title="Wrap the Selected Text in 'code' Tags: For code within sentences"><code>var</code></button>
+<button class="toolbar" onclick="InsertText('&amp;l' + 't;');return false;" title="Insert HTML Extended Character Code For &lt;">&nbsp;&lt;&nbsp;</button>
+<button class="toolbar" onclick="InsertText('&amp;g' + 't;');return false;" title="Insert HTML Extended Character Code For &gt;">&nbsp;&gt;&nbsp;</button>
+<button class="toolbar" onclick="InsertText('&amp;a' + 'mp;');return false;" title="Insert HTML Extended Character Code For &amp;">&nbsp;&amp;&nbsp;</button>
+<button class="toolbar" onclick="InLinkErAte(null, false);return false;" title="Convert URL to a hyperlink">link</button>
+<button class="toolbar" onclick="InLinkErAte(null, true);return false;" title="Convert URL to a hyperlink with optional 'New Window' link">[^]</button>
+<button class="toolbar" onclick="Encoderate();return false;" title="HTML encode text">encode</button>
+<button class="toolbar" onclick="Untab();return false;" title="Replace tabs with spaces">untab</button>
+<button class="toolbar" onclick="AdjustLeading(4);return false;" title="indent">indent</button>
+<button class="toolbar" onclick="AdjustLeading(-4);return false;" title="outdent">outdent</button>
+</div>
+<div id="EditWrap" style="position: relative;">
+	<table id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_EditContainer" class="container-editor" cellpadding="0" cellspacing="0">
+	<tbody><tr valign="top">
+		<td style="padding-right: 15px; width: 100%;">
+		<div class="resizable-control"><span><textarea name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$MessageText" id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText" class="resizable text-editor processed" style="width: 100%; height: 340px;"></textarea><div style="margin-right: -12px;" class="grippie"> </div></span></div>
+		
+	</td>
+	</tr>
+</tbody></table>
+
+
+</div>
+	<div id="paste-dialog" class="paste-dialog invisible">
+
+		<div class="header"><a href="#" class="close-notify">OK</a>
+		Paste as</div>
+
+		<div class="padded">
+		<table id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting" class="small-text paste-options extended" border="0">
+	<tbody><tr>
+		<td><span onmouseover="previewPaste('text')" onmouseout="previewPaste(getPasteSetting())" title="HTML markup will be removed from text"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_0" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="text" onclick="previewPaste('text');" tabindex="8" type="radio"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_0">Strip HTML</label></span></td>
+	</tr><tr>
+		<td><span onmouseover="previewPaste('encoded')" onmouseout="previewPaste(getPasteSetting())" title="Pasted text will automatically be HTML-encoded"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_1" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="encoded" onclick="previewPaste('encoded');" tabindex="8" type="radio"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_1">Encode HTML</label></span></td>
+	</tr><tr>
+		<td><span onmouseover="previewPaste('html')" onmouseout="previewPaste(getPasteSetting())" title="Clipboard will be pasted as-is, preserving HTML tags and entities."><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_2" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="html" checked="checked" onclick="previewPaste('html');" tabindex="8" type="radio"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_2">Paste as-is</label></span></td>
+	</tr><tr>
+		<td><span onmouseover="previewPaste('code')" onmouseout="previewPaste(getPasteSetting())" title="Clipboard text will be wrapped in PRE tags, and content HTML encoded, always"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_3" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="code" onclick="previewPaste('code');" tabindex="8" type="radio"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_3">Code block</label></span></td>
+	</tr><tr>
+		<td><span onmouseover="previewPaste('quote')" onmouseout="previewPaste(getPasteSetting())" title="Clipboard text will be pasted within a quote block"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_4" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="quote" onclick="previewPaste('quote');" tabindex="8" type="radio"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_4">Quoted Text</label></span></td>
+	</tr><tr>
+		<td><span onmouseover="previewPaste('auto')" onmouseout="previewPaste(getPasteSetting())" title="Sniff pasted text to see if it contains code, and wrap in PRE blocks if it does"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_5" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="auto" onclick="previewPaste('auto');" tabindex="8" type="radio"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_5">Best guess</label></span></td>
+	</tr>
+</tbody></table>
+		</div>
+
+		<div id="expando" class="not-invisible">
+			<div class="header">To display as</div>
+			<table width="100%" cellpadding="0" cellspacing="0">
+			<tbody><tr><td class="MsgBd BdSel"><div id="pasteHtmlPreview" class="paste-preview"></div></td></tr>
+			</tbody></table>
+		</div>
+
+	</div>
+
+<script type="text/javascript">
+<!--
+var content = document.getElementById('ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText');
+var Cancelled = false;
+var Submitted = false;
+var pasteOptionsVisible = false;
+var InitContent = '';
+var autoOption = '';
+var afterPasteContent = '';
+var pastedHtml, pastedCode;
+var pasteStart, pasteEnd;
+var pastePreviewOverEditor = true;
+var disableInputTrack = false;
+var longMsgWarning = true;
+var localLinksWarning = true;
+var IE9 = false;
+var IE8orLess = false;
+var ignoreHtmlId = 'ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml';
+
+function CollapseNewlines(text) {
+	return text.replace(/\r\n\r\n/gm, "\r\n");
+}
+
+function NewlinesToBreak(text) {
+	return text.replace(/\r\n/g, "\n").replace(/\n/g, "<br>");
+}
+
+function CleanBadStuff(text) {
+	var badTags='html|body|base|basefont|head|meta|xmp|script|noscript|isindex|src|bdo|xml|plaintext|object|applet|embed|bgsound|marquee|title|form|input|button|select|option|textarea|optgroup|label|frame|frameset|iframe|noframes';
+	var re = new RegExp("<(\/?)(" + badTags + ")", "gi");
+	return text.replace(re, "&lt;$1$2");
+}
+
+function HtmlToText(input)
+{
+	return $("<div/>").html(input).text().trim();
+}
+
+function GetCaretPosition(field) {
+	try {
+		var caretPos = 0;
+		if (typeof(field.selectionStart) != 'number' && document.selection) { 
+			field.focus();
+			var sel = document.selection.createRange();
+			sel.moveStart('character', -field.value.length);
+			caretPos = sel.text.length;
+		}
+		else (field.selectionStart || field.selectionStart == '0')
+			caretPos = oField.selectionStart;
+
+		return caretPos;
+	}
+	catch(e) { return 0; }
+}
+
+function SetCaretPosition(obj, position) {
+	try {
+		if (obj.setSelectionRange) {  
+			obj.focus();  
+			obj.setSelectionRange(position, position);
+		} 
+		else if (obj.createTextRange) {  
+			var range = obj.createTextRange();
+			range.move("character", position);  
+			range.select(); 
+		} 
+		else if (window.getSelection) {
+			
+			var sel = window.getSelection();
+			var range = document.createRange();		
+			
+			var walker=document.createTreeWalker(obj, NodeFilter.SHOW_ELEMENT, null, false);
+			var pos = position;
+			var node = obj;
+			
+			while(walker.nextNode()) {
+				node = walker.currentNode;
+				if (pos > node.value.length) {
+					pos -= node.value.length;
+				}
+				else break;
+			}
+			node = node.firstChild;
+			range.setStart(node, pos);
+			range.setEnd(node, pos);
+			
+			sel.removeAllRanges();
+			sel.addRange(range);
+		} 
+		else if (document.selection) {
+			var range = document.body.createTextRange();
+			range.moveToElementText(obj);
+			range.setEndPoint("EndToEnd", range);
+			range.moveStart('character', position);
+			range.moveEnd('character', position-obj.innerText.length);
+			range.select();
+		} 
+	}
+	catch (e) {}
+}
+
+/* Completely broken in IE */
+function GetSelectionBounds(field) { 
+	var start = 0, end = 0;
+ 
+	if (typeof(field.selectionStart) != 'number' && document.selection) {
+
+		var sel = document.selection.createRange();
+		if (sel && sel.htmlText) {
+			var workingRange, textInputRange = field.createTextRange();
+			if (textInputRange) workingRange = textInputRange.duplicate();
+
+			if (textInputRange && workingRange)
+			{
+				workingRange.moveToBookmark(sel.getBookmark());
+				textInputRange.setEndPoint('EndToStart', workingRange);
+
+				var text_part = sel.text.replace(/[\r\n]/g,'.'); // IE doesn’t always count newlines in the length
+				var text_whole = field.value.replace(/[\r\n]/g, '.');
+
+				start = text_whole.indexOf(text_part, textInputRange.text.length);
+				end   = start + text_part.length;
+			}
+		}
+		else
+			start = end = GetCaretPosition(field);
+	} 
+	else { 
+		start = field.selectionStart; 
+		end = field.selectionEnd; 
+	} 
+
+	return { 
+		start: start, 
+		end: end 
+	}; 
+} 
+
+function GetSelectedText()
+{
+	var text = "";
+	if (content)
+	{
+		if (document.selection && document.selection.createRange)
+			text = document.selection.createRange().text;
+		else if (content.selectionStart != content.selectionEnd)
+			text = content.value.substring(content.selectionStart, content.selectionEnd);
+	}
+	return text;
+}
+
+function ReplaceSelectedText(text)
+{
+	if (document.selection && document.selection.createRange) {
+		range = document.selection.createRange();
+
+		if (range != null) {
+			range.text = text;
+
+			// Hack to prevent odd behavior.
+			range = range.duplicate();
+			setTimeout(selectRange, 0);
+		}
+	}
+	else {
+		content.value = content.value.substring(0, content.selectionStart) + text +
+						content.value.substring(content.selectionEnd, content.value.length);
+	}
+}
+
+function SelectText(field, start, end)
+{
+	if (typeof(field.selectionStart) != 'number' && document.selection && document.selection.createRange) {
+		range = field.createTextRange();
+		range.move('character', start);
+		range.moveStart('character', 0);
+		range.moveEnd('character', end-start+1);
+
+		// Hack to prevent odd behavior.
+		range = range.duplicate();
+		setTimeout(selectRange, 0);
+	}
+	else {
+		field.selectionStart = start;
+		field.selectionEnd = end;
+	}
+}
+
+function ExpandSelectionToLines(field) {
+	var bounds = GetSelectionBounds(field);
+	while (bounds.start > 0 && content.value.substring(bounds.start-1, bounds.start)!='\n') 
+		bounds.start--;
+	if (content.value.substring(bounds.start, bounds.start+1) == '\n' && bounds.start < content.value.length)
+		bounds.start++;
+	while (bounds.end < content.value.length && content.value.substring(bounds.end, bounds.end+1)!='\n') 
+		bounds.end++;
+	//if (content.value.substring(bounds.end, bounds.end+1) == '\n' && bounds.end > 0)
+	//	bounds.end--;
+
+	SelectText(field, bounds.start, bounds.end);
+}
+
+function getQuoteableHTML()
+{
+	var useHtml = true;
+	if ($('#' + ignoreHtmlId).length > 0)
+		useHtml = !$('#' + ignoreHtmlId)[0].checked;
+
+	var text = null;
+	if (document.selection && document.selection.createRange) {
+		var elm = document.selection.createRange();	
+		text = useHtml? elm.htmlText : elm.text;
+	}
+	else if (window.getSelection) {
+		if (useHtml) {
+			var range = window.getSelection().getRangeAt(0);
+			var parent = range.commonAncestorContainer;
+			var html = parent.innerHTML;
+			var startContainer = range.startContainer;
+			var spanNode = startContainer.ownerDocument.createElement("layer");
+			var docfrag = range.extractContents();
+			spanNode.appendChild(docfrag);
+			range.insertNode(spanNode);
+			parent.innerHTML = html;
+
+			text = spanNode.innerHTML;
+		} else
+			text = window.getSelection().toString();
+	}
+
+	return text? text.replace(/<img[^>]*alt=[^\|]*\|\s([^"]*)[^>]*>/igm, "$1") : null;
+}
+
+function InsertText(text) 
+{
+	if (Submitted || text <= 0 || !content) return false;
+
+	var scrollPos = content.scrollTop;
+
+	if (document.all /*typeof(content.selectionStart) != 'number'*/)
+	{
+		if (document.selection && document.selection.createRange)
+		{
+			content.focus();
+			var selTxtRng = document.selection.createRange();
+			var selTxt = selTxtRng.text;
+			selTxtRng.text = text; 
+		}
+	}
+	else
+	{
+		var caretPos = content.selectionStart + text.length;
+
+		if (content.selectionStart >= 0) // !=content.selectionEnd)
+		{
+			var caretPos = content.selectionStart + text.length;
+			content.value = content.value.substring(0, content.selectionStart) + text +
+							content.value.substring(content.selectionStart, content.value.length);
+			SetCaretPosition(caretPos);
+		}
+		else
+		{
+			content.value += text;
+			content.focus();
+		}
+		
+		content.selectionStart = caretPos;
+		content.selectionEnd = caretPos;
+	}
+
+	if (scrollPos&&content.scrollTop)
+		content.scrollTop = scrollPos;
+
+	return false;
+}
+
+function QuoteText(author)
+{
+	var useHtml = true;
+	if ($('#' + ignoreHtmlId).length > 0)
+	  useHtml = !$('#' + ignoreHtmlId)[0].checked;
+
+	if (quoteableElmID == '') return;
+	var preContentElm = document.getElementById(quoteableElmID);
+	if (document.all)
+	{
+		if (document.selection && document.selection.createRange) {
+			elm = document.selection.createRange().parentElement();
+			while (elm && (elm != preContentElm) && elm.parentElement) elm = elm.parentElement;
+			if (elm != preContentElm) return false;
+		}
+		else return;
+	}
+	else
+	{
+		if (window.getSelection) {	
+			elm = window.getSelection().anchorNode;
+			while (elm && elm != preContentElm) elm = elm.parentNode;
+			if (!elm) return false;
+		}
+		else
+			return false;
+	}
+	
+	var txt = getQuoteableHTML();
+	if (txt&&txt != "") 
+	{
+		var Quote = "";
+		if (content && content.value != "") Quote += "\n";	
+		if (useHtml) Quote += "<blockquote class=\"quote\"><div class=\"op\">";
+		Quote += (author + " wrote:");
+		if (useHtml) Quote += "</div>";
+		else Quote += "\n";
+		Quote += txt;
+		if (useHtml) Quote += "</blockquote>";
+		else Quote += "\n";
+		Quote += "\n";
+		
+		InsertText(Quote);
+	}
+	else
+		alert('You did not select any text to quote');
+		
+	return false;
+}
+
+// Based on the work of Jason Jystad. Endless kudos and thanks Jason.
+// Mozilla additions based on work by Jörgen Sigvardsson. 
+function ToggleTagWrap(content, tag, attr)
+{
+	if (Submitted) return false;
+	if (tag.length <= 0) return false;
+	
+	var s_tag = "<" + tag;
+	if (attr) s_tag += " " + attr;
+	s_tag += ">";
+	var e_tag = "</" + tag + ">";
+	
+	if (content)
+	{
+		if (document.all) {
+			if (document.selection && document.selection.createRange) {
+				content.focus();
+				var selTxtRng = document.selection.createRange();
+				var selTxt = selTxtRng.text;
+				var startLen = s_tag.length;
+				var endLen  = e_tag.length;
+				var selLen  = selTxt.length;
+				
+				if (selTxt.substr(0, startLen) == s_tag && selTxt.substr(selLen-endLen) == e_tag)
+					selTxtRng.text = selTxt.substr(startLen, selLen-startLen-endLen);
+				else
+					selTxtRng.text = s_tag + selTxt + e_tag;
+					
+				if (selTxt.length == 0)
+				{
+					selTxtRng.move("character", -(tag.length + 3));
+					selTxtRng.select();
+				}
+				content.focus();
+			}
+			else
+			{
+				content.value += (s_tag + e_tag);
+				content.focus();
+			}
+		}
+		else
+		{
+			var scrollPos = content.scrollTop;
+			var caretPos = content.selectionStart + s_tag.length ;
+
+			if (true /*content.selectionStart != content.selectionEnd*/)
+			{
+				var startLen = s_tag.length;
+				var endLen = e_tag.length;
+
+				var selTxt = '', selLen = 0;
+				if (content.selectionStart != content.selectionEnd) { 
+					selTxt = content.value.substring(content.selectionStart, content.selectionEnd);
+					selLen = selTxt.length;
+				}
+				
+				var startTxt = content.value.substring(0, content.selectionStart);
+				var endTxt	= content.value.substring(content.selectionEnd, content.value.length);
+							
+				if (selLen > 0 && selTxt.substr(0, startLen) == s_tag && 
+					selTxt.substr(selLen-endLen) == e_tag)
+					content.value = startTxt + selTxt.substr(startLen, selLen-startLen-endLen) + endTxt;
+				else
+					content.value = startTxt + s_tag + selTxt + e_tag + endTxt;
+			}
+			else
+			{
+				content.value += (s_tag + e_tag);
+				content.focus();
+			}
+			
+			content.scrollTop = scrollPos;
+			content.selectionStart = caretPos;
+			content.selectionEnd = caretPos;
+		}
+	}
+	return false;
+}
+
+function ToggleWrapSelection(tag, attr) {
+	return ToggleTagWrap(content, tag, attr);
+}
+
+function trim(str) { return str.replace(/^\s+|\s+$/g, ''); }
+
+String.prototype.htmlEncode = function()
+{
+   var div = document.createElement('div');
+   var text = document.createTextNode(this);
+   div.appendChild(text);
+   return div.innerHTML;
+};
+
+function MakeLinkLive(linkText, title, addNewWinLnk) {
+	
+	var link = new Object();
+	link.offset = 0;
+	link.titleLength = 0;
+	link.html = linkText;	
+
+	if (linkText.length > 2048)
+		return link;
+
+	if (title == null || title.length==0) title = linkText.replace(/^\s+|\s+$/g,""); 
+
+	var articlesPath = 'http://www.codeproject.com/KB'.toLowerCase();
+	if (articlesPath.substring(0, 7) != "http://") articlesPath="http://" + articlesPath;
+
+	
+	var blogsPath = 'http://www.codeproject.com/' +
+					'articles';
+	if (blogsPath.substring(0, 7) != "http://") blogsPath="http://" + blogsPath;
+
+	var videosPath = 'http://www.codeproject.com/' +
+					 'articles';
+	if (videosPath.substring(0, 7) != "http://") videosPath="http://" + videosPath;
+
+	var questionsPath = 'http://www.codeproject.com/' +
+						'questions';
+	if (questionsPath.substring(0, 7) != "http://") questionsPath="http://" + questionsPath;
+
+	var answersPath =	'http://www.codeproject.com/' +
+						'answers';
+	if (answersPath.substring(0, 7) != "http://") answersPath="http://" + answersPath;
+
+	var tipsntricksPath =	'http://www.codeproject.com/' +
+							'tips';
+	if (tipsntricksPath.substring(0, 7) != "http://") tipsntricksPath="http://" + tipsntricksPath;
+
+	var referencePath =	'http://www.codeproject.com/' +
+							'reference';
+    if (referencePath.substring(0, 7) != "http://") referencePath="http://" + referencePath;
+
+	var re = new RegExp("^((ht|f)tps?:\/\/|www.)([^ \n\t]*)$", "i");
+	var url = trim(linkText);
+
+	if (!IsCursorInsideOpenTag(content) && url && re.test(url))
+	{
+		var checkTitle = ((title.substring(0, 7) != "http://")? "http://" + title : title);
+		if (checkTitle.substr(0, articlesPath.length).toLowerCase()  == articlesPath  || 
+			checkTitle.substr(0, referencePath.length).toLowerCase() == referencePath || 
+			checkTitle.substr(0, blogsPath.length).toLowerCase()     == blogsPath     || 
+			checkTitle.substr(0, videosPath.length).toLowerCase()    == videosPath) {
+			var artTitle = $.ajax({
+				type    : "GET",
+				timeout : 2000,
+				url     : "/script/articles/ajax/GetTitle.aspx",
+				data    : "aurl=" + title,
+				async   : false
+			}).responseText;
+			if (artTitle && artTitle.length > 0 && artTitle.length < 500)
+				title = artTitle.htmlEncode();
+		}
+		else if (checkTitle.substr(0, questionsPath.length).toLowerCase()   == questionsPath || 
+				 checkTitle.substr(0, answersPath.length).toLowerCase()     == answersPath   ||
+				 checkTitle.substr(0, referencePath.length).toLowerCase()   == referencePath ||
+				 checkTitle.substr(0, tipsntricksPath.length).toLowerCase() == tipsntricksPath) {
+				var artTitle = $.ajax({
+				type    : "GET",
+				timeout : 2000,
+				url     : "/script/answers/ajax/GetTitle.aspx",
+				data    : "aurl=" + title,
+				async   : false
+			}).responseText;
+			if (artTitle && artTitle.length > 0 && artTitle.length < 500)
+				title = artTitle.htmlEncode();
+		}
+
+		if (url.substr(0, 4).toLowerCase() == "www.")
+			url = "http://" + url;
+
+		// Form the URL.
+		var text = '<a href="' + url + '">' + title + '</a>';
+		if (addNewWinLnk)
+			text += '[<a href="' + url + '" target="_blank" title="New Window">^</a>]';
+
+		var offset = -text.length + 9 + url.length + 2;
+		
+		link.offset = offset;
+		link.titleLength = title.length;
+		link.html = text;
+	}
+	
+	return link;
+}
+
+var range = null;
+function selectRange() {
+	if (range&&range.select) range.select(); // Select the previously defined range.
+	range = null;
+}
+
+function Encoderate()
+{
+	if (Submitted) return false;
+
+	var text = GetSelectedText();
+	var encoded = escapeHTML(text);
+
+	if (text == encoded) return;
+
+	disableInputTrack = true;
+	ReplaceSelectedText(encoded);
+	disableInputTrack = false;
+
+	return false;
+}
+
+function Untab()
+{
+	if (Submitted) return false;
+
+	var untabbed = '', text = GetSelectedText(), tabStop = 4;
+	var i,j, placesTillTabstop = tabStop;
+
+	// untabbed = text.replace(/\t/gm,"    "); - deprecated
+
+	for (var i = 0; i < text.length; i++) {
+		var char = text.substring(i,i+1);
+		if (char == '\t') {
+			for (j = 0; j < placesTillTabstop; j++) untabbed += ' ';
+				placesTillTabstop = tabStop;
+		}
+		else if (char == '\n') {
+			untabbed += char;
+			placesTillTabstop = tabStop;
+		}
+		else {
+			untabbed += char;
+			placesTillTabstop--;
+			if (placesTillTabstop <= 0)
+			   placesTillTabstop = tabStop;
+		}
+	}
+
+	if (text == untabbed) return;
+
+	disableInputTrack = true;
+	ReplaceSelectedText(untabbed);
+	disableInputTrack = false;
+
+	return false;
+}
+
+function AdjustLeading(amount)
+{
+	// Currently cheating: amount is only used to see if it's + or -.
+	if (Submitted) return false;
+
+	ExpandSelectionToLines(content);
+	var bounds = GetSelectionBounds(content);
+
+	var text = GetSelectedText();
+
+	var adjusted;
+	if (amount < 0) {
+		var reg = new RegExp("^(\t| {1,4})", "gim");
+		adjusted = text.replace(reg, "");
+	}
+	else {
+		var reg = IE8orLess? new RegExp("^[^\n]?", "gim") : new RegExp("^", "gim");
+		adjusted = text.replace(reg, "    ");
+	}
+
+	if (text == adjusted) return;
+
+	disableInputTrack = true;
+
+	ReplaceSelectedText(adjusted);
+
+	SelectText(content, bounds.start, bounds.start + adjusted.length);
+
+	disableInputTrack = false;
+
+	return false;
+}
+
+function InLinkErAte(linkText, addNewWinLnk, selectedText)  {
+	if (Submitted) return false;
+	if (content)
+	{
+		var title = null;
+		if (document.all)
+		{
+			if (document.selection && document.selection.createRange)
+			{
+				range = document.selection.createRange();
+				if (selectedText)
+				{
+					if (linkText == null) 
+						linkText = selectedText;
+					else 
+						title = selectedText;
+				}
+				else
+				{
+					if (linkText == null) 
+					   linkText = range.text; 
+					else 
+					   title = range.text;	
+				}
+				content.focus();
+			}
+		}
+		else
+		{
+			if (content.selectionStart != content.selectionEnd)
+			{
+				if (linkText == null)
+					linkText = content.value.substring(content.selectionStart, content.selectionEnd);
+				else
+					title = content.value.substring(content.selectionStart, content.selectionEnd);
+			}
+		}
+
+		if (!linkText || linkText.length == 0)
+		{
+			disableInputTrack = true;
+			//alert("Please select a URL within the message text to convert");
+			if (addNewWinLnk)
+				InsertText("<a href=\"\"></a>[<a href=\"\" target=\"_blank\">^</a>]");
+			else			
+				InsertText("<a href=\"\"></a>");
+			disableInputTrack = false;
+			return false;
+		}
+		
+		var link = MakeLinkLive(linkText, title, addNewWinLnk);
+		if (link.html.length > 0)
+		{
+			if (document.all /* || typeof(content.selectionStart) != 'number'*/)
+			{
+				if (range != null)
+				{
+					disableInputTrack = true;
+					range.text = link.html;
+					range.move('character', link.offset);
+					range.moveStart('character', 0);
+					range.moveEnd('character', link.titleLength);
+
+					// Hack to prevent odd behavior.
+					range = range.duplicate();
+					disableInputTrack = false;
+
+					setTimeout(selectRange, 0);
+				}
+			}
+			else
+			{
+				disableInputTrack = true;
+				link.offset += content.selectionStart;
+				content.value = content.value.substring(0, content.selectionStart) + 
+							link.html + content.value.substring(content.selectionEnd, content.value.length);
+				content.selectionStart = link.html.length + link.offset;
+				content.selectionEnd = content.selectionStart + link.titleLength;
+				content.focus();
+				disableInputTrack = false;
+			}
+		}
+	}
+	
+	return link.html.length > 0;
+	//return false;
+}
+
+function escapeHTML(str)
+{
+	while (str.indexOf("\r\n") >= 0)
+		str = str.replace(/\r\n/g, String.fromCharCode(1));
+	
+	var div = document.createElement('div');
+	var text = document.createTextNode(str);
+	div.appendChild(text);
+	text = div.innerHTML;
+	
+	while (text.indexOf(String.fromCharCode(1)) >= 0)
+		text = text.replace(String.fromCharCode(1), "\r\n");
+	
+	return text;
+}
+
+function getPasteSetting() {
+	var onPasteListItems = $('#ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting input[type=radio]');
+	if (!onPasteListItems) return "auto";
+	for (var x = 0; x < onPasteListItems.length; x++) {
+		if (onPasteListItems[x].checked) return onPasteListItems[x].value;
+	}
+}
+
+function getPasteOptionCell(name) {
+	return $('#ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting input[value=' + name + ']').parent().parent().parent();
+}
+
+function ShowPasteOptions(insidePre, code, html, content) {
+
+	afterPasteContent = content.value;
+	autoOption = 'html';
+
+	if (!code||code.indexOf("<pre")!=0) code = "<pre>" + escapeHTML(html) + "</pre>";
+	else autoOption = 'code';
+
+	pastedHtml = html;
+	pastedCode = code;
+
+	if (insidePre) getPasteOptionCell('code').hide(); else getPasteOptionCell('code').show();
+
+	if (html == escapeHTML(html)) {
+		if (initialPasteMode == 'text') {
+			getPasteOptionCell('html').hide();
+			getPasteOptionCell('encoded').hide(); 
+			if (autoOption == 'html' || autoOption == 'encoded') autoOption='text';
+		}
+		else
+			getPasteOptionCell('text').hide(); 
+
+		if (initialPasteMode == 'encoded') {
+			getPasteOptionCell('html').hide();
+			getPasteOptionCell('text').hide(); 
+			if (autoOption == 'html' || autoOption == 'text') autoOption='encoded';
+		}
+		else
+			getPasteOptionCell('encoded').hide(); 
+	}
+	else {
+		getPasteOptionCell('text').show(); 
+		getPasteOptionCell('encoded').show(); 
+		getPasteOptionCell('html').show(); 
+	}
+
+	previewPaste(getPasteSetting(), false);
+	currentText = content.value;
+
+	if (pastePreviewOverEditor)
+		$("#paste-dialog").css('right', '0px');
+	else
+		$("#paste-dialog").css('left', $('#ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText').width().toString() + 'px');
+	$("#paste-dialog").fadeIn('fast');
+
+	pasteOptionsVisible = true;
+}
+
+function previewPaste(format, suppressUpdate) {
+
+	var htmlToPaste = "";
+	var htmlPreview = "";
+
+	if (format == 'auto') format = autoOption;
+	
+	if (format == 'text') {
+		htmlToPaste = htmlPreview = HtmlToText(CleanBadStuff(pastedHtml));
+		$('#pasteHtmlPreview').html(NewlinesToBreak(escapeHTML(htmlToPaste)));
+	}
+	else if (format == 'encoded') {
+		htmlToPaste = htmlPreview = escapeHTML(pastedHtml);
+		$('#pasteHtmlPreview').html(CleanBadStuff(NewlinesToBreak(htmlPreview)));
+	}
+	else if (format == 'html') {
+		htmlToPaste = CleanBadStuff(pastedHtml);
+		htmlPreview = CleanBadStuff(htmlToPaste);
+		$('#pasteHtmlPreview').html(CleanBadStuff(NewlinesToBreak(pastedHtml)));
+	}
+	else if (format == 'quote') {
+		htmlToPaste = '<blockquote class="quote"><div class="op">Quote:</div>' + 
+					  CleanBadStuff(pastedHtml) + '</blockquote>';
+		htmlPreview = htmlToPaste;
+		$('#pasteHtmlPreview').html(CleanBadStuff(NewlinesToBreak(htmlPreview)));
+	}
+	else if (format == 'code') {
+		if (IE8orLess) htmlToPaste = htmlPreview = CleanBadStuff(CollapseNewlines(pastedCode));
+		else htmlToPaste = htmlPreview = CleanBadStuff(pastedCode);
+		$('#pasteHtmlPreview').html(CleanBadStuff(NewlinesToBreak(htmlPreview)));
+	}
+
+	if (!suppressUpdate) {
+		content.value = afterPasteContent.substring(0, pasteStart) + htmlToPaste +
+						afterPasteContent.substring(pasteEnd, afterPasteContent.length);
+		currentText   = content.value;
+		SetCaretPosition(content, pasteStart + htmlToPaste.length);
+	}
+}
+
+var currentText = "";
+var inPaste = false;
+var selStart;
+var selEnd;
+function OnPaste(e) { 
+	currentText = content.value;
+
+	var bounds = GetSelectionBounds(content);
+	selStart   = bounds.start;
+	selEnd     = bounds.end;
+
+	inPaste    = true;
+
+	// This will handle right-click onPaste
+	// 1. Can't use OnChange to handle right-click paste because onchange is fired in OnBlur. What the...?
+	// 2. Can't use OnMouseUp because this is fired before the context menu appears
+	// 3. The OnPaste itself is fired *before* the paste event occurs.
+	setTimeout(OnTrackInput, 300);
+}
+function OnTrackInput(e) {
+
+	if (!disableInputTrack && pasteOptionsVisible && !inPaste && content.value != currentText) {
+		$("#paste-dialog").fadeOut('fast');
+		pasteOptionsVisible = false;
+	}
+
+	if (disableInputTrack || !inPaste) 
+	{
+		if (!e)e = window.event;
+		if (e)e.returnValue = true;
+		return true;
+	}
+	var newText = content.value;
+	
+	if (newText.length > currentText.length + 1)
+	{
+		pasteStart = 0;
+		pasteEnd   = newText.length;
+
+		for (var i=0; i<newText.length; ++i) {
+		if (currentText.substring(0, i) == newText.substring(0, i)) pasteStart = i;
+			else break;
+		}
+	
+		for (var i=newText.length-1; i>=0; --i) {
+			var newSeg     = newText.substring(i);
+			var currentSeg = currentText.substring(currentText.length-newSeg.length);
+			if (currentSeg == newSeg) pasteEnd = i;
+			else break;
+		}
+	
+		if (pasteEnd > pasteStart) {
+			var pastedText = newText.substring(pasteStart, pasteEnd);
+
+			var link = MakeLinkLive(pastedText, pastedText, false);
+			if (link.titleLength > 0) 
+			{
+				// if (pasteOption == "text")
+					pastedText = escapeHTML(pastedText);
+				content.value = currentText;
+				content.selectionStart = selStart;
+				content.selectionEnd = selEnd;
+
+				InLinkErAte(pastedText, true);
+			} 
+			else 
+			{
+				var insidePre     = IsCursorInsideTag(content,"pre", pastedText.length);
+				var insideOpenTag = IsCursorInsideOpenTag(content);
+				var code = "";
+				if (!insidePre && !insideOpenTag) {
+					try {
+						code = $.ajax({
+							type: "POST",
+							timeout: 1000,
+							url: "/script/content/ajax/SniffCode.aspx",
+							data: "text=" + encodeURIComponent(pastedText),
+							async: false
+						}).responseText;
+					}
+					catch(e) { code=""; }
+				}
+
+				var useHtml = true;
+				if ($('#' + ignoreHtmlId).length > 0)
+					useHtml = !$('#' + ignoreHtmlId)[0].checked;
+
+				// Can we bypass the question entirely?
+				if (useHtml && !insideOpenTag && (!insidePre || pastedText != escapeHTML(pastedText)))
+				{
+					ShowPasteOptions(insidePre, code, pastedText, content);
+				}
+				else
+				{
+					// InsertText(CollapseNewlines(pastedText));
+					var toPaste = CollapseNewlines(pastedText);
+					content.value = content.value.substring(0, pasteStart) + toPaste
+								  + content.value.substring(pasteEnd, content.value.length);
+					SetCaretPosition(content, pasteStart + toPaste.length);
+				}
+			}
+		}
+	}
+
+	currentText = content.value;
+	
+	if (inPaste) {
+		inPaste = false;
+		return false;
+	}
+}
+
+function ConvertToExtended() 
+{
+	if (Submitted) return false;
+	if (content)
+	{
+		if (document.selection && document.selection.createRange)
+		{
+			content.focus();
+			var selTxtRng = document.selection.createRange();
+			var strNewText = selTxtRng.text;
+			strNewText = strNewText.replace(/>/g, "&gt;");
+			strNewText = strNewText.replace(/</g, "&lt;");
+			selTxtRng.text = strNewText;
+		}
+		else
+		{
+			alert("This function is presently only compatible with IE4+ on Win32 platforms.");
+		}
+	}
+	return false;
+}
+
+function BeforeUnload(e)
+{
+	if (Submitted || Cancelled) return;
+	if (typeof(content) == "undefined") return;
+	
+	if (content && (content.value != InitContent)) {
+		// if (e)e.returnValue = "You will lose any unsaved text. Is this OK?";	
+		return "You will lose any unsaved text. Is this OK?";
+	}
+}
+
+function CancelMsg() 
+{
+	if (content && content.value && !confirm("Are you sure you want to cancel this message?"))
+		return false;
+
+	Cancelled = true;
+	history.back(-1);
+	return false;
+}
+
+function Submit() 
+{
+	if (!content) return true;
+	
+	content.value = trim(content.value);
+	
+	if (longMsgWarning) {
+		if (content.value.length > 10000) 
+		{ 
+			if (!confirm("This message is extremely long. Long messages increase download times for those " +
+						 "with slow connections. Are you sure you want to risk the wrath of other users by " +
+						 "posting a message this long?")) 
+				return false; 
+		}
+		else if (content.value.length > 4000) 
+			if (!confirm("This message is very long. Long messages increase download times for those " +
+						 "with slow connections. Are you sure you want to post a message this long?")) 
+				return false;
+	}
+
+	if (localLinksWarning) {
+		if (content.value.match(/<a href=("|')?http:\/\/localhost/gi))
+			if (!confirm("You have included a link to your local machine, not a remote machine. " +
+						 "Is this intended?")) 
+				return false;
+	}
+
+	if (content.value.length==0) {
+		alert( "Please enter a message" );
+		content.focus();
+		return false;
+	}
+	
+	Submitted = true;
+
+	
+
+	return true;
+}
+
+// Gets cursor position inside in node element.
+function GetCursorPosition(node)
+{
+	// I have no time for Opera. What a nightmare to debug
+	if (navigator.userAgent.toLowerCase().indexOf("opera") != -1) return 0;
+	
+	if(node.selectionStart)	return node.selectionStart;
+	else if(!document.selection) return 0;
+
+	// IE browser
+	var marker = "\001";
+	var docselection = document.selection.createRange();
+	if (!docselection) return 0;
+
+	var dulplicateSelection	= docselection.duplicate();
+	if (!dulplicateSelection || !dulplicateSelection.moveToElementText) return 0;
+
+	disableInputTrack = true;
+
+	dulplicateSelection.moveToElementText(node);
+	docselection.text = marker;
+	var position = (dulplicateSelection.text.indexOf(marker));
+	docselection.moveStart('character',-1);
+	docselection.text = "";
+	
+	if (position == -1)position = node.value.length; // cursor is at the end of string
+
+	disableInputTrack = false;
+	
+	return position;
+}
+
+// Returns true if cursor is inside the given element.
+function IsCursorInsideTag(textarea, tag, offset)
+{
+	var result = false;
+	if (textarea)
+	{
+		var cursorPosition = GetCursorPosition(textarea);
+		if (offset && cursorPosition) cursorPosition -= offset;
+		if (cursorPosition && cursorPosition > 0) {
+		
+			var textBeforeCursor = textarea.value.substr(0, cursorPosition);
+
+			var open  = new RegExp("<" + tag + "(\s)*", "gi");
+			var close = new RegExp("<\/" + tag + ">", "gi");
+
+			var opening_tags_array = textBeforeCursor.match(open);
+			var closing_tags_array = textBeforeCursor.match(close);
+			
+			if (opening_tags_array) {
+				if (closing_tags_array) {
+					if (opening_tags_array.length > closing_tags_array.length)
+						result = true;
+				}
+				else
+					result = true; // there are no closing tags
+			}
+		}
+	}
+	
+	return result;
+}
+
+// Returns true if cursor is inside an open tag (eg <tag ...|)
+function IsCursorInsideOpenTag(textarea, offset) {
+	var result = false;
+	if (textarea)
+	{
+		var cursorPosition = GetCursorPosition(textarea);
+		if (offset && cursorPosition) cursorPosition -= offset;
+		if (cursorPosition && cursorPosition > 0) {
+		
+			var textBeforeCursor = textarea.value.substr(0, cursorPosition);
+
+			var tag     = new RegExp("<[a-z]+\\s+[^>]*$", "mi");
+			var matches = textBeforeCursor.match(tag);
+			
+			result = matches && matches.length > 0;
+		}
+	}
+	
+	return result;
+}
+
+var oldBeforeUnload=window.onbeforeunload;
+window.onbeforeunload=function(){return BeforeUnload();if(oldBeforeUnload)oldBeforeUnload();};
+
+if (typeof(content) == "undefined") content=null;
+else InitContent = content.value;
+
+if (content.addEventListener) {
+	content.addEventListener('keyup', OnTrackInput, true);
+	content.addEventListener('paste', OnPaste, true); 
+} 
+else if (content.attachEvent) {
+	try {
+		content.attachEvent("onkeyup", OnTrackInput);
+		content.attachEvent("onpaste", OnPaste);
+	} catch(e) {}
+}
+
+$(document).ready(function() {
+	$('#paste-dialog a.close-notify').click(function() {
+		$('#paste-dialog').stop(true, true).fadeOut('fast');
+		pasteOptionsVisible = false;
+		return false;
+	});
+	$(content).click(function() {
+		$('#paste-dialog').stop(true, true).fadeOut('fast');
+		pasteOptionsVisible = false;
+		return false;
+	});
+	
+});
+//-->
+</script><span id="ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal" style="color: Red; display: none;">The content must be at least 30 characters.</span>
+		</div>
+
+		
+
+		<div class="small-text padded-top">
+			<span class="small-text invisible"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml" name="ctl00$ctl00$MC$AMC$PostEntryObj$IgnoreHtml" tabindex="6" type="checkbox"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml">Treat my content as plain text, not as HTML</label></span>
+		</div>
+
+		
+		<h2>Preview <span id="refresh-count" style="display: none;">0</span></h2>
+		<div id="Preview" class="preview">…</div>
+
+		
+		
+
+		
+		<br>
+		<p id="AjaxLogonErrors" class="error callout" style="display: none;">
+		
+
+</p><div id="LogOnContainer">
+
+<table class="member-signin" cellspacing="0">
+<tbody><tr>
+	<td id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_ExistHead" colspan="2"><h3>Existing Members</h3>
+		<div style="margin: -20px 0pt 10px;" class="subdue">Sign in to your account</div>
+	</td>
+<td id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickSignHead" colspan="2"><h3 id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickTitle">...or Join us</h3>
+		<div style="margin: -20px 0pt 10px;" class="subdue">Download, Vote, Comment, Publish.</div>
+	</td>
+
+</tr>
+
+<tr valign="top">
+
+	
+	<td>
+
+		<table>
+		<tbody><tr>
+			<td class="align-middle align-right nowrap">Your Email &nbsp;</td>
+			<td><input name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$CurrentEmail" id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_CurrentEmail" class="small-text" style="width: 175px;" type="email"></td>
+		</tr>
+		<tr>
+			<td class="align-middle align-right nowrap">Password &nbsp;</td>
+			<td><input name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$CurrentPassword" id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_CurrentPassword" class="small-text" style="width: 175px;" type="password"></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="align-middle align-right nowrap">
+				
+				<div><a id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_SendPassword" class="forgot small-text" href="http://www.codeproject.com/script/Membership/SendPassword.aspx?rp=http%3a%2f%2fwww.codeproject.com%2f">Forgot your password?</a></div>
+			</td>
+		</tr>
+		</tbody></table>
+
+	</td>
+	<td width="70px">&nbsp;</td>
+
+	<td>
+
+		<table>
+		<tbody><tr>
+			<td class="align-middle align-right nowrap">Your Email &nbsp;</td>
+			<td class="align-right">
+				<input name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$QuickEmail" id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickEmail" class="small-text" style="width: 175px;" type="email">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div id="NewEmailError" class="locked invisible small-text" style="margin-top: -10px; display: none;">This 
+				email is in use. Do you need your <a id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_Password2" href="http://www.codeproject.com/script/Membership/SendPassword.aspx?rp=http%3a%2f%2fwww.codeproject.com%2f">password</a>?</div>
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="align-middle align-right nowrap subdue">
+				Optional Password &nbsp;
+				<input name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$QuickPassword" id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickPassword" class="small-text" style="width: 125px;" type="password">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="align-right small-text">
+				
+			</td>
+		</tr>
+		</tbody></table>
+
+	</td>
+	<td width="70px">&nbsp;</td>
+	
+	
+</tr>
+
+
+
+</tbody></table>
+
+<div id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_Choices" style="margin-top: -100px; width: 275px; margin-left: 335px;" class="small-text subdue">
+    <input id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_TermsOfUse" name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$TermsOfUse" type="checkbox"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_TermsOfUse">I have read and agree to the <a target="_blank" href="http://www.codeproject.com/info/TermsOfUse.aspx">Terms of Service</a> and <a target="_blank" href="http://www.codeproject.com/info/privacy.aspx">Privacy Policy</a></label><br>
+    <span onchange="logonCtrlObject.OnNewslettersCheckChange(this);"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_AllNewsletters" name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$AllNewsletters" checked="checked" type="checkbox"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_AllNewsletters">Please subscribe me to the CodeProject newsletters</label></span>
+</div>
+
+</div>
+
+<script type="text/javascript">
+    function LogonCtrlObject()
+    {
+        var clickedOptin = false;
+
+        this.OnCountryChange = function (CASL, subscribing) {
+        }
+
+        this.OnNewslettersCheckChange = function (checkbox) {
+            clickedOptin = true;
+        }
+
+        this.OnCountrySelectionChange = function (dropdown) {
+            var CASLCountries = [ "Afghanistan","Åland Islands","Algeria","American Samoa","Andorra","Angola","Anguilla","Anonymous Proxy","Antarctica","Aruba","Asia/Pacific Region","Benin","Bermuda","Bolivia","Bonaire, Sint Eustatius And Saba","Bouvet Island","British Crown Dependencies","British Indian Ocean Territory","Brunei Darussalam","Burundi","Canada","Cape Verde","Chad","Christmas Island","Cocos (Keeling) Islands","Comoros","Congo","Congo (The Democratic Republic Of The)","Cook Islands","Cote D'ivoire","Cuba","Curaçao","Djibouti","East Timor","Egypt","El Salvador","Equatorial Guinea","Eritrea","Ethiopia","Europe","Falkland Islands (Malvinas)","Faroe Islands","Fiji","France (Metropolitan)","French Guiana","French Polynesia","French Southern Territories","Gabon","Gibraltar","Greenland","Guadeloupe","Guam","Guernsey","Guinea","Guinea-Bissau","Guyana","Haiti","Heard Island And Mcdonald Islands","Holy See (Vatican City State)","Honduras","Iran (Islamic Republic Of)","Iraq","Isle Of Man","Jersey","Kiribati","Korea (Democratic People's Republic Of)","Kuwait","Kyrgyzstan","Lao People's Democratic Republic","Lebanon","Lesotho","Liberia","Libyan Arab Jamahiriya","Macau","Madagascar","Malawi","Maldives","Mali","Marshall Islands","Martinique","Mauritania","Mayotte","Mexico","Micronesia (Federated States Of)","Monaco","Mongolia","Montserrat","N/A","Nauru","Netherlands Antilles","New Caledonia","Nicaragua","Niger","Nigeria","Niue","Norfolk Island","Northern Mariana Islands","Oman","Other","Palau","Palestinian Territory (Occupied)","Panama","Papua New Guinea","Paraguay","Pitcairn","Reunion","Rwanda","Saint Barthélemy","Saint Helena","Saint Kitts And Nevis","Saint Martin (French)","Saint Pierre And Miquelon","Samoa","San Marino","Sao Tome And Principe","Satellite Provider","Senegal","Serbia And Montenegro","Seychelles","Sint Maarten","Solomon Islands","Somalia","South Georgia And The South Sandwich Islands","Sudan","Suriname","Svalbard And Jan Mayen","Swaziland","Syrian Arab Republic","Taiwan","Tajikistan","Timor-Leste","Togo","Tokelau","Turkmenistan","Tuvalu","United States Minor Outlying Islands","Uruguay","Uzbekistan","Vanuatu","Wallis And Futuna","Western Sahara","Yemen","Yugoslavia","Zaire","Zimbabwe",];
+            if (dropdown.selectedIndex >= 0) {
+                var country = dropdown[dropdown.selectedIndex].text;
+
+                var useCASL = false;
+                for (i = 0; i < CASLCountries.length; i++) {
+                    if (CASLCountries[i] == country) {
+                        useCASL = true;
+                        break;
+                    }
+                }
+
+                if (!clickedOptin)
+                    $('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_AllNewsletters').prop('checked', !useCASL);
+
+                logonCtrlObject.OnCountryChange(useCASL, $('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_AllNewsletters').prop('checked'));
+            }
+        }
+    }
+
+    var logonCtrlObject = new LogonCtrlObject();
+</script>
+
+
+		
+		<div class="clearfix padded-top">
+		
+		<div id="AjaxSubmitGroup" style="">
+			<a href="javascript:void(0)" id="ctl00_ctl00_MC_AMC_PostEntryObj_AjaxSubmit" class="button-large safe" onclick="OnAjaxSubmit(); return false;">Submit your solution!</a>
+		</div>
+		</div>
+
+		
+		<div class="callout">
+		When answering a question please:<br>
+		<ol class="spaced">
+			<li>Read the question carefully.</li>
+			<li>Understand that English isn't everyone's first language so be lenient of bad 
+			spelling and grammar.</li>
+			<li>If a question is poorly phrased then either ask for clarification, ignore it, or
+			<b>edit the question</b> and fix the problem. Insults are not welcome.</li>
+		</ol>
+		Let's work to help developers, not make them feel stupid.
+		</div>
+		
+
+	</div>
+	
+    
+	
+
+	
+    <div class="clearfix"></div>
+
+	
+</div>
+
+
+</div>
+<br style="clear: both;">
+</div>
+
+
+<div id="ctl00_ctl00_MC_AMC_LicenseTerms" class="small-text" style="margin-top: 20px;"><p class="small-text">This content, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+
+
+	<!-- Main Page Contents End -->
+
+	</div>
+
+</div>
+
+
+
+<div id="ctl00_ctl00_MC_NavRight" class="text-sidebar question">
+
+	
+
+<div class="align-right">
+
+&nbsp;
+<a id="ctl00_ctl00_MC_Tools_PrintLnk" title="Print" href="http://www.codeproject.com/Questions/226294/Draw-a-filled-Rectangle?display=Print"><img src="Draw-a-filled-Rectangle_elemei/print24.png" style="border: 0pt none ;" alt="Print" height="24px" width="24px"></a>
+
+ 
+
+
+<a id="ctl00_ctl00_MC_Tools_AnswersRSS" title="Quick Answers RSS feed" href="http://www.codeproject.com/webservices/QuestionRSS.aspx">
+<img src="Draw-a-filled-Rectangle_elemei/rss24.png" alt="Answers RSS" style="border: 0pt none ; width: 24px; height: 24px;">
+</a>
+
+
+
+</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="padded-top" style="height: 250px;">
+		<div class="msg-300x250" data-format="300x250" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="ros" data-tags="VC6, OpenGL"><noscript><a
+href="http://ad.doubleclick.net/N6839/jump/lqm.codeproject.site/ros;sz=300x250;ord=635487013957507358?"><img
+src="http://ad.doubleclick.net/N6839/ad/lqm.codeproject.site/ros;sz=300x250;ord=635487013957507358?"
+width="300px" height="250px" /></a></noscript></div>
+	</div>
+
+	
+	
+
+<div class="experts-list padded-top">
+
+<div id="Header" class="header">Top Experts in 24hrs</div>
+
+<table class="experts-list padded">
+<tbody><tr>
+<td>0</td>
+<td><a id="MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=2291164">Sergey Alexandrovich Kryukov</a></td>
+<td align="right"><span title="Points earned in period">195</span></td>
+</tr>
+
+<tr>
+<td>1</td>
+<td><a id="MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=4884011">CHill60</a></td>
+<td align="right"><span title="Points earned in period">185</span></td>
+</tr>
+
+<tr>
+<td>2</td>
+<td><a id="MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=8522102">Tadit Dash (ତଡିତ୍ କୁମାର ଦାଶ)</a></td>
+<td align="right"><span title="Points earned in period">180</span></td>
+</tr>
+
+<tr>
+<td>3</td>
+<td><a id="MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=26923">BillWoodruff</a></td>
+<td align="right"><span title="Points earned in period">135</span></td>
+</tr>
+
+<tr>
+<td>4</td>
+<td><a id="MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=10255428">Afzaal Ahmad Zeeshan</a></td>
+<td align="right"><span title="Points earned in period">94</span></td>
+</tr>
+</tbody></table>
+</div>
+	
+
+<div class="experts-list padded-top">
+
+<div id="Header" class="header">Top Experts this month</div>
+
+<table class="experts-list padded">
+<tbody><tr>
+<td>0</td>
+<td><a id="MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=2291164">Sergey Alexandrovich Kryukov</a></td>
+<td align="right"><span title="Points earned in period">4,668</span></td>
+</tr>
+
+<tr>
+<td>1</td>
+<td><a id="MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=635858">Maciej Los</a></td>
+<td align="right"><span title="Points earned in period">1,664</span></td>
+</tr>
+
+<tr>
+<td>2</td>
+<td><a id="MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=8522102">Tadit Dash (ତଡିତ୍ କୁମାର ଦାଶ)</a></td>
+<td align="right"><span title="Points earned in period">1,537</span></td>
+</tr>
+
+<tr>
+<td>3</td>
+<td><a id="MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=1778670">CPallini</a></td>
+<td align="right"><span title="Points earned in period">1,452</span></td>
+</tr>
+
+<tr>
+<td>4</td>
+<td><a id="MemberName" href="http://www.codeproject.com/script/Membership/View.aspx?mid=34187">Richard Deeming</a></td>
+<td align="right"><span title="Points earned in period">1,115</span></td>
+</tr>
+</tbody></table>
+</div>
+	
+		
+	<div style="margin: 10px auto auto; width: 160px;" class="sticky-stop">
+		
+	</div>
+	
+</div>
+
+
+</div>
+<br>
+
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_ctl00_MC_AMC_PostEntryObj_ValidationSummary1"));
+var Page_Validators =  new Array(document.getElementById("ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_ctl00_MC_AMC_PostEntryObj_ValidationSummary1 = document.all ? document.all["ctl00_ctl00_MC_AMC_PostEntryObj_ValidationSummary1"] : document.getElementById("ctl00_ctl00_MC_AMC_PostEntryObj_ValidationSummary1");
+ctl00_ctl00_MC_AMC_PostEntryObj_ValidationSummary1.validationGroup = "ItemDetails";
+var ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal = document.all ? document.all["ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal"] : document.getElementById("ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal");
+ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal.errormessage = "The content must be at least 30 characters.";
+ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal.display = "Dynamic";
+ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal.validationGroup = "ItemDetails";
+ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal.evaluationfunction = "CustomValidatorEvaluateIsValid";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+</form>
+
+
+
+					
+
+					<!-- Main Page Contents End -->
+					<br clear="all">
+				</div>
+
+				<div class="theme1-background padded sticky-stop">
+					<div style="margin: auto; width: 728px;">
+						<div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="ros" data-loadonview="true" data-tags="VC6, OpenGL,pos_bottom"><noscript><a
+href="http://ad.doubleclick.net/N6839/jump/lqm.codeproject.site/ros;sz=728x90;ord=635487013957507358?"><img
+src="http://ad.doubleclick.net/N6839/ad/lqm.codeproject.site/ros;sz=728x90;ord=635487013957507358?"
+width="728px" height="90px" /></a></noscript></div>
+					</div>
+				</div>
+
+				<div class="extended tiny-text">
+					<div class="row">
+						<div class="float-left">
+							<a id="ctl00_ctl00_AdvertiseLink" href="http://developermedia.com/">Advertise</a> | 
+							<a id="ctl00_ctl00_PrivacyLink" href="http://www.codeproject.com/info/privacy.aspx">Privacy</a> |
+							<a id="ctl00_ctl00_Mobile" rel="nofollow" href="http://www.codeproject.com/Questions/226294/Draw-a-filled-Rectangle?display=Mobile">Mobile</a>
+							<br>
+							Web03 |
+							2.8.141008.1 |
+							Last Updated 16 Jun 2013
+						</div>
+						<div class="float-right align-right">
+							Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2014 <br>
+							All Rights Reserved.
+							<a id="ctl00_ctl00_TermsOfUseLink" href="http://www.codeproject.com/info/TermsOfUse.aspx">Terms of Service</a>
+						</div>
+
+						
+
+
+<div class="page-width">
+Layout: <a id="ctl00_ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="http://www.codeproject.com/Questions/226294/Draw-a-filled-Rectangle?PageFlow=FixedWidth">fixed</a>
+|
+<a id="ctl00_ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="http://www.codeproject.com/Questions/226294/Draw-a-filled-Rectangle?PageFlow=Fluid">fluid</a>
+</div>
+
+
+					</div>
+				</div>
+	
+				<br clear="all">
+		
+					
+
+			
+
+	</div>
+	</div>
+	</div>
+
+    <div id="ctl00_ctl00_Address" class="tiny-text subdue align-center padded-top">
+    CodeProject, 
+    503-250 Ferrand Drive Toronto Ontario, M3C 3G8 Canada
+    +1 416-849-8900 x 100
+    </div>
+
+</div>
+<div id="page-bottom"></div>
+
+
+
+<script type="text/javascript" language="Javascript" src="Draw-a-filled-Rectangle_elemei/jquery.js"></script><script type="text/javascript">//<![CDATA[
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='/script/JS/jquery-1.6.2.min.js' type='text/javascript' %3E%3C/script%3E"));
+}//]]></script>
+<script type="text/javascript" language="Javascript" src="Draw-a-filled-Rectangle_elemei/qa.js"></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+$('#NewEntryGroup').show();
+$('#ctl00_ctl00_MC_AMC_AddChild2').hide();
+$('#ctl00_ctl00_MC_AMC_AddChild1').attr('href', '#NewEntryGroup');
+$('#ctl00_ctl00_MC_AMC_AddChild1').attr('name', 'anchorTarget');
+$(document).ready(function() { anchorAnimate() });
+
+function UpdateSize(elmName, indicator) {
+ var elm = document.getElementById(elmName);
+ if (elm) {
+  var indElm = document.getElementById(indicator);
+  if (indElm) indElm.value = elm.value.length.toString();
+ }
+}
+
+
+                    function OnEdit() { 
+                        $('#Preview').html('');
+                        $('#AjaxSubmitErrors').hide();
+                        $('#AjaxLogonErrors').hide();
+                    }
+                    $('#TitleSize').prop('disabled', true);
+                    var validationData = {};
+                    validationData.postErrorDivId   = 'AjaxSubmitErrors';
+                    validationData.logonErrorDivId  = 'AjaxLogonErrors';
+                    validationData.generalErrorMsg  = 'An error occurred and we were unable to complete your request. The error has been logged and an administrator notified. Sorry :(';
+                    validationData.minContentLength = 30;
+                    validationData.tooShortMsg      = 'The content is too short.';
+
+                    var newEntryData = {};
+                    newEntryData.postUrl          = '/script/Answers/WebServices/ProcessNewEntry.aspx';
+                    newEntryData.typeName         = 'answer';
+                    newEntryData.parentId         = 226294;
+                    newEntryData.parentTypeName   = 'answer';
+                    newEntryData.containerId      = 'PostEntryContainer';
+                    newEntryData.contentId        = 'ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText';
+                    newEntryData.submitBtnId      = 'AjaxSubmit';
+                    newEntryData.helpTipsId       = 'ctl00_ctl00_MC_AMC_PostEntryObj_HelpTips';
+                    newEntryData.useWysiwygEditor = false;
+                    newEntryData.ignoreHtmlId     = 'ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml';
+                    newEntryData.onPasteMode      = 'html';
+
+                    var logonData = {};
+                    logonData.loggedIn    = false;
+                    logonData.postUrl     = 'https://www.codeproject.com/script/Membership/Ajax/ProcessLogonOrSignup.aspx';
+                    logonData.containerId = 'LogOnContainer';
+
+                    function OnAjaxSubmit() {
+                        TryPostNewEntry(validationData, newEntryData, logonData);
+                    }
+if (RegisterPreviewRefresh)RegisterPreviewRefresh(1000, 'ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText', false, 'ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml', '/script/Articles/WebServices/ArticleServices.aspx/UpdateEditLockStatus', 0);var lastPreviewContent='';function RefreshPreview(previewHelper) {var ignore=$('#ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml')[0];
+var formatType=ignore.checked?'Text':'TextWithHtml';
+
+                        var htmlContent = GetEditorContent(false, 'ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText');
+                        if (lastPreviewContent != htmlContent) {
+                            lastPreviewContent = htmlContent;
+                            postData = {
+                                'ParentId'         : newEntryData.parentId,
+                                'Content'          : htmlContent,
+                                'WysiwygEditorUsed': newEntryData.useWysiwygEditor,
+                                'IgnoreHtml'       : $('#' + newEntryData.ignoreHtmlId)[0].checked,
+                                'PasteMode'        : newEntryData.onPasteMode 
+                            };
+                            $.ajax({
+                                type:     'POST',
+                                cache:    false,
+                                dataType: 'json',
+                                data:      postData,
+                                timeout:   1000,
+                                async:     true,
+                                url:       '/script/Answers/Preview.aspx',
+                                success: function(data) {
+                                    if (!data || !data.html || data.html == '')
+                                        result = '<p class="error">Unexpected error when attempting to retrieve preview HTML.</p>';
+                                    else 
+                                        result = decodeURIComponent(data.html);
+                                    $('#Preview').html(result);
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    errorThrown;
+                                }
+                            });
+                        }
+                        else if (htmlContent.length == 0) {
+                            $('#Preview').html('&hellip;');
+                        }
+                    }
+$('#ctl00_ctl00_MC_AMC_PostEntryObj_PostbackSubmitGroup').hide();
+                              $('#AjaxSubmitGroup').show();
+$(function() {
+                                    var lasttime=new Date().getTime();
+                                    $('#NewEmailError').hide();
+                                    var emailEle = $('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickEmail');
+                                    emailEle.blur(function() {
+                                        var email = $.trim(emailEle.val());
+                                        if (email.length > 0)
+                                            checkEmail(email);
+                                    });
+                                    emailEle.keyup(function() {
+                                        var email = $.trim(emailEle.val());
+                                        var current=new Date().getTime();
+                                        if (email.length > 0 && (current-lasttime) > 1000) {
+                                            checkEmail(email);
+                                            lasttime=current;
+                                        }
+                                    });
+                                });
+                                function checkEmail(email) {
+                                    $.get('/script/Membership/Ajax/EmailExists.aspx?meml=' + escape(email),
+                                        function(data) {
+                                            if (data.toLowerCase() == 'true')
+                                                $('#NewEmailError').show();
+                                            else
+                                                $('#NewEmailError').hide();
+                                        });
+                                }
+$(function ()
+                {
+                    $('.oauth').click(function () {
+                        $this = $(this);
+                        href = $this.attr('href');
+                        var myWindow = window.open(href, 'popup',
+                                    'width=800,height=600,location=0,menubar=0,resizeable=0,scrollbars=0,toolbar=0');
+                        myWindow.focus();
+                        var timer = setInterval(function () {
+                                        if (myWindow.closed) {
+                                            clearInterval(timer);
+                                            // window.location.reload(); // May do a POST reload, shows a warning
+                                            window.location = window.location; // force a GET reload
+                                        }
+                                    }, 200);
+                        return false;
+                    });
+                });
+var oSrchFlt = false, oSrchBox=false,srchBoxFoc=false;
+$(document).ready(function() {
+ if(InitWatermark)InitWatermark('sb_tb', 'Search for articles, questions, tips');
+ var sbar = $('#sb_tb'); 
+ var sfilter = $('#SearchFilter');
+ if (sbar && sfilter) {
+  sfilter.removeClass('popup'); sfilter.hide(); sfilter.removeClass('open');
+  sbar.blur(function() {
+ if (!oSrchFlt) {sfilter.hide(); sfilter.removeClass('open');}
+ srchBoxFoc=false;
+ });
+  sbar.focus(function() {
+ oSrchFlt=false; srchBoxFoc=true;
+ sfilter.show(); sfilter.addClass('open');
+ });
+  sbar.mouseleave(function() { oSrchBox=false; });
+  sbar.mouseover(function() { oSrchBox=true; });
+  sfilter.mouseleave(function() { oSrchFlt=false; if (!srchBoxFoc&&!oSrchBox) { sfilter.hide(); sfilter.removeClass('open'); }});
+  sfilter.mouseover(function() { oSrchFlt=true; });
+ }
+});
+$('#usf').change(function() {$('#usfc').val('true');});
+$('#clear-rate_ctl00_ctl00_MC_AMC_RatePost_RSU').click(function () {    $('#ctl00_ctl00_MC_AMC_RatePost_RSU').hide(); return false;});$("#ctl00_ctl00_MC_AMC_RatePost_RateItemWrapper")   .removeClass("container-rating")   .hover( function() { $('#ctl00_ctl00_MC_AMC_RatePost_RSU').fadeIn('fast'); },            function() { $('#ctl00_ctl00_MC_AMC_RatePost_RSU').fadeOut('fast'); } );
+function PostBack_ctl00_ctl00_MC_AMC_RatePost_RateItemWrapper() {
+  return rateItem(226294,2,4,false,true,3,'MediumStars');
+}
+
+                        function getVotesHistogram(objectId, objectTypeId, containerId, loadingId) {
+                            if (!$('#' + containerId).attr('alreadyRequested')){
+                                $.ajax({
+                                    url: '/script/Ratings/Ajax/Histogram.aspx?obid=' + objectId + '&obtid='+objectTypeId,
+                                    success: function (data) {
+                                        $('#' + containerId).html(data);
+                                        $('#' + loadingId).hide();
+                                    }
+                                });
+                                $('#' + containerId).attr('alreadyRequested', 'true');
+                            }
+                        }
+$(document).ready(function() {   new starRating('#ctl00_ctl00_MC_AMC_RatePost_VoteFormDiv', PostBack_ctl00_ctl00_MC_AMC_RatePost_RateItemWrapper,'ctl00_ctl00_MC_AMC_RatePost');
+  $('#ctl00_ctl00_MC_AMC_RatePost_RB').mouseenter(function() {     getVotesHistogram(226294,2   ,'ctl00_ctl00_MC_AMC_RatePost_Histogram','ctl00_ctl00_MC_AMC_RatePost_Loading');  })})
+$(document).ready(function() { $('#ctl00_ctl00_MC_AMC_RatePost_SubmitRateBtn').hide(); });
+$(document).ready(function() { $('#ctl00_ctl00_MC_AMC_RatePost_SubmitRateBtn').hide(); });function ChkRtctl00_ctl00_MC_AMC_RatePost(){}
+
+$('#clear-rate_ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU').click(function () {    $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU').hide(); return false;});$("#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateItemWrapper")   .removeClass("container-rating")   .hover( function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU').fadeIn('fast'); },            function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU').fadeOut('fast'); } );
+function PostBack_ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateItemWrapper() {
+  return rateItem(226299,2,5,false,true,3,'SmallStars');
+}
+$(document).ready(function() {   new starRating('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteFormDiv', PostBack_ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateItemWrapper,'ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost');
+  $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RB').mouseenter(function() {     getVotesHistogram(226299,2   ,'ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_Histogram','ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_Loading');  })})
+$(document).ready(function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_SubmitRateBtn').hide(); });
+$(document).ready(function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_SubmitRateBtn').hide(); });function ChkRtctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost(){}
+
+$('#clear-rate_ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU').click(function () {    $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU').hide(); return false;});$("#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateItemWrapper")   .removeClass("container-rating")   .hover( function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU').fadeIn('fast'); },            function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU').fadeOut('fast'); } );
+function PostBack_ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateItemWrapper() {
+  return rateItem(226437,2,5,false,true,3,'SmallStars');
+}
+$(document).ready(function() {   new starRating('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteFormDiv', PostBack_ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateItemWrapper,'ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost');
+  $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RB').mouseenter(function() {     getVotesHistogram(226437,2   ,'ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_Histogram','ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_Loading');  })})
+$(document).ready(function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_SubmitRateBtn').hide(); });
+$(document).ready(function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_SubmitRateBtn').hide(); });function ChkRtctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost(){}
+
+$('#clear-rate_ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_RSU').click(function () {    $('#ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_RSU').hide(); return false;});$("#ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_RateItemWrapper")   .removeClass("container-rating")   .hover( function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_RSU').fadeIn('fast'); },            function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_RSU').fadeOut('fast'); } );
+function PostBack_ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_RateItemWrapper() {
+  return rateItem(607389,2,5,false,true,3,'SmallStars');
+}
+$(document).ready(function() {   new starRating('#ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_VoteFormDiv', PostBack_ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_RateItemWrapper,'ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost');
+  $('#ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_RB').mouseenter(function() {     getVotesHistogram(607389,2   ,'ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_Histogram','ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_Loading');  })})
+$(document).ready(function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_SubmitRateBtn').hide(); });
+$(document).ready(function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost_SubmitRateBtn').hide(); });function ChkRtctl00_ctl00_MC_AMC_Answers_ctl02_A_RatePost(){}
+
+var quoteableElmID = '';
+var initialPasteMode = 'html';
+
+$(document).ready(function() {$('textarea.resizable:not(.processed)').TextAreaResizer(false);});
+
+//]]>
+</script>
+
+
+</body></html>

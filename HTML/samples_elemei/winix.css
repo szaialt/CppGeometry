@@ -1,0 +1,671 @@
+/*
+	some globals
+	we are not clearing css here
+*/
+
+div.winix table {
+border-collapse: collapse;
+border-spacing: 0;
+margin: 0.5em 0 0.5em 0;
+border: none;
+border:1px solid red;
+}
+
+div.winix table th {
+font-weight: bold;
+}
+
+div.winix table th, div.winix table td {
+border: 1px solid #e5e5e5;
+padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
+
+div.winix table.winix_taba {
+border: 1px solid #e5e5e5;
+}
+
+div.winix table.winix_taba th, div.winix table.winix_taba td {
+border: 1px solid #e5e5e5;
+}
+
+
+
+
+
+
+div.winix table.winix_table_withoutborder th, div.winix table.winix_table_withoutborder td {
+border: none;
+}
+
+div.winix input[type=text], div.winix input[type=password], div.winix textarea {
+border: 1px solid #dedede;
+padding: 2px;
+}
+
+div.winix h1 {
+margin: 0.5em 0 0.5em;
+}
+
+div.winix h2 {
+margin: 1.5em 0 0.5em;
+}
+
+div.winix p {
+text-indent: 0;
+margin: 0.5em 0 0.5em;
+}
+
+
+/*
+	form controls
+*/
+
+div.winix div.winix_input_a label {
+display: block;
+margin: 1em 0 0.4em 0;
+}
+
+div.winix div.winix_input_a input[type=text] {
+width: 500px;
+}
+
+div.winix div.winix_input_a textarea {
+width: 100%;
+}
+
+div.winix form input[type=submit] {
+clear: both;
+display: block;
+padding: 2px;
+min-width: 150px;
+margin: 2em 0 1em 0;
+}
+
+div.winix div.winix_input_b {
+margin: 0.3em 0 0.3em 0;
+}
+
+div.winix div.winix_input_b label {
+display: inline;
+}
+
+div.winix div.winix_input_b input {
+display: inline;
+}
+
+/*
+	imgcrop
+*/
+
+div.winix img#winix_imgcropper {
+}
+
+ul.winix_imgcrop_list > li {
+overflow: hidden;
+padding: 1em 0 1em 0;
+border-bottom: 1px solid #ededed;
+margin: 0 0 1em 0;
+}
+
+
+div.winix div.winix_imgcrop_list_image {
+float: left;
+width: 210px;
+}
+
+div.winix div.winix_imgcrop_list_image img {
+max-width: 200px;
+}
+
+div.winix div.winix_imgcrop_list_imageurl {
+float: left;
+width: 250px;
+overflow: hidden;
+}
+
+div.winix div.winix_imgcrop_list_options {
+float: left;
+width: 300px;
+}
+
+
+/*
+	upload
+	fileupload id comes from jquery upload (do not use winix prefix with it)
+*/
+
+div.winix form#fileupload {
+display: block;
+margin: 3em 0 1em 0;
+font-size: 11px;
+}
+
+div.winix #fileupload .files span.preview img {
+max-width: 250px;
+max-height: 300px;
+}
+
+div.winix #fileupload .files td {
+vertical-align: middle;
+}
+
+div.winix #fileupload button.cancel {
+display: none;
+}
+
+
+/*
+	mount
+*/
+
+table.winix_mountpoints {
+
+}
+
+table.winix_mountpoints th {
+font-weight: bold;
+white-space: normal;
+text-align: center;
+}
+
+/*
+	ls
+*/
+
+
+div.winix div#winix_ls_browse_leftcolumn {
+float: left;
+width: 30%;
+margin: 0 2em 1em 1em;
+}
+
+div.winix div#winix_ls_browse_leftcolumn li {
+margin: 0;
+padding: 0;
+list-style-type: none;
+list-style-image: none;
+background: none;
+}
+
+div.winix div#winix_ls_browse_leftcolumn h2 {
+font-size: 1em;
+font-weight: normal;
+}
+
+div.winix div#winix_ls_browse_leftcolumn a {
+text-decoration: none;
+outline-style: none;
+}
+
+div.winix div#winix_ls_browse_leftcolumn a:hover, div.winix div#winix_ls_browse_leftcolumn a:focus {
+text-decoration: underline;
+}
+
+div.winix div#winix_ls_browse_rightcolumn {
+float: left;
+width: 60%;
+}
+
+div.winix div#winix_ls_browse_rightcolumn h2 {
+font-size: 1em;
+font-weight: normal;
+}
+
+
+div.winix div#winix_ls_browse_rightcolumn li {
+display: block;
+float: left;
+margin: 0 1em 1em 0;
+padding: 0;
+list-style-type: none;
+list-style-image: none;
+background: none;
+}
+
+div.winix div#winix_ls_browse_rightcolumn li a img {
+padding: 3px;
+}
+
+div.winix div#winix_ls_browse_rightcolumn li a:focus {
+outline-style: none;
+}
+
+div.winix div#winix_ls_browse_rightcolumn li a:hover img, div.winix div#winix_ls_browse_rightcolumn li a:focus img {
+border: 1px solid black;
+padding: 2px;
+}
+
+
+/*
+	tickets
+*/
+
+div.winix table.winix_tickets_tab {
+border: 1px solid #D1D1E1;
+}
+
+div.winix table.winix_tickets_tab th {
+font-weight: bold;
+}
+
+div.winix table.winix_tickets_tab th, div.winix table.winix_tickets_tab td {
+text-align: center;
+font-size: 0.7em;
+border: 1px solid #D1D1E1;
+vertical-align: middle;
+padding: 0.3em 0.5em 0.3em 0.5em;
+}
+
+div.winix table.winix_tickets_tab td.winix_tickets_tab_title {
+font-size: 1em;
+text-align: left;
+padding: 0.3em 0.5em 0.3em 0.5em;
+}
+
+div.winix table.winix_tickets_tab a {
+display: block;
+}
+
+
+
+
+
+
+div.winix div.winix_ticket {
+background: #FFFED5;
+padding: 2em;
+border: 1px dotted #AFAFAF;
+margin-bottom: 2em;
+}
+
+
+div.winix div.winix_ticket table th {
+text-align: left;
+border: 0;
+padding: 0 1em 0 0;
+}
+
+
+div.winix div.winix_ticket table td {
+border: 0;
+}
+
+
+div.winix div.winix_ticket p.winix_ticket_edit {
+font-size: 0.8em;
+text-align: right;
+float: right;
+}
+
+
+
+div.winix table.winix_create_ticket {
+margin: 1em 0 1em 0;
+}
+
+
+div.winix table.winix_create_ticket th {
+text-align: left;
+font-weight: normal;
+padding: 0 1em 0 0;
+}
+
+
+div.winix table.winix_create_ticket th, div.winix table.winix_create_ticket td {
+border: 0;
+vertical-align: middle;
+}
+
+
+div.winix table.winix_create_ticket input {
+margin: 0.3em 0 0.3em 0;
+padding: 2px;
+display: block;
+min-width: 150px;
+}
+
+div.winix table.winix_create_ticket select {
+margin: 0.3em 0 0.3em 0;
+padding: 2px;
+display: block;
+min-width: 160px;
+}
+
+
+div.winix table.winix_create_ticket div.winix_create_ticket_file_row {
+overflow: hidden;
+width: 500px;
+margin: 1.5em 0 1.5em 0;
+}
+
+div.winix table.winix_create_ticket div.winix_create_ticket_file_row img {
+float: left;
+display: block;
+}
+
+/* !! FIX ME it does not work -- the button is displayed at the bottom of the above image*/
+div.winix table.winix_create_ticket div.winix_create_ticket_file_row input[type=submit] {
+float: left;
+width: 50px;
+display: block;
+}
+
+
+/*
+	threads
+*/
+
+
+div.winix table.winix_forum {
+border: 1px solid #D1D1E1;
+}
+
+
+div.winix table.winix_forum th {
+border: 1px solid #D1D1E1;
+}
+
+
+div.winix table.winix_forum td {
+border: 1px solid #D1D1E1;
+}
+
+div.winix table.winix_forum a {
+display: block;
+padding: 0 4px 0 4px;
+}
+
+div.winix table.winix_forum td.smallfont {
+font-size: 0.7em;
+}
+
+
+div.winix div.winix_threadbox {
+padding: 0.2em 1em 1em 1em;
+}
+
+
+div.winix div.winix_threadboxcolor {
+background: #F4F4F4;
+border-radius: 8px;
+-moz-border-radius: 8px;
+-webkit-border-radius: 8px;
+}
+
+
+div.winix div.winix_threadbox a.winix_threadedit {
+margin: 0.5em 0 0 0;
+float: right;
+font-size: 0.8em;
+}
+
+
+
+
+/*
+	sort
+*/
+
+
+div.winix ul#winix_sort_items {
+margin: 0.5em 0 0.5em 0;
+}
+
+div.winix ul#winix_sort_items li {
+list-style-type: none;
+display: block;
+padding: 0.2em 1em 0.2em 1em;
+border: 1px solid #D3D3D3;
+background: #EDEDED;
+margin: 0.3em 0 0.3em 0;
+cursor: move;
+}
+
+div.winix ul#winix_sort_items input{
+width: 30px;
+margin: 0 10px 0 0;
+}
+
+div.winix ul#winix_sort_items img {
+height: 50px;
+}
+
+div.winix span.winix_sort_item_title {
+font-size: 0.8em;
+font-style: italic;
+}
+
+
+/*
+	ipban
+*/
+
+div.winix table.ipban_table {
+font-size: 0.8em;
+}
+
+
+/*
+	other stuff
+*/
+
+/* table.winix_slog can be outside div.winix */
+table.winix_slog th, table.winix_slog td {
+border: 0;
+padding: 0.2em 0.5em 0.2em 0.5em;
+margin: 0;
+}
+
+table.winix_slog th.winix_slogerror {
+background: red;
+color: white;
+}
+
+table.winix_slog th.winix_slogwarning {
+background: #7373FF;
+color: white;
+}
+
+table.winix_slog th.winix_sloginfo {
+background: #F0F0F0;
+color: black;
+}
+
+
+/* div.winix_itemoptions_a can be outside div.winix */
+div.winix_itemoptions_a {
+clear: both;
+border-top: 1px solid #D1D1E1;
+padding: 1em;
+margin: 5em 0 1em 0;
+}
+
+div.winix_itemoptions_a h2 {
+margin-top: 0;
+font-size: 1.1em;
+}
+
+div.winix_itemoptions_a ul {
+overflow: hidden;
+margin: 1em 0 2em 0;
+display: block;
+}
+
+div.winix_itemoptions_a li {
+display: block;
+margin-left: 2em;
+font-size: 0.8em;
+line-height: 1.8em;
+}
+
+
+/* div.winix_itemoptions_b can be outside div.winix */
+div.winix_itemoptions_b {
+clear: both;
+margin: 1em 0 1em 0;
+}
+
+div.winix_itemoptions_b h2 {
+margin-top: 0;
+font-size: 1.1em;
+}
+
+div.winix_itemoptions_b ul {
+overflow: hidden;
+margin: 1em 0 1em 0;
+display: block;
+padding: 0;
+}
+
+div.winix_itemoptions_b li {
+display: block;
+margin-left: 0;
+padding-left: 0;
+font-size: 0.8em;
+line-height: 1.5em;
+list-style-type: none;
+background: none;
+}
+
+
+
+
+p.winix_iteminfo {
+font-size: 0.7em;
+color: #AAAAAA;
+margin: 0.4em 0 1.8em 0;
+}
+
+p.winix_itemtabinfo {
+font-size: 0.7em;
+color: #AAAAAA;
+margin: 0 0 1em 0;
+padding: 0.5em 0 0 0;
+}
+
+p.winix_itemtabinfo2 {
+font-size: 0.7em;
+color: #AAAAAA;
+margin: 0 0 1em 0;
+padding: 1.5em 0 0 0;
+}
+
+
+
+/*
+ *
+ *
+ *
+	old stuff (need correction)
+ *
+ *
+ *
+ *
+*/
+
+
+img.catimage {
+max-width: 600px;
+}
+
+pre.nowinixbreak {
+display: inline;
+white-space: normal;
+}
+
+
+
+/*
+	from bbcode
+*/
+
+span.bbitalic {
+font-style: italic;
+}
+
+
+span.bbunderline {
+text-decoration: underline;
+}
+
+
+span.bbstrike {
+text-decoration: line-through;
+}
+
+
+div.bbquote {
+display: block;
+padding: 0.5em;
+margin: 0.5em 0 1em 0;
+border: 1px solid #C3C3C3;
+background: #F0F0F0;
+}
+
+div.bbquote span.bbquotewho {
+font-size: 0.8em;
+color: #BABABA;
+}
+
+code.bbcode {
+display: block;
+background-color: #fafafa;
+padding: 1em;
+font-size: 0.8em;
+}
+
+
+ul.bblist  {
+margin-left: 2em;
+}
+
+
+ul.bblist li {
+list-style-type: disc;
+}
+
+span.bbcolyellow {
+color: yellow;
+}
+
+span.bbcolred {
+color: red;
+}
+
+span.bbcolgreen {
+color: green;
+}
+
+span.bbcolblue {
+color: blue;
+}
+
+span.bbcolbrown {
+color: brown;
+}
+
+span.bbcolblack {
+color: black;
+}
+
+
+
+ul.galleryimages li {
+display: block;
+float: left;
+margin: 0 0 6px 10px;
+}
+
+ul.galleryimages a, ul.galleryimages a:hover, ul.galleryimages a:focus, ul.galleryimages a:active {
+background: none; 
+}
+
+ul.galleryimages img { 
+background: none; 
+}
+
+
+
+
+

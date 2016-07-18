@@ -1,0 +1,34 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-2"><title>SDL_keysym</title><meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.76b+"><link rel="HOME" title="SDL Library Documentation" href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/index.html"><link rel="UP" title="SDL Event Structures." href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/eventstructures.html"><link rel="PREVIOUS" title="SDL_QuitEvent" href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlquitevent.html"><link rel="NEXT" title="SDLKey" href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlkey.html"></head><body class="REFENTRY" link="#0000ee" text="#000000" vlink="#551a8b" alink="#ff0000" bgcolor="#fff8dc"><div class="NAVHEADER"><table summary="Header navigation table" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><th colspan="3" align="center">SDL Library Documentation</th></tr><tr><td valign="bottom" width="10%" align="left"><a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlquitevent.html" accesskey="P">Prev</a></td><td valign="bottom" width="80%" align="center"></td><td valign="bottom" width="10%" align="right"><a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlkey.html" accesskey="N">Next</a></td></tr></tbody></table><hr width="100%" align="LEFT"></div><h1><a name="SDLKEYSYM"></a>SDL_keysym</h1><div class="REFNAMEDIV"><a name="AEN4659"></a><h2>Name</h2>SDL_keysym&nbsp;--&nbsp;Keysym structure</div><div class="REFSECT1"><a name="AEN4662"></a><h2>Structure Definition</h2><pre class="PROGRAMLISTING">typedef struct{
+  Uint8 scancode;
+  SDLKey sym;
+  SDLMod mod;
+  Uint16 unicode;
+} SDL_keysym;</pre></div><div class="REFSECT1"><a name="AEN4665"></a><h2>Structure Data</h2><div class="INFORMALTABLE"><a name="AEN4667"></a><p></p><table class="CALSTABLE" border="0"><tbody><tr><td valign="TOP" align="LEFT"><tt class="STRUCTFIELD"><i>scancode</i></tt></td><td valign="TOP" align="LEFT">Hardware specific scancode</td></tr><tr><td valign="TOP" align="LEFT"><tt class="STRUCTFIELD"><i>sym</i></tt></td><td valign="TOP" align="LEFT">SDL virtual keysym</td></tr><tr><td valign="TOP" align="LEFT"><tt class="STRUCTFIELD"><i>mod</i></tt></td><td valign="TOP" align="LEFT">Current key modifiers</td></tr><tr><td valign="TOP" align="LEFT"><tt class="STRUCTFIELD"><i>unicode</i></tt></td><td valign="TOP" align="LEFT">Translated character</td></tr></tbody></table><p></p></div></div><div class="REFSECT1"><a name="AEN4686"></a><h2>Description</h2><p>The <span class="STRUCTNAME">SDL_keysym</span> structure is used by reporting key presses and releases since it is a part of the <a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlkeyboardevent.html"><span class="STRUCTNAME">SDL_KeyboardEvent</span></a>.</p><p>The <tt class="STRUCTFIELD"><i>scancode</i></tt> field should generally be left alone, it is the hardware dependent scancode returned by the keyboard. The <tt class="STRUCTFIELD"><i>sym</i></tt> field is extremely useful. It is the SDL-defined value of the key (see <a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlkey.html">SDL Key Syms</a>. This field is very useful when you are checking for certain key presses, like so:
+</p><pre class="PROGRAMLISTING">.
+.
+while(SDL_PollEvent(&amp;event)){
+  switch(event.type){
+    case SDL_KEYDOWN:
+      if(event.key.keysym.sym==SDLK_LEFT)
+        move_left();
+      break;
+    .
+    .
+    .
+  }
+}
+.
+.</pre>
+<tt class="STRUCTFIELD"><i>mod</i></tt> stores the current state of the keyboard modifiers as explained in <a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlgetmodstate.html"><tt class="FUNCTION">SDL_GetModState</tt></a>. The <tt class="STRUCTFIELD"><i>unicode</i></tt> is only used when UNICODE translation is enabled with <a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlenableunicode.html"><tt class="FUNCTION">SDL_EnableUNICODE</tt></a>. If <tt class="STRUCTFIELD"><i>unicode</i></tt>
+is non-zero then this a the UNICODE character corresponding to the
+keypress. If the high 9 bits of the character are 0, then this maps to
+the equivalent ASCII character:
+<pre class="PROGRAMLISTING">char ch;
+if ( (keysym.unicode &amp; 0xFF80) == 0 ) {
+  ch = keysym.unicode &amp; 0x7F;
+}
+else {
+  printf("An International Character.\n");
+}</pre>
+UNICODE translation does have a slight overhead so don't enable it unless its needed.<p></p></div><div class="REFSECT1"><a name="AEN4705"></a><h2>See Also</h2><p><a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlkey.html"><span class="STRUCTNAME">SDLKey</span></a></p></div><div class="NAVFOOTER"><hr width="100%" align="LEFT"><table summary="Footer navigation table" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="top" width="33%" align="left"><a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlquitevent.html" accesskey="P">Prev</a></td><td valign="top" width="34%" align="center"><a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/index.html" accesskey="H">Home</a></td><td valign="top" width="33%" align="right"><a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/sdlkey.html" accesskey="N">Next</a></td></tr><tr><td valign="top" width="33%" align="left">SDL_QuitEvent</td><td valign="top" width="34%" align="center"><a href="http://www.libsdl.org/release/SDL-1.2.15/docs/html/eventstructures.html" accesskey="U">Up</a></td><td valign="top" width="33%" align="right">SDLKey</td></tr></tbody></table></div></body></html>

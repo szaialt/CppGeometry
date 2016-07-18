@@ -1,0 +1,1215 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-2">
+	<!--Morrowland Presents Apron Tutorials-->
+	<!--http://www.morrowland.com-->
+	<!--http://www.morrowland.com/apron/index.php-->
+	<!--http://www.morrowland.com/apron/tutorials/gl/gl_window.php-->
+	<!--Created by Ronny André Reierstad-->
+	
+<title>OPENGL WINDOW</title>
+
+
+	<meta http-equiv="Page-Enter" content="blendtrans(duration=1.0)">	
+	<link rel="STYLESHEET" type="text/css" href="gl_window.php_elemei/scroll.css" media="screen">
+	<link rel="STYLESHEET" type="text/css" href="gl_window.php_elemei/main.css" media="screen">
+	<script src="gl_window.php_elemei/mouseover.js"></script>
+	<!--<script src='js/overlib.js'></script>--><!-- overLIB (c) Erik Bosrup -->
+
+</head><body topmargin="0" leftmargin="0">
+
+	<!--TABLE TOP-->
+	<table height="93" width="958" align="center" background="gl_window.php_elemei/bg_top.jpg" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td width="440"><img src="gl_window.php_elemei/main.jpg" height="93" width="398" border="0"></td>
+			<td width="502"><div align="center">
+	
+				<table height="64" width="472" background="gl_window.php_elemei/bg_banner.gif" border="0" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td><div align="center"><img src="gl_window.php_elemei/spacer_bgbanner.gif" height="2" width="12"></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div align="center"><a href="http://www.morrowland.com/apron/projects/shadow_blade/index.php"><img src="gl_window.php_elemei/shadowblade.gif" alt="Shadow Blade" height="60" width="468" border="0"></a></div>
+						</td>
+					</tr>
+				</tbody></table>
+			</div></td>
+			<td>
+				<div align="right"><img src="gl_window.php_elemei/topend.jpg"></div>
+			</td>
+		</tr>
+	</tbody></table>
+	
+	
+	
+	<!--INFO TABLE-->
+	<table height="55" width="958" align="center" background="gl_window.php_elemei/bg_info.jpg" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td height="29" valign="bottom" width="138">
+				<!--Inner Info Table-->
+				<table width="958" border="0" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td width="60"><img src="gl_window.php_elemei/infoend_l.jpg" border="0"></td>
+						<td width="5"><img src="gl_window.php_elemei/infostr.jpg" border="0"></td>
+						<td width="100"><div align="center"><a href="http://www.morrowland.com/"><img src="gl_window.php_elemei/bn_ml.jpg" alt="Morrowland Presents Apron Tutorials" height="23" border="0"></a></div></td>
+						<td width="5"><img src="gl_window.php_elemei/infostr.jpg" border="0"></td>
+						<td width="619"><marquee direction="right" scrolldelay="1" scrollamount="1"><font face="tahoma" size="1" color="#ffffff">game - design - multimedia - web - programming - tutorials - There are currently  viewers visiting Apron Tutorials.</font></marquee></td>
+						<td><img src="gl_window.php_elemei/infostr.jpg" border="0"></td>
+						<!-- // old Forum_Button(); -->
+						<td align="right"><img src="gl_window.php_elemei/infoend.jpg" border="0"></td>
+					</tr>
+				</tbody></table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<!--Inner Menu Table-->
+				<table width="958" border="0" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td width="158" background="gl_window.php_elemei/bg_menul.gif"><img src="gl_window.php_elemei/menuend.jpg" border="0"></td>
+						<td align="left">	<table border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+		    <td width="15">&nbsp;</td>
+			<!--<td><SCRIPT Language="JavaScript"> MouseOver('../../images/gfx/buttons/forum_a.jpg','../../images/gfx/buttons/forum_b.jpg',"border=0", '../../forum/index.php'); </SCRIPT></td>-->
+			<td><img src="gl_window.php_elemei/null.jpg"></td>
+			<td><img src="gl_window.php_elemei/null.jpg"></td>
+			<td><script language="JavaScript"> MouseOver('../../images/gfx/buttons/books_a.jpg','../../images/gfx/buttons/books_b.jpg',"border=0", '../../finance/books/index.php'); </script><a onmouseover='change("a1","../../images/gfx/buttons/books_b.jpg")' onmouseout='change("a1","../../images/gfx/buttons/books_a.jpg")' href="http://www.morrowland.com/apron/finance/books/index.php"><img name="a1" src="gl_window.php_elemei/books_a.jpg" border="0"></a></td>
+			<!--<td><SCRIPT Language="JavaScript"> MouseOver('../../images/gfx/buttons/shop_a.jpg','../../images/gfx/buttons/shop_b.jpg',"border=0", '../../finance/shop/index.php'); </SCRIPT></td>-->
+			<td><img src="gl_window.php_elemei/null.jpg"></td>
+			<td><img src="gl_window.php_elemei/null.jpg"></td>
+	
+			<!--<td><SCRIPT Language="JavaScript"> MouseOver('../../images/gfx/buttons/members_a.jpg','../../images/gfx/buttons/members_b.jpg',"border=0", '../../uc.php'); </SCRIPT></td>-->
+			<!--<td><SCRIPT Language="JavaScript"> MouseOver('../../images/gfx/buttons/contest_a.jpg','../../images/gfx/buttons/contest_b.jpg',"border=0", '../../uc.php'); </SCRIPT></td>-->
+			<td width="30">&nbsp;</td>
+			<td><script language="JavaScript"> MouseOver('../../images/gfx/buttons/advertise_a.jpg','../../images/gfx/buttons/advertise_b.jpg',"border=0", '../../finance/advertise/index.php'); </script><a onmouseover='change("a2","../../images/gfx/buttons/advertise_b.jpg")' onmouseout='change("a2","../../images/gfx/buttons/advertise_a.jpg")' href="http://www.morrowland.com/apron/finance/advertise/index.php"><img name="a2" src="gl_window.php_elemei/advertise_a.jpg" border="0"></a></td>
+			<!--<td><img src='../../images/gfx/buttons/null.jpg'></td>-->
+		</tr>
+	</tbody></table></td>
+						<!--&nbsp;&nbsp;&nbsp;&nbsp;<iframe height="16" frameborder="0" width="136" id="iframe2" name="iframe2" src="http://www.morrowland.com/viewers/numberviewers.php?userid=3"></iframe>-->
+						<!--<td width="158" background='../../images/gfx/bg_menur.jpg' align="center">Current Viewers </td>-->
+						<td width="158" align="center" background="gl_window.php_elemei/bg_menur.jpg"><iframe id="iframe2" name="iframe2" src="gl_window.php_elemei/currentviewers.html" frameborder="0" height="16" width="140"></iframe></td>
+					</tr>
+				</tbody></table>
+			</td>
+		</tr>
+	</tbody></table>
+	
+	
+	
+	<!--MAIN TABLE-->
+	<table width="958" align="center" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td valign="top" width="158" background="gl_window.php_elemei/bg_lumenu.gif">&nbsp;</td>
+			<td align="center" background="gl_window.php_elemei/bg_umenu.gif"><style>				 
+	table.menu
+	{ 
+		font-size:11;
+		font-family: tahoma;
+		position:absolute;
+		visibility:hidden;
+	}
+	
+	td.menu
+	{	  
+		/*background-image: url("images/menu_bg.jpg");*/
+		/*background-repeat: no-repeat;*/
+		background: #303032;
+		background-image: url('../../images/gfx/side_arrow.jpg');
+		background-position: right; 
+		background-repeat: no-repeat;
+		border: 1px solid #626262; 
+		border-collapse: collapse;
+	}
+</style>
+
+  <script type="text/javascript">
+    function showmenu(elmnt)
+    {
+       document.all(elmnt).style.visibility='visible';
+    }
+
+    function hidemenu(elmnt)
+    {
+      document.all(elmnt).style.visibility='hidden';
+    }
+ </script>
+
+<table bordercolorlight="#717171" bordercolordark="#515151" width="636" border="1" cellpadding="0" cellspacing="0"><tbody><tr bgcolor="#000000"><td onmouseover="showmenu('Technical')" onmouseout="hidemenu('Technical')" width="80" background="gl_window.php_elemei/stp.gif"><center><a style="text-decoration: none;" href="http://www.morrowland.com/apron/amenu.php"><font size="1">TECHNICAL</font></a></center><table class="menu" id="Technical" width="82" border="0">
+<tbody><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_cs.php">c#</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_cpp.php">c/c++</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_d3d.php">direct3d</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_java.php">java</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_gl.php">opengl</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_vbnet.php">vb.net</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_vb.php">visual basic</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_win32.php">win32</a></td></tr></tbody></table></td><td onmouseover="showmenu('Graphical')" onmouseout="hidemenu('Graphical')" width="80" background="gl_window.php_elemei/stp.gif"><center><a style="text-decoration: none;" href="http://www.morrowland.com/apron/amenu.php"><font size="1">GRAPHICAL</font></a></center><table class="menu" id="Graphical" width="82" border="0">
+<tbody><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_3ds.php">3ds max</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_draw.php">draw sketch</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_ps.php">photoshop</a></td></tr></tbody></table></td><td onmouseover="showmenu('Sound')" onmouseout="hidemenu('Sound')" width="80" background="gl_window.php_elemei/stp.gif"><center><a style="text-decoration: none;" href="http://www.morrowland.com/apron/amenu.php"><font size="1">SOUND</font></a></center><table class="menu" id="Sound" width="82" border="0">
+<tbody><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_fmod.php">fmod</a></td></tr></tbody></table></td><td onmouseover="showmenu('Game')" onmouseout="hidemenu('Game')" width="80" background="gl_window.php_elemei/stp.gif"><center><a style="text-decoration: none;" href="http://www.morrowland.com/apron/amenu.php"><font size="1">GAME</font></a></center><table class="menu" id="Game" width="82" border="0">
+</table></td><td onmouseover="showmenu('Web')" onmouseout="hidemenu('Web')" width="80" background="gl_window.php_elemei/stp.gif"><center><a style="text-decoration: none;" href="http://www.morrowland.com/apron/amenu.php"><font size="1">WEB</font></a></center><table class="menu" id="Web" width="82" border="0">
+<tbody><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_asp.php">asp</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_dhtml.php">dhtml</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_html.php">html</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_js.php">java script</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/tut_php.php">php</a></td></tr></tbody></table></td><td onmouseover="showmenu('Article')" onmouseout="hidemenu('Article')" width="80" background="gl_window.php_elemei/stp.gif"><center><a style="text-decoration: none;" href="http://www.morrowland.com/apron/amenu.php"><font size="1">ARTICLE</font></a></center><table class="menu" id="Article" width="82" border="0">
+<tbody><tr><td class="menu"><a href="http://www.morrowland.com/apron/gen_article.php">general</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/gl_article.php">opengl</a></td></tr></tbody></table></td><td onmouseover="showmenu('Tool')" onmouseout="hidemenu('Tool')" width="80" background="gl_window.php_elemei/stp.gif"><center><a style="text-decoration: none;" href="http://www.morrowland.com/apron/amenu.php"><font size="1">TOOL</font></a></center><table style="visibility: hidden;" class="menu" id="Tool" width="112" border="0">
+<tbody><tr><td class="menu"><a href="http://www.morrowland.com/apron/tools/cnv_number/cnv_number.php">number_converter</a></td></tr></tbody></table></td><td onmouseover="showmenu('Project')" onmouseout="hidemenu('Project')" width="80" background="gl_window.php_elemei/stp.gif"><center><a style="text-decoration: none;" href="http://www.morrowland.com/apron/amenu.php"><font size="1">PROJECT</font></a></center><table class="menu" id="Project" width="112" border="0">
+<tbody><tr><td class="menu"><a href="http://www.morrowland.com/apron/bb.php">billy blue flame</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/ge.php">game environment</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/projects/shadow_blade/index.php">shadow blade</a></td></tr><tr><td class="menu"><a href="http://www.morrowland.com/apron/v3g.php">virtual 3d guide</a></td></tr></tbody></table></td></tr></tbody></table></td>
+			<td valign="top" width="158" background="gl_window.php_elemei/bg_rumenu.gif">&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" align="center" background="gl_window.php_elemei/bg_lside.gif">
+				<table 0="" border="1"><tbody><tr><td>
+
+
+
+
+     <table class="side" cellpadding="0" cellspacing="1">
+        <tbody><tr>
+          <td class="sidehead_left">&nbsp;NEWS</td>
+        </tr>
+        <tr>
+          <td class="sidebody">
+       	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/index.php"><font face="tahoma" size="1">news</font></a></p>
+            <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_history.php"><font face="tahoma" size="1">history</font></a></p>
+ 	    <br>
+          </td>
+        </tr>
+      </tbody></table>
+
+
+
+      <table class="side" cellpadding="0" cellspacing="1">
+        <tbody><tr>
+          <td class="sidehead_left">&nbsp;TECHNICAL TUTORIALS</td>
+        </tr>
+        <tr>
+          <td class="sidebody">
+            <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_gl.php"><font face="tahoma" size="1">opengl</font></a></p>
+	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_d3d.php"><font face="tahoma" size="1">direct3d</font></a></p>
+      	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_cpp.php"><font face="tahoma" size="1">c/c++</font></a></p>
+       	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_vb.php"><font face="tahoma" size="1">visual basic</font></a></p>
+       	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_java.php"><font face="tahoma" size="1">java</font></a></p>
+	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_cs.php"><font face="tahoma" size="1">c#</font></a></p>
+
+            <br>
+          </td>
+        </tr>
+      </tbody></table>
+
+
+
+        <table class="side" cellpadding="0" cellspacing="1">
+        <tbody><tr>
+          <td class="sidehead_left">&nbsp;WEB TUTORIALS</td>
+        </tr>
+        <tr>
+          <td class="sidebody">
+	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_html.php"><font face="tahoma" size="1">html</font></a></p>
+	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_dhtml.php"><font face="tahoma" size="1">dhtml</font></a></p>
+	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_asp.php"><font face="tahoma" size="1">asp</font></a></p>
+	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_php.php"><font face="tahoma" size="1">php</font></a></p>
+
+            <br>
+          </td>
+        </tr>
+      </tbody></table>
+
+
+
+
+        <table class="side" cellpadding="0" cellspacing="1">
+        <tbody><tr>
+          <td class="sidehead_left">&nbsp;IMAGE EDITING</td>
+        </tr>
+        <tr>
+          <td class="sidebody">
+      	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_ps.php"><font face="tahoma" size="1">photoshop</font></a></p>
+      	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_draw.php"><font face="tahoma" size="1">draw sketch</font></a></p>
+
+            <br>
+          </td>
+        </tr>
+      </tbody></table>
+
+
+
+      <table class="side" cellpadding="0" cellspacing="1">
+        <tbody><tr>
+          <td class="sidehead_left">&nbsp;3D MODELING</td>
+        </tr>
+        <tr>
+          <td class="sidebody">
+      	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_3ds.php"><font face="tahoma" size="1">3d studio</font></a></p>
+
+            <br>
+          </td>
+        </tr>
+      </tbody></table>
+
+
+
+        <table class="side" cellpadding="0" cellspacing="1">
+        <tbody><tr>
+          <td class="sidehead_left">&nbsp;PROJECTS</td>
+        </tr>
+        <tr>
+          <td class="sidebody">
+      	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/projects/shadow_blade/index.php"><font face="tahoma" size="1">shadow blade</font></a></p>
+      	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/ge.php"><font face="tahoma" size="1">game environment</font></a></p>
+      	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/v3g.php"><font face="tahoma" size="1">virtual 3d guide</font></a></p>
+   <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/bb.php"><font face="tahoma" size="1">billy blue flame</font></a></p>
+            <br>
+          </td>
+        </tr>
+      </tbody></table>
+
+
+        <table class="side" cellpadding="0" cellspacing="1">
+        <tbody><tr>
+          <td class="sidehead_left">&nbsp;DEMOS</td>
+        </tr>
+        <tr>
+          <td class="sidebody">
+      	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/tut_win32.php"><font face="tahoma" size="1">win32 api </font></a></p>
+
+            <br>
+          </td>
+        </tr>
+      </tbody></table>
+
+
+        <table class="side" cellpadding="0" cellspacing="1">
+        <tbody><tr>
+          <td class="sidehead_left">&nbsp;ARTICLES</td>
+        </tr>
+        <tr>
+          <td class="sidebody">
+      	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/gen_article.php"><font face="tahoma" size="1">general</font></a></p>
+           	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/gl_article.php"><font face="tahoma" size="1">opengl</font></a></p>
+            <br>
+          </td>
+        </tr>
+      </tbody></table>
+
+
+
+      <table class="side" cellpadding="0" cellspacing="1">
+        <tbody><tr>
+          <td class="sidehead_left">&nbsp;COMMUNITY</td>
+        </tr>
+        <tr>
+          <td class="sidebody">
+            <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/about_us.php"><font face="tahoma" size="1">about us</font></a></p>
+ 	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/credit.php"><font face="tahoma" size="1">credit</font></a></p>
+	    <p style="word-spacing: 0pt; margin-top: 0pt; margin-bottom: 0pt;"><font face="tahoma" size="1">&nbsp;&nbsp;</font><a href="http://www.morrowland.com/apron/contact/index.php"><font face="tahoma" size="1">contact</font></a></p>
+
+            <br>
+          </td>
+        </tr>
+      </tbody></table>
+
+
+
+  	<!--<br><center>Total Viewers: <script language="JavaScript" src='../../viewer/total_viewer.php' type="text/JavaScript"></script><center><br><br>-->
+		
+	<br><br>
+	<center><iframe id="iframe2" name="iframe2" src="gl_window.php_elemei/i_total_viewer.html" frameborder="0" height="16" width="138"></iframe></center>
+
+  	<center><iframe id="iframe2" name="iframe2" src="gl_window.php_elemei/numberviewers.html" frameborder="0" height="16" width="138"></iframe></center>
+    <br>
+	<center><iframe id="iframe3" name="iframe3" src="gl_window.php_elemei/count.html" frameborder="0" height="60" width="138"></iframe></center>
+
+
+<center>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+<!-- 
+var sc_project=913164; 
+var sc_invisible=0; 
+var sc_partition=7; 
+var sc_security="2a90884f"; 
+var sc_text=4; 
+//-->
+</script>
+
+<script type="text/javascript" language="javascript" src="gl_window.php_elemei/counter.js"></script><script language="JavaScript" src="gl_window.php_elemei/text.html"></script>2.177.393
+<noscript><a href="http://www.statcounter.com/" target="_blank"><img
+src="http://c8.statcounter.com/counter.php?sc_project=913164&amp;java=0&amp;security=2a90884f&amp;invisible=0"
+alt="counter create hit" border="0"></a> </noscript>
+<!-- End of StatCounter Code -->
+</center></td></tr></tbody></table>
+			</td>
+			<td valign="top" bgcolor="#000000">
+				<hr noshade="noshade" size="1"><!--START-->
+
+<table width="200" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td><img src="gl_window.php_elemei/tut_gllogo.jpg"></td></tr>
+</tbody></table>
+
+<hr noshade="noshade" size="1">
+
+<center>
+
+<link rel="STYLESHEET" type="text/css" href="gl_window.php_elemei/code.html" media="screen">
+<link rel="stylesheet" type="text/css" href="gl_window.php_elemei/cpp.css">
+
+
+<table class="gl_tut" width="585" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><h1>OPENGL WINDOW TUTORIAL</h1>
+</td></tr></tbody></table>
+
+<table class="gl_tut" width="585" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>In
+this tutorial you will learn how to create an empty OpenGL window, or
+at least see how it is done : ) I will use highlighted C++ syntax in
+this tutorial. If you are unfamiliar with C++, but familiar with an
+other programming language don&#65533;t worry about that.. The OpenGL syntax,
+it is pretty much the same for all programming languages. Before we
+start I will mention a couple of more things.. First, you don't have to
+know how to create the window to be able to use the window.. So don&#65533;t
+give up if you don&#65533;t understand this fairly advanced code, you will
+find it a lot easier to understand the next tutorial.. You should
+however study the InitGL and DrawGLScene functions we will use them in
+the next tutorials. Most of this window code is originally created by
+Neon Helium, and is mostly the same code that you will find in NeHe&#65533;s
+Lesson 5 for most programming languages. I use this window code because
+it is a nice piece of work, and also the most popular OpenGL window
+code to be found on the Internet. By using this window code, it may
+become easier for you to compare your own work with other OpenGL
+programming examples from different websites, it sure was for me.. <br><br><br>
+1# Ok let's rock! In order for OpenGL to be compiled on your computer
+you must first include the necessary header and library files. If you
+don't have these files, then click this link.<br> <a href="http://www.morrowland.com/apron/tutorials/gl/gl_preliminary.php">Click to download OpenGL SDK!</a>
+<br><br>
+In Microsoft Visual Studio you can include the needed lib files in
+Project-&gt;Settings menu under the Link tab. Or you can include them
+by code, as you can see below. I have already done this for you in the
+source code, but since this may be the first time you include a lib
+file I&#65533;ll tell you a little about it. Lib files are library files that
+can give us programming access to a dll file. For a programmer dll
+files can be much like a precompiled class with a lot of useful
+functions.. A lib file can be included like you see below by using a
+pragma call.
+</td></tr></tbody></table>
+
+
+<br><table width="585" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="cpp">
+<pre class="cpp"><font class="keyword">#pragma</font> <font class="keyword">comment</font><font class="operator">(</font><font class="keyword">lib</font><font class="operator">,</font> <font class="string">"opengl32.lib"</font><font class="operator">)</font>
+<font class="keyword">#pragma</font> <font class="keyword">comment</font><font class="operator">(</font><font class="keyword">lib</font><font class="operator">,</font> <font class="string">"glu32.lib"</font><font class="operator">)</font>
+<font class="keyword">#pragma</font> <font class="keyword">comment</font><font class="operator">(</font><font class="keyword">lib</font><font class="operator">,</font> <font class="string">"glaux.lib"</font><font class="operator">)</font>
+
+<font class="keyword">#include</font> <font class="string">"windows.h"</font>       <font class="comment">// Header File For Windows</font>
+<font class="keyword">#include</font> <font class="string">"gl\gl.h"</font>         <font class="comment">// Header File For The OpenGL32 Library</font>
+<font class="keyword">#include</font> <font class="string">"gl\glu.h"</font>        <font class="comment">// Header File For The GLu32 Library</font>
+<font class="keyword">#include</font> <font class="string">"gl\glaux.h"</font>      <font class="comment">// Header File For The Glaux Library</font>
+</pre></td></tr></tbody></table><br>
+
+
+
+
+
+<table class="gl_tut" width="585" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>2#
+Next we need to declare some variables. Our window needs a window
+handle, a device context and an OpenGL rendering context. The OpenGL
+Rendering Context is defined as hRC. Every OpenGL program needs a
+Rendering Context. A Rendering Context is what links OpenGL calls to
+the Device Context. In order for your program to draw to the window you
+need to create a Device Context from the window handler. The Windows
+Device Context is defined as hDC. The DC connects the window to the GDI
+(Graphics Device Interface). The RC connects OpenGL to the DC. We also
+declare an array for our keyboard routine, a boolean called active (set
+to true if the application is running) and a fullscreen flag.
+</td></tr></tbody></table>
+
+<br><table width="585" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="cpp">
+<pre class="cpp">HDC	   hDC<font class="operator">=</font>NULL<font class="operator">;</font>   <font class="comment">// Private GDI Device Context</font>
+HGLRC	   hRC<font class="operator">=</font>NULL<font class="operator">;</font>   <font class="comment">// Permanent Rendering Context</font>
+HWND	   hWnd<font class="operator">=</font>NULL<font class="operator">;</font>  <font class="comment">// Holds Our Window Handle</font>
+HINSTANCE   hInstance<font class="operator">;</font>  <font class="comment">// Holds The Instance Of The Application</font>
+
+<font class="keyword">bool</font>	keys<font class="operator">[</font><font class="number">256</font><font class="operator">];</font>          <font class="comment">// Array Used For The Keyboard Routine</font>
+<font class="keyword">bool</font>	active<font class="operator">=</font>TRUE<font class="operator">;</font>        <font class="comment">// Window Active Flag Set To TRUE By Default</font>
+<font class="keyword">bool</font>	fullscreen<font class="operator">=</font>TRUE<font class="operator">;</font>    <font class="comment">// Set To Fullscreen Mode By Default</font>
+</pre></td></tr></tbody></table><br>
+
+
+
+
+
+
+<table class="gl_tut" width="585" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>3#
+The next thing we are going to declare is our window procedure
+function. This function handles all the messages that are being sent to
+our window. If we press a key or move the mouse we want our window to
+know how to respond to it..
+</td></tr></tbody></table>
+
+<br><table width="585" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="cpp">
+<pre class="cpp">LRESULT	CALLBACK WndProc<font class="operator">(</font>HWND<font class="operator">,</font> UINT<font class="operator">,</font> WPARAM<font class="operator">,</font> LPARAM<font class="operator">);</font>	<font class="comment">// Declaration For WndProc</font>
+</pre></td></tr></tbody></table><br>
+
+
+
+
+
+
+
+<table class="gl_tut" width="585" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>4#
+The ReSizeGLScene function is used to resize our OpenGL scene. This
+function also makes sure we don&#65533;t &#65533;do a divide by zero&#65533; and crash the
+application. To reset and define our new view port we first pass in our
+wanted scene width and height into the glViewport function. We then
+want to create a nice perspective roughly meaning that things get
+smaller in a distance.
+<br><br>glMatrixMode(GL_PROJECTION) indicates that the next lines of
+code will affect the projection matrix. The projection matrix is
+responsible for adding perspective to our scene. glLoadIdentity is
+similar to a reset, it restores the selected matrix to it's original
+state. After glLoadIdentity has been called we set up our perspective
+view for the scene with gluPerspective (read more in the OpenGL camera
+article). <br><br>
+glMatrixMode(GL_MODELVIEW) indicates that any new transformations will
+affect the model view matrix. The model view matrix is where our object
+information is stored. Last we reset the model view matrix. Don't worry
+if you don't understand this stuff.. Just know that it has to be done
+if you want the window view in perspective.
+</td></tr></tbody></table>
+
+
+<br><table width="585" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="cpp">
+<pre class="cpp">GLvoid ReSizeGLScene<font class="operator">(</font>GLsizei width<font class="operator">,</font> GLsizei height<font class="operator">)</font>
+<font class="operator">{</font>
+    <font class="keyword">if</font> <font class="operator">(</font>height<font class="operator">==</font><font class="number">0</font><font class="operator">)</font>			<font class="comment">// Prevent A Divide By Zero By</font>
+    <font class="operator">{</font>
+	height<font class="operator">=</font><font class="number">1</font><font class="operator">;</font>			<font class="comment">// Making Height Equal One</font>
+    <font class="operator">}</font>
+
+    glViewport<font class="operator">(</font><font class="number">0</font><font class="operator">,</font><font class="number">0</font><font class="operator">,</font>width<font class="operator">,</font>height<font class="operator">);</font>	<font class="comment">// Reset The Current Viewport</font>
+
+    glMatrixMode<font class="operator">(</font>GL_PROJECTION<font class="operator">);</font>	<font class="comment">// Select The Projection Matrix</font>
+    glLoadIdentity<font class="operator">();</font>		<font class="comment">// Reset The Projection Matrix</font>
+
+    <font class="comment">// Calculate The Aspect Ratio Of The Window</font>
+    gluPerspective<font class="operator">(</font><font class="number">45.0f</font><font class="operator">,(</font>GLfloat<font class="operator">)</font>width<font class="operator">/(</font>GLfloat<font class="operator">)</font>height<font class="operator">,</font><font class="number">0.1f</font><font class="operator">,</font><font class="number">100.0f</font><font class="operator">);</font>
+
+    glMatrixMode<font class="operator">(</font>GL_MODELVIEW<font class="operator">);</font>	<font class="comment">// Select The Modelview Matrix</font>
+    glLoadIdentity<font class="operator">();</font>		<font class="comment">// Reset The Modelview Matrix</font>
+<font class="operator">}</font>
+</pre></td></tr></tbody></table><br>
+
+
+
+
+
+
+<table class="gl_tut" width="585" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>5#
+Now this function we will use a lot! Here we will do all of the
+initialisation for our OpenGL applications. We set the color of the
+screen, we turn on the depth buffer (Z-Buffer), enable smooth shading,
+etc. This function will not be called until the OpenGL Window has been
+successfully created. <br><br>
+The next line enables smooth shading. Smooth shading blends colors nicely across a polygon, and smoothes out lighting. 
+<br><br>
+The following line sets the color of the screen. The color values range
+from 0.0f to 1.0f. 0.0f being the darkest and 1. 0f being the
+brightest. This function uses RGBA values. The first parameter is the
+Red Intensity, the second parameter is for Green and the third is for
+Blue. The closer the value of the number is to 1.0f, the brighter that
+specific color will be. The last number is an Alpha value. When it
+comes to clearing the screen, we won&#65533;t worry about the 4th number. For
+now just leave it at zero. You create different colors by mixing the
+three primary colors for light (red, green, blue). <br><br>
+The next tree functions is for the depth buffer. Think of the depth
+buffer as layers into the screen. The depth buffer keeps track of how
+deep objects are into the screen. It keeps track of which object to
+draw first so that a square you drew behind a triangle doesn't end up
+if front of the triangle on the screen. The depth buffer is a very
+important part of OpenGL, and of 3D programming in general. We don't
+need the depth buffer in this application, but as you start to explore
+more advanced OpenGL tutorials, try to disable the depth buffer and see
+what happens.. <br><br>
+So what else can you use the setup function for in the future?! If you
+want to render a 3D model you need to load the model before you can
+render it.. It would be appropriate to call your model loading function
+here, but for now we are only dealing with a blank window..
+</td></tr></tbody></table>
+
+
+<br><table width="585" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="cpp">
+<pre class="cpp"><font class="keyword">int</font> InitGL<font class="operator">(</font>GLvoid<font class="operator">)</font>				<font class="comment">// All Setup For OpenGL Goes Here</font>
+<font class="operator">{</font>
+    glShadeModel<font class="operator">(</font>GL_SMOOTH<font class="operator">);</font>		<font class="comment">// Enable Smooth Shading</font>
+    glClearColor<font class="operator">(</font><font class="number">0.0f</font><font class="operator">,</font> <font class="number">0.0f</font><font class="operator">,</font> <font class="number">0.0f</font><font class="operator">,</font> <font class="number">0.0f</font><font class="operator">);</font>	<font class="comment">// Black Background</font>
+    glClearDepth<font class="operator">(</font><font class="number">1.0f</font><font class="operator">);</font>			<font class="comment">// Depth Buffer Setup</font>
+    glEnable<font class="operator">(</font>GL_DEPTH_TEST<font class="operator">);</font>		<font class="comment">// Enables Depth Testing</font>
+    glDepthFunc<font class="operator">(</font>GL_LEQUAL<font class="operator">);</font>			<font class="comment">// The Type Of Depth Testing To Do</font>
+
+    <font class="comment">// Really Nice Perspective Calculations</font>
+    glHint<font class="operator">(</font>GL_PERSPECTIVE_CORRECTION_HINT<font class="operator">,</font> GL_NICEST<font class="operator">);</font>
+    <font class="keyword">return</font> TRUE<font class="operator">;</font>			 	<font class="comment">// Initialization Went OK</font>
+<font class="operator">}</font>
+</pre></td></tr></tbody></table><br>
+
+
+
+
+
+
+
+
+
+
+<table class="gl_tut" width="585" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>6#
+Ahh! Finally the render function.. This is my favourite OpenGL
+function. In this function you can call all the models you want to
+display on the screen. Anything from simple polygons to advanced game
+characters.. It works like this: You should first clear the color and
+depth buffer, then you render your scene using double buffering. Double
+buffering is a technique used by graphic systems to support smooth
+rendering by drawing with two color buffers often called: the front
+color buffer and back color buffer. With double buffering, you render
+your scene to the (off-screen) back buffer. After the scene is finished
+rendering, you swap the back buffer with the front buffer. This buffer
+swapping process happens so fast that it is hidden from the user. The
+double buffering technique eliminates the flickering effects that
+usually arise when scenes are rendered directly to the screen. You
+should always clear the screen first. This way you will prevent the
+frames you paint to the screen from overlapping.
+If you don&#65533;t like the idea of the two &#65533;layers swapping&#65533;, you can just
+imagine that you&#65533;re drawing directly to the screen, like I do ; ) Now
+you know how it works, and don&#65533;t worry the window code will handle this
+process for you. Just think of it as a simple flip book.. </td></tr></tbody></table>
+
+
+<br><table width="585" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="cpp">
+<pre class="cpp"><font class="keyword">int</font> DrawGLScene<font class="operator">(</font>GLvoid<font class="operator">)</font>		<font class="comment">// Here's Where We Do All The Drawing</font>
+<font class="operator">{</font>
+    <font class="comment">// Clear Screen And Depth Buffer</font>
+    glClear<font class="operator">(</font>GL_COLOR_BUFFER_BIT <font class="operator">|</font> GL_DEPTH_BUFFER_BIT<font class="operator">);</font>
+    <font class="comment">// Reset The Current Modelview Matrix</font>
+    glLoadIdentity<font class="operator">();</font>
+	
+    <font class="comment">// Place your code here!</font>
+
+    <font class="keyword">return</font> TRUE<font class="operator">;</font>			<font class="comment">// Keep Going</font>
+<font class="operator">}</font>
+</pre></td></tr></tbody></table><br>
+
+
+
+
+
+
+<table class="gl_tut" width="585" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>7#
+The next section of code is called just before we exit the application.
+The purpose of KillGLWindow is to release the Rendering Context, the
+Device Context and finally the window handler. NeHe have added a lot of
+useful error checking to this function. If the program is unable to
+destroy any part of the Window, a message box will appear with a
+describing error message, making it a lot easier to find errors, and do
+manual debugging.
+</td></tr></tbody></table>
+
+
+<br><table width="585" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="cpp">
+<pre class="cpp">GLvoid KillGLWindow<font class="operator">(</font>GLvoid<font class="operator">)</font>			<font class="comment">// Properly Kill The Window</font>
+<font class="operator">{</font>
+    <font class="keyword">if</font> <font class="operator">(</font>fullscreen<font class="operator">)</font>			<font class="comment">// Are We In Fullscreen Mode?</font>
+    <font class="operator">{</font>
+	ChangeDisplaySettings<font class="operator">(</font>NULL<font class="operator">,</font><font class="number">0</font><font class="operator">);</font>	<font class="comment">// witch Back To Desktop</font>
+	ShowCursor<font class="operator">(</font>TRUE<font class="operator">);</font>			<font class="comment">// Show Mouse Pointer</font>
+	
+    <font class="keyword">if</font> <font class="operator">(</font>hRC<font class="operator">)</font>				<font class="comment">// Do We Have A Rendering Context?</font>
+    <font class="operator">{</font>
+	<font class="keyword">if</font> <font class="operator">(!</font>wglMakeCurrent<font class="operator">(</font>NULL<font class="operator">,</font>NULL<font class="operator">))</font>	<font class="comment">// Able To Release DC And RC?</font>
+	<font class="operator">{</font>
+		MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Release Of DC And RC Failed."</font><font class="operator">,</font>
+		<font class="string">"SHUTDOWN ERROR"</font><font class="operator">,</font>MB_OK <font class="operator">|</font> MB_ICONINFORMATION<font class="operator">);</font>
+	<font class="operator">}</font>
+
+	<font class="keyword">if</font> <font class="operator">(!</font>wglDeleteContext<font class="operator">(</font>hRC<font class="operator">))</font>		<font class="comment">// Able To Delete The RC?</font>
+	<font class="operator">{</font>
+		MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Release Rendering Context Failed."</font><font class="operator">,</font>
+		<font class="string">"SHUTDOWN ERROR"</font><font class="operator">,</font>MB_OK <font class="operator">|</font> MB_ICONINFORMATION<font class="operator">);</font>
+	<font class="operator">}</font>
+	hRC<font class="operator">=</font>NULL<font class="operator">;</font>				<font class="comment">// Set RC To NULL</font>
+    <font class="operator">}</font>
+
+    <font class="keyword">if</font> <font class="operator">(</font>hDC <font class="operator">&amp;&amp;</font> <font class="operator">!</font>ReleaseDC<font class="operator">(</font>hWnd<font class="operator">,</font>hDC<font class="operator">))</font>		<font class="comment">// Are We Able To Release The DC</font>
+    <font class="operator">{</font>
+	MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Release Device Context Failed."</font><font class="operator">,</font>
+	<font class="string">"SHUTDOWN ERROR"</font><font class="operator">,</font>MB_OK <font class="operator">|</font> MB_ICONINFORMATION<font class="operator">);</font>
+	hDC<font class="operator">=</font>NULL<font class="operator">;</font>				<font class="comment">// Set DC To NULL</font>
+    <font class="operator">}</font>
+
+    <font class="keyword">if</font> <font class="operator">(</font>hWnd <font class="operator">&amp;&amp;</font> <font class="operator">!</font>DestroyWindow<font class="operator">(</font>hWnd<font class="operator">))</font>	<font class="comment">// Able To Destroy The Window?</font>
+    <font class="operator">{</font>
+	MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Could Not Release hWnd."</font><font class="operator">,</font>
+	<font class="string">"SHUTDOWN ERROR"</font><font class="operator">,</font>MB_OK <font class="operator">|</font> MB_ICONINFORMATION<font class="operator">);</font>
+	hWnd<font class="operator">=</font>NULL<font class="operator">;</font>			<font class="comment">// Set hWnd To NULL</font>
+    <font class="operator">}</font>
+
+    <font class="keyword">if</font> <font class="operator">(!</font>UnregisterClass<font class="operator">(</font><font class="string">"OpenGL"</font><font class="operator">,</font>hInstance<font class="operator">))//</font> Able To Unregister Class<font class="operator">?</font>
+    <font class="operator">{</font>
+	MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Could Not Unregister Class."</font><font class="operator">,</font>
+	<font class="string">"SHUTDOWN ERROR"</font><font class="operator">,</font>MB_OK <font class="operator">|</font> MB_ICONINFORMATION<font class="operator">);</font>
+	hInstance<font class="operator">=</font>NULL<font class="operator">;</font>			<font class="comment">// Set hInstance To NULL</font>
+    <font class="operator">}</font>
+<font class="operator">}</font>
+</pre></td></tr></tbody></table><br>
+
+
+
+
+
+
+
+<table class="gl_tut" width="585" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>8#
+This LONG function creates an OpenGL Win32 window. In general it starts
+by setting up a Win32 window , moves on to ask if we want fullscreen
+and then inserts the values we want for our OpenGL window. A last if
+everything was successful it calls InitGL our setup function.
+<br><br>The first variable you see is PixelFormat. Later in the
+function we will &#65533;ask&#65533; Windows to find us a pixel format that matches
+the one we want, the number of the mode that Windows ends up finding
+for us will be stored in the variable PixelFormat. <br><br>
+The WNDCLASS wc object will be used to hold our Window Class structure.
+The Window Class structure holds information about our window. By
+changing different fields in the Class we can change how the window
+looks and behaves. Every window you see has it&#65533;s own Window Class.
+Before you create your window, you must register a class for the
+window.
+<br><br>dwExStyle and dwStyle will store the Extended and normal
+Window Style Information. We can use variables to store the styles so
+that we can change the styles depending on what type of window we need
+to create (A popup window for fullscreen or a window with a border for
+windowed mode)
+<br><br>The following five lines of code holds the values of the upper
+left, and lower right values of a rectangle. We can use these values to
+adjust the window size so that the area we draw is the exact resolution
+we want to have for our window. If we create a 640x480 window, the
+borders of the window will take up some of our resolution tough.
+<br><br>Now we move on to insert the value of our fullscreen flag.
+Before we start to define some of the properties of our new window by
+using our wc window class object. We pass in values like which mouse
+cursor, application icon and our message handler.
+After this we register our window class with RegisterClass..
+<br><br>The next section of the function is about switching to
+fullscreen mode. There are a few very important things you should keep
+in mind when switching to fullscreen mode. Make sure the width and
+height that you use in fullscreen mode is the same as the width and
+height you plan to use for your window, and most importantly, set
+fullscreen mode before you create your window. In this code, you don't
+have to worry about the width and height, the fullscreen and the window
+size are both set to be the same size requested. <br><br>
+The function also need to store the value of your screen before you
+switch to fullscreen mode..
+This way you will get the same resolution to your screen when you exit
+the application as you
+had before.. Some annoying application forget to do this, they switch
+your screen resolution, but you have to go and change it back manually
+afterwards..
+<br><br>After we have set our wanted display mode we use
+AdjustWindowRectEx to pass in our rectangle values and CreateWindowEx
+to create our window with our wanted size and properties.
+If the function should fail to create the window correctly, it will
+move to destroy the window and exit the program.
+<br><br>Coming up next is the code that describes a Pixel Format. We
+choose a format that supports OpenGL and double buffering, along with
+RGBA (red, green, blue, alpha channel). We try to find a pixel format
+that matches the bits we decided on (16bit, 24bit, 32bit). Finally we
+set up a 16bit Z-Buffer. The remaining parameters are either not used
+or are not important (aside from the stencil buffer and the (slow)
+accumulation buffer).
+After our window is created it&#65533;s proper to do some error checking to
+see that everything went as planned. <br>
+<br>
+<font color="#ffff00">
+ We check if we: <br>
+- can't get a device context. <br>
+- can&#65533;t find a correct pixel format. <br>
+- can&#65533;t set the pixel format. <br>
+- can&#65533;t get the rendering context<br>
+- can&#65533;t activate the rendering context<br>
+<br>
+</font>
+If everything went as planned, and our OpenGL Win32 window was created
+correctly we need to show the new window, set it to be the foreground
+window (giving it higher priority) and then set the focus on that
+window. Then we can call ReSizeGLScene passing it the screen width and
+height to set up our new OpenGL screen with perspective. FINALLY it&#65533;s
+time to call our OpenGL setup function InitGL..
+</td></tr></tbody></table>
+
+
+
+<br><table width="585" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="cpp">
+<pre class="cpp">BOOL CreateGLWindow<font class="operator">(</font><font class="keyword">char</font><font class="operator">*</font> title<font class="operator">,</font> <font class="keyword">int</font> width<font class="operator">,</font> <font class="keyword">int</font> height<font class="operator">,</font>
+		    <font class="keyword">int</font> bits<font class="operator">,</font> <font class="keyword">bool</font> fullscreenflag<font class="operator">)</font>
+<font class="operator">{</font>
+    <font class="comment">// First some standard Win32 window creating</font>
+    GLuint	PixelFormat<font class="operator">;</font>
+    WNDCLASS	wc<font class="operator">;</font>
+    DWORD		dwExStyle<font class="operator">;</font>	
+    DWORD		dwStyle<font class="operator">;</font>	
+    RECT		WindowRect<font class="operator">;</font>
+    WindowRect<font class="operator">.</font>left<font class="operator">=(</font><font class="keyword">long</font><font class="operator">)</font><font class="number">0</font><font class="operator">;</font>
+    WindowRect<font class="operator">.</font>right<font class="operator">=(</font><font class="keyword">long</font><font class="operator">)</font>width<font class="operator">;</font>
+    WindowRect<font class="operator">.</font>top<font class="operator">=(</font><font class="keyword">long</font><font class="operator">)</font><font class="number">0</font><font class="operator">;</font>		
+    WindowRect<font class="operator">.</font>bottom<font class="operator">=(</font><font class="keyword">long</font><font class="operator">)</font>height<font class="operator">;</font>	
+
+    <font class="comment">// fullscreen variable</font>
+    fullscreen<font class="operator">=</font>fullscreenflag<font class="operator">;</font>
+
+    hInstance		<font class="operator">=</font> GetModuleHandle<font class="operator">(</font>NULL<font class="operator">);</font>
+    wc<font class="operator">.</font>style		<font class="operator">=</font> CS_HREDRAW <font class="operator">|</font> CS_VREDRAW <font class="operator">|</font> CS_OWNDC<font class="operator">;</font>
+    wc<font class="operator">.</font>lpfnWndProc		<font class="operator">=</font> <font class="operator">(</font>WNDPROC<font class="operator">)</font> WndProc<font class="operator">;</font>
+    wc<font class="operator">.</font>cbClsExtra		<font class="operator">=</font> <font class="number">0</font><font class="operator">;</font>
+    wc<font class="operator">.</font>cbWndExtra		<font class="operator">=</font> <font class="number">0</font><font class="operator">;</font>
+    wc<font class="operator">.</font>hInstance		<font class="operator">=</font> hInstance<font class="operator">;</font>
+    wc<font class="operator">.</font>hIcon		<font class="operator">=</font> LoadIcon<font class="operator">(</font>NULL<font class="operator">,</font> IDI_WINLOGO<font class="operator">);</font>	
+    wc<font class="operator">.</font>hCursor		<font class="operator">=</font> LoadCursor<font class="operator">(</font>NULL<font class="operator">,</font> IDC_ARROW<font class="operator">);</font>
+    wc<font class="operator">.</font>hbrBackground	<font class="operator">=</font> NULL<font class="operator">;</font>			
+    wc<font class="operator">.</font>lpszMenuName	<font class="operator">=</font> NULL<font class="operator">;</font>		
+    wc<font class="operator">.</font>lpszClassName	<font class="operator">=</font> <font class="string">"OpenGL"</font><font class="operator">;</font>	
+
+    <font class="comment">// Register the window class</font>
+    <font class="keyword">if</font> <font class="operator">(!</font>RegisterClass<font class="operator">(&amp;</font>wc<font class="operator">))</font>		
+    <font class="operator">{</font>
+	MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Failed To Register The Window Class."</font><font class="operator">,</font>
+	<font class="string">"ERROR"</font><font class="operator">,</font>MB_OK<font class="operator">|</font>MB_ICONEXCLAMATION<font class="operator">);</font>
+	<font class="keyword">return</font> FALSE<font class="operator">;</font>			
+    <font class="operator">}</font>
+
+    <font class="comment">// If fullscreen flag is set</font>
+    <font class="keyword">if</font> <font class="operator">(</font>fullscreen<font class="operator">)</font>	
+    <font class="operator">{</font>
+	DEVMODE dmScreenSettings<font class="operator">;</font>
+	memset<font class="operator">(&amp;</font>dmScreenSettings<font class="operator">,</font><font class="number">0</font><font class="operator">,</font><font class="keyword">sizeof</font><font class="operator">(</font>dmScreenSettings<font class="operator">));</font>
+	dmScreenSettings<font class="operator">.</font>dmSize<font class="operator">=</font><font class="keyword">sizeof</font><font class="operator">(</font>dmScreenSettings<font class="operator">);</font>
+	dmScreenSettings<font class="operator">.</font>dmPelsWidth	<font class="operator">=</font> width<font class="operator">;</font>
+	dmScreenSettings<font class="operator">.</font>dmPelsHeight	<font class="operator">=</font> height<font class="operator">;</font>
+	dmScreenSettings<font class="operator">.</font>dmBitsPerPel	<font class="operator">=</font> bits<font class="operator">;</font>	
+	dmScreenSettings<font class="operator">.</font>dmFields<font class="operator">=</font>DM_BITSPERPEL<font class="operator">|</font>
+                             	DM_PELSWIDTH <font class="operator">|</font> DM_PELSHEIGHT<font class="operator">;</font>
+
+	<font class="comment">// Try To Set Selected Mode And Get Results.</font>
+	<font class="keyword">if</font> <font class="operator">(</font>ChangeDisplaySettings<font class="operator">(&amp;</font>dmScreenSettings<font class="operator">,</font>
+               CDS_FULLSCREEN<font class="operator">)!=</font>DISP_CHANGE_SUCCESSFUL<font class="operator">)</font>
+	<font class="operator">{</font>
+		<font class="keyword">if</font> <font class="operator">(</font>MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"The Requested 
+		Fullscreen Mode Is Not Supported
+		By\nYour Video Card<font class="operator">.</font> Use Windowed
+		Mode Instead<font class="operator">?</font><font class="string">",
+		<font class="string">"OPENGL"</font><font class="operator">,</font>MB_YESNO<font class="operator">|</font>MB_ICONEXCLAMATION<font class="operator">)==</font>IDYES<font class="operator">)</font>
+		<font class="operator">{</font>
+			fullscreen<font class="operator">=</font>FALSE<font class="operator">;</font>
+		<font class="operator">}</font>
+		<font class="keyword">else</font>
+		<font class="operator">{</font>
+			MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Program Will Now Close."</font><font class="operator">,</font>
+			<font class="string">"ERROR"</font><font class="operator">,</font>MB_OK<font class="operator">|</font>MB_ICONSTOP<font class="operator">);</font>
+			<font class="keyword">return</font> FALSE<font class="operator">;</font>
+		<font class="operator">}</font>
+	<font class="operator">}</font>
+    <font class="operator">}</font>
+
+    <font class="keyword">if</font> <font class="operator">(</font>fullscreen<font class="operator">)</font>	
+    <font class="operator">{</font>
+	dwExStyle<font class="operator">=</font>WS_EX_APPWINDOW<font class="operator">;</font>
+	dwStyle<font class="operator">=</font>WS_POPUP<font class="operator">;</font>	
+	ShowCursor<font class="operator">(</font>FALSE<font class="operator">);</font>	
+    <font class="operator">}</font>
+    <font class="keyword">else</font>
+    <font class="operator">{</font>
+	dwExStyle<font class="operator">=</font>WS_EX_APPWINDOW <font class="operator">|</font> WS_EX_WINDOWEDGE<font class="operator">;</font>	
+	dwStyle<font class="operator">=</font>WS_OVERLAPPEDWINDOW<font class="operator">;</font>	
+    <font class="operator">}</font>
+
+    AdjustWindowRectEx<font class="operator">(&amp;</font>WindowRect<font class="operator">,</font> dwStyle<font class="operator">,</font> FALSE<font class="operator">,</font> dwExStyle<font class="operator">);</font>
+
+    <font class="comment">// Create The Window</font>
+    <font class="keyword">if</font> <font class="operator">(!(</font>hWnd<font class="operator">=</font>CreateWindowEx<font class="operator">(</font>	dwExStyle<font class="operator">,</font>	
+				<font class="string">"OpenGL"</font><font class="operator">,</font>	
+				title<font class="operator">,</font>		
+				dwStyle <font class="operator">|</font>		
+				WS_CLIPSIBLINGS <font class="operator">|</font>	
+				WS_CLIPCHILDREN<font class="operator">,</font>
+				<font class="number">0</font><font class="operator">,</font> <font class="number">0</font><font class="operator">,</font>				
+				WindowRect<font class="operator">.</font>right<font class="operator">-</font>WindowRect<font class="operator">.</font>left<font class="operator">,</font>
+				WindowRect<font class="operator">.</font>bottom<font class="operator">-</font>WindowRect<font class="operator">.</font>top<font class="operator">,</font>
+				NULL<font class="operator">,</font>			
+				NULL<font class="operator">,</font>		
+				hInstance<font class="operator">,</font>		
+				NULL<font class="operator">)))</font>	
+    <font class="operator">{</font>
+	KillGLWindow<font class="operator">();</font>		<font class="comment">// Reset The Display</font>
+	MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Window Creation Error."</font><font class="operator">,</font>
+	<font class="string">"ERROR"</font><font class="operator">,</font>MB_OK<font class="operator">|</font>MB_ICONEXCLAMATION<font class="operator">);</font>
+	<font class="keyword">return</font> FALSE<font class="operator">;</font>			
+    <font class="operator">}</font>
+
+    <font class="comment">// Tell the window how we want things to be..</font>
+    <font class="keyword">static</font>	PIXELFORMATDESCRIPTOR pfd<font class="operator">=</font>
+    <font class="operator">{</font>
+	<font class="keyword">sizeof</font><font class="operator">(</font>PIXELFORMATDESCRIPTOR<font class="operator">),</font>
+	<font class="number">1</font><font class="operator">,</font>			<font class="comment">// Version Number</font>
+	PFD_DRAW_TO_WINDOW <font class="operator">|</font>	<font class="comment">// Format Must Support Window</font>
+	PFD_SUPPORT_OPENGL <font class="operator">|</font>	<font class="comment">// Format Must Support OpenGL</font>
+	PFD_DOUBLEBUFFER<font class="operator">,</font>		<font class="comment">// Double Buffering</font>
+	PFD_TYPE_RGBA<font class="operator">,</font>		<font class="comment">// Request An RGBA Format</font>
+	bits<font class="operator">,</font>			<font class="comment">// Select Our Color Depth</font>
+	<font class="number">0</font><font class="operator">,</font> <font class="number">0</font><font class="operator">,</font> <font class="number">0</font><font class="operator">,</font> <font class="number">0</font><font class="operator">,</font> <font class="number">0</font><font class="operator">,</font> <font class="number">0</font><font class="operator">,</font>		<font class="comment">// Color Bits Ignored</font>
+	<font class="number">0</font><font class="operator">,</font>			<font class="comment">// No Alpha Buffer</font>
+	<font class="number">0</font><font class="operator">,</font>			<font class="comment">// Shift Bit Ignored</font>
+	<font class="number">0</font><font class="operator">,</font>			<font class="comment">// No Accumulation Buffer</font>
+	<font class="number">0</font><font class="operator">,</font> <font class="number">0</font><font class="operator">,</font> <font class="number">0</font><font class="operator">,</font> <font class="number">0</font><font class="operator">,</font>		<font class="comment">// Accumulation Bits Ignored</font>
+	<font class="number">16</font><font class="operator">,</font>			<font class="comment">// 16Bit Z-Buffer (Depth Buffer)  </font>
+	<font class="number">0</font><font class="operator">,</font>			<font class="comment">// No Stencil Buffer</font>
+	<font class="number">0</font><font class="operator">,</font>			<font class="comment">// No Auxiliary Buffer</font>
+	PFD_MAIN_PLANE<font class="operator">,</font>		<font class="comment">// Main Drawing Layer</font>
+	<font class="number">0</font><font class="operator">,</font>			<font class="comment">// Reserved</font>
+	<font class="number">0</font><font class="operator">,</font> <font class="number">0</font><font class="operator">,</font> <font class="number">0</font>			<font class="comment">// Layer Masks Ignored	</font>
+    <font class="operator">};</font>
+
+    <font class="comment">// Did We Get A Device Context?</font>
+    <font class="keyword">if</font> <font class="operator">(!(</font>hDC<font class="operator">=</font>GetDC<font class="operator">(</font>hWnd<font class="operator">)))</font>	
+    <font class="operator">{</font>
+	KillGLWindow<font class="operator">();</font>		<font class="comment">// Reset The Display</font>
+	MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Can't Create A GL Device Context."</font><font class="operator">,</font>
+	<font class="string">"ERROR"</font><font class="operator">,</font>MB_OK<font class="operator">|</font>MB_ICONEXCLAMATION<font class="operator">);</font>
+	<font class="keyword">return</font> FALSE<font class="operator">;</font>		<font class="comment">// Return FALSE</font>
+    <font class="operator">}</font>
+
+    <font class="comment">// Did Windows Find A Matching Pixel Format?</font>
+    <font class="keyword">if</font> <font class="operator">(!(</font>PixelFormat<font class="operator">=</font>ChoosePixelFormat<font class="operator">(</font>hDC<font class="operator">,&amp;</font>pfd<font class="operator">)))</font>	
+    <font class="operator">{</font>
+	KillGLWindow<font class="operator">();</font>		<font class="comment">// Reset The Display</font>
+	MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Can't Find A Suitable PixelFormat."</font><font class="operator">,</font>
+	<font class="string">"ERROR"</font><font class="operator">,</font>MB_OK<font class="operator">|</font>MB_ICONEXCLAMATION<font class="operator">);</font>
+	<font class="keyword">return</font> FALSE<font class="operator">;</font>		<font class="comment">// Return FALSE</font>
+    <font class="operator">}</font>
+    <font class="comment">// Are We Able To Set The Pixel Format?</font>
+    <font class="keyword">if</font><font class="operator">(!</font>SetPixelFormat<font class="operator">(</font>hDC<font class="operator">,</font>PixelFormat<font class="operator">,&amp;</font>pfd<font class="operator">))</font>		
+    <font class="operator">{</font>
+	KillGLWindow<font class="operator">();</font>		<font class="comment">// Reset The Display</font>
+	MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Can't Set The PixelFormat."</font><font class="operator">,</font>
+	<font class="string">"ERROR"</font><font class="operator">,</font>MB_OK<font class="operator">|</font>MB_ICONEXCLAMATION<font class="operator">);</font>
+	<font class="keyword">return</font> FALSE<font class="operator">;</font>		<font class="comment">// Return FALSE</font>
+    <font class="operator">}</font>
+
+    <font class="comment">// Are We Able To Get A Rendering Context?</font>
+    <font class="keyword">if</font> <font class="operator">(!(</font>hRC<font class="operator">=</font>wglCreateContext<font class="operator">(</font>hDC<font class="operator">)))</font>
+    <font class="operator">{</font>
+	KillGLWindow<font class="operator">();</font>		<font class="comment">// Reset The Display</font>
+	MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Can't Create A GL Rendering Context."</font><font class="operator">,</font>
+	<font class="string">"ERROR"</font><font class="operator">,</font>MB_OK<font class="operator">|</font>MB_ICONEXCLAMATION<font class="operator">);</font>
+	<font class="keyword">return</font> FALSE<font class="operator">;</font>		<font class="comment">// Return FALSE</font>
+    <font class="operator">}</font>
+
+    <font class="comment">// Try To Activate The Rendering Context</font>
+    <font class="keyword">if</font><font class="operator">(!</font>wglMakeCurrent<font class="operator">(</font>hDC<font class="operator">,</font>hRC<font class="operator">))</font>	
+    <font class="operator">{</font>
+	KillGLWindow<font class="operator">();</font>		<font class="comment">// Reset The Display</font>
+	MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Can't Activate The GL Rendering Context."</font><font class="operator">,</font>
+	<font class="string">"ERROR"</font><font class="operator">,</font>MB_OK<font class="operator">|</font>MB_ICONEXCLAMATION<font class="operator">);</font>
+	<font class="keyword">return</font> FALSE<font class="operator">;</font>		<font class="comment">// Return FALSE</font>
+    <font class="operator">}</font>
+
+    ShowWindow<font class="operator">(</font>hWnd<font class="operator">,</font>SW_SHOW<font class="operator">);</font>	<font class="comment">// Show The Window</font>
+    SetForegroundWindow<font class="operator">(</font>hWnd<font class="operator">);</font>	<font class="comment">// Slightly Higher Priority</font>
+    SetFocus<font class="operator">(</font>hWnd<font class="operator">);</font>		<font class="comment">// Sets Focus To The Window</font>
+    ReSizeGLScene<font class="operator">(</font>width<font class="operator">,</font> height<font class="operator">);</font>	<font class="comment">// Set Up Our Perspective GL Screen</font>
+
+    <font class="comment">// Initialize Our Newly Created GL Window</font>
+    <font class="keyword">if</font> <font class="operator">(!</font>InitGL<font class="operator">())</font>
+    <font class="operator">{</font>
+	KillGLWindow<font class="operator">();</font>		<font class="comment">// Reset The Display</font>
+	MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Initialization Failed."</font><font class="operator">,</font>
+	<font class="string">"ERROR"</font><font class="operator">,</font>MB_OK<font class="operator">|</font>MB_ICONEXCLAMATION<font class="operator">);</font>
+	<font class="keyword">return</font> FALSE<font class="operator">;</font>		<font class="comment">// Return FALSE</font>
+    <font class="operator">}</font>
+
+    <font class="keyword">return</font> TRUE<font class="operator">;</font>			<font class="comment">// Success</font>
+<font class="operator">}</font>
+</font></font></pre></td></tr></tbody></table><br>
+
+
+
+
+
+<table class="gl_tut" width="585" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>9#
+This our windows message handler WndProc (window procedure). It handles
+all the messages for our window like mouse move, key pressed,
+application closed .etc. The code below is how we set up a standard
+message loop:
+<br><br>
+<font color="#ffff00">
+These commands are being called <br>
+WM_ACTIVATE // if the window is activated<br>
+WM_SYSCOMMAND // on system command interrupts<br>
+WM_CLOSE // on close window command<br>
+WM_KEYDOWN // if a key is pressed<br>
+WM_KEYUP // if a key is released<br>
+WM_SIZE // if window is resized<br>
+</font>
+</td></tr></tbody></table>
+
+
+
+<br><table width="585" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="cpp">
+<pre class="cpp">LRESULT CALLBACK WndProc<font class="operator">(</font>	HWND hWnd<font class="operator">,</font>	<font class="comment">// Handle For This Window</font>
+			UINT	uMsg<font class="operator">,</font>	<font class="comment">// Message For This Window</font>
+			WPARAM	wParam<font class="operator">,</font>  <font class="comment">// Additional Message Information</font>
+			LPARAM	lParam<font class="operator">)</font>	<font class="comment">// Additional Message Information</font>
+<font class="operator">{</font>
+	<font class="keyword">switch</font> <font class="operator">(</font>uMsg<font class="operator">)</font>			<font class="comment">// Check For Windows Messages</font>
+	<font class="operator">{</font>
+		<font class="keyword">case</font> WM_ACTIVATE<font class="operator">:</font>	<font class="comment">// Watch For Window Activate Message</font>
+		<font class="operator">{</font>
+			<font class="keyword">if</font> <font class="operator">(!</font>HIWORD<font class="operator">(</font>wParam<font class="operator">))//</font> Check Minimization State
+	
+				active<font class="operator">=</font>TRUE<font class="operator">;//</font> Program Is Active
+			<font class="operator">}</font>
+			<font class="keyword">else</font>
+			<font class="operator">{</font>
+				active<font class="operator">=</font>FALSE<font class="operator">;//</font> Program Is No Longer Active
+			<font class="operator">}</font>
+
+			<font class="keyword">return</font> <font class="number">0</font><font class="operator">;</font>	<font class="comment">// Return To The Message Loop</font>
+		<font class="operator">}</font>
+
+		<font class="keyword">case</font> WM_SYSCOMMAND<font class="operator">:</font>	<font class="comment">// Intercept System Commands</font>
+		<font class="operator">{</font>
+			<font class="keyword">switch</font> <font class="operator">(</font>wParam<font class="operator">)</font>	<font class="comment">// Check System Calls</font>
+			<font class="operator">{</font>
+				<font class="comment">// Screensaver Trying To Start?</font>
+				<font class="keyword">case</font> SC_SCREENSAVE<font class="operator">:</font>	
+				<font class="comment">// Monitor Trying To Enter Powersave?</font>
+				<font class="keyword">case</font> SC_MONITORPOWER<font class="operator">:</font>
+				<font class="keyword">return</font> <font class="number">0</font><font class="operator">;</font>	<font class="comment">// Prevent From Happening</font>
+			<font class="operator">}</font>
+			<font class="keyword">break</font><font class="operator">;</font>			<font class="comment">// Exit</font>
+		<font class="operator">}</font>
+
+		<font class="keyword">case</font> WM_CLOSE<font class="operator">:</font>	<font class="comment">// Did We Receive A Close Message?</font>
+		<font class="operator">{</font>
+			PostQuitMessage<font class="operator">(</font><font class="number">0</font><font class="operator">);//</font> Send A Quit Message
+			<font class="keyword">return</font> <font class="number">0</font><font class="operator">;</font>		<font class="comment">// Jump Back</font>
+		<font class="operator">}</font>
+
+		<font class="keyword">case</font> WM_KEYDOWN<font class="operator">:</font>		<font class="comment">// Is A Key Being Held Down?</font>
+		<font class="operator">{</font>
+			keys<font class="operator">[</font>wParam<font class="operator">]</font> <font class="operator">=</font> TRUE<font class="operator">;//</font> If So<font class="operator">,</font> Mark It As TRUE
+			<font class="keyword">return</font> <font class="number">0</font><font class="operator">;</font>		<font class="comment">// Jump Back</font>
+		<font class="operator">}</font>
+
+		<font class="keyword">case</font> WM_KEYUP<font class="operator">:</font>		<font class="comment">// Has A Key Been Released?</font>
+		<font class="operator">{</font>
+			keys<font class="operator">[</font>wParam<font class="operator">]</font> <font class="operator">=</font> FALSE<font class="operator">;//</font> If So<font class="operator">,</font> Mark It As FALSE
+			<font class="keyword">return</font> <font class="number">0</font><font class="operator">;</font>			<font class="comment">// Jump Back</font>
+		<font class="operator">}</font>
+
+		<font class="keyword">case</font> WM_SIZE<font class="operator">:</font>		<font class="comment">// Resize The OpenGL Window</font>
+		<font class="operator">{</font>
+ 			<font class="comment">// LoWord=Width, HiWord=Height</font>
+			ReSizeGLScene<font class="operator">(</font>LOWORD<font class="operator">(</font>lParam<font class="operator">),</font>HIWORD<font class="operator">(</font>lParam<font class="operator">));</font> 
+			<font class="keyword">return</font> <font class="number">0</font><font class="operator">;</font>			<font class="comment">// Jump Back</font>
+		<font class="operator">}</font>
+	<font class="operator">}</font>
+
+	<font class="comment">// Pass All Unhandled Messages To DefWindowProc</font>
+	<font class="keyword">return</font> DefWindowProc<font class="operator">(</font>hWnd<font class="operator">,</font>uMsg<font class="operator">,</font>wParam<font class="operator">,</font>lParam<font class="operator">);</font>
+<font class="operator">}</font>
+</pre></td></tr></tbody></table><br>
+
+
+
+
+
+
+
+<table class="gl_tut" width="585" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>10#
+Last we will look at the function that is called first by standard
+Win32 application the WinMain. As you can see this function starts with
+a declaring two variables. The first variable msg is for the message
+loop. The second is a boolean to see if we want to exit the message
+loop.
+Then it calls a message box that asks which screen mode we prefer. It
+will then call our function CreateGLWindow with the wanted screen
+resolution and our fullscreen variable. After the window is created
+this function will go into a loop. This message loop will go on until
+the Esc or exit window button is pressed. If you study the function for
+a while you will see that by pressing F1 you can toggle between
+fullscreen and window mode.
+</td></tr></tbody></table>
+
+
+
+<br><table width="585" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="cpp">
+<pre class="cpp"><font class="keyword">int</font> WINAPI WinMain<font class="operator">(</font> HINSTANCE hInstance<font class="operator">,</font>	<font class="comment">// Instance</font>
+		  HINSTANCE hPrevInstance<font class="operator">,</font>	<font class="comment">// Previous Instance</font>
+		  LPSTR lpCmdLine<font class="operator">,</font>		<font class="comment">// Command Line Parameters</font>
+		  <font class="keyword">int</font> nCmdShow<font class="operator">)</font>		<font class="comment">// Window Show State</font>
+<font class="operator">{</font>
+	MSG	msg<font class="operator">;</font>			<font class="comment">// Windows Message Structure</font>
+	BOOL	done<font class="operator">=</font>FALSE<font class="operator">;</font>		<font class="comment">// Bool Variable To Exit Loop</font>
+
+	<font class="comment">// Ask The User Which Screen Mode They Prefer</font>
+	<font class="keyword">if</font> <font class="operator">(</font>MessageBox<font class="operator">(</font>NULL<font class="operator">,</font><font class="string">"Would You Like To Run In Fullscreen Mode?"</font><font class="operator">,</font>
+	<font class="string">"Start FullScreen?"</font><font class="operator">,</font>MB_YESNO<font class="operator">|</font>MB_ICONQUESTION<font class="operator">)==</font>IDNO<font class="operator">)</font>
+	<font class="operator">{</font>
+		fullscreen<font class="operator">=</font>FALSE<font class="operator">;</font>	<font class="comment">// Windowed Mode</font>
+	<font class="operator">}</font>
+
+	<font class="comment">// Create Our OpenGL Window</font>
+	<font class="keyword">if</font> <font class="operator">(!</font>CreateGLWindow<font class="operator">(</font><font class="string">"APRON TUTORIALS"</font><font class="operator">,</font><font class="number">640</font><font class="operator">,</font><font class="number">480</font><font class="operator">,</font><font class="number">16</font><font class="operator">,</font>fullscreen<font class="operator">))</font>
+	<font class="operator">{</font>
+		<font class="keyword">return</font> <font class="number">0</font><font class="operator">;</font>		<font class="comment">// Quit If Window Was Not Created</font>
+	<font class="operator">}</font>
+
+	<font class="keyword">while</font><font class="operator">(!</font>done<font class="operator">)</font>		<font class="comment">// Loop That Runs While done=FALSE</font>
+	<font class="operator">{</font>
+		<font class="comment">// Is There A Message Waiting?</font>
+		<font class="keyword">if</font> <font class="operator">(</font>PeekMessage<font class="operator">(&amp;</font>msg<font class="operator">,</font>NULL<font class="operator">,</font><font class="number">0</font><font class="operator">,</font><font class="number">0</font><font class="operator">,</font>PM_REMOVE<font class="operator">))</font>
+		<font class="operator">{</font>
+			<font class="comment">// Have We Received A Quit Message?</font>
+			<font class="keyword">if</font> <font class="operator">(</font>msg<font class="operator">.</font>message<font class="operator">==</font>WM_QUIT<font class="operator">)</font>
+			<font class="operator">{</font>
+				done<font class="operator">=</font>TRUE<font class="operator">;//</font> If So done<font class="operator">=</font>TRUE
+			<font class="operator">}</font>
+			<font class="keyword">else</font>	<font class="comment">// If Not, Deal With Window Messages</font>
+			<font class="operator">{</font>
+				<font class="comment">// Translate The Message</font>
+				TranslateMessage<font class="operator">(&amp;</font>msg<font class="operator">);</font>
+				<font class="comment">// Dispatch The Message</font>
+				DispatchMessage<font class="operator">(&amp;</font>msg<font class="operator">);</font>
+			<font class="operator">}</font>
+		<font class="operator">}</font>
+		<font class="keyword">else</font>			<font class="comment">// If There Are No Messages</font>
+		<font class="operator">{</font>
+			<font class="comment">// Draw The Scene.</font>
+			<font class="comment">// Active?  Was There A Quit Received?</font>
+			<font class="keyword">if</font> <font class="operator">((</font>active <font class="operator">&amp;&amp;</font> <font class="operator">!</font>DrawGLScene<font class="operator">())</font> <font class="operator">||</font> keys<font class="operator">[</font>VK_ESCAPE<font class="operator">])</font>
+			<font class="operator">{</font>
+				<font class="comment">// ESC or DrawGLScene Signalled A Quit</font>
+				done<font class="operator">=</font>TRUE<font class="operator">;</font>
+			<font class="operator">}</font>
+			<font class="keyword">else</font>		<font class="comment">// Not Time To Quit, Update Screen</font>
+			<font class="operator">{</font>
+				<font class="comment">// Swap Buffers (Double Buffering)</font>
+				SwapBuffers<font class="operator">(</font>hDC<font class="operator">);</font>
+			<font class="operator">}</font>
+
+			<font class="keyword">if</font> <font class="operator">(</font>keys<font class="operator">[</font>VK_F1<font class="operator">])</font>	<font class="comment">// Is F1 Being Pressed?</font>
+			<font class="operator">{</font>
+				keys<font class="operator">[</font>VK_F1<font class="operator">]=</font>FALSE<font class="operator">;//</font> If So Make Key FALSE
+				KillGLWindow<font class="operator">();</font>	<font class="comment">// Kill Our Current Window</font>
+				<font class="comment">// Toggle Fullscreen / Windowed Mode</font>
+				fullscreen<font class="operator">=!</font>fullscreen<font class="operator">;</font>
+				<font class="comment">// Recreate Our OpenGL Window</font>
+				<font class="keyword">if</font> <font class="operator">(!</font>CreateGLWindow<font class="operator">(</font><font class="string">"APRON TUTORIALS"</font><font class="operator">,</font>
+				<font class="number">640</font><font class="operator">,</font><font class="number">480</font><font class="operator">,</font><font class="number">16</font><font class="operator">,</font>fullscreen<font class="operator">))</font>
+				<font class="operator">{</font>
+					<font class="comment">// Quit If Window Was Not Created</font>
+					<font class="keyword">return</font> <font class="number">0</font><font class="operator">;</font>
+				<font class="operator">}</font>
+			<font class="operator">}</font>
+		<font class="operator">}</font>
+	<font class="operator">}</font>
+
+	<font class="comment">// Shutdown</font>
+	KillGLWindow<font class="operator">();</font>		<font class="comment">// Kill The Window</font>
+	<font class="keyword">return</font> <font class="operator">(</font>msg<font class="operator">.</font>wParam<font class="operator">);</font>	<font class="comment">// Exit The Program</font>
+<font class="operator">}</font>
+</pre></td></tr></tbody></table><br>
+
+
+
+
+<table class="gl_tut" width="585" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>That&#65533;s
+it! You can breath now ; )You might think that It&#65533;s a lot of code for
+only one window.. But you will get used to it after some practise. Try
+downloading the source code and compile it. If you want you can also
+shorten the code by removing all the error checking, but I don&#65533;t
+recommend it! Most OpenGL programmers don't create there own window at
+first, but I do recommend that you read through the code a couple of
+times. Feel free to use this window in future OpenGL applications.
+Learn how to use this one, and then move on the next and much easier
+tutorial.. <br><br>
+
+Please mention me in your references!
+<br><br>
+
+THE END!
+<br><br>
+
+
+
+Regards<br>
+Ronny André Reierstad<br>
+<br>
+<hr noshade="noshade" size="1">
+<table width="585" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+  <td width="50"><a href="http://www.morrowland.com/apron/tutorials/gl/gl_window.zip"><img src="gl_window.php_elemei/tut_file.gif" alt="Download Source Code!" border="0"></a></td>
+  <td valign="left"><font face="verdana" size="4">Visual Studio C++ Source Code</font></td>
+ </tr>
+</tbody></table>
+<hr noshade="noshade" size="1">
+<table width="585" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+  <td width="50"><a href="http://www.morrowland.com/apron/tutorials/vb/vb_gl_window.zip"><img src="gl_window.php_elemei/tut_file.gif" alt="Download Source Code!" border="0"></a></td>
+  <td valign="left"><font face="verdana" size="4">Visual Basic Source Code</font></td>
+ </tr>
+</tbody></table>
+<hr noshade="noshade" size="1">
+<table width="585" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+  <td width="50"><a href="http://www.morrowland.com/apron/tutorials/gl/glut_window.zip"><img src="gl_window.php_elemei/tut_file.gif" alt="Download Source Code!" border="0"></a></td>
+  <td valign="left"><font face="verdana" size="4">GLUT C++ Source Code</font></td>
+ </tr>
+</tbody></table>
+<hr noshade="noshade" size="1">
+<table width="585" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+  <td width="50"><a href="http://www.morrowland.com/apron/tutorials/gl/gl_lwjgl_window.zip"><img src="gl_window.php_elemei/tut_file.gif" alt="Download Source Code!" border="0"></a></td>
+  <td valign="left"><font face="verdana" size="4">Java LWJGL Source Code</font></td>
+ </tr>
+</tbody></table>
+<hr noshade="noshade" size="1">
+
+
+<br>
+Credits &amp; References: <br>
+-------------------------------------------------------------<br>
+This tutorial is built on a Jeff Molofee (aka NeHe) Lesson5.<br>
+COPYRIGHT AND DISCLAIMER: (c)2000 Jeff Molofee <br>
+http://nehe.gamedev.net <br>
+<br>
+And to Fredric Echols For Cleaning Up <br>
+Thank you for a great tutorial site! <br>
+-------------------------------------------------------------<br>
+
+</td></tr></tbody></table>
+<!--STOP-->
+				<!--E Main File-->
+			</center></td>
+			<td valign="top" align="center" background="gl_window.php_elemei/bg_rside.gif">
+				<table 0="" border="1"><tbody><tr><td> </td></tr></tbody></table>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" background="gl_window.php_elemei/bg_dleft.gif">&nbsp;</td>
+			<td valign="bottom" align="center" background="gl_window.php_elemei/bg_dmenu.gif"><font face="tahoma" size="1">All rights reserved Morrowland Š 2011</font></td>
+			<td valign="top" background="gl_window.php_elemei/bg_dright.gif">&nbsp;</td>
+		</tr>
+	</tbody></table>
+
+	
+	<!--TABLE BOTTOM-->
+	<table width="958" align="center" background="gl_window.php_elemei/bg_d.gif" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td align="center"><font face="tahoma" size="1">Ronny André Reierstad</font></td>
+		</tr>
+	</tbody></table>
+
+</body></html>

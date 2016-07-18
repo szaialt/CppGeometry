@@ -1,0 +1,1 @@
+/**/twttr.receiveCount({"count":0,"url":"http:\/\/lazyfoo.net\/tutorials\/SDL\/28_per-pixel_collision_detection\/index.php\/"});

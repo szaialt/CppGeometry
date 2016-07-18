@@ -1,0 +1,852 @@
+#include <SDL.h>
+#include <SDL_gfxPrimitives.h>
+#include "primitive_structs.h"
+#include <vector>
+#include <SDL_keyboard.h>
+#include <SDL_events.h>
+#include <iostream>
+#include <time.h>
+//#include <sdl_keyboard.h>
+
+using namespace std;
+ 
+int min(int a, int b){
+  if (a < b) return a;
+  else return b;
+} 
+ 
+vector<vector<int> > generate_cyclic_matrix(int n){
+  vector<int> first;
+  for (int i = 0; i < n; i++){
+    first.push_back(i);
+  }
+  vector<vector<int> > matrix;
+
+  for (int i = 0; i < n; i++){
+    matrix.push_back(first);
+  }  
+
+  for (int i = 0; i < n; i++){
+    for (int j = 0; j < n; j++){
+      matrix.at(i).at(j) = (matrix.at(i).at(j) + i)%n;
+    }  
+  }
+  return matrix;
+}
+
+color int_to_color(int n, int colorMaxValue){
+  color col;
+  if (n == 0) {
+    col.red = colorMaxValue;
+    col.green = colorMaxValue;
+    col.blue = colorMaxValue;
+    col.alpha = colorMaxValue;
+  }
+  else if (n == 1) {
+    col.red = colorMaxValue;
+    col.green = 0;
+    col.blue = 0;  
+    col.alpha = colorMaxValue;
+  }
+  else if (n == 2) {
+    col.red = 0;
+    col.green = 0;
+    col.blue = colorMaxValue;      
+    col.alpha = colorMaxValue;
+
+  }
+  else if (n == 3) {
+    col.red = colorMaxValue;
+    col.green = colorMaxValue;
+    col.blue = 0;
+    col.alpha = colorMaxValue;
+  }
+  else if (n == 4) {
+    col.red = 0;
+    col.green = colorMaxValue/2;
+    col.blue = 0;
+    col.alpha = colorMaxValue;
+  }
+  else if (n == 5) {
+    col.red = colorMaxValue/2;
+    col.green = 0;
+    col.blue = colorMaxValue;
+    col.alpha = colorMaxValue;
+  }
+  else if (n == 6) {
+    col.red = colorMaxValue/4;
+    col.green = colorMaxValue/4;
+    col.blue = colorMaxValue;
+    col.alpha = colorMaxValue;
+  }
+  else if (n == 7) {
+    col.red = colorMaxValue/2;
+    col.green = 0;
+    col.blue = 0;
+    col.alpha = colorMaxValue;
+  }
+  else if (n == 8) {
+    col.red = 0;
+    col.green = 3*colorMaxValue/4;
+    col.blue = colorMaxValue/4;
+    col.alpha = colorMaxValue;
+  }
+  else if (n == 9) {
+    col.red = colorMaxValue;
+    col.green = colorMaxValue/3;
+    col.blue = 0;
+    col.alpha = colorMaxValue;
+  }
+  return col;    
+}
+ 
+int main(int argc, char *argv[]) {
+    SDL_Event ev;
+    SDL_Surface *screen;
+ 
+    /* SDL inicializálása és ablak megnyitása */
+    SDL_Init(SDL_INIT_VIDEO);
+    screen=SDL_SetVideoMode(0, 0, 0, SDL_ANYFORMAT);
+    if (!screen) {
+        fprintf(stderr, "Nem sikerult megnyitni az ablakot!\n");
+        exit(1);
+    }
+    SDL_WM_SetCaption("SDL peldaprogram", "SDL peldaprogram");
+
+      //Update the surface 
+      //SDL_UpdateWindowSurface( screen );
+      SDL_Flip(screen);
+    const int width = screen->w;
+    const int height = screen->h; 
+    int mx = min(width, height);
+    const int colorMaxValue = 255;
+    const int gap = mx/30;
+    const int maxGroupSize = 11;
+    //Nincs ezeknek semmi hatása
+    bool switchrg = true;
+    bool switchby = false;
+    
+    // Itt rajzolj
+    int i;
+    int tick = 1;
+
+    vector<vector<int> > V4;
+    
+    vector<int> v1;
+    vector<int> v2;
+    vector<int> v3;
+    vector<int> v4;
+
+    v1.push_back(0);
+    v1.push_back(1);
+    v2.push_back(1);
+    v2.push_back(0);
+    
+    v1.push_back(2);
+    v1.push_back(3);
+    v2.push_back(3);
+    v2.push_back(2);
+    
+    v3.push_back(2);
+    v3.push_back(3);
+    v4.push_back(3);
+    v4.push_back(2);        
+    
+    v3.push_back(0);
+    v3.push_back(1);
+    v4.push_back(1);
+    v4.push_back(0);
+    
+    V4.push_back(v1);
+    V4.push_back(v2);
+    V4.push_back(v3);
+    V4.push_back(v4);
+
+    vector<vector<int> > S3;
+    
+    vector<int> s1;
+    vector<int> s2;
+    vector<int> s3;
+    vector<int> s4;
+    vector<int> s5;
+    vector<int> s6;    
+    
+    // e eq 0, a eq 1, b eq 2, c eq 3, d eq 4, f eq 5
+    
+    s1.push_back(0);
+    s1.push_back(1);
+    s1.push_back(2);
+    s1.push_back(3);
+    s1.push_back(4);
+    s1.push_back(5);
+    
+    s2.push_back(1);
+    s2.push_back(0);
+    s2.push_back(4);
+    s2.push_back(5);
+    s2.push_back(2);
+    s2.push_back(3);    
+    
+    s3.push_back(2);
+    s3.push_back(5);
+    s3.push_back(0);
+    s3.push_back(4);
+    s3.push_back(3);
+    s3.push_back(1);
+    
+    s4.push_back(3);
+    s4.push_back(4);
+    s4.push_back(5);
+    s4.push_back(0);
+    s4.push_back(1);
+    s4.push_back(2);
+    
+    s5.push_back(4);
+    s5.push_back(3);
+    s5.push_back(1);
+    s5.push_back(2);
+    s5.push_back(5);
+    s5.push_back(0);
+    
+    s6.push_back(5);
+    s6.push_back(2);
+    s6.push_back(3);
+    s6.push_back(1);
+    s6.push_back(0);
+    s6.push_back(4);
+
+    S3.push_back(s1);
+    S3.push_back(s2);
+    S3.push_back(s3);
+    S3.push_back(s4);
+    S3.push_back(s5);
+    S3.push_back(s6);    
+    
+    vector<vector<int> > Z42;
+    vector<int> z1;
+    vector<int> z2;
+    vector<int> z3;
+    vector<int> z4;
+    vector<int> z5;
+    vector<int> z6;
+    vector<int> z7;
+    vector<int> z8;
+
+    z1.push_back(0);
+    z1.push_back(1);
+    z1.push_back(2);
+    z1.push_back(3);
+    z2.push_back(1);
+    z2.push_back(2);
+    z2.push_back(3);
+    z2.push_back(0);
+    z3.push_back(2);
+    z3.push_back(3);
+    z3.push_back(0);
+    z3.push_back(1);
+    z4.push_back(3);
+    z4.push_back(0);
+    z4.push_back(1);
+    z4.push_back(2);
+
+    z5.push_back(4);
+    z5.push_back(5);
+    z5.push_back(6);
+    z5.push_back(7);
+    z6.push_back(5);
+    z6.push_back(6);
+    z6.push_back(7);
+    z6.push_back(4);
+    z7.push_back(6);
+    z7.push_back(7);
+    z7.push_back(4);
+    z7.push_back(5);
+    z8.push_back(7);
+    z8.push_back(4);
+    z8.push_back(5);
+    z8.push_back(6);
+
+    z1.push_back(4);
+    z1.push_back(5);
+    z1.push_back(6);
+    z1.push_back(7);
+    z2.push_back(5);
+    z2.push_back(6);
+    z2.push_back(7);
+    z2.push_back(4);
+    z3.push_back(6);
+    z3.push_back(7);
+    z3.push_back(4);
+    z3.push_back(5);
+    z4.push_back(7);
+    z4.push_back(4);
+    z4.push_back(5);
+    z4.push_back(6);
+
+    z5.push_back(0);
+    z5.push_back(1);
+    z5.push_back(2);
+    z5.push_back(3);
+    z6.push_back(1);
+    z6.push_back(2);
+    z6.push_back(3);
+    z6.push_back(0);
+    z7.push_back(2);
+    z7.push_back(3);
+    z7.push_back(0);
+    z7.push_back(1);
+    z8.push_back(3);
+    z8.push_back(0);
+    z8.push_back(1);
+    z8.push_back(2);
+
+    Z42.push_back(z1);
+    Z42.push_back(z2);
+    Z42.push_back(z3);
+    Z42.push_back(z4);
+    Z42.push_back(z5);
+    Z42.push_back(z6);
+    Z42.push_back(z7);
+    Z42.push_back(z8);
+
+
+    vector<vector<int> > Z222;
+    
+    vector<int> zz1;
+    vector<int> zz2;
+    vector<int> zz3;
+    vector<int> zz4;
+    vector<int> zz5;
+    vector<int> zz6;
+    vector<int> zz7;
+    vector<int> zz8;
+
+    zz1.push_back(0);
+    zz1.push_back(1);
+    zz2.push_back(1);
+    zz2.push_back(0);
+    
+    zz1.push_back(2);
+    zz1.push_back(3);
+    zz2.push_back(3);
+    zz2.push_back(2);
+    
+    zz3.push_back(2);
+    zz3.push_back(3);
+    zz4.push_back(3);
+    zz4.push_back(2);        
+    
+    zz3.push_back(0);
+    zz3.push_back(1);
+    zz4.push_back(1);
+    zz4.push_back(0);
+
+    zz5.push_back(4);
+    zz5.push_back(5);
+    zz6.push_back(5);
+    zz6.push_back(4);
+    
+    zz5.push_back(6);
+    zz5.push_back(7);
+    zz6.push_back(7);
+    zz6.push_back(6);
+    
+    zz7.push_back(6);
+    zz7.push_back(7);
+    zz8.push_back(7);
+    zz8.push_back(6);        
+    
+    zz7.push_back(4);
+    zz7.push_back(5);
+    zz8.push_back(5);
+    zz8.push_back(4);
+
+    zz1.push_back(4);
+    zz1.push_back(5);
+    zz2.push_back(5);
+    zz2.push_back(4);
+    
+    zz1.push_back(6);
+    zz1.push_back(7);
+    zz2.push_back(7);
+    zz2.push_back(6);
+    
+    zz3.push_back(6);
+    zz3.push_back(7);
+    zz4.push_back(7);
+    zz4.push_back(6);        
+    
+    zz3.push_back(4);
+    zz3.push_back(5);
+    zz4.push_back(5);
+    zz4.push_back(4);
+
+    zz5.push_back(0);
+    zz5.push_back(1);
+    zz6.push_back(1);
+    zz6.push_back(0);
+    
+    zz5.push_back(2);
+    zz5.push_back(3);
+    zz6.push_back(3);
+    zz6.push_back(2);
+    
+    zz7.push_back(2);
+    zz7.push_back(3);
+    zz8.push_back(3);
+    zz8.push_back(2);        
+    
+    zz7.push_back(0);
+    zz7.push_back(1);
+    zz8.push_back(1);
+    zz8.push_back(0);
+
+
+    Z222.push_back(zz1);
+    Z222.push_back(zz2);
+    Z222.push_back(zz3);
+    Z222.push_back(zz4);
+    Z222.push_back(zz5);
+    Z222.push_back(zz6);
+    Z222.push_back(zz7);
+    Z222.push_back(zz8);
+
+
+    vector<vector<int> > Q8;
+    
+    vector<int> q1;
+    vector<int> q2;
+    vector<int> q3;
+    vector<int> q4;
+    vector<int> q5;
+    vector<int> q6;
+    vector<int> q7;
+    vector<int> q8;
+
+    //1 eq 0, -1 eq 1, i eq 2, -i eq 3, j eq 4, -j eq 5, k eq 6, -k eq 7
+    q1.push_back(0);
+    q1.push_back(1);
+    q2.push_back(1);
+    q2.push_back(0);
+    
+    q1.push_back(2);
+    q1.push_back(3);
+    q2.push_back(3);
+    q2.push_back(2);
+    
+    q3.push_back(2);
+    q3.push_back(3);
+    q4.push_back(3);
+    q4.push_back(2);        
+    
+    q3.push_back(1);
+    q3.push_back(0);
+    q4.push_back(0);
+    q4.push_back(1);
+    
+    q5.push_back(4);
+    q5.push_back(5);
+    q6.push_back(5);
+    q6.push_back(4);
+    
+    q5.push_back(6);
+    q5.push_back(7);
+    q6.push_back(7);
+    q6.push_back(6);
+    
+    q7.push_back(7);
+    q7.push_back(6);
+    q8.push_back(6);
+    q8.push_back(7);        
+    
+    q7.push_back(4);
+    q7.push_back(5);
+    q8.push_back(5);
+    q8.push_back(4);
+    
+    q1.push_back(4);
+    q1.push_back(5);
+    q2.push_back(5);
+    q2.push_back(4);
+    
+    q1.push_back(7);
+    q1.push_back(6);
+    q2.push_back(6);
+    q2.push_back(7);
+    
+    q3.push_back(7);
+    q3.push_back(6);
+    q4.push_back(6);
+    q4.push_back(7);        
+    
+    q3.push_back(5);
+    q3.push_back(4);
+    q4.push_back(4);
+    q4.push_back(5);    
+        
+    q5.push_back(1);
+    q5.push_back(0);
+    q6.push_back(0);
+    q6.push_back(1);
+        
+    q5.push_back(2);
+    q5.push_back(3);
+    q6.push_back(3);
+    q6.push_back(2);
+    
+    q7.push_back(3);
+    q7.push_back(2);
+    q8.push_back(2);
+    q8.push_back(3);        
+    
+    q7.push_back(1);
+    q7.push_back(0);
+    q8.push_back(0);
+    q8.push_back(1);    
+    
+    Q8.push_back(q1);
+    Q8.push_back(q2);
+    Q8.push_back(q3);
+    Q8.push_back(q4);
+    Q8.push_back(q5);
+    Q8.push_back(q6);
+    Q8.push_back(q7);
+    Q8.push_back(q8);
+    
+    vector<vector<int> > D4;
+    
+  //e eq 0, b eq 1, a eq 2, a2 eq 3, a3 eq 4, ab eq 5, a2b eq 6, a3b eq 7
+    
+    vector<int> d1;
+    vector<int> d2;
+    vector<int> d3;
+    vector<int> d4;
+    vector<int> d5;
+    vector<int> d6;
+    vector<int> d7;
+    vector<int> d8;
+    
+    /*
+    
+       e       b       a       a2      a3      ab      a2b     a3b
+       b       e       a3b     a2b     ab      a3      a2      a
+       a       ab      a2      a3      e       a2b     a3b     b
+      a2      a2b     a3      e       a       a3b     b       ab
+      a3      a3b     e       a       a2      b       ab      a2b
+      ab      a       b       a3b     a2b     e       a3      a2
+     a2b     a2      ab      b       a3b     a       e       a3
+     a3b     a3      a2b     ab      b       a2      a       e
+        
+    */
+    
+    
+  //e eq 0, b eq 1, a eq 2, a2 eq 3, a3 eq 4, ab eq 5, a2b eq 6, a3b eq 7
+    
+    d1.push_back(0);
+    d1.push_back(1);
+    d1.push_back(2);
+    d1.push_back(3);    
+    d1.push_back(4);
+    d1.push_back(5);
+    d1.push_back(6);
+    d1.push_back(7);    
+    
+    d2.push_back(1);
+    d2.push_back(0);
+    d2.push_back(7);
+    d2.push_back(6);    
+    d2.push_back(5);
+    d2.push_back(4);
+    d2.push_back(3);
+    d2.push_back(2);       
+    
+    d3.push_back(2);
+    d3.push_back(5);
+    d3.push_back(3);
+    d3.push_back(4);    
+    d3.push_back(0);
+    d3.push_back(6);
+    d3.push_back(7);
+    d3.push_back(1);        
+    
+    d4.push_back(3);
+    d4.push_back(6);
+    d4.push_back(4);
+    d4.push_back(0);    
+    d4.push_back(2);
+    d4.push_back(7);
+    d4.push_back(1);
+    d4.push_back(5);  
+    
+    d5.push_back(4);
+    d5.push_back(7);
+    d5.push_back(0);
+    d5.push_back(2);    
+    d5.push_back(3);
+    d5.push_back(1);
+    d5.push_back(5);
+    d5.push_back(6);  
+    
+    d6.push_back(5);
+    d6.push_back(2);
+    d6.push_back(1);
+    d6.push_back(7);    
+    d6.push_back(6);
+    d6.push_back(0);
+    d6.push_back(4);
+    d6.push_back(3);  
+    
+    d7.push_back(6);
+    d7.push_back(3);
+    d7.push_back(5);
+    d7.push_back(1);    
+    d7.push_back(7);
+    d7.push_back(2);
+    d7.push_back(0);
+    d7.push_back(4);  
+    
+    d8.push_back(7);
+    d8.push_back(4);
+    d8.push_back(6);
+    d8.push_back(5);    
+    d8.push_back(1);
+    d8.push_back(3);
+    d8.push_back(2);
+    d8.push_back(0);  
+    
+  //e eq 0, b eq 1, a eq 2, a2 eq 3, a3 eq 4, ab eq 5, a2b eq 6, a3b eq 7 
+
+    D4.push_back(d1);
+    D4.push_back(d2);
+    D4.push_back(d3);
+    D4.push_back(d4);
+    D4.push_back(d5);
+    D4.push_back(d6);
+    D4.push_back(d7);
+    D4.push_back(d8);
+
+    vector<vector<int> > Z33;
+
+    vector<int> zzz1;
+    vector<int> zzz2;
+    vector<int> zzz3;
+    vector<int> zzz4;
+    vector<int> zzz5;
+    vector<int> zzz6;
+    vector<int> zzz7;
+    vector<int> zzz8;
+    vector<int> zzz9;
+
+    zzz1.push_back(0);
+    zzz1.push_back(1);
+    zzz1.push_back(2);
+    zzz2.push_back(1);
+    zzz2.push_back(2);
+    zzz2.push_back(0);
+    zzz3.push_back(2);
+    zzz3.push_back(0);
+    zzz3.push_back(1);
+
+    zzz4.push_back(3);
+    zzz4.push_back(4);
+    zzz4.push_back(5);
+    zzz5.push_back(4);
+    zzz5.push_back(5);
+    zzz5.push_back(3);
+    zzz6.push_back(5);
+    zzz6.push_back(3);
+    zzz6.push_back(4);
+
+    zzz1.push_back(3);
+    zzz1.push_back(4);
+    zzz1.push_back(5);
+    zzz2.push_back(4);
+    zzz2.push_back(5);
+    zzz2.push_back(3);
+    zzz3.push_back(5);
+    zzz3.push_back(3);
+    zzz3.push_back(4);
+
+    zzz7.push_back(6);
+    zzz7.push_back(7);
+    zzz7.push_back(8);
+    zzz8.push_back(7);
+    zzz8.push_back(8);
+    zzz8.push_back(6);
+    zzz9.push_back(8);
+    zzz9.push_back(6);
+    zzz9.push_back(7);
+
+    zzz4.push_back(6);
+    zzz4.push_back(7);
+    zzz4.push_back(8);
+    zzz5.push_back(7);
+    zzz5.push_back(8);
+    zzz5.push_back(6);
+    zzz6.push_back(8);
+    zzz6.push_back(6);
+    zzz6.push_back(7);
+
+    zzz1.push_back(6);
+    zzz1.push_back(7);
+    zzz1.push_back(8);
+    zzz2.push_back(7);
+    zzz2.push_back(8);
+    zzz2.push_back(6);
+    zzz3.push_back(8);
+    zzz3.push_back(6);
+    zzz3.push_back(7);
+
+    zzz7.push_back(0);
+    zzz7.push_back(1);
+    zzz7.push_back(2);
+    zzz8.push_back(1);
+    zzz8.push_back(2);
+    zzz8.push_back(0);
+    zzz9.push_back(2);
+    zzz9.push_back(0);
+    zzz9.push_back(1);
+
+    zzz4.push_back(0);
+    zzz4.push_back(1);
+    zzz4.push_back(2);
+    zzz5.push_back(1);
+    zzz5.push_back(2);
+    zzz5.push_back(0);
+    zzz6.push_back(2);
+    zzz6.push_back(0);
+    zzz6.push_back(1);
+
+    zzz7.push_back(3);
+    zzz7.push_back(4);
+    zzz7.push_back(5);
+    zzz8.push_back(4);
+    zzz8.push_back(5);
+    zzz8.push_back(3);
+    zzz9.push_back(5);
+    zzz9.push_back(3);
+    zzz9.push_back(4);
+
+    Z33.push_back(zzz1);
+    Z33.push_back(zzz2);
+    Z33.push_back(zzz3);
+    Z33.push_back(zzz4);
+    Z33.push_back(zzz5);
+    Z33.push_back(zzz6);
+    Z33.push_back(zzz7);
+    Z33.push_back(zzz8);
+    Z33.push_back(zzz9);
+
+    vector<vector<vector<int> > > groups; 
+        
+    for (int i = 0; i < maxGroupSize; i++){
+      groups.push_back(generate_cyclic_matrix(i));
+      if (i == 4)
+        groups.push_back(V4);
+      if (i == 6)
+        groups.push_back(S3);
+      if (i == 8){
+        groups.push_back(Z42);    
+        groups.push_back(Z222);        
+        groups.push_back(D4);      
+        groups.push_back(Q8);      
+       }
+      if (i == 9)
+        groups.push_back(Z33);
+    }
+            
+    while (SDL_WaitEvent(&ev) && ev.type!=SDL_QUIT && ev.type != SDL_KEYDOWN){
+       if (ev.type == SDL_KEYDOWN)
+         {
+          cout << "Billentyű észlelve." << endl;
+          SDL_Quit();
+        }
+      else if (ev.type == SDL_MOUSEBUTTONDOWN)
+         {
+          cout << "Egér észlelve." << endl;
+          SDL_Quit();
+        }
+        for (int i = 0; i < groups.size(); i++){
+        
+          int cellSize = mx/(groups.at(i).size()+1);
+          
+          SDL_FillRect( screen, NULL, SDL_MapRGB( 
+                      screen->format, 0x00, 0x00, 000 ) );                     
+          const Uint8* currentKeyStates = SDL_GetKeyState( NULL ); 
+
+          if( currentKeyStates[ SDLK_UP ] ) {
+                 switchrg = true;
+          } 
+          else if( currentKeyStates[ SDLK_DOWN ] ) {
+                 switchrg = false;
+          } 
+          else if( currentKeyStates[ SDLK_LEFT ] ) {
+                 switchby = true;
+          } 
+          else if( currentKeyStates[ SDLK_RIGHT ] ) { 
+                 switchby = false;
+          } 
+          else {
+                 switchrg = false; 
+                 switchby = false;
+          }           
+          
+           //if (switchby && switchrg){
+
+           //SDL_FillRect( screen, NULL, SDL_MapRGB( 
+           //   screen->format, 0xFF, 0xFF, 0xFF ) ); 
+              
+           //}    
+           
+          for (int j = 0; j < groups.at(i).size(); j++){
+
+           for (int k = 0; k < groups.at(i).at(j).size(); k++){
+        
+            //El kell érni, hogy majd középre kerüljön
+            Sint16 x1 = j*cellSize + gap;
+            Sint16 y1 = k*cellSize + gap;  
+            Sint16 x2 = (j+1)*cellSize;
+            Sint16 y2 = (k+1)*cellSize; 
+             
+            int colint = groups.at(i).at(j).at(k);
+            color col = int_to_color(colint, colorMaxValue);
+             
+           //if (switchby && switchrg){
+           // A kék és a fekete kivételével minden világos
+           /* boxRGBA(screen, x1, y1, x2, y2,
+                  colorMaxValue-col.red, 
+                  colorMaxValue-col.green, 
+                  colorMaxValue-col.blue, col.alpha);*/
+            //}   
+            //else if (switchrg){
+            //A sötétzöld helyén álló bordó sokkal sötétebb
+            //a pirost helyettesítő világoszöldnél
+            boxRGBA(screen, x1, y1, x2, y2,
+              col.green, col.red, col.blue, col.alpha);
+            //}
+            //else if (switchby){
+              //Kék-sárga csere kell
+              //Sok a sárga
+              //int yy = min(col.red, col.green);
+            //boxRGBA(screen, x1, y1, x2, y2,
+              //col.red - yy + col.blue, 
+              //col.green - yy + col.blue, yy, col.alpha);
+            //}           
+            //else {
+            //boxRGBA(screen, x1, y1, x2, y2,
+              //col.red, col.green, col.blue, col.alpha);
+            //}              
+            
+           }
+        }
+     /* eddig elvegzett rajzolasok a kepernyore */
+     SDL_Flip(screen);
+     sleep( tick ); 
+    }  
+        
+    }
+    /* ablak bezarasa */
+    SDL_Quit();
+ 
+    return 0;
+}

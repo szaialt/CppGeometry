@@ -1,0 +1,36 @@
+BODY {
+
+scrollbar-face-color: #181FB1;
+scrollbar-shadow-color: #436532;
+scrollbar-highlight-color: #FFFFFF;
+scrollbar-3dlight-color: #000000;
+scrollbar-darkshadow-color:#000000;
+scrollbar-arrow-color: #FFFFFF;	
+scrollbar-track-color: #D1D3FF;
+	
+	
+}
+A  {
+	color : #319CFF;
+	text-decoration : underline;
+	font : bold;
+}
+
+A:Hover  {
+	color : Red;
+	text-decoration : none;
+	font : bold;
+}
+
+a.menulink {
+	color: White;
+	text-decoration: none;
+	font-weight : bold;
+}  
+.menulink:hover{
+	color: Red;
+	text-decoration: none;
+}
+
+BODY  {}
+

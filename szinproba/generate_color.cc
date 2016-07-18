@@ -1,0 +1,78 @@
+#include <math.h>
+#include <time.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+
+typedef struct color {
+  int red;
+  int green;
+  int blue;
+} color;
+
+int min(int a, int b){
+  if (a < b) return a;
+  else return b;
+} 
+
+int approximately(int x, int y, int d) {
+  if (((x-y) < d) || ((y-x) < d)) return 0;
+  else return 1;
+}
+
+color generate_color(int colorMaxValue){
+     const int coldist = 30;
+     int red =  rand() / colorMaxValue;
+     int green =  rand() / colorMaxValue;
+     int blue =  rand() / colorMaxValue;
+     //I hate grey
+     if (((approximately(red, colorMaxValue/2, coldist) == 0) && 
+       (approximately(blue, colorMaxValue/2, coldist) == 0) && 
+       (approximately(green, colorMaxValue/2, coldist) == 0))){
+         if (red > colorMaxValue/2) 
+           red = (red + coldist) % colorMaxValue;
+         if (red < colorMaxValue/2) 
+           red = (red - coldist) % colorMaxValue;
+         if (green > colorMaxValue/2) 
+           green = (green + coldist) % colorMaxValue;
+         if (green < colorMaxValue/2) 
+           green = (green - coldist) % colorMaxValue;
+         if (blue > colorMaxValue/2) 
+           blue = (blue + coldist) % colorMaxValue;
+         if (blue < colorMaxValue/2) 
+           blue = (blue - coldist) % colorMaxValue;
+     }
+     if ((approximately(red, green, coldist) == 0) && 
+       (approximately(blue, green, coldist) == 0) && 
+       (approximately(red, blue, coldist) == 0)){
+       int r = red;
+       int g = green;
+       int b = blue;
+        if (approximately(r, g, coldist) == 0) {
+           if (r > g) 
+             red = (r + coldist) % colorMaxValue;
+           if (red < green) 
+             red = (r - coldist) % colorMaxValue;
+      }
+      if (approximately(g, b, coldist) == 0) {
+           if (g > b) 
+             green = (g + coldist) % colorMaxValue;
+           if (green < blue) 
+             green = (g - coldist) % colorMaxValue;    
+      }        
+      if  (approximately(b, r, coldist) == 0) {
+           if (b > r) 
+             blue = (b + coldist) % colorMaxValue;
+           if (blue < red) 
+             blue = (b - coldist) % colorMaxValue;    
+      }
+  
+
+
+  }
+  color col;
+  col.red = red;
+  col.green = green;
+  col.blue = blue;
+  return col;
+}

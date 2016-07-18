@@ -1,0 +1,524 @@
+    body
+    {
+	/*body*/
+	background-color: #000000;
+	background-image: url("../images/test.bmp");
+
+	/*main font*/
+	font-family:tahoma;
+	/*font-weight: bold;*/
+	font-size: 7.5pt;
+	color: #FFFFFF;
+    }
+
+    table
+    {
+	/*main font*/
+	font-family:tahoma;
+	font-size: 7.5pt;
+	color: #FFFFFF;
+    }
+
+	img.main{ border-color: #AAAAAA; }
+
+    table.news
+    {
+	/*main font*/
+	font-family:verdana;
+	font-size: 8pt;
+
+	color: #FFFFFF;
+    }
+
+
+    table.3dsedit
+    {
+	background-image: url("../images/gridg.bmp");
+	font-family:verdana;
+	font-size: 8pt;
+	color: #FFFFFF;
+    }
+
+    pre.3dsedit
+    {
+	font-family:verdana;
+	font-size: 8pt;
+	color: #FFFFFF;
+    }
+
+
+    /*hyperlink text*/
+    a:link    { color: #00FFFF; }
+    a:visited { color: #FFFFFF; }
+    a:active  { color: #FFFFFF; }
+    a:hover   { color: #FFFF00; }
+
+    /*hyperlink image*/
+    a:link    img{ border-color: #0000FF; }
+    a:visited img{ border-color: #555555; }
+    a:active  img{ border-color: #555555; }
+    a:hover   img{ border-color: #00FFFF; }
+
+    h1{ font-size: 10pt; font-family: tahoma; }
+
+
+    input.cmdblack {background-color: #030303; font-weight: bold; font-size: 12px; color: white;}
+
+    pre
+    {
+	padding: 7pt;
+	font: 9pt;
+	white-space: pre;
+    }
+
+
+
+    /*side menu*/			 
+    table.side
+    { 
+	font-size:10;
+	font-family: tahoma;
+	width: 140;
+	/*padding:		0px;*/
+	margin:		2px;
+	/*border-collapse: collapse;*/
+    }
+
+    td.sidehead_left
+    {	  
+	background: #303032;
+	background-image: url("../images/gfx/side_arrow.jpg");
+	background-position: right; 
+ 	background-repeat: no-repeat;
+	border: 1px solid #AAAAAA; 
+	border-collapse: collapse;
+
+    }
+
+    td.sidehead_right
+    {	  
+	background: #00003E;
+	background-position: right; 
+ 	background-repeat: no-repeat;
+	border: 1px solid #AAAAAA; 
+	border-collapse: collapse;
+
+    }
+
+
+    td.sidebody
+    {	  
+	border: 1px solid #626262; 
+    }
+
+
+
+
+    /*general web files*/
+    td.WebHead 
+    { 
+      font-size: 7.5pt; 
+      font-family: tahoma;
+	font-weight: bold;
+	height: 18px;
+    }
+
+    td.WebBody
+    {
+
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+    }
+
+    /*****************/
+    /*LARGE WEB UNITS*/
+    /*****************/
+
+    /*opengl web files*/
+    td.glWebHead 
+    { 
+        background-color: #800000; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+	height: 18px;
+background-image: url("../images/large_top.gif");
+    }
+
+    td.glWebBody
+    { 
+	background-color: #800000; 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-image: url("../images/grid.gif");
+    }
+
+
+
+    /*Directx web files*/
+    td.d3dWebHead 
+    { 
+        background-color: #784707; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+	height: 18px;
+background-image: url("../images/large_top.gif");
+    }
+
+    td.d3dWebBody
+    { 
+	background-color: #784707; 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-image: url("../images/grid2.gif");
+    }
+
+    /*3ds max web files*/
+    td.3dsWebHead 
+    { 
+        background-color: #202050; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+	height: 18px;
+	border: 1px solid #AAAAAA; 
+
+    }
+
+    td.3dsWebBody
+    { 
+	background-color: #202050; 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-image: url("../images/gridg.bmp");
+	border: 1px solid #AAAAAA; 
+    }
+
+
+    /*Win32 web files*/
+    td.win32WebHead 
+    { 
+        background-color: #000050; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+	height: 18px;
+background-image: url("../images/large_top.gif");
+    }
+
+    td.win32WebBody
+    {  
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #141414;
+    }
+
+
+    /*CS web files*/
+    td.csWebHead 
+    { 
+        background-color: #000080; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+	height: 18px;
+background-image: url("../images/large_top.gif");
+    }
+
+    td.csWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #141414;
+    }
+
+    /*java web files*/
+    td.javaWebHead 
+    { 
+        background-color: #EE4030; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+	height: 18px;
+background-image: url("../images/large_top.gif");
+    }
+
+    td.javaWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #141414;
+    }
+
+    /*cpp web files*/
+    td.cppWebHead 
+    { 
+      background-color: #002244; 
+      font-size: 7.5pt; 
+      font-family: tahoma;
+	font-weight: bold;
+	height: 18px;
+background-image: url("../images/large_top.gif");
+    }
+
+    td.cppWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #141414;
+    }
+
+    /*vbnet web files*/
+    td.vbnetWebHead 
+    { 
+      background-color: #000044; 
+      font-size: 7.5pt; 
+      font-family: tahoma;
+	font-weight: bold;
+	height: 18px;
+background-image: url("../images/large_top.gif");
+    }
+
+    td.vbnetWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #141414;
+    }
+
+
+    /*VB web files*/
+    td.vbWebHead 
+    { 
+        background-color: #044D91; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+	height: 18px;
+background-image: url("../images/large_top.gif");
+    }
+
+    td.vbWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #141414;
+    }
+
+
+    /*OpenGL tutorial font*/
+    table.gl_tut
+    {
+	font-size: 12.0px;
+	color: #33BBFF;
+	font-family: verdana;
+	background-color: #000000;
+    }
+
+
+    /*Direct3D tutorial font*/
+    table.d3d_tut
+    {
+	font-size: 12.0px;
+	color: #FFBB33;
+	font-family: verdana;
+	background-color: #000000;
+    }
+
+
+
+
+
+    /*****************/
+    /*SMALL WEB UNITS*/
+    /*****************/
+
+    /*html web files*/
+    td.htmlWebHead 
+    { 
+        background-color: #044D91; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+    }
+
+    td.htmlWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #010112;
+    }
+
+    /*js web files*/
+    td.jsWebHead 
+    { 
+        background-color: #C72E2E; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+    }
+
+    td.jsWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #010112;
+    }
+
+    /*dhtml web files*/
+    td.dhtmlWebHead 
+    { 
+        background-color: #448855; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+    }
+
+    td.dhtmlWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #010112;
+    }
+
+    /*vbs web files*/
+    td.vbsWebHead 
+    { 
+        background-color: #044D91; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+    }
+
+    td.vbsWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #010112;
+    }
+
+    /*php web files*/
+    td.phpWebHead 
+    { 
+        background-color: #901010; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+    }
+
+    td.phpWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #010112;
+    }
+
+    /*asp web files*/
+    td.aspWebHead 
+    { 
+        background-color: #202040; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+    }
+
+    td.aspWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #010112;
+    }
+
+    /*ps files*/
+    td.psWebHead 
+    { 
+        background-color: #330000; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+	border: 1px solid #AAAAAA; 
+    }
+
+    td.psWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #010112;
+	border: 1px solid #AAAAAA; 
+    }
+
+    /*fmod files*/
+    td.fmodWebHead 
+    { 
+        background-color: #055A75; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+    }
+
+    td.fmodWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #101015;
+    }
+
+    /*article files*/
+    td.ArticleWebHead
+    { 
+        background-color: #330000; 
+        font-size: 7.5pt; 
+        font-family: tahoma;
+	font-weight: bold;
+	border: 1px solid #AAAAAA; 
+    }
+
+    td.ArticleWebBody
+    { 
+	font-size: 7.5pt;
+	font-family: tahoma;
+	font-weight: bold;
+	background-color: #121212;
+	border: 1px solid #AAAAAA; 
+    }
+
+
+   /************************/
+   /* WEB TUTORIAL SECTION */
+   /************************/
+   td.tut_html { background-color: #202040; }'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,158 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-2">
+<title>Hacking GLUT to Eliminate the glutMainLoop() Problem.</title>
+</head><body link="#8fff8f" text="#b5a642" vlink="#18a515" alink="#20336b" background="glut_hack_elemei/marble.png" bgcolor="#005000">
+
+<table border="1"><tbody><tr><td>
+<h3>IMPORTANT NOTE:</h3>
+The information in this document has been obsoleted by the
+arrival on the scene of the <a href="http://freeglut.sourceforge.net/">
+freeglut</a> library.   <a href="http://freeglut.sourceforge.net/">freeglut</a>
+has the 'hack' described below included as a standard part of the library,
+and additionally is released under a clear OpenSource license (the Xfree
+license) so it can be modified and redistributed without strings attached.  
+<a href="http://freeglut.sourceforge.net/">freeglut</a> is a superset of the
+GLUT functionality and can be linked with existing GLUT applications without
+modifications or recompiling.
+</td></tr></tbody></table>
+
+<h1>Hacking GLUT to Eliminate the glutMainLoop() Problem.</h1>
+Mark Kilgard's GLUT library is one of the most truly useful aids to portable
+programming. It carefully hides all the ugly issues of window manipulation,
+producing simple menu's, keboard, mouse and joystick I/O. If your application
+can tolerate the restrictions of GLUT, it's a breeze to write code that
+will port across dozens of dissimilar platforms.
+<h2>There has to be a 'BUT'...</h2>
+Yep - there certainly is. GLUT is a strictly event driven library.
+Essentially, all GLUT applications must set up callbacks for all
+the events they are interested in (Keystrokes, redisplay, resize,
+mouse clicks, etc) - and then hand over control to a GLUT function
+called 'glutMainLoop()' - which never returns. That's fine for simple
+programs that don't use certain other libraries - but now and again,
+you'll want to link a GLUT program to another library that ALSO assumes
+control of the main loop. Another time this can be a pain is if you
+want to retro-fit a simple user interface into an existing, complex
+application which might not be able to use the glutIdleFunc callback.
+<p>
+This turns off a lot of users and IMHO is an unnecessary restriction.
+</p><h2>So What Can I do About It?</h2>
+There are several ways to get around the problem of needing another
+library that also wants to 'own' the main loop.
+<ul>
+<li> You could attack the OTHER library and try to remove its
+     main-loop restriction. That isn't always possible - and
+     if you don't have the sources to the other library then
+     you've had it.
+</li><li> You could try to create multiple execution threads - one
+     for GLUT's main loop, another for the other library. That
+     won't work in all operating systems - and some libraries
+     are not at all thread-safe. This sometimes works well
+     though.
+</li><li> You can hack GLUT.
+</li></ul>
+The last option is really the reason for this Web page. I
+have found that a dozen lines of code is all that's required
+and the resulting hacked GLUT remains 100% compatible with
+the original library.
+<h2>What Do I Do?</h2>
+Locate the GLUT source code. In every release I have examined,
+there will be a file named <code>lib/glut/glut_event.c</code>
+<p>
+Inside that file you'll find the source for glutMainLoop().
+In outline it looks like this:
+</p><pre>
+/* CENTRY */
+void APIENTRY
+glutMainLoop(void)
+{
+  &lt;some_error_checking&gt;
+
+  for (;;) {
+    &lt;some_other_code&gt;
+  }
+}
+/* ENDCENTRY */
+
+</pre>
+This may be changed to look like this:
+<pre>
+  /* CENTRY */
+  void APIENTRY
+  glutMainLoop(void)
+  {
+    for(;;)
+      glutMainLoopUpdate () ;
+  }
+  /* ENDCENTRY */
+
+  /* CENTRY */
+  void APIENTRY
+  glutMainLoopUpdate(void)
+  {
+    &lt;some_error_checking&gt;
+    &lt;some_other_code&gt;
+  }
+  /* ENDCENTRY */
+
+</pre>
+You'll have to add a declaration for glutMainLoopUpdate() into
+glut.h:
+<pre>
+  extern void APIENTRY glutMainLoop(void);
+  extern void APIENTRY glutMainLoopUpdate(void);
+
+</pre>
+Recompile...and that's it.
+<h2>How Do I Use It?</h2>
+Now, your code can change from:
+<pre>
+  glutMainLoop () ;
+
+</pre>
+...to...
+<pre>
+  while ( 1 )
+    glutMainLoopUpdate () ;
+
+</pre>
+But more usefully, you can now use one of the callbacks of some
+other library to call the new glutMainLoopUpdate() function:
+<pre>
+  some_other_library_IdleFunc ( glutMainLoopUpdate ) ;
+  some_other_library_MainLoop () ;
+
+</pre>
+<h2>Is this Reliable?</h2>
+It certainly seems to be - I know of dozens of people who have
+used this hack (or something very close to it) without any
+problems. All current GLUT implementations can be fixed in
+the exact same way.
+<p>
+It does have a microscopic effect on performance because the
+error checking that glutMainLoop() used to do only once is
+now done in every iteration of glutMainLoopUpdate(). However,
+in all current GLUT releases, the amount of checking is truly
+negligable - so this should not be a concern. If it worries you
+then dump the error checking code - it's not checking for anything
+too subtle - just making sure you called glutInit and opened a
+window.
+</p><h2>Will This Become a Part of the Normal GLUT Release?</h2>
+Well, I begin to doubt it. It seems a simple enough change - and
+there is no doubt that people find it useful. However, I have
+now asked Mark Kilgard to include it in the release on several
+occasions.  He refuses on grounds of unnecessary complexity - I don't
+understand that view - but GLUT is his baby and he has the right
+to release whatever he wants.
+<table border="1"><tbody><tr><td>
+<h3>IMPORTANT NOTE:</h3>
+The information in this document has been obsoleted by the
+arrival on the scene of the <a href="http://freeglut.sourceforge.net/">
+freeglut</a> library.   <a href="http://freeglut.sourceforge.net/">freeglut</a>
+has the 'hack' described below included as a standard part of the library,
+and additionally is released under a clear OpenSource license (the Xfree
+license) so it can be modified and redistributed without strings attached.  
+<a href="http://freeglut.sourceforge.net/">freeglut</a> is a superset of the
+GLUT functionality and can be linked with existing GLUT applications without
+modifications or recompiling.
+</td></tr></tbody></table>
+</body></html>

@@ -1,0 +1,1437 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="search" href="http://basic4gl.wikispaces.com/space/opensearch" type="application/opensearchdescription+xml" title="Wikispaces Search (basic4gl Wiki)">
+<link rel="alternate" type="application/x-wiki" title="Edit This Page" href="http://basic4gl.wikispaces.com/page/edit/2D+Drawing+in+OpenGL">
+<link rel="alternate" title="basic4gl - All Changes" href="http://basic4gl.wikispaces.com/wiki/xmla?v=rss_2_0" type="application/rss+xml">
+<link rel="alternate" title="basic4gl : 2D Drawing in OpenGL - Discussion" href="http://basic4gl.wikispaces.com/message/xml/2D+Drawing+in+OpenGL?v=rss_2_0" type="application/rss+xml">
+<link rel="alternate" title="basic4gl : 2D Drawing in OpenGL - Edits" href="http://basic4gl.wikispaces.com/page/xml/2D+Drawing+in+OpenGL?v=rss_2_0" type="application/rss+xml">
+<link rel="microsummary" href="http://basic4gl.wikispaces.com/page/microsummary/2D+Drawing+in+OpenGL/edits">
+<link rel="microsummary" href="http://basic4gl.wikispaces.com/page/microsummary/2D+Drawing+in+OpenGL/messages">
+<script src="2D+Drawing+in+OpenGL_elemei/ga.js" type="text/javascript"></script><script src="2D+Drawing+in+OpenGL_elemei/mixpanel-2.js" type="text/javascript"></script><script type="text/javascript">
+
+if (typeof ws === 'undefined') ws = {};
+if (typeof ws.context === 'undefined') ws.context = {};
+ws.context = {
+  instance: {
+    id: '1',
+    url: 'wikispaces.com',
+    isMain: true,
+    supportsGoogleDocs: false
+  },
+  user: {
+    id: '',
+    username: '',
+    status: '',
+    locale: 'en_US',
+    imageUrl: 'http://c1.wikicdn.com/i/user_none_lg.jpg'
+  },
+  wiki: {
+    id: '14092',
+    name: 'basic4gl',
+    text: 'basic4gl',
+    module: 'B',
+    isClassroom: false,
+    isTesClassroom: false
+    ,defaultSpaceId: 14092
+  },
+  project: {
+    id: '14092',
+    name: ''
+  },
+  space: {
+    id: '14092',
+    name: 'basic4gl',
+    isDefaultSpace: true
+  },
+
+  environment_name: 'prod',
+  userCanAdministerWiki: false,
+
+  path: {
+    object: 'page',
+    method: 'view',
+    page: '2D Drawing in OpenGL',
+    id: ''
+  },
+
+  settings: {
+    main_domain: 'wikispaces.com',
+    asset_url_prefix: 'http://c1.wikicdn.com',
+    beta_features: false,
+    isMobileSite: false,
+    isUploadCapable: true,
+    can_discuss: false,
+    has_gdocs: false,
+    isDialog: false
+  },
+  clockSkewMillis: 1412090243558 - ((window.performance && window.performance.timing.responseStart > 0) ? window.performance.timing.responseStart : (new Date()).getTime())
+}
+
+
+// legacy javascript API variables, use the above instead
+var wikispaces_isUserLoggedIn = !!ws.context.user.id;
+var wikispaces_isMain = ws.context.instance.isMain;
+var wikispaces_username = ws.context.user.username;
+var wikispaces_spaceName = ws.context.space.name;
+var wikispaces_projectName = ws.context.project.name;
+var wikispaces_wikiName = ws.context.wiki.name;
+var wikispaces_wikiText = ws.context.wiki.text;
+var wikispaces_isDefaultSpace = ws.context.space.isDefaultSpace;
+var wikispaces_method = ws.context.path.method;
+var wikispaces_object = ws.context.path.object;
+var wikispaces_page = ws.context.path.page;
+var wikispaces_id = ws.context.path.id;
+var wikispaces_domain = ws.context.instance.url;
+var wikispaces_isUserOrganizer = false;
+var wikispaces_main_domain = ws.context.settings.asset_url_prefix;
+var wikispaces_asset_url_prefix = ws.context.settings.asset_url_prefix;
+var wikispaces_beta_features = ws.context.settings.beta_features;
+var wikispaces_isMobileSite = ws.context.settings.isMobileSite;
+var wikispaces_isUploadCapable = ws.context.settings.isUploadCapable;
+var wikispaces_can_discuss = ws.context.settings.can_discuss;
+var wikispaces_has_gdocs = ws.context.settings.has_gdocs;
+
+</script>
+<script type="text/template" id="dialog-template">
+<div class="modal fade" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><%= header %></h4>
+      </div>
+      <div class="modal-body">
+        <%= body %>
+      </div>
+    </div>
+  </div>
+</div>
+</script>
+
+<title>basic4gl - 2D Drawing in OpenGL</title>
+<meta charset="utf-8">
+<link rel="apple-touch-icon" sizes="144x144" href="http://c1.wikicdn.com/_/z6371z4x/i/logo-144.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://c1.wikicdn.com/_/j5j77xz3/i/logo-114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://c1.wikicdn.com/_/vq8j5432/i/logo-72.png">
+<link rel="apple-touch-icon" href="http://c1.wikicdn.com/_/38515190/i/logo-57.png">
+<link rel="shortcut icon" href="http://c1.wikicdn.com/_/55v9k02z/i/logo-16.png">
+<style type="text/css">
+/* Standard theme styles */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  font-family: arial, helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+}
+.ws-theme-header-inner,
+.ws-theme-body-inner,
+.ws-theme-footer-inner,
+.ws-theme-content-inner,
+.ws-theme-sidebar-inner {
+  position: relative;
+}
+.ws-theme-header-inner:after,
+.ws-theme-body-inner:after,
+.ws-theme-footer-inner:after,
+.ws-theme-content-inner:after,
+.ws-theme-sidebar-inner:after,
+.ws-theme-menu-inner:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.ws-theme-content, .ws-theme-sidebar {
+  overflow-x: auto;
+}
+.ws-theme-footer {
+  text-align: right;
+}
+.ws-theme-footer a, .ws-theme-footer a:hover {
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .ws-theme-container {
+    width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .ws-theme-content {
+    width: 550px;
+    min-height: 384px;
+    float: right;
+  }
+  .ws-theme-sidebar {
+    width: 200px;
+    float: left;
+  }
+}
+@media (min-width: 992px) {
+  .ws-theme-container {
+    width: 970px;
+  }
+  .ws-theme-content {
+    width: 770px;
+    min-height: 496px;
+  }
+}
+@media (min-width: 1200px) {
+  .ws-theme-container {
+    width: 1170px;
+  }
+  .ws-theme-content {
+    width: 970px;
+    min-height: 600px;
+  }
+}
+/* End standard theme styles */
+</style>
+<style type="text/css">
+/* Theme-specific styles */
+body {
+  background-color: #E7E7E7;
+}
+
+.ws-theme-header .WikiSearch .WikiSearchInput,
+.ws-theme-sidebar .WikiSearch .WikiSearchInput,
+.ws-theme-footer .WikiSearch .WikiSearchInput {
+  width: 100%;
+}
+
+.ws-theme-header,
+.ws-theme-sidebar,
+.ws-theme-footer {
+  color: #000000;
+}
+.ws-theme-header img,
+.ws-theme-sidebar img,
+.ws-theme-footer img {
+  padding: 0;
+  vertical-align: top;
+  border: 0;
+}
+.ws-theme-header a,
+.ws-theme-sidebar a,
+.ws-theme-footer a {
+  color: #0000FF;
+  text-decoration: none
+}
+.ws-theme-header a:hover,
+.ws-theme-sidebar a:hover,
+.ws-theme-footer a:hover {
+  text-decoration: underline;
+}
+
+.ws-theme-header,
+.ws-theme-sidebar {
+  display: none;
+}
+
+.ws-theme-body-inner {
+  padding: 3px;
+}
+
+.ws-theme-content {
+  overflow-x: visible;
+}
+.ws-theme-content-inner {
+  background-color: #FFF;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #CCC;
+}
+
+.ws-theme-footer {
+  margin: 15px 8px;
+  font-size: 12px;
+}
+
+.ws-theme-footer .WikiLicense img {
+  vertical-align: text-bottom;
+}
+
+@media (min-width: 768px) {
+  .ws-theme-container {
+    width: auto;
+  }
+
+  .ws-theme-header,
+  .ws-theme-sidebar {
+    display: block;
+  }
+
+  .ws-theme-header {
+    margin: 8px 0;
+  }
+
+  .ws-theme-body-inner {
+    padding: 0 10px;
+  }
+
+  .ws-theme-content {
+    width: auto;
+    float: none;
+    margin-left: 200px;
+  }
+  .ws-theme-content-inner {
+    width: 100%;
+    border: none;
+    float: left;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.625);
+  }
+
+  .ws-theme-sidebar {
+    padding: 15px 10px 0 0;
+  }
+  .ws-theme-sidebar ul.WikiActions,
+  .ws-theme-sidebar .WikispacesNavbar .WikispacesNavbarEntryItems ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .ws-theme-sidebar ul.WikiActions > li {
+    padding: 2px;
+  }
+  .ws-theme-nav-edit {
+    color: #666;
+    text-align: center;
+  }
+}
+</style>
+<link rel="stylesheet" href="2D+Drawing+in+OpenGL_elemei/217420326D.css" type="text/css">
+<link rel="stylesheet" href="2D+Drawing+in+OpenGL_elemei/vqk8zz39-internal-bootstrap.css" type="text/css">
+<link rel="stylesheet" href="2D+Drawing+in+OpenGL_elemei/j0982453-internal.css" type="text/css">
+<script src="2D+Drawing+in+OpenGL_elemei/60x01v91-common.js" type="text/javascript"></script>
+<!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+mixpanel.init("4befd1d5600e4becd938beae1be02db5");</script><!-- end Mixpanel -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+
+  var wsGoogleAccount = 'UA-80504-1';
+  _gaq.push(['_setAccount', wsGoogleAccount]);
+  _gaq.push(['_gat._anonymizeIp']);
+  _gaq.push(['_setDomainName', 'wikispaces.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  _gaq.push(['_setCustomVar', 2, 'Authenticated', 'Guest', 2]);
+</script></head><body><a href="#WikiContent" class="hidden sr-only sr-only-focusable">Skip to main content</a><div id="js-fixed-header-holder"><div class="WikispacesContent WikispacesBs3" role="banner">
+      <div id="WikispacesBanner">Welcome. <a href="http://www.wikispaces.com/t/y/searchbanner">Learn more about what Wikispaces has to offer</a>.</div>
+    <div class="ws-main-top-nav visible-xs">
+    <div class="navbar navbar-static-top" style="margin-bottom: 0pt;">
+      <div class="container">
+                <div class="navbar-header">
+          <div class="visible-xs pull-left">
+            <a href="http://basic4gl.wikispaces.com/space/menu" class="WikispacesDialogLink btn navbar-btn">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+          <div class="visible-xs pull-right js-globalnav-popover-container">
+                        <a href="http://www.wikispaces.com/site/signin?goto=http%3A%2F%2Fbasic4gl.wikispaces.com%2F2D%2BDrawing%2Bin%2BOpenGL" class="btn navbar-btn ws-mobile-guest-username js-globalnav-popover-trigger">
+              guest
+            </a>
+                        <div class="hidden js-globalnav-popover-content">
+              <div class="WikispacesContent WikispacesBs3">
+                <div class="WikiInternalHeaderNav noHide">
+  <div class="WikiInternalHeaderNavMenu">
+                          
+                  <span class="WikiInternalHeaderNavMenuArea"><a href="http://www.wikispaces.com/user/join?goto=http%3A%2F%2Fbasic4gl.wikispaces.com%2Fspace%2Fjoin" rel="nofollow" class="WikispacesXDomainDialogLink">Join</a></span>
+
+          <span class="divider">|</span>
+        
+        <span class="WikiInternalHeaderNavMenuArea"><a class="js-help-trigger" rel="nofollow" href="http://help.wikispaces.com/">Help</a></span>
+
+        <span class="divider">|</span>
+      
+      <span class="WikiInternalHeaderNavMenuArea"><a href="http://www.wikispaces.com/site/signin?goto=http%3A%2F%2Fbasic4gl.wikispaces.com%2F2D%2BDrawing%2Bin%2BOpenGL" rel="nofollow" class="WikispacesXDomainDialogLink">Sign In</a></span>
+      </div>
+</div>              </div>
+            </div>
+          </div>
+          <div class="ws-navbar-middle-xs">
+            <div class="navbar-brand" role="navigation">
+              <a href="http://www.wikispaces.com/" class="ws-logo"></a>
+              <i class="fa fa-angle-right"></i>
+              <a href="http://basic4gl.wikispaces.com/">basic4gl</a>
+                              <i class="fa fa-angle-right"></i> <a href="http://basic4gl.wikispaces.com/home">Home</a>
+              
+            </div>
+          </div>
+                    <form action="/search/view" method="post" class="navbar-form ws-include-xs pull-left ws-navbar-search hidden-xs" role="search"><input name="wikispacesFormToken" value="ddac7d7e78262cd3aea88223d991a292b0d25ee8" type="hidden"><input class="form-control search-query" name="q" placeholder="Search" type="text"> </form>
+                  </div>
+      </div>
+    </div>
+  </div>
+      <div class="hidden-xs"><div class="WikiInternalHeaderNav WikiElement floating">
+  <div class="WikiInternalHeaderNavMenu">
+                                    <span class="WikiInternalHeaderNavMenuArea guestUserName">guest</span><span class="slideMarker divider">|</span>
+        
+                  <span class="WikiInternalHeaderNavMenuArea"><a href="http://www.wikispaces.com/user/join?goto=http%3A%2F%2Fbasic4gl.wikispaces.com%2Fspace%2Fjoin" rel="nofollow" class="WikispacesXDomainDialogLink">Join</a></span>
+
+          <span class="divider">|</span>
+        
+        <span class="WikiInternalHeaderNavMenuArea"><a class="js-help-trigger" rel="nofollow" href="http://help.wikispaces.com/">Help</a></span>
+
+        <span class="divider">|</span>
+      
+      <span class="WikiInternalHeaderNavMenuArea"><a href="http://www.wikispaces.com/site/signin?goto=http%3A%2F%2Fbasic4gl.wikispaces.com%2F2D%2BDrawing%2Bin%2BOpenGL" rel="nofollow" class="WikispacesXDomainDialogLink">Sign In</a></span>
+      </div>
+</div></div>
+  </div></div><div id="js-fixed-header-offset">
+
+<div class="ws-theme-body">
+  <div class="ws-theme-container">
+    <div class="ws-theme-body-inner">
+      <nav class="ws-theme-sidebar" role="navigation">
+        <div class="ws-theme-sidebar-inner">
+                    <div class="ws-theme-logo">
+            <a href="http://basic4gl.wikispaces.com/" class="WikiLogo WikiElement"><img src="2D+Drawing+in+OpenGL_elemei/logo.jpg" alt="basic4gl"></a>          </div>
+                    <div class="ws-theme-menu">
+            <div class="ws-theme-menu-inner">
+              <ul class="WikiActions WikiElement WikiControls">
+    <li id="WikiActionHome"><div><span class="WikiActionSupplemental" style="float: right;"></span><a href="http://basic4gl.wikispaces.com/"><i class="fa fa-home fa-fw"></i></a><a href="http://basic4gl.wikispaces.com/">Wiki Home</a></div></li>
+    <li id="WikiActionChanges"><div><span class="WikiActionSupplemental" style="float: right;"></span><a href="http://basic4gl.wikispaces.com/wiki/changes"><i class="fa fa-clock-o fa-fw"></i></a><a href="http://basic4gl.wikispaces.com/wiki/changes">Recent Changes</a></div></li>
+    <li id="WikiActionPagesAndFiles"><div><span class="WikiActionSupplemental" style="float: right;"></span><a href="http://basic4gl.wikispaces.com/space/content"><i class="fa fa-file-text-o fa-fw"></i></a><a href="http://basic4gl.wikispaces.com/space/content">Pages and Files</a></div></li>
+    <li id="WikiActionMembers"><div class="js-member-link"><span class="WikiActionSupplemental" style="float: right;"></span><a href="http://basic4gl.wikispaces.com/wiki/members"><i class="fa fa-user fa-fw"></i></a><a href="http://basic4gl.wikispaces.com/wiki/members">Members</a></div></li>
+</ul>
+              <form action="/search/view" method="post" class="WikiSearch WikiElement" role="search"><input class="form-control WikiSearchInput" name="q" placeholder="Search" type="text"> </form>              <div class="WikiCustomNav WikiElement wiki"><a class="wiki_link" href="http://basic4gl.wikispaces.com/home">Home</a><br>
+----<a class="wiki_link" href="http://basic4gl.wikispaces.com/Basic4gl+Documentation+Page">Documentation</a><br>
+----<a class="wiki_link" href="http://basic4gl.wikispaces.com/Basic4gl+Tutorials+Page">Tutorials</a><br>
+Demos <a class="wiki_link" href="http://basic4gl.wikispaces.com/Demos">1</a>, <a class="wiki_link" href="http://basic4gl.wikispaces.com/Demos_2">2</a>, <a class="wiki_link" href="http://basic4gl.wikispaces.com/Demos%2C+page+3">3</a>, <a class="wiki_link" href="http://basic4gl.wikispaces.com/Demos_4">4</a><br>
+<a class="wiki_link" href="http://basic4gl.wikispaces.com/Projects">Projects</a><br>
+<a class="wiki_link" href="http://basic4gl.wikispaces.com/Media">Media</a><br>
+<a class="wiki_link" href="http://basic4gl.wikispaces.com/updates">Release notes</a><br>
+<a class="wiki_link" href="http://basic4gl.wikispaces.com/Links">External link</a><br>
+<a class="wiki_link" href="http://basic4gl.wikispaces.com/Basic4gl_addons">Add ons</a><br>
+<a class="wiki_link" href="http://basic4gl.wikispaces.com/Screen+Savers">Screen Savers</a><br>
+<a class="wiki_link" href="http://basic4gl.wikispaces.com/Plugins">Plugin DLLs</a><br>
+<hr>
+<a class="wiki_link_ext" href="http://basic4gl.wikispaces.com/space/filelist" rel="nofollow">Upload files</a><br>
+<a class="wiki_link_ext" href="http://basic4gl.wikispaces.com/message/list/home" rel="nofollow">Mini Forum</a></div>              <div class="ws-theme-nav-edit">
+                              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main class="ws-theme-content" role="main">
+        <div class="ws-theme-content-inner">
+          <div class="contentBox"><div class="innerContentBox" id="WikiContent">
+
+
+<script type="text/template" id="comment-footer-template">
+
+<div class="commentFooter modal-footer">
+  <div class="pull-left">
+    <button type="button" class="btn btn-default btn-sm previous"><i class="fa fa-arrow-left"></i></button>
+    <button type="button" class="btn btn-default btn-sm next"><i class="fa fa-arrow-right"></i></button>
+  </div>
+  <% if (ws.context.userCanAdministerWiki && !WikispacesCommentManager.readOnly) { %>
+  <div class="pull-right">
+    <button type="button" class="btn btn-default btn-sm remove">Remove</button>
+  </div>
+  <% } %>
+</div>
+
+</script>
+
+<script type="text/template" id="comment-content-template">
+<div class="ws-box commentView">
+  <div class="comment-close">
+    <button type="button" class="closeme close" aria-hidden="true">&times;</button>
+  </div>
+  <div class="commentHeader">
+    <p class="ws-stream-meta command-context">
+      <a class="userLink userLinkPicture" href="<%= userCreated.url %>"><img class="userPicture" src="<%= userCreated.imageUrl %>" width="16" height="16"></a>
+      <a href="<%= userCreated.url %>"><%= userCreated.username %></a>
+      <% if (smartDate == '__live__') { %>
+      <abbr class="timeago" title="<%= (new Date(parseInt(dateCreated, 10) * 1000)).toISOString() %>">
+        <%= dateCreated %>
+      </abbr>
+      <% } else { %>
+        <%- smartDate %>
+      <% } %>
+      <% if (ws.context.userCanAdministerWiki) { %>
+        <i class="fa fa-trash-o contextual-command delete ws-tip" title="Delete Comment"></i>
+      <% } %>
+    </p>
+  </div>
+
+  <div class="commentBody">
+    <div class="commentContent">
+      <%= description %>
+    </div>
+
+      <% for(i = 0; i < replyPages.length; i++) { %>
+        <% for(var j = 0; j < replyPages[i].digests.length; j++) { %>
+      <div class="commentReply" data-id="<%= replyPages[i].digests[j].id %>">
+        <p class="ws-stream-meta command-context">
+          <a class="userLink userLinkPicture" href="<%= replyPages[i].digests[j].userCreated.url %>"><img class="userPicture" src="<%= replyPages[i].digests[j].userCreated.imageUrl %>" width="16" height="16"></a>
+          <a href="<%= replyPages[i].digests[j].userCreated.url %>"><%= replyPages[i].digests[j].userCreated.username %></a>
+          <% if (smartDate == '__live__') { %>
+          <abbr class="timeago" title="<%= (new Date(parseInt(replyPages[i].digests[j].dateCreated, 10) * 1000)).toISOString() %>">
+            <%= new Date(parseInt(replyPages[i].digests[j].dateCreated, 10) * 1000).toLocaleString() %>
+          </abbr>
+          <% } else { %>
+            <%- smartDate %>
+          <% } %>
+          <% if (ws.context.userCanAdministerWiki) { %>
+          <i class="fa fa-trash-o contextual-command delete-reply ws-tip" title="Delete Reply"></i>
+          <% } %>
+          </p>
+        <div class="commentContent"><%= replyPages[i].digests[j].body %></div>
+      </div>
+        <% } %>
+      <% } %>
+
+      <form class="reply commentReply">
+        <div class="form-group">
+          <textarea name="reply" placeholder="Reply" class="form-control" /></textarea>
+        </div>
+        <div class="btn-toolbar">
+          <button type="submit" class="btn btn-primary btn-sm" name="go" value="1">Post</button>
+
+          <% if (ws.context.user.id) { %>
+            <% if (monitored) { %>
+            <button type="button" class="btn btn-default btn-sm pull-right toggle-monitor ws-tip active" title="You are monitoring replies."><i class="fa fa-eye"></i></button>
+            <% } else { %>
+            <button type="button" class="btn btn-default btn-sm pull-right toggle-monitor ws-tip" title="You are not monitoring replies."><i class="fa fa-eye"></i></button>
+            <% } %>
+          <% } %>
+          <% if (ws.context.userCanAdministerWiki) { %>
+            <% if (locked) { %>
+            <button type="button" class="btn btn-default btn-sm pull-right toggle-lock ws-tip active" title="Replies are not allowed."><i class="fa fa-lock"></i></button>
+            <% } else { %>
+            <button type="button" class="btn btn-default btn-sm pull-right toggle-lock ws-tip" title="Replies are allowed."><i class="fa fa-lock"></i></button>
+            <% } %>
+          <% } %>
+
+          <i class="fa fa-spinner fa-spin spinner pull-right hidden"></i>
+        </div>
+      </form>
+   </div>
+
+   
+<div class="commentFooter modal-footer">
+  <div class="pull-left">
+    <button type="button" class="btn btn-default btn-sm previous"><i class="fa fa-arrow-left"></i></button>
+    <button type="button" class="btn btn-default btn-sm next"><i class="fa fa-arrow-right"></i></button>
+  </div>
+  <% if (ws.context.userCanAdministerWiki && !WikispacesCommentManager.readOnly) { %>
+  <div class="pull-right">
+    <button type="button" class="btn btn-default btn-sm remove">Remove</button>
+  </div>
+  <% } %>
+</div>
+
+</div>
+</script>
+
+<script type="text/template" id="comment-composer-template">
+<div class="ws-box commentView">
+  <div class="commentComposer">
+    <div class="comment-close">
+      &nbsp;<button type="button" class="close closeme" aria-hidden="true">&times;</button>
+    </div>
+    <div class="commentHeader">
+      <p class="ws-stream-meta command-context">
+        <img class="userPicture" src="<%= userCreated.imageUrl %>" width="16" height="16">
+        <a href="#" onclick="return false;"><%= userCreated.username %></a>
+      </p>
+    </div>
+    <div class="commentBody">
+      <textarea name="comment" class="compose form-control" placeholder="Comment"/></textarea><br/>
+      <div class="btn-toolbar">
+        <button type="button" class="btn btn-default btn-sm monitored active pull-right" style="margin-left: 6px" onclick="jQuery(this).toggleClass('active')"><i class="fa fa-eye"></i></button>
+        <button type="button" class="btn btn-default btn-sm locked btn-toggle pull-right" onclick="jQuery(this).toggleClass('active')"><i class="fa fa-lock"></i></button>
+        <button type="button" class="btn btn-primary btn-sm closeme">Save</button>
+      </div>
+    </div>
+  </div>
+
+  
+<div class="commentFooter modal-footer">
+  <div class="pull-left">
+    <button type="button" class="btn btn-default btn-sm previous"><i class="fa fa-arrow-left"></i></button>
+    <button type="button" class="btn btn-default btn-sm next"><i class="fa fa-arrow-right"></i></button>
+  </div>
+  <% if (ws.context.userCanAdministerWiki && !WikispacesCommentManager.readOnly) { %>
+  <div class="pull-right">
+    <button type="button" class="btn btn-default btn-sm remove">Remove</button>
+  </div>
+  <% } %>
+</div>
+
+</div>
+</script>
+
+<script type="text/template" id="comment-proxy-template">
+<div class="comment-proxy">
+  <span class="commentUser">
+  <% if (userCreated) { %>
+    <img class="userPicture" src="<%= userCreated.imageUrl %>" width="16" height="16">
+  <% } else { %>
+    <img class="userPicture" src="/i/user_none_sm.jpg" width="16" height="16">
+  <% } %>
+  </span>
+  <span class="commentReplies"><%= 1 + _(replyPages).reduce(function(memo, page){ return memo + page.digests.length; }, 0) %></span>
+</div>
+</script>
+
+
+<div class="ws-menu-bar WikiControls WikispacesContent WikispacesBs3">
+  
+    <h1 class="pageTitle"><a href="http://basic4gl.wikispaces.com/2D+Drawing+in+OpenGL">2D Drawing in OpenGL</a></h1>
+      <div class="btn-group pull-right">
+          <a class="btn btn-default editButton" href="http://basic4gl.wikispaces.com/page/edit/2D+Drawing+in+OpenGL?goto=http%3A%2F%2Fbasic4gl.wikispaces.com%2F2D%2BDrawing%2Bin%2BOpenGL"><i class="fa fa-pencil fa-fw"></i> Edit</a>          <a class="btn btn-default tipme" title="view 2 discussion posts" href="http://basic4gl.wikispaces.com/page/messages/2D+Drawing+in+OpenGL"><i class="fa fa-comments fa-fw"></i> 2</a>          <a class="btn btn-default tipme" title="view 37 revisions" href="http://basic4gl.wikispaces.com/page/history/2D+Drawing+in+OpenGL"><i class="fa fa-clock-o fa-fw"></i> 37</a>          <a class="btn btn-default ws-btn-more dropdown-toggle tipme" title="more options" href="http://basic4gl.wikispaces.com/page/menu/2D+Drawing+in+OpenGL"><i class="icon-height-only fa-fw"></i>…</a>        <ul class="ws-more-menu dropdown-menu dropdown-menu-right">
+              <li class=" dropdown"><a class=" ws-tag-dropdown-toggle" href="http://basic4gl.wikispaces.com/page/tags/2D+Drawing+in+OpenGL"><span class="pull-right">4</span> <i class="fa fa-tag fa-fw"></i> Tags</a>
+          <div class="dropdown-menu dropdown-menu-right ws-tag-dropdown-menu">
+          
+
+
+
+<form action="#" name="WikiTagForm" class="WikiTagForm"><input name="wikispacesFormToken" value="d9264127529ee975daa8d81f4b5650816bfda606" type="hidden"><input name="wikispacesFormToken" value="d9264127529ee975daa8d81f4b5650816bfda606" type="hidden">
+  <div class="WikiTagList">
+    <i class="fa fa-tag ws-action"></i>
+        <ul class="list-unstyled">
+                          <li><a href="http://basic4gl.wikispaces.com/space/content?tag=basic4gl">basic4gl</a></li>
+                                <li><a href="http://basic4gl.wikispaces.com/space/content?tag=opengl">opengl</a></li>
+                                <li><a href="http://basic4gl.wikispaces.com/space/content?tag=sprite">sprite</a></li>
+                                <li><a href="http://basic4gl.wikispaces.com/space/content?tag=tutorial">tutorial</a></li>
+              </ul>
+          <a href="#" class="WikiTagsEditLink">edit</a>
+      </div>
+    <div class="WikiTagsEdit WikispacesContent WikispacesBs3 row">
+    <input name="url" value="http://basic4gl.wikispaces.com/tag/update/2D%20Drawing%20in%20OpenGL" type="hidden">
+    <input name="type" value="page" type="hidden">
+    <input name="ajax" value="1" type="hidden">
+    <div class="col-sm-4 col-sm-push-8">
+      <button class="btn btn-primary ws-tag-form-save" type="submit" name="go" value="1">Save</button>
+      <button type="button" class="btn btn-default WikiTagFormCancel">Cancel</button>
+    </div>
+    <div class="col-sm-8 col-sm-pull-4">
+      <input class="form-control WikiTagInput" name="tagList" value="basic4gl,opengl,sprite,tutorial" type="text">
+    </div>
+  </div>
+  </form>      </div>
+    </li>
+              <li class="divider"></li>
+            <li class=""><a class=" WikispacesDialogLink" href="http://basic4gl.wikispaces.com/wiki/addmonitor?monitorLink=page%3A2D%20Drawing%20in%20OpenGL"><i class="fa fa-eye fa-fw"></i> Notify</a>
+    </li>
+        <li class=""><a class=" WikispacesDialogLink" href="http://basic4gl.wikispaces.com/page/rss/2D+Drawing+in+OpenGL"><i class="fa fa-rss fa-fw"></i> RSS</a>
+    </li>
+        <li class=""><a class="" href="http://basic4gl.wikispaces.com/page/links/2D+Drawing+in+OpenGL"><i class="fa fa-link fa-fw"></i> Backlinks</a>
+    </li>
+              <li class="divider"></li>
+            <li class=""><a class="" href="http://basic4gl.wikispaces.com/page/code/2D+Drawing+in+OpenGL"><i class="fa fa-code fa-fw"></i> Source</a>
+    </li>
+        <li class=""><a class="" href="http://basic4gl.wikispaces.com/2D+Drawing+in+OpenGL?f=print"><i class="fa fa-print fa-fw"></i> Print</a>
+    </li>
+        <li class=""><a class="" href="http://basic4gl.wikispaces.com/page/pdf/2D+Drawing+in+OpenGL"><i class="fa fa-cloud-download fa-fw"></i> Export (PDF)</a>
+    </li>
+      </ul>  </div>
+  </div>
+
+
+
+
+  <textarea class="form-control" id="autosaveContent" style="display: none;" rows="1" cols="1"></textarea>
+  <div id="autosavePrompt" style="display: none;"></div>
+
+<div class="commentContainer">
+  <div class="commentSubject">
+  <div class="wiki wikiPage" id="content_view">
+  <span class="goog_qs-tidbit goog_qs-tidbit-0"><strong>OpenG</strong>L
+was designed primarily as a 3D graphics library, but it can be used for
+2D drawing as well. This tutorial will show you the cleanest and
+easiest way to</span> get started.<br>
+<br>
+<!-- ws:start:WikiTextHeadingRule:13:&lt;h1&gt; --><h1 id="toc0"><a name="Setting up a 2D projection..."></a><!-- ws:end:WikiTextHeadingRule:13 -->Setting up a 2D projection...</h1>
+ The best way to draw in 2D is to use a 2D projection matrix.<br>
+The Basic4GL default projection matrix is a 3D "perspective transform"
+matrix, which is good for displaying 3D objects, but awkward for 2D
+drawing.<br>
+<br>
+We can setup a 2D projection like this:<br>
+<!-- ws:start:WikiTextCodeRule:0:
+&lt;pre class=&quot;basic4gl&quot;&gt; const XSize = 640, YSize = 480;&lt;br/&gt;&lt;br/&gt; glMatrixMode (GL_PROJECTION);&lt;br/&gt;&lt;br/&gt; glLoadIdentity ();&lt;br/&gt;&lt;br/&gt; glOrtho (0, XSize, YSize, 0, 0, 1);&lt;br/&gt;&lt;br/&gt; glMatrixMode (GL_MODELVIEW);&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="kw3">const</span> XSize <span class="sy0">=</span> <span class="nu0">640</span>, YSize <span class="sy0">=</span> <span class="nu0">480</span><span class="sy0">;</span>
+&nbsp;
+ <span class="kw2">glMatrixMode</span> <span class="br0">(</span><span class="kw1">GL_PROJECTION</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+ <span class="kw2">glLoadIdentity</span> <span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+ <span class="kw2">glOrtho</span> <span class="br0">(</span><span class="nu0">0</span>, XSize, YSize, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+ <span class="kw2">glMatrixMode</span> <span class="br0">(</span><span class="kw1">GL_MODELVIEW</span><span class="br0">)</span><span class="sy0">;</span></pre>
+
+<!-- ws:end:WikiTextCodeRule:0 -->This sets up the OpenGL window so
+that (0,0) corresponds to the top left corner, and (640,480)
+corresponds to the bottom right hand corner.<br>
+<br>
+Note: If your window is set to 640x480, then one unit will map to one
+pixel of the monitor. If not, OpenGL will stretch the image to fit your
+window size. (You can avoid this in Basic4GL by using WindowWidth() and
+WindowHeight() instead of XSize and YSize, which will ensure that the
+projection will match the current window size.)<br>
+<br>
+To achieve exact pixelization (pixel-precise drawing), it's important
+to understand that coordinates in OpenGL are technically not tied to
+the actual screen pixels, so even if you set up 2D projection as
+explained above, you still specify the locations with higher than pixel
+granularity. That is, (0,0) corresponds to the top-left corner <em>inside</em> the top-left <em>pixel</em>,
+while (0.5, 0.5) corresponds to the center of that pixel. Forgetting
+about this can easily lead to quite unpredictable misplacements of
+primitives and to unwanted anti-aliasing blur. For example, if you want
+to lit pixels using GL_POINTS, you should use coordinates that end with
+a half (like 10.5 instead of 10), as in principle you want to put that
+point at the center of the pixel, not at the corner of it, as in the
+last case the point will overlap with the neighbor pixels (because an
+OpenGL "point" of default size 1 is in fact a 1x1 square), hence
+possibly painting some of those screen pixels. But if for example you
+draw lines (GL_LINES) or polygons (GL_QUADS, etc.), you want to put the
+vertices at the edges of the pixels, so you will often use integer
+coordinates. If you are not using anti-aliasing, a popular trick to
+avoid all this mess is to apply glTranslatef (0.375, 0.375, 0) on the
+GL_MODELVIEW matrix, and then use integer coordinates everywhere; this
+displacement will keep the edges of the primitives away from the places
+where OpenGL vacillates about which screen pixels to paint.<br>
+<br>
+<!-- ws:start:WikiTextHeadingRule:15:&lt;h1&gt; --><h1 id="toc1"><a name="x2D means no depth!"></a><!-- ws:end:WikiTextHeadingRule:15 -->2D means no depth!</h1>
+ We should also turn off the depth buffer.<br>
+The depth buffer is what OpenGL uses to determine which objects are
+infront or behind each other in 3D space, based on their pixel's Z
+coordinates.<br>
+<br>
+Because we're not drawing in 3D, and aren't using the Z coordinates, we
+don't need the depth buffer. Infact it may interfere with our drawing.
+Therefore we turn it off with:<br>
+<!-- ws:start:WikiTextCodeRule:1:
+&lt;pre class=&quot;basic4gl&quot;&gt; glDisable(GL_DEPTH_TEST)&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="kw2">glDisable</span><span class="br0">(</span><span class="kw1">GL_DEPTH_TEST</span><span class="br0">)</span></pre>
+
+<!-- ws:end:WikiTextCodeRule:1 --><!-- ws:start:WikiTextHeadingRule:17:&lt;h1&gt; --><h1 id="toc2"><a name="x2D drawing principles"></a><!-- ws:end:WikiTextHeadingRule:17 -->2D drawing principles</h1>
+ 2D drawing in OpenGL is much like 3D drawing.<br>
+We first clear the screen:<br>
+<!-- ws:start:WikiTextCodeRule:2:
+&lt;pre class=&quot;basic4gl&quot;&gt; glClear(GL_COLOR_BUFFER_BIT)&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="kw2">glClear</span><span class="br0">(</span><span class="kw1">GL_COLOR_BUFFER_BIT</span><span class="br0">)</span></pre>
+
+<!-- ws:end:WikiTextCodeRule:2 -->(Notice we didn't use the GL_DEPTH_BUFFER_BIT, because we're not using the depth buffer.)<br>
+<br>
+We then draw our graphics primatives (GL_QUADS, GL_TRIANGLES, GL_LINES etc), with standard glBegin()..glEnd() blocks.<br>
+(We typically use the glVertex<strong>2</strong>f instruction to specify the vertices instead of glVertex<strong>3</strong>f.)<br>
+<br>
+We can use all the standard OpenGL transformations if we want to (glTranslate, glScale, glRotate etc).<br>
+<br>
+When we've finished rendering the scene, we display it with<br>
+<!-- ws:start:WikiTextCodeRule:3:
+&lt;pre class=&quot;basic4gl&quot;&gt; SwapBuffers()&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="kw2">SwapBuffers</span><span class="br0">(</span><span class="br0">)</span></pre>
+
+<!-- ws:end:WikiTextCodeRule:3 --><!-- ws:start:WikiTextHeadingRule:19:&lt;h3&gt; --><h3 id="toc3"><a name="x2D drawing principles--To draw a single point"></a><!-- ws:end:WikiTextHeadingRule:19 -->To draw a single point</h3>
+ <!-- ws:start:WikiTextCodeRule:4:
+&lt;pre class=&quot;basic4gl&quot;&gt; glBegin(GL_POINTS)&lt;br/&gt;&lt;br/&gt; glVertex2f(x1, y1)&lt;br/&gt;&lt;br/&gt; glEnd()&lt;br/&gt;&lt;br/&gt;&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="kw2">glBegin</span><span class="br0">(</span><span class="kw1">GL_POINTS</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y1<span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glEnd</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+&nbsp;</pre>
+
+<!-- ws:end:WikiTextCodeRule:4 -->Note: This will work pixel-precisely
+only if you apply some of the trick explained earlier, and this goes to
+the later examples too.<br>
+<!-- ws:start:WikiTextHeadingRule:21:&lt;h3&gt; --><h3 id="toc4"><a name="x2D drawing principles--To draw a line"></a><!-- ws:end:WikiTextHeadingRule:21 -->To draw a line</h3>
+ <!-- ws:start:WikiTextCodeRule:5:
+&lt;pre class=&quot;basic4gl&quot;&gt; glBegin(GL_LINES)&lt;br/&gt;&lt;br/&gt; glVertex2f(x1, y1): glVertex2f(x2, y2)&lt;br/&gt;&lt;br/&gt; glEnd()&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="kw2">glBegin</span><span class="br0">(</span><span class="kw1">GL_LINES</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y1<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x2, y2<span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glEnd</span><span class="br0">(</span><span class="br0">)</span></pre>
+
+<!-- ws:end:WikiTextCodeRule:5 --><!-- ws:start:WikiTextHeadingRule:23:&lt;h3&gt; --><h3 id="toc5"><a name="x2D drawing principles--To draw a square or rectangle"></a><!-- ws:end:WikiTextHeadingRule:23 -->To draw a square or rectangle</h3>
+ Filled in:<br>
+<!-- ws:start:WikiTextCodeRule:6:
+&lt;pre class=&quot;basic4gl&quot;&gt; glBegin(GL_QUADS)&lt;br/&gt;&lt;br/&gt; glVertex2f(x1, y1): glVertex2f(x2, y1): glVertex2f(x2, y2): glVertex2f(x1, y2)&lt;br/&gt;&lt;br/&gt; glEnd()&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="kw2">glBegin</span><span class="br0">(</span><span class="kw1">GL_QUADS</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y1<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x2, y1<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x2, y2<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y2<span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glEnd</span><span class="br0">(</span><span class="br0">)</span></pre>
+
+<!-- ws:end:WikiTextCodeRule:6 -->Hollow:<br>
+<!-- ws:start:WikiTextCodeRule:7:
+&lt;pre class=&quot;basic4gl&quot;&gt; glBegin(GL_LINE_LOOP)&lt;br/&gt;&lt;br/&gt; glVertex2f(x1, y1): glVertex2f(x2, y1): glVertex2f(x2, y2): glVertex2f(x1, y2)&lt;br/&gt;&lt;br/&gt; glEnd()&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="kw2">glBegin</span><span class="br0">(</span><span class="kw1">GL_LINE_LOOP</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y1<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x2, y1<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x2, y2<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y2<span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glEnd</span><span class="br0">(</span><span class="br0">)</span></pre>
+
+<!-- ws:end:WikiTextCodeRule:7 --><!-- ws:start:WikiTextHeadingRule:25:&lt;h3&gt; --><h3 id="toc6"><a name="x2D drawing principles--To draw a circle"></a><!-- ws:end:WikiTextHeadingRule:25 -->To draw a circle</h3>
+ OpenGL does not have any primitives for drawing curves or circles.<br>
+However we can approximate a circle using a triangle fan like this:<br>
+<!-- ws:start:WikiTextCodeRule:8:
+&lt;pre class=&quot;basic4gl&quot;&gt; glBegin(GL_TRIANGLE_FAN)&lt;br/&gt;&lt;br/&gt; glVertex2f(x1, y1)&lt;br/&gt;&lt;br/&gt; for angle# = 0 to 360 step 5&lt;br/&gt;&lt;br/&gt; glVertex2f(x1 + sind(angle#) * radius#, y1 + cosd(angle#) * radius#)&lt;br/&gt;&lt;br/&gt; next&lt;br/&gt;&lt;br/&gt; glEnd()&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="kw2">glBegin</span><span class="br0">(</span><span class="kw1">GL_TRIANGLE_FAN</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y1<span class="br0">)</span>
+&nbsp;
+ <span class="kw3">for</span> angle# <span class="sy0">=</span> <span class="nu0">0</span> <span class="kw3">to</span> <span class="nu0">360</span> <span class="kw3">step</span> <span class="nu0">5</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1 <span class="sy0">+</span> <span class="kw2">sind</span><span class="br0">(</span>angle#<span class="br0">)</span> <span class="sy0">*</span> radius#, y1 <span class="sy0">+</span> <span class="kw2">cosd</span><span class="br0">(</span>angle#<span class="br0">)</span> <span class="sy0">*</span> radius#<span class="br0">)</span>
+&nbsp;
+ <span class="kw3">next</span>
+&nbsp;
+ <span class="kw2">glEnd</span><span class="br0">(</span><span class="br0">)</span></pre>
+
+<!-- ws:end:WikiTextCodeRule:8 -->Or for a hollow circle:<br>
+<!-- ws:start:WikiTextCodeRule:9:
+&lt;pre class=&quot;basic4gl&quot;&gt; glBegin(GL_LINE_LOOP)&lt;br/&gt;&lt;br/&gt; for angle# = 0 to 360 step 5&lt;br/&gt;&lt;br/&gt; glVertex2f(x1 + sind(angle#) * radius#, y1 + cosd(angle#) * radius#)&lt;br/&gt;&lt;br/&gt; next&lt;br/&gt;&lt;br/&gt; glEnd()&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="kw2">glBegin</span><span class="br0">(</span><span class="kw1">GL_LINE_LOOP</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw3">for</span> angle# <span class="sy0">=</span> <span class="nu0">0</span> <span class="kw3">to</span> <span class="nu0">360</span> <span class="kw3">step</span> <span class="nu0">5</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1 <span class="sy0">+</span> <span class="kw2">sind</span><span class="br0">(</span>angle#<span class="br0">)</span> <span class="sy0">*</span> radius#, y1 <span class="sy0">+</span> <span class="kw2">cosd</span><span class="br0">(</span>angle#<span class="br0">)</span> <span class="sy0">*</span> radius#<span class="br0">)</span>
+&nbsp;
+ <span class="kw3">next</span>
+&nbsp;
+ <span class="kw2">glEnd</span><span class="br0">(</span><span class="br0">)</span></pre>
+
+<!-- ws:end:WikiTextCodeRule:9 --><!-- ws:start:WikiTextHeadingRule:27:&lt;h3&gt; --><h3 id="toc7"><a name="x2D drawing principles--To draw in different colours"></a><!-- ws:end:WikiTextHeadingRule:27 -->To draw in different colours</h3>
+ Simply use:<br>
+<!-- ws:start:WikiTextCodeRule:10:
+&lt;pre class=&quot;basic4gl&quot;&gt; glColor3f(red, green, blue)&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="kw2">glColor3f</span><span class="br0">(</span>red, green, blue<span class="br0">)</span></pre>
+
+<!-- ws:end:WikiTextCodeRule:10 -->To set the colour first.<br>
+<em>Red</em>, <em>green</em>, and <em>blue</em> are colour coordinates, between 0 and 1.<br>
+<br>
+<!-- ws:start:WikiTextHeadingRule:29:&lt;h3&gt; --><h3 id="toc8"><a name="x2D drawing principles--To set the background colour"></a><!-- ws:end:WikiTextHeadingRule:29 -->To set the background colour</h3>
+ Set the background colour using:<br>
+<!-- ws:start:WikiTextCodeRule:11:
+&lt;pre class=&quot;basic4gl&quot;&gt; glClearColor(red, green, blue, 0)&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="kw2">glClearColor</span><span class="br0">(</span>red, green, blue, <span class="nu0">0</span><span class="br0">)</span></pre>
+
+<!-- ws:end:WikiTextCodeRule:11 -->Add this line <strong>before</strong> the glClear(GL_COLOR_BUFFER_BIT) line.<br>
+<br>
+<!-- ws:start:WikiTextHeadingRule:31:&lt;h1&gt; --><h1 id="toc9"><a name="Putting it all together"></a><!-- ws:end:WikiTextHeadingRule:31 -->Putting it all together</h1>
+ Let's finish the tutorial with a working example:<br>
+<!-- ws:start:WikiTextCodeRule:12:
+&lt;pre class=&quot;basic4gl&quot;&gt; ' Setup a 2D projection&lt;br/&gt;&lt;br/&gt; const XSize = 640, YSize = 480&lt;br/&gt;&lt;br/&gt; glMatrixMode (GL_PROJECTION)&lt;br/&gt;&lt;br/&gt; glLoadIdentity ()&lt;br/&gt;&lt;br/&gt; glOrtho (0, XSize, YSize, 0, 0, 1)&lt;br/&gt;&lt;br/&gt; glDisable(GL_DEPTH_TEST)&lt;br/&gt;&lt;br/&gt; glMatrixMode (GL_MODELVIEW)&lt;br/&gt;&lt;br/&gt; glLoadIdentity()&lt;br/&gt;&lt;br/&gt; ' Displacement trick for exact pixelization&lt;br/&gt;&lt;br/&gt; glTranslatef(0.375, 0.375, 0)&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt; ' Variables&lt;br/&gt;&lt;br/&gt; dim angle#, x1, y1, x2, y2, radius#&lt;br/&gt;&lt;br/&gt; dim i&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt; ' Draw a scene&lt;br/&gt;&lt;br/&gt; glClearColor(.3, .3, .3, 0)&lt;br/&gt;&lt;br/&gt; glClear(GL_COLOR_BUFFER_BIT)&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt; x1 = 20: y1 = 20: x2 = 620: y2 = 460: gosub HollowRectangle&lt;br/&gt;&lt;br/&gt; x1 = 20: y1 = 40: x2 = 620: y2 = 40: gosub Line&lt;br/&gt;&lt;br/&gt; x1 = 602: y1 = 22: x2 = 618: y2 = 37: gosub Rectangle&lt;br/&gt;&lt;br/&gt; x1 = 580: y1 = 460: x2 = 620: y2 = 420: gosub Line&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt; for i = 1 to 5000&lt;br/&gt;&lt;br/&gt; x1 = rnd() % 600 + 20&lt;br/&gt;&lt;br/&gt; y1 = rnd() % 420 + 40&lt;br/&gt;&lt;br/&gt; gosub Point&lt;br/&gt;&lt;br/&gt; next&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt; x1 = 320: y1 = 240: radius# = 20: gosub Circle&lt;br/&gt;&lt;br/&gt; x1 = 320: y1 = 240: radius# = 40: gosub HollowCircle&lt;br/&gt;&lt;br/&gt; x1 = 320: y1 = 240: radius# = 60: gosub HollowCircle&lt;br/&gt;&lt;br/&gt; x1 = 320: y1 = 240: radius# = 80: gosub HollowCircle&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt; SwapBuffers()&lt;br/&gt;&lt;br/&gt; End&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt; Point:&lt;br/&gt;&lt;br/&gt; glBegin(GL_POINTS)&lt;br/&gt;&lt;br/&gt; glVertex2f(x1 + 0.5, y1 + 0.5)&lt;br/&gt;&lt;br/&gt; glEnd()&lt;br/&gt;&lt;br/&gt; return&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt; Line:&lt;br/&gt;&lt;br/&gt; glBegin(GL_LINES)&lt;br/&gt;&lt;br/&gt; glVertex2f(x1, y1): glVertex2f(x2, y2)&lt;br/&gt;&lt;br/&gt; glEnd()&lt;br/&gt;&lt;br/&gt; return&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt; Rectangle:&lt;br/&gt;&lt;br/&gt; glBegin(GL_QUADS)&lt;br/&gt;&lt;br/&gt; glVertex2f(x1, y1): glVertex2f(x2, y1): glVertex2f(x2, y2): glVertex2f(x1, y2)&lt;br/&gt;&lt;br/&gt; glEnd()&lt;br/&gt;&lt;br/&gt; return&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt; HollowRectangle:&lt;br/&gt;&lt;br/&gt; glBegin(GL_LINE_LOOP)&lt;br/&gt;&lt;br/&gt; glVertex2f(x1, y1): glVertex2f(x2, y1): glVertex2f(x2, y2): glVertex2f(x1, y2)&lt;br/&gt;&lt;br/&gt; glEnd()&lt;br/&gt;&lt;br/&gt; return&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt; Circle:&lt;br/&gt;&lt;br/&gt; glBegin(GL_TRIANGLE_FAN)&lt;br/&gt;&lt;br/&gt; glVertex2f(x1, y1)&lt;br/&gt;&lt;br/&gt; for angle# = 0 to 360 step 5&lt;br/&gt;&lt;br/&gt; glVertex2f(x1 + sind(angle#) * radius#, y1 + cosd(angle#) * radius#)&lt;br/&gt;&lt;br/&gt; next&lt;br/&gt;&lt;br/&gt; glEnd()&lt;br/&gt;&lt;br/&gt; return&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt; HollowCircle:&lt;br/&gt;&lt;br/&gt; glBegin(GL_LINE_LOOP)&lt;br/&gt;&lt;br/&gt; for angle# = 0 to 360 step 5&lt;br/&gt;&lt;br/&gt; glVertex2f(x1 + sind(angle#) * radius#, y1 + cosd(angle#) * radius#)&lt;br/&gt;&lt;br/&gt; next&lt;br/&gt;&lt;br/&gt; glEnd()&lt;br/&gt;&lt;br/&gt; return&lt;/pre&gt;
+ -->
+<style type="text/css"><!--
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.basic4gl  {font-family:monospace;}
+.basic4gl .imp {font-weight: bold; color: red;}
+.basic4gl .kw1 {color: #000080; font-weight: bold;}
+.basic4gl .kw2 {color: #FF0000;}
+.basic4gl .kw3 {color: #0000FF;}
+.basic4gl .co1 {color: #657CC4; font-style: italic;}
+.basic4gl .br0 {color: #000080;}
+.basic4gl .sy0 {color: #0000FF;}
+.basic4gl .st0 {color: #008000;}
+.basic4gl .nu0 {color: #000080; font-weight: bold;}
+.basic4gl span.xtra { display:block; }
+
+-->
+</style><pre class="basic4gl"> <span class="co1">' Setup a 2D projection</span>
+&nbsp;
+ <span class="kw3">const</span> XSize <span class="sy0">=</span> <span class="nu0">640</span>, YSize <span class="sy0">=</span> <span class="nu0">480</span>
+&nbsp;
+ <span class="kw2">glMatrixMode</span> <span class="br0">(</span><span class="kw1">GL_PROJECTION</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glLoadIdentity</span> <span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glOrtho</span> <span class="br0">(</span><span class="nu0">0</span>, XSize, YSize, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">1</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glDisable</span><span class="br0">(</span><span class="kw1">GL_DEPTH_TEST</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glMatrixMode</span> <span class="br0">(</span><span class="kw1">GL_MODELVIEW</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glLoadIdentity</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+ <span class="co1">' Displacement trick for exact pixelization</span>
+&nbsp;
+ <span class="kw2">glTranslatef</span><span class="br0">(</span><span class="nu0">0.375</span>, <span class="nu0">0.375</span>, <span class="nu0">0</span><span class="br0">)</span>
+&nbsp;
+&nbsp;
+&nbsp;
+ <span class="co1">' Variables</span>
+&nbsp;
+ <span class="kw3">dim</span> angle#, x1, y1, x2, y2, radius#
+&nbsp;
+ <span class="kw3">dim</span> i
+&nbsp;
+&nbsp;
+&nbsp;
+ <span class="co1">' Draw a scene</span>
+&nbsp;
+ <span class="kw2">glClearColor</span><span class="br0">(</span>.3, .3, .3, <span class="nu0">0</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glClear</span><span class="br0">(</span><span class="kw1">GL_COLOR_BUFFER_BIT</span><span class="br0">)</span>
+&nbsp;
+&nbsp;
+&nbsp;
+ x1 <span class="sy0">=</span> <span class="nu0">20</span><span class="sy0">:</span> y1 <span class="sy0">=</span> <span class="nu0">20</span><span class="sy0">:</span> x2 <span class="sy0">=</span> <span class="nu0">620</span><span class="sy0">:</span> y2 <span class="sy0">=</span> <span class="nu0">460</span><span class="sy0">:</span> <span class="kw3">gosub</span> HollowRectangle
+&nbsp;
+ x1 <span class="sy0">=</span> <span class="nu0">20</span><span class="sy0">:</span> y1 <span class="sy0">=</span> <span class="nu0">40</span><span class="sy0">:</span> x2 <span class="sy0">=</span> <span class="nu0">620</span><span class="sy0">:</span> y2 <span class="sy0">=</span> <span class="nu0">40</span><span class="sy0">:</span> <span class="kw3">gosub</span> Line
+&nbsp;
+ x1 <span class="sy0">=</span> <span class="nu0">602</span><span class="sy0">:</span> y1 <span class="sy0">=</span> <span class="nu0">22</span><span class="sy0">:</span> x2 <span class="sy0">=</span> <span class="nu0">618</span><span class="sy0">:</span> y2 <span class="sy0">=</span> <span class="nu0">37</span><span class="sy0">:</span> <span class="kw3">gosub</span> Rectangle
+&nbsp;
+ x1 <span class="sy0">=</span> <span class="nu0">580</span><span class="sy0">:</span> y1 <span class="sy0">=</span> <span class="nu0">460</span><span class="sy0">:</span> x2 <span class="sy0">=</span> <span class="nu0">620</span><span class="sy0">:</span> y2 <span class="sy0">=</span> <span class="nu0">420</span><span class="sy0">:</span> <span class="kw3">gosub</span> Line
+&nbsp;
+&nbsp;
+&nbsp;
+ <span class="kw3">for</span> i <span class="sy0">=</span> <span class="nu0">1</span> <span class="kw3">to</span> <span class="nu0">5000</span>
+&nbsp;
+ x1 <span class="sy0">=</span> <span class="kw2">rnd</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">%</span> <span class="nu0">600</span> <span class="sy0">+</span> <span class="nu0">20</span>
+&nbsp;
+ y1 <span class="sy0">=</span> <span class="kw2">rnd</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">%</span> <span class="nu0">420</span> <span class="sy0">+</span> <span class="nu0">40</span>
+&nbsp;
+ <span class="kw3">gosub</span> Point
+&nbsp;
+ <span class="kw3">next</span>
+&nbsp;
+&nbsp;
+&nbsp;
+ x1 <span class="sy0">=</span> <span class="nu0">320</span><span class="sy0">:</span> y1 <span class="sy0">=</span> <span class="nu0">240</span><span class="sy0">:</span> radius# <span class="sy0">=</span> <span class="nu0">20</span><span class="sy0">:</span> <span class="kw3">gosub</span> Circle
+&nbsp;
+ x1 <span class="sy0">=</span> <span class="nu0">320</span><span class="sy0">:</span> y1 <span class="sy0">=</span> <span class="nu0">240</span><span class="sy0">:</span> radius# <span class="sy0">=</span> <span class="nu0">40</span><span class="sy0">:</span> <span class="kw3">gosub</span> HollowCircle
+&nbsp;
+ x1 <span class="sy0">=</span> <span class="nu0">320</span><span class="sy0">:</span> y1 <span class="sy0">=</span> <span class="nu0">240</span><span class="sy0">:</span> radius# <span class="sy0">=</span> <span class="nu0">60</span><span class="sy0">:</span> <span class="kw3">gosub</span> HollowCircle
+&nbsp;
+ x1 <span class="sy0">=</span> <span class="nu0">320</span><span class="sy0">:</span> y1 <span class="sy0">=</span> <span class="nu0">240</span><span class="sy0">:</span> radius# <span class="sy0">=</span> <span class="nu0">80</span><span class="sy0">:</span> <span class="kw3">gosub</span> HollowCircle
+&nbsp;
+&nbsp;
+&nbsp;
+ <span class="kw2">SwapBuffers</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw3">End</span>
+&nbsp;
+&nbsp;
+&nbsp;
+ Point<span class="sy0">:</span>
+&nbsp;
+ <span class="kw2">glBegin</span><span class="br0">(</span><span class="kw1">GL_POINTS</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1 <span class="sy0">+</span> <span class="nu0">0.5</span>, y1 <span class="sy0">+</span> <span class="nu0">0.5</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glEnd</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw3">return</span>
+&nbsp;
+&nbsp;
+&nbsp;
+ Line<span class="sy0">:</span>
+&nbsp;
+ <span class="kw2">glBegin</span><span class="br0">(</span><span class="kw1">GL_LINES</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y1<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x2, y2<span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glEnd</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw3">return</span>
+&nbsp;
+&nbsp;
+&nbsp;
+ Rectangle<span class="sy0">:</span>
+&nbsp;
+ <span class="kw2">glBegin</span><span class="br0">(</span><span class="kw1">GL_QUADS</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y1<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x2, y1<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x2, y2<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y2<span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glEnd</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw3">return</span>
+&nbsp;
+&nbsp;
+&nbsp;
+ HollowRectangle<span class="sy0">:</span>
+&nbsp;
+ <span class="kw2">glBegin</span><span class="br0">(</span><span class="kw1">GL_LINE_LOOP</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y1<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x2, y1<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x2, y2<span class="br0">)</span><span class="sy0">:</span> <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y2<span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glEnd</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw3">return</span>
+&nbsp;
+&nbsp;
+&nbsp;
+ Circle<span class="sy0">:</span>
+&nbsp;
+ <span class="kw2">glBegin</span><span class="br0">(</span><span class="kw1">GL_TRIANGLE_FAN</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1, y1<span class="br0">)</span>
+&nbsp;
+ <span class="kw3">for</span> angle# <span class="sy0">=</span> <span class="nu0">0</span> <span class="kw3">to</span> <span class="nu0">360</span> <span class="kw3">step</span> <span class="nu0">5</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1 <span class="sy0">+</span> <span class="kw2">sind</span><span class="br0">(</span>angle#<span class="br0">)</span> <span class="sy0">*</span> radius#, y1 <span class="sy0">+</span> <span class="kw2">cosd</span><span class="br0">(</span>angle#<span class="br0">)</span> <span class="sy0">*</span> radius#<span class="br0">)</span>
+&nbsp;
+ <span class="kw3">next</span>
+&nbsp;
+ <span class="kw2">glEnd</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw3">return</span>
+&nbsp;
+&nbsp;
+&nbsp;
+ HollowCircle<span class="sy0">:</span>
+&nbsp;
+ <span class="kw2">glBegin</span><span class="br0">(</span><span class="kw1">GL_LINE_LOOP</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw3">for</span> angle# <span class="sy0">=</span> <span class="nu0">0</span> <span class="kw3">to</span> <span class="nu0">360</span> <span class="kw3">step</span> <span class="nu0">5</span>
+&nbsp;
+ <span class="kw2">glVertex2f</span><span class="br0">(</span>x1 <span class="sy0">+</span> <span class="kw2">sind</span><span class="br0">(</span>angle#<span class="br0">)</span> <span class="sy0">*</span> radius#, y1 <span class="sy0">+</span> <span class="kw2">cosd</span><span class="br0">(</span>angle#<span class="br0">)</span> <span class="sy0">*</span> radius#<span class="br0">)</span>
+&nbsp;
+ <span class="kw3">next</span>
+&nbsp;
+ <span class="kw2">glEnd</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+ <span class="kw3">return</span></pre>
+
+<!-- ws:end:WikiTextCodeRule:12 -->
+  </div>
+
+<div id="pageEditor" class="editorWrapper editorLayer">
+  <iframe id="target_editor" name="target_editor" src="2D+Drawing+in+OpenGL_elemei/blank.html" style="border: 0pt none ; width: 0px; height: 0px;"></iframe>
+    <form action="/page/edit/2D+Drawing+in+OpenGL" method="post" class="editorForm" id="editorForm"><input name="wikispacesFormToken" value="771f53fe773e587e6835640c03579a129ba205aa" type="hidden"><div class="wsh"><input class="form-control" name="wikispaces_user_id" value="user-1412090243" type="text"></div><div class="wsh"><input class="form-control" name="goto" autocomplete="off" type="text"></div><div class="mimw"><input class="form-control" name="mode" autocomplete="off" type="text"></div><div class="wsh"><input class="form-control" name="version" autocomplete="off" type="text"></div><div class="mimw"><input class="form-control" name="pageComments" autocomplete="off" type="text"></div><div class="jowic"><input class="form-control" name="saveAndContinue" autocomplete="off" type="text"></div><div class="jowic"><input class="form-control" name="comment" autocomplete="off" type="text"></div><div class="jovise"><input class="form-control" name="commentsDisabled" autocomplete="off" type="text"></div><div class="movkp"><input class="form-control" name="contentPresent" autocomplete="off" type="text"></div><div class="wsh"><input class="form-control" name="editorCleanup" autocomplete="off" type="text"></div><div class="wsh"><input class="form-control" name="WikispacesEditorContent" autocomplete="off" type="text"></div><input name="wikispacesASFormToken" value="9b1ef94c1ee2df2bdc734766df481ae89c9e15e6" type="hidden">
+    <input title="goto" name="e9872cbd50fcedf81d371fe89db05c08b773379a" value="" type="hidden">
+    <input title="mode" name="fbda1fdfa45e4999126bf214baa2bf0c97aef9f5" autocomplete="off" value="visual" type="hidden">
+    <input title="version" name="09c2213d86f368aca7704911e233cb1dbba687f1" autocomplete="off" value="512235856" type="hidden">
+    <input title="pageComments" name="69f57e59374c9b99a6ad2c19f8dba6cfb4cb3925" autocomplete="off" value="" type="hidden">
+    <input title="saveAndContinue" name="122f97f59f4ccf50d2ac495f624ad2a5c377cb72" value="0" type="hidden">
+    <input title="comment" name="acd74f7674625abee8f286737872e9c1382bfed8" value="" type="hidden">
+    <input title="commentsDisabled" name="d8cbc6ae57f3605f3731c0321c290007a9bad311" autocomplete="off" value="" type="hidden">
+    <input title="contentPresent" name="5678e5267ad9cb42c3448682ee4869762aba13c0" autocomplete="off" value="" type="hidden">
+    <input title="editorCleanup" name="d8f6746d55721263261569553533a07574bc1667" autocomplete="off" value="" type="hidden">
+
+    <textarea id="wsMainEditor" title="content" class="noContentHide" name="d3ab04ae8fc7588fddcf0ceae5ebf2b96c2925f8" style="width: 100%; height: 400px; position: absolute; top: -50000px; left: -50000px;" autocomplete="off"></textarea>
+
+  <noscript>
+    <h2>Javascript Required</h2>
+    <p>You need to enable Javascript in your browser to edit pages.</p>
+  </noscript>
+
+  </form>
+  
+  
+  <div id="plainTextEditor" style="position: relative; display: none;" class="editorLayer">
+    <textarea id="textEditor" class="autogrow"></textarea>
+    <p style="clear: both;" align="right"><a href="http://help.wikispaces.com/help.wikitext" class="js-help-link" data-help="help.wikitext">help on how to format text</a></p>
+  </div>
+</div>
+
+
+
+
+  </div>
+  <div class="commentColumn WikispacesStream"><div class="WikispacesContent WikispacesBs3"><div class="commentList"></div></div></div>
+</div>
+
+</div></div><div id="sentinel" style="clear: both;"></div>        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+<footer class="ws-theme-footer" role="contentinfo">
+  <div class="ws-theme-container">
+    <div class="ws-theme-footer-inner">
+      <div class="WikiFooterNav WikiElement">
+<a href="http://help.wikispaces.com/" rel="nofollow" class="js-help-trigger">Help</a> ·
+<a href="http://www.wikispaces.com/about">About</a> ·
+<a href="http://blog.wikispaces.com/" target="_new">Blog</a> ·
+<a href="http://www.wikispaces.com/content/pricing" rel="nofollow">Pricing</a> ·
+<a href="http://www.wikispaces.com/privacy" rel="nofollow">Privacy</a> ·
+<a href="http://www.wikispaces.com/terms" rel="nofollow">Terms</a> ·
+<a href="http://www.wikispaces.com/site/help?url=http%3A%2F%2Fbasic4gl.wikispaces.com%2F2D%2BDrawing%2Bin%2BOpenGL" rel="nofollow"><strong>Support</strong></a> ·
+<a href="http://basic4gl.wikispaces.com/space/subscribe/upgrade"><strong>Upgrade</strong></a>
+</div>      <div class="WikiLicense WikiElement">Portions not contributed by visitors are Copyright 2014 Tangient LLC</div>    </div>
+  </div>
+</footer>
+
+
+<div id="js-help-template" class="hidden">
+  <div class="ws-help">
+    <div class="js-help-controls WikispacesContent WikispacesBs3">
+      <a href="http://www.wikispaces.com/site/gettingstarted/off" class="btn btn-default hidden js-getting-started-off pull-right">Turn off "Getting Started"</a>
+      <ol class="breadcrumb">
+        <li class="js-special-breadcrumb active">
+          <a href="http://help.wikispaces.com/" data-breadcrumb="0">Home</a>
+        </li>
+        <li class="js-ellipsis hidden js-special-breadcrumb">
+          ...
+        </li>
+        <li class="js-spinner hidden js-special-breadcrumb"><i class="fa fa-spinner fa-spin"></i></li>
+      </ol>
+    </div>
+    <div class="ws-help-content wiki">Loading...</div>
+  </div>
+</div>
+</div>
+<script src="2D+Drawing+in+OpenGL_elemei/89941qv6-editorc.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+ws.namespace('ws.stream');
+ws.stream.userCanPostMessage = false;
+ws.stream.shareSource = "http:\/\/basic4gl.wikispaces.com\/page\/shares\/2D+Drawing+in+OpenGL";
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+jQuery(document).ready(function() {
+  ws.common.addJsonNotices({"warning":[],"error":[],"info":[],"success":[]});
+});
+
+jQuery(document).ready(function($) {
+  
+  function tipPlacement() {
+    return this.$element.closest('.ws-menu-bar .btn-group').is('.open') ? 'top' : 'bottom';
+  }
+
+  
+
+  $('.ws-menu-bar').each(function() {
+    var $menuBar = $(this);
+    var $tagDropdown = $menuBar.find('.ws-tag-dropdown-menu');
+    $menuBar.find('.tipme').tooltip({placement: tipPlacement, container: '.ws-menu-bar'});
+
+    
+    $menuBar.find('.ws-btn-more').click(ws.common.makeLinkClickFunction(function(e) {
+      if ($(this).closest('.ws-menu-bar .btn-group').is('.open')) {
+        ws.common.hideMorePageBar();
+      } else {
+        ws.common.showMorePageBar();
+      }
+    }));
+
+    $menuBar.on('click', '.ws-tag-dropdown-toggle', ws.common.makeLinkClickFunction(function(e) {
+      if ($(this).closest('.ws-menu-bar .dropdown').is('.open')) {
+        ws.common.hideTagDropdown();
+      } else {
+        ws.common.showTagDropdown();
+      }
+    }));
+
+    $(document.body).click(function(e) {
+      var $target = $(e.target);
+      if (!$target.closest('.ws-more-menu').closest('.ws-menu-bar').is($menuBar)
+          || $target.closest('a').is('.WikispacesDialogLink')) {
+        ws.common.hideMorePageBar();
+      }
+      if ($tagDropdown.length && !$target.closest('.ws-tag-dropdown-menu').is($tagDropdown)) {
+        ws.common.hideTagDropdown();
+      }
+    });
+    
+  });
+});
+
+
+jQuery(document).ready(function($) {
+  $('.ws-more-menu').on('click', 'a', function(e) {
+    if ($(this).is('.disabled')) {
+      e.preventDefault();
+    }
+  });
+});
+
+
+jQuery(document).ready(function() {
+  ws.editor.canEdit = true;
+  var editUrl = 'http://basic4gl.wikispaces.com/page/edit/2D+Drawing+in+OpenGL?goto=http%3A%2F%2Fbasic4gl.wikispaces.com%2F2D%2BDrawing%2Bin%2BOpenGL';
+
+  jQuery('#js-edit-from-template').change(function() {
+    window.location = ws.common.addUriParams(editUrl, [['template', jQuery(this).val()]]);
+  });
+});
+
+
+jQuery(document).ready(function() {
+  ws.editor.loadEditorLibs('http://www.wikispaces.com/site/editorlibs/en_US/j562054q.gz.js');
+});
+
+
+ws.editor.startEditor = function (moreCoreOptions, moreMainOptions) {
+  ws.editor.canEdit = true;
+
+  var coreOptions = {
+    'content_css': ['http://www.wikispaces.com/stylesheet/editori/217420326D.gz.css']
+  };
+
+  // The stylesheet is passed in as a string, turn it into an array
+  // Add bootstrap styles to the editor, if we are in a theme that has full screen bootstrap
+  if (jQuery('body').is('.WikispacesBs3')) {
+    coreOptions.content_css.push('http://www.wikispaces.com//s/internal-bootstrap-body.css');
+  }
+
+  var mainOptions = {
+    'wssave_cancel_url': '/2D+Drawing+in+OpenGL',
+    'wsimage_upload_url': 'http://basic4gl.wikispaces.com/file/multiupload',
+    'wsimage_max_file_size_mb': '10',
+    'wsimage_page_view_group': ''
+  };
+
+  ws.editor.loadEditor(jQuery.extend(coreOptions, moreCoreOptions), jQuery.extend(mainOptions, moreMainOptions));
+};
+
+  var wikispaces_page_version = '512235856';
+
+  jQuery(document).ready(function() {
+    ws.editor.enableButtons();
+  });
+
+
+
+--></script><!-- w1 774 mem:56:498(33) dql:26:31(2) wki:2:4(2) tot:774:774(1) -->
+
+</body></html>

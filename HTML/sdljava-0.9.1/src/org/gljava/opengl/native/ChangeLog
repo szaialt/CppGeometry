@@ -1,0 +1,17 @@
+2005-02-11  Ivan Z. Ganza  <ivan_ganza@yahoo.com>
+
+	* glew.i (Repository): removed extern from function prototypes as
+	it wasn't needed and was messing up VC++.
+
+2005-02-10  Ivan Z. Ganza  <ivan_ganza@yahoo.com>
+
+	* glew.i (Repository): removed include of GL.h.  No need for it
+	and it can confuse some compiliers due to symbol redefinition.
+
+2005-01-30  Ivan Z. Ganza  <ivan_ganza@yahoo.com>
+
+	* glew.i (Repository): added ability to disable loading of
+	shared library via -Dsdljava.bootclasspath value  or
+	-Dgljava.bootclasspath (any value prevents loading of shared libs)
+	
+

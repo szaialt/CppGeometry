@@ -1,0 +1,1 @@
+/**/twttr.receiveCount({"count":1,"url":"http:\/\/lazyfoo.net\/tutorials\/SDL\/26_motion\/index.php\/"});

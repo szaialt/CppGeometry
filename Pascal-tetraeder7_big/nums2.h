@@ -1,0 +1,123 @@
+using namespace std;
+
+//vector<long> from_long(){}
+
+vector<long> sum(vector<long> num1, vector<long> num2){
+    long s1=num1.size(),s2=num2.size();
+    long temp=0,j=max(s1,s2);
+    long Sum[j+1];
+    for(long i=0;i<j;i++)
+    {
+        Sum[i]=(num1.at(i)+num2.at(i)+temp)%10;
+        temp=(num1.at(i)+num2.at(i)+temp)/10;
+    }
+    while(temp){Sum[j++]=temp%10;temp/=10;}
+    vector<long> sum;
+    for (long i = 0; i < j+1; i++){
+      sum.push_back(Sum[i]);
+    }
+    return sum;
+}
+
+vector<long> mul(vector<long> num1, vector<long> num2){
+    
+    long s1=num1.size(),s2=num2.size();
+    long temp,k,m=0;
+    long Mul[s1+s2+1]; 
+    for(long i=0;i<s1;i++)
+    {
+        temp=0;
+        for(long j=0;j<s2;j++)
+        {
+            Mul[i+j]+=(num1.at(i)*num2.at(j)+temp)%10;
+            temp=(num1.at(i)*num2.at(j)+temp)/10;
+        }
+        k=i+s2;
+        while(temp){Mul[k++]+=temp%10;temp/=10;}
+        m=max(m,k);
+    }
+    for(long i=m;i>0;i--)
+    {
+        if(Mul[i]>9)
+        {
+            Mul[i-1]+=Mul[i]/10;
+            Mul[i]%=10;
+        }
+    }
+    vector<long> mul;
+    for (long i = 0; i < s1+s2+1; i++){
+      mul.push_back(Mul[i]);
+    }
+    return mul;
+}
+
+//Maradékos osztás
+//Tízes csoportokra szedi a számot
+//Kiszámítja az egyes csoportok értékét Horner-elrendezéssel
+//Minden csoportnak veszi a maradékát,
+//és megszorozza 10^10 megfelelő hatványának maradékával
+//ezeket összeadja, és kiadja maradékként
+
+ 
+long horner(vector<long> v, long x)
+{
+  long s = 0;
+ 
+  for( vector<long>::const_reverse_iterator i = v.rbegin(); i != v.rend(); i++ )
+    s = s*x + *i;
+  return s;
+}
+
+vector<vector<long> > pieces(vector<long> num, long length){
+  long size = num.size();
+  long dbs = size / length;
+  vector<vector<long> > matrix;
+  for (long i = 0; i < dbs; i++)
+  {
+    vector<long> row;
+    for (long k = 0; k <= length; k++)
+    {
+      row.push_back(num.at(k + length*i));            
+    }
+    matrix.push_back(row);
+  }
+  return matrix; 
+}
+
+long modulo_power(long base, long exp, long mod){
+  long pow = 1;
+    for (long i = 0; i < exp; i++){
+      pow = (pow * 10) % mod;
+   }
+   return pow;
+}
+
+vector<long> div(vector<long> dividend, long dvsr)
+{
+long rem = 0;
+long dvnd;
+long quot;
+long i;
+vector<long> quotient;
+    for(i = 0; i < dividend.size(); i++){
+        dvnd = (rem * 10) + dividend.at(i);
+        rem = dvnd % dvsr;
+        quot = dvnd / dvsr;
+        quotient.push_back(quot);
+    }
+    return quotient;
+}
+
+vector<long> rest(vector<long> num1, long mod){
+  vector<long> modv;
+  modv.push_back(mod);
+  vector<long> quot = div(num1, mod);
+  vector<long> mult = mul(quot, modv);
+  for (int i = 0; i < mult.size(); i++){
+    mult.at(i) = -(mult.at(i));
+  }
+  return sum(num1, mul(quot, modv));  
+}
+
+
+

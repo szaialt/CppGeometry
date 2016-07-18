@@ -1,0 +1,483 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-2">
+
+<title>Jeff Molofee's OpenGL Windows Tutorial</title>
+<style type="text/css">
+A:link {COLOR: lightblue; TEXT-DECORATION: none}
+A:visited {COLOR: lightblue; TEXT-DECORATION: none}
+A:active {COLOR: lightblue; TEXT-DECORATION: none}
+A:hover {COLOR: #ffda6a; TEXT-DECORATION: none}
+</style>
+</head><body text="#ffffff" bgcolor="#000000">
+<hr>
+I'll start this tutorial by jumping right into the code.  I'll try to break the code into sections, and for each section,
+I will comment in as much detail as I can.  The first thing you will have to do is build a project in Visual C++.
+If you don't know how to do this, you shouldn't be learning OpenGL, you should be learning C++.
+<br><br>
+After you have created a new win32 application in Visual C++, you will want to link to the OpenGL libraries.  In Visual C++
+go to Project, Settings, then click on the LINK tab.  Under "Object/Library Modules" at the beginning of the line
+(before kernal32.lib) add "OpenGL32.lib GLu32.lib and GLaux.lib".  Once you've done this click on OK.  You're now ready to
+write an OpenGL Windows program.
+<br><br>
+The first 4 lines you will enter tell the compiler how to use the library files.  The lines look like this:
+<hr>
+<font color="#ccccff"><pre>#include &lt;windows.h&gt;		<font color="pink">// Header File For Windows</font>
+#include &lt;gl\gl.h&gt;		<font color="pink">// Header File For The OpenGL32 Library</font>
+#include &lt;gl\glu.h&gt;		<font color="pink">// Header File For The GLu32 Library</font>
+#include &lt;gl\glaux.h&gt;		<font color="pink">// Header File For The GLaux Library</font>
+</pre></font>
+<hr>
+Next you need to set up all the variables you will be using in your program.  This program will create a blank OpenGL
+window, so we won't need to set up alot of variables just yet.  The few that we do set up are very important, and will
+be used in just about every OpenGL program you write using this code.
+<br><br>
+The first two lines set up Rendering Contexts.  Every OpenGL program is linked to a Rendering Context.  A Rendering Context
+is what links OpenGL calls to a Windows window.  The OpenGL Rendering Context is defined as hRC.  In order for Windows to
+draw to a window you need to create a Device Context.  The Windows Device Context is defined as hDC.  The DC connects the
+window to the GDI (Graphics Device Interface).  The RC connect OpenGL to the DC.
+<hr>
+<font color="#ccccff"></font><pre><font color="#ccccff">static HGLRC hRC;		<font color="pink">// Permanent Rendering Context</font>
+static HDC hDC;			<font color="pink">// Private GDI Device Context</font>
+</font></pre><font color="#ccccff"></font>
+<hr>
+The only other variable we will use for now is an array that we will use to monitor key presses on the keyboard.  There
+are many ways to watch for keypresses on the keyboard, but this is the way I do it.  It's reliable, and it can handle
+more than one key being pressed at a time.
+<hr>
+<font color="#ccccff"><pre>BOOL	keys[256];		<font color="pink">// Array Used For The Keyboard Routine</font>
+</pre></font>
+<hr>
+In the next section of code we do all of the setup for OpenGL.  We set what color to clear the screen to, we turn on the
+depth buffer, enable smooth shading, and most importantly, we set the the screen to render in perspective, using the
+height and width of the window.  This routine wont be called until the OpenGL window has been made.
+<hr>
+<font color="#ccccff"><pre>GLvoid InitGL(GLsizei Width, GLsizei Height)	<font color="pink">// This Will Be Called Right After The GL Window Is Created</font>
+{
+</pre></font>
+<hr>
+The next line sets the color of the screen when it clears.  If you don't know how colors work, I'll quickly explain.
+All the numbers can range from 0.0f to 1.0f.  0.0 being the darkest and 1.0 being the brightest.  The first number
+after glClearColor is the Red Intensity, the second number is for Green, the third for Blue.  The higher the number is to
+1.0f, the brighter that specific color will be.  The last number is for an Alpha value.  When it comes to clearing
+the screen, I never worry about the 4th number.  For now leave it at 0.0f.  I will explain it's use in another tutorial.
+<br><br>
+So, if you had glClearColor(0.0f,0.0f,1.0f,0.0f) you would be clearing the screen to a bright blue.  If you had
+glClearColor(0.5f,0.0f,0.0f,0.0f) you would be clearing the screen to a medium red.  Not bright (1.0f) and not dark (0.0f).
+To make a white background, you would put all the colors as high as possible (1.0f).  Black is as low as possible (0.0f).
+<hr>
+<font color="#ccccff"><pre>	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);	<font color="pink">// This Will Clear The Background Color To Black</font>
+</pre></font>
+<hr>
+The next three lines have to do with the Depth Buffer.  Think of the depth buffer as layers into the screen.  The depth
+buffer keeps track of how deep objects are into the screen.  We wont really be using the depth buffer in this program, but
+just about every OpenGL program that draws on the screen in 3D will use the depth buffer.  It sorts out which object to
+display on the screen so that a square you drew behind a circle doesn't end up overtop of the circle.  The depth buffer
+is a very important part of OpenGL.
+<hr>
+<font color="#ccccff"><pre>	glClearDepth(1.0);			<font color="pink">// Enables Clearing Of The Depth Buffer</font>
+	glDepthFunc(GL_LESS);			<font color="pink">// The Type Of Depth Test To Do</font>
+	glEnable(GL_DEPTH_TEST);		<font color="pink">// Enables Depth Testing</font>
+</pre></font>
+<hr>
+The next 5 lines enable smooth shading (which I will explain in later tutorials) and set the screen up for a perspective
+view.  Meaning things in the distance get smaller.  This creates a realistic looking scene.  The perspective is calculated
+with a 45 degree viewing angle based on the windows width and height.  The 0.1f, 100.0f is the depth into the screen.
+<br><br>
+glMatrixMode(GL_PROJECTION) indicates that the next commands will affect the projection matrix.  glLoadIdentity() is
+similar to a reset.  Once the scene is reset, perspective is calculated for the scene.  glMatrixMode(GL_MODELVIEW)
+indicates that any new transformations will affect the modelview matrix.  Don't worry if you don't understand this stuff,
+I will be explaining it all in later tutorials.  Just know that is HAS to be done if you want a nice perspective scene.
+<hr>
+<font color="#ccccff"><pre>	glShadeModel(GL_SMOOTH);		<font color="pink">// Enables Smooth Color Shading</font>
+
+	glMatrixMode(GL_PROJECTION);		<font color="pink">// Select The Projection Matrix</font>
+	glLoadIdentity();			<font color="pink">// Reset The Projection Matrix</font>
+
+	gluPerspective(45.0f,(GLfloat)Width/(GLfloat)Height,0.1f,100.0f);	<font color="pink">// Calculate The Aspect Ratio Of The Window</font>
+
+	glMatrixMode(GL_MODELVIEW);		<font color="pink">// Select The Modelview Matrix</font>
+}
+</pre></font>
+<hr>
+The next section of code is very similar to the code above.  It's job is to resize the OpenGL scene whenever you resize
+the window (assuming you are using windows rather than fullscreen which we are not).  Even if you are not able to resize
+the window (for example, you're in fullscreen mode), this routine will still be called at least once when the program is
+first run.  Again, the scene is resized based on the width and height of the window it's being displayed in.
+<hr>
+<font color="#ccccff"></font><pre><font color="#ccccff">GLvoid ReSizeGLScene(GLsizei Width, GLsizei Height)
+{
+	if (Height==0)				<font color="pink">// Prevent A Divide By Zero If The Window Is Too Small</font>
+		Height=1;
+
+	glViewport(0, 0, Width, Height);	<font color="pink">// Reset The Current Viewport And Perspective Transformation</font>
+
+	glMatrixMode(GL_PROJECTION);		<font color="pink">// Select The Projection Matrix</font>
+	glLoadIdentity();			<font color="pink">// Reset The Projection Matrix</font>
+
+	gluPerspective(45.0f,(GLfloat)Width/(GLfloat)Height,0.1f,100.0f);	<font color="pink">// Calculate The Aspect Ratio Of The Window</font>
+	glMatrixMode(GL_MODELVIEW);		<font color="pink">// Select The Modelview Matrix</font>
+}
+</font></pre><font color="#ccccff"></font>
+<hr>
+This section is where all of your drawing code will go.  Anything you plan to display on the screen will go in this
+section of code.  Each tutorial after this one will add code to this section of the program.  If you already have an
+understanding of OpenGL, you can try creating basic shapes by adding OpenGL code below glLoadIdentity().  If you're new
+to OpenGL, wait for my next tutorial.  For now all we will do is clear the screen to the color we previously decided on,
+clear the depth buffer and reset the scene.
+<hr>
+<font color="#ccccff"><pre>GLvoid DrawGLScene(GLvoid)
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);		<font color="pink">// Clear The Screen And The Depth Buffer</font>
+	glLoadIdentity();						<font color="pink">// Reset The View</font>
+}
+</pre></font>
+<hr>
+The next section of code is the most important section in this program.  It sets up the Windows window, it sets the Pixel
+mode, it watches for resizing, key presses, and closing of the program.
+<br><br>
+The first 4 lines do the following.  hWnd is storage for the window.  Message holds the message telling your program what
+to do next.  wParam and lParam hold information that is included with the message, such as window width and height.
+<hr>
+<font color="#ccccff"><pre>LRESULT CALLBACK WndProc(	HWND	hWnd,
+				UINT	message,
+				WPARAM	wParam,
+				LPARAM	lParam)
+</pre></font>
+<hr>
+The code in between the brackets sets up the pixel format.  I prefer not to use an indexed color mode.  If you don't know
+what that means, don't worry about it.  The pixel format describes how OpenGL will write to the window.  Alot of the code
+is ignored but required.  I will put short comments for each lines.  A question mark means I'm not to sure what the line
+of code does (I'm only human).
+<hr>
+<font color="#ccccff"></font><pre><font color="#ccccff">{
+	RECT	Screen;					<font color="pink">// Used Later On To Get The Size Of The Window</font>
+	GLuint	PixelFormat;
+	static	PIXELFORMATDESCRIPTOR pfd=
+	{
+		sizeof(PIXELFORMATDESCRIPTOR),		<font color="pink">// Size Of This Pixel Format Descriptor</font>
+		1,					<font color="pink">// Version Number (?)</font>
+		PFD_DRAW_TO_WINDOW |			<font color="pink">// Format Must Support Window</font>
+		PFD_SUPPORT_OPENGL |			<font color="pink">// Format Must Support OpenGL</font>
+		PFD_DOUBLEBUFFER,			<font color="pink">// Must Support Double Buffering</font>
+		PFD_TYPE_RGBA,				<font color="pink">// Request An RGBA Format</font>
+		16,					<font color="pink">// Select A 16Bit Color Depth</font>
+		0, 0, 0, 0, 0, 0,			<font color="pink">// Color Bits Ignored (?)</font>
+		0,					<font color="pink">// No Alpha Buffer</font>
+		0,					<font color="pink">// Shift Bit Ignored (?)</font>
+		0,					<font color="pink">// No Accumulation Buffer</font>
+		0, 0, 0, 0,				<font color="pink">// Accumulation Bits Ignored (?)</font>
+		16,					<font color="pink">// 16Bit Z-Buffer (Depth Buffer)</font>  
+		0,					<font color="pink">// No Stencil Buffer</font>
+		0,					<font color="pink">// No Auxiliary Buffer (?)</font>
+		PFD_MAIN_PLANE,				<font color="pink">// Main Drawing Layer</font>
+		0,					<font color="pink">// Reserved (?)</font>
+		0, 0, 0					<font color="pink">// Layer Masks Ignored (?)</font>
+	};
+</font></pre><font color="#ccccff"></font>
+<hr>
+This section of code handles messages.  Messages are generated when you exit a program, press a key, move a window, etc.
+each "case" section handles a different message.  If you screw anything up in this section, don't expect your code to work
+properly, if it works at all.
+<hr>
+<font color="#ccccff"><pre>	switch (message)				<font color="pink">// Tells Windows We Want To Check The Message</font>
+	{
+</pre></font>
+<hr>
+WM_CREATE means the program is requesting that a window be created.  The first thing we do is get a DC (device context)
+for our window.  Remember, without it we can't draw to the window.  We then set the pixel format.  The computer will select
+a format that matches or is as close as possible to the format we set up above.  I don't do alot of error checking here,
+which is bad, but I like to keep my code small.  If it doesn't work I add the coded needed to make it work.  You might
+want to check how others set up the pixel format.
+<hr>
+<font color="#ccccff"><pre>		case WM_CREATE:
+			hDC = GetDC(hWnd);					<font color="pink">// Gets A Device Context For The Window</font>
+
+			PixelFormat = ChoosePixelFormat(hDC, &amp;pfd);		<font color="pink">// Finds The Closest Match To The Pixel Format We Set Above</font>
+</pre></font>
+<hr>
+If a suitable pixel format can not be found, an error message will pop up stating that a suitable format could not be
+found.  It will wait for you to press OK before the prorgram quits.
+<hr>
+<font color="#ccccff"><pre>			if (!PixelFormat)
+			{
+				MessageBox(0,"Can't Find A Suitable PixelFormat.","Error",MB_OK|MB_ICONERROR);
+				PostQuitMessage(0);				<font color="pink">// This Sends A 'Message' Telling The Program To Quit</font>
+				break;						<font color="pink">// Prevents The Rest Of The Code From Running</font>
+			}
+</pre></font>
+<hr>
+If a suitable format is found, the computer will try to set the pixel format for the device context.  If the pixel format
+can not be set for whatever reason, an error message will pop up stating that the pixel format could not be set.  It will
+wait for you to press OK before exiting the program.
+<hr>
+<font color="#ccccff"><pre>			if(!SetPixelFormat(hDC,PixelFormat,&amp;pfd))
+			{
+				MessageBox(0,"Can't Set The PixelFormat.","Error",MB_OK|MB_ICONERROR);
+				PostQuitMessage(0);
+				break;
+			}
+</pre></font>
+<hr>
+If the code has made it this far, the DC (device context) has been created, and set up to use the proper pixel format.  Now
+we have to create a Rendering Context so OpenGL can use the DC.  wglCreateContext will grab a Rendering Context and store
+it in hRC.  If for some reason a Rendering Context is not available, an error message will pop.  Pressing OK will exit the
+program.
+<hr>
+<font color="#ccccff"><pre>			hRC = wglCreateContext(hDC);
+			if(!hRC)
+			{
+				MessageBox(0,"Can't Create A GL Rendering Context.","Error",MB_OK|MB_ICONERROR);
+				PostQuitMessage(0);
+				break;
+			}
+</pre></font>
+<hr>
+Now that we have a Rendering Context we need to make it active so that OpenGL can draw to the window.  Again, if for some
+reason it can't be made active, an error message will pop up.  Clicking OK in the error window will exit the program.
+<hr>
+<font color="#ccccff"><pre>			if(!wglMakeCurrent(hDC, hRC))
+			{
+				MessageBox(0,"Can't activate GLRC.","Error",MB_OK|MB_ICONERROR);
+				PostQuitMessage(0);
+				break;
+			}
+</pre></font>
+<hr>
+If everything went ok, all we have to do now is create the OpenGL drawing area.  GetClientRect will get the width and
+height of the window.  It will store the width in right, and the height in bottom.  After we've gotten the width and
+height, we Initialize the OpenGL screen.  We do this by calling InitGL, and passing the parameters right and bottom
+(width and height).
+<hr>
+<font color="#ccccff"><pre>			GetClientRect(hWnd, &amp;Screen);
+			InitGL(Screen.right, Screen.bottom);
+			break;
+</pre></font>
+<hr>
+WM_DESTROY and WM_CLOSE are pretty much the same.  The program will send this message whenever you quit the program,
+press ALT-F4, or if you send a PostQuitMessage(0) like we did above whenever an error occured.
+<br><br>
+ChangeDisplaySettings(NULL,0) will switch the desktop back to the resolution it was in before we switched to fullscreen
+mode.  wglMakeCurrent(hDC,NULL) will make the device context current.  wglDeleteContext(hRC) will delete the OpenGL
+rendering context.  ReleaseDC(hWnd,hDC) deletes the window device context.  Basically this deletes the OpenGL window.
+<hr>
+<font color="#ccccff"></font><pre><font color="#ccccff">		case WM_DESTROY:
+		case WM_CLOSE:
+			ChangeDisplaySettings(NULL, 0);
+
+			wglMakeCurrent(hDC,NULL);
+			wglDeleteContext(hRC);
+			ReleaseDC(hWnd,hDC);
+
+			PostQuitMessage(0);
+			break;
+</font></pre><font color="#ccccff"></font>
+<hr>
+WM_KEYDOWN is called whenever a key is pressed.  The key that is being pressed is stored in wParam.  So what the following
+code does is this.  Say I press 'A'... The letter a actually has a number value that represents it.  So in the keydown
+code, it makes the cell that represents the 'A' key equal TRUE.  Later in the code if I check the status of that 'cell', I
+will see that it is TRUE, and know that the 'A' key is indeed being held down.
+<hr>
+<font color="#ccccff"><pre>		case WM_KEYDOWN:
+			keys[wParam] = TRUE;
+			break;
+</pre></font>
+<hr>
+WM_KEYUP is called whenever a key is released.  The key that is released is also stored in wParam.  So when I release the
+'A' key, it makes the cell for the 'A' key equal FALSE.  When I check that cell to see if the 'A' key is pressed, it will
+return FALSE, meaning "no, it is not pressed".
+<hr>
+<font color="#ccccff"><pre>		case WM_KEYUP:
+			keys[wParam] = FALSE;
+			break;
+</pre></font>
+<hr>
+The last thing I do is watch to see if the window is resized.  It may seem pointless to have this code here when you are
+running your program in fullscreen mode, but without this code, the OpenGL screen will not appear.  Trust me, it's
+important.
+<br><br>
+Whenever a WM_SIZE message is sent to Windows, two parameters are sent with it.  The new width of the screen, and the
+new height of the screen.  These parameters are stored in LOWORD(lParam) and HIWORD(lParam).  So the line ReSizeGLScene
+calls the section of code that resizes the screen.  It passes the width and height to that section of code.
+<hr>
+<font color="#ccccff"><pre>		case WM_SIZE:
+			ReSizeGLScene(LOWORD(lParam),HIWORD(lParam));
+			break;
+</pre></font>
+<hr>
+I believe this last bit of code lets Windows process any other messages that we dont handle in our code, then ends this
+procedure.
+<hr>
+<font color="#ccccff"><pre>		default:
+			return (DefWindowProc(hWnd, message, wParam, lParam));
+	}
+return (0);
+}
+</pre></font>
+<hr>
+This is where the program begins, where the window is created, where pretty much everything that doesn't have to do with
+drawing is done.  We start of by creating the window.
+<hr>
+<font color="#ccccff"><pre>int WINAPI WinMain(	HINSTANCE	hInstance, 
+			HINSTANCE	hPrevInstance, 
+			LPSTR		lpCmdLine, 
+			int		nCmdShow)
+{
+	MSG		msg;		<font color="pink">// Windows Message Structure</font>
+	WNDCLASS	wc;		<font color="pink">// Windows Class Structure Used To Set Up The Type Of Window</font>
+	HWND		hWnd;		<font color="pink">// Storage For Window Handle</font>
+</pre></font>
+<hr>
+the style CS_HREDRAW and CS_VREDRAW force the window to redraw whenever it is moved.  CS_OWNDC creates a private DC for
+the window.  Meaning the DC is not shared across applications. WndProc is the procedure that watches for messages in the
+program.  We set hIcon to NULL meaning we don't want an ICON in the window, and for a mouse pointer we use the standard
+arrow.  The background color doesn't matter (we set that in GL).  We don't want a menu in this window so we set it to NULL,
+and the class name is any name you want.
+<hr>
+<font color="#ccccff"><pre>	wc.style		= CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
+	wc.lpfnWndProc		= (WNDPROC) WndProc;
+	wc.cbClsExtra		= 0;
+	wc.cbWndExtra		= 0;
+	wc.hInstance		= hInstance;
+	wc.hIcon		= NULL;
+	wc.hCursor		= LoadCursor(NULL, IDC_ARROW);
+	wc.hbrBackground	= NULL;
+	wc.lpszMenuName		= NULL;
+	wc.lpszClassName	= "OpenGL WinClass";
+</pre></font>
+<hr>
+Now we register the class.  If anything goes wrong, an error message will pop up.  Clicking on OK in the error box will
+exit the program.
+<hr>
+<font color="#ccccff"><pre>	if(!RegisterClass(&amp;wc))
+	{
+		MessageBox(0,"Failed To Register The Window Class.","Error",MB_OK|MB_ICONERROR);
+		return FALSE;
+	}
+</pre></font>
+<hr>
+Now we make the window.  Although we make the window here, it wont be set up for OpenGL until the WM_CREATE message is
+sent.  WS_CLIPCHILDREN and WS_CLIPSIBLINGS is required for OpenGL.  It's very important that you add them.  The window I
+like to use is the popup window.  It's works good with fullscreen mode.
+<hr>
+<font color="#ccccff"><pre>	hWnd = CreateWindow(
+	"OpenGL WinClass",
+	"Jeff Molofee's GL Code Tutorial ... NeHe '99",		<font color="pink">// Title Appearing At The Top Of The Window</font>
+
+	WS_POPUP |
+	WS_CLIPCHILDREN |
+	WS_CLIPSIBLINGS,
+
+	0, 0,							<font color="pink">// The Position Of The Window On The Screen</font>
+	640, 480,						<font color="pink">// The Width And Height Of The WIndow</font>
+
+	NULL,
+	NULL,
+	hInstance,
+	NULL);
+</pre></font>
+<hr>
+Now we do the usual error checking.  If the window could not be created for some reason, an error message will pop up on
+the screen.  Pressing OK will exit the program.
+<hr>
+<font color="#ccccff"><pre>	if(!hWnd)
+	{
+		MessageBox(0,"Window Creation Error.","Error",MB_OK|MB_ICONERROR);
+		return FALSE;
+	}
+</pre></font>
+<hr>
+The next section of code is something people seem to have alot of problems with...  switching to fullscreen mode.  There is
+one important thing you have to keep in mind when switching to full screen mode.  Make sure the width and height you use
+in fullscreen mode is the same width and height you used when you made your window.
+<br><br>
+I don't set a color depth when I switch to fullscreen mode.  Every time I tried switching color depth, I got weird requests
+from Windows to do things like reboot the computer to switch to the new color mode.  I'm not sure if only I get this
+message or not, but I've decided to leave the computer in whatever color depth it was in before the GL program ran.
+<br><br>
+An important thing to note is that this code will not run in C.  This file has to be saved as a .CPP file.
+<hr>
+<font color="#ccccff"><pre>	DEVMODE dmScreenSettings;							<font color="pink">// Developer Mode</font>
+
+	memset(&amp;dmScreenSettings, 0, sizeof(DEVMODE));					<font color="pink">// Clear Room To Store Settings</font>
+	dmScreenSettings.dmSize		= sizeof(DEVMODE);				<font color="pink">// Size Of The Devmode Structure</font>
+	dmScreenSettings.dmPelsWidth	= 640;						<font color="pink">// Screen Width</font>
+	dmScreenSettings.dmPelsHeight	= 480;						<font color="pink">// Screen Height</font>
+	dmScreenSettings.dmFields	= DM_PELSWIDTH | DM_PELSHEIGHT;			<font color="pink">// Pixel Mode</font>
+	ChangeDisplaySettings(&amp;dmScreenSettings, CDS_FULLSCREEN);			<font color="pink">// Switch To Full Screen</font>
+</pre></font>
+<hr>
+ShowWindow does exactly what it says.  It shows the window you've just created on the screen.  I like to do this after I
+switch to fullscreen mode, although I'm not sure it really matters.  UpdateWindow refreshes the window, SetFocus makes
+the window active, and calling wglMakeCurrent(hDC,hRC) makes sure the Rendering Context hasn't been released.
+<hr>
+<font color="#ccccff"><pre>	ShowWindow(hWnd, SW_SHOW);
+	UpdateWindow(hWnd);
+	SetFocus(hWnd);
+	wglMakeCurrent(hDC,hRC);
+</pre></font>
+<hr>
+Now we create an endless loop.  The only way to get out of the loop is to press ESC.  Once ESC is pressed, a quit message
+is sent, and the program terminates.
+<hr>
+<font color="#ccccff"><pre>	while (1)
+	{
+		<font color="pink">// Process All Messages</font>
+		while (PeekMessage(&amp;msg, NULL, 0, 0, PM_NOREMOVE))
+		{
+			if (GetMessage(&amp;msg, NULL, 0, 0))
+			{
+				TranslateMessage(&amp;msg);
+				DispatchMessage(&amp;msg);
+			}
+			else
+			{
+				return TRUE;
+			}
+		}
+</pre></font>
+<hr>
+DrawGLScene jumps to the portion of the program that does the actual drawing of OpenGL objects.  In this program we left
+that section empty.  All we did was clear the screen to black.  In later tutorials I will show you how to do actual
+OpenGL graphics.
+<br><br>
+SwapBuffers(hDC) is a VERY important command.  We have the window set up to do double buffering.  What this means is the
+image is drawn in a hidden window (called a buffer).  When we tell the computer to swap buffers, the hidden buffer is
+copied to the screen.  This produces smooth flicker free animation, and prevents the viewer from seeing the objects as
+they are drawn.
+<hr>
+<font color="#ccccff"><pre>		DrawGLScene();								<font color="pink">// Draw The Scene</font>
+		SwapBuffers(hDC);							<font color="pink">// Swap Screen Buffers</font>
+		if (keys[VK_ESCAPE]) SendMessage(hWnd,WM_CLOSE,0,0);			<font color="pink">// If ESC Is Pressed Quit</font>
+	}
+}
+</pre></font>
+<hr>
+In this tutorial I have tried to explain in as much detail, every step involved in setting up, and creating a fullscreen
+OpenGL program of your own, that will exit when the ESC key is pressed.  I've spent 3 days and roughly 13 hours writing
+this tutorial.  If you have comments or questions please email me.  If you feel I have incorrectly commented something or
+that the code could be done better in some sections, please let me know.  I want to make the best OpenGL tutorials I can.
+I'm interested in hearing your feedback.
+<br><br>
+<font color="aqua"><b>Jeff Molofee</b> (<b>NeHe</b>)</font>
+<br><br>
+* DOWNLOAD <a href="http://users.polytech.unice.fr/%7Ebuffa/cours/synthese_image/DOCS/Tutoriaux/Nehe/lesson1.zip" tppabs="http://www.demonews.com/hosted/nehe/tutorials/vc/lesson1.zip">Visual C++</a> Code For This Lesson.<br>
+* DOWNLOAD <a href="http://users.polytech.unice.fr/%7Ebuffa/cours/synthese_image/DOCS/Tutoriaux/Nehe/lesson1-1.zip" tppabs="http://www.demonews.com/hosted/nehe/tutorials/vfortran/lesson1.zip">Visual Fortran</a> Code For This Lesson.  <font color="lime">
+( Conversion by <a href="mailto:Jean-Philippe.Perois@wanadoo.fr">Jean-Philippe Perois</a> )</font><br>
+* DOWNLOAD <a href="http://users.polytech.unice.fr/%7Ebuffa/cours/synthese_image/DOCS/Tutoriaux/Nehe/lesson1-2.zip" tppabs="http://www.demonews.com/hosted/nehe/tutorials/delphi/lesson1.zip">Delphi</a> Code For This Lesson.  <font color="lime">
+( Conversion by <a href="mailto:brad@choate.net">Brad Choate</a> )</font><br>
+* DOWNLOAD <a href="http://users.polytech.unice.fr/%7Ebuffa/cours/synthese_image/DOCS/Tutoriaux/Nehe/lesson1-3.zip" tppabs="http://www.demonews.com/hosted/nehe/tutorials/linux/lesson1.zip">Linux</a> Code For This Lesson.  <font color="lime">
+( Conversion by <a href="mailto:ulmont@bellsouth.net">Richard Campbell</a> )</font><br>
+* DOWNLOAD <a href="http://users.polytech.unice.fr/%7Ebuffa/cours/synthese_image/DOCS/Tutoriaux/Nehe/lesson1-4.zip" tppabs="http://www.demonews.com/hosted/nehe/tutorials/irix/lesson1.zip">Irix</a> Code For This Lesson.  <font color="lime">
+( Conversion by <a href="mailto:lakmal@gunasekara.de">Lakmal Gunasekara</a> )</font><br>
+* DOWNLOAD <a href="http://users.polytech.unice.fr/%7Ebuffa/cours/synthese_image/DOCS/Tutoriaux/Nehe/lesson1-5.zip" tppabs="http://www.demonews.com/hosted/nehe/tutorials/solaris/lesson1.zip">Solaris</a> Code For This Lesson.  <font color="lime">
+( Conversion by <a href="mailto:lakmal@gunasekara.de">Lakmal Gunasekara</a> )</font><br>
+* DOWNLOAD <a href="http://users.polytech.unice.fr/%7Ebuffa/cours/synthese_image/DOCS/Tutoriaux/Nehe/lesson1.sit" tppabs="http://www.demonews.com/hosted/nehe/tutorials/mac/lesson1.sit">Mac OS</a> Code For This Lesson.  <font color="lime">
+( Conversion by <a href="mailto:asp@usc.edu">Anthony Parker</a> )</font><br>
+* DOWNLOAD <a href="http://users.polytech.unice.fr/%7Ebuffa/cours/synthese_image/DOCS/Tutoriaux/Nehe/lesson1-6.zip" tppabs="http://www.demonews.com/hosted/nehe/tutorials/pbasic/lesson1.zip">Power Basic</a> Code For This Lesson.  <font color="lime">
+( Conversion by <a href="mailto:anguslaw@net.ntl.com">Angus Law</a> )</font><br>
+* DOWNLOAD <a href="http://users.polytech.unice.fr/%7Ebuffa/cours/synthese_image/DOCS/Tutoriaux/Nehe/tppmsgs/msgs0.htm#11" tppabs="http://www.ngent.com/staff/chrish/opengl/index.html" target="_blank">BeOS</a> Code For This Lesson.  <font color="lime">
+( Conversion by <a href="mailto:chrish@ngent.com">Chris Herborth</a> )</font><br>
+* DOWNLOAD <a href="http://users.polytech.unice.fr/%7Ebuffa/cours/synthese_image/DOCS/Tutoriaux/Nehe/tppmsgs/msgs0.htm#12" tppabs="http://dev.knowledgeassociates.com/hodglim/nehe/nehe.html" target="_blank">Java</a> Code For This Lesson.  <font color="lime">
+( Conversion by <a href="mailto:Hodglim@hotmail.com">Darren Hodges</a> )</font>
+<hr>
+</body></html>

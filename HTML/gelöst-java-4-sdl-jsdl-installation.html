@@ -1,0 +1,2125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="de" dir="ltr" xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<!-- base href="http://www.ubuntu-forum.de/" -->
+	<title>[GELÖST] Java 4 SDL (jsdl) Installation:  - Terminal - Ubuntu-Forum &amp; Kubuntu-Forum | www.Ubuntu-Forum.de</title>
+	
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-script-type" content="text/javascript">
+<meta http-equiv="content-style-type" content="text/css">
+<meta name="description" content="Forum rund um Ubuntu, Kubuntu, Xubuntu  mit schneller, freundlicher und kompetenter Hilfe von Anwendern für Anwender">
+<meta name="keywords" content="Ubuntu, Kubuntu, Xubuntu, Edubuntu, Mythbuntu, Forum, Hilfe, Fragen, Probleme">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+
+<script type="text/javascript" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/protoaculous.js"></script>
+<script type="text/javascript" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/default.js"></script>
+<script type="text/javascript" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/PopupMenuList.js"></script>
+<script type="text/javascript" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/AjaxRequest.js"></script>
+
+<!-- wbb styles -->
+<link rel="stylesheet" type="text/css" media="screen" href="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/burningBoard.css">
+
+
+<!-- dynamic styles -->
+<link rel="stylesheet" type="text/css" media="screen" href="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/style-3.css">
+
+<!-- print styles -->
+<link rel="stylesheet" type="text/css" media="print" href="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/print.css">
+
+<!-- opera styles -->
+<script type="text/javascript">
+	//<![CDATA[
+	if (Prototype.Browser.Opera) {
+		document.write('<style type="text/css">.columnContainer { border: 0; }</style>');
+	}
+	//]]>
+</script>
+
+<script type="text/javascript">
+	//<![CDATA[
+	var SID_ARG_2ND	= '&s=bc29f4a0cf0a51966d0906089b3b67207991cd80';
+	var SECURITY_TOKEN = '92cde147c2ea5eb02b875eab5ae3f1df5477fc2d';
+	var RELATIVE_WCF_DIR = 'wcf/';
+	var RELATIVE_WBB_DIR = '';
+	var LANG_DELETE_CONFIRM = 'Möchten Sie das Element wirklich löschen?';
+	//]]>
+</script>
+
+<!-- hack styles -->
+<!--[if lt IE 7]>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.ubuntu-forum.de/wcf/style/extra/ie6-fix.css" />
+	<style type="text/css">
+								#header, #footer, #main, #mainMenu, #userPanel { /* note: non-standard style-declaration */
+							_width: expression(((document.body.clientWidth/screen.width)) < 0.7 ? "780px":"95%" );
+			}
+					</style>
+<![endif]-->
+
+<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.ubuntu-forum.de/wcf/style/extra/ie7-fix.css" />
+	<script type="text/javascript">
+		//<![CDATA[
+		document.observe('dom:loaded', function() {
+			if (location.hash) {
+				var columnContainer = null;
+				var columnContainerHeight = 0;
+				$$('.columnContainer > .column').each(function(column) {
+					if (columnContainer != column.up()) {
+						columnContainer = column.up();
+						columnContainerHeight = columnContainer.getHeight();
+					}
+					columnContainer.addClassName('columnContainerJS');
+					column.setStyle({ 'height': columnContainerHeight + 'px' });
+					columnContainer.up().setStyle({ 'height': columnContainerHeight + 1 + 'px' });
+					column.removeClassName('column').addClassName('columnJS');
+				});
+			}
+			$$('.layout-3 .second').each(function(column) {
+				column.insert('<div style="float: right; font-size: 0">&nbsp;</div>');
+			});
+		});
+		//]]>
+	</script>
+	<![endif]-->
+
+<!--[if IE 8]>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.ubuntu-forum.de/wcf/style/extra/ie8-fix.css" />
+	<![endif]-->
+
+
+	
+	<script type="text/javascript" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/ImageViewer.js"></script>
+<script type="text/javascript">
+	//<![CDATA[			
+	// when the window is fully loaded, add image viewer
+	Event.observe(window, 'load', function() {
+		new ImageViewer($$('.enlargable'), {
+			langCaption		: 'this.links.length > 1 ? "Bild " + (this.currentIndex + 1) + " von " + this.links.length + (this.currentLink.title ? (" - " + this.currentLink.title) : "") : (this.currentLink.title ? this.currentLink.title : "")',
+			langPrevious		: 'Vorheriges Bild',
+			langNext		: 'Nächstes Bild',
+			langPlay		: 'Diashow starten (Bildwechsel alle 5 Sekunden)',
+			langPause		: 'Diashow stoppen',
+			langEnlarge		: 'Nur dieses Bild anzeigen (beendet die Bildbetrachtung)',
+			langClose		: 'Schließen',
+			imgBlankSrc		: 'wcf/images/imageViewer/blank.png',
+			imgMenuSrc		: 'wcf/images/imageViewer/menu.png',
+			imgPlaySrc		: 'wcf/icon/imageViewer/playM.png',
+			imgPreviousSrc		: 'wcf/icon/imageViewer/previousM.png',
+			imgNextSrc		: 'wcf/icon/imageViewer/nextM.png',
+			imgEnlargeSrc		: 'wcf/icon/imageViewer/enlargeM.png',
+			imgPauseSrc		: 'wcf/icon/imageViewer/pauseM.png',
+			imgCloseSrc		: 'wcf/icon/imageViewer/closeM.png',
+			imgPlayHoverSrc		: 'wcf/icon/imageViewer/playHoverM.png',
+			imgPreviousHoverSrc	: 'wcf/icon/imageViewer/previousHoverM.png',
+			imgNextHoverSrc		: 'wcf/icon/imageViewer/nextHoverM.png',
+			imgEnlargeHoverSrc	: 'wcf/icon/imageViewer/enlargeHoverM.png',
+			imgPauseHoverSrc	: 'wcf/icon/imageViewer/pauseHoverM.png',
+			imgCloseHoverSrc	: 'wcf/icon/imageViewer/closeHoverM.png'	
+		});
+	});
+//]]>
+</script>	
+	<!--[if IE]>
+		<script type="text/javascript">
+			//<![CDATA[
+			
+			onloadEvents.push(function() {
+				if (document.referrer) {
+					var postForm = document.referrer.search(/PostEdit|PostAdd/);
+					if (postForm != -1) {
+						var postID = (window.location + '').split('postID=');
+						if (!isNaN(postID[1])) window.location.href = '#post' + postID[1];
+					}
+				}
+				});
+			
+			//]]>
+		</script>
+	<![endif]-->
+	<script type="text/javascript" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/MultiPagesLinks.js"></script>
+	<script type="text/javascript">
+		//<![CDATA[
+		var INLINE_IMAGE_MAX_WIDTH = 530;
+		//]]>
+	</script>
+	<script type="text/javascript" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/ImageResizer.js"></script>
+		<script type="text/javascript">
+		//<![CDATA[
+		var language = new Object();
+		var postData = new Hash();
+		var url = 'index.php?page=Thread&threadID=27316&pageNo=1&s=bc29f4a0cf0a51966d0906089b3b67207991cd80';
+		//]]>
+	</script>
+			<script type="text/javascript" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/MultiQuote.js"></script>
+<script type="text/javascript">
+	//<![CDATA[
+	var quoteData = new Hash();
+	document.observe("dom:loaded", function() {
+		multiQuoteObj = new MultiQuote(quoteData, '', {
+			langButtonQuote			: 'Zitieren',
+			langButtonQuoteMultiple		: '"Zitieren" + (objectValue.quotes > 0 ? " ("+objectValue.quotes+")" : "")',
+			langQuoteDirectly		: 'Nachricht direkt zitieren',
+			langMarkToQuote			: 'Nachricht zum Zitieren auswählen',
+			langQuoteTextDirectly		: 'Textstelle direkt zitieren',
+			langMarkTextToQuote		: 'Textstelle zum Zitieren auswählen',
+			langRemoveQuotes		: 'Ausgewählte Zitate entfernen',
+			langQuoteParagraphDirectly	: 'Absatz direkt zitieren',
+			langMarkParagraphToQuote	: 'Absatz zum Zitieren auswählen',
+			langQuoteParagraphsDirectly	: 'Absätze direkt zitieren',
+			langMarkParagraphsToQuote	: 'Absätze zum Zitieren auswählen',
+			iconMessageQuoteOptions		: 'wcf/icon/messageQuoteOptionsS.png'
+		});
+	});
+//]]>
+</script>			<link rel="alternate" type="application/rss+xml" href="http://www.ubuntu-forum.de/index.php?page=PostsFeed&amp;format=rss2&amp;threadID=27316" title="Beiträge dieses Themas abonnieren (RSS2)">
+	<link rel="alternate" type="application/atom+xml" href="http://www.ubuntu-forum.de/index.php?page=PostsFeed&amp;format=atom&amp;threadID=27316" title="Beiträge dieses Themas abonnieren (Atom)">
+</head><body id="tplThread">
+
+<p class="skipHeader hidden"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#skipToContent" title="Zum Seiteninhalt springen">Zum Seiteninhalt springen</a></p><!-- support for disabled surfers -->
+
+
+
+	
+<div id="headerContainer">
+	<a id="top"></a>
+	<div id="userPanel" class="userPanel">
+		<div class="userPanelInner">
+			<p style="display: none;" id="userAvatar">
+				<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/avatar-default.png" alt="">			</p>
+			<p id="userNote">
+				Sie sind nicht angemeldet.			</p>
+			<div id="userMenu">
+				<ul>
+											<li id="userMenuLogin" class="options"><a href="http://www.ubuntu-forum.de/index.php?form=UserLogin&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80" id="loginButton"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/loginOptionsS.png" alt="" id="loginButtonImage"> <span>Anmelden</span></a></li>
+
+						<li id="userMenuRegistration"><a href="http://www.ubuntu-forum.de/index.php?page=Register&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/registerS.png" alt=""> <span>Registrieren</span></a></li>
+						
+															</ul>
+			</div>
+		</div>
+	</div>
+
+			<script type="text/javascript">
+			//<![CDATA[
+			document.observe("dom:loaded", function() {
+				var loginFormVisible = false;
+
+				var loginBox = $('quickLoginBox');
+				var loginButton = $('loginButton');
+
+				if (loginButton && loginBox) {
+					function showLoginForm(evt) {
+						if (loginBox.hasClassName('hidden')) {
+							loginBox.setStyle('display: none');
+							loginBox.removeClassName('hidden');
+						}
+
+						var top = (loginButton.cumulativeOffset()[1] + loginButton.getHeight() + 5);
+						var left = loginButton.cumulativeOffset()[0] > $$('body')[0].getWidth()/2 ? loginButton.cumulativeOffset()[0] - loginBox.getWidth() + loginButton.getWidth() : loginButton.cumulativeOffset()[0];
+						loginBox.setStyle('left: ' + left + 'px; top: ' + top + 'px;');
+						if (loginBox.visible()) {
+							new Effect.Parallel([
+								new Effect.BlindUp(loginBox),
+								new Effect.Fade(loginBox)
+							], { duration: 0.3 });
+							loginFormVisible = false;
+						}
+						else {
+							new Effect.Parallel([
+								new Effect.BlindDown(loginBox),
+								new Effect.Appear(loginBox)
+							], { duration: 0.3 });
+							loginFormVisible = true;
+						}
+						evt.stop();
+					}
+
+					loginButton.observe('click', showLoginForm);
+					loginButton.observe('dblclick', function() { document.location.href = fixURL('index.php?form=UserLogin&s=bc29f4a0cf0a51966d0906089b3b67207991cd80'); });
+
+					document.getElementById('quickLoginUsername').onfocus = function() { if (this.value == 'Benutzername') this.value=''; };
+					document.getElementById('quickLoginUsername').onblur = function() { if (this.value == '') this.value = 'Benutzername'; };
+					$('loginButtonImage').src = $('loginButtonImage').src.gsub('loginS.png', 'loginOptionsS.png');
+				}
+			});
+			//]]>
+		</script>
+	
+	<div id="header">
+
+		
+
+																			
+		<div id="search">
+			<form method="post" action="index.php?form=Search">
+
+				<div class="searchContainer">
+					<input autocomplete="off" tabindex="5" id="searchInput" class="inputText searchOptions" name="q" value="Thema durchsuchen" type="text">
+					<input tabindex="6" id="searchSubmit" class="searchSubmit inputImage" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/searchSubmitS.png" alt="Absenden" type="image">
+					<input name="s" value="bc29f4a0cf0a51966d0906089b3b67207991cd80" type="hidden">						<input name="threadID" value="27316" type="hidden">
+	<input name="types[]" value="post" type="hidden">
+	<input name="findThreads" value="0" type="hidden">
+
+					<script type="text/javascript">
+						//<![CDATA[
+						document.getElementById('searchInput').setAttribute('autocomplete', 'off');
+						document.getElementById('searchInput').onfocus = function() { if (this.value == 'Thema durchsuchen') this.value=''; };
+						document.getElementById('searchInput').onblur = function() { if (this.value == '') this.value = 'Thema durchsuchen'; };
+						document.getElementById('searchSubmit').ondblclick = function() { window.location = fixURL('index.php?form=Search&s=bc29f4a0cf0a51966d0906089b3b67207991cd80'); };
+													popupMenuList.register("searchInput");
+							document.getElementById('searchInput').className += " searchOptions";
+												//]]>
+					</script>
+											<div class="searchInputMenu">
+							<div class="hidden" id="searchInputMenu">
+								<div class="pageMenu smallFont">
+									<ul>
+														<li><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;action=unread&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Ungelesene Beiträge</a></li>
+				<li><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;action=unreplied&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Unbeantwortete Themen</a></li>
+				<li><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;action=24h&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Themen der letzten 24 Stunden</a></li>
+																	<li><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Erweiterte Suche</a></li>									</ul>
+								</div>
+							</div>
+						</div>
+					
+											<noscript>
+<p><a
+href="http://www.ubuntu-forum.de/index.php?form=Search&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Erweiterte
+Suche</a></p> </noscript>
+									</div>
+			</form>
+		</div>
+		<div id="logo">
+			<div class="logoInner">
+				<h1 class="pageTitle"><a href="http://www.ubuntu-forum.de/index.html?s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Ubuntu-Forum &amp; Kubuntu-Forum | www.Ubuntu-Forum.de</a></h1>
+									<a href="http://www.ubuntu-forum.de/index.html?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" class="pageLogo">
+						<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/ubuntuforumlogo.png" title="Ubuntu-Forum &amp; Kubuntu-Forum | www.Ubuntu-Forum.de" alt="">
+					</a>
+							</div>
+		</div>
+	</div>
+
+	
+	<div id="mainMenu" class="mainMenu">
+		<div class="mainMenuInner"><ul><li id="mainMenuItem3" class="firstActive"><a href="http://www.ubuntu-forum.de/index.html?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Forum"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/indexM.png" alt=""> <span>Forum</span></a></li><li id="mainMenuItem6"><a href="http://www.ubuntu-forum.de/index.php?page=Portal&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Portal"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/portalM.png" alt=""> <span>Portal</span></a></li><li id="mainMenuItem10"><a href="http://wiki.ubuntu-forum.de/" title="Wiki"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/iconwikiM.png" alt=""> <span>Wiki</span></a></li><li id="mainMenuItem2"><a href="http://www.ubuntu-forum.de/index.php?page=MembersList&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Mitglieder"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/membersM.png" alt=""> <span>Mitglieder</span></a></li><li id="mainMenuItem8"><a href="http://www.ubuntu-forum.de/index.php?page=Rules&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Regeln"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/rulesM.png" alt=""> <span>Regeln</span></a></li><li id="mainMenuItem7"><a href="http://www.ubuntu-forum.de/index.php?page=Help&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Hilfe"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/helpM.png" alt=""> <span>Hilfe</span></a></li><li id="mainMenuItem9"><a href="http://wiki.ubuntu-forum.de/index.php?title=FAQ:Forum" title="FAQ"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/help2M.png" alt=""> <span>FAQ</span></a></li><li id="mainMenuItem11" class="last"><a href="http://www.linux-onlineshop.de/" title="&lt;b&gt;Unser Sponsor: Linux-Onlineshop.de&lt;/b&gt;"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/shoppingcartM.png" alt=""> <span><b>Unser Sponsor: Linux-Onlineshop.de</b></span></a></li></ul>
+		</div>
+	</div>
+
+</div>
+<div id="mainContainer">
+
+<div id="main">
+	
+	<ul class="breadCrumbs">
+			<li><a href="http://www.ubuntu-forum.de/index.html?s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/indexS.png" alt=""> <span>Ubuntu-Forum &amp; Kubuntu-Forum | www.Ubuntu-Forum.de</span></a> »</li>
+		
+			<li><a href="http://www.ubuntu-forum.de/forum/255/software.html?s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/categoryS.png" alt=""> <span>Software</span></a> »</li>
+		
+			<li><a href="http://www.ubuntu-forum.de/forum/13/terminal.html?s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/boardS.png" alt=""> <span>Terminal</span></a> »</li>
+		
+	</ul>	
+	<a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#" id="skipToContent"></a><!-- support for disabled surfers -->
+	
+	<div class="mainHeadline">
+		<img id="threadEdit27316" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/threadClosedL.png" alt="">
+		<div class="headlineContainer">
+			<h2 id="threadTitle27316">
+				<span id="threadPrefix27316" class="prefix"><strong></strong></span>
+				<a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html?s=bc29f4a0cf0a51966d0906089b3b67207991cd80">[GELÖST] Java 4 SDL (jsdl) Installation:</a>
+			</h2>
+			<p></p>
+		</div>
+	</div>
+	
+		
+		<p class="info">Lieber Besucher, herzlich willkommen bei: Ubuntu-Forum &amp; Kubuntu-Forum | www.Ubuntu-Forum.de. 
+Falls dies Ihr erster Besuch auf dieser Seite ist, lesen Sie sich bitte die <a href="http://www.ubuntu-forum.de/index.php?page=Help&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Hilfe</a> durch. Dort wird Ihnen die Bedienung dieser Seite näher erläutert.
+Darüber hinaus sollten Sie sich registrieren, um alle Funktionen dieser Seite nutzen zu können.
+Benutzen Sie das <a href="http://www.ubuntu-forum.de/index.php?page=Register&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Registrierungsformular</a>, um sich zu registrieren oder <a href="http://www.ubuntu-forum.de/index.php?page=Help&amp;item=user.login&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">informieren Sie sich ausführlich</a> über den Registrierungsvorgang.
+Falls Sie sich bereits zu einem früheren Zeitpunkt registriert haben, können Sie sich <a href="http://www.ubuntu-forum.de/index.php?form=UserLogin&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">hier anmelden</a>.</p>
+			
+	<div class="contentHeader">
+								<div class="largeButtons">
+					</div>
+	</div>
+	
+	
+				
+										
+			
+												
+		<script type="text/javascript">
+			//<![CDATA[
+				
+				quoteData.set('post-161514', {
+					objectID: 161514,
+					objectType: 'post',
+					quotes: 0				});
+				
+						//]]>
+		</script>
+		
+										
+					<div id="postRow161514" class="message threadStarterPost">
+				<div class="messageInner messageLeft dividers container-2">
+					<a id="post161514"></a>					
+					<div class="messageSidebar">
+	<p class="skipSidebar hidden"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#skipPoint161514" title="Benutzerinformationen überspringen">Benutzerinformationen überspringen</a></p><!-- support for disabled surfers -->
+			<div class="messageAuthor">
+			<p class="userName">
+															<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/offlineS.png" alt="" title="»HamsDa« ist offline">		
+												
+				<a href="http://www.ubuntu-forum.de/user/9107-hamsda/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »HamsDa« aufrufen">
+					<span>HamsDa</span>
+				</a>
+				
+							</p>
+
+												<p class="userTitle smallFont">User</p>
+													<p class="userRank"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/cool.png" alt=""></p>
+										
+					</div>
+		
+									<div class="userAvatar">
+					<a href="http://www.ubuntu-forum.de/user/9107-hamsda/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »HamsDa« aufrufen"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/avatar-1917.gif" alt="" style="width: 100px; height: 100px;"></a>
+				</div>
+							
+					<div class="userSymbols">
+				<ul>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/genderMaleS.png" alt="»HamsDa« ist männlich" title="»HamsDa« ist männlich"></li>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/threadStarterS.png" alt="»HamsDa« ist der Autor dieses Themas" title="»HamsDa« ist der Autor dieses Themas"></li>
+										
+									</ul>
+			</div>
+				
+					<div class="userCredits">
+									<p><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;types[]=post&amp;userID=9107&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Beiträge: 624</a></p>
+									<p>Registrierungsdatum: 30.12.2006</p>
+									<p>Derivat: Ubuntu</p>
+									<p>Architektur: 32-Bit PC</p>
+									<p>Desktop: GNOME 3.0</p>
+								
+							</div>
+				
+					<div class="userMessenger">
+				<ul>
+											<li><a href="http://www.ubuntu-forum.de/index.php?form=PMNew&amp;userID=9107&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/pmEmptyS.png" alt="Nachricht senden" title="Nachricht senden"></a></li>
+										
+									</ul>
+			</div>
+				
+		
+	<a id="skipPoint161514"></a><!-- support for disabled surfers -->
+</div>					
+					<div class="messageContent">
+						<div class="messageContentInner color-1">
+							<div class="messageHeader">
+								<p class="messageCount">
+									<a href="http://www.ubuntu-forum.de/post/161514/gel%C3%B6st-java-4-sdl-jsdl-installation.html#post161514" title="Permalink zum 1. Beitrag" class="messageNumber">1</a>
+																	</p>
+								<div class="containerIcon">
+									<img id="postEdit161514" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/postM.png" alt="">
+								</div>
+								<div class="containerContent">
+									<p class="smallFont light">10.11.2007, 00:32</p>
+								</div>
+							</div>
+							
+							<h3 id="postTopic161514" class="messageTitle"><span>[GELÖST] Java 4 SDL (jsdl) Installation:</span></h3>
+							
+							<div class="messageBody">
+																<div id="postText161514">
+									Ich habe Probleme beim Installieren von Java 4 SDL.<br>
+<br>
+Folgendes:<br>
+<div class="border codeBox">
+	<div>
+		<table>
+			<tbody><tr>
+				<td class="codeLineNumbers container-3">
+					<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/codeS.png" alt="">
+				</td>
+				<td class="codeLines container-4">
+					<h3>Quellcode</h3>
+				</td>
+			</tr>
+			<tr>
+				<td class="codeLineNumbers container-3">
+					<pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre>
+				</td>
+				<td class="codeLines container-4">
+					<pre>christoph@<span class="highlight">ubuntu</span>:~/Desktop/<span class="highlight">sdljava</span>-0.9.1$ ant jar
+Unable to locate tools.jar. Expected to find it in /usr/lib/jvm/java-1.5.0-gcj-4.2-1.5.0.0/lib/tools.jar
+Buildfile: build.xml
+
+init:
+
+compile:
+    [javac] Compiling 196 source files to /home/christoph/Desktop/<span class="highlight">sdljava</span>-0.9.1/classes
+
+BUILD FAILED
+/home/christoph/Desktop/<span class="highlight">sdljava</span>-0.9.1/build.xml:26: Unable to find a javac compiler;
+com.sun.tools.javac.Main is not on the classpath.
+Perhaps JAVA_HOME does not point to the JDK.
+It is currently set to "/usr/lib/jvm/java-1.5.0-gcj-4.2-1.5.0.0/jre"
+
+Total time: 0 seconds</pre>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+</div>Ich hab leider keine Ahnung, wo die JAVA_HOME hinzeigen soll.<br>
+Hoffe mal, hier hat jemand ne Ahnung =\								</div>
+							</div>
+							
+														
+															<div class="signature">
+Heimrechner Marke Eigenbau // Windows 7 Ultimate 64 Bit // 13.04 Raring
+Ringtail // Unity // Kernel 3.8.0-19-generic </div>
+														
+															<p class="editNote smallFont light">Dieser Beitrag wurde bereits 3 mal editiert, zuletzt von »HamsDa« (11.11.2007, 23:11)</p>
+														
+														
+							<div class="messageFooterRight">
+								<div class="smallButtons">
+									<ul id="postButtons161514">
+										<li class="extraButton"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#top" title="Zum Seitenanfang"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/upS.png" alt="Zum Seitenanfang"> <span class="hidden">Zum Seitenanfang</span></a></li><li class="options"><a href="javascript:void(0);" id="postQuote161514"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/messageQuoteOptionsS.png"> <span>Zitieren</span></a><div class="hidden" id="postQuote161514Menu"></div></li>
+																																																											</ul>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+				
+				
+																		
+		<script type="text/javascript">
+			//<![CDATA[
+				
+				quoteData.set('post-161601', {
+					objectID: 161601,
+					objectType: 'post',
+					quotes: 0				});
+				
+						//]]>
+		</script>
+		
+										
+					<div id="postRow161601" class="message">
+				<div class="messageInner messageLeft dividers container-1">
+					<a id="post161601"></a>					
+					<div class="messageSidebar">
+	<p class="skipSidebar hidden"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#skipPoint161601" title="Benutzerinformationen überspringen">Benutzerinformationen überspringen</a></p><!-- support for disabled surfers -->
+			<div class="messageAuthor">
+			<p class="userName">
+															<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/offlineS.png" alt="" title="»Milde« ist offline">		
+												
+				<a href="http://www.ubuntu-forum.de/user/6265-milde/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »Milde« aufrufen">
+					<span>Milde</span>
+				</a>
+				
+							</p>
+
+												<p class="userTitle smallFont">User</p>
+													<p class="userRank"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/cool.png" alt=""></p>
+										
+					</div>
+		
+									<div class="userAvatar">
+					<a href="http://www.ubuntu-forum.de/user/6265-milde/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »Milde« aufrufen"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/avatar-2634.jpg" alt="" style="width: 150px; height: 150px;"></a>
+				</div>
+							
+					<div class="userSymbols">
+				<ul>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/genderMaleS.png" alt="»Milde« ist männlich" title="»Milde« ist männlich"></li>
+										
+									</ul>
+			</div>
+				
+					<div class="userCredits">
+									<p><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;types[]=post&amp;userID=6265&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Beiträge: 545</a></p>
+									<p>Registrierungsdatum: 24.04.2006</p>
+									<p>Derivat: Ubuntu</p>
+									<p>Architektur: 32-Bit PC</p>
+									<p>Andere Betriebssysteme: Fedora 9 Sulphur</p>
+								
+							</div>
+				
+					<div class="userMessenger">
+				<ul>
+											<li><a href="http://www.ubuntu-forum.de/index.php?form=PMNew&amp;userID=6265&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/pmEmptyS.png" alt="Nachricht senden" title="Nachricht senden"></a></li>
+										
+									</ul>
+			</div>
+				
+		
+	<a id="skipPoint161601"></a><!-- support for disabled surfers -->
+</div>					
+					<div class="messageContent">
+						<div class="messageContentInner color-2">
+							<div class="messageHeader">
+								<p class="messageCount">
+									<a href="http://www.ubuntu-forum.de/post/161601/gel%C3%B6st-java-4-sdl-jsdl-installation.html#post161601" title="Permalink zum 2. Beitrag" class="messageNumber">2</a>
+																	</p>
+								<div class="containerIcon">
+									<img id="postEdit161601" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/postM.png" alt="">
+								</div>
+								<div class="containerContent">
+									<p class="smallFont light">10.11.2007, 14:29</p>
+								</div>
+							</div>
+							
+							<h3 id="postTopic161601" class="messageTitle"><span></span></h3>
+							
+							<div class="messageBody">
+																<div id="postText161601">
+									Hi,<br>
+du hast entscheinend nur eine JRE ( "<strong>J</strong>ava <strong>R</strong>untime <strong>E</strong>nvironment" Version )<br>
+<blockquote class="quoteBox container-4">
+	<div class="quoteHeader">
+		<h3><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/quoteS.png" alt="">
+					Zitat				</h3>
+	</div>
+	<div class="quoteBody">
+		Perhaps JAVA_HOME does not point to the JDK.<br>
+It is currently set to "/usr/lib/jvm/java-1.5.0-gcj-4.2-1.5.0.0/jre"	</div>
+</blockquote><br>
+<br>
+JAVA_HOME kann somit gar nicht zu einem JDK ( <strong>J</strong>ava <strong>D</strong>evelopment <strong>K</strong>it ) zeigen.<br>
+Soviel ich weiß enthält nur das JDK den Java<strong>c</strong> ( Javacompiler )<br>
+<br>
+Das würde heißen, du schmeißt JRE runter und installierst die neuste Version von dem JDK.<br>
+Ich glaube die neuste sollte JDK 1.6 sein, welche du unter der SUN Homepage auffinden kannst, oder in den Repos.<br>
+<br>
+<br>
+<br>
+<br>
+mfg Milde								</div>
+							</div>
+							
+														
+															<div class="signature">
+									<a href="http://www.ubuntu-forum.de/index.php?form=search"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WU1192393219W47127a03a38c1-sufu.html" class="resizeImage" alt=""></a>   ___  <a href="http://www.ubuntu-forum.de/post/163724/gel%C3%B6ste-probleme.html#post163724"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WB1193693720W47265218d7436-geloest.html" class="resizeImage" alt=""></a>    ___<a href="http://wiki.ubuntu-forum.de/" class="externalURL"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WI1192393320W47127a6875e8d-wiki.html" class="resizeImage" alt=""></a>								</div>
+														
+														
+														
+							<div class="messageFooterRight">
+								<div class="smallButtons">
+									<ul id="postButtons161601">
+										<li class="extraButton"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#top" title="Zum Seitenanfang"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/upS.png" alt="Zum Seitenanfang"> <span class="hidden">Zum Seitenanfang</span></a></li><li class="options"><a href="javascript:void(0);" id="postQuote161601"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/messageQuoteOptionsS.png"> <span>Zitieren</span></a><div class="hidden" id="postQuote161601Menu"></div></li>
+																																																											</ul>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+				
+				
+																		
+		<script type="text/javascript">
+			//<![CDATA[
+				
+				quoteData.set('post-161628', {
+					objectID: 161628,
+					objectType: 'post',
+					quotes: 0				});
+				
+						//]]>
+		</script>
+		
+										
+					<div id="postRow161628" class="message threadStarterPost">
+				<div class="messageInner messageLeft dividers container-2">
+					<a id="post161628"></a>					
+					<div class="messageSidebar">
+	<p class="skipSidebar hidden"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#skipPoint161628" title="Benutzerinformationen überspringen">Benutzerinformationen überspringen</a></p><!-- support for disabled surfers -->
+			<div class="messageAuthor">
+			<p class="userName">
+															<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/offlineS.png" alt="" title="»HamsDa« ist offline">		
+												
+				<a href="http://www.ubuntu-forum.de/user/9107-hamsda/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »HamsDa« aufrufen">
+					<span>HamsDa</span>
+				</a>
+				
+							</p>
+
+												<p class="userTitle smallFont">User</p>
+													<p class="userRank"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/cool.png" alt=""></p>
+										
+					</div>
+		
+									<div class="userAvatar">
+					<a href="http://www.ubuntu-forum.de/user/9107-hamsda/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »HamsDa« aufrufen"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/avatar-1917.gif" alt="" style="width: 100px; height: 100px;"></a>
+				</div>
+							
+					<div class="userSymbols">
+				<ul>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/genderMaleS.png" alt="»HamsDa« ist männlich" title="»HamsDa« ist männlich"></li>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/threadStarterS.png" alt="»HamsDa« ist der Autor dieses Themas" title="»HamsDa« ist der Autor dieses Themas"></li>
+										
+									</ul>
+			</div>
+				
+					<div class="userCredits">
+									<p><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;types[]=post&amp;userID=9107&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Beiträge: 624</a></p>
+									<p>Registrierungsdatum: 30.12.2006</p>
+									<p>Derivat: Ubuntu</p>
+									<p>Architektur: 32-Bit PC</p>
+									<p>Desktop: GNOME 3.0</p>
+								
+							</div>
+				
+					<div class="userMessenger">
+				<ul>
+											<li><a href="http://www.ubuntu-forum.de/index.php?form=PMNew&amp;userID=9107&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/pmEmptyS.png" alt="Nachricht senden" title="Nachricht senden"></a></li>
+										
+									</ul>
+			</div>
+				
+		
+	<a id="skipPoint161628"></a><!-- support for disabled surfers -->
+</div>					
+					<div class="messageContent">
+						<div class="messageContentInner color-1">
+							<div class="messageHeader">
+								<p class="messageCount">
+									<a href="http://www.ubuntu-forum.de/post/161628/gel%C3%B6st-java-4-sdl-jsdl-installation.html#post161628" title="Permalink zum 3. Beitrag" class="messageNumber">3</a>
+																	</p>
+								<div class="containerIcon">
+									<img id="postEdit161628" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/postM.png" alt="">
+								</div>
+								<div class="containerContent">
+									<p class="smallFont light">10.11.2007, 16:24</p>
+								</div>
+							</div>
+							
+							<h3 id="postTopic161628" class="messageTitle"><span></span></h3>
+							
+							<div class="messageBody">
+																<div id="postText161628">
+									Entschuldigung, ich habe anscheinend etwas zu wenig Informationen gegeben.<br>
+sun-java6-jdk ist bereits installiert, da ich in der Schule mit
+NetBeans und Java programmiere (was übrigens einwandfrei funktioniert).
+</div>
+							</div>
+							
+														
+															<div class="signature">
+Heimrechner Marke Eigenbau // Windows 7 Ultimate 64 Bit // 13.04 Raring
+Ringtail // Unity // Kernel 3.8.0-19-generic </div>
+														
+														
+														
+							<div class="messageFooterRight">
+								<div class="smallButtons">
+									<ul id="postButtons161628">
+										<li class="extraButton"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#top" title="Zum Seitenanfang"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/upS.png" alt="Zum Seitenanfang"> <span class="hidden">Zum Seitenanfang</span></a></li><li class="options"><a href="javascript:void(0);" id="postQuote161628"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/messageQuoteOptionsS.png"> <span>Zitieren</span></a><div class="hidden" id="postQuote161628Menu"></div></li>
+																																																											</ul>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+				
+				
+																		
+		<script type="text/javascript">
+			//<![CDATA[
+				
+				quoteData.set('post-161674', {
+					objectID: 161674,
+					objectType: 'post',
+					quotes: 0				});
+				
+						//]]>
+		</script>
+		
+										
+					<div id="postRow161674" class="message">
+				<div class="messageInner messageLeft dividers container-1">
+					<a id="post161674"></a>					
+					<div class="messageSidebar">
+	<p class="skipSidebar hidden"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#skipPoint161674" title="Benutzerinformationen überspringen">Benutzerinformationen überspringen</a></p><!-- support for disabled surfers -->
+			<div class="messageAuthor">
+			<p class="userName">
+															<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/offlineS.png" alt="" title="»Milde« ist offline">		
+												
+				<a href="http://www.ubuntu-forum.de/user/6265-milde/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »Milde« aufrufen">
+					<span>Milde</span>
+				</a>
+				
+							</p>
+
+												<p class="userTitle smallFont">User</p>
+													<p class="userRank"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/cool.png" alt=""></p>
+										
+					</div>
+		
+									<div class="userAvatar">
+					<a href="http://www.ubuntu-forum.de/user/6265-milde/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »Milde« aufrufen"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/avatar-2634.jpg" alt="" style="width: 150px; height: 150px;"></a>
+				</div>
+							
+					<div class="userSymbols">
+				<ul>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/genderMaleS.png" alt="»Milde« ist männlich" title="»Milde« ist männlich"></li>
+										
+									</ul>
+			</div>
+				
+					<div class="userCredits">
+									<p><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;types[]=post&amp;userID=6265&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Beiträge: 545</a></p>
+									<p>Registrierungsdatum: 24.04.2006</p>
+									<p>Derivat: Ubuntu</p>
+									<p>Architektur: 32-Bit PC</p>
+									<p>Andere Betriebssysteme: Fedora 9 Sulphur</p>
+								
+							</div>
+				
+					<div class="userMessenger">
+				<ul>
+											<li><a href="http://www.ubuntu-forum.de/index.php?form=PMNew&amp;userID=6265&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/pmEmptyS.png" alt="Nachricht senden" title="Nachricht senden"></a></li>
+										
+									</ul>
+			</div>
+				
+		
+	<a id="skipPoint161674"></a><!-- support for disabled surfers -->
+</div>					
+					<div class="messageContent">
+						<div class="messageContentInner color-2">
+							<div class="messageHeader">
+								<p class="messageCount">
+									<a href="http://www.ubuntu-forum.de/post/161674/gel%C3%B6st-java-4-sdl-jsdl-installation.html#post161674" title="Permalink zum 4. Beitrag" class="messageNumber">4</a>
+																	</p>
+								<div class="containerIcon">
+									<img id="postEdit161674" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/postM.png" alt="">
+								</div>
+								<div class="containerContent">
+									<p class="smallFont light">10.11.2007, 18:44</p>
+								</div>
+							</div>
+							
+							<h3 id="postTopic161674" class="messageTitle"><span></span></h3>
+							
+							<div class="messageBody">
+																<div id="postText161674">
+									Hi,<br>
+trage diese Zeilen am Ende von deiner deiner "/etc/bash.bashrc" ein:<br>
+<blockquote class="quoteBox container-4">
+	<div class="quoteHeader">
+		<h3><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/quoteS.png" alt="">
+					Zitat				</h3>
+	</div>
+	<div class="quoteBody">
+		JAVA_HOME="/der/Pfad/zum/javaJDK"<br>
+export JAVA_HOME	</div>
+</blockquote><br>
+<br>
+Dann log dich aus und schau obs geklappt hat per:<br>
+<div class="border codeBox">
+	<div>
+		<table>
+			<tbody><tr>
+				<td class="codeLineNumbers container-3">
+					<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/codeS.png" alt="">
+				</td>
+				<td class="codeLines container-4">
+					<h3>Quellcode</h3>
+				</td>
+			</tr>
+			<tr>
+				<td class="codeLineNumbers container-3">
+					<pre>1
+</pre>
+				</td>
+				<td class="codeLines container-4">
+					<pre>echo $JAVA_HOME</pre>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+</div><br>
+<br>
+Auszug von mir:<br>
+<blockquote class="quoteBox container-4">
+	<div class="quoteHeader">
+		<h3><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/quoteS.png" alt="">
+					Zitat				</h3>
+	</div>
+	<div class="quoteBody">
+		echo $JAVA_HOME<br>
+/opt/jdk1.6.0_02	</div>
+</blockquote><br>
+<br>
+<br>
+<br>
+mfg Milde								</div>
+							</div>
+							
+														
+															<div class="signature">
+									<a href="http://www.ubuntu-forum.de/index.php?form=search"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WU1192393219W47127a03a38c1-sufu.html" class="resizeImage" alt=""></a>   ___  <a href="http://www.ubuntu-forum.de/post/163724/gel%C3%B6ste-probleme.html#post163724"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WB1193693720W47265218d7436-geloest.html" class="resizeImage" alt=""></a>    ___<a href="http://wiki.ubuntu-forum.de/" class="externalURL"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WI1192393320W47127a6875e8d-wiki.html" class="resizeImage" alt=""></a>								</div>
+														
+														
+														
+							<div class="messageFooterRight">
+								<div class="smallButtons">
+									<ul id="postButtons161674">
+										<li class="extraButton"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#top" title="Zum Seitenanfang"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/upS.png" alt="Zum Seitenanfang"> <span class="hidden">Zum Seitenanfang</span></a></li><li class="options"><a href="javascript:void(0);" id="postQuote161674"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/messageQuoteOptionsS.png"> <span>Zitieren</span></a><div class="hidden" id="postQuote161674Menu"></div></li>
+																																																											</ul>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+				
+				
+																		
+		<script type="text/javascript">
+			//<![CDATA[
+				
+				quoteData.set('post-161683', {
+					objectID: 161683,
+					objectType: 'post',
+					quotes: 0				});
+				
+						//]]>
+		</script>
+		
+										
+					<div id="postRow161683" class="message threadStarterPost">
+				<div class="messageInner messageLeft dividers container-2">
+					<a id="post161683"></a>					
+					<div class="messageSidebar">
+	<p class="skipSidebar hidden"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#skipPoint161683" title="Benutzerinformationen überspringen">Benutzerinformationen überspringen</a></p><!-- support for disabled surfers -->
+			<div class="messageAuthor">
+			<p class="userName">
+															<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/offlineS.png" alt="" title="»HamsDa« ist offline">		
+												
+				<a href="http://www.ubuntu-forum.de/user/9107-hamsda/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »HamsDa« aufrufen">
+					<span>HamsDa</span>
+				</a>
+				
+							</p>
+
+												<p class="userTitle smallFont">User</p>
+													<p class="userRank"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/cool.png" alt=""></p>
+										
+					</div>
+		
+									<div class="userAvatar">
+					<a href="http://www.ubuntu-forum.de/user/9107-hamsda/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »HamsDa« aufrufen"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/avatar-1917.gif" alt="" style="width: 100px; height: 100px;"></a>
+				</div>
+							
+					<div class="userSymbols">
+				<ul>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/genderMaleS.png" alt="»HamsDa« ist männlich" title="»HamsDa« ist männlich"></li>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/threadStarterS.png" alt="»HamsDa« ist der Autor dieses Themas" title="»HamsDa« ist der Autor dieses Themas"></li>
+										
+									</ul>
+			</div>
+				
+					<div class="userCredits">
+									<p><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;types[]=post&amp;userID=9107&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Beiträge: 624</a></p>
+									<p>Registrierungsdatum: 30.12.2006</p>
+									<p>Derivat: Ubuntu</p>
+									<p>Architektur: 32-Bit PC</p>
+									<p>Desktop: GNOME 3.0</p>
+								
+							</div>
+				
+					<div class="userMessenger">
+				<ul>
+											<li><a href="http://www.ubuntu-forum.de/index.php?form=PMNew&amp;userID=9107&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/pmEmptyS.png" alt="Nachricht senden" title="Nachricht senden"></a></li>
+										
+									</ul>
+			</div>
+				
+		
+	<a id="skipPoint161683"></a><!-- support for disabled surfers -->
+</div>					
+					<div class="messageContent">
+						<div class="messageContentInner color-1">
+							<div class="messageHeader">
+								<p class="messageCount">
+									<a href="http://www.ubuntu-forum.de/post/161683/gel%C3%B6st-java-4-sdl-jsdl-installation.html#post161683" title="Permalink zum 5. Beitrag" class="messageNumber">5</a>
+																	</p>
+								<div class="containerIcon">
+									<img id="postEdit161683" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/postM.png" alt="">
+								</div>
+								<div class="containerContent">
+									<p class="smallFont light">10.11.2007, 19:30</p>
+								</div>
+							</div>
+							
+							<h3 id="postTopic161683" class="messageTitle"><span></span></h3>
+							
+							<div class="messageBody">
+																<div id="postText161683">
+									Danke für die Information.<br>
+Nun, mein Hauptproblem besteht leider noch immer: Welcher Pfad für die JAVA_HOME?<br>
+<br>
+Ich denke mal, der richtige Pfad ist irgendo unter /usr/lib/jvm/<br>
+Nur wo genau?								</div>
+							</div>
+							
+														
+															<div class="signature">
+Heimrechner Marke Eigenbau // Windows 7 Ultimate 64 Bit // 13.04 Raring
+Ringtail // Unity // Kernel 3.8.0-19-generic </div>
+														
+															<p class="editNote smallFont light">Dieser Beitrag wurde bereits 1 mal editiert, zuletzt von »HamsDa« (10.11.2007, 19:31)</p>
+														
+														
+							<div class="messageFooterRight">
+								<div class="smallButtons">
+									<ul id="postButtons161683">
+										<li class="extraButton"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#top" title="Zum Seitenanfang"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/upS.png" alt="Zum Seitenanfang"> <span class="hidden">Zum Seitenanfang</span></a></li><li class="options"><a href="javascript:void(0);" id="postQuote161683"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/messageQuoteOptionsS.png"> <span>Zitieren</span></a><div class="hidden" id="postQuote161683Menu"></div></li>
+																																																											</ul>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+				
+				
+																		
+		<script type="text/javascript">
+			//<![CDATA[
+				
+				quoteData.set('post-161694', {
+					objectID: 161694,
+					objectType: 'post',
+					quotes: 0				});
+				
+						//]]>
+		</script>
+		
+										
+					<div id="postRow161694" class="message">
+				<div class="messageInner messageLeft dividers container-1">
+					<a id="post161694"></a>					
+					<div class="messageSidebar">
+	<p class="skipSidebar hidden"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#skipPoint161694" title="Benutzerinformationen überspringen">Benutzerinformationen überspringen</a></p><!-- support for disabled surfers -->
+			<div class="messageAuthor">
+			<p class="userName">
+															<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/offlineS.png" alt="" title="»Milde« ist offline">		
+												
+				<a href="http://www.ubuntu-forum.de/user/6265-milde/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »Milde« aufrufen">
+					<span>Milde</span>
+				</a>
+				
+							</p>
+
+												<p class="userTitle smallFont">User</p>
+													<p class="userRank"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/cool.png" alt=""></p>
+										
+					</div>
+		
+									<div class="userAvatar">
+					<a href="http://www.ubuntu-forum.de/user/6265-milde/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »Milde« aufrufen"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/avatar-2634.jpg" alt="" style="width: 150px; height: 150px;"></a>
+				</div>
+							
+					<div class="userSymbols">
+				<ul>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/genderMaleS.png" alt="»Milde« ist männlich" title="»Milde« ist männlich"></li>
+										
+									</ul>
+			</div>
+				
+					<div class="userCredits">
+									<p><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;types[]=post&amp;userID=6265&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Beiträge: 545</a></p>
+									<p>Registrierungsdatum: 24.04.2006</p>
+									<p>Derivat: Ubuntu</p>
+									<p>Architektur: 32-Bit PC</p>
+									<p>Andere Betriebssysteme: Fedora 9 Sulphur</p>
+								
+							</div>
+				
+					<div class="userMessenger">
+				<ul>
+											<li><a href="http://www.ubuntu-forum.de/index.php?form=PMNew&amp;userID=6265&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/pmEmptyS.png" alt="Nachricht senden" title="Nachricht senden"></a></li>
+										
+									</ul>
+			</div>
+				
+		
+	<a id="skipPoint161694"></a><!-- support for disabled surfers -->
+</div>					
+					<div class="messageContent">
+						<div class="messageContentInner color-2">
+							<div class="messageHeader">
+								<p class="messageCount">
+									<a href="http://www.ubuntu-forum.de/post/161694/gel%C3%B6st-java-4-sdl-jsdl-installation.html#post161694" title="Permalink zum 6. Beitrag" class="messageNumber">6</a>
+																	</p>
+								<div class="containerIcon">
+									<img id="postEdit161694" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/postM.png" alt="">
+								</div>
+								<div class="containerContent">
+									<p class="smallFont light">10.11.2007, 20:37</p>
+								</div>
+							</div>
+							
+							<h3 id="postTopic161694" class="messageTitle"><span></span></h3>
+							
+							<div class="messageBody">
+																<div id="postText161694">
+									Hi,<br>
+gib doch mal ein:<br>
+<div class="border codeBox">
+	<div>
+		<table>
+			<tbody><tr>
+				<td class="codeLineNumbers container-3">
+					<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/codeS.png" alt="">
+				</td>
+				<td class="codeLines container-4">
+					<h3>Quellcode</h3>
+				</td>
+			</tr>
+			<tr>
+				<td class="codeLineNumbers container-3">
+					<pre>1
+</pre>
+				</td>
+				<td class="codeLines container-4">
+					<pre>whereis javac</pre>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+</div><br>
+Dann bekommst du ausgegeben, wo "javac" liegt. <br>
+Du ziehst /bin/javac ab und hast dann dein JDK Verzeichnis  <img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/smile.png" alt=":)"><br>
+<br>
+<br>
+mfg Milde								</div>
+							</div>
+							
+														
+															<div class="signature">
+									<a href="http://www.ubuntu-forum.de/index.php?form=search"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WU1192393219W47127a03a38c1-sufu.html" class="resizeImage" alt=""></a>   ___  <a href="http://www.ubuntu-forum.de/post/163724/gel%C3%B6ste-probleme.html#post163724"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WB1193693720W47265218d7436-geloest.html" class="resizeImage" alt=""></a>    ___<a href="http://wiki.ubuntu-forum.de/" class="externalURL"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WI1192393320W47127a6875e8d-wiki.html" class="resizeImage" alt=""></a>								</div>
+														
+														
+														
+							<div class="messageFooterRight">
+								<div class="smallButtons">
+									<ul id="postButtons161694">
+										<li class="extraButton"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#top" title="Zum Seitenanfang"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/upS.png" alt="Zum Seitenanfang"> <span class="hidden">Zum Seitenanfang</span></a></li><li class="options"><a href="javascript:void(0);" id="postQuote161694"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/messageQuoteOptionsS.png"> <span>Zitieren</span></a><div class="hidden" id="postQuote161694Menu"></div></li>
+																																																											</ul>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+				
+				
+																		
+		<script type="text/javascript">
+			//<![CDATA[
+				
+				quoteData.set('post-161831', {
+					objectID: 161831,
+					objectType: 'post',
+					quotes: 0				});
+				
+						//]]>
+		</script>
+		
+										
+					<div id="postRow161831" class="message threadStarterPost">
+				<div class="messageInner messageLeft dividers container-2">
+					<a id="post161831"></a>					
+					<div class="messageSidebar">
+	<p class="skipSidebar hidden"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#skipPoint161831" title="Benutzerinformationen überspringen">Benutzerinformationen überspringen</a></p><!-- support for disabled surfers -->
+			<div class="messageAuthor">
+			<p class="userName">
+															<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/offlineS.png" alt="" title="»HamsDa« ist offline">		
+												
+				<a href="http://www.ubuntu-forum.de/user/9107-hamsda/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »HamsDa« aufrufen">
+					<span>HamsDa</span>
+				</a>
+				
+							</p>
+
+												<p class="userTitle smallFont">User</p>
+													<p class="userRank"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/cool.png" alt=""></p>
+										
+					</div>
+		
+									<div class="userAvatar">
+					<a href="http://www.ubuntu-forum.de/user/9107-hamsda/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »HamsDa« aufrufen"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/avatar-1917.gif" alt="" style="width: 100px; height: 100px;"></a>
+				</div>
+							
+					<div class="userSymbols">
+				<ul>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/genderMaleS.png" alt="»HamsDa« ist männlich" title="»HamsDa« ist männlich"></li>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/threadStarterS.png" alt="»HamsDa« ist der Autor dieses Themas" title="»HamsDa« ist der Autor dieses Themas"></li>
+										
+									</ul>
+			</div>
+				
+					<div class="userCredits">
+									<p><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;types[]=post&amp;userID=9107&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Beiträge: 624</a></p>
+									<p>Registrierungsdatum: 30.12.2006</p>
+									<p>Derivat: Ubuntu</p>
+									<p>Architektur: 32-Bit PC</p>
+									<p>Desktop: GNOME 3.0</p>
+								
+							</div>
+				
+					<div class="userMessenger">
+				<ul>
+											<li><a href="http://www.ubuntu-forum.de/index.php?form=PMNew&amp;userID=9107&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/pmEmptyS.png" alt="Nachricht senden" title="Nachricht senden"></a></li>
+										
+									</ul>
+			</div>
+				
+		
+	<a id="skipPoint161831"></a><!-- support for disabled surfers -->
+</div>					
+					<div class="messageContent">
+						<div class="messageContentInner color-1">
+							<div class="messageHeader">
+								<p class="messageCount">
+									<a href="http://www.ubuntu-forum.de/post/161831/gel%C3%B6st-java-4-sdl-jsdl-installation.html#post161831" title="Permalink zum 7. Beitrag" class="messageNumber">7</a>
+																	</p>
+								<div class="containerIcon">
+									<img id="postEdit161831" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/postM.png" alt="">
+								</div>
+								<div class="containerContent">
+									<p class="smallFont light">11.11.2007, 14:30</p>
+								</div>
+							</div>
+							
+							<h3 id="postTopic161831" class="messageTitle"><span></span></h3>
+							
+							<div class="messageBody">
+																<div id="postText161831">
+									<div class="border codeBox">
+	<div>
+		<table>
+			<tbody><tr>
+				<td class="codeLineNumbers container-3">
+					<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/codeS.png" alt="">
+				</td>
+				<td class="codeLines container-4">
+					<h3>Quellcode</h3>
+				</td>
+			</tr>
+			<tr>
+				<td class="codeLineNumbers container-3">
+					<pre>1
+2
+</pre>
+				</td>
+				<td class="codeLines container-4">
+					<pre>christoph@<span class="highlight">ubuntu</span>:~/Desktop/<span class="highlight">sdljava</span>-0.9.1$ whereis javac
+javac: /usr/bin/javac /usr/share/man/man1/javac.1.gz</pre>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+</div>Das JDK-Verzeichnis kann doch nicht /usr sein, oder?<br>
+<br>
+[EDIT]:<br>
+Habe gerade mal das JDK neu installiert.<br>
+JAVA_HOME zeigt jez auch nichts (zumindest sagt mir das die Ausgabe) und das Kompilieren funktioniert.<br>
+Wtf? &gt;_&gt;								</div>
+							</div>
+							
+														
+															<div class="signature">
+Heimrechner Marke Eigenbau // Windows 7 Ultimate 64 Bit // 13.04 Raring
+Ringtail // Unity // Kernel 3.8.0-19-generic </div>
+														
+															<p class="editNote smallFont light">Dieser Beitrag wurde bereits 3 mal editiert, zuletzt von »HamsDa« (11.11.2007, 14:36)</p>
+														
+														
+							<div class="messageFooterRight">
+								<div class="smallButtons">
+									<ul id="postButtons161831">
+										<li class="extraButton"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#top" title="Zum Seitenanfang"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/upS.png" alt="Zum Seitenanfang"> <span class="hidden">Zum Seitenanfang</span></a></li><li class="options"><a href="javascript:void(0);" id="postQuote161831"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/messageQuoteOptionsS.png"> <span>Zitieren</span></a><div class="hidden" id="postQuote161831Menu"></div></li>
+																																																											</ul>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+				
+				
+																		
+		<script type="text/javascript">
+			//<![CDATA[
+				
+				quoteData.set('post-161853', {
+					objectID: 161853,
+					objectType: 'post',
+					quotes: 0				});
+				
+						//]]>
+		</script>
+		
+										
+					<div id="postRow161853" class="message">
+				<div class="messageInner messageLeft dividers container-1">
+					<a id="post161853"></a>					
+					<div class="messageSidebar">
+	<p class="skipSidebar hidden"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#skipPoint161853" title="Benutzerinformationen überspringen">Benutzerinformationen überspringen</a></p><!-- support for disabled surfers -->
+			<div class="messageAuthor">
+			<p class="userName">
+															<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/offlineS.png" alt="" title="»Milde« ist offline">		
+												
+				<a href="http://www.ubuntu-forum.de/user/6265-milde/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »Milde« aufrufen">
+					<span>Milde</span>
+				</a>
+				
+							</p>
+
+												<p class="userTitle smallFont">User</p>
+													<p class="userRank"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/cool.png" alt=""></p>
+										
+					</div>
+		
+									<div class="userAvatar">
+					<a href="http://www.ubuntu-forum.de/user/6265-milde/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »Milde« aufrufen"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/avatar-2634.jpg" alt="" style="width: 150px; height: 150px;"></a>
+				</div>
+							
+					<div class="userSymbols">
+				<ul>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/genderMaleS.png" alt="»Milde« ist männlich" title="»Milde« ist männlich"></li>
+										
+									</ul>
+			</div>
+				
+					<div class="userCredits">
+									<p><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;types[]=post&amp;userID=6265&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Beiträge: 545</a></p>
+									<p>Registrierungsdatum: 24.04.2006</p>
+									<p>Derivat: Ubuntu</p>
+									<p>Architektur: 32-Bit PC</p>
+									<p>Andere Betriebssysteme: Fedora 9 Sulphur</p>
+								
+							</div>
+				
+					<div class="userMessenger">
+				<ul>
+											<li><a href="http://www.ubuntu-forum.de/index.php?form=PMNew&amp;userID=6265&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/pmEmptyS.png" alt="Nachricht senden" title="Nachricht senden"></a></li>
+										
+									</ul>
+			</div>
+				
+		
+	<a id="skipPoint161853"></a><!-- support for disabled surfers -->
+</div>					
+					<div class="messageContent">
+						<div class="messageContentInner color-2">
+							<div class="messageHeader">
+								<p class="messageCount">
+									<a href="http://www.ubuntu-forum.de/post/161853/gel%C3%B6st-java-4-sdl-jsdl-installation.html#post161853" title="Permalink zum 8. Beitrag" class="messageNumber">8</a>
+																	</p>
+								<div class="containerIcon">
+									<img id="postEdit161853" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/postM.png" alt="">
+								</div>
+								<div class="containerContent">
+									<p class="smallFont light">11.11.2007, 15:51</p>
+								</div>
+							</div>
+							
+							<h3 id="postTopic161853" class="messageTitle"><span></span></h3>
+							
+							<div class="messageBody">
+																<div id="postText161853">
+									Hi,<br>
+<div class="border codeBox">
+	<div>
+		<table>
+			<tbody><tr>
+				<td class="codeLineNumbers container-3">
+					<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/codeS.png" alt="">
+				</td>
+				<td class="codeLines container-4">
+					<h3>Quellcode</h3>
+				</td>
+			</tr>
+			<tr>
+				<td class="codeLineNumbers container-3">
+					<pre>1
+</pre>
+				</td>
+				<td class="codeLines container-4">
+					<pre>/usr/bin/javac</pre>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+</div><br>
+Das ist ein Link, der wurde erstellt, um nicht in das Verzeichnis von javac gehen zu müssen und ./javac einzugeben.<br>
+Folge dem Link und du kommst zu javac. ( ls -al | grep javac )<br>
+Ist aber schon komisch, dass du die Verknüpfung von Javac hast, aber
+das Verzeichnis, von deinem JDK ( wo javac liegt ) nicht angezeigt wird
+<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/confused.png" alt="?("><br>
+<br>
+Wenn das kompilieren finktioniert, dann ist der Java-Kompiler auch vorhanden!<br>
+Wo hast du denn JDK (neu) reininstalliert?<br>
+Vllt. nochmal "whereis javac" ?<br>
+Dann nimmst du den Pfad zur JDK Version und schreibst ihn in die bashrc.<br>
+Danach ausloggen und "echo $JAVA_HOME".<br>
+<br>
+<br>
+mfg Milde<br>
+<br>
+P.S. du meinst, dein Vorhaben funktioniert, obwohl $JAVA_HOME nicht auf
+das Verzeichnis zeigt? Dann wurde es vllt. so gefunden. </div>
+							</div>
+							
+														
+															<div class="signature">
+									<a href="http://www.ubuntu-forum.de/index.php?form=search"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WU1192393219W47127a03a38c1-sufu.html" class="resizeImage" alt=""></a>   ___  <a href="http://www.ubuntu-forum.de/post/163724/gel%C3%B6ste-probleme.html#post163724"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WB1193693720W47265218d7436-geloest.html" class="resizeImage" alt=""></a>    ___<a href="http://wiki.ubuntu-forum.de/" class="externalURL"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WI1192393320W47127a6875e8d-wiki.html" class="resizeImage" alt=""></a>								</div>
+														
+														
+														
+							<div class="messageFooterRight">
+								<div class="smallButtons">
+									<ul id="postButtons161853">
+										<li class="extraButton"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#top" title="Zum Seitenanfang"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/upS.png" alt="Zum Seitenanfang"> <span class="hidden">Zum Seitenanfang</span></a></li><li class="options"><a href="javascript:void(0);" id="postQuote161853"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/messageQuoteOptionsS.png"> <span>Zitieren</span></a><div class="hidden" id="postQuote161853Menu"></div></li>
+																																																											</ul>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+				
+				
+																		
+		<script type="text/javascript">
+			//<![CDATA[
+				
+				quoteData.set('post-161882', {
+					objectID: 161882,
+					objectType: 'post',
+					quotes: 0				});
+				
+						//]]>
+		</script>
+		
+										
+					<div id="postRow161882" class="message threadStarterPost">
+				<div class="messageInner messageLeft dividers container-2">
+					<a id="post161882"></a>					
+					<div class="messageSidebar">
+	<p class="skipSidebar hidden"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#skipPoint161882" title="Benutzerinformationen überspringen">Benutzerinformationen überspringen</a></p><!-- support for disabled surfers -->
+			<div class="messageAuthor">
+			<p class="userName">
+															<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/offlineS.png" alt="" title="»HamsDa« ist offline">		
+												
+				<a href="http://www.ubuntu-forum.de/user/9107-hamsda/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »HamsDa« aufrufen">
+					<span>HamsDa</span>
+				</a>
+				
+							</p>
+
+												<p class="userTitle smallFont">User</p>
+													<p class="userRank"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/cool.png" alt=""></p>
+										
+					</div>
+		
+									<div class="userAvatar">
+					<a href="http://www.ubuntu-forum.de/user/9107-hamsda/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »HamsDa« aufrufen"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/avatar-1917.gif" alt="" style="width: 100px; height: 100px;"></a>
+				</div>
+							
+					<div class="userSymbols">
+				<ul>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/genderMaleS.png" alt="»HamsDa« ist männlich" title="»HamsDa« ist männlich"></li>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/threadStarterS.png" alt="»HamsDa« ist der Autor dieses Themas" title="»HamsDa« ist der Autor dieses Themas"></li>
+										
+									</ul>
+			</div>
+				
+					<div class="userCredits">
+									<p><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;types[]=post&amp;userID=9107&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Beiträge: 624</a></p>
+									<p>Registrierungsdatum: 30.12.2006</p>
+									<p>Derivat: Ubuntu</p>
+									<p>Architektur: 32-Bit PC</p>
+									<p>Desktop: GNOME 3.0</p>
+								
+							</div>
+				
+					<div class="userMessenger">
+				<ul>
+											<li><a href="http://www.ubuntu-forum.de/index.php?form=PMNew&amp;userID=9107&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/pmEmptyS.png" alt="Nachricht senden" title="Nachricht senden"></a></li>
+										
+									</ul>
+			</div>
+				
+		
+	<a id="skipPoint161882"></a><!-- support for disabled surfers -->
+</div>					
+					<div class="messageContent">
+						<div class="messageContentInner color-1">
+							<div class="messageHeader">
+								<p class="messageCount">
+									<a href="http://www.ubuntu-forum.de/post/161882/gel%C3%B6st-java-4-sdl-jsdl-installation.html#post161882" title="Permalink zum 9. Beitrag" class="messageNumber">9</a>
+																	</p>
+								<div class="containerIcon">
+									<img id="postEdit161882" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/postM.png" alt="">
+								</div>
+								<div class="containerContent">
+									<p class="smallFont light">11.11.2007, 17:50</p>
+								</div>
+							</div>
+							
+							<h3 id="postTopic161882" class="messageTitle"><span></span></h3>
+							
+							<div class="messageBody">
+																<div id="postText161882">
+									Ich habe das JDK weder per aptitude install sun-java6-jdk installiert.<br>
+<br>
+Nochmal whereis javac bringt wieder nur das Gleiche.<br>
+<div class="border codeBox">
+	<div>
+		<table>
+			<tbody><tr>
+				<td class="codeLineNumbers container-3">
+					<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/codeS.png" alt="">
+				</td>
+				<td class="codeLines container-4">
+					<h3>Quellcode</h3>
+				</td>
+			</tr>
+			<tr>
+				<td class="codeLineNumbers container-3">
+					<pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre>
+				</td>
+				<td class="codeLines container-4">
+					<pre>christoph@<span class="highlight">ubuntu</span>:/usr/bin$ locate javac
+/etc/alternatives/javac
+/etc/alternatives/javac.1.gz
+/home/christoph/Programme/NetBeans5.5.1/ide7/config/Modules/org-netbeans-modules-javacore.xml
+/home/christoph/Programme/NetBeans5.5.1/ide7/modules/locale/org-netbeans-modules-javacore_ja.jar
+/home/christoph/Programme/NetBeans5.5.1/ide7/modules/locale/org-netbeans-modules-javacore_pt_BR.jar
+/home/christoph/Programme/NetBeans5.5.1/ide7/modules/locale/org-netbeans-modules-javacore_zh_CN.jar
+/home/christoph/Programme/NetBeans5.5.1/ide7/modules/org-netbeans-modules-javacore.jar
+/home/christoph/Programme/NetBeans5.5.1/ide7/update_tracking/org-netbeans-modules-javacore.xml
+/media/disk/Backup/Windows/Desktop/LOGOComfort_V5/jre/bin/javacpl.exe
+/media/disk/Software/Programme/Siemens LOGOComfort V5/jre/bin/javacpl.exe
+/usr/bin/javac
+/usr/lib/epiphany-gecko/2.20/extensions/libjavaconsoleextension.la
+/usr/lib/epiphany-gecko/2.20/extensions/libjavaconsoleextension.so
+/usr/lib/jvm/java-6-sun-1.6.0.03/bin/javac
+/usr/lib/jvm/java-6-sun-1.6.0.03/man/ja/man1/javac.1.gz
+/usr/lib/jvm/java-6-sun-1.6.0.03/man/man1/javac.1.gz
+/usr/share/man/man1/javac.1.gz
+/var/lib/dpkg/alternatives/javac</pre>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+</div>Besonders achten sollte man hier auf den allerersten Eintrag: "/etc/alternatives/javac".<br>
+<br>
+Der Link "/usr/bin/javac" zeigt nämlich ebenfalls nach "/etc/alternatives/javac".<br>
+<br>
+NetBeans 5.5.1 jedoch findet das JDK bei der Installation in dem (im
+obigen Abschnitt ebenfalls vorkommenden) Verzeichnis
+"/usr/lib/jvm/java-6-sun-1.6.0.03". </div>
+							</div>
+							
+														
+															<div class="signature">
+Heimrechner Marke Eigenbau // Windows 7 Ultimate 64 Bit // 13.04 Raring
+Ringtail // Unity // Kernel 3.8.0-19-generic </div>
+														
+															<p class="editNote smallFont light">Dieser Beitrag wurde bereits 2 mal editiert, zuletzt von »HamsDa« (11.11.2007, 17:54)</p>
+														
+														
+							<div class="messageFooterRight">
+								<div class="smallButtons">
+									<ul id="postButtons161882">
+										<li class="extraButton"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#top" title="Zum Seitenanfang"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/upS.png" alt="Zum Seitenanfang"> <span class="hidden">Zum Seitenanfang</span></a></li><li class="options"><a href="javascript:void(0);" id="postQuote161882"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/messageQuoteOptionsS.png"> <span>Zitieren</span></a><div class="hidden" id="postQuote161882Menu"></div></li>
+																																																											</ul>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+				
+				
+																		
+		<script type="text/javascript">
+			//<![CDATA[
+				
+				quoteData.set('post-161900', {
+					objectID: 161900,
+					objectType: 'post',
+					quotes: 0				});
+				
+						//]]>
+		</script>
+		
+										
+					<div id="postRow161900" class="message">
+				<div class="messageInner messageLeft dividers container-1">
+					<a id="post161900"></a>					
+					<div class="messageSidebar">
+	<p class="skipSidebar hidden"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#skipPoint161900" title="Benutzerinformationen überspringen">Benutzerinformationen überspringen</a></p><!-- support for disabled surfers -->
+			<div class="messageAuthor">
+			<p class="userName">
+															<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/offlineS.png" alt="" title="»Milde« ist offline">		
+												
+				<a href="http://www.ubuntu-forum.de/user/6265-milde/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »Milde« aufrufen">
+					<span>Milde</span>
+				</a>
+				
+							</p>
+
+												<p class="userTitle smallFont">User</p>
+													<p class="userRank"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/cool.png" alt=""></p>
+										
+					</div>
+		
+									<div class="userAvatar">
+					<a href="http://www.ubuntu-forum.de/user/6265-milde/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »Milde« aufrufen"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/avatar-2634.jpg" alt="" style="width: 150px; height: 150px;"></a>
+				</div>
+							
+					<div class="userSymbols">
+				<ul>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/genderMaleS.png" alt="»Milde« ist männlich" title="»Milde« ist männlich"></li>
+										
+									</ul>
+			</div>
+				
+					<div class="userCredits">
+									<p><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;types[]=post&amp;userID=6265&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Beiträge: 545</a></p>
+									<p>Registrierungsdatum: 24.04.2006</p>
+									<p>Derivat: Ubuntu</p>
+									<p>Architektur: 32-Bit PC</p>
+									<p>Andere Betriebssysteme: Fedora 9 Sulphur</p>
+								
+							</div>
+				
+					<div class="userMessenger">
+				<ul>
+											<li><a href="http://www.ubuntu-forum.de/index.php?form=PMNew&amp;userID=6265&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/pmEmptyS.png" alt="Nachricht senden" title="Nachricht senden"></a></li>
+										
+									</ul>
+			</div>
+				
+		
+	<a id="skipPoint161900"></a><!-- support for disabled surfers -->
+</div>					
+					<div class="messageContent">
+						<div class="messageContentInner color-2">
+							<div class="messageHeader">
+								<p class="messageCount">
+									<a href="http://www.ubuntu-forum.de/post/161900/gel%C3%B6st-java-4-sdl-jsdl-installation.html#post161900" title="Permalink zum 10. Beitrag" class="messageNumber">10</a>
+																	</p>
+								<div class="containerIcon">
+									<img id="postEdit161900" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/postM.png" alt="">
+								</div>
+								<div class="containerContent">
+									<p class="smallFont light">11.11.2007, 18:47</p>
+								</div>
+							</div>
+							
+							<h3 id="postTopic161900" class="messageTitle"><span></span></h3>
+							
+							<div class="messageBody">
+																<div id="postText161900">
+									Hi,<br>
+javac befindet sich auch in<blockquote class="quoteBox container-4">
+	<div class="quoteHeader">
+		<h3><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/quoteS.png" alt="">
+					Zitat				</h3>
+	</div>
+	<div class="quoteBody">
+		/usr/lib/jvm/java-6-sun-1.6.0.03/bin/	</div>
+</blockquote><br>
+Das JAVA_HOME-Verzeichnis ist damit <blockquote class="quoteBox container-4">
+	<div class="quoteHeader">
+		<h3><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/quoteS.png" alt="">
+					Zitat				</h3>
+	</div>
+	<div class="quoteBody">
+		/usr/lib/jvm/java-6-sun-1.6.0.03	</div>
+</blockquote><br>
+<br>
+Das /usr/bin/javac nach /etc/alternatives/javac zeigt macht nichts, denn das wiederum sollte auf <blockquote class="quoteBox container-4">
+	<div class="quoteHeader">
+		<h3><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/quoteS.png" alt="">
+					Zitat				</h3>
+	</div>
+	<div class="quoteBody">
+		 /usr/lib/jvm/java-6-sun-1.6.0.03/bin/javac	</div>
+</blockquote> zeigen.<br>
+<br>
+<span style="text-decoration: underline;">Somit gilt:</span><br>
+<br>
+javac liegt int deinem "/usr/lib/jvm/java-6-sun-1.6.0.03/bin" Verzeichnis !<br>
+javac wird nach /etc/alternatives verlinkt<br>
+javac wird weiterverlinkt nach /usr/bin/javac<br>
+<br>
+<blockquote class="quoteBox container-4">
+	<div class="quoteHeader">
+		<h3><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/quoteS.png" alt="">
+					Zitat				</h3>
+	</div>
+	<div class="quoteBody">
+The /etc/alternatives defines default applications for the traditional
+Unix/Linux system - such as, the default application to handle irc, to
+browse the web etc. </div>
+</blockquote><br>
+<br>
+So, was heißt das?<br>
+Am besten du schaust dir dazu die Beispiele auf diese Seite an ( ist in engl. ) <a href="http://www.ubuntu-forum.de/index.php?page=ExternalLink&amp;url=http%3A%2F%2Fwww.debian-administration.org%2Farticles%2F91" class="externalURL">&gt;klick&lt;</a><br>
+<br>
+Wenn du Java Versionen installiert hast, kannst du per /etc/alternatives festlegen, welche javac Version verwendet werden soll.<br>
+Genauso mit dem Beispiel von den Editoren auf der Seite die ich dir verlinkt habe.<br>
+<br>
+mfg Milde<br>
+<br>
+P.S. da ich mein javac nicht über /etc/alternatives laufen hab, hier mal ein Bild von meinem java:<br>
+<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WY1194803805W4737425d071d0-Java.html" class="resizeImage" alt="">								</div>
+							</div>
+							
+														
+															<div class="signature">
+									<a href="http://www.ubuntu-forum.de/index.php?form=search"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WU1192393219W47127a03a38c1-sufu.html" class="resizeImage" alt=""></a>   ___  <a href="http://www.ubuntu-forum.de/post/163724/gel%C3%B6ste-probleme.html#post163724"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WB1193693720W47265218d7436-geloest.html" class="resizeImage" alt=""></a>    ___<a href="http://wiki.ubuntu-forum.de/" class="externalURL"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/WI1192393320W47127a6875e8d-wiki.html" class="resizeImage" alt=""></a>								</div>
+														
+														
+														
+							<div class="messageFooterRight">
+								<div class="smallButtons">
+									<ul id="postButtons161900">
+										<li class="extraButton"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#top" title="Zum Seitenanfang"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/upS.png" alt="Zum Seitenanfang"> <span class="hidden">Zum Seitenanfang</span></a></li><li class="options"><a href="javascript:void(0);" id="postQuote161900"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/messageQuoteOptionsS.png"> <span>Zitieren</span></a><div class="hidden" id="postQuote161900Menu"></div></li>
+																																																											</ul>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+				
+				
+																		
+		<script type="text/javascript">
+			//<![CDATA[
+				
+				quoteData.set('post-161976', {
+					objectID: 161976,
+					objectType: 'post',
+					quotes: 0				});
+				
+						//]]>
+		</script>
+		
+										
+					<div id="postRow161976" class="message threadStarterPost">
+				<div class="messageInner messageLeft dividers container-2">
+					<a id="post161976"></a>					
+					<div class="messageSidebar">
+	<p class="skipSidebar hidden"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#skipPoint161976" title="Benutzerinformationen überspringen">Benutzerinformationen überspringen</a></p><!-- support for disabled surfers -->
+			<div class="messageAuthor">
+			<p class="userName">
+															<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/offlineS.png" alt="" title="»HamsDa« ist offline">		
+												
+				<a href="http://www.ubuntu-forum.de/user/9107-hamsda/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »HamsDa« aufrufen">
+					<span>HamsDa</span>
+				</a>
+				
+							</p>
+
+												<p class="userTitle smallFont">User</p>
+													<p class="userRank"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/cool.png" alt=""></p>
+										
+					</div>
+		
+									<div class="userAvatar">
+					<a href="http://www.ubuntu-forum.de/user/9107-hamsda/?s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Benutzerprofil von »HamsDa« aufrufen"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/avatar-1917.gif" alt="" style="width: 100px; height: 100px;"></a>
+				</div>
+							
+					<div class="userSymbols">
+				<ul>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/genderMaleS.png" alt="»HamsDa« ist männlich" title="»HamsDa« ist männlich"></li>
+											<li><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/threadStarterS.png" alt="»HamsDa« ist der Autor dieses Themas" title="»HamsDa« ist der Autor dieses Themas"></li>
+										
+									</ul>
+			</div>
+				
+					<div class="userCredits">
+									<p><a href="http://www.ubuntu-forum.de/index.php?form=Search&amp;types[]=post&amp;userID=9107&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80">Beiträge: 624</a></p>
+									<p>Registrierungsdatum: 30.12.2006</p>
+									<p>Derivat: Ubuntu</p>
+									<p>Architektur: 32-Bit PC</p>
+									<p>Desktop: GNOME 3.0</p>
+								
+							</div>
+				
+					<div class="userMessenger">
+				<ul>
+											<li><a href="http://www.ubuntu-forum.de/index.php?form=PMNew&amp;userID=9107&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/pmEmptyS.png" alt="Nachricht senden" title="Nachricht senden"></a></li>
+										
+									</ul>
+			</div>
+				
+		
+	<a id="skipPoint161976"></a><!-- support for disabled surfers -->
+</div>					
+					<div class="messageContent">
+						<div class="messageContentInner color-1">
+							<div class="messageHeader">
+								<p class="messageCount">
+									<a href="http://www.ubuntu-forum.de/post/161976/gel%C3%B6st-java-4-sdl-jsdl-installation.html#post161976" title="Permalink zum 11. Beitrag" class="messageNumber">11</a>
+																	</p>
+								<div class="containerIcon">
+									<img id="postEdit161976" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/postM.png" alt="">
+								</div>
+								<div class="containerContent">
+									<p class="smallFont light">11.11.2007, 23:11</p>
+								</div>
+							</div>
+							
+							<h3 id="postTopic161976" class="messageTitle"><span></span></h3>
+							
+							<div class="messageBody">
+																<div id="postText161976">
+									Danke vielmals =)<br>
+Das Problem ist [GELÖST], mein Wissenslücke geschlossen und alle sind glücklich <img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/squint.png" alt="^^">								</div>
+							</div>
+							
+														
+															<div class="signature">
+Heimrechner Marke Eigenbau // Windows 7 Ultimate 64 Bit // 13.04 Raring
+Ringtail // Unity // Kernel 3.8.0-19-generic </div>
+														
+															<p class="editNote smallFont light">Dieser Beitrag wurde bereits 1 mal editiert, zuletzt von »HamsDa« (11.11.2007, 23:11)</p>
+														
+														
+							<div class="messageFooterRight">
+								<div class="smallButtons">
+									<ul id="postButtons161976">
+										<li class="extraButton"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#top" title="Zum Seitenanfang"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/upS.png" alt="Zum Seitenanfang"> <span class="hidden">Zum Seitenanfang</span></a></li><li class="options"><a href="javascript:void(0);" id="postQuote161976"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/messageQuoteOptionsS.png"> <span>Zitieren</span></a><div class="hidden" id="postQuote161976Menu"></div></li>
+																																																											</ul>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+				
+				
+									
+		
+	<div class="contentFooter">
+				
+		<div id="threadEditMarked" class="optionButtons"></div>
+		<div id="postEditMarked" class="optionButtons"></div>
+		
+		<div class="largeButtons">
+					</div>
+	</div>
+	
+		
+		
+	<div class="pageOptions">
+		
+		
+				
+			</div>
+	<form method="get" action="index.php" class="quickJump">
+	<div>
+		<input name="page" value="Board" type="hidden">
+		<select name="boardID" onchange="if (this.options[this.selectedIndex].value != 0) this.form.submit()">
+			<option value="0">Bitte wählen:</option>
+			<option value="0">-----------------------</option>
+			<option label="News" value="54">News</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Ubuntu News" value="5">&nbsp;&nbsp;&nbsp;&nbsp; Ubuntu News</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Linux und OpenSource News" value="172">&nbsp;&nbsp;&nbsp;&nbsp; Linux und OpenSource News</option>
+<option label="Sammelsurium" value="219">Sammelsurium</option>
+<option label="Betriebssystem(e)" value="254">Betriebssystem(e)</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Ubuntu" value="4">&nbsp;&nbsp;&nbsp;&nbsp; Ubuntu</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Installation und Upgrades" value="257">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Installation und Upgrades</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vor der Installation" value="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vor der Installation</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Probleme bei der Ubuntu-Installation" value="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Probleme bei der Ubuntu-Installation</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upgrade-Probleme" value="218">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upgrade-Probleme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Systemadministration" value="90">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Systemadministration</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Programme installieren und entfernen" value="230">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Programme installieren und entfernen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ubuntu-Paketverwaltung" value="231">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ubuntu-Paketverwaltung</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manuelles Installieren von Programmen" value="232">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Manuelles Installieren von Programmen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Desktop- und Arbeitsumgebungen" value="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Desktop- und Arbeitsumgebungen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unity-Forum" value="247">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unity-Forum</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GNOME-Forum" value="43">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GNOME-Forum</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; KDE-Forum" value="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; KDE-Forum</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Xfce-Forum" value="53">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Xfce-Forum</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Compiz" value="92">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Compiz</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Andere Fenstermanager und Arbeitsumgebungen" value="89">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Andere Fenstermanager und Arbeitsumgebungen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X-Server" value="91">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X-Server</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Partitionen und Dateisysteme" value="223">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Partitionen und Dateisysteme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Netzwerk-Dateisysteme" value="224">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Netzwerk-Dateisysteme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Verschlüsselte Systeme" value="225">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Verschlüsselte Systeme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CUPS" value="93">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CUPS</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rechte- und Benutzerverwaltung" value="144">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rechte- und Benutzerverwaltung</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kernel-Angelegenheiten" value="14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kernel-Angelegenheiten</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Systemprogramme und Administrationsprobleme" value="204">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Systemprogramme und Administrationsprobleme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sicherheit und Datenschutz" value="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sicherheit und Datenschutz</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Virenschutz" value="82">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Virenschutz</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rootkits und Spyware" value="83">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rootkits und Spyware</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kryptografie und verschlüsselte Dateisysteme" value="84">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kryptografie und verschlüsselte Dateisysteme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Fragen zur Sicherheit" value="214">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Fragen zur Sicherheit</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Netzwerk: Überwachung und Sicherheit" value="260">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Netzwerk: Überwachung und Sicherheit</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu" value="145">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Andere Betriebssysteme" value="256">&nbsp;&nbsp;&nbsp;&nbsp; Andere Betriebssysteme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Bootmanager" value="202">&nbsp;&nbsp;&nbsp;&nbsp; Bootmanager</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bitte lesen: Welche Informationen sollte ich liefern?" value="236">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bitte lesen: Welche Informationen sollte ich liefern?</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Virtuelle Maschinen, Wine, Emulatoren und Simulatoren" value="100">&nbsp;&nbsp;&nbsp;&nbsp; Virtuelle Maschinen, Wine, Emulatoren und Simulatoren</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VirtualBox" value="118">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VirtualBox</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VMWare" value="102">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VMWare</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Andere Virtualisierungslösungen" value="207">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Andere Virtualisierungslösungen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wine und Crossover" value="101">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wine und Crossover</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Emulatoren und Simulatoren" value="137">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Emulatoren und Simulatoren</option>
+<option label="Hardware" value="17">Hardware</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Netzwerk+Internet - Einrichtung und Konfiguration" value="186">&nbsp;&nbsp;&nbsp;&nbsp; Netzwerk+Internet - Einrichtung und Konfiguration</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LAN" value="188">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LAN</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bitte lesen: Welche Informationen sollte ich liefern?" value="233">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bitte lesen: Welche Informationen sollte ich liefern?</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WLAN" value="189">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WLAN</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bitte lesen: Welche Informationen sollte ich liefern?" value="235">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bitte lesen: Welche Informationen sollte ich liefern?</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Internet stationär" value="190">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Internet stationär</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Internet mobil" value="191">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Internet mobil</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige technische Themen" value="192">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige technische Themen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Interne Laufwerke" value="122">&nbsp;&nbsp;&nbsp;&nbsp; Interne Laufwerke</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Externe Laufwerke und USB Sticks" value="77">&nbsp;&nbsp;&nbsp;&nbsp; Externe Laufwerke und USB Sticks</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Eingabegeräte" value="113">&nbsp;&nbsp;&nbsp;&nbsp; Eingabegeräte</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Sound" value="182">&nbsp;&nbsp;&nbsp;&nbsp; Sound</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bitte lesen: Welche Informationen sollte ich liefern?" value="237">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bitte lesen: Welche Informationen sollte ich liefern?</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Grafikkarten" value="220">&nbsp;&nbsp;&nbsp;&nbsp; Grafikkarten</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NVIDIA" value="74">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NVIDIA</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ATI (AMD)" value="119">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ATI (AMD)</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEL" value="221">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INTEL</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Andere Hersteller" value="120">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Andere Hersteller</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; TV-Karten" value="121">&nbsp;&nbsp;&nbsp;&nbsp; TV-Karten</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Drucker" value="75">&nbsp;&nbsp;&nbsp;&nbsp; Drucker</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Netzwerkdrucker" value="110">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Netzwerkdrucker</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CUPS" value="201">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CUPS</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Scanner" value="114">&nbsp;&nbsp;&nbsp;&nbsp; Scanner</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Kameras" value="251">&nbsp;&nbsp;&nbsp;&nbsp; Kameras</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; MP3-Player" value="79">&nbsp;&nbsp;&nbsp;&nbsp; MP3-Player</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Hardware" value="80">&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Hardware</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Notebooks &amp; PDAs" value="19">&nbsp;&nbsp;&nbsp;&nbsp; Notebooks &amp; PDAs</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Netbooks" value="183">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Netbooks</option>
+<option label="Software" value="255">Software</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Netzwerk+Internet - Anwendungen" value="187">&nbsp;&nbsp;&nbsp;&nbsp; Netzwerk+Internet - Anwendungen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kommunikation" value="193">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kommunikation</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Browser" value="194">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Browser</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Server, Fernzugriff und verteilte Dateisysteme" value="195">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Server, Fernzugriff und verteilte Dateisysteme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Überwachung + Sicherheit" value="196">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Überwachung + Sicherheit</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Netzwerkanwendungen" value="197">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Netzwerkanwendungen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Multimedia" value="16">&nbsp;&nbsp;&nbsp;&nbsp; Multimedia</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Multimedia Player" value="86">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Multimedia Player</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Videobearbeitung" value="87">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Videobearbeitung</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Audiobearbeitung" value="88">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Audiobearbeitung</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige multimediale Anwendungen und Probleme" value="212">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige multimediale Anwendungen und Probleme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Grafikprogramme" value="95">&nbsp;&nbsp;&nbsp;&nbsp; Grafikprogramme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Grafikbearbeitung" value="96">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Grafikbearbeitung</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bilder-Verwaltung" value="98">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bilder-Verwaltung</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Grafikprogramme" value="211">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Grafikprogramme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Spiele" value="39">&nbsp;&nbsp;&nbsp;&nbsp; Spiele</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Spiele für Linux" value="239">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Spiele für Linux</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Spiele für andere Betriebssysteme" value="240">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Spiele für andere Betriebssysteme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Office-Anwendungen" value="11">&nbsp;&nbsp;&nbsp;&nbsp; Office-Anwendungen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Büroprogramme" value="208">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Büroprogramme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Homebanking" value="72">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Homebanking</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Büroanwendungen" value="209">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Büroanwendungen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Backup, Restore und Recovery" value="248">&nbsp;&nbsp;&nbsp;&nbsp; Backup, Restore und Recovery</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Terminal" value="13" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp; Terminal</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Softwaresammelsurium" value="10">&nbsp;&nbsp;&nbsp;&nbsp; Softwaresammelsurium</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Software-Vorstellungen" value="177">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Software-Vorstellungen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Softwareentwicklung" value="216">&nbsp;&nbsp;&nbsp;&nbsp; Softwareentwicklung</option>
+<option label="Weitere Themen" value="9">Weitere Themen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Probleme" value="20">&nbsp;&nbsp;&nbsp;&nbsp; Sonstige Probleme</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Projekte" value="45">&nbsp;&nbsp;&nbsp;&nbsp; Projekte</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Hardware-Beratung" value="184">&nbsp;&nbsp;&nbsp;&nbsp; Hardware-Beratung</option>
+<option label="Regionale Usertreffen" value="124">Regionale Usertreffen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Norddeutschland" value="148">&nbsp;&nbsp;&nbsp;&nbsp; Norddeutschland</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Schleswig-Holstein" value="156">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Schleswig-Holstein</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mecklenburg-Vorpommern" value="157">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mecklenburg-Vorpommern</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Niedersachsen" value="158">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Niedersachsen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hamburg" value="159">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hamburg</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bremen" value="160">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bremen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Westdeutschland" value="149">&nbsp;&nbsp;&nbsp;&nbsp; Westdeutschland</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nordrhein-Westfalen" value="161">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nordrhein-Westfalen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hessen" value="162">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hessen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rheinland-Pfalz" value="163">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rheinland-Pfalz</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Saarland" value="164">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Saarland</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Ostdeutschland" value="147">&nbsp;&nbsp;&nbsp;&nbsp; Ostdeutschland</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Berlin" value="165">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Berlin</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Brandenburg" value="166">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Brandenburg</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sachsen-Anhalt" value="167">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sachsen-Anhalt</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sachsen" value="168">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sachsen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thüringen" value="169">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thüringen</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Süddeutschland" value="150">&nbsp;&nbsp;&nbsp;&nbsp; Süddeutschland</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bayern" value="170">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bayern</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Baden-Württemberg" value="171">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Baden-Württemberg</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Österreich" value="135">&nbsp;&nbsp;&nbsp;&nbsp; Österreich</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Schweiz" value="136">&nbsp;&nbsp;&nbsp;&nbsp; Schweiz</option>
+<option label="Archiv" value="198">Archiv</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Unstable Archiv" value="35">&nbsp;&nbsp;&nbsp;&nbsp; Unstable Archiv</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ubuntu 14.04 - Trusty Tahr" value="246">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ubuntu 14.04 - Trusty Tahr</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ubuntu 13.10 - Saucy Salamander" value="252">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ubuntu 13.10 - Saucy Salamander</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ubuntu 13.04 - Raring Ringtail" value="253">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ubuntu 13.04 - Raring Ringtail</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Quantal Quetzal" value="245">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Quantal Quetzal</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Precise Pangolin" value="244">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Precise Pangolin</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Oneiric Ocelot" value="243">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Oneiric Ocelot</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Natty Narwhal" value="228">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Natty Narwhal</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Maverick Meerkat" value="227">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Maverick Meerkat</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Lucid Lynx" value="222">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Lucid Lynx</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Karmic Koala" value="217">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Karmic Koala</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Jaunty Jackalope" value="181">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Jaunty Jackalope</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Intrepid Ibex" value="173">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Intrepid Ibex</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Hardy Heron" value="123">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unstable Ubuntu - Hardy Heron</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ältere Beiträge" value="179">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ältere Beiträge</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Daemonen&amp;Magier - Archiv" value="25">&nbsp;&nbsp;&nbsp;&nbsp; Daemonen&amp;Magier - Archiv</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Spiele-Archiv" value="238">&nbsp;&nbsp;&nbsp;&nbsp; Spiele-Archiv</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Netzwerk- und Internet-Archiv" value="22">&nbsp;&nbsp;&nbsp;&nbsp; Netzwerk- und Internet-Archiv</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Hardware-Archiv" value="199">&nbsp;&nbsp;&nbsp;&nbsp; Hardware-Archiv</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Windowmanager-Archiv" value="203">&nbsp;&nbsp;&nbsp;&nbsp; Windowmanager-Archiv</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Office-Archiv" value="210">&nbsp;&nbsp;&nbsp;&nbsp; Office-Archiv</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Multimedia-Archiv" value="213">&nbsp;&nbsp;&nbsp;&nbsp; Multimedia-Archiv</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Anfängerprobleme-Archiv" value="38">&nbsp;&nbsp;&nbsp;&nbsp; Anfängerprobleme-Archiv</option>
+<option label="&nbsp;&nbsp;&nbsp;&nbsp; Paketverwaltung - Archiv" value="143">&nbsp;&nbsp;&nbsp;&nbsp; Paketverwaltung - Archiv</option>
+		</select>
+		
+		<input name="s" value="bc29f4a0cf0a51966d0906089b3b67207991cd80" type="hidden">		<input class="inputImage" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/submitS.png" alt="Absenden" type="image">
+	</div>
+</form></div>
+
+</div>
+<div id="footerContainer">
+	<div id="footer">
+
+
+
+
+&nbsp;
+
+<table style="border: 1px dashed rgb(168, 144, 88);" valign="middle" align="center" border="0" cellpadding="0" cellspacing="4">
+<tbody><tr>
+<td align="center">Sponsorenwerbung:</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.linux-onlineshop.de/Linux-Hardware.geek" target="_self">
+<img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/tuxedo-computers-linux.png" title="Linux Computer PCs Notebooks Laptops" alt="Tuxedo Computers" align="center" border="0"></a>
+</td>
+</tr>
+<tr>
+<td style="background-color: rgb(255, 255, 255);" class="boardTitle" cellspacing="4" align="center"><a href="http://www.linux-onlineshop.de/Linux-Hardware.geek" target="_self">
+Hardware, Computer, PCs, Notebooks &amp; Laptops mit Linux</a></td>
+</tr>
+</tbody></table>
+
+&nbsp;
+
+
+
+			<div id="footerMenu" class="footerMenu">
+		<div class="footerMenuInner"><ul><li id="mainMenuItem1" class="first"><a href="http://www.ubuntu-forum.de/index.php?page=Help&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Hilfe"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/helpS.png" alt=""> <span>Hilfe</span></a></li><li id="mainMenuItem4"><a href="http://www.ubuntu-forum.de/index.php?page=LegalNotice&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Impressum"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/legalNoticeS.png" alt=""> <span>Impressum</span></a></li><li id="mainMenuItem5" class="last"><a href="http://www.ubuntu-forum.de/index.php?page=Rules&amp;s=bc29f4a0cf0a51966d0906089b3b67207991cd80" title="Nutzungsbestimmungen"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/termsOfUseS.png" alt=""> <span>Nutzungsbestimmungen</span></a></li></ul>
+		</div>
+	</div>
+		<div id="footerOptions" class="footerOptions">
+			<div class="footerOptionsInner">
+				<ul>
+										
+																<li id="date" class="date last" title="05.02.2015, 16:23 UTC+1"><em><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/dateS.png" alt=""> <span>05.02.2015, 16:23</span></em></li>
+										<li id="toTopLink" class="last extraButton"><a href="http://www.ubuntu-forum.de/artikel/27316/gel%C3%B6st-java-4-sdl-jsdl-installation.html#top" title="Zum Seitenanfang"><img src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/upS.png" alt="Zum Seitenanfang"> <span class="hidden">Zum Seitenanfang</span></a></li>
+				</ul>
+			</div>
+		</div>
+
+
+
+
+		<p class="copyright"><a href="http://www.ubuntu-forum.de/index.php?page=ExternalLink&amp;url=http%3A%2F%2Fwww.woltlab.com%2Fde%2F">Forensoftware: <strong>Burning Board®</strong>, entwickelt von <strong>WoltLab® GmbH</strong></a><br>
+
+<a href="http://www.ubuntu-forum.de/individuelle-notebooks-laptops.html">Individuelle Notebooks Laptops</a> - <a href="http://www.ubuntu-forum.de/individuelle-computer-pcs.html">Individuelle Computer PCs</a> - <a href="http://www.linux-onlineshop.de/" target="_blank">Linux Computer</a><br><a href="http://www.modernboard.de/" target="_blank">Computer Forum</a> - <a href="http://www.ubuntu-forum.de/lastminute.html" target="_blank">Lastminute</a>&nbsp;-&nbsp;<a href="http://www.ubuntu-forum.de/ubuntu-linux.html" target="_blank">Ubuntu Linux</a>&nbsp;-&nbsp;<a href="http://www.ubuntu-forum.de/abmahnung.html" target="_blank">Abmahnung</a>&nbsp;-&nbsp;<a href="http://www.ubuntu-forum.de/linux_brillen.html" target="_blank">Linux Brillen</a>&nbsp;<br><a href="http://www.ubuntu-forum.de/branchenverzeichnis/" target="_blank">Branchenverzeichnis</a>&nbsp;-&nbsp;<a href="http://www.nerdshirt.de/" target="_blank">Geek und Nerd Shirt Shop</a>&nbsp;-&nbsp;<a href="http://www.ubuntu-forum.de/t-shirts.html" target="_blank">T-Shirts</a>&nbsp;-&nbsp;<a href="http://www.ubuntu-forum.de/mit-adch-netgear-wlan-router-sichern.html" target="_blank">Netgear WLAN Router</a>&nbsp;<br><a href="http://www.ubuntu-forum.de/wasserbetten_whirlpools.html" target="_blank">Wasserbetten &amp; Whirlpools</a>&nbsp;-&nbsp;<a href="http://www.ubuntu-forum.de/linux_paintball_markierer.html" target="_blank">Linux Paintball Markierer</a>&nbsp; - <a href="http://www.maincomputer.de/beamerverleih_notebookverleih_beamer_notebook_leihen_bayreuth.html" target="_blank">Beamer Notebook Verleih Bayreuth</a><br>
+
+
+               </p>
+	</div>
+</div>
+	<div class="border loginPopup hidden" id="quickLoginBox">
+		<form method="post" action="index.php?form=UserLogin" class="container-1">
+			<div>
+				<input tabindex="1" class="inputText" id="quickLoginUsername" name="loginUsername" value="Benutzername" title="Benutzername" type="text">
+				<input tabindex="2" class="inputText" id="quickLoginPassword" name="loginPassword" value="" title="Kennwort" type="password">
+				<input name="url" value="/index.php?page=Thread&amp;threadID=27316" type="hidden">				<input name="s" value="bc29f4a0cf0a51966d0906089b3b67207991cd80" type="hidden">				<input tabindex="4" class="inputImage" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/submitS.png" alt="Absenden" type="image">
+			</div>
+			<p><label><input tabindex="3" id="useCookies" name="useCookies" value="1" type="checkbox"> Dauerhaft angemeldet bleiben?</label></p>
+		</form>
+	</div>
+<div style="display: none;" class="imageViewerBackground"><p class="imageViewerCaption"></p></div><div class="imageViewerMenu" style="left: 418px; display: none;"><img title="Vorheriges Bild" style="margin: 0pt 10px; cursor: pointer;" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/previousM.png" id="previousImage"><img title="Diashow starten (Bildwechsel alle 5 Sekunden)" style="margin: 0pt 10px; cursor: pointer;" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/playM.png" id="playImage"><img title="Nächstes Bild" style="margin: 0pt 10px; cursor: pointer;" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/nextM.png" id="nextImage"><img title="Nur dieses Bild anzeigen (beendet die Bildbetrachtung)" style="margin: 0pt 10px; cursor: pointer;" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/enlargeM.png" id="enlargeButton"><img title="Schließen" style="margin: 0pt 10px; cursor: pointer;" src="gel%C3%B6st-java-4-sdl-jsdl-installation_elemei/closeM.png" id="closeImageViewer"></div></body></html>

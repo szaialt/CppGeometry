@@ -1,0 +1,85 @@
+#include "polygon.h"
+
+using namespace std;
+
+Polygon::Polygon(int n, int alpha, int degrees, point p, color col){
+  this->n = n;
+  this->alpha = alpha;
+  this->degrees = degrees;
+  this->center = p;
+  this->col = col;
+
+}
+
+vector<point> Polygon::polygon(int t, int dx, int dy){
+  //A vectorban a sokszög csúcsait adja meg
+  int r = t;
+  double degrees_to_rads = 2 * M_PI / degrees ;
+  int delta = degrees/n;
+  int phi = alpha;
+  vector<point> points = vector<point>();
+  for (int i = 0; i < n; i++){
+    int x = center.x + r * cos(degrees_to_rads * phi) + dx;
+    int y = center.y + r * sin(degrees_to_rads * phi) + dy;
+    point p;
+    p.x = x;
+    p.y = y;
+    points.push_back(p);
+    phi = phi + delta;
+  }
+  return points;
+} 
+
+void Polygon::draw(SDL_Surface *screen, int t, int d){
+ 
+  vector<point> points = polygon(d);
+
+  for (int i = 0; i < n; i++){
+    filledCircleRGBA(screen, points.at(i).x, points.at(i).y, t, col.red, col.green, col.blue, col.alpha);
+   }
+  
+  /* eddig elvegzett rajzolasok a kepernyore */
+  SDL_Flip(screen);
+}
+
+Polygon Polygon::rotate(int u, int v, int delta){
+  int n_ = this->n;
+  int alpha_ = this->alpha + delta;
+  int degrees_ = this->degrees;
+  point center_;
+  int x = this->center.x;
+  int y = this->center.y;
+  double degrees_to_rads = 2 * M_PI / degrees ;
+  int x_=((x-u)*cos(degrees_to_rads * delta)+(y-v)*sin(degrees_to_rads * delta))+u;
+  int y_=((x-u)*sin(degrees_to_rads * delta)-(y-v)*cos(degrees_to_rads * delta))+v; 
+  center_.x = x_;
+  center_.y = y_;
+  color col_ = this->col;
+  Polygon pol = Polygon(n_, alpha_, degrees_, center_, col_);
+  return pol;
+}
+
+Polygon Polygon::mirror(int width){
+  int wh = width/2;
+  int n_ = this->n;
+  int alpha_ = this->alpha;
+  int degrees_ = this->degrees;
+  point center_;
+  int x = this->center.x;
+  int y = this->center.y;
+  int x_ = width - x;
+  int y_ = y;
+  center_.x = x_;
+  center_.y = y_;
+  color col_ = this->col;
+  Polygon pol = Polygon(n_, alpha_, degrees_, center_, col_);
+  return pol;  
+}
+
+color Polygon::getColor(){
+  return this->col;
+}
+
+void Polygon::setColor(color col){
+  this->col = col;
+}

@@ -1,0 +1,1 @@
+/**/twttr.receiveCount({"count":0,"url":"http:\/\/lazyfoo.net\/tutorials\/SDL\/46_multithreading\/index.php\/"});

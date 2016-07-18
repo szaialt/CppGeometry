@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index,nofollow">
+
+<title>SDL_SetTextInputRect - SDL Wiki'</title>
+<link rel="Alternate" title="Wiki Page Content" href="#MainWikiPageContent">
+
+<script type="text/javascript" src="SDL_SetTextInputRect_elemei/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Keresés";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="SDL_SetTextInputRect_elemei/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="SDL_SetTextInputRect_elemei/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="SDL_SetTextInputRect_elemei/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="SDL_SetTextInputRect_elemei/projection.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="SDL_SetTextInputRect_elemei/pygments.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static195/fixedleft/css/msie.css">
+<![endif]-->
+
+
+<link rel="alternate" title="SDL Wiki: SDL_SetTextInputRect" href="http://wiki.libsdl.org/SDL_SetTextInputRect?diffs=1&amp;show_att=1&amp;action=rss_rc&amp;unique=0&amp;page=SDL_SetTextInputRect&amp;ddiffs=1" type="application/rss+xml">
+
+<link type="text/css" href="SDL_SetTextInputRect_elemei/jquery-ui-1.css" rel="stylesheet">
+<script type="text/javascript" src="SDL_SetTextInputRect_elemei/jquery-1.js"></script>
+<script type="text/javascript" src="SDL_SetTextInputRect_elemei/jquery-ui-1.js"></script>
+
+<script type="text/javascript" src="SDL_SetTextInputRect_elemei/sorttable.js"></script>
+
+<script type="text/javascript" src="SDL_SetTextInputRect_elemei/fixedleft.js"></script>
+
+<style type="text/css">
+<!--
+p#pageinfo {display: none;}
+div#sidebar li.sidepanel  a:visited {color: purple;}
+-->
+</style>
+
+
+<link rel="Start" href="http://wiki.libsdl.org/FrontPage">
+<link rel="Alternate" title="Wiki-jelölés" href="http://wiki.libsdl.org/SDL_SetTextInputRect?action=raw">
+<link rel="Alternate" media="print" title="Nyomtatási nézet" href="http://wiki.libsdl.org/SDL_SetTextInputRect?action=print">
+<link rel="Search" href="http://wiki.libsdl.org/Keres%C5%91Lap">
+<link rel="Index" href="http://wiki.libsdl.org/C%C3%ADmJegyz%C3%A9k">
+<link rel="Glossary" href="http://wiki.libsdl.org/Sz%C3%B3Jegyz%C3%A9k">
+<link rel="Help" href="http://wiki.libsdl.org/HelpOnFormatting">
+</head><body dir="ltr" lang="hu">
+<div id="sidebar"><img src="SDL_SetTextInputRect_elemei/slideleft.png" id="hideIcon" title="hide sidebar" onclick="hideSidebar();" height="16" width="16"><h1 id="wikinavigationheader">Wiki Navigation</h1><div class="sidepanel">
+<div id="logo"><a href="http://wiki.libsdl.org/FrontPage"></a><div align="center"><a href="http://www.libsdl.org/"><img src="SDL_SetTextInputRect_elemei/SDL_logo20_sm.png" alt="SDL Logo"></a> </div> SDL Wiki</div>
+</div><div id="sidebarWikiMenu"><ul id="wikiNavMenu"><li class="sidepanel showSidePanel" id="sidebarSearch"><div>Search Wiki</div>
+<form id="searchform" method="get" action="/SDL_SetTextInputRect">
+<input name="action" value="fullsearch" type="hidden">
+<input name="context" value="180" type="hidden">
+<input id="searchinput" name="value" size="25" alt="Search" type="text">
+<div id="searchbuttons">
+<input id="titlesearch" name="titlesearch" value="Címek" alt="Search Titles" type="submit">
+<input id="fullsearch" name="fullsearch" value="Szöveg" alt="Search Full Text" type="submit">
+</div>
+</form>
+</li>
+<li class="sidepanel showSidePanel" id="sidebarNavigation"><div>Quick Links</div><ul id="navibar"><li class="wikilink"><a href="http://wiki.libsdl.org/FrontPage">FrontPage</a></li><li class="wikilink"><a href="http://wiki.libsdl.org/Introduction">Introduction</a></li><li class="wikilink"><a href="http://wiki.libsdl.org/Support">Support</a></li><li class="wikilink"><a href="http://wiki.libsdl.org/CategoryAPI">API By Name</a></li><li class="wikilink"><a href="http://wiki.libsdl.org/APIByCategory">API By Category</a></li><li class="wikilink"><a href="http://wiki.libsdl.org/Contributing">Contributing</a></li><li class="wikilink"><a href="http://wiki.libsdl.org/%C3%9AjabbV%C3%A1ltoz%C3%A1sok">ÚjabbVáltozások</a></li><li class="wikilink"><a href="http://wiki.libsdl.org/Keres%C5%91Lap">KeresőLap</a></li><li class="wikilink"><a href="http://wiki.libsdl.org/Wiki%20Help">Wiki Help</a></li></ul></li>
+<li class="sidepanel showSidePanel" id="sidebarUser"><div>User Actions</div><ul id="username"><li><a href="http://wiki.libsdl.org/SDL_SetTextInputRect?action=login" id="login" rel="nofollow">Belépés</a></li></ul></li></ul></div></div><div id="wikipagecontent"><div id="altWikiNavMenu">
+<img src="SDL_SetTextInputRect_elemei/slideright.png" id="showIcon" title="show sidebar" onclick="showSidebar();" height="16" width="16"><ul class="sideways" id="menuIcon"><li><a href="#" id="contentWikiMenu">
+<img src="SDL_SetTextInputRect_elemei/menu.png" height="16" width="13"></a>
+</li></ul></div><h1 id="wikipageheader">Wiki Page Content</h1><a name="MainWikiPageContent"></a><div id="page" dir="ltr" lang="en">
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><div><table style=""><tbody><tr>  <td style="color: rgb(255, 0, 0); text-align: center;"><p class="line862"> DRAFT</p></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line867">
+</p><h1 id="SDL_SetTextInputRect-1">SDL_SetTextInputRect</h1>
+<span class="anchor" id="line-6"></span><p class="line874">Use this function to set the rectangle used to type Unicode text inputs. <span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span></p><p class="line867"></p><div class="table-of-contents"><p class="table-of-contents-heading">Tartalomjegyzék</p><ol><li>
+<a href="#SDL_SetTextInputRect-1">SDL_SetTextInputRect</a><ol><li>
+<a href="#Syntax">Syntax</a></li><li>
+<a href="#Function_Parameters">Function Parameters</a></li><li>
+<a href="#Code_Examples">Code Examples</a></li><li>
+<a href="#Remarks">Remarks</a></li><li>
+<a href="#Related_Functions">Related Functions</a></li></ol></li></ol></div> <span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><p class="line867">
+</p><h2 id="Syntax">Syntax</h2>
+<span class="anchor" id="line-11"></span><p class="line867"><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+function isnumbered(obj) {
+  return obj.childNodes.length && obj.firstChild.childNodes.length && obj.firstChild.firstChild.className == 'LineNumber';
+}
+function nformat(num,chrs,add) {
+  var nlen = Math.max(0,chrs-(''+num).length), res = '';
+  while (nlen>0) { res += ' '; nlen-- }
+  return res+num+add;
+}
+function addnumber(did, nstart, nstep) {
+  var c = document.getElementById(did), l = c.firstChild, n = 1;
+  if (!isnumbered(c)) {
+    if (typeof nstart == 'undefined') nstart = 1;
+    if (typeof nstep  == 'undefined') nstep = 1;
+    var n = nstart;
+    while (l != null) {
+      if (l.tagName == 'SPAN') {
+        var s = document.createElement('SPAN');
+        var a = document.createElement('A');
+        s.className = 'LineNumber';
+        a.appendChild(document.createTextNode(nformat(n,4,'')));
+        a.href = '#' + did + '_' + n;
+        s.appendChild(a);
+        s.appendChild(document.createTextNode(' '));
+        n += nstep;
+        if (l.childNodes.length) {
+          l.insertBefore(s, l.firstChild);
+        }
+        else {
+          l.appendChild(s);
+        }
+      }
+      l = l.nextSibling;
+    }
+  }
+  return false;
+}
+function remnumber(did) {
+  var c = document.getElementById(did), l = c.firstChild;
+  if (isnumbered(c)) {
+    while (l != null) {
+      if (l.tagName == 'SPAN' && l.firstChild.className == 'LineNumber') l.removeChild(l.firstChild);
+      l = l.nextSibling;
+    }
+  }
+  return false;
+}
+function togglenumber(did, nstart, nstep) {
+  var c = document.getElementById(did);
+  if (isnumbered(c)) {
+    remnumber(did);
+  } else {
+    addnumber(did,nstart,nstep);
+  }
+  return false;
+}
+</script>
+
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-pygments_3733\', 1, 1);" \
+                class="codenumbers">Sorszámozás megjelenítése/elrejtése<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-pygments_3733', 1, 1);" class="codenumbers">Sorszámozás megjelenítése/elrejtése</a>
+<pre dir="ltr" id="CA-pygments_3733" lang="en"><span class="line"><span class="kt">void</span> <span class="n">SDL_SetTextInputRect</span><span class="p">(</span><span class="n">SDL_Rect</span><span class="o">*</span> <span class="n">rect</span><span class="p">)</span>
+</span></pre></div><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><p class="line867">
+</p><h2 id="Function_Parameters">Function Parameters</h2>
+<span class="anchor" id="line-16"></span><div><table><tbody><tr>  <td><p class="line891"><strong>rect</strong></p></td>
+  <td><p class="line862">the <a href="http://wiki.libsdl.org/SDL_Rect">SDL_Rect</a> structure representing the rectangle to receive text (ignored if NULL)</p></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><p class="line867">
+</p><h2 id="Code_Examples">Code Examples</h2>
+<span class="anchor" id="line-19"></span><p class="line867"><span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span></p><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="#" onclick="return togglenumber(\'CA-pygments_3734\', 1, 1);" \
+                class="codenumbers">Sorszámozás megjelenítése/elrejtése<\/a>');
+</script><a href="#" onclick="return togglenumber('CA-pygments_3734', 1, 1);" class="codenumbers">Sorszámozás megjelenítése/elrejtése</a>
+<pre dir="ltr" id="CA-pygments_3734" lang="en"><span class="line"><span class="n">You</span> <span class="n">can</span> <span class="n">add</span> <span class="n">your</span> <span class="n">code</span> <span class="n">example</span> <span class="n">here</span>
+</span></pre></div><span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><p class="line867">
+</p><h2 id="Remarks">Remarks</h2>
+<span class="anchor" id="line-24"></span><p class="line867"><em>You can add useful comments here</em> <span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span></p><p class="line867">
+</p><h2 id="Related_Functions">Related Functions</h2>
+<span class="anchor" id="line-27"></span><ul><li style="list-style-type: none;"><p class="line891"><a href="http://wiki.libsdl.org/SDL_StartTextInput">SDL_StartTextInput</a> <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span></p></li></ul><p class="line867"></p><hr><p class="line874"> <span class="anchor" id="line-30"></span><a href="http://wiki.libsdl.org/CategoryAPI">CategoryAPI</a>, <a href="http://wiki.libsdl.org/CategoryKeyboard">CategoryKeyboard</a> <span class="anchor" id="line-31"></span><span class="anchor" id="bottom"></span></p></div><p id="pageinfo" class="info" dir="ltr" lang="hu">None: SDL_SetTextInputRect  (Utoljára <span title="PhilippWiesemann @ p57A6BB58.dip0.t-ipconnect.de[87.166.187.88]"><a class="nonexistent" href="http://wiki.libsdl.org/PhilippWiesemann" title="PhilippWiesemann @ p57A6BB58.dip0.t-ipconnect.de[87.166.187.88]">PhilippWiesemann</a></span> módosította 2013-09-28 12:01:13-kor.)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<!-- Feedback -->
+<link rel="stylesheet" type="text/css" href="SDL_SetTextInputRect_elemei/styles.css">
+<div id="feedback">
+    <div class="header"><img class="arrow down">Feedback</div>
+    <div class="section">
+        <div class="message">Please include your contact information if you'd like to receive a reply.</div>
+
+        <textarea></textarea>
+
+        <a class="thispage submit" href="">Submit</a>
+    </div>
+</div>
+
+<script src="SDL_SetTextInputRect_elemei/jquery.js"></script>
+<script src="SDL_SetTextInputRect_elemei/script.js"></script>
+
+<div id="footer">
+<ul id="credits">
+<li><a href="http://moinmo.in/" title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a></li><li><a href="http://moinmo.in/Python" title="MoinMoin is written in Python.">Python Powered</a></li><li><a href="http://moinmo.in/GPL" title="MoinMoin is GPL licensed.">GPL licensed</a></li><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+
+
+</div>
+
+<img src="SDL_SetTextInputRect_elemei/newwindow.png" height="0" width="0">
+</div></body></html>

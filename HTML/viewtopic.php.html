@@ -1,0 +1,658 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-gb" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en-gb"><head>
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-language" content="en-gb">
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+<title>The Game Programming Wiki • View topic - SDL screen resolution (Newbie Q)</title>
+
+<link rel="alternate" type="application/atom+xml" title="Feed - The Game Programming Wiki" href="http://forum.gpwiki.org/feed.php"><link rel="alternate" type="application/atom+xml" title="Feed - News" href="http://forum.gpwiki.org/feed.php?mode=news"><link rel="alternate" type="application/atom+xml" title="Feed - All forums" href="http://forum.gpwiki.org/feed.php?mode=forums"><link rel="alternate" type="application/atom+xml" title="Feed - New Topics" href="http://forum.gpwiki.org/feed.php?mode=topics"><link rel="alternate" type="application/atom+xml" title="Feed - Active Topics" href="http://forum.gpwiki.org/feed.php?mode=topics_active"><link rel="alternate" type="application/atom+xml" title="Feed - Forum - C and C++ Game Programming" href="http://forum.gpwiki.org/feed.php?f=2"><link rel="alternate" type="application/atom+xml" title="Feed - Topic - SDL screen resolution (Newbie Q)" href="http://forum.gpwiki.org/feed.php?f=2&amp;t=6616">
+
+<link rel="stylesheet" href="viewtopic.php_elemei/stylesheet.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="viewtopic.php_elemei/gpwiki_header.css">
+<script src="viewtopic.php_elemei/ca-pub-8199339419526862.js" type="text/javascript"></script><script src="viewtopic.php_elemei/jquery.js"></script>
+<script type="text/javascript" src="viewtopic.php_elemei/gpwiki_header2.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+
+
+function popup(url, width, height, name)
+{
+	if (!name)
+	{
+		name = '_popup';
+	}
+
+	window.open(url.replace(/&amp;/g, '&'), name, 'height=' + height + ',resizable=yes,scrollbars=yes,width=' + width);
+	return false;
+}
+
+function jumpto()
+{
+	var page = prompt('Enter the page number you wish to go to:', '1');
+	var per_page = '';
+	var base_url = '';
+
+	if (page !== null && !isNaN(page) && page == Math.floor(page) && page > 0)
+	{
+		if (base_url.indexOf('?') == -1)
+		{
+			document.location.href = base_url + '?start=' + ((page - 1) * per_page);
+		}
+		else
+		{
+			document.location.href = base_url.replace(/&amp;/g, '&') + '&start=' + ((page - 1) * per_page);
+		}
+	}
+}
+
+/**
+* Find a member
+*/
+function find_username(url)
+{
+	popup(url, 760, 570, '_usersearch');
+	return false;
+}
+
+/**
+* Mark/unmark checklist
+* id = ID of parent container, name = name prefix, state = state [true/false]
+*/
+function marklist(id, name, state)
+{
+	var parent = document.getElementById(id);
+	if (!parent)
+	{
+		eval('parent = document.' + id);
+	}
+
+	if (!parent)
+	{
+		return;
+	}
+
+	var rb = parent.getElementsByTagName('input');
+	
+	for (var r = 0; r < rb.length; r++)
+	{
+		if (rb[r].name.substr(0, name.length) == name)
+		{
+			rb[r].checked = state;
+		}
+	}
+}
+
+
+
+// ]]>
+</script>
+</head><body class="ltr">
+
+<a name="top"></a>
+
+<div id="wrapheader">
+
+<div class="NavBar">
+	<div class="NavPad">.</div>
+		<div class="NavBarContent"><a class="TopNavLink" href="http://www.gpwiki.org/">Home</a></div>
+		<div class="NavBarContent"><a class="TopNavLink" href="http://content.gpwiki.org/">Wiki</a></div>
+		<div class="NavBarContent"><a class="TopNavLink" href="http://forum.gpwiki.org/">Forum</a></div>
+		<div class="NavBarContent"><a class="TopNavLink" href="http://www.gpwiki.org/iotd">Featured&nbsp;Project</a></div>
+		<div class="NavBarContent"><a class="TopNavLink" href="https://twitter.com/#%21/GPWiki">@GPWiki</a></div>
+		<div class="NavBarRight">
+		<form action="http://www.google.com/cse" id="cse-search-box" target="_blank">
+			<div>
+				<input name="cx" value="partner-pub-8199339419526862:3820954634" type="hidden">
+				<input name="ie" value="UTF-8" type="hidden">
+				<input style="background: rgb(255, 255, 255) url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif) no-repeat scroll left center; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;" name="q" size="35" class="headerSearchText" type="text">
+				<input name="sa" value="Search" class="headerSearchButton" type="submit">
+			</div>
+		<input value="forum.gpwiki.org/viewtopic.php?t=6616" name="siteurl" type="hidden"><input value="www.google.com/search?q=sdl+screen+size&amp;client=iceweasel-a&amp;rls=org.mozilla%3Ahu-HU%3Aunofficial&amp;oq=sdl+screen+size&amp;gs_l=heirloom-serp.3..0i19j0i22i30i19l3.8118.9395.0.9922.5.5.0.0.0.0.301.908.2j0j2j1.5.0....0...1ac.1.34.heirloom-serp..1.4.607.dLz8iTrIrDM" name="ref" type="hidden"><input value="" name="ss" type="hidden"></form>
+	</div>	
+</div>
+	
+<script type="text/javascript" src="viewtopic.php_elemei/brand"></script>		
+		
+<div class="logoBox" id="ld1" style="display: block;">
+ <a href="http://www.gpwiki.org/"><img src="viewtopic.php_elemei/endian_classic.png" alt="Chunky by FelipeFS" title="Chunky by FelipeFS" id="li1" height="126" width="150" border="0/"></a>
+</div>
+
+<div class="logoBox" id="ld2" style="display: block;">
+ <a href="http://www.gpwiki.org/"><img src="viewtopic.php_elemei/endian_classic.png" alt="Chunky by FelipeFS" title="Chunky by FelipeFS" id="li2" height="126" width="150" border="0/"></a>
+</div>
+
+<div class="logoText">
+ <a href="http://www.gpwiki.org/"><img src="viewtopic.php_elemei/logo_text_blue.png" alt="GPWiki.org" title="GPWiki.org" height="54" width="174" border="0/"></a>
+</div>
+
+
+	<div id="menubar">
+		<table width="100%" cellspacing="0">
+		<tbody><tr>
+			<td class="genmed">
+				<a href="http://forum.gpwiki.org/ucp.php?mode=login&amp;sid=562217b5a40aed29188f013646ca0729"><img src="viewtopic.php_elemei/icon_mini_login.gif" alt="*" height="13" width="12"> Login</a>&nbsp; &nbsp;<a href="http://forum.gpwiki.org/ucp.php?mode=register&amp;sid=562217b5a40aed29188f013646ca0729"><img src="viewtopic.php_elemei/icon_mini_register.gif" alt="*" height="13" width="12"> Register</a>
+					
+			</td>
+			<td class="genmed" align="right">
+				<a href="http://forum.gpwiki.org/faq.php?sid=562217b5a40aed29188f013646ca0729"><img src="viewtopic.php_elemei/icon_mini_faq.gif" alt="*" height="13" width="12"> FAQ</a>
+				&nbsp; &nbsp;<a href="http://forum.gpwiki.org/search.php?sid=562217b5a40aed29188f013646ca0729"><img src="viewtopic.php_elemei/icon_mini_search.gif" alt="*" height="13" width="12"> Search</a>
+			</td>
+		</tr>
+		</tbody></table>
+	</div>
+
+	<div id="datebar">
+		<table width="100%" cellspacing="0">
+		<tbody><tr>
+			<td class="gensmall"></td>
+			<td class="gensmall" align="right">It is currently Tue Aug 19, 2014 2:44 pm<br></td>
+		</tr>
+		</tbody></table>
+	</div>
+
+</div>
+
+<div id="wrapcentre">
+
+	
+	<p class="searchbar">
+		<span style="float: left;"><a href="http://forum.gpwiki.org/search.php?search_id=unanswered&amp;sid=562217b5a40aed29188f013646ca0729">View unanswered posts</a> | <a href="http://forum.gpwiki.org/search.php?search_id=active_topics&amp;sid=562217b5a40aed29188f013646ca0729">View active topics</a></span>
+		
+	</p>
+	
+
+	<br style="clear: both;">
+
+	<table class="tablebg" style="margin-top: 5px;" width="100%" cellpadding="0" cellspacing="1">
+	<tbody><tr>
+		<td class="row1">
+			<p class="breadcrumbs"><a href="http://forum.gpwiki.org/index.php?sid=562217b5a40aed29188f013646ca0729">Board index</a> » <a href="http://forum.gpwiki.org/viewforum.php?f=22&amp;sid=562217b5a40aed29188f013646ca0729">Game Programming Discussion</a> » <a href="http://forum.gpwiki.org/viewforum.php?f=2&amp;sid=562217b5a40aed29188f013646ca0729">C and C++ Game Programming</a></p>
+			<p class="datetime">All times are UTC </p>
+		</td>
+	</tr>
+	</tbody></table>
+
+	<br>
+
+<div id="pageheader">
+	<h2><a class="titles" href="http://forum.gpwiki.org/viewtopic.php?f=2&amp;t=6616&amp;sid=562217b5a40aed29188f013646ca0729">SDL screen resolution (Newbie Q)</a></h2>
+
+
+</div>
+
+<br clear="all"><br>
+
+<div id="pagecontent">
+
+	<table width="100%" cellspacing="1">
+	<tbody><tr>
+		<td nowrap="nowrap" valign="middle" align="left">
+		<a href="http://forum.gpwiki.org/posting.php?mode=post&amp;f=2&amp;sid=562217b5a40aed29188f013646ca0729"><img src="viewtopic.php_elemei/button_topic_new.gif" alt="Post new topic" title="Post new topic"></a>&nbsp;<a href="http://forum.gpwiki.org/posting.php?mode=reply&amp;f=2&amp;t=6616&amp;sid=562217b5a40aed29188f013646ca0729"><img src="viewtopic.php_elemei/button_topic_reply.gif" alt="Reply to topic" title="Reply to topic"></a>
+		</td>
+		
+			<td class="nav" nowrap="nowrap" valign="middle">&nbsp;Page <strong>1</strong> of <strong>1</strong><br></td>
+			<td class="gensmall" nowrap="nowrap">&nbsp;[ 4 posts ]&nbsp;</td>
+			<td class="gensmall" nowrap="nowrap" width="100%" align="right"></td>
+		
+	</tr>
+	</tbody></table>
+
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tbody><tr>
+		<td class="cat">
+			<table width="100%" cellspacing="0">
+			<tbody><tr>
+				<td class="nav" nowrap="nowrap">&nbsp;
+				<a href="http://forum.gpwiki.org/viewtopic.php?f=2&amp;t=6616&amp;sid=562217b5a40aed29188f013646ca0729&amp;view=print" title="Print view">Print view</a>
+				</td>
+				<td class="nav" nowrap="nowrap" align="right"><a href="http://forum.gpwiki.org/viewtopic.php?f=2&amp;t=6616&amp;view=previous&amp;sid=562217b5a40aed29188f013646ca0729">Previous topic</a> | <a href="http://forum.gpwiki.org/viewtopic.php?f=2&amp;t=6616&amp;view=next&amp;sid=562217b5a40aed29188f013646ca0729">Next topic</a>&nbsp;</td>
+			</tr>
+			</tbody></table>
+		</td>
+	</tr>
+
+	</tbody></table>
+
+
+	<table class="tablebg" width="100%" cellspacing="1">
+	
+		<tbody><tr>
+			<th>Author</th>
+			<th>Message</th>
+		</tr>
+	<tr class="row1">
+
+			<td valign="middle" align="center">
+				<a name="p101523"></a>
+				<b class="postauthor">Trake</b>
+			</td>
+			<td height="25" width="100%">
+				<table width="100%" cellspacing="0">
+				<tbody><tr>
+				
+					<td class="gensmall" width="100%"><div style="float: left;">&nbsp;<b>Post subject:</b> <a href="#p101523">SDL screen resolution (Newbie Q)</a></div><div style="float: right;"><a href="http://forum.gpwiki.org/viewtopic.php?p=101523&amp;sid=562217b5a40aed29188f013646ca0729#p101523"><img src="viewtopic.php_elemei/icon_post_target.gif" alt="Post" title="Post" height="9" width="12"></a><b>Posted:</b> Tue Jul 24, 2007 2:58 pm&nbsp;</div></td>
+				</tr>
+				</tbody></table>
+			</td>
+		</tr>
+
+		<tr class="row1">
+
+			<td class="profile" valign="top">
+				<table width="150" align="center" cellspacing="4">
+			
+				<tbody><tr>
+					<td class="postdetails">Novice</td>
+				</tr>
+			
+				</tbody></table>
+
+				<span class="postdetails">
+					<br><b>Joined:</b> Thu Sep 01, 2005 4:11 pm<br><b>Posts:</b> 5
+				</span>
+
+			</td>
+			<td valign="top">
+				<table width="100%" cellspacing="5">
+				<tbody><tr>
+					<td>
+					
+
+						<div class="postbody">Hi all,
+<br>A quick newbie question: is it possible to get SDL to auto-detect
+the screen resolution so that you don't have to define it when
+initializing?
+<br>Thanks in advance
+<br>
+<br>Trake</div>
+
+					<br clear="all"><br>
+
+						<table width="100%" cellspacing="0">
+						<tbody><tr valign="middle">
+							<td class="gensmall" align="right">
+							
+							</td>
+						</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				</tbody></table>
+			</td>
+		</tr>
+
+		<tr class="row1">
+
+			<td class="profile"><strong><a href="#wrapheader">Top</a></strong></td>
+			<td><div class="gensmall" style="float: left;">&nbsp;<a href="http://forum.gpwiki.org/memberlist.php?mode=viewprofile&amp;u=364&amp;sid=562217b5a40aed29188f013646ca0729"><img src="viewtopic.php_elemei/icon_user_profile.gif" alt="Profile" title="Profile"></a> &nbsp;</div> <div class="gensmall" style="float: right;">&nbsp;</div></td>
+	
+		</tr>
+
+	<tr>
+		<td class="spacer" colspan="2" height="1"><img src="viewtopic.php_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tbody><tr class="row2">
+
+			<td valign="middle" align="center">
+				<a name="p101524"></a>
+				<b class="postauthor">me22</b>
+			</td>
+			<td height="25" width="100%">
+				<table width="100%" cellspacing="0">
+				<tbody><tr>
+				
+					<td class="gensmall" width="100%"><div style="float: left;">&nbsp;<b>Post subject:</b> <a href="#p101524"></a></div><div style="float: right;"><a href="http://forum.gpwiki.org/viewtopic.php?p=101524&amp;sid=562217b5a40aed29188f013646ca0729#p101524"><img src="viewtopic.php_elemei/icon_post_target.gif" alt="Post" title="Post" height="9" width="12"></a><b>Posted:</b> Tue Jul 24, 2007 3:24 pm&nbsp;</div></td>
+				</tr>
+				</tbody></table>
+			</td>
+		</tr>
+
+		<tr class="row2">
+
+			<td class="profile" valign="top">
+				<table width="150" align="center" cellspacing="4">
+			
+				<tbody><tr>
+					<td class="postdetails">13375p34k3r</td>
+				</tr>
+			
+				<tr>
+					<td><img src="viewtopic.php_elemei/pun9ep.html" alt="User avatar" height="64" width="64"></td>
+				</tr>
+			
+				</tbody></table>
+
+				<span class="postdetails">
+					<br><b>Joined:</b> Tue Dec 06, 2005 3:54 pm<br><b>Posts:</b> 1420<br><b>Location:</b> A Nation inside a Nation.
+				</span>
+
+			</td>
+			<td valign="top">
+				<table width="100%" cellspacing="5">
+				<tbody><tr>
+					<td>
+					
+
+						<div class="postbody">Sounds like a question that could be answered by reading the SDL documentation, to me.</div>
+
+					
+						<div class="postbody"><br>_________________<br>Hlade's Law: If you have a difficult task, give it to a lazy person -- they will find an easier way to do it.</div>
+					<br clear="all"><br>
+
+						<table width="100%" cellspacing="0">
+						<tbody><tr valign="middle">
+							<td class="gensmall" align="right">
+							
+							</td>
+						</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				</tbody></table>
+			</td>
+		</tr>
+
+		<tr class="row2">
+
+			<td class="profile"><strong><a href="#wrapheader">Top</a></strong></td>
+			<td><div class="gensmall" style="float: left;">&nbsp;<a href="http://forum.gpwiki.org/memberlist.php?mode=viewprofile&amp;u=479&amp;sid=562217b5a40aed29188f013646ca0729"><img src="viewtopic.php_elemei/icon_user_profile.gif" alt="Profile" title="Profile"></a> &nbsp;</div> <div class="gensmall" style="float: right;">&nbsp;</div></td>
+	
+		</tr>
+
+	<tr>
+		<td class="spacer" colspan="2" height="1"><img src="viewtopic.php_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tbody><tr class="row1">
+
+			<td valign="middle" align="center">
+				<a name="p101528"></a>
+				<b class="postauthor">Jamie</b>
+			</td>
+			<td height="25" width="100%">
+				<table width="100%" cellspacing="0">
+				<tbody><tr>
+				
+					<td class="gensmall" width="100%"><div style="float: left;">&nbsp;<b>Post subject:</b> <a href="#p101528"></a></div><div style="float: right;"><a href="http://forum.gpwiki.org/viewtopic.php?p=101528&amp;sid=562217b5a40aed29188f013646ca0729#p101528"><img src="viewtopic.php_elemei/icon_post_target.gif" alt="Post" title="Post" height="9" width="12"></a><b>Posted:</b> Tue Jul 24, 2007 4:08 pm&nbsp;</div></td>
+				</tr>
+				</tbody></table>
+			</td>
+		</tr>
+
+		<tr class="row1">
+
+			<td class="profile" valign="top">
+				<table width="150" align="center" cellspacing="4">
+			
+				<tbody><tr>
+					<td class="postdetails">Game Programming Guru</td>
+				</tr>
+			
+				</tbody></table>
+
+				<span class="postdetails">
+					<br><b>Joined:</b> Thu Jun 08, 2006 7:48 pm<br><b>Posts:</b> 1248<br><b>Location:</b> Scotland
+				</span>
+
+			</td>
+			<td valign="top">
+				<table width="100%" cellspacing="5">
+				<tbody><tr>
+					<td>
+					
+
+						<div class="postbody">Passing 0 for width and height might do the trick.</div>
+
+					<br clear="all"><br>
+
+						<table width="100%" cellspacing="0">
+						<tbody><tr valign="middle">
+							<td class="gensmall" align="right">
+							
+							</td>
+						</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				</tbody></table>
+			</td>
+		</tr>
+
+		<tr class="row1">
+
+			<td class="profile"><strong><a href="#wrapheader">Top</a></strong></td>
+			<td><div class="gensmall" style="float: left;">&nbsp;<a href="http://forum.gpwiki.org/memberlist.php?mode=viewprofile&amp;u=762&amp;sid=562217b5a40aed29188f013646ca0729"><img src="viewtopic.php_elemei/icon_user_profile.gif" alt="Profile" title="Profile"></a> &nbsp;</div> <div class="gensmall" style="float: right;">&nbsp;</div></td>
+	
+		</tr>
+
+	<tr>
+		<td class="spacer" colspan="2" height="1"><img src="viewtopic.php_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tbody><tr class="row2">
+
+			<td valign="middle" align="center">
+				<a name="p101531"></a>
+				<b class="postauthor">!name</b>
+			</td>
+			<td height="25" width="100%">
+				<table width="100%" cellspacing="0">
+				<tbody><tr>
+				
+					<td class="gensmall" width="100%"><div style="float: left;">&nbsp;<b>Post subject:</b> <a href="#p101531"></a></div><div style="float: right;"><a href="http://forum.gpwiki.org/viewtopic.php?p=101531&amp;sid=562217b5a40aed29188f013646ca0729#p101531"><img src="viewtopic.php_elemei/icon_post_target.gif" alt="Post" title="Post" height="9" width="12"></a><b>Posted:</b> Tue Jul 24, 2007 5:48 pm&nbsp;</div></td>
+				</tr>
+				</tbody></table>
+			</td>
+		</tr>
+
+		<tr class="row2">
+
+			<td class="profile" valign="top">
+				<table width="150" align="center" cellspacing="4">
+			
+				<tbody><tr>
+					<td class="postdetails">Grand Optimizer</td>
+				</tr>
+			
+				</tbody></table>
+
+				<span class="postdetails">
+					<br><b>Joined:</b> Thu Nov 09, 2006 12:11 am<br><b>Posts:</b> 339
+				</span>
+
+			</td>
+			<td valign="top">
+				<table width="100%" cellspacing="5">
+				<tbody><tr>
+					<td>
+					
+
+						<div class="postbody">Call <a href="http://www.libsdl.org/cgi/docwiki.cgi/SDL_5fGetVideoInfo" class="postlink">SDL_GetVideoInfoo</a> and get the current width, height and bpp.</div>
+
+					<br clear="all"><br>
+
+						<table width="100%" cellspacing="0">
+						<tbody><tr valign="middle">
+							<td class="gensmall" align="right">
+							
+							</td>
+						</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				</tbody></table>
+			</td>
+		</tr>
+
+		<tr class="row2">
+
+			<td class="profile"><strong><a href="#wrapheader">Top</a></strong></td>
+			<td><div class="gensmall" style="float: left;">&nbsp;<a href="http://forum.gpwiki.org/memberlist.php?mode=viewprofile&amp;u=1031&amp;sid=562217b5a40aed29188f013646ca0729"><img src="viewtopic.php_elemei/icon_user_profile.gif" alt="Profile" title="Profile"></a> &nbsp;</div> <div class="gensmall" style="float: right;">&nbsp;</div></td>
+	
+		</tr>
+
+	<tr>
+		<td class="spacer" colspan="2" height="1"><img src="viewtopic.php_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tbody><tr align="center">
+		<td class="cat"><form name="viewtopic" method="post" action="./viewtopic.php?f=2&amp;t=6616&amp;sid=562217b5a40aed29188f013646ca0729"><span class="gensmall">Display posts from previous:</span> <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select>&nbsp;<span class="gensmall">Sort by</span> <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select> <select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select>&nbsp;<input class="btnlite" value="Go" name="sort" type="submit"></form></td>
+	</tr>
+	</tbody></table>
+	
+
+	<table width="100%" cellspacing="1">
+	<tbody><tr>
+		<td nowrap="nowrap" valign="middle" align="left">
+		<a href="http://forum.gpwiki.org/posting.php?mode=post&amp;f=2&amp;sid=562217b5a40aed29188f013646ca0729"><img src="viewtopic.php_elemei/button_topic_new.gif" alt="Post new topic" title="Post new topic"></a>&nbsp;<a href="http://forum.gpwiki.org/posting.php?mode=reply&amp;f=2&amp;t=6616&amp;sid=562217b5a40aed29188f013646ca0729"><img src="viewtopic.php_elemei/button_topic_reply.gif" alt="Reply to topic" title="Reply to topic"></a>
+		</td>
+		
+			<td class="nav" nowrap="nowrap" valign="middle">&nbsp;Page <strong>1</strong> of <strong>1</strong><br></td>
+			<td class="gensmall" nowrap="nowrap">&nbsp;[ 4 posts ]&nbsp;</td>
+			<td class="gensmall" nowrap="nowrap" width="100%" align="right"></td>
+		
+	</tr>
+	</tbody></table>
+
+</div>
+
+<div id="pagefooter"></div>
+
+<br clear="all">
+<table class="tablebg" style="margin-top: 5px;" width="100%" cellpadding="0" cellspacing="1">
+	<tbody><tr>
+		<td class="row1">
+			<p class="breadcrumbs"><a href="http://forum.gpwiki.org/index.php?sid=562217b5a40aed29188f013646ca0729">Board index</a> » <a href="http://forum.gpwiki.org/viewforum.php?f=22&amp;sid=562217b5a40aed29188f013646ca0729">Game Programming Discussion</a> » <a href="http://forum.gpwiki.org/viewforum.php?f=2&amp;sid=562217b5a40aed29188f013646ca0729">C and C++ Game Programming</a></p>
+			<p class="datetime">All times are UTC </p>
+		</td>
+	</tr>
+	</tbody></table>
+	<br clear="all">
+
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tbody><tr>
+		<td class="cat"><h4>Who is online</h4></td>
+	</tr>
+	<tr>
+		<td class="row1"><p class="gensmall">Users browsing this forum: No registered users and 0 guests</p></td>
+	</tr>
+	</tbody></table>
+
+
+<br clear="all">
+
+<table width="100%" cellspacing="1">
+<tbody><tr>
+	<td nowrap="nowrap" valign="top" width="40%" align="left"></td>
+	<td nowrap="nowrap" valign="top" align="right"><span class="gensmall">You <strong>cannot</strong> post new topics in this forum<br>You <strong>cannot</strong> reply to topics in this forum<br>You <strong>cannot</strong> edit your posts in this forum<br>You <strong>cannot</strong> delete your posts in this forum<br></span></td>
+</tr>
+</tbody></table>
+
+<br clear="all">
+
+<table width="100%" cellspacing="0">
+<tbody><tr>
+	<td><form method="get" name="search" action="./search.php?sid=562217b5a40aed29188f013646ca0729"><span class="gensmall">Search for:</span> <input class="post" name="keywords" size="20" type="text"> <input class="btnlite" value="Go" type="submit"><input name="t" value="6616" type="hidden">
+<input name="sf" value="msgonly" type="hidden">
+<input name="sid" value="562217b5a40aed29188f013646ca0729" type="hidden">
+</form></td>
+	<td align="right">
+	<form method="post" name="jumpbox" action="./viewforum.php?sid=562217b5a40aed29188f013646ca0729" onsubmit="if(document.jumpbox.f.value == -1){return false;}">
+
+	<table border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td nowrap="nowrap"><span class="gensmall">Jump to:</span>&nbsp;<select name="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
+
+		
+			<option value="-1">Select a forum</option>
+		<option value="-1">------------------</option>
+			<option value="20">Forums</option>
+		
+			<option value="15">&nbsp; &nbsp;Forum Rules and Posting Guidelines</option>
+		
+			<option value="21">Wiki Discussion</option>
+		
+			<option value="4">&nbsp; &nbsp;Help</option>
+		
+			<option value="5">&nbsp; &nbsp;Content Issues</option>
+		
+			<option value="22">Game Programming Discussion</option>
+		
+			<option value="2" selected="selected">&nbsp; &nbsp;C and C++ Game Programming</option>
+		
+			<option value="8">&nbsp; &nbsp;Java Game Programming</option>
+		
+			<option value="6">&nbsp; &nbsp;Language Agnostic Programming</option>
+		
+			<option value="7">&nbsp; &nbsp;.NET Game Programming</option>
+		
+			<option value="26">&nbsp; &nbsp;Mobile Game Programming</option>
+		
+			<option value="30">&nbsp; &nbsp;Web-Based Game Programming</option>
+		
+			<option value="18">&nbsp; &nbsp;Other Languages</option>
+		
+			<option value="35">&nbsp; &nbsp;OpenGL Development</option>
+		
+			<option value="36">&nbsp; &nbsp;Direct X Development</option>
+		
+			<option value="23">Game Development Discussion</option>
+		
+			<option value="11">&nbsp; &nbsp;Game Design</option>
+		
+			<option value="19">&nbsp; &nbsp;Game Media</option>
+		
+			<option value="24">Off-Topic Discussion</option>
+		
+			<option value="9">&nbsp; &nbsp;Announcements</option>
+		
+			<option value="3">&nbsp; &nbsp;Off-Topic</option>
+		
+			<option value="16">&nbsp; &nbsp;Community Projects</option>
+		
+			<option value="34">&nbsp; &nbsp;News</option>
+		
+
+		</select>&nbsp;<input class="btnlite" value="Go" type="submit"></td>
+	</tr>
+	</tbody></table>
+
+	</form>
+</td>
+</tr>
+</tbody></table>
+
+
+</div>
+
+<div id="wrapfooter">
+	
+	<script async="" src="viewtopic.php_elemei/adsbygoogle.js"></script>
+	<!-- Forum Footer -->
+	<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: inline-block; width: 970px; height: 90px;" data-ad-client="ca-pub-8199339419526862" data-ad-slot="3744529361"><ins id="aswift_0_expand" style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 970px; background-color: transparent;"><ins id="aswift_0_anchor" style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 970px; background-color: transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="90" scrolling="no" width="970"></iframe></ins></ins></ins>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script><br>
+	<span class="copyright">Powered by <a href="https://www.phpbb.com/">phpBB</a>® Forum Software © phpBB Group
+	</span>
+</div>
+
+</body></html>

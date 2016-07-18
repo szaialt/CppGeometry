@@ -1,0 +1,417 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="js" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>LWJGL Basics 1 (The Display) | NinjaCave</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="alternate" type="application/rss+xml" title="Comments for &quot;LWJGL Basics 1 (The Display)&quot;" href="http://ninjacave.com/crss/node/23">
+
+<link rel="shortcut icon" href="http://ninjacave.com/misc/favicon.ico" type="image/x-icon">
+<link type="text/css" rel="stylesheet" media="all" href="lwjglbasics1_elemei/geshifilter.css">
+<link type="text/css" rel="stylesheet" media="all" href="lwjglbasics1_elemei/node.css">
+<link type="text/css" rel="stylesheet" media="all" href="lwjglbasics1_elemei/defaults.css">
+<link type="text/css" rel="stylesheet" media="all" href="lwjglbasics1_elemei/system.css">
+<link type="text/css" rel="stylesheet" media="all" href="lwjglbasics1_elemei/system-menus.css">
+<link type="text/css" rel="stylesheet" media="all" href="lwjglbasics1_elemei/user.css">
+<link type="text/css" rel="stylesheet" media="all" href="lwjglbasics1_elemei/comment.css">
+<link type="text/css" rel="stylesheet" media="all" href="lwjglbasics1_elemei/style.css">
+<link type="text/css" rel="stylesheet" media="print" href="lwjglbasics1_elemei/print.css">
+<script src="lwjglbasics1_elemei/ga.js" type="text/javascript"></script><script type="text/javascript" src="lwjglbasics1_elemei/js_bd621500a24c3b6d618cac49d7f36dde.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip" } });
+//--><!]]>
+</script>
+</head><body class="">
+<div class="header">
+  <h1><a href="http://ninjacave.com/" title="NinjaCave"><img src="lwjglbasics1_elemei/logo.png" alt="NinjaCave" id="logo"></a></h1></div>
+<div class="navigation">
+    <ul class="links primary-links"><li class="menu-133 first"><a href="http://ninjacave.com/" title="">Home</a></li>
+<li class="menu-161"><a href="http://ninjacave.com/tutorials" title="Tutorials">Tutorials</a></li>
+<li class="menu-224"><a href="http://ninjacave.com/taxonomy/term/6" title="Projects">Projects</a></li>
+<li class="menu-128 last"><a href="http://ninjacave.com/contact" title="">Contact</a></li>
+</ul>    <a href="http://ninjacave.com/rss.xml" class="sub_rss" title="Subscribe to RSS">Subscribe to RSS</a>
+    <form action="/lwjglbasics1" accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div id="search" class="container-inline">
+  <div class="form-item" id="edit-search-theme-form-1-wrapper">
+ <label for="edit-search-theme-form-1">Search this site: </label>
+ <input maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" title="Enter the terms you wish to search for." class="form-text" type="text">
+</div>
+<input name="op" id="edit-submit" value="Search" class="form-submit" type="submit">
+<input name="form_build_id" id="form-3ece6565fd2ca3043dc6e9813224e559" value="form-3ece6565fd2ca3043dc6e9813224e559" type="hidden">
+<input name="form_id" id="edit-search-theme-form" value="search_theme_form" type="hidden">
+</div>
+
+</div></form>
+  </div>
+  <div class="body">
+                <h2>LWJGL Basics 1 (The Display)</h2>    <div id="node-23" class="node">
+
+
+
+  
+  <div class="content clear-block">
+    <p></p><p><span style="font-weight: bold;">Introduction</span><br>
+The LWJGL library uses its own lightweight native window (known as the
+Display) and has its own input system. This provides a fast, small
+context to draw on, enables low latency input and is a solid base for
+building modern games.</p>
+<p><span style="font-weight: bold;">The LWJGL Display</span><br>
+The <span style="font-weight: bold;">Display</span> class is LWJGL's most important class. It creates and controls the native window on which all graphics content is rendered.</p>
+<p>The Display class has 3 methods that one should be aware of, namely:<br>
+</p><ul class="bb-list" style="list-style-type: circle;">
+<li><span style="font-weight: bold;">create()</span></li>
+<li><span style="font-weight: bold;">update()</span></li>
+<li><span style="font-weight: bold;">destroy()</span></li>
+</ul>
+<p><span style="font-weight: bold;">Display.create()</span><br>
+This method will create the native Display window. In order to set the
+size of the Display its DisplayMode must be set. For simplicity we will
+not cover fullscreen mode in this tutorial. The DisplayMode is set
+before calling Display.create() and done by specifying the width and
+height of the Display as follows:</p>
+<p></p><div class="geshifilter"><pre class="java geshifilter-java" style="font-family: monospace;">Display.<span style="color: rgb(0, 102, 51);">setDisplayMode</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 0, 0); font-weight: bold;">new</span> DisplayMode<span style="color: rgb(0, 153, 0);">(</span>width,height<span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+Display.<span style="color: rgb(0, 102, 51);">create</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span></pre></div>
+<p>This will create the native Display of the desired size. OpenGL methods can now be called to start drawing on the Display. </p>
+<p>In order to keep the application running a basic loop will be needed to update the contents of the Display.</p>
+<p><span style="font-weight: bold;">Display.update()</span><br>
+LWJGL uses double buffering and everything will be drawn to an offscreen buffer. When <span style="font-weight: bold;">Display.update()</span>
+is called it will swap the buffers and make what has been drawn
+visible. Normally this method is called once every frame inside the
+rendering loop. This method will also poll the Keyboard and Mouse.</p>
+<p><span style="font-weight: bold;">Display.destroy()</span><br>
+This method will destroy the native Display (i.e. close it) and clean up any resources used by it.</p>
+<p>The <span style="font-weight: bold;">Display.isCloseRequested()</span>
+method will return true when the close button on the native window is
+clicked. This will be used in the example below to exit our rendering
+loop.</p>
+<p></p><div class="geshifilter"><pre class="java geshifilter-java" style="font-family: monospace;"><span style="color: rgb(0, 0, 0); font-weight: bold;">import</span> <span style="color: rgb(0, 102, 153);">org.lwjgl.LWJGLException</span><span style="color: rgb(51, 153, 51);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">import</span> <span style="color: rgb(0, 102, 153);">org.lwjgl.opengl.Display</span><span style="color: rgb(51, 153, 51);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">import</span> <span style="color: rgb(0, 102, 153);">org.lwjgl.opengl.DisplayMode</span><span style="color: rgb(51, 153, 51);">;</span>
+&nbsp;
+<span style="color: rgb(0, 0, 0); font-weight: bold;">public</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">class</span> DisplayExample <span style="color: rgb(0, 153, 0);">{</span>
+&nbsp;
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">public</span> <span style="color: rgb(0, 0, 102); font-weight: bold;">void</span> start<span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span> <span style="color: rgb(0, 153, 0);">{</span>
+        <span style="color: rgb(0, 0, 0); font-weight: bold;">try</span> <span style="color: rgb(0, 153, 0);">{</span>
+	    Display.<span style="color: rgb(0, 102, 51);">setDisplayMode</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 0, 0); font-weight: bold;">new</span> DisplayMode<span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(204, 102, 204);">800</span>,<span style="color: rgb(204, 102, 204);">600</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+	    Display.<span style="color: rgb(0, 102, 51);">create</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+	<span style="color: rgb(0, 153, 0);">}</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">catch</span> <span style="color: rgb(0, 153, 0);">(</span>LWJGLException e<span style="color: rgb(0, 153, 0);">)</span> <span style="color: rgb(0, 153, 0);">{</span>
+	    e.<span style="color: rgb(0, 102, 51);">printStackTrace</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+	    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Asystem+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: rgb(0, 51, 153);">System</span></a>.<span style="color: rgb(0, 102, 51);">exit</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(204, 102, 204);">0</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+	<span style="color: rgb(0, 153, 0);">}</span>
+&nbsp;
+	<span style="color: rgb(102, 102, 102); font-style: italic;">// init OpenGL here</span>
+&nbsp;
+	<span style="color: rgb(0, 0, 0); font-weight: bold;">while</span> <span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(51, 153, 51);">!</span>Display.<span style="color: rgb(0, 102, 51);">isCloseRequested</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(0, 153, 0);">)</span> <span style="color: rgb(0, 153, 0);">{</span>
+&nbsp;
+	    <span style="color: rgb(102, 102, 102); font-style: italic;">// render OpenGL here</span>
+&nbsp;
+	    Display.<span style="color: rgb(0, 102, 51);">update</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+	<span style="color: rgb(0, 153, 0);">}</span>
+&nbsp;
+	Display.<span style="color: rgb(0, 102, 51);">destroy</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+    <span style="color: rgb(0, 153, 0);">}</span>
+&nbsp;
+    <span style="color: rgb(0, 0, 0); font-weight: bold;">public</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">static</span> <span style="color: rgb(0, 0, 102); font-weight: bold;">void</span> main<span style="color: rgb(0, 153, 0);">(</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: rgb(0, 51, 153);">String</span></a><span style="color: rgb(0, 153, 0);">[</span><span style="color: rgb(0, 153, 0);">]</span> argv<span style="color: rgb(0, 153, 0);">)</span> <span style="color: rgb(0, 153, 0);">{</span>
+        DisplayExample displayExample <span style="color: rgb(51, 153, 51);">=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">new</span> DisplayExample<span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+	displayExample.<span style="color: rgb(0, 102, 51);">start</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+    <span style="color: rgb(0, 153, 0);">}</span>
+<span style="color: rgb(0, 153, 0);">}</span></pre></div>
+<p>The full LWJGL Display API can be found on its Javadoc page <a href="http://lwjgl.org/javadoc/org/lwjgl/opengl/Display.html" class="bb-url">here</a>.</p>
+  </div>
+
+  <div class="clear-block">
+    <div class="meta">
+          <div class="terms"><ul class="links inline"><li class="taxonomy_term_3 first last"><a href="http://ninjacave.com/taxonomy/term/3" rel="tag" title="LWJGL">LWJGL</a></li>
+</ul></div>
+        </div>
+
+          <div class="links"><ul class="links inline"><li class="comment_add first last"><a href="http://ninjacave.com/comment/reply/23#comment-form" title="Share your thoughts and opinions related to this posting.">Add new comment</a></li>
+</ul></div>
+      </div>
+
+</div>
+<div id="comments"><h2 class="comments">Comments</h2><a id="comment-113"></a>
+
+<div class="comment comment-published odd">
+    <div class="n_comment">
+    <div class="n_subject"><p></p><p>When
+I put this code into Eclipse and run it, I get the error. I copied and
+pasted even and still got the error. I am running LWJGL 2.9.1.<br>
+Exception in thread "main" java.lang.UnsatisfiedLinkError: no lwjgl in java.library.path<br>
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1860)<br>
+	at java.lang.Runtime.loadLibrary0(Runtime.java:845)<br>
+	at java.lang.System.loadLibrary(System.java:1084)<br>
+	at org.lwjgl.Sys$1.run(Sys.java:73)<br>
+	at java.security.AccessController.doPrivileged(Native Method)<br>
+	at org.lwjgl.Sys.doLoadLibrary(Sys.java:66)<br>
+	at org.lwjgl.Sys.loadLibrary(Sys.java:95)<br>
+	at org.lwjgl.Sys.(Sys.java:112)<br>
+	at org.lwjgl.opengl.Display.(Display.java:135)<br>
+	at part01.DisplayExample.start(DisplayExample.java:13)<br>
+	at part01.DisplayExample.main(DisplayExample.java:34)</p>
+</div>
+    <div class="n_bar">
+      <div class="n_name"> Anonymous Ninja</div>
+      <div class="n_date">Wed, 01/08/2014 - 21:52 </div>
+      <div class="n_links">
+                <ul class="links"><li class="comment_reply first last"><a href="http://ninjacave.com/comment/reply/23/113">reply</a></li>
+</ul>              </div>
+    </div>
+  </div>
+</div>
+<div class="indented"><a id="comment-120"></a>
+
+<div class="comment comment-published even">
+    <div class="n_comment">
+    <div class="n_subject"><p></p><p>Did you add natives?<br>
+If you didnt its just to right-click your prodject &gt; properties &gt;
+Java Build Path &gt; Libraries and expand lwjgl, select Native library
+location and click edit on the right.<br>
+Select the path to lwjgl natives (C:/LWJGL/native/windows)<br>
+if you use lwjgl_util too its the same thing.</p>
+</div>
+    <div class="n_bar">
+      <div class="n_name"> Anonymous Ninja</div>
+      <div class="n_date">Fri, 03/28/2014 - 15:53 </div>
+      <div class="n_links">
+                <ul class="links"><li class="comment_reply first last"><a href="http://ninjacave.com/comment/reply/23/120">reply</a></li>
+</ul>              </div>
+    </div>
+  </div>
+</div>
+</div><a id="comment-106"></a>
+
+<div class="comment comment-published odd">
+    <div class="n_comment">
+    <div class="n_subject"><p></p><p>here is a picture of what I have right now. The error reads expected class or object definition.</p>
+<p><a href="http://imgur.com/gTYMx5f" title="http://imgur.com/gTYMx5f">http://imgur.com/gTYMx5f</a></p>
+</div>
+    <div class="n_bar">
+      <div class="n_name"> Anonymous Ninja</div>
+      <div class="n_date">Thu, 12/19/2013 - 05:31 </div>
+      <div class="n_links">
+                <ul class="links"><li class="comment_reply first last"><a href="http://ninjacave.com/comment/reply/23/106">reply</a></li>
+</ul>              </div>
+    </div>
+  </div>
+</div>
+<a id="comment-66"></a>
+
+<div class="comment comment-published even">
+    <div class="n_comment">
+    <div class="n_subject"><p></p><p>I forgot, now I'm searching to find the Mac equivalent of Task Manager.</p>
+</div>
+    <div class="n_bar">
+      <div class="n_name"> Anonymous Ninja</div>
+      <div class="n_date">Mon, 11/26/2012 - 02:54 </div>
+      <div class="n_links">
+                <ul class="links"><li class="comment_reply first last"><a href="http://ninjacave.com/comment/reply/23/66">reply</a></li>
+</ul>              </div>
+    </div>
+  </div>
+</div>
+<a id="comment-20"></a>
+
+<div class="comment comment-published odd">
+    <div class="n_comment">
+    <div class="n_subject"><p></p><p>"Could not find the main class: DisplayExample. Program will now exit."</p>
+<p>I keep getting that error every time I try to run it... I'll copy
+and paste my code but it's not any much different than yours. Do you
+have any idea what the problem is? Thanks.</p>
+<p></p><div class="geshifilter"><pre class="java geshifilter-java" style="font-family: monospace;"><span style="color: rgb(0, 0, 0); font-weight: bold;">import</span> <span style="color: rgb(0, 102, 153);">org.lwjgl.LWJGLException</span><span style="color: rgb(51, 153, 51);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">import</span> <span style="color: rgb(0, 102, 153);">org.lwjgl.opengl.Display</span><span style="color: rgb(51, 153, 51);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">import</span> <span style="color: rgb(0, 102, 153);">org.lwjgl.opengl.DisplayMode</span><span style="color: rgb(51, 153, 51);">;</span>
+&nbsp;
+<span style="color: rgb(0, 0, 0); font-weight: bold;">public</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">class</span> DisplayExample <span style="color: rgb(0, 153, 0);">{</span>
+&nbsp;
+	<span style="color: rgb(0, 0, 0); font-weight: bold;">public</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">static</span> <span style="color: rgb(0, 0, 102); font-weight: bold;">void</span> main<span style="color: rgb(0, 153, 0);">(</span><a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Astring+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: rgb(0, 51, 153);">String</span></a><span style="color: rgb(0, 153, 0);">[</span><span style="color: rgb(0, 153, 0);">]</span> args<span style="color: rgb(0, 153, 0);">)</span> <span style="color: rgb(0, 153, 0);">{</span>
+			DisplayExample displayExample <span style="color: rgb(51, 153, 51);">=</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">new</span> DisplayExample<span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+		displayExample.<span style="color: rgb(0, 102, 51);">start</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+		<span style="color: rgb(0, 153, 0);">}</span>
+	<span style="color: rgb(0, 0, 0); font-weight: bold;">public</span> <span style="color: rgb(0, 0, 102); font-weight: bold;">void</span> start<span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span> <span style="color: rgb(0, 153, 0);">{</span>
+&nbsp;
+		<span style="color: rgb(0, 0, 0); font-weight: bold;">try</span> <span style="color: rgb(0, 153, 0);">{</span>
+		Display.<span style="color: rgb(0, 102, 51);">setDisplayMode</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 0, 0); font-weight: bold;">new</span> DisplayMode<span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(204, 102, 204);">800</span>,<span style="color: rgb(204, 102, 204);">600</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+		Display.<span style="color: rgb(0, 102, 51);">create</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+&nbsp;
+		<span style="color: rgb(0, 153, 0);">}</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">catch</span> <span style="color: rgb(0, 153, 0);">(</span>LWJGLException e<span style="color: rgb(0, 153, 0);">)</span> <span style="color: rgb(0, 153, 0);">{</span>
+			e.<span style="color: rgb(0, 102, 51);">printStackTrace</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+			<a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Asystem+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: rgb(0, 51, 153);">System</span></a>.<span style="color: rgb(0, 102, 51);">exit</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(204, 102, 204);">0</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+&nbsp;
+		<span style="color: rgb(0, 153, 0);">}</span>
+&nbsp;
+&nbsp;
+		<span style="color: rgb(0, 0, 0); font-weight: bold;">while</span> <span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(51, 153, 51);">!</span>Display.<span style="color: rgb(0, 102, 51);">isCloseRequested</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(0, 153, 0);">)</span> <span style="color: rgb(0, 153, 0);">{</span>
+&nbsp;
+			Display.<span style="color: rgb(0, 102, 51);">update</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+		<span style="color: rgb(0, 153, 0);">}</span>
+&nbsp;
+		Display.<span style="color: rgb(0, 102, 51);">destroy</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+&nbsp;
+	<span style="color: rgb(0, 153, 0);">}</span>
+<span style="color: rgb(0, 153, 0);">}</span></pre></div>
+</div>
+    <div class="n_bar">
+      <div class="n_name"> Anonymous Ninja</div>
+      <div class="n_date">Tue, 01/10/2012 - 04:21 </div>
+      <div class="n_links">
+                <ul class="links"><li class="comment_reply first last"><a href="http://ninjacave.com/comment/reply/23/20">reply</a></li>
+</ul>              </div>
+    </div>
+  </div>
+</div>
+<div class="indented"><a id="comment-21"></a>
+
+<div class="comment comment-published even">
+    <div class="n_comment">
+    <div class="n_subject"><p></p><p>I
+found the answer; one of the folders in the path had a semicolon, so it
+was separating the thing into two different paths. &lt;___&lt; Renaming
+it and replacing the lwjgl.jar fixed it.</p>
+</div>
+    <div class="n_bar">
+      <div class="n_name"> Anonymous Ninja</div>
+      <div class="n_date">Mon, 01/16/2012 - 22:00 </div>
+      <div class="n_links">
+                <ul class="links"><li class="comment_reply first last"><a href="http://ninjacave.com/comment/reply/23/21">reply</a></li>
+</ul>              </div>
+    </div>
+  </div>
+</div>
+</div><a id="comment-10"></a>
+
+<div class="comment comment-published odd">
+    <div class="n_comment">
+    <div class="n_subject"><p></p><p>I
+copied and pasted this "Display Example" example into my Eclipse
+project after configuring it as you said in your earlier tutorial. When
+I run the program as a java application, I get what looks like tv
+static, and the LWJGL icon in the top left corner is orange and
+obscured. How do I get rid of the static, or is it supposed to be there?</p>
+</div>
+    <div class="n_bar">
+      <div class="n_name"> Anonymous Ninja</div>
+      <div class="n_date">Sat, 09/10/2011 - 22:41 </div>
+      <div class="n_links">
+                <ul class="links"><li class="comment_reply first last"><a href="http://ninjacave.com/comment/reply/23/10">reply</a></li>
+</ul>              </div>
+    </div>
+  </div>
+</div>
+<div class="indented"><a id="comment-11"></a>
+
+<div class="comment comment-published even">
+    <div class="n_comment">
+    <div class="n_subject"><p></p><p>odd
+indeed, its not something that is normal behaviour and sounds like a
+driver problem. Do update your graphics drivers and see if that makes
+any difference.</p>
+</div>
+    <div class="n_bar">
+      <div class="n_name"> admin</div>
+      <div class="n_date">Sat, 09/10/2011 - 23:30 </div>
+      <div class="n_links">
+                <ul class="links"><li class="comment_reply first last"><a href="http://ninjacave.com/comment/reply/23/11">reply</a></li>
+</ul>              </div>
+    </div>
+  </div>
+</div>
+<div class="indented"><a id="comment-12"></a>
+
+<div class="comment comment-published odd">
+    <div class="n_comment">
+    <div class="n_subject"><p></p><p>I
+don't know if that makes any difference, but tutorials 3 and 4 work
+perfectly. I guess on my computer, I need to state what gets put on the
+canvas or else it'll print anything(hence, the tv static). Since tuts 3
+and 4 have an object on the screen, it works correctly(does that make
+sense?) </p>
+<p>Oh well, asides from the first 2 tuts, the window works perfectly, so, I'm not complaining anymore.</p>
+</div>
+    <div class="n_bar">
+      <div class="n_name"> Anonymous Ninja</div>
+      <div class="n_date">Sun, 09/11/2011 - 12:10 </div>
+      <div class="n_links">
+                <ul class="links"><li class="comment_reply first last"><a href="http://ninjacave.com/comment/reply/23/12">reply</a></li>
+</ul>              </div>
+    </div>
+  </div>
+</div>
+<div class="indented"><a id="comment-15"></a>
+
+<div class="comment comment-published even">
+    <div class="n_comment">
+    <div class="n_subject"><p></p><p>I'm
+betting the difference you're seeing is due to the glClear() call. It
+depends on the driver, but if you don't clear the buffer first (ie,
+glClear(GL_COLOR_BUFFER_BIT) ), the buffer will be full of random data.
+I think OSX GL drivers usually clear the buffer (or the memory) while
+Windows drivers don't (it's technically unnecessary assuming you render
+over the whole buffer). If you've ever seen a "hall of mirrors effect"
+in a game, that's actually related to this.</p>
+</div>
+    <div class="n_bar">
+      <div class="n_name"> Anonymous Ninja</div>
+      <div class="n_date">Tue, 11/15/2011 - 19:06 </div>
+      <div class="n_links">
+                <ul class="links"><li class="comment_reply first last"><a href="http://ninjacave.com/comment/reply/23/15">reply</a></li>
+</ul>              </div>
+    </div>
+  </div>
+</div>
+<div class="indented"><a id="comment-93"></a>
+
+<div class="comment comment-published odd">
+    <div class="n_comment">
+    <div class="n_subject"><p></p><p>Exception in thread "main" java.lang.UnsatisfiedLinkError: no lwjgl in java.library.path<br>
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1758)<br>
+	at java.lang.Runtime.loadLibrary0(Runtime.java:823)<br>
+	at java.lang.System.loadLibrary(System.java:1045)<br>
+	at org.lwjgl.Sys$1.run(Sys.java:73)<br>
+	at java.security.AccessController.doPrivileged(Native Method)<br>
+	at org.lwjgl.Sys.doLoadLibrary(Sys.java:66)<br>
+	at org.lwjgl.Sys.loadLibrary(Sys.java:95)<br>
+	at org.lwjgl.Sys.(Sys.java:112)<br>
+	at org.lwjgl.opengl.Display.(Display.java:135)<br>
+	at lwjgl.start(lwjgl.java:14)<br>
+	at lwjgl.main(lwjgl.java:9)</p>
+<p>BTW I used ALL of the jars as "extenal jars"</p>
+</div>
+    <div class="n_bar">
+      <div class="n_name"> Anonymous Ninja</div>
+      <div class="n_date">Wed, 08/21/2013 - 03:17 </div>
+      <div class="n_links">
+                <ul class="links"><li class="comment_reply first last"><a href="http://ninjacave.com/comment/reply/23/93">reply</a></li>
+</ul>              </div>
+    </div>
+  </div>
+</div>
+<div class="indented"><a id="comment-96"></a>
+
+<div class="comment comment-published even">
+    <div class="n_comment">
+    <div class="n_subject"><p></p><p>You need to set up a natives folder, and link the build path to your OS.</p>
+</div>
+    <div class="n_bar">
+      <div class="n_name"> Anonymous Ninja</div>
+      <div class="n_date">Sat, 10/19/2013 - 07:56 </div>
+      <div class="n_links">
+                <ul class="links"><li class="comment_reply first last"><a href="http://ninjacave.com/comment/reply/23/96">reply</a></li>
+</ul>              </div>
+    </div>
+  </div>
+</div>
+</div></div></div></div></div></div> </div>
+  <div class="footer">
+  <p></p><center><a href="http://www.ninjacave.com/user" target="_blank">
+<img src="lwjglbasics1_elemei/star.png" height="16" width="16" border="0">
+</a></center>
+  </div>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-20603131-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+</body></html>

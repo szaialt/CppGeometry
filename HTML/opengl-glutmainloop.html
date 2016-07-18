@@ -1,0 +1,1462 @@
+<!DOCTYPE HTML>
+<html itemtype="http://schema.org/QAPage" itemscope=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+    
+    <title>glut - opengl glutmainloop() - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="opengl glutmainloop()">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="i just started off using OpenGL and it seems it is not easy to understand the working of the glutMainLoop() what really happens there? Does it stay there doing nothing till any of the function calls ">
+    <meta property="og:url" content="http://stackoverflow.com/questions/1862496/opengl-glutmainloop">
+    <link rel="canonical" href="http://stackoverflow.com/questions/1862496/opengl-glutmainloop">
+
+    
+    
+    <script src="opengl-glutmainloop_elemei/quant.js"></script><script src="opengl-glutmainloop_elemei/beacon.js"></script><script src="opengl-glutmainloop_elemei/analytics.js"></script><script src="opengl-glutmainloop_elemei/ados_002.js" type="text/javascript"></script><script src="opengl-glutmainloop_elemei/ados.js" type="text/javascript"></script><script src="opengl-glutmainloop_elemei/jquery.js"></script>
+    <script src="opengl-glutmainloop_elemei/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="opengl-glutmainloop_elemei/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'opengl glutmainloop()'" href="http://stackoverflow.com/feeds/question/1862496">
+    <script>
+        
+        StackExchange.ready(function () {
+                
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.initSnippetRenderer();
+                });
+                
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:1862496});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '1862496');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1413118103,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"6397eadc197eba8a27c4f165a0f7ad62","isAnonymous":true,"ab":{"homepage_recommended_algo":{"v":"a","g":2},"new_user_inbox_message":{"v":"a","g":2}}}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"9845c425e870","js/moderator.en.js":"3878bee89992","js/full-anon.en.js":"28d0f2ecd7d6","js/full.en.js":"6abbfb910f0c","js/wmd.en.js":"396ed432a70e","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"16b738e40bb4","js/help.en.js":"56d0a3a560ae","js/tageditor.en.js":"acbefb65df40","js/tageditornew.en.js":"53b1de98b146","js/inline-tag-editing.en.js":"de80429b1816","js/revisions.en.js":"6c7265ea9fa1","js/review.en.js":"afa958db47d0","js/tagsuggestions.en.js":"bc2c996faeda","js/post-validation.en.js":"17d6838c3755","js/explore-qlist.en.js":"ce6dbe2ac3f4","js/events.en.js":"651cc5c098af","js/keyboard-shortcuts.en.js":"ce0f6a9b71dc","js/external-editor.en.js":"ae4d49a9a324","js/external-editor.en.js":"ae4d49a9a324","js/snippet-javascript.en.js":"2bca5038353d","js/snippet-javascript-codemirror.en.js":"d056033999c8"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script src="opengl-glutmainloop_elemei/adFeedback.js" type="text/javascript"></script><link href="opengl-glutmainloop_elemei/adFeedback.css" rel="stylesheet"><script src="opengl-glutmainloop_elemei/full-anon.js"></script><script src="opengl-glutmainloop_elemei/snippet-javascript.js"></script><script src="opengl-glutmainloop_elemei/post-validation.js"></script><script src="opengl-glutmainloop_elemei/external-editor.js"></script><link rel="stylesheet" type="text/css" href="opengl-glutmainloop_elemei/sidebar.css"></head><body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1862496%2fopengl-glutmainloop" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1862496%2fopengl-glutmainloop" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 130 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1862496%2fopengl-glutmainloop" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1862496%2fopengl-glutmainloop" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">stack overflow careers</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" value="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+Stack Overflow is a question and answer site for professional and
+enthusiast programmers. It's 100% free, no registration required. </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://stackoverflow.com/questions/1862496/opengl-glutmainloop" class="question-hyperlink">opengl glutmainloop()</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="1862496" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1072299106",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1072299106"><a href="http://engine.adzerk.net/r?e=eyJhdiI6OTk0LCJhdCI6NCwiYnQiOjAsImNtIjoxNjk3OTUsImNoIjoxMTc4LCJjciI6NTQ4MzI5LCJkaSI6ImQ2ZDBiYzM4Mzg4NzQ2NzlhMGE1NDA0MzE4NWNiZjI3IiwiZG0iOjEsImZjIjo1NjExMTgsImZsIjoyOTg0MzMsImlwIjoiODQuMS4yMDEuMTE4Iiwia3ciOiJvcGVuZ2wsZ2x1dCIsIm1rIjoib3BlbmdsIiwibnciOjIyLCJwYyI6OS41LCJwciI6NzY1LCJydCI6MiwicmYiOiJodHRwOi8vd3d3Lmdvb2dsZS5jb20vc2VhcmNoP3E9b3BlbmdsK2xvb3AraW4rZGlzcGxheStmdW5jdGlvbiZpZT11dGYtOCZvZT11dGYtOCZhcT10JnJscz1vcmcubW96aWxsYTpodS1IVTp1bm9mZmljaWFsJmNsaWVudD1pY2V3ZWFzZWwtYSIsInN0Ijo4Mjc3LCJ1ayI6ImRkZjI4NGUyOGI5MDQ2NzE5OTRjOWY4OTMxMzFlNDc5Iiwiem4iOjQzLCJ0cyI6MTQxMzExODEwNDM5MiwidXIiOiJodHRwOi8vd3d3LmlubW9iaS5jb20vdXNkLTIwLWVjcG0vP3V0bV9zb3VyY2U9c3RhY2tvdmVyZmxvdyZ1dG1fbWVkaXVtPWRpc3BsYXkmdXRtX2NhbXBhaWduPWVjcG0tZ3VhcmFudGVlLWVuIn0&amp;s=1bDtUzUvTVVbG3CqISDyaHrcoss" rel="nofollow" target="_blank" title=""><img src="opengl-glutmainloop_elemei/2f62d2f3c33b44f79df5fb4dd98ecf9a.png" title="" alt="" height="90" width="728" border="0"></a><img src="opengl-glutmainloop_elemei/i_002.gif" style="position: absolute;" height="0px" width="0px" border="0"><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display: none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="1862496" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>i just started off using OpenGL and it seems it is not easy to understand the working of the <code>glutMainLoop()</code> what really happens there? Does it stay there doing nothing till any of the function calls responds?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/opengl" class="post-tag js-gps-track" title="show questions tagged 'opengl'" rel="tag">opengl</a> <a href="http://stackoverflow.com/questions/tagged/glut" class="post-tag js-gps-track" title="show questions tagged 'glut'" rel="tag">glut</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/1862496" title="short permalink to this question" class="short-link" id="link-post-1862496">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1862496/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/1862496/revisions" title="show all edits to this post">edited <span title="2013-03-28 11:36:30Z" class="relativetime">Mar 28 '13 at 11:36</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1600108/miller"><div class="gravatar-wrapper-32"><img src="opengl-glutmainloop_elemei/1bbd575e2ed28bfaae0bbfcaf06e4b08.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1600108/miller">miller</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">408</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="24 bronze badges"><span class="badge3"></span><span class="badgecount">24</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2009-12-07 19:58:15Z" class="relativetime">Dec 7 '09 at 19:58</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/178248/codemax"><div class="gravatar-wrapper-32"><img src="opengl-glutmainloop_elemei/818bfb161b75230692122c8f61441199.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/178248/codemax">codemax</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">120</span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1862496" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-1862496" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								3 Answers
+                                <span style="display: none;" itemprop="answerCount">3</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/1862496/opengl-glutmainloop?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/1862496/opengl-glutmainloop?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/1862496/opengl-glutmainloop?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="1862505"></a>
+<div id="answer-1862505" class="answer" data-answerid="1862505" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="1862505" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">9</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>It calls your display callback over and over, calling idle between
+so that it can maintain a specific framerate if possible, and others if
+necessary (such as if you resize the window or trigger an input event).</p>
+
+<p>Essentially, within this function is the main program loop, where
+GLUT does most of the work for you and allows you to simply set up the
+specific program logic in these callbacks. It's been a while since I've
+worked with GLUT, and it is certainly confusing at first.</p>
+
+<p>In your display callback should obviously be your main logic to draw
+whatever it is that should be going on. In the idle callback should be
+some very lightweight operations to determine what the change in state
+should be from the last time display was called to the next time. For
+example, if you're animating something, this would be where you change
+its position or orientation.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/1862505" title="short permalink to this answer" class="short-link" id="link-post-1862505">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1862505/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-12-07 20:00:11Z" class="relativetime">Dec 7 '09 at 20:00</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/195615/strixvaria"><div class="gravatar-wrapper-32"><img src="opengl-glutmainloop_elemei/760251b750df5f461099445abcb6d132.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/195615/strixvaria">StrixVaria</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">419</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="15 bronze badges"><span class="badge3"></span><span class="badgecount">15</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1862505" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-1758510" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Glut has scarred me for life</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/20471/joe-philllips" title="14444 reputation" class="comment-user">Joe Philllips</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment1758510_1862505"><span title="2009-12-07 20:02:48Z" class="relativetime-clean">Dec 7 '09 at 20:02</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-1758539" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">GLUT is painful and it's not pretty...it turned me off from graphics programming, actually.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/195615/strixvaria" title="419 reputation" class="comment-user">StrixVaria</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment1758539_1862505"><span title="2009-12-07 20:06:14Z" class="relativetime-clean">Dec 7 '09 at 20:06</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-1758549" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Rotation
+was crazy for me, like 'wtf, there is a z-coordinate?' Once I took
+physics and learned some rules, everything calmed down</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/166712/anthony-forloney" title="30789 reputation" class="comment-user">Anthony Forloney</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment1758549_1862505"><span title="2009-12-07 20:07:17Z" class="relativetime-clean">Dec 7 '09 at 20:07</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-1763907" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">glutMainLoop
+only calls the display callback when a glut event triggers the display
+callback, such as resizing the window, uncovering the window, or
+calling glutPostRedisplay. You have to put code in your program to
+trigger glut into calling your display callback at a proper frame rate
+to produce animation in your program. For example, you can put a call
+to glutPostResdisplay into your idle callback function, so when GLUT is
+idle your display callback will get called.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/207838/mr-berna" title="7389 reputation" class="comment-user">Mr. Berna</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment1763907_1862505"><span title="2009-12-08 13:45:15Z" class="relativetime-clean">Dec 8 '09 at 13:45</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-1862505" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1749688551",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1749688551"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo4NDcsImNoIjoxMTc4LCJjciI6MTA3NjksImRpIjoiOTA5MGI4MTRhNWY3NDAzNjkyOTcwZjJmMWU4Yjc5YjIiLCJkbSI6MSwiZmMiOjE2ODg2LCJmbCI6MjQ0NCwiaXAiOiI4NC4xLjIwMS4xMTgiLCJrdyI6Im9wZW5nbCxnbHV0IiwibnciOjIyLCJwYyI6MCwicHIiOjE1NjgsInJ0IjoxLCJyZiI6Imh0dHA6Ly93d3cuZ29vZ2xlLmNvbS9zZWFyY2g_cT1vcGVuZ2wrbG9vcCtpbitkaXNwbGF5K2Z1bmN0aW9uJmllPXV0Zi04Jm9lPXV0Zi04JmFxPXQmcmxzPW9yZy5tb3ppbGxhOmh1LUhVOnVub2ZmaWNpYWwmY2xpZW50PWljZXdlYXNlbC1hIiwic3QiOjgyNzcsInVrIjoiZGRmMjg0ZTI4YjkwNDY3MTk5NGM5Zjg5MzEzMWU0NzkiLCJ6biI6NDQsInRzIjoxNDEzMTE4MTA0Mzk1LCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tP3V0bV9zb3VyY2U9c3RhY2tleGNoYW5nZS5jb20mdXRtX21lZGl1bT1hZCZ1dG1fY2FtcGFpZ249aG91c2UtYWRzLWNhdGNoLWFsbC1hbGwtc2l0ZXMmdXRtX2NvbnRlbnQ9bGItbW9yZS1wYXkta2V5In0&amp;s=lpnCtcx4MxWQfrzXxSrl-CtxTlM" rel="nofollow" target="_blank" title=""><img src="opengl-glutmainloop_elemei/d893babe671c41118c1fece177e0a21a.jpg" title="" alt="" height="90" width="728" border="0"></a><img src="opengl-glutmainloop_elemei/i_003.gif" style="position: absolute;" height="0px" width="0px" border="0"><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display: none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+  
+<a name="1862524"></a>
+<div id="answer-1862524" class="answer" data-answerid="1862524" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="1862524" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>It is exactly as StrixVaria has stated.</p>
+
+<blockquote>
+  <p>glutMainLoop enters the GLUT event processing loop.
+This routine should be called at most once in a GLUT program. Once
+called, this routine will never return. It will call as necessary any
+callbacks that have been registered. </p>
+</blockquote>
+
+<p>Taken from <a href="http://www.opengl.org/documentation/specs/glut/spec3/node14.html" rel="nofollow">here</a></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/1862524" title="short permalink to this answer" class="short-link" id="link-post-1862524">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1862524/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-12-07 20:04:30Z" class="relativetime">Dec 7 '09 at 20:04</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/166712/anthony-forloney"><div class="gravatar-wrapper-32"><img src="opengl-glutmainloop_elemei/5006afd86e5cdb815a0665f8a0237a02.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/166712/anthony-forloney">Anthony Forloney</a><br>
+        <span class="reputation-score" title="reputation score 30789" dir="ltr">30.8k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="72 silver badges"><span class="badge2"></span><span class="badgecount">72</span></span><span title="86 bronze badges"><span class="badge3"></span><span class="badgecount">86</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1862524" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-1862524" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="23134612"></a>
+<div id="answer-23134612" class="answer" data-answerid="23134612" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="23134612" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Using opengl and glut together means that you would be writing a
+'glut' program that uses opengl commands in the callback functions.
+main contains glut functions. many glut functions need a callback
+function to be registered. Those callback functions usually contain
+opengl commands.</p>
+
+<p>Coming to your question, now when it is clear that you are mainly
+writing a glut program, it should also be taken that glutMainLoop
+function call actually executes the callback functions as and when
+required, which in return executes the opengl commands.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/23134612" title="short permalink to this answer" class="short-link" id="link-post-23134612">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/23134612/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-04-17 13:34:33Z" class="relativetime">Apr 17 at 13:34</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/597858/saurabh"><div class="gravatar-wrapper-32"><img src="opengl-glutmainloop_elemei/CThfs.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/597858/saurabh">Saurabh</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">1,280</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="19 silver badges"><span class="badge2"></span><span class="badgecount">19</span></span><span title="32 bronze badges"><span class="badge3"></span><span class="badgecount">32</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-23134612" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-23134612" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/1862496/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="1862496" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="http://www.google.com/search?q=opengl+loop+in+display+function&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:hu-HU:unofficial&amp;client=iceweasel-a" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.options.snippets.enabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            prepareEditor({
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                ,immediatelyShowMarkdownHelp:true
+                });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height: 24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="6397eadc197eba8a27c4f165a0f7ad62" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f1862496%2fopengl-glutmainloop%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google-oauth2" class="use-google-oauth2" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display: none;" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f1862496%2fopengl-glutmainloop%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/opengl" class="post-tag" title="show questions tagged 'opengl'" rel="tag">opengl</a> <a href="http://stackoverflow.com/questions/tagged/glut" class="post-tag" title="show questions tagged 'glut'" rel="tag">glut</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px;">
+			                    <p class="label-key" title="2009-12-07 19:58:15Z"><b>4 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px;">
+			                    <p class="label-key">
+			                        <b>8465 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px;">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/1862496/opengl-glutmainloop?lastactivity" class="lastactivity-link" title="2014-04-17 13:34:33Z">5 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk212348795",[17,2221]).setZone(45) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk212348795"><div id="careersadsdoublehigh" style="display: none;"></div><img src="opengl-glutmainloop_elemei/i.gif" style="position: absolute;" height="0px" width="0px" border="0"></div>  
+        <div id="hireme">
+            <script>
+window.careers_adurl="//careers.stackoverflow.com/gethired/js",window.careers_cssurl="//cdn-careers.sstatic.net/careers/gethired/sidebar.min.css?v=6c84c7ee57b0",window.careers_leaderboardcssurl="{leaderboardcssurl}",window.careers_companycssurl="//cdn-careers.sstatic.net/careers/gethired/company",window.careers_adselector="div#hireme",StackExchange.ready(function(){$.ajax({url:"//cdn-careers.sstatic.net/careers/gethired/loader.min.js?v=e8e2e53b6118",dataType:"script",cache:!0})});            </script>
+            
+        </div>
+			<div class="module" id="chat-feature">
+    
+
+    
+<h4><a title="47 users active in 20 rooms the last 60 minutes" href="http://chat.stackoverflow.com/" id="h-chat-link">47 People Chatting</a></h4>
+
+<div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="JavaScript"><a href="http://chat.stackoverflow.com/rooms/17">JavaScript</a></span></h3><span title="2014-10-12 11:24:25Z" class="ad502-last-message">1 hour ago - <a href="http://chat.stackoverflow.com/users/401137">Some Guy</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/401137"><img src="opengl-glutmainloop_elemei/92c72c5f2ce226143274c1d32e560fd4.jpeg" title="Some Guy: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/4106994"><img src="opengl-glutmainloop_elemei/396c49debffda553c4db0efa2f0b5106.png" title="Afonso Matos: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/871050"><img src="opengl-glutmainloop_elemei/a7a50a9492be737b0c012a839338272a.png" title="Second Rikudo: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/3459110"><img src="opengl-glutmainloop_elemei/b3fbef105b46f8235f182c12bfa09e5c.png" title="Awal Garg: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1078067"><img src="opengl-glutmainloop_elemei/euDPU.png" title="copy: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/859154"><img src="opengl-glutmainloop_elemei/OuPQv.jpg" title="Royi Namir: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1839506"><img src="opengl-glutmainloop_elemei/Sej2t.jpg" title="Caprica Six: 1 hour ago" height="23" width="23"></a></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="Lounge&lt;C++&gt;"><a href="http://chat.stackoverflow.com/rooms/10">Lounge&lt;C++&gt;</a></span></h3><span title="2014-10-12 11:24:47Z" class="ad502-last-message">1 hour ago - <a href="http://chat.stackoverflow.com/users/1804599">rightføld</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/174614"><img src="opengl-glutmainloop_elemei/ca9a84fecd3f2fea333e8a1ef16edf98.jpeg" title="Tony The Lion: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1804599"><img src="opengl-glutmainloop_elemei/44814a231040ea4f568c0bb2e3b7c223.jpeg" title="rightføld: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/2668766"><img src="opengl-glutmainloop_elemei/165f6c32dd82c6dd685f902f51cbdda0.png" title="Queue Overflow: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/155407"><img src="opengl-glutmainloop_elemei/309643e44224fbf01c6bf10c025e6c07.jpeg" title="Scott W: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/1381108"><img src="opengl-glutmainloop_elemei/0a55e1b257487441cd435f66bfb413f1.jpeg" title="Rapptz: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/298661"><img src="opengl-glutmainloop_elemei/3445f56229632874a44596385ed6d40c.jpeg" title="Puppy: 1 hour ago" height="23" width="23"></a><a href="http://chat.stackoverflow.com/users/493122"><img src="opengl-glutmainloop_elemei/5Qpua.png" title="Sofffia: 2 hours ago" height="23" width="23"></a></div></div></div>
+<script>
+// <!--
+    StackExchange.ready(
+    function () {
+        var options = {
+            chatUrl: 'http://chat.stackoverflow.com',
+            reloadUrl: '/api/recent-chat',
+            preloadData: {"activeUsers":47,"activeRooms":20,"rooms":[{"name":"JavaScript","id":17,"lastPost":1413113065,"posts":2211223,"users":[{"name":"Some Guy","id":401137,"emailhash":"92c72c5f2ce226143274c1d32e560fd4","lastPost":1413113065},{"name":"Afonso Matos","id":4106994,"emailhash":"396c49debffda553c4db0efa2f0b5106","lastPost":1413113062},{"name":"Second Rikudo","id":871050,"emailhash":"a7a50a9492be737b0c012a839338272a","lastPost":1413112887},{"name":"Awal Garg","id":3459110,"emailhash":"b3fbef105b46f8235f182c12bfa09e5c","lastPost":1413112583},{"name":"copy","id":1078067,"emailhash":"!http://i.stack.imgur.com/euDPU.png?s=128\u0026g=1","lastPost":1413111963},{"name":"Royi Namir","id":859154,"emailhash":"!http://i.stack.imgur.com/OuPQv.jpg?s=128\u0026g=1","lastPost":1413111886},{"name":"Caprica Six","id":1839506,"emailhash":"!http://i.stack.imgur.com/Sej2t.jpg?s=128\u0026g=1","lastPost":1413111711}],"messages":[{"date":1413113065,"user":"Some Guy","userid":401137}],"singleImage":false,"tags":["ecmascript","javascript"]},{"name":"Lounge\u003cC++\u003e","id":10,"lastPost":1413113087,"posts":3128685,"users":[{"name":"Tony The Lion","id":174614,"emailhash":"ca9a84fecd3f2fea333e8a1ef16edf98","lastPost":1413113052},{"name":"rightføld","id":1804599,"emailhash":"44814a231040ea4f568c0bb2e3b7c223","lastPost":1413112432},{"name":"Queue Overflow","id":2668766,"emailhash":"165f6c32dd82c6dd685f902f51cbdda0","lastPost":1413112029},{"name":"Scott W","id":155407,"emailhash":"309643e44224fbf01c6bf10c025e6c07","lastPost":1413111858},{"name":"Rapptz","id":1381108,"emailhash":"0a55e1b257487441cd435f66bfb413f1","lastPost":1413111528},{"name":"Puppy","id":298661,"emailhash":"3445f56229632874a44596385ed6d40c","lastPost":1413111514},{"name":"Sofffia","id":493122,"emailhash":"!http://i.stack.imgur.com/5Qpua.png?s=128\u0026g=1","lastPost":1413108621}],"messages":[{"date":1413113087,"user":"rightføld","userid":1804599}],"singleImage":false,"tags":["c++","c++11","c++14","c++-faq"]}]} 
+        };
+
+        StackExchange.chatAd.init(options);
+    });
+// -->
+</script>
+
+</div>  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/22568393?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/22568393/call-function-from-within-glutmainloop?lq=1" class="question-hyperlink">Call function from within glutMainLoop()</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/23918?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">6
+    </div>
+</a><a href="http://stackoverflow.com/questions/23918/opengl-rotation?rq=1" class="question-hyperlink">OpenGL Rotation</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/5748236?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/5748236/draw-a-square-in-opengl-at-mouse-position?rq=1" class="question-hyperlink">Draw a square in opengl at mouse position</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/6880863?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/6880863/keyboard-event-in-opengl-with-glut?rq=1" class="question-hyperlink">keyboard event in OpenGL with glut</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/10569811?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/10569811/clearing-mouseclicks-buffer-in-opengl?rq=1" class="question-hyperlink">Clearing mouseclicks buffer in openGL</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/10683925?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/10683925/is-it-possible-to-replace-glutmainloop-with-simple-loop?rq=1" class="question-hyperlink">Is it possible to replace glutMainLoop() with simple loop?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13544208?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/13544208/opengl-plane-not-showing-up?rq=1" class="question-hyperlink">OpenGL Plane not showing up</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/16222231?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">-5
+    </div>
+</a><a href="http://stackoverflow.com/questions/16222231/good-opengl-tutorial?rq=1" class="question-hyperlink">Good opengl tutorial</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/16564328?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">-1
+    </div>
+</a><a href="http://stackoverflow.com/questions/16564328/opengl-sphere-shrinking-and-expanding?rq=1" class="question-hyperlink">OpenGL - sphere shrinking and expanding</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/23946403?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/23946403/opengl-rotating-the-piece-of-an-object?rq=1" class="question-hyperlink">OpenGL, rotating the piece of an object</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/26049549?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/26049549/rotation-using-keyboard-glut-opengl?rq=1" class="question-hyperlink">Rotation using keyboard — glut / OpenGL</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/29804/what-to-do-about-top-students-making-other-students-lose-confidence" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What to do about top students making other students lose confidence?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/69457/why-did-remy-the-rat-from-ratatouille-cook-ratatouille-at-the-end-of-the-movie" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Remy (the rat from Ratatouille) cook Ratatouille at the end of the movie?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/62908/simple-plot-of-vector" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Simple Plot of Vector
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a href="http://chemistry.stackexchange.com/questions/18352/how-to-measure-dissolved-oxygen" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    how to measure dissolved oxygen?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/2478/terraforming-a-gas-giant-into-an-habitable-planet" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Terraforming a gas giant into an habitable planet?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/37652/im-26-make-75k-have-30k-saved-up-no-debt-live-rent-in-with-parents-who" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+I'm 26, make $75K, have $30K saved up, no debt, live (rent in) with
+parents who are losing their home. Should I buy home now and save? </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/29759/is-it-legal-and-ethical-to-post-my-notes-of-a-conference-i-am-attending-on-my-we" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it legal and ethical to post my notes of a conference I am attending on my website?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-emacs" title="Emacs Stack Exchange"></div><a href="http://emacs.stackexchange.com/questions/2086/org-mode-prevent-editing-of-text-within-collapsed-subtree" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:583 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Org Mode: Prevent editing of text within collapsed subtree
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-space" title="Space Exploration Stack Exchange"></div><a href="http://space.stackexchange.com/questions/5568/how-can-yuri-gagarins-vostok-1-flight-be-considered-to-have-been-orbital-since" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })">
+How can Yuri Gagarin's Vostok 1 flight be considered to have been
+orbital, since he did not go all the way around Earth? </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/37640/whats-the-catch-in-investing-in-real-estate-for-rent" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What's the catch in investing in real estate for rent?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/49239/i-failed-to-open-a-lock-now-what" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I failed to open a lock. Now what?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/26324395/whats-the-javascripts-object-prototype-behavior" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What's the JavaScript's Object.prototype behavior?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/8986/can-a-passenger-realistically-replace-suddenly-incapacitated-pilots" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a passenger realistically replace suddenly incapacitated pilots?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/70471/authentication-username-email-and-password-hashed-together-in-one-database-fi" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Authentication: Username (email) and password hashed together in one database field
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-graphicdesign" title="Graphic Design Stack Exchange"></div><a href="http://graphicdesign.stackexchange.com/questions/39616/is-it-frowned-upon-as-a-designer-if-you-dont-use-top-software" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:174 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it frowned upon as a designer if you don't use "top" software?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/49404/how-should-i-handle-arcane-spell-failure-in-pathfinder" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How should I handle arcane spell failure in pathfinder?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/140927/is-it-possible-to-start-fire-using-moonlight" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it possible to start fire using moonlight?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/969768/unfamiliar-notation-in-an-aops-paper" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Unfamiliar notation in an AoPS paper
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-gardening" title="Gardening &amp; Landscaping Stack Exchange"></div><a href="http://gardening.stackexchange.com/questions/14361/chilli-sprouts-are-too-close-together-should-i-start-culling-them" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:269 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Chilli sprouts are too close together. Should I start culling them?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/61826/replacing-elements-of-a-nested-list-by-some-value" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Replacing elements of a nested list by some value
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/536130/how-do-i-get-the-matrix-theme-colors-lime-green-text-over-black-background-on" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I get the Matrix theme colors (Lime-Green text over black background) on the Terminal?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/68975/what-is-different-about-being-targeted-by-a-professional-attacker" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is different about being targeted by a professional attacker?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/36524/at-the-cost-of-about-or-at-a-cost-of-about" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    At the cost of about or At a cost of about
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/161674/are-there-alternatives-to-using-udev" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are there alternatives to using `udev`?
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/1862496" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/1862496/ivc/bcd5');});
+</script>
+<noscript>
+    <div><img src="/posts/1862496/ivc/bcd5" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display: none;" id="prettify-lang"></div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=footerlink">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>                   with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.10.10.1929
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+<div id="noscript-warning">Stack Overflow works best with JavaScript
+enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif"
+alt="" class="dno"></div> </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('opengl,glut');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|opengl|glut|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    </body></html>

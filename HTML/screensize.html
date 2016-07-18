@@ -1,0 +1,1302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="top" href="http://forums.libsdl.org/index.php?sid=6123503f3e6f34dbb59f54487ae8a9b5" title="SDL Forum Index">
+<link rel="search" href="http://forums.libsdl.org/search.php?sid=6123503f3e6f34dbb59f54487ae8a9b5" title="Search">
+<link rel="help" href="http://forums.libsdl.org/faq.php?sid=6123503f3e6f34dbb59f54487ae8a9b5" title="FAQ">
+<link rel="author" href="http://forums.libsdl.org/memberlist.php?sid=6123503f3e6f34dbb59f54487ae8a9b5" title="Memberlist">
+<link rel="prev" href="http://forums.libsdl.org/viewtopic.php?t=4947&amp;view=previous&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5" title="View previous topic">
+<link rel="next" href="http://forums.libsdl.org/viewtopic.php?t=4947&amp;view=next&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5" title="View next topic">
+<link rel="up" href="http://forums.libsdl.org/viewforum.php?f=1&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5" title="SDL Development">
+<link rel="chapter forum" href="http://forums.libsdl.org/viewforum.php?f=3&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5" title="SDL Announcements">
+<link rel="chapter forum" href="http://forums.libsdl.org/viewforum.php?f=2&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5" title="SDL Jobs">
+<link rel="chapter forum" href="http://forums.libsdl.org/viewforum.php?f=1&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5" title="SDL Development">
+<link rel="chapter forum" href="http://forums.libsdl.org/viewforum.php?f=4&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5" title="Game Development">
+
+<title>SDL :: View topic - SDL Function To Return Desktop Screen Size ?</title>
+<link rel="stylesheet" href="screensize_elemei/style_blue.css" type="text/css">
+<style type="text/css">
+<!--
+@import url("./templates/Morpheus/formIE.css");
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!--
+
+var PreloadFlag = false;
+var expDays = 90;
+var exp = new Date();
+var tmp = '';
+var tmp_counter = 0;
+var tmp_open = 0;
+
+exp.setTime(exp.getTime() + (expDays*24*60*60*1000));
+
+function SetCookie(name, value)
+{
+	var argv = SetCookie.arguments;
+	var argc = SetCookie.arguments.length;
+	var expires = (argc > 2) ? argv[2] : null;
+	var path = (argc > 3) ? argv[3] : null;
+	var domain = (argc > 4) ? argv[4] : null;
+	var secure = (argc > 5) ? argv[5] : false;
+	document.cookie = name + "=" + escape(value) +
+		((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+		((path == null) ? "" : ("; path=" + path)) +
+		((domain == null) ? "" : ("; domain=" + domain)) +
+		((secure == true) ? "; secure" : "");
+}
+
+function getCookieVal(offset)
+{
+	var endstr = document.cookie.indexOf(";",offset);
+	if (endstr == -1)
+	{
+		endstr = document.cookie.length;
+	}
+	return unescape(document.cookie.substring(offset, endstr));
+}
+
+function GetCookie(name)
+{
+	var arg = name + "=";
+	var alen = arg.length;
+	var clen = document.cookie.length;
+	var i = 0;
+	while (i < clen)
+	{
+		var j = i + alen;
+		if (document.cookie.substring(i, j) == arg)
+			return getCookieVal(j);
+		i = document.cookie.indexOf(" ", i) + 1;
+		if (i == 0)
+			break;
+	}
+	return null;
+}
+
+function ShowHide(id1, id2, id3)
+{
+	var res = expMenu(id1);
+	if (id2 != '') expMenu(id2);
+	if (id3 != '') SetCookie(id3, res, exp);
+}
+
+function expMenu(id)
+{
+	var itm = null;
+	if (document.getElementById)
+	{
+		itm = document.getElementById(id);
+	}
+	else if (document.all)
+	{
+		itm = document.all[id];
+	}
+	else if (document.layers)
+	{
+		itm = document.layers[id];
+	}
+	if (!itm)
+	{
+		// do nothing
+	}
+	else if (itm.style)
+	{
+		if (itm.style.display == "none")
+		{
+			itm.style.display = "";
+			return 1;
+		}
+		else
+		{
+			itm.style.display = "none";
+			return 2;
+		}
+	}
+	else
+	{
+		itm.visibility = "show";
+		return 1;
+	}
+}
+
+//-->
+</script>
+</head><body link="#3b88c5" text="#000000" vlink="#3279b2" alink="#ff9c00" bgcolor="#ffffff">
+<iframe src="screensize_elemei/m2f_import_msgs.html" title="M2F Simple Cron check" frameborder="0" height="1" scrolling="NO" width="1">
+&lt;!-- Alternate content for non-supporting browsers --&gt;
+</iframe>
+<a name="top"></a>
+<table height="100%" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td class="border_left" width="10"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="10"></td>
+	<td class="content" height="100%" valign="top" width="100%" align="center">
+	<div id="header-box">
+		<div id="header-left"><a href="http://forums.libsdl.org/index.php?sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/logo_left.gif" alt="SDL Forum Index" height="69" width="125"></a></div>
+ 		<div id="header-right"><img src="screensize_elemei/logo_right.gif" alt="" height="69" width="125"></div>
+		<div id="header-center">
+			<b>SDL</b><br>
+			Simple DirectMedia Layer Forums
+		</div>
+	</div>
+	<div id="navigation">
+			&nbsp;<a href="http://forums.libsdl.org/profile.php?mode=register&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5">Register</a>&nbsp; |
+			&nbsp;<a href="http://forums.libsdl.org/faq.php?sid=6123503f3e6f34dbb59f54487ae8a9b5">FAQ</a>&nbsp; |
+			&nbsp;<a href="http://forums.libsdl.org/search.php?sid=6123503f3e6f34dbb59f54487ae8a9b5">Search</a>&nbsp; |
+			&nbsp;<a href="http://forums.libsdl.org/memberlist.php?sid=6123503f3e6f34dbb59f54487ae8a9b5">Memberlist</a>&nbsp; |
+			&nbsp;<a href="http://forums.libsdl.org/groupcp.php?sid=6123503f3e6f34dbb59f54487ae8a9b5">Usergroups</a>&nbsp; |
+			&nbsp;<a href="http://forums.libsdl.org/login.php?sid=6123503f3e6f34dbb59f54487ae8a9b5">Log in</a>&nbsp;
+	</div>
+	<div id="content">
+
+
+<table class="nav" width="100%" align="center" border="0" cellpadding="4" cellspacing="1">
+<tbody><tr>
+	<td class="nav" nowrap="nowrap" valign="middle" align="left"><span class="nav"><a href="http://forums.libsdl.org/index.php?sid=6123503f3e6f34dbb59f54487ae8a9b5">SDL Forum Index</a> » <a href="http://forums.libsdl.org/viewforum.php?f=1&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5">SDL Development</a></span></td>
+	<td class="nav navform" nowrap="nowrap" valign="middle" align="right"><span class="nav"><form action="search.php?mode=results&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5" method="post" style="display: inline;"><input name="show_results" value="topics" type="hidden"><input name="search_forum" value="1" type="hidden">
+	<input name="search_keywords" class="post" size="15" type="text">
+	<input value="Search" class="mainoption" type="submit">
+	</form></span></td>
+</tr>
+</tbody></table>
+
+<table width="100%" border="0" cellpadding="2" cellspacing="2">
+  <tbody><tr>
+    <td valign="middle" align="left"><a href="http://forums.libsdl.org/posting.php?mode=reply&amp;t=4947&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/reply.gif" alt="Reply to topic" align="middle" border="0"></a></td>
+	 <td valign="middle" align="right"><div class="pagination"></div></td>
+  </tr>
+</tbody></table>
+
+
+
+<a name="19329"></a>
+<table class="hdr" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td width="35" align="left"><img src="screensize_elemei/hdr_left_post.gif" alt="" height="25" width="35"></td><td nowrap="nowrap" width="100%" align="left">SDL Function To Return Desktop Screen Size ?</td><td width="120" align="right"><img src="screensize_elemei/hdr_right_blue.gif" alt="" height="25" width="120"></td></tr></tbody></table><table class="post" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td class="row" style="padding: 2px;" rowspan="2" valign="top" width="150" align="center">
+		<div style="padding: 3px;"><span class="name">JeZ-l-Lee</span><br></div>
+		<div style="padding: 2px;"><span class="postdetails"></span><br></div>
+		
+		<div style="margin: auto; overflow: hidden; width: 140px;"></div>
+		<br>
+		<table width="100%" cellpadding="0" cellspacing="5">
+			<tbody><tr><td align="left"><span class="postdetails">Joined: 20 Sep 2009</span></td></tr>
+			<tr><td align="left"><span class="postdetails">Posts: 398</span></td></tr>
+			<tr><td align="left"><span class="postdetails">Location: Long Island, New York, United States, Earth</span></td></tr>
+		</tbody></table>
+		<img src="screensize_elemei/spacer.gif" alt="" height="1" width="150" border="0">
+	</td>
+	<td class="postborder" rowspan="2" width="1"><img src="screensize_elemei/spacer.gif" alt="" height="100" width="1"></td>
+	<td class="row" valign="top" width="100%" align="left"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td style="padding: 3px;" width="50%" align="left"><span class="postdate"><a href="http://forums.libsdl.org/viewtopic.php?p=19329&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5#19329"><img src="screensize_elemei/icon_minipost.gif" alt="Post" title="Post" height="9" width="12" border="0"></a> Posted: Mon Sep 28, 2009 9:18 pm</span></td>
+		<td width="50%"></td>
+		<td class="posttop" valign="top" width="23" align="left"><img src="screensize_elemei/posttop_left.gif" alt="" height="9" width="23" border="0"></td>
+		<td class="posttop" nowrap="nowrap" valign="top"><a href="http://forums.libsdl.org/posting.php?mode=quote&amp;p=19329&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class="postline" height="1" width="50%"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="100"></td>
+		<td colspan="3" height="1"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+	<div style="padding: 4px;" class="postbody">SDL Function To Return Desktop Screen Size ?
+<br>
+
+<br>
+
+<br>
+JeZ+Lee
+<br>
+
+<br>
+<a href="http://www.silentheroproductions.com/" target="_blank">www.SilentHeroProductions.com</a>
+<br>
+
+<br>
+_______________________________________________
+<br>
+SDL mailing list
+<br>
+
+<br>
+<a href="http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org" target="_blank">http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org</a></div>
+	</td>
+</tr>
+<tr>
+	<td valign="bottom" align="left">
+	<div style="padding: 5px;" class="postbody"><span class="signature"><span class="gensmall"></span><br>_________________<br><span style="font-weight: bold;">JeZ+Lee</span>
+<br>
+JessePalser &lt;AT&gt; Gmail &lt;DOT&gt; com
+<br>
+<span style="font-weight: bold;">16BitSoft Inc.</span>
+<br>
+Video Game Design Studio
+<br>
+<a href="http://www.16bitsoft.com/" target="_blank">www.16BitSoft.com</a></span></div>
+	<table height="9" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="postbottom" height="9" nowrap="nowrap"><a href="http://forums.libsdl.org/profile.php?mode=viewprofile&amp;u=24&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0"></a><a href="http://forums.libsdl.org/privmsg.php?mode=post&amp;u=24&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_pm.gif" alt="Send private message" title="Send private message" border="0"></a><a href="http://www.16bitsoft.com/" target="_userwww"><img src="screensize_elemei/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0"></a><a href="aim:goim?screenname=SLNTHERO@aol.com&amp;message=Hello+Are+you+there?"><img src="screensize_elemei/icon_aim.gif" alt="AIM Address" title="AIM Address" border="0"></a><a href="http://edit.yahoo.com/config/send_webmesg?.target=NA&amp;.src=pg"><img src="screensize_elemei/icon_yim.gif" alt="Yahoo Messenger" title="Yahoo Messenger" border="0"></a><a href="http://forums.libsdl.org/profile.php?mode=viewprofile&amp;u=24&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_msn.gif" alt="MSN Messenger" title="MSN Messenger" border="0"></a><a href="http://wwp.icq.com/scripts/search.dll?to=223180991"><img src="screensize_elemei/icon_icq.gif" alt="ICQ Number" title="ICQ Number" border="0"></a></td>
+		<td height="9" width="100%" align="left"><img src="screensize_elemei/postbottom_right.gif" alt="" height="9" width="22"></td>
+	</tr>
+	</tbody></table></td>
+</tr>
+</tbody></table><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td height="15" valign="top" width="100%" align="right"><a href="#top"><img src="screensize_elemei/ftr_right.gif" alt="" height="10" width="60"></a></td></tr></tbody></table>
+<a name="19332"></a>
+<table class="hdr" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td width="35" align="left"><img src="screensize_elemei/hdr_left_post.gif" alt="" height="25" width="35"></td><td nowrap="nowrap" width="100%" align="left">SDL Function To Return Desktop Screen Size ?</td><td width="120" align="right"><img src="screensize_elemei/hdr_right_blue.gif" alt="" height="25" width="120"></td></tr></tbody></table><table class="post" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td class="row" style="padding: 2px;" rowspan="2" valign="top" width="150" align="center">
+		<div style="padding: 3px;"><span class="name">Bill Kendrick</span><br></div>
+		<div style="padding: 2px;"><span class="postdetails">Guest</span><br></div>
+		
+		<div style="margin: auto; overflow: hidden; width: 140px;"></div>
+		<br>
+		<table width="100%" cellpadding="0" cellspacing="5">
+			<tbody><tr><td align="left"><span class="postdetails"></span></td></tr>
+			<tr><td align="left"><span class="postdetails"></span></td></tr>
+			<tr><td align="left"><span class="postdetails"></span></td></tr>
+		</tbody></table>
+		<img src="screensize_elemei/spacer.gif" alt="" height="1" width="150" border="0">
+	</td>
+	<td class="postborder" rowspan="2" width="1"><img src="screensize_elemei/spacer.gif" alt="" height="100" width="1"></td>
+	<td class="row" valign="top" width="100%" align="left"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td style="padding: 3px;" width="50%" align="left"><span class="postdate"><a href="http://forums.libsdl.org/viewtopic.php?p=19332&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5#19332"><img src="screensize_elemei/icon_minipost.gif" alt="Post" title="Post" height="9" width="12" border="0"></a> Posted: Mon Sep 28, 2009 9:55 pm</span></td>
+		<td width="50%"></td>
+		<td class="posttop" valign="top" width="23" align="left"><img src="screensize_elemei/posttop_left.gif" alt="" height="9" width="23" border="0"></td>
+		<td class="posttop" nowrap="nowrap" valign="top"><a href="http://forums.libsdl.org/posting.php?mode=quote&amp;p=19332&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class="postline" height="1" width="50%"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="100"></td>
+		<td colspan="3" height="1"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+	<div style="padding: 4px;" class="postbody">On Mon, Sep 28, 2009 at 05:18:35PM -0400, Jesse Palser wrote:
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">SDL Function To Return Desktop Screen Size ?
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+Here's what I do in Tux Paint (when you run "tuxpaint --fullscreen --native"):
+<br>
+
+<br>
+if (native) {
+<br>
+screen = SDL_SetVideoMode(0, 0, {bpp}, SDL_FULLSCREEN | {other flags});
+<br>
+...
+<br>
+width = screen-&gt;w;
+<br>
+height = screen-&gt;h;
+<br>
+} else {
+<br>
+screen = SDL_SetVideoMode(width, height, {bpp}, {flags});
+<br>
+}
+<br>
+
+<br>
+In other words, if you try to open a 0x0 full-screen display, SDL will
+<br>
+end up using the desktop's resolution.  (Then you can fetch the size
+<br>
+via the 'w' and 'h' of the surface it sent back.)
+<br>
+
+<br>
+I know this isn't the same as "querying", but it might be all you need...
+<br>
+
+<br>
+-- 
+<br>
+-bill!
+<br>
+Sent from my computer
+<br>
+_______________________________________________
+<br>
+SDL mailing list
+<br>
+
+<br>
+<a href="http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org" target="_blank">http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org</a></div>
+	</td>
+</tr>
+<tr>
+	<td valign="bottom" align="left">
+	<div style="padding: 5px;" class="postbody"><span class="signature"><span class="gensmall"></span></span></div>
+	<table height="9" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="postbottom" height="9" nowrap="nowrap"></td>
+		<td height="9" width="100%" align="left"><img src="screensize_elemei/postbottom_right.gif" alt="" height="9" width="22"></td>
+	</tr>
+	</tbody></table></td>
+</tr>
+</tbody></table><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td height="15" valign="top" width="100%" align="right"><a href="#top"><img src="screensize_elemei/ftr_right.gif" alt="" height="10" width="60"></a></td></tr></tbody></table>
+<a name="19333"></a>
+<table class="hdr" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td width="35" align="left"><img src="screensize_elemei/hdr_left_post.gif" alt="" height="25" width="35"></td><td nowrap="nowrap" width="100%" align="left">SDL Function To Return Desktop Screen Size ?</td><td width="120" align="right"><img src="screensize_elemei/hdr_right_blue.gif" alt="" height="25" width="120"></td></tr></tbody></table><table class="post" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td class="row" style="padding: 2px;" rowspan="2" valign="top" width="150" align="center">
+		<div style="padding: 3px;"><span class="name">Stephen Anthony</span><br></div>
+		<div style="padding: 2px;"><span class="postdetails">Guest</span><br></div>
+		
+		<div style="margin: auto; overflow: hidden; width: 140px;"></div>
+		<br>
+		<table width="100%" cellpadding="0" cellspacing="5">
+			<tbody><tr><td align="left"><span class="postdetails"></span></td></tr>
+			<tr><td align="left"><span class="postdetails"></span></td></tr>
+			<tr><td align="left"><span class="postdetails"></span></td></tr>
+		</tbody></table>
+		<img src="screensize_elemei/spacer.gif" alt="" height="1" width="150" border="0">
+	</td>
+	<td class="postborder" rowspan="2" width="1"><img src="screensize_elemei/spacer.gif" alt="" height="100" width="1"></td>
+	<td class="row" valign="top" width="100%" align="left"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td style="padding: 3px;" width="50%" align="left"><span class="postdate"><a href="http://forums.libsdl.org/viewtopic.php?p=19333&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5#19333"><img src="screensize_elemei/icon_minipost.gif" alt="Post" title="Post" height="9" width="12" border="0"></a> Posted: Mon Sep 28, 2009 10:03 pm</span></td>
+		<td width="50%"></td>
+		<td class="posttop" valign="top" width="23" align="left"><img src="screensize_elemei/posttop_left.gif" alt="" height="9" width="23" border="0"></td>
+		<td class="posttop" nowrap="nowrap" valign="top"><a href="http://forums.libsdl.org/posting.php?mode=quote&amp;p=19333&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class="postline" height="1" width="50%"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="100"></td>
+		<td colspan="3" height="1"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+	<div style="padding: 4px;" class="postbody">On September 28, 2009, Bill Kendrick wrote:
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">On Mon, Sep 28, 2009 at 05:18:35PM -0400, Jesse Palser wrote:
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">SDL Function To Return Desktop Screen Size ?
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+Here's what I do in Tux Paint (when you run "tuxpaint --fullscreen
+<br>
+--native"):
+<br>
+
+<br>
+if (native) {
+<br>
+screen = SDL_SetVideoMode(0, 0, {bpp}, SDL_FULLSCREEN | {other
+<br>
+flags}); ...
+<br>
+width = screen-&gt;w;
+<br>
+height = screen-&gt;h;
+<br>
+} else {
+<br>
+screen = SDL_SetVideoMode(width, height, {bpp}, {flags});
+<br>
+}
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+Also:
+<br>
+_______________________________________________
+<br>
+SDL mailing list
+<br>
+
+<br>
+<a href="http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org" target="_blank">http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org</a></div>
+	</td>
+</tr>
+<tr>
+	<td valign="bottom" align="left">
+	<div style="padding: 5px;" class="postbody"><span class="signature"><span class="gensmall"></span></span></div>
+	<table height="9" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="postbottom" height="9" nowrap="nowrap"></td>
+		<td height="9" width="100%" align="left"><img src="screensize_elemei/postbottom_right.gif" alt="" height="9" width="22"></td>
+	</tr>
+	</tbody></table></td>
+</tr>
+</tbody></table><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td height="15" valign="top" width="100%" align="right"><a href="#top"><img src="screensize_elemei/ftr_right.gif" alt="" height="10" width="60"></a></td></tr></tbody></table>
+<a name="19334"></a>
+<table class="hdr" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td width="35" align="left"><img src="screensize_elemei/hdr_left_post.gif" alt="" height="25" width="35"></td><td nowrap="nowrap" width="100%" align="left">SDL Function To Return Desktop Screen Size ?</td><td width="120" align="right"><img src="screensize_elemei/hdr_right_blue.gif" alt="" height="25" width="120"></td></tr></tbody></table><table class="post" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td class="row" style="padding: 2px;" rowspan="2" valign="top" width="150" align="center">
+		<div style="padding: 3px;"><span class="name">Stephen Anthony</span><br></div>
+		<div style="padding: 2px;"><span class="postdetails">Guest</span><br></div>
+		
+		<div style="margin: auto; overflow: hidden; width: 140px;"></div>
+		<br>
+		<table width="100%" cellpadding="0" cellspacing="5">
+			<tbody><tr><td align="left"><span class="postdetails"></span></td></tr>
+			<tr><td align="left"><span class="postdetails"></span></td></tr>
+			<tr><td align="left"><span class="postdetails"></span></td></tr>
+		</tbody></table>
+		<img src="screensize_elemei/spacer.gif" alt="" height="1" width="150" border="0">
+	</td>
+	<td class="postborder" rowspan="2" width="1"><img src="screensize_elemei/spacer.gif" alt="" height="100" width="1"></td>
+	<td class="row" valign="top" width="100%" align="left"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td style="padding: 3px;" width="50%" align="left"><span class="postdate"><a href="http://forums.libsdl.org/viewtopic.php?p=19334&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5#19334"><img src="screensize_elemei/icon_minipost.gif" alt="Post" title="Post" height="9" width="12" border="0"></a> Posted: Mon Sep 28, 2009 10:06 pm</span></td>
+		<td width="50%"></td>
+		<td class="posttop" valign="top" width="23" align="left"><img src="screensize_elemei/posttop_left.gif" alt="" height="9" width="23" border="0"></td>
+		<td class="posttop" nowrap="nowrap" valign="top"><a href="http://forums.libsdl.org/posting.php?mode=quote&amp;p=19334&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class="postline" height="1" width="50%"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="100"></td>
+		<td colspan="3" height="1"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+	<div style="padding: 4px;" class="postbody">On September 28, 2009, Bill Kendrick wrote:
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">On Mon, Sep 28, 2009 at 05:18:35PM -0400, Jesse Palser wrote:
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">SDL Function To Return Desktop Screen Size ?
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+Here's what I do in Tux Paint (when you run "tuxpaint --fullscreen
+<br>
+--native"):
+<br>
+
+<br>
+if (native) {
+<br>
+screen = SDL_SetVideoMode(0, 0, {bpp}, SDL_FULLSCREEN | {other
+<br>
+flags}); ...
+<br>
+width = screen-&gt;w;
+<br>
+height = screen-&gt;h;
+<br>
+} else {
+<br>
+screen = SDL_SetVideoMode(width, height, {bpp}, {flags});
+<br>
+}
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+OK, lets try that again:
+<br>
+
+<br>
+SDL_VideoInfo* info = SDL_GetVideoInfo();
+<br>
+width = info-&gt;current_w;
+<br>
+height = info-&gt;current_h;
+<br>
+
+<br>
+This only works in SDL 1.2.11 or higher, I believe.
+<br>
+
+<br>
+SA
+<br>
+_______________________________________________
+<br>
+SDL mailing list
+<br>
+
+<br>
+<a href="http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org" target="_blank">http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org</a></div>
+	</td>
+</tr>
+<tr>
+	<td valign="bottom" align="left">
+	<div style="padding: 5px;" class="postbody"><span class="signature"><span class="gensmall"></span></span></div>
+	<table height="9" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="postbottom" height="9" nowrap="nowrap"></td>
+		<td height="9" width="100%" align="left"><img src="screensize_elemei/postbottom_right.gif" alt="" height="9" width="22"></td>
+	</tr>
+	</tbody></table></td>
+</tr>
+</tbody></table><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td height="15" valign="top" width="100%" align="right"><a href="#top"><img src="screensize_elemei/ftr_right.gif" alt="" height="10" width="60"></a></td></tr></tbody></table>
+<a name="19339"></a>
+<table class="hdr" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td width="35" align="left"><img src="screensize_elemei/hdr_left_post.gif" alt="" height="25" width="35"></td><td nowrap="nowrap" width="100%" align="left">SDL Function To Return Desktop Screen Size ?</td><td width="120" align="right"><img src="screensize_elemei/hdr_right_blue.gif" alt="" height="25" width="120"></td></tr></tbody></table><table class="post" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td class="row" style="padding: 2px;" rowspan="2" valign="top" width="150" align="center">
+		<div style="padding: 3px;"><span class="name">Sam Lantinga</span><br></div>
+		<div style="padding: 2px;"><span class="postdetails"></span><br></div>
+		
+		<div style="margin: auto; overflow: hidden; width: 140px;"></div>
+		<br>
+		<table width="100%" cellpadding="0" cellspacing="5">
+			<tbody><tr><td align="left"><span class="postdetails">Joined: 10 Sep 2009</span></td></tr>
+			<tr><td align="left"><span class="postdetails">Posts: 1662</span></td></tr>
+			<tr><td align="left"><span class="postdetails"></span></td></tr>
+		</tbody></table>
+		<img src="screensize_elemei/spacer.gif" alt="" height="1" width="150" border="0">
+	</td>
+	<td class="postborder" rowspan="2" width="1"><img src="screensize_elemei/spacer.gif" alt="" height="100" width="1"></td>
+	<td class="row" valign="top" width="100%" align="left"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td style="padding: 3px;" width="50%" align="left"><span class="postdate"><a href="http://forums.libsdl.org/viewtopic.php?p=19339&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5#19339"><img src="screensize_elemei/icon_minipost.gif" alt="Post" title="Post" height="9" width="12" border="0"></a> Posted: Tue Sep 29, 2009 1:21 am</span></td>
+		<td width="50%"></td>
+		<td class="posttop" valign="top" width="23" align="left"><img src="screensize_elemei/posttop_left.gif" alt="" height="9" width="23" border="0"></td>
+		<td class="posttop" nowrap="nowrap" valign="top"><a href="http://forums.libsdl.org/posting.php?mode=quote&amp;p=19339&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class="postline" height="1" width="50%"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="100"></td>
+		<td colspan="3" height="1"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+	<div style="padding: 4px;" class="postbody">And in SDL 1.3:
+<br>
+SDL_GetDesktopDisplayMode()
+<br>
+
+<br>
+On Mon, Sep 28, 2009 at 3:06 PM, Stephen Anthony wrote:
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">On September 28, 2009, Bill Kendrick wrote:
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">On Mon, Sep 28, 2009 at 05:18:35PM -0400, Jesse Palser wrote:
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">SDL Function To Return Desktop Screen Size ?
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+Here's what I do in Tux Paint (when you run "tuxpaint --fullscreen
+<br>
+--native"):
+<br>
+
+<br>
+&nbsp; if (native) {
+<br>
+&nbsp; &nbsp; screen = SDL_SetVideoMode(0, 0, {bpp}, SDL_FULLSCREEN | {other
+<br>
+flags}); ...
+<br>
+&nbsp; &nbsp; width = screen-&gt;w;
+<br>
+&nbsp; &nbsp; height = screen-&gt;h;
+<br>
+&nbsp; } else {
+<br>
+&nbsp; &nbsp; screen = SDL_SetVideoMode(width, height, {bpp}, {flags});
+<br>
+&nbsp; }
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+OK, lets try that again:
+<br>
+
+<br>
+&nbsp;SDL_VideoInfo* info = SDL_GetVideoInfo();
+<br>
+&nbsp;width = info-&gt;current_w;
+<br>
+&nbsp;height = info-&gt;current_h;
+<br>
+
+<br>
+This only works in SDL 1.2.11 or higher, I believe.
+<br>
+
+<br>
+SA
+<br>
+_______________________________________________
+<br>
+SDL mailing list
+<br>
+
+<br>
+<a href="http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org" target="_blank">http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org</a>
+<br>
+
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+
+<br>
+
+<br>
+-- 
+<br>
+	-Sam Lantinga, Founder and President, Galaxy Gameworks LLC
+<br>
+_______________________________________________
+<br>
+SDL mailing list
+<br>
+
+<br>
+<a href="http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org" target="_blank">http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org</a></div>
+	</td>
+</tr>
+<tr>
+	<td valign="bottom" align="left">
+	<div style="padding: 5px;" class="postbody"><span class="signature"><span class="gensmall"></span></span></div>
+	<table height="9" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="postbottom" height="9" nowrap="nowrap"><a href="http://forums.libsdl.org/profile.php?mode=viewprofile&amp;u=3&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0"></a><a href="http://forums.libsdl.org/privmsg.php?mode=post&amp;u=3&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_pm.gif" alt="Send private message" title="Send private message" border="0"></a></td>
+		<td height="9" width="100%" align="left"><img src="screensize_elemei/postbottom_right.gif" alt="" height="9" width="22"></td>
+	</tr>
+	</tbody></table></td>
+</tr>
+</tbody></table><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td height="15" valign="top" width="100%" align="right"><a href="#top"><img src="screensize_elemei/ftr_right.gif" alt="" height="10" width="60"></a></td></tr></tbody></table>
+<a name="19341"></a>
+<table class="hdr" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td width="35" align="left"><img src="screensize_elemei/hdr_left_post.gif" alt="" height="25" width="35"></td><td nowrap="nowrap" width="100%" align="left">SDL Function To Return Desktop Screen Size ?</td><td width="120" align="right"><img src="screensize_elemei/hdr_right_blue.gif" alt="" height="25" width="120"></td></tr></tbody></table><table class="post" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td class="row" style="padding: 2px;" rowspan="2" valign="top" width="150" align="center">
+		<div style="padding: 3px;"><span class="name">Torsten Giebl</span><br></div>
+		<div style="padding: 2px;"><span class="postdetails"></span><br></div>
+		
+		<div style="margin: auto; overflow: hidden; width: 140px;"></div>
+		<br>
+		<table width="100%" cellpadding="0" cellspacing="5">
+			<tbody><tr><td align="left"><span class="postdetails">Joined: 12 Sep 2009</span></td></tr>
+			<tr><td align="left"><span class="postdetails">Posts: 171</span></td></tr>
+			<tr><td align="left"><span class="postdetails"></span></td></tr>
+		</tbody></table>
+		<img src="screensize_elemei/spacer.gif" alt="" height="1" width="150" border="0">
+	</td>
+	<td class="postborder" rowspan="2" width="1"><img src="screensize_elemei/spacer.gif" alt="" height="100" width="1"></td>
+	<td class="row" valign="top" width="100%" align="left"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td style="padding: 3px;" width="50%" align="left"><span class="postdate"><a href="http://forums.libsdl.org/viewtopic.php?p=19341&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5#19341"><img src="screensize_elemei/icon_minipost.gif" alt="Post" title="Post" height="9" width="12" border="0"></a> Posted: Tue Sep 29, 2009 1:54 am</span></td>
+		<td width="50%"></td>
+		<td class="posttop" valign="top" width="23" align="left"><img src="screensize_elemei/posttop_left.gif" alt="" height="9" width="23" border="0"></td>
+		<td class="posttop" nowrap="nowrap" valign="top"><a href="http://forums.libsdl.org/posting.php?mode=quote&amp;p=19341&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class="postline" height="1" width="50%"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="100"></td>
+		<td colspan="3" height="1"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+	<div style="padding: 4px;" class="postbody">Hello !
+<br>
+
+<br>
+
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">And in SDL 1.3:
+<br>
+SDL_GetDesktopDisplayMode()
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+
+<br>
+This question is popping into my head right now :
+<br>
+
+<br>
+Is there also a way to get the actual desktop colordepth,
+<br>
+like if it is 8, 16, 24, 32 bit colors ?
+<br>
+
+<br>
+
+<br>
+CU
+<br>
+
+<br>
+_______________________________________________
+<br>
+SDL mailing list
+<br>
+
+<br>
+<a href="http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org" target="_blank">http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org</a></div>
+	</td>
+</tr>
+<tr>
+	<td valign="bottom" align="left">
+	<div style="padding: 5px;" class="postbody"><span class="signature"><span class="gensmall"></span></span></div>
+	<table height="9" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="postbottom" height="9" nowrap="nowrap"><a href="http://forums.libsdl.org/profile.php?mode=viewprofile&amp;u=6&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0"></a><a href="http://forums.libsdl.org/privmsg.php?mode=post&amp;u=6&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_pm.gif" alt="Send private message" title="Send private message" border="0"></a><a href="mailto:wizard@syntheticsw.com"><img src="screensize_elemei/icon_email.gif" alt="Send e-mail" title="Send e-mail" border="0"></a></td>
+		<td height="9" width="100%" align="left"><img src="screensize_elemei/postbottom_right.gif" alt="" height="9" width="22"></td>
+	</tr>
+	</tbody></table></td>
+</tr>
+</tbody></table><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td height="15" valign="top" width="100%" align="right"><a href="#top"><img src="screensize_elemei/ftr_right.gif" alt="" height="10" width="60"></a></td></tr></tbody></table>
+<a name="19342"></a>
+<table class="hdr" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td width="35" align="left"><img src="screensize_elemei/hdr_left_post.gif" alt="" height="25" width="35"></td><td nowrap="nowrap" width="100%" align="left">SDL Function To Return Desktop Screen Size ?</td><td width="120" align="right"><img src="screensize_elemei/hdr_right_blue.gif" alt="" height="25" width="120"></td></tr></tbody></table><table class="post" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td class="row" style="padding: 2px;" rowspan="2" valign="top" width="150" align="center">
+		<div style="padding: 3px;"><span class="name">Sam Lantinga</span><br></div>
+		<div style="padding: 2px;"><span class="postdetails"></span><br></div>
+		
+		<div style="margin: auto; overflow: hidden; width: 140px;"></div>
+		<br>
+		<table width="100%" cellpadding="0" cellspacing="5">
+			<tbody><tr><td align="left"><span class="postdetails">Joined: 10 Sep 2009</span></td></tr>
+			<tr><td align="left"><span class="postdetails">Posts: 1662</span></td></tr>
+			<tr><td align="left"><span class="postdetails"></span></td></tr>
+		</tbody></table>
+		<img src="screensize_elemei/spacer.gif" alt="" height="1" width="150" border="0">
+	</td>
+	<td class="postborder" rowspan="2" width="1"><img src="screensize_elemei/spacer.gif" alt="" height="100" width="1"></td>
+	<td class="row" valign="top" width="100%" align="left"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td style="padding: 3px;" width="50%" align="left"><span class="postdate"><a href="http://forums.libsdl.org/viewtopic.php?p=19342&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5#19342"><img src="screensize_elemei/icon_minipost.gif" alt="Post" title="Post" height="9" width="12" border="0"></a> Posted: Tue Sep 29, 2009 2:16 am</span></td>
+		<td width="50%"></td>
+		<td class="posttop" valign="top" width="23" align="left"><img src="screensize_elemei/posttop_left.gif" alt="" height="9" width="23" border="0"></td>
+		<td class="posttop" nowrap="nowrap" valign="top"><a href="http://forums.libsdl.org/posting.php?mode=quote&amp;p=19342&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class="postline" height="1" width="50%"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="100"></td>
+		<td colspan="3" height="1"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+	<div style="padding: 4px;" class="postbody">If you look at the API, you'll see it fills in one of these:
+<br>
+typedef struct
+<br>
+{
+<br>
+Uint32 format;              /**&lt; pixel format */
+<br>
+int w;                      /**&lt; width */
+<br>
+int h;                      /**&lt; height */
+<br>
+int refresh_rate;           /**&lt; refresh rate (or zero for unspecified) */
+<br>
+void *driverdata;           /**&lt; driver-specific data, initialize to 0 */
+<br>
+} SDL_DisplayMode;
+<br>
+
+<br>
+
+<br>
+On Mon, Sep 28, 2009 at 6:54 PM, Torsten Giebl wrote:
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">Hello !
+<br>
+
+<br>
+
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">And in SDL 1.3:
+<br>
+SDL_GetDesktopDisplayMode()
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+
+<br>
+This question is popping into my head right now :
+<br>
+
+<br>
+Is there also a way to get the actual desktop colordepth,
+<br>
+like if it is 8, 16, 24, 32 bit colors ?
+<br>
+
+<br>
+
+<br>
+CU
+<br>
+
+<br>
+_______________________________________________
+<br>
+SDL mailing list
+<br>
+
+<br>
+<a href="http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org" target="_blank">http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org</a>
+<br>
+
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+
+<br>
+
+<br>
+-- 
+<br>
+	-Sam Lantinga, Founder and President, Galaxy Gameworks LLC
+<br>
+_______________________________________________
+<br>
+SDL mailing list
+<br>
+
+<br>
+<a href="http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org" target="_blank">http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org</a></div>
+	</td>
+</tr>
+<tr>
+	<td valign="bottom" align="left">
+	<div style="padding: 5px;" class="postbody"><span class="signature"><span class="gensmall"></span></span></div>
+	<table height="9" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="postbottom" height="9" nowrap="nowrap"><a href="http://forums.libsdl.org/profile.php?mode=viewprofile&amp;u=3&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0"></a><a href="http://forums.libsdl.org/privmsg.php?mode=post&amp;u=3&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_pm.gif" alt="Send private message" title="Send private message" border="0"></a></td>
+		<td height="9" width="100%" align="left"><img src="screensize_elemei/postbottom_right.gif" alt="" height="9" width="22"></td>
+	</tr>
+	</tbody></table></td>
+</tr>
+</tbody></table><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td height="15" valign="top" width="100%" align="right"><a href="#top"><img src="screensize_elemei/ftr_right.gif" alt="" height="10" width="60"></a></td></tr></tbody></table>
+<a name="19362"></a>
+<table class="hdr" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td width="35" align="left"><img src="screensize_elemei/hdr_left_post.gif" alt="" height="25" width="35"></td><td nowrap="nowrap" width="100%" align="left">SDL Function To Return Desktop Screen Size ?</td><td width="120" align="right"><img src="screensize_elemei/hdr_right_blue.gif" alt="" height="25" width="120"></td></tr></tbody></table><table class="post" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td class="row" style="padding: 2px;" rowspan="2" valign="top" width="150" align="center">
+		<div style="padding: 3px;"><span class="name">JeZ-l-Lee</span><br></div>
+		<div style="padding: 2px;"><span class="postdetails"></span><br></div>
+		
+		<div style="margin: auto; overflow: hidden; width: 140px;"></div>
+		<br>
+		<table width="100%" cellpadding="0" cellspacing="5">
+			<tbody><tr><td align="left"><span class="postdetails">Joined: 20 Sep 2009</span></td></tr>
+			<tr><td align="left"><span class="postdetails">Posts: 398</span></td></tr>
+			<tr><td align="left"><span class="postdetails">Location: Long Island, New York, United States, Earth</span></td></tr>
+		</tbody></table>
+		<img src="screensize_elemei/spacer.gif" alt="" height="1" width="150" border="0">
+	</td>
+	<td class="postborder" rowspan="2" width="1"><img src="screensize_elemei/spacer.gif" alt="" height="100" width="1"></td>
+	<td class="row" valign="top" width="100%" align="left"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td style="padding: 3px;" width="50%" align="left"><span class="postdate"><a href="http://forums.libsdl.org/viewtopic.php?p=19362&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5#19362"><img src="screensize_elemei/icon_minipost.gif" alt="Post" title="Post" height="9" width="12" border="0"></a> Posted: Tue Sep 29, 2009 7:12 pm</span></td>
+		<td width="50%"></td>
+		<td class="posttop" valign="top" width="23" align="left"><img src="screensize_elemei/posttop_left.gif" alt="" height="9" width="23" border="0"></td>
+		<td class="posttop" nowrap="nowrap" valign="top"><a href="http://forums.libsdl.org/posting.php?mode=quote&amp;p=19362&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class="postline" height="1" width="50%"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="100"></td>
+		<td colspan="3" height="1"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+	<div style="padding: 4px;" class="postbody">Hi Bill,
+<br>
+
+<br>
+Your code to get desktop screen resolution worked for me!
+<br>
+
+<br>
+Thanks...
+<br>
+
+<br>
+
+<br>
+JeZ+Lee
+<br>
+
+<br>
+<a href="http://www.silentheroproductions.com/" target="_blank">www.SilentHeroProductions.com</a>
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+Bill Kendrick wrote:
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">On Mon, Sep 28, 2009 at 05:18:35PM -0400, Jesse Palser wrote:
+<br>
+
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">SDL Function To Return Desktop Screen Size ?
+<br>
+
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+Here's what I do in Tux Paint (when you run "tuxpaint --fullscreen --native"):
+<br>
+
+<br>
+if (native) {
+<br>
+screen = SDL_SetVideoMode(0, 0, {bpp}, SDL_FULLSCREEN | {other flags});
+<br>
+...
+<br>
+width = screen-&gt;w;
+<br>
+height = screen-&gt;h;
+<br>
+} else {
+<br>
+screen = SDL_SetVideoMode(width, height, {bpp}, {flags});
+<br>
+}
+<br>
+
+<br>
+In other words, if you try to open a 0x0 full-screen display, SDL will
+<br>
+end up using the desktop's resolution.  (Then you can fetch the size
+<br>
+via the 'w' and 'h' of the surface it sent back.)
+<br>
+
+<br>
+I know this isn't the same as "querying", but it might be all you need...
+<br>
+
+<br>
+
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+_______________________________________________
+<br>
+SDL mailing list
+<br>
+
+<br>
+<a href="http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org" target="_blank">http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org</a></div>
+	</td>
+</tr>
+<tr>
+	<td valign="bottom" align="left">
+	<div style="padding: 5px;" class="postbody"><span class="signature"><span class="gensmall"></span><br>_________________<br><span style="font-weight: bold;">JeZ+Lee</span>
+<br>
+JessePalser &lt;AT&gt; Gmail &lt;DOT&gt; com
+<br>
+<span style="font-weight: bold;">16BitSoft Inc.</span>
+<br>
+Video Game Design Studio
+<br>
+<a href="http://www.16bitsoft.com/" target="_blank">www.16BitSoft.com</a></span></div>
+	<table height="9" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="postbottom" height="9" nowrap="nowrap"><a href="http://forums.libsdl.org/profile.php?mode=viewprofile&amp;u=24&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0"></a><a href="http://forums.libsdl.org/privmsg.php?mode=post&amp;u=24&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_pm.gif" alt="Send private message" title="Send private message" border="0"></a><a href="http://www.16bitsoft.com/" target="_userwww"><img src="screensize_elemei/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0"></a><a href="aim:goim?screenname=SLNTHERO@aol.com&amp;message=Hello+Are+you+there?"><img src="screensize_elemei/icon_aim.gif" alt="AIM Address" title="AIM Address" border="0"></a><a href="http://edit.yahoo.com/config/send_webmesg?.target=NA&amp;.src=pg"><img src="screensize_elemei/icon_yim.gif" alt="Yahoo Messenger" title="Yahoo Messenger" border="0"></a><a href="http://forums.libsdl.org/profile.php?mode=viewprofile&amp;u=24&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_msn.gif" alt="MSN Messenger" title="MSN Messenger" border="0"></a><a href="http://wwp.icq.com/scripts/search.dll?to=223180991"><img src="screensize_elemei/icon_icq.gif" alt="ICQ Number" title="ICQ Number" border="0"></a></td>
+		<td height="9" width="100%" align="left"><img src="screensize_elemei/postbottom_right.gif" alt="" height="9" width="22"></td>
+	</tr>
+	</tbody></table></td>
+</tr>
+</tbody></table><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td height="15" valign="top" width="100%" align="right"><a href="#top"><img src="screensize_elemei/ftr_right.gif" alt="" height="10" width="60"></a></td></tr></tbody></table>
+<a name="19367"></a>
+<table class="hdr" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td width="35" align="left"><img src="screensize_elemei/hdr_left_post.gif" alt="" height="25" width="35"></td><td nowrap="nowrap" width="100%" align="left">SDL Function To Return Desktop Screen Size ?</td><td width="120" align="right"><img src="screensize_elemei/hdr_right_blue.gif" alt="" height="25" width="120"></td></tr></tbody></table><table class="post" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td class="row" style="padding: 2px;" rowspan="2" valign="top" width="150" align="center">
+		<div style="padding: 3px;"><span class="name">Max Horn</span><br></div>
+		<div style="padding: 2px;"><span class="postdetails">Guest</span><br></div>
+		
+		<div style="margin: auto; overflow: hidden; width: 140px;"></div>
+		<br>
+		<table width="100%" cellpadding="0" cellspacing="5">
+			<tbody><tr><td align="left"><span class="postdetails"></span></td></tr>
+			<tr><td align="left"><span class="postdetails"></span></td></tr>
+			<tr><td align="left"><span class="postdetails"></span></td></tr>
+		</tbody></table>
+		<img src="screensize_elemei/spacer.gif" alt="" height="1" width="150" border="0">
+	</td>
+	<td class="postborder" rowspan="2" width="1"><img src="screensize_elemei/spacer.gif" alt="" height="100" width="1"></td>
+	<td class="row" valign="top" width="100%" align="left"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td style="padding: 3px;" width="50%" align="left"><span class="postdate"><a href="http://forums.libsdl.org/viewtopic.php?p=19367&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5#19367"><img src="screensize_elemei/icon_minipost.gif" alt="Post" title="Post" height="9" width="12" border="0"></a> Posted: Tue Sep 29, 2009 10:19 pm</span></td>
+		<td width="50%"></td>
+		<td class="posttop" valign="top" width="23" align="left"><img src="screensize_elemei/posttop_left.gif" alt="" height="9" width="23" border="0"></td>
+		<td class="posttop" nowrap="nowrap" valign="top"><a href="http://forums.libsdl.org/posting.php?mode=quote&amp;p=19367&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0"></a></td>
+	</tr>
+	<tr>
+		<td class="postline" height="1" width="50%"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="100"></td>
+		<td colspan="3" height="1"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+	</tbody></table>
+	<div style="padding: 4px;" class="postbody">Am 29.09.2009 um 04:16 schrieb Sam Lantinga:
+<br>
+
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">If you look at the API, you'll see it fills in one of these:
+<br>
+typedef struct
+<br>
+{
+<br>
+Uint32 format;              /**&lt; pixel format */
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+Hm, and what does "pixel format" mean? That seems underdocumented to  
+<br>
+me... <img src="screensize_elemei/icon_smile.gif" alt="Smile" border="0">.
+<br>
+
+<br>
+
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">int w;                      /**&lt; width */
+<br>
+int h;                      /**&lt; height */
+<br>
+int refresh_rate;           /**&lt; refresh rate (or zero for  
+<br>
+unspecified) */
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+What unit? Hz, I guess? Would be nice if the doxygen comments would  
+<br>
+specify that, saves us from having to RTFS <img src="screensize_elemei/icon_smile.gif" alt="Smile" border="0">.
+<br>
+
+<br>
+<div align="center"><table class="quote" width="90%" align="center" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr> 
+	<td class="quote_user" align="left">Quote:</td>
+</tr>
+<tr>
+	<td class="quote" align="left">void *driverdata;           /**&lt; driver-specific data, initialize  
+<br>
+to 0 */
+<br>
+} SDL_DisplayMode;
+<br>
+</td>
+	</tr>
+</tbody></table></div>
+<br>
+
+<br>
+Cheers,
+<br>
+Max
+<br>
+
+<br>
+_______________________________________________
+<br>
+SDL mailing list
+<br>
+
+<br>
+<a href="http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org" target="_blank">http://lists.libsdl.org/listinfo.cgi/sdl-libsdl.org</a></div>
+	</td>
+</tr>
+<tr>
+	<td valign="bottom" align="left">
+	<div style="padding: 5px;" class="postbody"><span class="signature"><span class="gensmall"></span></span></div>
+	<table height="9" width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="postbottom" height="9" nowrap="nowrap"></td>
+		<td height="9" width="100%" align="left"><img src="screensize_elemei/postbottom_right.gif" alt="" height="9" width="22"></td>
+	</tr>
+	</tbody></table></td>
+</tr>
+</tbody></table><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td height="15" valign="top" width="100%" align="right"><a href="#top"><img src="screensize_elemei/ftr_right.gif" alt="" height="10" width="60"></a></td></tr></tbody></table>
+
+<table class="hdr" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td width="35" align="left"><img src="screensize_elemei/hdr_left_orange.gif" alt="" height="25" width="35"></td><td nowrap="nowrap" width="100%" align="left"><a href="http://forums.libsdl.org/viewtopic.php?t=4947&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5">SDL Function To Return Desktop Screen Size ?</a></td><td width="120" align="right"><img src="screensize_elemei/hdr_right_blue.gif" alt="" height="25" width="120"></td></tr></tbody></table><table class="forumline" width="100%" border="0" cellpadding="3" cellspacing="1">
+<tbody><tr>
+	<td class="row" valign="top" align="left">
+	<table width="100%" border="0" cellpadding="5" cellspacing="0">
+	<tbody><tr>
+		<td valign="top" align="left">
+			<span class="gensmall">You <b>cannot</b> post new topics in this forum<br>You <b>cannot</b> reply to topics in this forum<br>You <b>cannot</b> edit your posts in this forum<br>You <b>cannot</b> delete your posts in this forum<br>You <b>cannot</b> vote in polls in this forum<br></span>
+		</td>
+		<td valign="top" align="right">
+			<span class="gensmall">All times are GMT&nbsp;&nbsp;<br>
+			Page <b>1</b> of <b>1</b>&nbsp;&nbsp;</span>
+			<div class="pagination"></div><br>
+			<span class="gensmall"></span>
+		</td>
+	</tr>
+	</tbody></table>
+	</td>
+</tr>
+<tr>
+	<td class="catBottom" nowrap="nowrap" valign="middle" align="center"><table width="100%" border="0" cellpadding="2" cellspacing="0">
+	<tbody><tr>
+		<form method="post" action="viewtopic.php?t=4947&amp;start=0&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5" style="display: inline;"></form><td nowrap="nowrap" valign="middle" align="left"><select name="postdays"><option value="0" selected="selected">All Posts</option><option value="1">1 Day</option><option value="7">7 Days</option><option value="14">2 Weeks</option><option value="30">1 Month</option><option value="90">3 Months</option><option value="180">6 Months</option><option value="364">1 Year</option></select>&nbsp;<select name="postorder"><option value="asc" selected="selected">Oldest First</option><option value="desc">Newest First</option></select>&nbsp;<input value="Go" class="liteoption" name="submit" type="submit"></td>
+		<td nowrap="nowrap" valign="middle" align="right"><table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<form method="get" name="jumpbox" action="viewforum.php?sid=6123503f3e6f34dbb59f54487ae8a9b5" onsubmit="if(document.jumpbox.f.value == -1){return false;}"></form>
+	<td nowrap="nowrap"><select name="f" onchange="if(this.options[this.selectedIndex].value != -1){ forms['jumpbox'].submit() }"><option value="-1">Select a forum</option><option value="-1">&nbsp;</option><option value="-1">Simple DirectMedia Layer</option><option value="-1">----------------</option><option value="3">SDL Announcements</option><option value="2">SDL Jobs</option><option value="1" selected="selected">SDL Development</option><option value="4">Game Development</option></select><input name="sid" value="6123503f3e6f34dbb59f54487ae8a9b5" type="hidden">&nbsp;<input value="Go" class="liteoption" type="submit">&nbsp;</td>
+
+</tr>
+</tbody></table>
+</td>
+	</tr>
+	</tbody></table>
+	</td>
+</tr>
+</tbody></table><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td height="15" valign="top" width="100%" align="right"><a href="#top"><img src="screensize_elemei/ftr_right.gif" alt="" height="10" width="60"></a></td></tr></tbody></table>
+
+<table class="nav" width="100%" align="center" border="0" cellpadding="4" cellspacing="1">
+<tbody><tr>
+	<td class="nav" nowrap="nowrap" valign="middle" align="left"><span class="nav"><a href="http://forums.libsdl.org/index.php?sid=6123503f3e6f34dbb59f54487ae8a9b5">SDL Forum Index</a> » <a href="http://forums.libsdl.org/viewforum.php?f=1&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5">SDL Development</a></span></td>
+	<td class="nav navform" nowrap="nowrap" valign="middle" align="right"><span class="nav"><form action="search.php?mode=results&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5" method="post" style="display: inline;"><input name="show_results" value="topics" type="hidden"><input name="search_forum" value="1" type="hidden">
+	<input name="search_keywords" class="post" size="15" type="text">
+	<input value="Search" class="mainoption" type="submit">
+	</form></span></td>
+</tr>
+</tbody></table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td style="padding-top: 5px; padding-bottom: 5px;" valign="top" align="left">&nbsp;<a href="http://forums.libsdl.org/posting.php?mode=reply&amp;t=4947&amp;sid=6123503f3e6f34dbb59f54487ae8a9b5"><img src="screensize_elemei/reply.gif" alt="Reply to topic" align="middle" border="0"></a>
+	</td>
+	<td style="padding-top: 5px;" valign="top" align="right">&nbsp;</td>
+</tr>
+</tbody></table>
+
+
+
+<div id="admin_link"></div>
+
+<div id="copyright">
+<!--
+	//
+	//	From phpBB team:
+	//
+
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the
+	Powered by phpBB  line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected.
+
+	The phpBB Group : 2002
+
+	//
+	//	From Vjacheslav Trushkin:
+	//
+
+	You are allowed to use this phpBB style only if you agree to the following conditions:
+	- You cannot remove my copyright notice from style without my permission.
+	- You cannot use images from this style anywhere else without my permission.
+	- You can convert this style to another software, but converted style must have my copyright including link to my website.
+	- If you want to create new phpBB style based on this style you must ask my permission.
+	- If you modify this style it still should contain my copyright because it is based on my work. Modified style should not be available for download without my permission.
+
+	For support visit http://www.stsoftware.biz/forum
+
+// -->
+	Powered by <a href="http://www.phpbb.com/" target="_phpbb">phpBB</a>  © phpBB Group<br>
+	Design by <a href="http://www.stsoftware.biz/">Vjacheslav Trushkin</a> for <a href="http://www.phpbbstyles.com/">phpBBStyles.com</a>.<br>
+	Content © SDL<br>
+</div>
+
+</div><!-- content -->
+
+	</td><td class="border_right" width="10"><img src="screensize_elemei/spacer.gif" alt="" height="1" width="10"></td>
+</tr>
+</tbody></table>
+</body></html>

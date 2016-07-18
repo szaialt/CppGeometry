@@ -1,0 +1,1422 @@
+<!DOCTYPE HTML>
+<html itemtype="http://schema.org/QAPage" itemscope=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+    
+    <title>c - how to specify "width" or "point size" in SDL 2.0 draw points, lines or rect - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="how to specify &quot;width&quot; or &quot;point size&quot; in SDL 2.0 draw points, lines or rect">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I am trying to use SDL 2.0 function SDL_RenderDrawPoints() to plot data points on the screen. 
+
+In &quot;processing.org&quot;, I can use strokeWeight() to change the size of my &quot;points&quot;. How to do this in SD...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/21560384/how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect">
+    <link rel="canonical" href="http://stackoverflow.com/questions/21560384/how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect">
+
+    
+    
+    <script src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/quant.js"></script><script src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/beacon.js"></script><script src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/analytics.js"></script><script src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/jquery.js"></script>
+    <script src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'how to specify &quot;width&quot; or &quot;point size&quot; in SDL 2.0 draw points, lines or rect'" href="http://stackoverflow.com/feeds/question/21560384">
+    <meta name="twitter:app:country" content="US">
+    <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+    <meta name="twitter:app:id:iphone" content="871299723">
+    <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/21560384/how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect">
+    <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+    <meta name="twitter:app:id:ipad" content="871299723">
+    <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/21560384/how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect">
+    <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+    <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/21560384/how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect">
+    <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+    <script>
+        
+        StackExchange.ready(function () {
+                
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.initSnippetRenderer();
+                });
+                
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:21560384});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '21560384');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1419604290,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"d848e4f2b6f11938058e20bb192c13c6","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"9cec841bfbeb","js/moderator.en.js":"7ae78f8d46ec","js/full-anon.en.js":"713904b4dbb1","js/full.en.js":"e58898198057","js/wmd.en.js":"b162b51b4d6b","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"d14b32d61cc9","js/help.en.js":"b5f40fd81205","js/tageditor.en.js":"c84618a71b61","js/tageditornew.en.js":"07560885173f","js/inline-tag-editing.en.js":"48f13b102998","js/revisions.en.js":"6c7265ea9fa1","js/review.en.js":"21a23e72c7a9","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"43ba45591258","js/explore-qlist.en.js":"4e6f969d97ee","js/events.en.js":"1479fcec4d10","js/keyboard-shortcuts.en.js":"77c668b79701","js/external-editor.en.js":"c381a8be3d8d","js/external-editor.en.js":"c381a8be3d8d","js/snippet-javascript.en.js":"e67749f2ffb7","js/snippet-javascript-codemirror.en.js":"7304f37e3a45"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/full-anon.js"></script><script src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/snippet-javascript.js"></script><script src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/post-validation.js"></script><script src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/prettify-full.js"></script><script src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/external-editor.js"></script><link rel="stylesheet" type="text/css" href="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/company.css"><link rel="stylesheet" type="text/css" href="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/sidebar.css"></head><body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f21560384%2fhow-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f21560384%2fhow-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 134 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f21560384%2fhow-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f21560384%2fhow-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=anon-topbar">stack overflow careers</a>
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" value="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+Stack Overflow is a question and answer site for professional and
+enthusiast programmers. It's 100% free, no registration required. </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://stackoverflow.com/questions/21560384/how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect" class="question-hyperlink">how to specify “width” or “point size” in SDL 2.0 draw points, lines or rect</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="21560384" id="question">
+
+    <div class="everyonelovesstackoverflow" id="careers1"><a href="http://careers.stackoverflow.com/" rel="nofollow" target="_blank"><img src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/companypageadfallback-leaderboard-3.png"></a></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="21560384" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I am trying to use SDL 2.0 function <code>SDL_RenderDrawPoints()</code> to plot data points on the screen. </p>
+
+<p>In "processing.org", I can use <code>strokeWeight()</code> to change the size of my "points". How to do this in SDL 2.0</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/c" class="post-tag js-gps-track" title="show questions tagged 'c'" rel="tag">c</a> <a href="http://stackoverflow.com/questions/tagged/sdl-2" class="post-tag js-gps-track" title="show questions tagged 'sdl-2'" rel="tag">sdl-2</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/21560384" title="short permalink to this question" class="short-link" id="link-post-21560384">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/21560384/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/21560384/revisions" title="show all edits to this post">edited <span title="2014-09-02 03:46:31Z" class="relativetime">Sep 2 at 3:46</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1381108/rapptz"><div class="gravatar-wrapper-32"><img src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/0a55e1b257487441cd435f66bfb413f1.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1381108/rapptz">Rapptz</a><br>
+        <span class="reputation-score" title="reputation score 11797" dir="ltr">11.8k</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="36 silver badges"><span class="badge2"></span><span class="badgecount">36</span></span><span title="63 bronze badges"><span class="badge3"></span><span class="badgecount">63</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2014-02-04 18:25:08Z" class="relativetime">Feb 4 at 18:25</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1905022/zhe-hu"><div class="gravatar-wrapper-32"><img src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/f743dcdd53e216313cdb74f66cbb4c3f.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1905022/zhe-hu">Zhe Hu</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">373</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="12 bronze badges"><span class="badge3"></span><span class="badgecount">12</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-21560384" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-21560384" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								2 Answers
+                                <span style="display: none;" itemprop="answerCount">2</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/21560384/how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/21560384/how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/21560384/how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="24305966"></a>
+<div id="answer-24305966" class="answer" data-answerid="24305966" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="24305966" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>SDL does not support it natively,use the SDL_gfx library.</p>
+
+<p>There's a function thicklineRGBA which allows you to specify line width.</p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="typ">int</span><span class="pln"> thickLineRGBA </span><span class="pun">(</span><span class="pln">SDL_Renderer </span><span class="pun">*</span><span class="pln">rd</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Sint16</span><span class="pln"> x1</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Sint16</span><span class="pln"> y1</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Sint16</span><span class="pln"> x2</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Sint16</span><span class="pln"> y2</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Uint8</span><span class="pln"> width</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Uint8</span><span class="pln"> r</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Uint8</span><span class="pln"> g</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Uint8</span><span class="pln"> b</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Uint8</span><span class="pln"> a</span><span class="pun">)</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/24305966" title="short permalink to this answer" class="short-link" id="link-post-24305966">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/24305966/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-06-19 11:53:55Z" class="relativetime">Jun 19 at 11:53</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1443630/mahesh-bansod"><div><img src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/ba824734c2f919ba2de8c74f1fb22d35.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1443630/mahesh-bansod">Mahesh Bansod</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">399</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="17 bronze badges"><span class="badge3"></span><span class="badgecount">17</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-24305966" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-24305966" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<div class="everyonelovesstackoverflow" id="careers3"><a href="http://careers.stackoverflow.com/" rel="nofollow" target="_blank"><img src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/companypageadfallback-leaderboard-2.png"></a></div>
+  
+<a name="21562099"></a>
+<div id="answer-21562099" class="answer" data-answerid="21562099" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="21562099" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<h1>SDL_RenderSetScale</h1>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="typ">int</span><span class="pln"> SDL_RenderSetScale</span><span class="pun">(</span><span class="pln">SDL_Renderer</span><span class="pun">*</span><span class="pln"> renderer</span><span class="pun">,</span><span class="pln">
+                   </span><span class="typ">float</span><span class="pln">         scaleX</span><span class="pun">,</span><span class="pln">
+                   </span><span class="typ">float</span><span class="pln">         scaleY</span><span class="pun">)</span></code></pre>
+
+<h1>Note</h1>
+
+<p>The drawing coordinates are scaled by the x/y scaling factors before
+they are used by the renderer. This allows resolution independent
+drawing with a single coordinate system.</p>
+
+<p>If this results in scaling or subpixel drawing by the rendering
+backend, it will be handled using the appropriate quality hints. For
+best results use integer scaling factors.</p>
+
+<p>Taken from the <a href="http://wiki.libsdl.org/SDL_RenderSetScale?highlight=%28%5CbCategoryAPI%5Cb%29%7C%28SDLFunctionTemplate%29" rel="nofollow">SDL Wiki</a></p>
+
+<h1>Examlple</h1>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;SDL2/SDL.h&gt;</span><span class="pln">
+
+</span><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;iostream&gt;</span><span class="pln">
+
+</span><span class="typ">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    SDL_Renderer</span><span class="pun">*</span><span class="pln"> renderer</span><span class="pun">;</span><span class="pln">
+    SDL_Window</span><span class="pun">*</span><span class="pln"> window</span><span class="pun">;</span><span class="pln">
+    SDL_Point points</span><span class="pun">[</span><span class="lit">4</span><span class="pun">];</span><span class="pln">
+    SDL_Point  startingPoint</span><span class="pun">;</span><span class="pln">
+    startingPoint</span><span class="pun">.</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+    startingPoint</span><span class="pun">.</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">float</span><span class="pln"> scale </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1.0</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> SDL_Init</span><span class="pun">(</span><span class="pln"> SDL_INIT_EVERYTHING </span><span class="pun">)</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+        std</span><span class="pun">::</span><span class="pln">cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"Failed to init SDL : "</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> SDL_GetError</span><span class="pun">();</span><span class="pln">
+
+    window </span><span class="pun">=</span><span class="pln"> SDL_CreateWindow</span><span class="pun">(</span><span class="pln"> </span><span class="str">"Client"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">50</span><span class="pun">,</span><span class="pln"> </span><span class="lit">50</span><span class="pun">,</span><span class="pln"> </span><span class="lit">500</span><span class="pun">,</span><span class="pln"> </span><span class="lit">500</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">);</span><span class="pln">
+
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> window </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">nullptr</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+        std</span><span class="pun">::</span><span class="pln">cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"Failed to apply video mode : "</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> SDL_GetError</span><span class="pun">();</span><span class="pln">
+
+    renderer </span><span class="pun">=</span><span class="pln"> SDL_CreateRenderer</span><span class="pun">(</span><span class="pln"> window</span><span class="pun">,</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> SDL_RENDERER_ACCELERATED </span><span class="pun">);</span><span class="pln">
+
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> renderer </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">nullptr</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+        std</span><span class="pun">::</span><span class="pln">cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"Could not create renderer!"</span><span class="pun">;</span><span class="pln">
+
+    SDL_RenderSetLogicalSize</span><span class="pun">(</span><span class="pln"> renderer</span><span class="pun">,</span><span class="pln"> </span><span class="lit">500</span><span class="pun">,</span><span class="pln"> </span><span class="lit">500</span><span class="pln"> </span><span class="pun">);</span><span class="pln">
+
+    </span><span class="com">// Clear background</span><span class="pln">
+    SDL_SetRenderDrawColor</span><span class="pun">(</span><span class="pln"> renderer</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">255</span><span class="pln"> </span><span class="pun">);</span><span class="pln">
+    SDL_RenderClear</span><span class="pun">(</span><span class="pln"> renderer </span><span class="pun">);</span><span class="pln">
+    SDL_SetRenderDrawColor</span><span class="pun">(</span><span class="pln"> renderer</span><span class="pun">,</span><span class="pln"> </span><span class="lit">255</span><span class="pun">,</span><span class="pln"> </span><span class="lit">255</span><span class="pun">,</span><span class="pln"> </span><span class="lit">255</span><span class="pun">,</span><span class="pln"> </span><span class="lit">255</span><span class="pln"> </span><span class="pun">);</span><span class="pln">
+
+    </span><span class="com">// Create first 4 points</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">x</span><span class="pun">;</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">y</span><span class="pun">;</span><span class="pln">
+
+    points</span><span class="pun">[</span><span class="lit">1</span><span class="pun">].</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">1</span><span class="pun">].</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">y</span><span class="pun">;</span><span class="pln">
+
+    points</span><span class="pun">[</span><span class="lit">2</span><span class="pun">].</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">x</span><span class="pun">;</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">2</span><span class="pun">].</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">y </span><span class="pun">+</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+
+    points</span><span class="pun">[</span><span class="lit">3</span><span class="pun">].</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">3</span><span class="pun">].</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">y </span><span class="pun">+</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+
+    SDL_RenderDrawPoints</span><span class="pun">(</span><span class="pln"> renderer</span><span class="pun">,</span><span class="pln"> points</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="pun">);</span><span class="pln">
+
+    </span><span class="com">// Create seconds 4 points</span><span class="pln">
+    startingPoint</span><span class="pun">.</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> </span><span class="lit">125</span><span class="pun">;</span><span class="pln">
+    scale </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2.0</span><span class="pun">;</span><span class="pln">
+
+    points</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">x</span><span class="pun">;</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">y</span><span class="pun">;</span><span class="pln">
+
+    points</span><span class="pun">[</span><span class="lit">1</span><span class="pun">].</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">1</span><span class="pun">].</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">y</span><span class="pun">;</span><span class="pln">
+
+    points</span><span class="pun">[</span><span class="lit">2</span><span class="pun">].</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">x</span><span class="pun">;</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">2</span><span class="pun">].</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">y </span><span class="pun">+</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+
+    points</span><span class="pun">[</span><span class="lit">3</span><span class="pun">].</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">3</span><span class="pun">].</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">y </span><span class="pun">+</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="com">// Apply scale</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> </span><span class="pun">++</span><span class="pln">i </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        points</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">x </span><span class="pun">/=</span><span class="pln"> scale</span><span class="pun">;</span><span class="pln">
+        points</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">y </span><span class="pun">/=</span><span class="pln"> scale</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    SDL_RenderSetScale</span><span class="pun">(</span><span class="pln"> renderer</span><span class="pun">,</span><span class="pln"> scale</span><span class="pun">,</span><span class="pln"> scale </span><span class="pun">);</span><span class="pln">
+    SDL_RenderDrawPoints</span><span class="pun">(</span><span class="pln"> renderer</span><span class="pun">,</span><span class="pln"> points</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="pun">);</span><span class="pln">
+
+    </span><span class="com">// Create third 4 points</span><span class="pln">
+    startingPoint</span><span class="pun">.</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> </span><span class="lit">200</span><span class="pun">;</span><span class="pln">
+    scale </span><span class="pun">=</span><span class="pln"> </span><span class="lit">3.0</span><span class="pun">;</span><span class="pln">
+
+    points</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">x</span><span class="pun">;</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">y</span><span class="pun">;</span><span class="pln">
+
+    points</span><span class="pun">[</span><span class="lit">1</span><span class="pun">].</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">1</span><span class="pun">].</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">y</span><span class="pun">;</span><span class="pln">
+
+    points</span><span class="pun">[</span><span class="lit">2</span><span class="pun">].</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">x</span><span class="pun">;</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">2</span><span class="pun">].</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">y </span><span class="pun">+</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+
+    points</span><span class="pun">[</span><span class="lit">3</span><span class="pun">].</span><span class="pln">x </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+    points</span><span class="pun">[</span><span class="lit">3</span><span class="pun">].</span><span class="pln">y </span><span class="pun">=</span><span class="pln"> startingPoint</span><span class="pun">.</span><span class="pln">y </span><span class="pun">+</span><span class="pln"> </span><span class="lit">50</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="com">// Apply scale</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> </span><span class="pun">++</span><span class="pln">i </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        points</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">x </span><span class="pun">/=</span><span class="pln"> scale</span><span class="pun">;</span><span class="pln">
+        points</span><span class="pun">[</span><span class="pln">i</span><span class="pun">].</span><span class="pln">y </span><span class="pun">/=</span><span class="pln"> scale</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    SDL_RenderSetScale</span><span class="pun">(</span><span class="pln"> renderer</span><span class="pun">,</span><span class="pln"> scale</span><span class="pun">,</span><span class="pln"> scale </span><span class="pun">);</span><span class="pln">
+    SDL_RenderDrawPoints</span><span class="pun">(</span><span class="pln"> renderer</span><span class="pun">,</span><span class="pln"> points</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="pun">);</span><span class="pln">
+
+    SDL_RenderPresent</span><span class="pun">(</span><span class="pln"> renderer </span><span class="pun">);</span><span class="pln">
+
+    std</span><span class="pun">::</span><span class="pln">cin</span><span class="pun">.</span><span class="pln">ignore</span><span class="pun">();</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>This example will draw three series of four points in a square pattern :</p>
+
+<ul>
+<li>1.0 scale at 50, 50 to 100, 100</li>
+<li>2.0 scale at 125, 50 to 175, 100</li>
+<li>3.0 scale at 200, 50 to 250, 100</li>
+</ul>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/21562099" title="short permalink to this answer" class="short-link" id="link-post-21562099">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/21562099/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2014-02-04 19:55:56Z" class="relativetime">Feb 4 at 19:55</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2340558/olevegard"><div class="gravatar-wrapper-32"><img src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/DSCzy.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2340558/olevegard">olevegard</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">1,760</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="16 bronze badges"><span class="badge3"></span><span class="badgecount">16</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-21562099" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-21562099" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/21560384/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="21560384" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="http://www.google.hu/search?q=sdl+thickline&amp;ie=utf-8&amp;oe=utf-8&amp;rls=org.mozilla:hu-HU:unofficial&amp;client=iceweasel-a&amp;gws_rd=cr&amp;ei=OXGdVMbxCJftaNvkgPgL" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.options.snippets.enabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            prepareEditor({
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                ,immediatelyShowMarkdownHelp:true
+                });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height: 24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="d848e4f2b6f11938058e20bb192c13c6" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f21560384%2fhow-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display: none;" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f21560384%2fhow-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/c" class="post-tag" title="show questions tagged 'c'" rel="tag">c</a> <a href="http://stackoverflow.com/questions/tagged/sdl-2" class="post-tag" title="show questions tagged 'sdl-2'" rel="tag">sdl-2</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px;">
+			                    <p class="label-key" title="2014-02-04 18:25:08Z"><b>10 months ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px;">
+			                    <p class="label-key">
+			                        <b>629 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px;">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/21560384/how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect?lastactivity" class="lastactivity-link" title="2014-09-02 03:46:31Z">3 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://blog.stackoverflow.com/2014/12/stack-exchange-gives-back-2014/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2014/12/stack-exchange-gives-back-2014/?cb=1" class="question-hyperlink">Stack Exchange Gives Back 2014</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<div class="everyonelovesstackoverflow" id="careers2">
+        </div>
+        <div class=" orange looking tagged" id="hireme">  <a href="http://careers.stackoverflow.com/?a=2LAw8&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-small-sidebar-orange-looking" class="top" target="_blank"> <span>Looking for a job?</span> </a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/74983/d%C3%A9veloppeur-nodejs-ninja-fullstack-corexpert?a=p972GCZjc7D&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-small-sidebar-orange-looking" target="_blank" title="Développeur node.JS Ninja - FullStack at COREXPERT. Click to learn more."> <span class="title">Développeur node.JS Ninja - FullStack</span> <span class="company">COREXPERT</span> <span class="location">Lyon, France</span> <span class="post-tag">node.js</span> <span class="post-tag">javascript</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/76424/startup-engineer-scalability-machine-learning-scarab-research?a=pD52ELibrYC&amp;utm_source=stackoverflow.com&amp;utm_medium=ad&amp;utm_campaign=jobs-small-sidebar-orange-looking" target="_blank" title="Startup Engineer (scalability, machine learning, profit) at Scarab Research. Click to learn more."> <span class="title">Startup Engineer (scalability, machine learning, profit)</span> <span class="company">Scarab Research</span> <span class="location">Budapest, Hungary</span> <span class="post-tag">java</span> <span class="post-tag">scalability</span> </a> </li> </ul> <img alt="" class="impression" src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/p972GCZjc7D-pD52ELibrYC-2LAw8.gif" style="display: none;"> </div>
+			<div style="margin-bottom: 10px;">
+        
+
+<style type="text/css">
+#newsletter-ad {
+    width: 190px;
+    height: 250px;
+    overflow: hidden;
+    background: url('//cdn.sstatic.net/stackoverflow/img/newsletter-ad.png');
+    padding: 0 15px 0 15px;
+}
+#newsletter-ad-header {
+    margin-top: 60px;
+}
+#newsletter-ad ul {
+    margin: 1em 0 1em 1.5em;
+}
+#newsletter-ad ul li {
+    margin-bottom: 5px;
+}
+#newsletter-signup-container {
+    text-align: center;
+}
+#newsletter-preview-container {
+    margin-top: 10px;
+    text-align: center;
+}
+#newsletter-email-input {
+    width: 200px;
+}
+</style>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+    <p id="newsletter-ad-header">Get the <b>weekly newsletter!</b></p>
+    <ul>
+        <li>Top questions and answers</li>
+        <li>Important announcements</li>
+        <li>Unanswered questions</li>
+    </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" value="Sign up for the newsletter" type="button"></div>
+    <p id="newsletter-preview-container">see an <a href="http://stackexchange.com/newsletters/newsletter?site=stackoverflow.com" id="newsletter-preview">example newsletter</a></p>
+    <div class="dno">
+        
+<p class="privacy-policy-agreement">
+By subscribing, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">
+    </div>
+</div>
+
+    </div>  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/18109991?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/18109991/cygwin-and-sdl-2-0-how-to-compile?rq=1" class="question-hyperlink">Cygwin and SDL 2.0 : how to compile?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/18563710?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">5
+    </div>
+</a><a href="http://stackoverflow.com/questions/18563710/how-should-i-use-sdl2-ios-application-events?rq=1" class="question-hyperlink">How should I use SDL2 iOS Application Events?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/18730527?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/18730527/how-to-create-dummy-false-opengl-context-with-sdl-2-0-on-windows?rq=1" class="question-hyperlink">How to Create Dummy / False OpenGL Context with SDL 2.0 on Windows</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/19730964?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/19730964/how-to-draw-a-square-with-sdl-2-0?rq=1" class="question-hyperlink">How to draw a square with SDL 2.0?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/20342140?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/20342140/about-attempting-to-sync-audio-and-video?rq=1" class="question-hyperlink">About attempting to sync audio and video</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/21504878?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/21504878/why-doesnt-this-code-draw-a-triangle?rq=1" class="question-hyperlink">Why doesn't this code draw a triangle?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/22746582?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/22746582/sdl-accelerated-rendering?rq=1" class="question-hyperlink">SDL accelerated rendering</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/24669814?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/24669814/can-this-line-drawing-algorithm-be-optimized-sdl?rq=1" class="question-hyperlink">Can this line drawing algorithm be optimized? - SDL</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/25552052?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/25552052/ambiguous-symbol-around-int-types-between-assimp-and-sdl2?rq=1" class="question-hyperlink">Ambiguous Symbol around int types between Assimp and SDL2</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/25613526?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/25613526/using-sdl-blitscaled-to-created-scaled-copies-of-surfaces?rq=1" class="question-hyperlink">Using SDL_BlitScaled to created scaled copies of surfaces</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/216440/a-word-for-someone-who-is-easy-to-talk-to" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A word for: someone who is easy to talk to
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/145461/design-of-an-electronic-device-to-disable-remote-access-ability-of-contactless-p" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+Design of an electronic device to disable remote access ability of
+contactless payment cards without visible alterations and damage to the
+card </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/74838/writing-fizzbuzz-like-this-makes-me-feel-like-a-small-child" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Writing FizzBuzz like this makes me feel like a small child
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-skeptics" title="Skeptics Stack Exchange"></div><a href="http://skeptics.stackexchange.com/questions/25222/is-it-legal-to-shoot-groups-of-native-americans-in-some-us-states" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:212 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it legal to shoot groups of Native Americans in some US States?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/43941/does-the-indefinite-article-provide-optional-clarification" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does the indefinite article provide optional clarification?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/69547/divide-all-but-the-maximal-element-in-a-list-by-10" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Divide all but the maximal element in a list by 10?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/218567/latex-vs-word-improvements-of-latex-over-the-years" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    LaTeX vs Word; improvements of LaTeX over the years
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/856990/how-to-select-nth-result-on-command-line-without-using-mouse" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    how to select nth result on command line without using mouse
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-serverfault" title="Server Fault"></div><a href="http://serverfault.com/questions/654773/what-effect-does-https-traffic-have-on-web-cache-proxy-servers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:2 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What effect does https traffic have on web cache proxy servers?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/74895/project-euler-problem-12-triangle-number-with-500-divisors" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Project Euler Problem 12 - triangle number with 500 divisors
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-salesforce" title="Salesforce Stack Exchange"></div><a href="http://salesforce.stackexchange.com/questions/61016/facebook-auth-provider" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Facebook Auth provider
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/69627/how-would-i-return-a-random-mathematica-command" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How would I return a random Mathematica command?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/34753/is-there-any-copyright-on-letters-of-recommendation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there any copyright on letters of recommendation?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/565438/literally-erased-all-of-python" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Literally Erased All of Python
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-skeptics" title="Skeptics Stack Exchange"></div><a href="http://skeptics.stackexchange.com/questions/25217/did-fox-news-win-a-court-case-for-the-right-to-lie" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:212 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Did Fox News win a court case for the right to lie?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-italian" title="Italian Language Stack Exchange"></div><a href="http://italian.stackexchange.com/questions/3785/significato-di-lisciaia-e-liscia" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:524 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Significato di "lisciaia" e "liscia"
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/219511/how-do-i-add-text-above-a-long-underscore-in-plain-tex" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I add text above a long underscore in Plain Tex?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/130262/why-not-log-transform-all-variables-that-are-not-of-main-interest" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why not log-transform all variables that are not of main interest?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1081280/problem-solving-question-with-polynomials" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Problem Solving Question With Polynomials
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/11332/why-does-the-us-president-fly-in-an-obsolete-747-200" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does the US President fly in an obsolete 747-200?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1080426/farewell-2014-welcome-2015-math-golf" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Farewell 2014 welcome 2015 - "Math Golf"
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/74543/whos-in-the-fellowship-when-are-frodo-and-the-rest-of-the-gang-together" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Who's in the fellowship? When are Frodo, and the rest of the gang, together
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/155048/can-you-find-the-length-of-a-meter-without-a-ruler-or-clock" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can you find the length of a meter without a ruler or clock?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/175946/why-is-a-mirror-list-important-for-my-arch-installation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is a mirror list important for my Arch installation?
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/21560384" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/21560384/ivc/423b');});
+</script>
+<noscript>
+    <div><img src="/posts/21560384/ivc/423b" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display: none;" id="prettify-lang">lang-c</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=footerlink">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>                   with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.12.24.2140
+            </div>
+            
+        </div>
+    <iframe id="global-auth-frame" style="display: none;" src="how-to-specify-width-or-point-size-in-sdl-2-0-draw-points-lines-or-rect_elemei/read.html"></iframe></div>
+    <noscript>
+<div id="noscript-warning">Stack Overflow works best with JavaScript
+enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif"
+alt="" class="dno"></div> </noscript>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|c|sdl-2|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    </body></html>

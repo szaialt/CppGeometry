@@ -1,0 +1,20 @@
+public class PositionException extends Exception {
+  private Point p;
+
+  public PositionException(){}
+
+  public PositionException(Point p){
+    Point q = new Point();
+    q.setX(p.getX());
+    q.setY(p.getY());
+    this.p = q;
+  }
+
+  public Point getPoint(){
+    Point q = new Point();
+    q.setX(p.getX());
+    q.setY(p.getY());
+    return q;
+  }
+
+}

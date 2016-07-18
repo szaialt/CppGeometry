@@ -1,0 +1,2592 @@
+<!DOCTYPE HTML>
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+	
+	
+                <meta http-equiv="X-UA-Compatible" content="IE=9"> 
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta content="True" name="HandheldFriendly">
+		
+
+		<title>[SDL] Getting Screen resolution [solved] - APIs and Tools - GameDev.net</title>
+		<link rel="shortcut icon" href="http://www.gamedev.net/favicon.ico">
+		<link rel="image_src" href="http://public.gamedev5.net//public/style_images/master/gd_meta.png">
+		<script src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/cbgapi.loaded_1"></script><script src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/cbgapi.loaded_0"></script><script src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/all.js" id="facebook-jssdk"></script><script id="undefined" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/inpage_linkid.js" type="text/javascript"></script><script src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/ga.js" type="text/javascript"></script><script src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/gpt.js" type="text/javascript"></script><script type="text/javascript">
+		//<![CDATA[
+			jsDebug			= 0; /* Must come before JS includes */
+			USE_RTE			= 0;
+			DISABLE_AJAX	= parseInt(0); /* Disables ajax requests where text is sent to the DB; helpful for charset issues */
+			inACP			= false;
+			var isRTL		= false;
+			var rtlIe		= '';
+			var rtlFull		= '';
+		//]]>
+		</script>
+		
+	
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+
+				
+	
+	
+		<link rel="stylesheet" type="text/css" media="screen,print" href="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/index.css">
+	
+
+	
+	<style type="text/css" screen,media="">
+		/* Inline CSS */
+		.breadcrumb > li:first-child > .nav_sep{display:none;}
+	</style>
+	
+
+
+<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" title='Main' media="screen" href="http://public.gamedev5.net/public/style_css/css_20/ipb_ie.css" />
+<![endif]-->
+<!--[if lte IE 8]>
+	<style type='text/css'>
+		.ipb_table { table-layout: fixed; }
+		.ipsLayout_content { width: 99.5%; }
+	</style>
+<![endif]-->
+
+	<!-- Forces resized images to an admin-defined size -->
+	<style type="text/css">
+		img.bbc_img {
+			max-width: 640px !important;
+			max-height: 640px !important;
+		}
+	</style>
+
+
+<link href="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/css.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/BjilfL.html"></script>
+		<meta property="og:title" content="[SDL] Getting Screen resolution [solved] - APIs and Tools">
+		<meta property="og:site_name" content="GameDev.net">
+		<meta property="og:type" content="article">
+		
+	
+		
+		
+			<meta property="og:updated_time" content="1408459167">
+		
+		
+		
+		
+	
+
+		
+		
+			<meta name="keywords" content="[SDL],Getting,Screen,resolution,[solved],wondering,there,way,get,current,screen,system,I'm,working,Linux">
+		
+		
+		
+		
+	
+
+		
+		
+			<meta name="description" content="[SDL] Getting Screen resolution [solved] - posted in APIs and Tools: I was wondering. Is there a way to get the current screen resolution of the system. Im working in Linux and if the screen resolution is different than what I set my SDL app to (and set it to fullscreen) it crashes. Id like to be able to find the system screen resolution and change where things are placed on the screen accordingly. 
+
+Thanks!
+
+[Edited by - SigmaX on September 28, 2006 12:28:49 PM]">
+		
+		
+		
+			<meta property="og:description" content="[SDL] Getting Screen resolution [solved] - posted in APIs and Tools: I was wondering. Is there a way to get the current screen resolution of the system. Im working in Linux and if the screen resolution is different than what I set my SDL app to (and set it to fullscreen) it crashes. Id like to be able to find the system screen resolution and change where things are placed on the screen accordingly. 
+
+Thanks!
+
+[Edited by - SigmaX on September 28, 2006 12:28:49 PM]">
+		
+		
+	
+
+		
+		
+			<meta name="gdnet" content="game development, game, development, industry, games, gaming, gamer, make games, game programming, programming, game art, art, media, social gaming, game music, audio, design, publishing, publisher, publish, game books, graphics, gpu, networking, artificial intelligence, ai, physics, multiplayer, mmorpg, c++, lua, c, maya, 3dsmax, photoshop, visual studio, xna, windows, linux, xbox, ps3, wii">
+		
+		
+		
+		
+	
+
+		
+		
+			<meta name="identifier-url" content="http://www.gamedev.net/topic/416908-sdl-getting-screen-resolution-solved/">
+		
+		
+			<meta property="og:url" content="http://www.gamedev.net/topic/416908-sdl-getting-screen-resolution-solved/">
+		
+		
+		
+	
+
+<meta property="og:image" content="http://public.gamedev5.net//public/style_images/master/gd_meta.png">
+		
+		
+		<meta name="HandheldFriendly" content="true">
+		<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no">
+
+		
+<!-- All resources can be remote -->
+<script src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/shCore.js" type="text/javascript"></script>
+<script src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/shAutoloader.js" type="text/javascript"></script>
+
+<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<script type="text/javascript">
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') +
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+
+googletag.cmd.push(function() {
+googletag.defineSlot('/1004699/In-text_main', [1, 1], 'div-gpt-ad-1365724311420-0').addService(googletag.pubads());
+googletag.defineSlot('/1004699/Box_Main', [300, 250], 'div-gpt-ad-1365703926448-0').addService(googletag.pubads());
+googletag.defineSlot('/1004699/In-text_main', [800, 40], 'div-gpt-ad-1365703926448-1').addService(googletag.pubads());
+googletag.defineSlot('/1004699/Leaderboard_Main', [728, 90], 'div-gpt-ad-1365703926448-2').addService(googletag.pubads());
+googletag.defineSlot('/1004699/Spotlight_Main', [250, 250], 'div-gpt-ad-1365725906288-0').addService(googletag.pubads());
+
+googletag.defineSlot('/1004699/Topper_Forums', [800, 40], 'div-gpt-ad-1369184034697-1').addService(googletag.pubads());
+
+googletag.defineSlot('/1004699/Topper_Main', [1, 1], 'div-gpt-ad-1365703926448-5').addService(googletag.pubads());
+
+
+
+
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script><script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/prototype.js"></script><script src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/pubads_impl_46.js" type="text/javascript"></script>
+		<script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/scriptaculous.js"></script><script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/effects.js"></script><script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/dragdrop.js"></script><script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/builder.js"></script>
+	<script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/index.php" charset="UTF-8"></script><script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/jsapi"></script>
+<script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/jsapi"></script>
+  <script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/ips.js"></script>
+  <script type="text/javascript">
+	if ( typeof ipb.googleSearch == 'object' )
+	{
+		ipb.googleSearch.cseKey = '015339353205569714001:onzj1byha_k';
+                ipb.googleSearch.linkTarget = 'new';
+                ipb.googleSearch.tabImage = '0';
+                ipb.googleSearch.tabBlog = '0';
+                ipb.googleSearch.tabVideo = '0';
+                ipb.googleSearch.tabWeb = '0';
+                ipb.googleSearch.tabBook = '0';
+                ipb.googleSearch.tabNews = '0';
+                ipb.googleSearch.popwidth = '800';
+                ipb.googleSearch.popheight = '480';
+                ipb.googleSearch.popupyn = '0';
+		ipb.googleSearch.alwaysDefault = true;
+	}
+	else
+	{
+		$( document ).observe( 'dom:loaded', function()
+		{
+			
+			$( 's_google' ).up( '.special' ).remove();
+		});
+	}
+</script><script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/squote.js"></script>
+
+
+
+
+
+
+<script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/MathJax.js"></script>
+<script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/tabs.js"></script><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style>
+<!--<script type='text/javascript' src='http://public.gamedev5.net/public/js/ratewidget.js?nck=fb99e14e49767998a66e3b7a9956074d2'></script>-->
+
+
+
+<script type="text/javascript"> 
+
+// see whether device supports touch events (a bit simplistic, but...)
+var hasTouch = ("ontouchstart" in window);
+var iOS5 = /iPad|iPod|iPhone/.test(navigator.platform) && "matchMedia" in window;
+
+document.observe("dom:loaded", function() {
+
+var viewport = document.viewport.getDimensions();
+
+if (viewport.width <= 640)
+{
+$("dark").hide();
+
+}
+ 
+// hook touch events for drop-down menus
+// NB: if has touch events, then has standards event handling too
+// but we don't want to run this code on iOS5+
+if (hasTouch && document.querySelectorAll && !iOS5) {
+    var i, len, element,
+        dropdowns = document.querySelectorAll("#dark li.drop > a");
+ 
+    function menuTouch(event) {
+        // toggle flag for preventing click for this link
+        var i, len, noclick = !(this.dataNoclick);
+ 
+        // reset flag on all links
+        for (i = 0, len = dropdowns.length; i < len; ++i) {
+            dropdowns[i].dataNoclick = false;
+        }
+ 
+        // set new flag value and focus on dropdown menu
+        this.dataNoclick = noclick;
+        this.focus();
+    }
+ 
+    function menuClick(event) {
+        // if click isn't wanted, prevent it
+        if (this.dataNoclick) {
+            event.preventDefault();
+        }
+    }
+ 
+    for (i = 0, len = dropdowns.length; i < len; ++i) {
+        element = dropdowns[i];
+        element.dataNoclick = false;
+        element.addEventListener("touchstart", menuTouch, false);
+        element.addEventListener("click", menuClick, false);
+    }
+}
+
+});document.observe("dom:loaded", function() {var FAVE_TEMPLATE = '';    
+var ajaxUrl = ipb.vars['base_url'] + "app=search&module=ajax&section=taginfo&md5check=" + ipb.vars['secure_hash'];
+ipb.hoverCardRegister.initialize( 'taginfo', { 'w' : '300px', 'delay': 750, 'position' : 'bottomLeft' ,  'getId': true, 'setIdParam': 'tag', /*'ajaxUrl' : ajaxUrl,*/ 'callback' : initTagLike } );
+function initTagLike(hoverCardObject, id)
+{
+var ajaxUrl = ipb.vars['base_url'] + "app=search&module=ajax&section=taginfo&md5check=" + ipb.vars['secure_hash'] + "&tag=" + encodeURIComponent($(id).readAttribute('hovercard-id'));
+     new Ajax.Request( ajaxUrl,
+						{
+				    		method: 'post',
+                            evalJS: 'true',
+							onSuccess: function(t)
+							{
+							    hoverCardObject.card.update(t.responseText);
+                    			ipb.delegate.register('.ftoggle' , ipb.like.clicked );
+                    			ipb.delegate.register('._fsubmit', ipb.like.save );
+                    			ipb.delegate.register('._funset' , ipb.like.remove );
+                    			ipb.delegate.register('._fmore'  , ipb.like.more );
+                    			
+                    			/* Make sure hcards work */
+                    			ipb.like.resetEvents();
+							}
+					       });	
+}
+
+});
+
+  var _gaq = _gaq || [];
+var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-279474-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	
+		
+			
+			
+			
+			
+				<link id="ipsCanonical" rel="canonical" href="http://www.gamedev.net/topic/416908-sdl-getting-screen-resolution-solved/">
+			
+		
+
+			
+			
+			
+			
+				<link rel="stylesheet" type="text/css" title="Main" media="print" href="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/ipb_print.css">
+			
+		
+
+			
+			
+			
+			
+				<link rel="up" href="http://www.gamedev.net/forum/41-apis-and-tools/">
+			
+		
+
+			
+			
+			
+			
+				<link rel="author" href="http://www.gamedev.net/index.php?showuser=95361">
+			
+		
+	
+
+		
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="GameDev.net Forums RSS" href="http://www.gamedev.net/rss/forums/1-gamedevnet-forums-rss/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="GameDev.net Journals RSS feed " href="http://www.gamedev.net/rss/blog/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="IP.Gallery Images RSS Feed" href="http://www.gamedev.net/rss/gallery/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Events Calendar" href="http://www.gamedev.net/rss/calendar/1-events-calendar/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Last 10 Submissions RSS Feed" href="http://www.gamedev.net/rss/downloads/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles" href="http://www.gamedev.net/rss/ccs/1-articles/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Books" href="http://www.gamedev.net/rss/ccs/3-books/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Contests" href="http://www.gamedev.net/rss/ccs/35-contests/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Events" href="http://www.gamedev.net/rss/ccs/16-events/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project" href="http://www.gamedev.net/rss/ccs/37-indie-project/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project Stories" href="http://www.gamedev.net/rss/ccs/38-indie-project-stories/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Jobs" href="http://www.gamedev.net/rss/ccs/4-jobs/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="News" href="http://www.gamedev.net/rss/ccs/11-news/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Showdown" href="http://www.gamedev.net/rss/ccs/33-showdown/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Sweet Snippets" href="http://www.gamedev.net/rss/ccs/32-sweet-snippets/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Technical" href="http://www.gamedev.net/rss/ccs/1c940-technical/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Creative" href="http://www.gamedev.net/rss/ccs/1c941-creative/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Business" href="http://www.gamedev.net/rss/ccs/1c942-business/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Reviews" href="http://www.gamedev.net/rss/ccs/1c970-reviews/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: GameDev.net Soapbox" href="http://www.gamedev.net/rss/ccs/1c969-gamedevnet-soapbox/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Closed Articles" href="http://www.gamedev.net/rss/ccs/1c968-closed-articles/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Game Programming" href="http://www.gamedev.net/rss/ccs/1c943-game-programming/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: General Programming" href="http://www.gamedev.net/rss/ccs/1c944-general-programming/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Graphics Programming and Theory" href="http://www.gamedev.net/rss/ccs/1c945-graphics-programming-and-theory/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: DirectX and XNA" href="http://www.gamedev.net/rss/ccs/1c946-directx-and-xna/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: OpenGL" href="http://www.gamedev.net/rss/ccs/1c947-opengl/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Multiplayer and Network Programming" href="http://www.gamedev.net/rss/ccs/1c948-multiplayer-and-network-programming/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Artificial Intelligence" href="http://www.gamedev.net/rss/ccs/1c949-artificial-intelligence/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Math and Physics" href="http://www.gamedev.net/rss/ccs/1c950-math-and-physics/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Mobile Development" href="http://www.gamedev.net/rss/ccs/1c951-mobile-development/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: APIs and Tools" href="http://www.gamedev.net/rss/ccs/1c952-apis-and-tools/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Game Design" href="http://www.gamedev.net/rss/ccs/1c953-game-design/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Music and Sound" href="http://www.gamedev.net/rss/ccs/1c954-music-and-sound/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Visual Arts" href="http://www.gamedev.net/rss/ccs/1c955-visual-arts/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Breaking Into the Industry" href="http://www.gamedev.net/rss/ccs/1c956-breaking-into-the-industry/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Business and Law" href="http://www.gamedev.net/rss/ccs/1c957-business-and-law/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Interviews" href="http://www.gamedev.net/rss/ccs/1c958-interviews/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Articles: Production and Management" href="http://www.gamedev.net/rss/ccs/1c963-production-and-management/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Books: Technical" href="http://www.gamedev.net/rss/ccs/3c959-technical/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Books: Creative" href="http://www.gamedev.net/rss/ccs/3c962-creative/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Books: Industry Related" href="http://www.gamedev.net/rss/ccs/3c966-industry-related/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Books: Business and Law" href="http://www.gamedev.net/rss/ccs/3c964-business-and-law/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Books: Production and Management" href="http://www.gamedev.net/rss/ccs/3c965-production-and-management/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Books: General Programming" href="http://www.gamedev.net/rss/ccs/3c960-general-programming/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Books: APIs and Tools" href="http://www.gamedev.net/rss/ccs/3c961-apis-and-tools/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Free to Play" href="http://www.gamedev.net/rss/ccs/37c971-free-to-play/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Action" href="http://www.gamedev.net/rss/ccs/37c972-action/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Adventure" href="http://www.gamedev.net/rss/ccs/37c973-adventure/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Strategy" href="http://www.gamedev.net/rss/ccs/37c974-strategy/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: RPG" href="http://www.gamedev.net/rss/ccs/37c975-rpg/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Massively Multiplayer" href="http://www.gamedev.net/rss/ccs/37c976-massively-multiplayer/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Casual" href="http://www.gamedev.net/rss/ccs/37c977-casual/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Simulation" href="http://www.gamedev.net/rss/ccs/37c978-simulation/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Racing" href="http://www.gamedev.net/rss/ccs/37c979-racing/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Sports" href="http://www.gamedev.net/rss/ccs/37c980-sports/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Animation &amp;  Modeling" href="http://www.gamedev.net/rss/ccs/37c981-animation-modeling/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Audio Production" href="http://www.gamedev.net/rss/ccs/37c982-audio-production/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Design &amp; Illustration" href="http://www.gamedev.net/rss/ccs/37c983-design-illustration/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Education" href="http://www.gamedev.net/rss/ccs/37c984-education/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Photo Editing" href="http://www.gamedev.net/rss/ccs/37c985-photo-editing/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Software Training" href="http://www.gamedev.net/rss/ccs/37c986-software-training/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Utilities" href="http://www.gamedev.net/rss/ccs/37c987-utilities/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Indie Project: Video Production" href="http://www.gamedev.net/rss/ccs/37c988-video-production/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="News: GDNet Marketplace News" href="http://www.gamedev.net/rss/ccs/11c920-gdnet-marketplace-news/">
+			
+			
+			
+		
+
+			
+			
+				<link rel="alternate" type="application/rss+xml" title="Classifieds RSS Feed" href="http://www.gamedev.net/rss/classifieds/">
+			
+			
+			
+		
+	
+
+	
+
+
+	
+
+
+
+		
+		<script type="text/javascript">
+	//<![CDATA[
+		/* ---- URLs ---- */
+		ipb.vars['base_url'] 			= 'http://www.gamedev.net/index.php?s=ab5419a5ccbb20920b655a2bfe1b5553&';
+		ipb.vars['board_url']			= 'http://www.gamedev.net';
+		ipb.vars['img_url'] 			= "http://public.gamedev5.net//public/style_images/master";
+		ipb.vars['loading_img'] 		= 'http://public.gamedev5.net//public/style_images/master/loading.gif';
+		ipb.vars['active_app']			= 'forums';
+		ipb.vars['upload_url']			= 'http://uploads.gamedev.net';
+		/* ---- Member ---- */
+		ipb.vars['member_id']			= parseInt( 0 );
+		ipb.vars['is_supmod']			= parseInt( 0 );
+		ipb.vars['is_admin']			= parseInt( 0 );
+		ipb.vars['secure_hash'] 		= '880ea6a14ea49e853634fbdc5015a024';
+		ipb.vars['session_id']			= 'ab5419a5ccbb20920b655a2bfe1b5553';
+		ipb.vars['twitter_id']			= 0;
+		ipb.vars['fb_uid']				= 0;
+		ipb.vars['auto_dst']			= parseInt( 0 );
+		ipb.vars['dst_in_use']			= parseInt(  );
+		ipb.vars['is_touch']			= false;
+		ipb.vars['member_group']		= {"g_mem_info":"1"}
+		/* ---- cookies ----- */
+		ipb.vars['cookie_id'] 			= 'gd_';
+		ipb.vars['cookie_domain'] 		= '.gamedev.net';
+		ipb.vars['cookie_path']			= '/';
+		/* ---- Rate imgs ---- */
+		ipb.vars['rate_img_on']			= 'http://public.gamedev5.net//public/style_images/master/star.png';
+		ipb.vars['rate_img_off']		= 'http://public.gamedev5.net//public/style_images/master/star_off.png';
+		ipb.vars['rate_img_rated']		= 'http://public.gamedev5.net//public/style_images/master/star_rated.png';
+		/* ---- Uploads ---- */
+		ipb.vars['swfupload_swf']		= 'http://www.gamedev.net/public/js/3rd_party/swfupload/swfupload.swf';
+		ipb.vars['swfupload_enabled']	= true;
+		ipb.vars['use_swf_upload']		= ( '' == 'flash' ) ? true : false;
+		ipb.vars['swfupload_debug']		= false;
+		/* ---- other ---- */
+		ipb.vars['highlight_color']     = "#ade57a";
+		ipb.vars['charset']				= "UTF-8";
+		ipb.vars['time_offset']			= "-6";
+		ipb.vars['hour_format']			= "12";
+		ipb.vars['seo_enabled']			= 1;
+		
+		ipb.vars['seo_params']			= {"start":"-","end":"\/","varBlock":"?","varPage":"page-","varSep":"&","varJoin":"="};
+		
+		/* Templates/Language */
+		ipb.templates['inlineMsg']		= "";
+		ipb.templates['ajax_loading'] 	= "<div id='ajax_loading'><img src='http://public.gamedev5.net//public/style_images/master/ajax_loading.gif' alt='" + ipb.lang['loading'] + "' /></div>";
+		ipb.templates['close_popup']	= "<img src='http://public.gamedev5.net//public/style_images/master/close_popup.png' alt='x' />";
+		ipb.templates['rss_shell']		= new Template("<ul id='rss_menu' class='ipbmenu_content'>#{items}</ul>");
+		ipb.templates['rss_item']		= new Template("<li><a href='#{url}' title='#{title}'>#{title}</a></li>");
+		
+		ipb.templates['autocomplete_wrap'] = new Template("<ul id='#{id}' class='ipb_autocomplete' style='width: 250px;'></ul>");
+		ipb.templates['autocomplete_item'] = new Template("<li id='#{id}' data-url='#{url}'><img src='#{img}' alt='' class='ipsUserPhoto ipsUserPhoto_mini' />&nbsp;&nbsp;#{itemvalue}</li>");
+		ipb.templates['page_jump']		= new Template("<div id='#{id}_wrap' class='ipbmenu_content'><h3 class='bar'>Jump to page</h3><p class='ipsPad'><input type='text' class='input_text' id='#{id}_input' size='8' /> <input type='submit' value='Go' class='input_submit add_folder' id='#{id}_submit' /></p></div>");
+		ipb.templates['global_notify'] 	= new Template("<div class='popupWrapper'><div class='popupInner'><div class='ipsPad'>#{message} #{close}</div></div></div>");
+		
+		
+		ipb.templates['header_menu'] 	= new Template("<div id='#{id}' class='ipsHeaderMenu boxShadow'></div>");
+		
+		Loader.boot();
+	//]]>
+	</script>
+	<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style><script src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/osd.js" type="text/javascript"></script></head><body id="ipboard_body"><p id="content_jump" class="hide"><a id="top"></a><a href="#j_content" title="Jump to content" accesskey="m">Jump to content</a></p>
+		<div id="ipbwrapper">
+			<!-- ::: TOP BAR: Sign in / register or user drop down and notification alerts ::: -->
+			<div id="header_bar" class="clearfix">
+				<div class="main_width">
+					<ul id="admin_bar" class="ipsList_inline left">
+
+					
+                                           
+					</ul>
+
+					<div id="user_navigation" class="not_logged_in">
+							
+							<ul class="ipsList_inline right">
+								<li>
+									<span class="services">
+										
+											<a href="http://www.gamedev.net/index.php?app=core&amp;module=global&amp;section=login&amp;serviceClick=facebook"><span class="ip_facebook ip_sprite"></span></a>
+										
+										
+											<a href="http://www.gamedev.net/index.php?app=core&amp;module=global&amp;section=login&amp;serviceClick=twitter"><span class="ip_twitter ip_sprite"></span></a>
+										
+										
+										<a href="http://www.gamedev.net/index.php?app=core&amp;module=global&amp;section=login&amp;do=process&amp;use_google=1&amp;auth_key=880ea6a14ea49e853634fbdc5015a024" title="Log In with Google" id="googleIcon">
+<img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/login-google-icon.png" alt="Log In with Google" style="margin-top: -10px;">
+</a>
+<div id="googleOptions" style="display: none;">
+<h3>Google Sign in options</h3>
+	<form action="http://www.gamedev.net/index.php?app=core&amp;module=global&amp;section=login&amp;do=process&amp;use_google=1" method="post" id="googleLogin">
+<input name="auth_key" value="880ea6a14ea49e853634fbdc5015a024" type="hidden">
+<input value="http://www.gamedev.net/topic/416908-sdl-getting-screen-resolution-solved/" name="referer" type="hidden">
+<fieldset id="googlesignin_options">
+				<ul class="ipsForm ipsForm_vertical ipsPad_double">
+					<li class="ipsField ipsField_checkbox clearfix">
+						<input id="remember" checked="checked" name="rememberMe" value="1" class="input_check" type="checkbox">
+						<p class="ipsField_content">
+							<label for="remember">Remember me</label><br>
+							<span class="desc lighter">This is not recommended for shared computers</span>
+						</p>
+					</li>
+					
+						<li class="ipsField ipsField_checkbox clearfix">
+							<input id="invisible" name="anonymous" value="1" class="input_check" type="checkbox">
+							<p class="ipsField_content">
+								<label for="invisible">Sign in anonymously</label><br>
+								<span class="desc lighter">Don't add me to the active users list</span>
+							</p>
+						</li>
+					
+					
+					<li class="ipsPad_top ipsForm_center desc ipsType_smaller">
+						<a rel="nofollow" href="http://www.gamedev.net/privacypolicy/">Privacy Policy</a>
+					</li>
+					
+				</ul>
+			</fieldset>
+<div class="ipsForm_submit ipsForm_center">
+					<input class="ipsButton" value="Sign In" type="submit">
+				</div>
+</form>
+</div>
+<script type="text/javascript">
+var _googleLogin = null;
+function googlePop()
+{
+if ( !$('googleOptions') )
+{
+return false;
+}
+if( !_googleLogin )
+{
+ _googleLogin = new ipb.Popup( 'google', { 
+type: 'pane',
+initial: $('googleOptions').innerHTML,
+hideAtStart: false,
+w: '600px',
+modal: 'true'
+} );
+}
+else
+{
+ _googleLogin.show();
+}
+}
+ $('googleIcon').observe( 'click', function(e) {
+googlePop();
+        Event.stop(e);
+        return false;
+  });
+</script>
+									</span>
+									&nbsp;&nbsp;&nbsp;&nbsp;
+									<a href="http://www.gamedev.net/index.php?app=core&amp;module=global&amp;section=login" title="Sign In">Sign In</a>&nbsp;&nbsp;&nbsp;<a href="#" id="sign_in"></a>
+								</li>
+								<li>
+									<a href="http://www.gamedev.net/index.php?app=core&amp;module=global&amp;section=register" title="Create Account" id="register_link">Create Account</a>
+								</li>
+							</ul>
+						</div>
+				</div>
+			</div>
+			<!-- ::: BRANDING STRIP: Logo and search box ::: -->
+			<div id="branding">
+				<div class="main_width">
+					<div id="logo">
+						
+
+<script type="text/javascript">
+// And then move
+document.observe("dom:loaded", function(){
+	var _thisHtml	= $('nav_app_ipchat').down('a').innerHTML;
+	_thisHtml = _thisHtml + $('chat-tab-count-wrap').innerHTML;
+	$('nav_app_ipchat').down('a').update( _thisHtml ).setStyle( { position: 'relative' } );
+	$('chat-tab-count-wrap').remove();
+	$('chat-tab-count').show();
+});
+</script>
+
+							<a href="http://www.gamedev.net/" title="Go to community index" rel="home" accesskey="1"><span class="gd_small_logo sprite"></span></a>
+						
+					</div>
+
+
+                                <div id="navmenu">
+                                   <a href="#" onclick="Effect.toggle('dark', 'appear', {duration: 0.1}); return false;" class="box-shadow-menu"></a>
+                                </div>
+
+                                <div id="leaderboard">
+<!-- Leaderboard_Main -->
+<div id="div-gpt-ad-1365703926448-2" style="width: 728px; height: 90px;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1365703926448-2'); });
+</script><div style="border: 0pt none ;" id="google_ads_iframe_/1004699/Leaderboard_Main_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0pt none ; vertical-align: bottom;" marginheight="0" marginwidth="0" name="google_ads_iframe_/1004699/Leaderboard_Main_0" id="google_ads_iframe_/1004699/Leaderboard_Main_0" frameborder="0" height="90" scrolling="no" width="728"></iframe></div><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0pt none ; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" name="google_ads_iframe_/1004699/Leaderboard_Main_0__hidden__" id="google_ads_iframe_/1004699/Leaderboard_Main_0__hidden__" frameborder="0" height="0" scrolling="no" width="0"></iframe>
+</div>
+
+                                </div>
+					
+				</div>
+
+			</div>
+			<!-- ::: APPLICATION TABS ::: -->
+				<div class="main_width">
+        <div id="search" class="right">
+	<form action="http://www.gamedev.net/index.php?app=core&amp;module=search&amp;do=search&amp;fromMainBar=1" method="post" id="search-box">
+		<fieldset>
+			<label for="main_search" class="hide">Search</label>
+			<a href="http://www.gamedev.net/index.php?app=core&amp;module=search&amp;search_in=forums" title="Advanced Search" accesskey="4" rel="search" id="adv_search" class="advanced_search sprite right">Advanced</a>
+			<span id="search_wrap" class="right">
+				<input value="Search..." id="main_search" name="search_term" class="inactive" size="17" tabindex="6" type="text">
+				<span class="choice ipbmenu clickable" id="search_options" style="">Google</span>
+				<ul id="search_options_menucontent" class="ipbmenu_content ipsPad" style="display: none; position: absolute; z-index: 9999;">
+					<li style="z-index: 10000;" class="title"><strong style="z-index: 10000;">Search section:</strong></li>
+					<li style="z-index: 10000;" class="special">
+	<label style="z-index: 10000;" for="s_google" title="Google">
+		<input checked="checked" style="z-index: 10000;" name="search_app" value="google" class="input_radio" id="s_google" type="radio">Google
+	</label>
+</li><li style="z-index: 10000;" class="special">
+							<label style="z-index: 10000;" for="s_topic" title="This topic">
+								
+									<input style="z-index: 10000;" name="search_app" value="forums:topic:416908" class="input_radio" id="s_topic" type="radio"> 
+								
+								<strong style="z-index: 10000;">This topic</strong>
+							</label>
+						</li>
+					
+					
+					<li style="z-index: 10000;" class="app"><label style="z-index: 10000;" for="s_forums" title="Forums"><input style="z-index: 10000;" name="search_app" class="input_radio" id="s_forums" value="forums" type="radio">Forums</label></li><li style="z-index: 10000;" class="app"><label style="z-index: 10000;" for="s_members" title="Members"><input style="z-index: 10000;" name="search_app" class="input_radio" id="s_members" value="members" type="radio">Members</label></li><li style="z-index: 10000;" class="app"><label style="z-index: 10000;" for="s_core" title="Help Files"><input style="z-index: 10000;" name="search_app" class="input_radio" id="s_core" value="core" type="radio">Help Files</label></li>
+						
+					
+
+						
+					
+
+						
+					
+
+						<li style="z-index: 10000;" class="app"><label style="z-index: 10000;" for="s_blog" title="Developer Journals"><input style="z-index: 10000;" name="search_app" class="input_radio" id="s_blog" value="blog" type="radio">Developer Journals</label></li>
+					
+
+						<li style="z-index: 10000;" class="app"><label style="z-index: 10000;" for="s_gallery" title="Gallery"><input style="z-index: 10000;" name="search_app" class="input_radio" id="s_gallery" value="gallery" type="radio">Gallery</label></li>
+					
+
+						<li style="z-index: 10000;" class="app"><label style="z-index: 10000;" for="s_calendar" title="Calendar"><input style="z-index: 10000;" name="search_app" class="input_radio" id="s_calendar" value="calendar" type="radio">Calendar</label></li>
+					
+
+						<li style="z-index: 10000;" class="app"><label style="z-index: 10000;" for="s_downloads" title="Downloads"><input style="z-index: 10000;" name="search_app" class="input_radio" id="s_downloads" value="downloads" type="radio">Downloads</label></li>
+					
+
+						<li style="z-index: 10000;" class="app"><label style="z-index: 10000;" for="s_ccs" title="Resources"><input style="z-index: 10000;" name="search_app" class="input_radio" id="s_ccs" value="ccs" type="radio">Resources</label></li>
+					
+
+						<li style="z-index: 10000;" class="app"><label style="z-index: 10000;" for="s_nexus" title="Store"><input style="z-index: 10000;" name="search_app" class="input_radio" id="s_nexus" value="nexus" type="radio">Store</label></li>
+					
+
+						
+					
+
+						<li style="z-index: 10000;" class="app"><label style="z-index: 10000;" for="s_classifieds" title="Classifieds"><input style="z-index: 10000;" name="search_app" class="input_radio" id="s_classifieds" value="classifieds" type="radio">Classifieds</label></li>
+					
+
+						
+					
+
+						<li style="z-index: 10000;" class="app"><label style="z-index: 10000;" for="s_tracker" title="Tracker"><input style="z-index: 10000;" name="search_app" class="input_radio" id="s_tracker" value="tracker" type="radio">Tracker</label></li>
+					
+
+						
+					
+
+						
+					
+
+						
+					
+
+						
+					
+
+						<li style="z-index: 10000;" class="app"><label style="z-index: 10000;" for="s_links" title="Links"><input style="z-index: 10000;" name="search_app" class="input_radio" id="s_links" value="links" type="radio">Links</label></li>
+					
+
+						
+					
+
+						
+					
+				</ul>
+				<input class="submit_input clickable" value="" type="submit">
+			</span>
+			
+		</fieldset>
+	</form>
+</div>
+        <nav id="dark">
+            <ul>
+
+          
+                <li><a href="http://www.gamedev.net/">Home</a></li> 
+                <li><a href="http://www.gamedev.net/forum/31-for-beginners/">For Beginners</a></li> 
+                <li class="drop"><a href="http://www.gamedev.net/page/resources">Articles</a>
+                  <ul class="menu">
+                  <li><a href="http://www.gamedev.net/page/resources">All Articles</a></li>
+                  <li><a href="http://www.gamedev.net/page/resources/_/gdnethelp/how-to-publish-on-gamedevnet-r2927" style="border-top: 1px solid rgb(0, 204, 0); background: rgb(0, 153, 0) none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; color: white;">Post an Article</a></li>
+                  <li class="drop">
+                       <a href="http://www.gamedev.net/page/resources/_/technical/">Technical</a>
+                       <ul>
+                          <li><a href="http://www.gamedev.net/page/resources/_/technical/game-programming/">Game Programming</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/technical/general-programming/">General Programming</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/technical/graphics-programming-and-theory/">Graphics Programming and Theory</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/technical/directx-and-xna/">DirectX and XNA</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/technical/opengl/">OpenGL</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/technical/multiplayer-and-network-programming/">Multiplayer and Network Programming</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/technical/artificial-intelligence/">Artificial Intelligence</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/technical/math-and-physics/">Math and Physics</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/technical/mobile-development/">Mobile Development</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/technical/apis-and-tools/">APIs and Tools</a></li>
+                       </ul>
+                  </li>
+                  <li class="drop">
+                       <a href="http://www.gamedev.net/page/resources/_/creative/">Creative</a>
+                       <ul>
+                          <li><a href="http://www.gamedev.net/page/resources/_/creative/game-design/">Game Design</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/creative/music-and-sound/">Music and Sound</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/creative/visual-arts/">Visual Arts</a></li>
+                       </ul>
+                  </li>
+                  <li class="drop">
+                       <a href="http://www.gamedev.net/page/resources/_/business/">Business</a>
+                       <ul>
+                          <li><a href="http://www.gamedev.net/page/resources/_/business/breaking-into-the-industry/">Breaking into the Industry</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/business/production-and-management/">Production and Management</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/business/interviews/">Interviews</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/business/business-and-law/">Business and Law</a></li>
+                          <li><a href="http://www.gamedev.net/page/resources/_/business/435/">Event Coverage</a></li>
+                       </ul>
+                  </li>
+                  </ul>
+                </li>
+                <li class="drop"><a href="http://www.gamedev.net/index">Forums</a>
+                    <ul class="menu">
+                    <li><a href="http://www.gamedev.net/index">All Forums</a></li>
+                    <li class="drop">
+                        <a href="http://www.gamedev.net/forum/122-community-interaction/">Community Interaction</a>
+                        <ul>
+                        <li><a href="http://www.gamedev.net/forum/3-gdnet-lounge/">GDNet Lounge</a></li>
+                        <li><a href="http://www.gamedev.net/forum/157-coding-horrors/">Coding Horrors</a></li>
+                        <li><a href="http://www.gamedev.net/forum/158-article-writing/">Article Writing</a></li>
+                        <li><a href="http://www.gamedev.net/forum/4-gdnet-comments-suggestions-and-ideas/">GDNet Comments, Suggestions and Ideas</a></li>
+                        <li><a href="http://www.gamedev.net/forum/6-your-announcements/">Your Announcements</a></li>
+                        </ul>
+                    </li>
+                    <li class="drop">
+                        <a href="http://www.gamedev.net/forum/123-the-technical-side/">Technical</a>
+                        <ul>
+                        <li><a href="http://www.gamedev.net/forum/11-game-programming/">Game Programming</a></li>
+                        <li><a href="http://www.gamedev.net/forum/21-general-programming/">General Programming</a></li>
+                        <li><a href="http://www.gamedev.net/forum/12-graphics-programming-and-theory/">Graphics Programming and Theory</a></li>
+                        <li><a href="http://www.gamedev.net/forum/10-directx-and-xna/">DirectX and XNA</a></li>
+                        <li><a href="http://www.gamedev.net/forum/25-opengl/">OpenGL</a></li>
+                        <li><a href="http://www.gamedev.net/forum/15-multiplayer-and-network-programming/">Multiplayer and Network Programming</a></li>
+                        <li><a href="http://www.gamedev.net/forum/9-artificial-intelligence/">Artificial Intelligence</a></li>   
+                        <li><a href="http://www.gamedev.net/forum/20-math-and-physics/">Math and Physics</a></li>     
+                        <li><a href="http://www.gamedev.net/forum/39-mobile-and-console-development/">Mobile &amp; Console Development</a></li>    
+                        <li><a href="http://www.gamedev.net/forum/159-build-systems-and-source-control/">Build Systems &amp; Source Control</a></li>
+                        <li><a href="http://www.gamedev.net/forum/41-apis-and-tools/">APIs and Tools</a></li>                    
+                        </ul>                      
+                    </li>
+                    <li class="drop">
+
+                         <a href="http://www.gamedev.net/forum/124-the-creative-side/">Creative</a>
+                         <ul>
+                         <li><a href="http://www.gamedev.net/forum/17-game-design/">Game Design</a></li>
+                         <li><a href="http://www.gamedev.net/forum/32-writing-for-games/">Writing For Games</a></li>
+                         <li><a href="http://www.gamedev.net/forum/19-music-and-sound/">Music and Sound</a></li>
+                         <li><a href="http://www.gamedev.net/forum/18-visual-arts/">Visual Arts</a></li>
+                         <li><a href="http://www.gamedev.net/gallery">Gallery</a></li>
+                         </ul>                
+               
+  
+                    </li>
+
+                    <li class="drop"><a href="http://www.gamedev.net/forum/133-the-business-side/">Business</a>
+                          <ul>
+                          <li><a href="http://www.gamedev.net/forum/101-breaking-into-the-games-industry/">Breaking into the Industry</a></li>
+                          <li><a href="http://www.gamedev.net/forum/5-the-business-and-law-of-game-development/">Business &amp; Law</a></li>
+                          <li><a href="http://www.gamedev.net/forum/155-production-and-management/">Production &amp; Management</a></li>
+                          </ul>                
+                    </li>  
+               
+                    </ul>                
+                </li>              
+                <li class="drop"><a href="http://www.gamedev.net/blogs">Community</a>
+                    <ul class="menu">
+                    <li><a href="http://www.gamedev.net/blogs">Developer Journals</a></li>
+                    <li><a href="http://www.gamedev.net/page/showdown/">Screenshot Showdown</a></li>
+                    <li><a href="http://www.gamedev.net/subscribe">GDNet+ Subscriptions</a></li>                    
+                    <li><a href="http://www.gamedev.net/gallery">Gallery</a></li>
+                    <li><a href="http://www.gamedev.net/books">Books</a></li>           
+                    <li><a href="http://www.gamedev.net/store/">Store</a></li>  
+                    </ul>                
+                </li>
+                <li><a href="http://www.gamedev.net/sm/">Top Members</a></li> 
+                <li class="drop"><a href="http://www.gamedev.net/classifieds">Classifieds</a>
+                    <ul class="menu">
+                    <li><a href="http://www.gamedev.net/classifieds/category/4-job-offers/">Job Offers</a></li>
+                    <li><a href="http://www.gamedev.net/classifieds/category/2-contractors/">Contractors For Hire</a></li>
+                    <li><a href="http://www.gamedev.net/classifieds/category/21-contract-projects/">Contract Projects</a></li>
+                    <li><a href="http://www.gamedev.net/classifieds/category/5-hobbyist-projects/">Hobbyist Projects</a></li>     
+                    </ul>                
+                </li>
+                <li><a href="http://www.gamedev.net/files">Marketplace</a></li>
+
+                <!--<li><a href="/info/media">Advertise</a></li>-->
+            </ul>
+        </nav>
+
+
+				
+			</div>	
+			
+			<!-- ::: MAIN CONTENT AREA ::: -->
+			<div id="content" class="clearfix">
+				<!-- ::: NAVIGATION BREADCRUMBS ::: -->
+                                <div id="secondary_navigation" class="clearfix">
+				<ol class="breadcrumb top ipsList_inline left">
+														
+							
+								<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+									<span class="nav_sep">»</span>
+									 <a href="http://www.gamedev.net/page/index.html/" title="Return to Home" itemprop="url"><span itemprop="title">Home</span></a>
+								</li>
+								
+							
+
+								<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+									<span class="nav_sep">»</span>
+									 <a href="http://www.gamedev.net/index" title="Return to Forums" itemprop="url"><span itemprop="title">Forums</span></a>
+								</li>
+								
+							
+
+								<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+									<span class="nav_sep">»</span>
+									 <a href="http://www.gamedev.net/forum/123-the-technical-side/" title="Return to The Technical Side" itemprop="url"><span itemprop="title">The Technical Side</span></a>
+								</li>
+								
+							
+
+								<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+									<span class="nav_sep">»</span>
+									 <a href="http://www.gamedev.net/forum/41-apis-and-tools/" title="Return to APIs and Tools" itemprop="url"><span itemprop="title">APIs and Tools</span></a>
+								</li>
+								
+							
+						</ol>
+
+<div class="desc right" style="margin-top: -7px;">
+<div style="display: inline-block; position: relative; top: -6px;"> 
+<a href="http://www.gamedev.net/index.php?app=core&amp;module=search&amp;do=followed" data-tooltip="View the stuff you chose to follow" style="border-right: 1px solid black; padding-right: 10px; margin-right: 5px;">Watched Content</a>
+<a id="anonymous_element_6" href="http://www.gamedev.net/index.php?app=core&amp;module=search&amp;do=viewNewContent&amp;search_app=forums&amp;search_app_filters[forums][searchInKey]=&amp;period=today&amp;userMode=&amp;followedItemsOnly=0" data-tooltip="View new stuff on the site" style="border-right: 1px solid black; padding-right: 10px; margin-right: 5px;">New Content</a>
+</div>
+
+<a href="http://www.facebook.com/GameDev.net" data-tooltip="Join our Facebook group!" target="new"><span class="Facebook sprite" style="margin-right: 3px;"></span></a>
+<a href="http://twitter.com/gdevnet" data-tooltip="Follow us on Twitter!" target="new"><span class="Twitter sprite" style="margin-right: 3px;"></span></a>
+<a href="http://www.linkedin.com/groups?about=&amp;gid=132271&amp;trk=anet_ug_grppro" data-tooltip="Join our Linkedin group!" target="new"><span class="Linkedin sprite" style="margin-right: 3px;"></span></a>
+<a href="" id="rss_feed" class="clickable" alt="RSS Feed" target="new"><span class="Rss sprite" style="margin-right: 3px;"></span></a><ul style="position: absolute; display: none; z-index: 9999;" id="rss_menu" class="ipbmenu_content"><li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/forums/1-gamedevnet-forums-rss/" title="GameDev.net Forums RSS">GameDev.net Forums RSS</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/blog/" title="GameDev.net Journals RSS feed ">GameDev.net Journals RSS feed </a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/gallery/" title="IP.Gallery Images RSS Feed">IP.Gallery Images RSS Feed</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/calendar/1-events-calendar/" title="Events Calendar">Events Calendar</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/downloads/" title="Last 10 Submissions RSS Feed">Last 10 Submissions RSS Feed</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1-articles/" title="Articles">Articles</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/3-books/" title="Books">Books</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/35-contests/" title="Contests">Contests</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/16-events/" title="Events">Events</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37-indie-project/" title="Indie Project">Indie Project</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/38-indie-project-stories/" title="Indie Project Stories">Indie Project Stories</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/4-jobs/" title="Jobs">Jobs</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/11-news/" title="News">News</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/33-showdown/" title="Showdown">Showdown</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/32-sweet-snippets/" title="Sweet Snippets">Sweet Snippets</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c940-technical/" title="Articles: Technical">Articles: Technical</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c941-creative/" title="Articles: Creative">Articles: Creative</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c942-business/" title="Articles: Business">Articles: Business</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c970-reviews/" title="Articles: Reviews">Articles: Reviews</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c969-gamedevnet-soapbox/" title="Articles: GameDev.net Soapbox">Articles: GameDev.net Soapbox</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c968-closed-articles/" title="Articles: Closed Articles">Articles: Closed Articles</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c943-game-programming/" title="Articles: Game Programming">Articles: Game Programming</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c944-general-programming/" title="Articles: General Programming">Articles: General Programming</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c945-graphics-programming-and-theory/" title="Articles: Graphics Programming and Theory">Articles: Graphics Programming and Theory</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c946-directx-and-xna/" title="Articles: DirectX and XNA">Articles: DirectX and XNA</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c947-opengl/" title="Articles: OpenGL">Articles: OpenGL</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c948-multiplayer-and-network-programming/" title="Articles: Multiplayer and Network Programming">Articles: Multiplayer and Network Programming</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c949-artificial-intelligence/" title="Articles: Artificial Intelligence">Articles: Artificial Intelligence</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c950-math-and-physics/" title="Articles: Math and Physics">Articles: Math and Physics</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c951-mobile-development/" title="Articles: Mobile Development">Articles: Mobile Development</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c952-apis-and-tools/" title="Articles: APIs and Tools">Articles: APIs and Tools</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c953-game-design/" title="Articles: Game Design">Articles: Game Design</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c954-music-and-sound/" title="Articles: Music and Sound">Articles: Music and Sound</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c955-visual-arts/" title="Articles: Visual Arts">Articles: Visual Arts</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c956-breaking-into-the-industry/" title="Articles: Breaking Into the Industry">Articles: Breaking Into the Industry</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c957-business-and-law/" title="Articles: Business and Law">Articles: Business and Law</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c958-interviews/" title="Articles: Interviews">Articles: Interviews</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/1c963-production-and-management/" title="Articles: Production and Management">Articles: Production and Management</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/3c959-technical/" title="Books: Technical">Books: Technical</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/3c962-creative/" title="Books: Creative">Books: Creative</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/3c966-industry-related/" title="Books: Industry Related">Books: Industry Related</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/3c964-business-and-law/" title="Books: Business and Law">Books: Business and Law</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/3c965-production-and-management/" title="Books: Production and Management">Books: Production and Management</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/3c960-general-programming/" title="Books: General Programming">Books: General Programming</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/3c961-apis-and-tools/" title="Books: APIs and Tools">Books: APIs and Tools</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c971-free-to-play/" title="Indie Project: Free to Play">Indie Project: Free to Play</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c972-action/" title="Indie Project: Action">Indie Project: Action</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c973-adventure/" title="Indie Project: Adventure">Indie Project: Adventure</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c974-strategy/" title="Indie Project: Strategy">Indie Project: Strategy</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c975-rpg/" title="Indie Project: RPG">Indie Project: RPG</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c976-massively-multiplayer/" title="Indie Project: Massively Multiplayer">Indie Project: Massively Multiplayer</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c977-casual/" title="Indie Project: Casual">Indie Project: Casual</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c978-simulation/" title="Indie Project: Simulation">Indie Project: Simulation</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c979-racing/" title="Indie Project: Racing">Indie Project: Racing</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c980-sports/" title="Indie Project: Sports">Indie Project: Sports</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c981-animation-modeling/" title="Indie Project: Animation &amp;  Modeling">Indie Project: Animation &amp;  Modeling</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c982-audio-production/" title="Indie Project: Audio Production">Indie Project: Audio Production</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c983-design-illustration/" title="Indie Project: Design &amp; Illustration">Indie Project: Design &amp; Illustration</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c984-education/" title="Indie Project: Education">Indie Project: Education</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c985-photo-editing/" title="Indie Project: Photo Editing">Indie Project: Photo Editing</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c986-software-training/" title="Indie Project: Software Training">Indie Project: Software Training</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c987-utilities/" title="Indie Project: Utilities">Indie Project: Utilities</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/37c988-video-production/" title="Indie Project: Video Production">Indie Project: Video Production</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/ccs/11c920-gdnet-marketplace-news/" title="News: GDNet Marketplace News">News: GDNet Marketplace News</a></li>
+<li style="z-index: 10000;"><a style="z-index: 10000;" href="http://www.gamedev.net/rss/classifieds/" title="Classifieds RSS Feed">Classifieds RSS Feed</a></li></ul>
+</div>
+				</div>
+				<br>
+
+				<!-- ::: CONTENT ::: -->
+				
+				<div class="message unspecific">
+	
+	<p class="bbc_center"><span class="bbc_underline"><a class="bbc_url" href="http://bit.ly/1ghvrO4"><span style="font-family: arial;"><span style="font-size: 12px;">Bring your ideas to life with a Gaming Degree from Full Sail University</span></span></a></span></p>
+</div>
+<br>
+
+<script src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/smforum_vote.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+	ipb.topic.inSection = 'topicview';
+	ipb.topic.topic_id  = 416908;
+	ipb.topic.forum_id  = 41;
+	ipb.topic.start_id  = 0;
+	ipb.topic.topPid    = 0;
+	ipb.topic.counts    = { postTotal: 5,
+							curStart:  ipb.topic.start_id,
+							perPage:   20 };
+	//Search Setup
+	ipb.vars['search_type']			= 'forum';
+	ipb.vars['search_type_id']		= 41;
+	ipb.vars['search_type_2']		= 'topic';
+	ipb.vars['search_type_id_2']	= 416908;
+	
+	
+	// Delete stuff set up
+	ipb.topic.deleteUrls['hardDelete'] = new Template("http://www.gamedev.net/index.php?app=forums&amp;module=moderate&section=moderate&do=04&f=41&t=416908&st=&auth_key=880ea6a14ea49e853634fbdc5015a024&p=#{pid}");
+	ipb.topic.deleteUrls['softDelete'] = new Template("http://www.gamedev.net/index.php?app=forums&module=moderate&section=moderate&do=postchoice&tact=sdelete&t=416908&f=41&auth_key=880ea6a14ea49e853634fbdc5015a024&selectedpids[#{pid}]=#{pid}&pid=#{pid}");
+	
+//]]>
+</script>
+
+
+
+
+<div class="__like right" data-app="forums" data-area="topics" data-relid="416908" data-isfave="">
+	<span class="ipsButton_extra right " title="0 member(s) follow this topic" data-tooltip="0 member(s) follow this topic"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/icon_users.png"> <strong>0</strong></span>
+
+</div>
+<script type="text/javascript">
+	var FAVE_TEMPLATE = new Template( "<h3>Unfollow this topic</h3><div class='ipsPad'><span class='desc'>If you unfollow this topic you will no longer receive any notifications</span><br /><p class='ipsForm_center'><input type='button' value='Unfollow this topic' class='input_submit _funset' /></p></div>");
+</script>
+<a href="http://www.gamedev.net/user/95361-sigmax/" class="ipsUserPhotoLink">
+	<img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/e8eb88754934334be5203c2e1c176e93.png" class="ipsUserPhoto ipsUserPhoto_medium left">
+</a>
+<div class="ipsBox_withphoto">
+	
+	<h1 class="ipsType_pagetitle">
+		[SDL] Getting Screen resolution [solved]
+	</h1>
+	<div class="desc lighter blend_links">
+		 Started by <a href="http://www.gamedev.net/user/95361-sigmax/" title="View Profile">SigmaX</a>, Sep 28 2006 03:18 AM
+	</div>
+	
+</div>
+<br>
+	  <div class="message error">
+      <b>Old topic!</b><br>
+<strong class="bbc">Guest</strong>, the last post of this topic is over <strong class="bbc">60 days old</strong> and at this point you may not reply in this topic. If you wish to continue this conversation start a new topic.
+</div>
+<br>
+
+
+
+<div class="topic_controls">
+	
+	<ul class="topic_buttons">
+		
+					<li class="disabled"><span>You cannot reply to this topic</span></li>
+				
+		
+	</ul>	
+</div>
+
+<div class="maintitle clear clearfix">
+	<span class="ipsType_small">
+		4 replies to this topic
+	</span>
+		
+</div>
+
+<div class="topic hfeed clear clearfix">
+	
+	
+	
+	
+	
+
+	<div class="ipsBox">
+		<div class="ipsBox_container" id="ips_Posts">
+                        			
+				<!--post:416908-->
+<div class="post_block hentry clear clearfix " id="post_id_416908">
+		<a id="entry416908"></a>
+<a href="http://www.gamedev.net/index.php?showuser=95361" class="ipsUserPhotoLink" style=""><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/e8eb88754934334be5203c2e1c176e93.png" class="ipsUserPhoto ipsUserPhoto_medium left" style="margin-top: -5px; margin-right: 10px; margin-left: 2px;"></a>
+		
+	
+		
+		<div class="post_wrap" onmouseenter="$('rep_post_416908').fade({ duration: 0.4, from: 0.1, to: 1 });" onmouseleave="$('rep_post_416908').fade({ duration: 0.4, from: 1, to: 0.1 });">
+			<h3 class="row2">
+				
+				<span class="post_id right ipsType_small desc blend_links"><a href="http://www.gamedev.net/topic/416908-sdl-getting-screen-resolution-solved/?view=findpost&amp;p=416908" rel="bookmark" title=": post #1">#1</a></span>
+				
+					<span class="author vcard"><a id="anonymous_element_1" hovercard-ref="member" hovercard-id="95361" data-ipb="noparse" class="url fn name  ___hover___member _hoversetup" href="http://www.gamedev.net/user/95361-sigmax/" title=""><span itemprop="name">SigmaX</span></a></span>
+				
+			        <span class="desc">&nbsp;&nbsp;Members &nbsp;&nbsp;-&nbsp;&nbsp;Reputation: <span data-tooltip="Reputation Points"><strong><a href="http://www.gamedev.net/sm/member/95361-sigmax">317</a></strong></span></span>
+
+		
+
+				
+			</h3>
+			<div class="author_info" style="padding: 5px; width: 60px; clear: both;">
+
+                        <div style="display: block; height: 120px;">
+  <div style="position: absolute; margin-top: 20px; left: -2px;">
+
+    <div style="background: transparent url(/public/style_images/rating_bkg.png) no-repeat scroll 0% 0%; position: absolute; width: 43px; height: 65px; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; top: -3px; left: 10px;"></div>
+        <a class="voteaction_like vdisabled" id="votelike_416908" href="#" data-tooltip="&lt;b&gt;You must login to GameDev.net&lt;/b&gt;&lt;br/&gt;Login to vote on this post.&lt;br/&gt;">Like</a>
+
+    <div class="votecard">
+      <div>
+        <em><strong>0</strong><span>Likes</span></em>
+      
+        <em><strong>1</strong><span>Likes</span></em>
+      </div>
+    </div>
+
+    <a class="voteaction_dislike vdisabled" id="votedislike_416908" href="#" data-tooltip="&lt;b&gt;You must login to GameDev.net&lt;/b&gt;&lt;br/&gt;Login to vote on this post.&lt;br/&gt;">Like</a>
+
+  </div>
+</div>       
+			</div>
+			<div class="post_body" style="margin: 0pt 10px 0pt 65px;">
+
+				<p class="posted_info desc lighter ipsType_small">
+					Posted <abbr class="published" title="2006-09-28T09:18:16+00:00">28 September 2006 - 03:18 AM</abbr>
+				</p>
+				
+				<div class="post entry-content ">
+					<!--cached-Sun, 17 Aug 2014 12:05:22 +0000-->I
+was wondering. Is there a way to get the current screen resolution of
+the system. I'm working in Linux and if the screen resolution is
+different than what I set my SDL app to (and set it to fullscreen) it
+crashes. I'd like to be able to find the system screen resolution and
+change where things are placed on the screen accordingly. Thanks!
+<!--EDIT--><span class="editedby"><!--/EDIT-->[Edited by - SigmaX on September 28, 2006 12:28:49 PM]<!--EDIT--></span><!--/EDIT-->
+					
+					<br>
+					
+				</div>
+				
+				
+					<div class="signature" data-memberid="95361">
+	
+	<!--signature-cached-Tue, 15 Jul 2014 00:06:10 +0000-->-)------ Ed
+</div>
+				
+			
+				<ul class="post_controls clear clearfix">
+					<li class="top hide"><a href="#ipboard_body" class="top" title="Back to top">Back to top</a></li>
+					
+					
+					
+					
+					
+					
+				</ul>
+					
+			</div>
+		</div>
+	</div>
+		
+		
+		<hr>
+		
+		
+			<div class="nexusad" align="center"><div class="ad_topic_container">
+
+<div class="ad_topic_content">
+
+<div class="ad_topic_description">Sponsor:</div> 
+
+<!-- Topper_Forums -->
+<div id="div-gpt-ad-1369184034697-1" style="width: 800px; height: 40px;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1369184034697-1'); });
+</script><div style="border: 0pt none ;" id="google_ads_iframe_/1004699/Topper_Forums_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0pt none ; vertical-align: bottom;" marginheight="0" marginwidth="0" name="google_ads_iframe_/1004699/Topper_Forums_0" id="google_ads_iframe_/1004699/Topper_Forums_0" frameborder="0" height="40" scrolling="no" width="800"></iframe></div>
+</div>
+
+
+</div>
+</div></div>
+		
+<script type="text/javascript">
+var pid = parseInt(416908);
+if ( pid > ipb.topic.topPid ){
+	ipb.topic.topPid = pid;
+}
+
+	// Show multiquote for JS browsers
+	if ( $('multiq_416908') )
+	{
+		$('multiq_416908').show();
+	}
+	
+	if( $('toggle_post_416908') )
+	{
+		$('toggle_post_416908').show();
+	}
+	
+	// Add perm data
+	ipb.topic.deletePerms[416908] = { 'canDelete' : 0, 'canSoftDelete' : 0 };
+
+</script>
+			
+
+				<!--post:3776675-->
+<div class="post_block hentry clear clearfix " id="post_id_3776675">
+		<a id="entry3776675"></a>
+<a href="http://www.gamedev.net/index.php?showuser=50164" class="ipsUserPhotoLink" style=""><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/photo-50164.png" class="ipsUserPhoto ipsUserPhoto_medium left" style="margin-top: -5px; margin-right: 10px; margin-left: 2px;"></a>
+		
+	
+		
+		<div class="post_wrap" onmouseenter="$('rep_post_3776675').fade({ duration: 0.4, from: 0.1, to: 1 });" onmouseleave="$('rep_post_3776675').fade({ duration: 0.4, from: 1, to: 0.1 });">
+			<h3 class="row2">
+				
+				<span class="post_id right ipsType_small desc blend_links"><a href="http://www.gamedev.net/topic/416908-sdl-getting-screen-resolution-solved/?view=findpost&amp;p=3776675" rel="bookmark" title=": post #2">#2</a></span>
+				
+					<span class="author vcard"><a id="anonymous_element_2" hovercard-ref="member" hovercard-id="50164" data-ipb="noparse" class="url fn name  ___hover___member _hoversetup" href="http://www.gamedev.net/user/50164-eedok/" title=""><span itemprop="name">eedok</span></a></span>
+				
+			        <span class="desc">&nbsp;&nbsp;<span style="color: rgb(181, 116, 56); font-weight: bold;">GDNet+</span> &nbsp;&nbsp;-&nbsp;&nbsp;Reputation: <span data-tooltip="Reputation Points"><strong><a href="http://www.gamedev.net/sm/member/50164-eedok">971</a></strong></span></span>
+
+		
+
+				
+			</h3>
+			<div class="author_info" style="padding: 5px; width: 60px; clear: both;">
+
+                        <div style="display: block; height: 120px;">
+  <div style="position: absolute; margin-top: 20px; left: -2px;">
+
+    <div style="background: transparent url(/public/style_images/rating_bkg.png) no-repeat scroll 0% 0%; position: absolute; width: 43px; height: 65px; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; top: -3px; left: 10px;"></div>
+        <a class="voteaction_like vdisabled" id="votelike_3776675" href="#" data-tooltip="&lt;b&gt;You must login to GameDev.net&lt;/b&gt;&lt;br/&gt;Login to vote on this post.&lt;br/&gt;">Like</a>
+
+    <div class="votecard">
+      <div>
+        <em><strong>0</strong><span>Likes</span></em>
+      
+        <em><strong>1</strong><span>Likes</span></em>
+      </div>
+    </div>
+
+    <a class="voteaction_dislike vdisabled" id="votedislike_3776675" href="#" data-tooltip="&lt;b&gt;You must login to GameDev.net&lt;/b&gt;&lt;br/&gt;Login to vote on this post.&lt;br/&gt;">Like</a>
+
+  </div>
+</div>       
+			</div>
+			<div class="post_body" style="margin: 0pt 10px 0pt 65px;">
+
+				<p class="posted_info desc lighter ipsType_small">
+					Posted <abbr class="published" title="2006-09-28T09:33:22+00:00">28 September 2006 - 03:33 AM</abbr>
+				</p>
+				
+				<div class="post entry-content ">
+					<!--cached-Sun, 17 Aug 2014 12:05:22 +0000--><a href="http://www.libsdl.org/cgi/docwiki.cgi/SDL_5fGetVideoInfo" class="bbc_url" title="External link" rel="nofollow external">SDL_GetVideoInfo</a> returns a <a href="http://www.libsdl.org/cgi/docwiki.cgi/SDL_5fVideoInfo" class="bbc_url" title="External link" rel="nofollow external">SDL_VideoInfo</a> structure which has .current_w and .current_h which is the current resolution.
+					
+					<br>
+					
+				</div>
+				
+				
+			
+				<ul class="post_controls clear clearfix">
+					<li class="top hide"><a href="#ipboard_body" class="top" title="Back to top">Back to top</a></li>
+					
+					
+					
+					
+					
+					
+				</ul>
+					
+			</div>
+		</div>
+	</div>
+		
+		
+		<hr>
+		
+		
+<script type="text/javascript">
+var pid = parseInt(3776675);
+if ( pid > ipb.topic.topPid ){
+	ipb.topic.topPid = pid;
+}
+
+	// Show multiquote for JS browsers
+	if ( $('multiq_3776675') )
+	{
+		$('multiq_3776675').show();
+	}
+	
+	if( $('toggle_post_3776675') )
+	{
+		$('toggle_post_3776675').show();
+	}
+	
+	// Add perm data
+	ipb.topic.deletePerms[3776675] = { 'canDelete' : 0, 'canSoftDelete' : 0 };
+
+</script>
+			
+
+				<!--post:3776686-->
+<div class="post_block hentry clear clearfix " id="post_id_3776686">
+		<a id="entry3776686"></a>
+<a href="http://www.gamedev.net/index.php?showuser=95361" class="ipsUserPhotoLink" style=""><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/e8eb88754934334be5203c2e1c176e93.png" class="ipsUserPhoto ipsUserPhoto_medium left" style="margin-top: -5px; margin-right: 10px; margin-left: 2px;"></a>
+		
+	
+		
+		<div class="post_wrap" onmouseenter="$('rep_post_3776686').fade({ duration: 0.4, from: 0.1, to: 1 });" onmouseleave="$('rep_post_3776686').fade({ duration: 0.4, from: 1, to: 0.1 });">
+			<h3 class="row2">
+				
+				<span class="post_id right ipsType_small desc blend_links"><a href="http://www.gamedev.net/topic/416908-sdl-getting-screen-resolution-solved/?view=findpost&amp;p=3776686" rel="bookmark" title=": post #3">#3</a></span>
+				
+					<span class="author vcard"><a id="anonymous_element_3" hovercard-ref="member" hovercard-id="95361" data-ipb="noparse" class="url fn name  ___hover___member _hoversetup" href="http://www.gamedev.net/user/95361-sigmax/" title=""><span itemprop="name">SigmaX</span></a></span>
+				
+			        <span class="desc">&nbsp;&nbsp;Members &nbsp;&nbsp;-&nbsp;&nbsp;Reputation: <span data-tooltip="Reputation Points"><strong><a href="http://www.gamedev.net/sm/member/95361-sigmax">317</a></strong></span></span>
+
+		
+
+				
+			</h3>
+			<div class="author_info" style="padding: 5px; width: 60px; clear: both;">
+
+                        <div style="display: block; height: 120px;">
+  <div style="position: absolute; margin-top: 20px; left: -2px;">
+
+    <div style="background: transparent url(/public/style_images/rating_bkg.png) no-repeat scroll 0% 0%; position: absolute; width: 43px; height: 65px; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; top: -3px; left: 10px;"></div>
+        <a class="voteaction_like vdisabled" id="votelike_3776686" href="#" data-tooltip="&lt;b&gt;You must login to GameDev.net&lt;/b&gt;&lt;br/&gt;Login to vote on this post.&lt;br/&gt;">Like</a>
+
+    <div class="votecard">
+      <div>
+        <em><strong>0</strong><span>Likes</span></em>
+      
+        <em><strong>1</strong><span>Likes</span></em>
+      </div>
+    </div>
+
+    <a class="voteaction_dislike vdisabled" id="votedislike_3776686" href="#" data-tooltip="&lt;b&gt;You must login to GameDev.net&lt;/b&gt;&lt;br/&gt;Login to vote on this post.&lt;br/&gt;">Like</a>
+
+  </div>
+</div>       
+			</div>
+			<div class="post_body" style="margin: 0pt 10px 0pt 65px;">
+
+				<p class="posted_info desc lighter ipsType_small">
+					Posted <abbr class="published" title="2006-09-28T09:44:45+00:00">28 September 2006 - 03:44 AM</abbr>
+				</p>
+				
+				<div class="post entry-content ">
+					<!--cached-Sun, 17 Aug 2014 12:05:22 +0000--><!--QUOTE--><blockquote><span class="smallfont">Quote:</span><table width="95%" border="0" cellpadding="4" cellspacing="0"><tbody><tr><td class="quote"><!--/QUOTE--><!--STARTQUOTE--><i>Original post by eedok</i><br><a href="http://www.libsdl.org/cgi/docwiki.cgi/SDL_5fGetVideoInfo" class="bbc_url" title="External link" rel="nofollow external">SDL_GetVideoInfo</a> returns a <a href="http://www.libsdl.org/cgi/docwiki.cgi/SDL_5fVideoInfo" class="bbc_url" title="External link" rel="nofollow external">SDL_VideoInfo</a> structure which has .current_w and .current_h which is the current resolution.<!--QUOTE--></td></tr></tbody></table></blockquote><!--/QUOTE--><!--ENDQUOTE--><br><br>Thanks!
+That's what I'm looking for (haven't tried it yet, read the
+description). I hope this is a fairly recent change. I saw that
+structure in the book "Focus on SDL" and it made no mention of those
+two members. <br>
+					
+				</div>
+				
+				
+					<div class="signature" data-memberid="95361">
+	
+	<!--signature-cached-Tue, 15 Jul 2014 00:06:10 +0000-->-)------ Ed
+</div>
+				
+			
+				<ul class="post_controls clear clearfix">
+					<li class="top hide"><a href="#ipboard_body" class="top" title="Back to top">Back to top</a></li>
+					
+					
+					
+					
+					
+					
+				</ul>
+					
+			</div>
+		</div>
+	</div>
+		
+		
+		<hr>
+		
+		
+<script type="text/javascript">
+var pid = parseInt(3776686);
+if ( pid > ipb.topic.topPid ){
+	ipb.topic.topPid = pid;
+}
+
+	// Show multiquote for JS browsers
+	if ( $('multiq_3776686') )
+	{
+		$('multiq_3776686').show();
+	}
+	
+	if( $('toggle_post_3776686') )
+	{
+		$('toggle_post_3776686').show();
+	}
+	
+	// Add perm data
+	ipb.topic.deletePerms[3776686] = { 'canDelete' : 0, 'canSoftDelete' : 0 };
+
+</script>
+			
+
+				<!--post:3776740-->
+<div class="post_block hentry clear clearfix " id="post_id_3776740">
+		<a id="entry3776740"></a>
+<a href="http://www.gamedev.net/index.php?showuser=2996" class="ipsUserPhotoLink" style=""><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/photo-2996.jpg" class="ipsUserPhoto ipsUserPhoto_medium left" style="margin-top: -5px; margin-right: 10px; margin-left: 2px;"></a>
+		
+	
+		
+		<div class="post_wrap" onmouseenter="$('rep_post_3776740').fade({ duration: 0.4, from: 0.1, to: 1 });" onmouseleave="$('rep_post_3776740').fade({ duration: 0.4, from: 1, to: 0.1 });">
+			<h3 class="row2">
+				
+				<span class="post_id right ipsType_small desc blend_links"><a href="http://www.gamedev.net/topic/416908-sdl-getting-screen-resolution-solved/?view=findpost&amp;p=3776740" rel="bookmark" title=": post #4">#4</a></span>
+				
+					<span class="author vcard"><a id="anonymous_element_4" hovercard-ref="member" hovercard-id="2996" data-ipb="noparse" class="url fn name  ___hover___member _hoversetup" href="http://www.gamedev.net/user/2996-kylotan/" title=""><span itemprop="name">Kylotan</span></a></span>
+				
+			        <span class="desc">&nbsp;&nbsp;<span style="color: rgb(203, 2, 26);">Moderators</span> &nbsp;&nbsp;-&nbsp;&nbsp;Reputation: <span data-tooltip="Reputation Points"><strong><a href="http://www.gamedev.net/sm/member/2996-kylotan">3333</a></strong></span></span>
+
+		
+
+				
+			</h3>
+			<div class="author_info" style="padding: 5px; width: 60px; clear: both;">
+
+                        <div style="display: block; height: 120px;">
+  <div style="position: absolute; margin-top: 20px; left: -2px;">
+
+    <div style="background: transparent url(/public/style_images/rating_bkg.png) no-repeat scroll 0% 0%; position: absolute; width: 43px; height: 65px; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; top: -3px; left: 10px;"></div>
+        <a class="voteaction_like vdisabled" id="votelike_3776740" href="#" data-tooltip="&lt;b&gt;You must login to GameDev.net&lt;/b&gt;&lt;br/&gt;Login to vote on this post.&lt;br/&gt;">Like</a>
+
+    <div class="votecard">
+      <div>
+        <em><strong>0</strong><span>Likes</span></em>
+      
+        <em><strong>1</strong><span>Likes</span></em>
+      </div>
+    </div>
+
+    <a class="voteaction_dislike vdisabled" id="votedislike_3776740" href="#" data-tooltip="&lt;b&gt;You must login to GameDev.net&lt;/b&gt;&lt;br/&gt;Login to vote on this post.&lt;br/&gt;">Like</a>
+
+  </div>
+</div>       
+			</div>
+			<div class="post_body" style="margin: 0pt 10px 0pt 65px;">
+
+				<p class="posted_info desc lighter ipsType_small">
+					Posted <abbr class="published" title="2006-09-28T10:37:35+00:00">28 September 2006 - 04:37 AM</abbr>
+				</p>
+				
+				<div class="post entry-content ">
+					<!--cached-Sun, 17 Aug 2014 12:05:22 +0000-->I
+don't think there have been any significant changes to SDL for years.
+Either way, a book is rarely going to cover every single thing in the
+reference docs. <br>
+					
+				</div>
+				
+				
+			
+				<ul class="post_controls clear clearfix">
+					<li class="top hide"><a href="#ipboard_body" class="top" title="Back to top">Back to top</a></li>
+					
+					
+					
+					
+					
+					
+				</ul>
+					
+			</div>
+		</div>
+	</div>
+		
+		
+		<hr>
+		
+		
+<script type="text/javascript">
+var pid = parseInt(3776740);
+if ( pid > ipb.topic.topPid ){
+	ipb.topic.topPid = pid;
+}
+
+	// Show multiquote for JS browsers
+	if ( $('multiq_3776740') )
+	{
+		$('multiq_3776740').show();
+	}
+	
+	if( $('toggle_post_3776740') )
+	{
+		$('toggle_post_3776740').show();
+	}
+	
+	// Add perm data
+	ipb.topic.deletePerms[3776740] = { 'canDelete' : 0, 'canSoftDelete' : 0 };
+
+</script>
+			
+
+				<!--post:3776878-->
+<div class="post_block hentry clear clearfix " id="post_id_3776878">
+		<a id="entry3776878"></a>
+<a href="http://www.gamedev.net/index.php?showuser=95361" class="ipsUserPhotoLink" style=""><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/e8eb88754934334be5203c2e1c176e93.png" class="ipsUserPhoto ipsUserPhoto_medium left" style="margin-top: -5px; margin-right: 10px; margin-left: 2px;"></a>
+		
+	
+		
+		<div class="post_wrap" onmouseenter="$('rep_post_3776878').fade({ duration: 0.4, from: 0.1, to: 1 });" onmouseleave="$('rep_post_3776878').fade({ duration: 0.4, from: 1, to: 0.1 });">
+			<h3 class="row2">
+				
+				<span class="post_id right ipsType_small desc blend_links"><a href="http://www.gamedev.net/topic/416908-sdl-getting-screen-resolution-solved/?view=findpost&amp;p=3776878" rel="bookmark" title=": post #5">#5</a></span>
+				
+					<span class="author vcard"><a id="anonymous_element_5" hovercard-ref="member" hovercard-id="95361" data-ipb="noparse" class="url fn name  ___hover___member _hoversetup" href="http://www.gamedev.net/user/95361-sigmax/" title=""><span itemprop="name">SigmaX</span></a></span>
+				
+			        <span class="desc">&nbsp;&nbsp;Members &nbsp;&nbsp;-&nbsp;&nbsp;Reputation: <span data-tooltip="Reputation Points"><strong><a href="http://www.gamedev.net/sm/member/95361-sigmax">317</a></strong></span></span>
+
+		
+
+				
+			</h3>
+			<div class="author_info" style="padding: 5px; width: 60px; clear: both;">
+
+                        <div style="display: block; height: 120px;">
+  <div style="position: absolute; margin-top: 20px; left: -2px;">
+
+    <div style="background: transparent url(/public/style_images/rating_bkg.png) no-repeat scroll 0% 0%; position: absolute; width: 43px; height: 65px; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; top: -3px; left: 10px;"></div>
+        <a class="voteaction_like vdisabled" id="votelike_3776878" href="#" data-tooltip="&lt;b&gt;You must login to GameDev.net&lt;/b&gt;&lt;br/&gt;Login to vote on this post.&lt;br/&gt;">Like</a>
+
+    <div class="votecard">
+      <div>
+        <em><strong>0</strong><span>Likes</span></em>
+      
+        <em><strong>1</strong><span>Likes</span></em>
+      </div>
+    </div>
+
+    <a class="voteaction_dislike vdisabled" id="votedislike_3776878" href="#" data-tooltip="&lt;b&gt;You must login to GameDev.net&lt;/b&gt;&lt;br/&gt;Login to vote on this post.&lt;br/&gt;">Like</a>
+
+  </div>
+</div>       
+			</div>
+			<div class="post_body" style="margin: 0pt 10px 0pt 65px;">
+
+				<p class="posted_info desc lighter ipsType_small">
+					Posted <abbr class="published" title="2006-09-28T12:27:57+00:00">28 September 2006 - 06:27 AM</abbr>
+				</p>
+				
+				<div class="post entry-content ">
+					<!--cached-Sun, 17 Aug 2014 12:05:22 +0000-->Well
+it looks like the author of the book was using an older version of SDL
+(or the most current version at the time of pubishing). And it also
+looks like I'm using the same version. The current_w and current_h
+where added to the SDL_VideoInfo structure in version 1.2.10.
+Unfortunatly I'm using glSDL which is stuck at 1.2.9. Thanks for the
+help. This may be useful in my personal projects. <br>
+					
+				</div>
+				
+				
+					<div class="signature" data-memberid="95361">
+	
+	<!--signature-cached-Tue, 15 Jul 2014 00:06:10 +0000-->-)------ Ed
+</div>
+				
+			
+				<ul class="post_controls clear clearfix">
+					<li class="top hide"><a href="#ipboard_body" class="top" title="Back to top">Back to top</a></li>
+					
+					
+					
+					
+					
+					
+				</ul>
+					
+			</div>
+		</div>
+	</div>
+		
+		
+		<hr>
+		
+		
+<script type="text/javascript">
+var pid = parseInt(3776878);
+if ( pid > ipb.topic.topPid ){
+	ipb.topic.topPid = pid;
+}
+
+	// Show multiquote for JS browsers
+	if ( $('multiq_3776878') )
+	{
+		$('multiq_3776878').show();
+	}
+	
+	if( $('toggle_post_3776878') )
+	{
+		$('toggle_post_3776878').show();
+	}
+	
+	// Add perm data
+	ipb.topic.deletePerms[3776878] = { 'canDelete' : 0, 'canSoftDelete' : 0 };
+
+</script>
+			
+		</div>
+	</div>
+
+<hr>
+<!-- MOD LINKS -->
+
+<hr>
+<div class="topic_controls clear ipsPad_top_bottom_half">
+	
+	<div class="ipsPad_top_slimmer right">
+		<a href="http://www.gamedev.net/forum/41-apis-and-tools/" class="ipsType_small desc">Back to APIs and Tools</a>
+		
+	</div>
+	
+	
+</div>
+<br>
+	  <div class="message error">
+      <b>Old topic!</b><br>
+<strong class="bbc">Guest</strong>, the last post of this topic is over <strong class="bbc">60 days old</strong> and at this point you may not reply in this topic. If you wish to continue this conversation start a new topic.
+</div>
+<br>
+<!-- Close topic -->
+<!--</div>-->
+
+<!-- BOTTOM BUTTONS -->
+
+	<br>
+	<div class="clear clearfix left">
+		
+
+	<ul class="topic_share left shareButtons ipsList_inline">
+	
+		<li><a href="http://www.gamedev.net/index.php?sharelink=twitter;aHR0cDovL3d3dy5nYW1lZGV2Lm5ldC90b3BpYy80MTY5MDgtc2RsLWdldHRpbmctc2NyZWVuLXJlc29sdXRpb24tc29sdmVkLw,,;W1NETF0gR2V0dGluZyBTY3JlZW4gcmVzb2x1dGlvbiBbc29sdmVkXQ,," rel="nofollow" target="_blank" title="Share this link via Twitter" class="_slink" id="slink_twitter"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/twitter_002.png"></a></li>
+	
+
+		
+				<li class="fbLike"><div fb-iframe-plugin-query="action=like&amp;app_id=128221277204697&amp;href=http%3A%2F%2Fwww.gamedev.net%2Ftopic%2F416908-sdl-getting-screen-resolution-solved%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=150" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" data-href="http://www.gamedev.net/topic/416908-sdl-getting-screen-resolution-solved/" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false" data-action="like"><span style="overflow: hidden; vertical-align: top; width: 0px; height: 0px;"><iframe src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/like.html" style="border: medium none ; visibility: visible; width: 0px; height: 0px;" title="fb:like Facebook Social Plugin" allowtransparency="true" name="f1cdd45331f0882" frameborder="0" height="1000px" scrolling="no" width="150px"></iframe></span></div><div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0pt; width: 0pt;"><div></div></div><div style="position: absolute; top: -10000px; height: 0pt; width: 0pt;"><div><iframe src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/FX-Xf5fQjUk.html" style="border: medium none ;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0" scrolling="no"></iframe><iframe src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/FX-Xf5fQjUk_002.html" style="border: medium none ;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0" scrolling="no"></iframe></div></div></div></li>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=128221277204697";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+			
+	
+
+		
+				<script gapi_processed="true" type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/plusone.js">
+	
+		{lang: 'en-GB'}
+	
+</script>
+<li><div class="googlePlusOne"><div id="___plusone_0" style="border-style: none; margin: 0pt; padding: 0pt; background: transparent none repeat scroll 0% 0%; text-indent: 0pt; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 24px; height: 15px;"><iframe title="+1" data-gapiattached="true" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/fastbutton.html" name="I0_1408459197761" id="I0_1408459197761" vspace="0" tabindex="0" style="border-style: none; margin: 0px; position: static; top: 0pt; width: 24px; left: 0pt; visibility: visible; height: 15px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div></div></li>
+			
+	
+
+		<li><a href="http://www.gamedev.net/index.php?sharelink=digg;aHR0cDovL3d3dy5nYW1lZGV2Lm5ldC90b3BpYy80MTY5MDgtc2RsLWdldHRpbmctc2NyZWVuLXJlc29sdXRpb24tc29sdmVkLw,,;W1NETF0gR2V0dGluZyBTY3JlZW4gcmVzb2x1dGlvbiBbc29sdmVkXQ,," rel="nofollow" target="_blank" title="Share this link via Digg" class="_slink" id="slink_digg"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/digg.png"></a></li>
+	
+
+		
+	
+
+		<li><a href="http://www.gamedev.net/index.php?sharelink=reddit;aHR0cDovL3d3dy5nYW1lZGV2Lm5ldC90b3BpYy80MTY5MDgtc2RsLWdldHRpbmctc2NyZWVuLXJlc29sdXRpb24tc29sdmVkLw,,;W1NETF0gR2V0dGluZyBTY3JlZW4gcmVzb2x1dGlvbiBbc29sdmVkXQ,," rel="nofollow" target="_blank" title="Share this link via Reddit" class="_slink" id="slink_reddit"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/reddit.png"></a></li>
+	
+
+		
+	
+
+		<li><a href="http://www.gamedev.net/index.php?sharelink=email;aHR0cDovL3d3dy5nYW1lZGV2Lm5ldC90b3BpYy80MTY5MDgtc2RsLWdldHRpbmctc2NyZWVuLXJlc29sdXRpb24tc29sdmVkLw,,;W1NETF0gR2V0dGluZyBTY3JlZW4gcmVzb2x1dGlvbiBbc29sdmVkXQ,," rel="nofollow" target="_blank" title="Share this link via Email" class="_slink" id="slink_email"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/email.png"></a></li>
+	
+
+		<li><a href="http://www.gamedev.net/index.php?sharelink=print;aHR0cDovL3d3dy5nYW1lZGV2Lm5ldC90b3BpYy80MTY5MDgtc2RsLWdldHRpbmctc2NyZWVuLXJlc29sdXRpb24tc29sdmVkLw,,;W1NETF0gR2V0dGluZyBTY3JlZW4gcmVzb2x1dGlvbiBbc29sdmVkXQ,," rel="nofollow" target="_blank" title="Print" class="_slink" id="slink_print"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/print.png"></a></li>
+	
+
+		<li><a href="http://www.gamedev.net/index.php?sharelink=download;aHR0cDovL3d3dy5nYW1lZGV2Lm5ldC90b3BpYy80MTY5MDgtc2RsLWdldHRpbmctc2NyZWVuLXJlc29sdXRpb24tc29sdmVkLw,,;W1NETF0gR2V0dGluZyBTY3JlZW4gcmVzb2x1dGlvbiBbc29sdmVkXQ,," rel="nofollow" target="_blank" title="Download" class="_slink" id="slink_download"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/download.png"></a></li>
+	
+
+		<li><a href="http://www.gamedev.net/index.php?sharelink=blogthis;aHR0cDovL3d3dy5nYW1lZGV2Lm5ldC90b3BpYy80MTY5MDgtc2RsLWdldHRpbmctc2NyZWVuLXJlc29sdXRpb24tc29sdmVkLw,,;W1NETF0gR2V0dGluZyBTY3JlZW4gcmVzb2x1dGlvbiBbc29sdmVkXQ,," rel="nofollow" target="_blank" title="Share this link via Blog This" class="_slink" id="slink_blogthis"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/blogthis.png"></a></li>
+	
+	</ul>
+	<script type="text/javascript">
+		ipb.sharelinks.url   = "http://www.gamedev.net/topic/416908-sdl-getting-screen-resolution-solved/";
+		ipb.sharelinks.title = "[SDL] Getting Screen resolution [solved]";
+		ipb.sharelinks.bname = "GameDev.net";
+	</script>
+
+	</div>
+	<br>
+
+
+
+</div>
+
+
+
+
+
+
+
+	<script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/prettify.js"></script>
+	<script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/lang-sql.js"></script>
+	<!-- By default we load generic code, php, css, sql and xml/html; load others here if desired -->
+	<script type="text/javascript">
+	//<![CDATA[
+		Event.observe( window, 'load', function(e){ prettyPrint() });
+	//]]>
+	</script>
+<div id="multiQuoteInsert" style="display: none;" class="ipsFloatingAction">
+	<span class="ipsButton no_width" id="mqbutton">Reply to quoted posts</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="multiQuoteClear" class="ipsType_smaller desc" title="Clear the posts you have selected with MultiQuote">Clear</a> &nbsp;&nbsp;&nbsp;
+</div>
+				
+
+				<ol class="breadcrumb bottom ipsList_inline left clearfix clear">
+															
+							
+
+								<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+									<a href="http://www.gamedev.net/index" itemprop="url">
+<span class="nav_sep"><b>»</b></span>
+										<span itemprop="title">Forums</span>
+									</a>
+								</li>
+
+							
+							
+								<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+									<span class="nav_sep"><b>»</b></span>
+									 <a href="http://www.gamedev.net/page/index.html/" title="Return to Home" itemprop="url"><span itemprop="title">Home</span></a>
+								</li>
+								
+							
+
+								<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+									<span class="nav_sep"><b>»</b></span>
+									 <a href="http://www.gamedev.net/index" title="Return to Forums" itemprop="url"><span itemprop="title">Forums</span></a>
+								</li>
+								
+							
+
+								<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+									<span class="nav_sep"><b>»</b></span>
+									 <a href="http://www.gamedev.net/forum/123-the-technical-side/" title="Return to The Technical Side" itemprop="url"><span itemprop="title">The Technical Side</span></a>
+								</li>
+								
+							
+
+								<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+									<span class="nav_sep"><b>»</b></span>
+									 <a href="http://www.gamedev.net/forum/41-apis-and-tools/" title="Return to APIs and Tools" itemprop="url"><span itemprop="title">APIs and Tools</span></a>
+								</li>
+								
+							
+						</ol>
+
+			</div>
+
+
+			<!-- ::: FOOTER (Change skin, language, mark as read, etc) ::: -->
+
+			<div id="footer_utilities" class="main_width clearfix clear">
+				<a rel="nofollow" href="#top" id="backtotop" title="Go to top"><span class="gdtop sprite" style="margin-top: 5px;"></span></a>
+				<ul class="ipsList_inline left">
+
+					
+							
+					
+						<li>
+							<a class="" rel="nofollow" href="#" id="new_language">English (USA)</a>							
+							<ul id="new_language_menucontent" class="ipbmenu_content with_checks" style="display: none; position: absolute; z-index: 9999;">
+								
+									<li style="z-index: 10000;" class="selected">
+										<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?showtopic=416908&amp;k=880ea6a14ea49e853634fbdc5015a024&amp;setlanguage=1&amp;langurlbits=showtopic=416908&amp;cal_id=&amp;langid=1">English (USA)</a>
+									</li>
+								
+
+									<li style="z-index: 10000;">
+										<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?showtopic=416908&amp;k=880ea6a14ea49e853634fbdc5015a024&amp;setlanguage=1&amp;langurlbits=showtopic=416908&amp;cal_id=&amp;langid=2">English (USA) (COPY)</a>
+									</li>
+								
+							</ul>
+						</li>
+					
+					<li>
+						<a class="" rel="nofollow" id="mark_all_read" href="http://www.gamedev.net/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=all&amp;k=880ea6a14ea49e853634fbdc5015a024" title="Mark all as read">Mark Community Read</a>
+						<ul id="mark_all_read_menucontent" class="ipbmenu_content" style="display: none; position: absolute; z-index: 9999;">
+							
+								<li style="z-index: 10000;">
+									
+								</li>
+							
+
+								<li style="z-index: 10000;">
+									<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=forums&amp;k=880ea6a14ea49e853634fbdc5015a024">Forums</a>
+								</li>
+							
+
+								<li style="z-index: 10000;">
+									<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=members&amp;k=880ea6a14ea49e853634fbdc5015a024">Members</a>
+								</li>
+							
+
+								<li style="z-index: 10000;">
+									<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=blog&amp;k=880ea6a14ea49e853634fbdc5015a024">Developer Journals</a>
+								</li>
+							
+
+								<li style="z-index: 10000;">
+									<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=gallery&amp;k=880ea6a14ea49e853634fbdc5015a024">Gallery</a>
+								</li>
+							
+
+								<li style="z-index: 10000;">
+									<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=downloads&amp;k=880ea6a14ea49e853634fbdc5015a024">Downloads</a>
+								</li>
+							
+
+								<li style="z-index: 10000;">
+									<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=ccs&amp;k=880ea6a14ea49e853634fbdc5015a024">Resources</a>
+								</li>
+							
+
+								<li style="z-index: 10000;">
+									<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=nexus&amp;k=880ea6a14ea49e853634fbdc5015a024">Store</a>
+								</li>
+							
+
+								<li style="z-index: 10000;">
+									<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=classifieds&amp;k=880ea6a14ea49e853634fbdc5015a024">Classifieds</a>
+								</li>
+							
+
+								<li style="z-index: 10000;">
+									<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=tracker&amp;k=880ea6a14ea49e853634fbdc5015a024">Tracker</a>
+								</li>
+							
+
+								<li style="z-index: 10000;">
+									<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=app&amp;markApp=links&amp;k=880ea6a14ea49e853634fbdc5015a024">Links</a>
+								</li>
+							
+							<li style="z-index: 10000;">
+								<a style="z-index: 10000;" href="http://www.gamedev.net/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=all&amp;k=880ea6a14ea49e853634fbdc5015a024"><strong style="z-index: 10000;">Mark all as read</strong></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="http://www.gamedev.net/index.php?app=core&amp;module=help" title="View help" rel="help" accesskey="6">Help</a>
+					</li>				
+				</ul>
+			</div>
+
+<div id="partnercontainer">
+        <div class="partners">
+             <div style="margin-top: 6px;">PARTNERS</div>
+             <div class="pNav">
+                <a href="http://www.design3.com/" target="new"><span class="design3_dark_tagline sprite"></span></a>
+             </div>
+             <div class="pNav" style="margin-top: 3px; width: 130px;">
+                <a href="http://www.worldgamingexecutives.com/page/articles-2" target="new"><span class="wge sprite"></span></a>
+
+             </div>
+             <div class="pNav">
+                <a href="http://www.packtpub.com/" target="new"><span class="packt sprite"></span></a>
+             </div>
+<!--
+             <div class="pNav" style='margin: 12px 0 5px 0;width: 220px;'>
+                <a href="http://www.game-connection.com/gameconn/" target="new"><img src="http://public.gamedev.net/images/partners/gameconnection.png"  height="24" width="24" border="0"></a>
+             </div>
+-->
+
+             <div class="pNav" style="margin-top: 3px; width: 80px;">
+                <a href="http://www.chinajoy.net/" target="new"><span class="chinajoy sprite"></span></a>
+</div>
+             <div class="pNav" style="margin: -10px 0pt 0pt 50px;">
+                <a href="http://www.assembla.com/plans?affiliate=GameDev" target="new"><span class="assembla-logo-small sprite"></span></a>
+             </div>
+
+<!--
+<div class="pNav" style="margin: -3px 0 0 50px;">
+                <a href="http://gdconf.com/" target="new"><span class="gdc_logo sprite"></span></a>
+             </div>
+-->
+
+             
+
+        </div>
+</div>		              
+             	
+<div id="footercontainer">
+	<div class="footer">
+			<div class="fRef">
+				<a href="http://www.gamedev.net/">
+					<span class="logo_small sprite"></span>
+				</a>
+				<div class="fRef-text">
+					Copyright © 1999-2014 GameDev.Net LLC
+                                        <p><br>GameDev.net™, the GameDev.net logo, and GDNet™ are trademarks of GameDev.net, LLC<br></p>
+				</div>
+
+			</div>
+
+			<div class="fNav">
+                        <h5>Navigation</h5>
+                        <ul>
+                        <li><a href="http://www.gamedev.net/">Home</a></li>
+                        <li><a href="http://www.gamedev.net/forum/31-for-beginners/">For Beginners</a></li>
+                        <li><a href="http://www.gamedev.net/forum/123-the-technical-side/">Technical</a></li>
+                        <li><a href="http://www.gamedev.net/forum/124-the-creative-side/">Creative</a></li>
+                        <li><a href="http://www.gamedev.net/forum/133-the-business-side/">Business</a></li>
+                        </ul>
+                        </div>
+
+			<div class="fNav">
+                        <h5>Customer Service</h5>
+                        <ul>
+                        <li><a href="http://www.gamedev.net/subscribe/">GDNet+ Subscriptions</a></li>
+                        <li><a href="http://www.gamedev.net/classifieds">Job Advertising</a></li>
+                        <li><a href="http://www.gamedev.net/info/legal/tos.htm">Terms of Service</a></li>
+                        <li><a href="http://www.gamedev.net/info/legal/tos.htm#privacy">Privacy Policy</a></li>
+                        </ul>
+                        </div>
+
+			<div class="fNav">
+                        <h5>Company Info</h5>
+                        <ul>
+                        <li><a href="http://www.gamedev.net/info/about">About Us</a></li>
+                        <li><a href="http://www.gamedev.net/info/media/">Advertise on Gamedev.net</a></li>
+                        <li><a href="http://www.gamedev.net/info/about/contact.html">Contact Us</a></li>
+                        </ul>
+                        </div>
+
+			<div style="clear: both;"><!--empty--></div>
+			<!--empty-->
+	</div>
+</div>
+
+			
+			
+		</div>
+
+
+
+
+
+				<script type="text/javascript" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/lightbox.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+	// Lightbox Configuration
+	LightboxOptions = Object.extend({
+	    fileLoadingImage:        'http://public.gamedev5.net//public/style_images/master/lightbox/loading.gif',     
+	    fileBottomNavCloseImage: 'http://public.gamedev5.net//public/style_images/master/lightbox/closelabel.gif',
+	    overlayOpacity: 0.8,   // controls transparency of shadow overlay
+	    animate: true,         // toggles resizing animations
+	    resizeSpeed: 10,        // controls the speed of the image resizing animations (1=slowest and 10=fastest)
+	    borderSize: 10,         //if you adjust the padding in the CSS, you will need to update this variable
+		// When grouping images this is used to write: Image # of #.
+		// Change it for non-english localization
+		labelImage: "Image",
+		labelOf: "of"
+	}, window.LightboxOptions || {});
+/* Watch for a lightbox image and set up our downloadbutton watcher */
+document.observe('click', (function(event){
+    var target = event.findElement('a[rel*="lightbox"]') || event.findElement('area[rel*="lightbox"]') || event.findElement('span[rel*="lightbox"]');
+    if (target) {
+        event.stop();
+        gbl_addDownloadButton();
+    }
+}).bind(this));
+var _to    = '';
+var _last  = '';
+function gbl_addDownloadButton()
+{
+	if ( typeof( ipsLightbox.lightboxImage ) != 'undefined' && ipsLightbox.lightboxImage.src )
+	{
+		if ( _last != ipsLightbox.lightboxImage.src )
+		{
+			if ( ! $('gbl_d') )
+			{
+				$('bottomNav').insert( { top: "<div id='gbl_d' style='text-align:right;padding-bottom:4px;'></div>" } );
+			}
+			
+			$('gbl_d').update( "<a href='"+ ipsLightbox.lightboxImage.src + "' target='_blank'><img src='http://public.gamedev5.net//public/style_images/master/lightbox/download-icon.png' /></a>" );
+			
+			_last = ipsLightbox.lightboxImage.src;
+		}
+	}
+	
+	/* Check for init and then keep checking for new image */
+	_to = setTimeout( "gbl_addDownloadButton()", 1000 );
+}
+//]]>
+</script>
+            
+            <div id="inline_login_form" style="display: none;">
+		<form action="http://www.gamedev.net/index.php?app=core&amp;module=global&amp;section=login&amp;do=process" method="post" id="login">
+				<input name="auth_key" value="880ea6a14ea49e853634fbdc5015a024" type="hidden">
+				<input name="referer" value="http://www.gamedev.net/topic/416908-sdl-getting-screen-resolution-solved/" type="hidden">
+				<h3>Sign In</h3>
+				<div class="ipsBox_notice">
+                <ul class="ipsList_inline">
+                    <li><a href="http://www.gamedev.net/index.php?app=core&amp;module=global&amp;section=login&amp;do=process&amp;use_google=1&amp;auth_key=880ea6a14ea49e853634fbdc5015a024" class="ipsButton_secondary" id="googleAjax"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/login-google-icon_002.png" alt="Google"> &nbsp; Use Google</a></li>
+                </ul>
+            </div>
+<script type="text/javascript">
+  $('googleAjax').observe( 'click', function(e) { 
+if ( $('inline_login_form') )
+{
+$('inline_login_form').hide();
+$('sign_in_popup_inner').hide();
+$('sign_in_popup_close').hide();
+}
+googlePop();
+Event.stop(e);
+
+return false;
+  });
+</script><div class="ipsBox_notice">
+						<ul class="ipsList_inline">
+							
+								<li><a href="http://www.gamedev.net/index.php?app=core&amp;module=global&amp;section=login&amp;serviceClick=facebook" class="ipsButton_secondary"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/facebook.png" alt="Facebook"> &nbsp; Use Facebook</a></li>
+							
+							
+								<li><a href="http://www.gamedev.net/index.php?app=core&amp;module=global&amp;section=login&amp;serviceClick=twitter" class="ipsButton_secondary"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/twitter.png" alt="Twitter"> &nbsp; Use Twitter</a></li>
+							
+							
+							
+						</ul>
+					</div>
+				<br>
+				<div class="ipsForm ipsForm_horizontal">
+					<fieldset>
+						<ul>
+							<li class="ipsField">
+								<div class="ipsField_content">
+									Need an account? <a href="http://www.gamedev.net/index.php?app=core&amp;module=global&amp;section=register" title="Register now!">Register now!</a>
+								</div>
+							</li>
+							<li class="ipsField ipsField_primary">
+								<label for="ips_username" class="ipsField_title">Username</label>
+								<div class="ipsField_content">
+									<input id="ips_username" class="input_text" name="ips_username" size="30" tabindex="0" type="text">
+								</div>
+							</li>
+							<li class="ipsField ipsField_primary">
+								<label for="ips_password" class="ipsField_title">Forum Password</label>
+								<div class="ipsField_content">
+									<input id="ips_password" class="input_text" name="ips_password" size="30" tabindex="0" type="password"><br>
+									<a href="http://www.gamedev.net/index.php?app=core&amp;module=global&amp;section=lostpass" title="Retrieve password">I've forgotten my password</a>
+								</div>
+							</li>
+							<li class="ipsField ipsField_checkbox">
+								<input id="inline_remember" checked="checked" name="rememberMe" value="1" class="input_check" tabindex="0" type="checkbox">
+								<div class="ipsField_content">
+									<label for="inline_remember">
+										<strong>Remember me</strong><br>
+										<span class="desc lighter">This is not recommended for shared computers</span>
+									</label>
+								</div>
+							</li>
+							
+								<li class="ipsField ipsField_checkbox">
+									<input id="inline_invisible" name="anonymous" value="1" class="input_check" tabindex="0" type="checkbox">
+									<div class="ipsField_content">
+										<label for="inline_invisible">
+											<strong>Sign in anonymously</strong><br>
+											<span class="desc lighter">Don't add me to the active users list</span>
+										</label>
+									</div>
+								</li>
+							
+							
+							<li class="ipsPad_top ipsForm_center desc ipsType_smaller">
+								<a rel="nofollow" href="http://www.gamedev.net/privacypolicy/">Privacy Policy</a>
+							</li>
+							
+						</ul>
+					</fieldset>
+					
+					<div class="ipsForm_submit ipsForm_center">
+						<input class="ipsButton" value="Sign In" tabindex="0" type="submit">
+					</div>
+				</div>
+			</form>
+	</div>
+	
+		
+<div id="infobar" style="display: none;"><div id="infobarmsg"></div></div>
+<div id="nav_app_ipchat" style="display: none;"><a style="position: relative;" href=""><span id="chat-tab-count" class="ipsHasNotifications" title="" style="">9</span></a></div>
+	<div style="display: none;" id="overlay"></div><div style="display: none;" id="lightbox"><div style="width: 250px; height: 250px;" id="outerImageContainer"><div id="imageContainer"><img id="lightboxImage"><div id="hoverNav"><a id="prevLink" href="#"></a><a id="nextLink" href="#"></a></div><div id="loading"><a id="loadingLink" href="#"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/loading.gif"></a></div></div></div><div id="imageDataContainer"><div id="imageData"><div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span></div><div id="bottomNav"><a id="bottomNavClose" href="#"><img src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/closelabel.gif"></a></div></div></div></div><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="%5BSDL%5D%20Getting%20Screen%20resolution%20%5Bsolved%5D%20-%20APIs%20and%20Tools%20-%20GameDev.net_elemei/postmessageRelay.html" id="oauth2relay317878351" name="oauth2relay317878351"></iframe><iframe style="display: none; width: 0px; height: 0px;" name="google_osd_static_frame" id="google_osd_static_frame_8092356181655"></iframe></body><iframe src="" style="display: none;"></iframe></html>

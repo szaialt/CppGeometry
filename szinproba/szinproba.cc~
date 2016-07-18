@@ -1,0 +1,10 @@
+#include "generate_color.cc"
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  color col = generate_color(255);
+  cout << "(" << col.red << ", " << col.green << ", ";
+  cout << col.blue << ")" << endl;
+}

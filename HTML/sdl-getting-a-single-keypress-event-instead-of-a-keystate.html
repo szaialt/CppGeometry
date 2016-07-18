@@ -1,0 +1,1666 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+    
+    <title>c++ - SDL - Getting a single keypress event instead of a keystate? - Game Development Stack Exchange</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/gamedev/img/favicon.ico?v=ef00a9bb5b67">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/gamedev/img/apple-touch-icon.png?v=0cfb55927bd2">
+    <link rel="search" type="application/opensearchdescription+xml" title="Game Development Stack Exchange" href="http://gamedev.stackexchange.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@StackGameDev">
+    <meta name="twitter:domain" content="gamedev.stackexchange.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/gamedev/img/apple-touch-icon@2.png?v=9bca23db2259">
+    <meta name="og:title" content="SDL - Getting a single keypress event instead of a keystate?">
+    <meta name="og:description" content="Right now I'm working on a simple SDL project, but I've hit an issue when trying to get a single keypress event to skip past a splash screen. Right now, there are 4 start-up splash screens that I w...">
+    <meta name="og:url" content="http://gamedev.stackexchange.com/questions/35785/sdl-getting-a-single-keypress-event-instead-of-a-keystate">
+    <link rel="canonical" href="http://gamedev.stackexchange.com/questions/35785/sdl-getting-a-single-keypress-event-instead-of-a-keystate">
+
+    
+    
+    <script src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/quant.js"></script><script src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/beacon.js"></script><script src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/analytics.js"></script><script src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/ados_002.js" type="text/javascript"></script><script src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/ados.js" type="text/javascript"></script><script src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/jquery.js"></script>
+    <script src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'SDL - Getting a single keypress event instead of a keystate?'" href="http://gamedev.stackexchange.com/feeds/question/35785">
+    <script>
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:35785});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('53', '35785');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com,ws://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToInboxNotifications();
+                    StackExchange.realtime.subscribeToReputationNotifications('53');
+                StackExchange.realtime.subscribeToTopBarNotifications('53');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1408716279,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"site":{"name":"Game Development Stack Exchange","description":"Q&A for professional and independent game developers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"d313afe8cee3bf80df3db350c8dd001f","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"055a220273ad","js/moderator.en.js":"eacc3f340c48","js/full-anon.en.js":"70e7f54660a8","js/full.en.js":"9d65da3b8789","js/wmd.en.js":"0eeb1eff16fa","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"6a619d3310d0","js/help.en.js":"e7027b95c535","js/tageditor.en.js":"51d012a65199","js/tageditornew.en.js":"01817d520b4d","js/inline-tag-editing.en.js":"ea666f1bc7d0","js/revisions.en.js":"989c474e85a9","js/review.en.js":"b45f441b02fe","js/tagsuggestions.en.js":"97867e3c2def","js/post-validation.en.js":"6e22bc663fb6","js/explore-qlist.en.js":"8b8b631bd679","js/events.en.js":"a528312f1072","js/keyboard-shortcuts.en.js":"fea1dd4595da"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/full-anon.js"></script><script src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/post-validation.js"></script><script src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/prettify-full.js"></script></head><body class="question-page new-topbar" itemscope="" itemtype="http://schema.org/QAPage">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://gamedev.stackexchange.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackexchange.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackexchange.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://gamedev.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="53" data-gps-track="        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-gamedev" title="Game Development"></div>
+        Game Development
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.gamedev.stackexchange.com/" class="site-link js-gps-track" data-id="54" data-gps-track="            site.switch({ target_site:54, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-gamedevmeta" title="Game Development Meta"></div>
+        Game Development Meta
+    </a>
+
+                </li>
+                    </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://gamedev.stackexchange.com/users/signup?returnurl=http%3a%2f%2fgamedev.stackexchange.com%2fquestions%2f35785%2fsdl-getting-a-single-keypress-event-instead-of-a-keystate" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://gamedev.stackexchange.com/users/login?returnurl=http%3a%2f%2fgamedev.stackexchange.com%2fquestions%2f35785%2fsdl-getting-a-single-keypress-event-instead-of-a-keystate" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 131 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://gamedev.stackexchange.com/users/signup?returnurl=http%3a%2f%2fgamedev.stackexchange.com%2fquestions%2f35785%2fsdl-getting-a-single-keypress-event-instead-of-a-keystate" class="login-link">sign up</a>
+                            <a href="https://gamedev.stackexchange.com/users/login?returnurl=http%3a%2f%2fgamedev.stackexchange.com%2fquestions%2f35785%2fsdl-getting-a-single-keypress-event-instead-of-a-keystate" class="login-link">log in</a>
+                            <a href="http://gamedev.stackexchange.com/tour">tour</a>
+
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://gamedev.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://gamedev.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.gamedev.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" value="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://gamedev.stackexchange.com/">
+                    Game Development
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://gamedev.stackexchange.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://gamedev.stackexchange.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://gamedev.stackexchange.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://gamedev.stackexchange.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://gamedev.stackexchange.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://gamedev.stackexchange.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/gamedev/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://gamedev.stackexchange.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+Game Development Stack Exchange is a question and answer site for
+professional and independent game developers. It's 100% free, no
+registration required. </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://gamedev.stackexchange.com/questions/35785/sdl-getting-a-single-keypress-event-instead-of-a-keystate" class="question-hyperlink">SDL - Getting a single keypress event instead of a keystate?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="35785" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,0,"adzerk1204043976",4).enableDynamicSiteSelection().setZone(29) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1204043976"><div style="background-image: url(data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==); width: 1px; height: 1px; display: none;"></div><img src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/i.gif" style="position: absolute;" height="0px" width="0px" border="0"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="35785" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>Right now
+I'm working on a simple SDL project, but I've hit an issue when trying
+to get a single keypress event to skip past a splash screen. Right now,
+there are 4 start-up splash screens that I would like to be able to
+skip with a <strong>single keypress</strong> (of any key). My issue is that, as of now, if I <strong>hold down</strong> a key, it skips through each splash screen to the very last one immediately.</p>
+
+<p>The splash screens are stored as an array of SDL surfaces which are
+all loaded at the initialization of the state. I have an variable
+called currentSplashImage that controls which element of the array is
+being rendered on the screen. I've set it up so that whenever there's a
+SDL_KEYDOWN event, it triggers a single incrementation of the
+currentSplashImage variable.</p>
+
+<p>So, I'm really not sure why my code isn't working correctly. For
+some reason, when I hold down a button, it seems to be treating the
+held button as a new key press event every time it ticks through the
+code. Does anyone know how I can go about fixing this issue?</p>
+
+<p>[Here's a snippet of code that I've been using...]</p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> </span><span class="typ">SplashScreenState</span><span class="pun">::</span><span class="pln">handleEvents</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    SDL_PollEvent</span><span class="pun">(</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">localEvent </span><span class="pun">);</span><span class="pln">
+
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> localEvent</span><span class="pun">.</span><span class="pln">type </span><span class="pun">==</span><span class="pln"> SDL_KEYDOWN </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> currentSplashImage </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> currentSplashImage </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln"> currentSplashImage</span><span class="pun">++;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> localEvent</span><span class="pun">.</span><span class="pln">type </span><span class="pun">==</span><span class="pln"> SDL_QUIT </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        smgaEngine</span><span class="pun">.</span><span class="pln">setRunning</span><span class="pun">(</span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>I should also mention that the SDL_Event 'localEvent' is part of the
+GameState parent class, while this event handling code is part of a
+SplashScreenState subclass.</p>
+
+<p>If anyone knows why this is happening, or if there is any way to
+improve my code, It'd be helpful to me! :D I'm still a very new
+programmer, trying to learn.</p>
+
+<p>UPDATE:</p>
+
+<p>I added a std::cout line to that the code runs multiple times with a
+single KEYDOWN event. I also tried disabling SDL_EnableKeyRepeat, but
+it didn't fix the issue.</p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> </span><span class="typ">SplashScreenState</span><span class="pun">::</span><span class="pln">handleEvents</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    SDL_PollEvent</span><span class="pun">(</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">localEvent </span><span class="pun">);</span><span class="pln">
+
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> localEvent</span><span class="pun">.</span><span class="pln">type </span><span class="pun">==</span><span class="pln"> SDL_KEYDOWN </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> currentSplashImage </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> currentSplashImage </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln"> 
+            currentSplashImage</span><span class="pun">++;</span><span class="pln">
+            std</span><span class="pun">::</span><span class="pln">cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"KEYDOWN.."</span><span class="pun">;</span><span class="pln"> </span><span class="com">//&lt;---- test cout line</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> localEvent</span><span class="pun">.</span><span class="pln">type </span><span class="pun">==</span><span class="pln"> SDL_QUIT </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        smgaEngine</span><span class="pun">.</span><span class="pln">setRunning</span><span class="pun">(</span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>This prints out "KEYDOWN..KEYDOWN..KEYDOWN.." in the cout stream when a button is held.</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://gamedev.stackexchange.com/questions/tagged/c%2b%2b" class="post-tag js-gps-track" title="show questions tagged 'c++'" rel="tag">c++</a> <a href="http://gamedev.stackexchange.com/questions/tagged/architecture" class="post-tag js-gps-track" title="show questions tagged 'architecture'" rel="tag">architecture</a> <a href="http://gamedev.stackexchange.com/questions/tagged/sdl" class="post-tag js-gps-track" title="show questions tagged 'sdl'" rel="tag">sdl</a> <a href="http://gamedev.stackexchange.com/questions/tagged/events" class="post-tag js-gps-track" title="show questions tagged 'events'" rel="tag">events</a> <a href="http://gamedev.stackexchange.com/questions/tagged/keyboard" class="post-tag js-gps-track" title="show questions tagged 'keyboard'" rel="tag">keyboard</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://gamedev.stackexchange.com/q/35785" title="short permalink to this question" class="short-link" id="link-post-35785">share</a><span class="lsep">|</span><a href="http://gamedev.stackexchange.com/posts/35785/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://gamedev.stackexchange.com/posts/35785/revisions" title="show all edits to this post">edited <span title="2012-09-10 04:33:17Z" class="relativetime">Sep 10 '12 at 4:33</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2012-09-10 04:05:25Z" class="relativetime">Sep 10 '12 at 4:05</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://gamedev.stackexchange.com/users/18736/mrkatswordfish"><div class="gravatar-wrapper-32"><img src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/6f825abb09fd46d88caade666badf547.jpeg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://gamedev.stackexchange.com/users/18736/mrkatswordfish">MrKatSwordfish</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">145</span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-35785" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-35785" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								4 Answers
+                                <span style="display: none;" itemprop="answerCount">4</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://gamedev.stackexchange.com/questions/35785/sdl-getting-a-single-keypress-event-instead-of-a-keystate?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://gamedev.stackexchange.com/questions/35785/sdl-getting-a-single-keypress-event-instead-of-a-keystate?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://gamedev.stackexchange.com/questions/35785/sdl-getting-a-single-keypress-event-instead-of-a-keystate?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="35802"></a>
+<div id="answer-35802" class="answer accepted-answer" data-answerid="35802" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="35802" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p><code>SDL_PollEvent</code> will not change the content of the event you pass through if there is no new event to report. This means that <code>type == SDL_KEYDOWN</code> will stay true until some other event arrives.</p>
+
+<p>You need to check the value returned from <code>SDL_PollEvent</code> and only continue on to your event handling code when there is a new event to handle.</p>
+
+<p>eg.</p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">SDL_PollEvent</span><span class="pun">(</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">localEvent </span><span class="pun">)</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> localEvent</span><span class="pun">.</span><span class="pln">type </span><span class="pun">==</span><span class="pln"> SDL_KEYDOWN </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> currentSplashImage </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> currentSplashImage </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln"> 
+            currentSplashImage</span><span class="pun">++;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> localEvent</span><span class="pun">.</span><span class="pln">type </span><span class="pun">==</span><span class="pln"> SDL_QUIT </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        smgaEngine</span><span class="pun">.</span><span class="pln">setRunning</span><span class="pun">(</span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>You may also consider using <code>SDL_WaitEvent</code> instead, which pauses the app until another event is available.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://gamedev.stackexchange.com/a/35802" title="short permalink to this answer" class="short-link" id="link-post-35802">share</a><span class="lsep">|</span><a href="http://gamedev.stackexchange.com/posts/35802/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://gamedev.stackexchange.com/posts/35802/revisions" title="show all edits to this post">edited <span title="2012-09-11 12:00:03Z" class="relativetime">Sep 11 '12 at 12:00</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-09-10 11:57:21Z" class="relativetime">Sep 10 '12 at 11:57</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://gamedev.stackexchange.com/users/1101/kylotan"><div class="gravatar-wrapper-32"><img src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/cf13ca370e0d7b84b4a20912abe076a4.jpeg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://gamedev.stackexchange.com/users/1101/kylotan">Kylotan</a><br>
+        <span class="reputation-score" title="reputation score 20182" dir="ltr">20.2k</span><span title="32 silver badges"><span class="badge2"></span><span class="badgecount">32</span></span><span title="76 bronze badges"><span class="badge3"></span><span class="badgecount">76</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-35802" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="1" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-60297" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1. After reading the SDL documentation about how to handle the keyboard (specifically <a href="http://www.libsdl.org/docs/html/guideinputkeyboard.html#AEN354" rel="nofollow">here</a>) this seems to be the problem.</span>
+                –&nbsp;
+                    <a href="http://gamedev.stackexchange.com/users/18892/llonesmiz" title="121 reputation" class="comment-user">llonesmiz</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment60297_35802"><span title="2012-09-10 12:09:27Z" class="relativetime-clean">Sep 10 '12 at 12:09</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-60298" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I see! That's gotta be the issue. Thanks so much for your insight! :D</span>
+                –&nbsp;
+                    <a href="http://gamedev.stackexchange.com/users/18736/mrkatswordfish" title="145 reputation" class="comment-user owner">MrKatSwordfish</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment60298_35802"><span title="2012-09-10 12:35:09Z" class="relativetime-clean">Sep 10 '12 at 12:35</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-60341" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I'm
+curious.. Would it be possible (or smart) to create an SDL_UserEvent
+that essentially adds an empty event to the queue using SDL_PushEvent?
+That way, I could simply push an empty event to the queue after each
+keypress is registered? -- Also, would SDL_WaitEvent pause the program?
+I'd like to have the ability to use animated screens also, but maybe I
+shouldn't be looking for a one-size-fits-all solution...</span>
+                –&nbsp;
+                    <a href="http://gamedev.stackexchange.com/users/18736/mrkatswordfish" title="145 reputation" class="comment-user owner">MrKatSwordfish</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment60341_35802"><span title="2012-09-10 23:23:53Z" class="relativetime-clean">Sep 10 '12 at 23:23</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-60345" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Why
+would you need an empty event? And yes, SDL_WaitEvent paused the
+program - but you're in a splash screen state, so that doesn't sound
+like it would be a problem.</span>
+                –&nbsp;
+                    <a href="http://gamedev.stackexchange.com/users/1101/kylotan" title="20182 reputation" class="comment-user">Kylotan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment60345_35802"><span title="2012-09-10 23:40:57Z" class="relativetime-clean">Sep 10 '12 at 23:40</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-60372" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">All you need to do, is wrap all your code that looks at <code>localEvent</code> in an if statement, where the if statement only executes that code if <code>SDL_PollEvent</code>
+returns 1. If it doesn't return 1, you don't run your event handling
+code, as there is no event to handle. I edited the answer to try and
+make this clear.</span>
+                –&nbsp;
+                    <a href="http://gamedev.stackexchange.com/users/1101/kylotan" title="20182 reputation" class="comment-user">Kylotan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment60372_35802"><span title="2012-09-11 11:58:46Z" class="relativetime-clean">Sep 11 '12 at 11:58</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-35802" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link " title="expand to show all comments on this post, or add one of your own" href="#" onclick="">show <b>1</b> more comment</a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,0,"adzerk1546998782",4).enableDynamicSiteSelection().setZone(30) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1546998782"><div style="background-image: url(data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==); width: 1px; height: 1px; display: none;"></div><img src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/i_002.gif" style="position: absolute;" height="0px" width="0px" border="0"></div>
+  
+<a name="35788"></a>
+<div id="answer-35788" class="answer" data-answerid="35788" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="35788" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Does simply checking for an <code>SDL_KEYUP</code> not work? You can't have an <code>SDL_KEYUP</code> before an <code>SDL_KEYDOWN</code>.</p>
+
+<p>If <code>SDL_EnableKeyRepeat(0, 0);</code> is not working for you,
+then you should assume it is not reliable and not use it. Build your
+own key-repeat handling logic like lionesmiz hinted at.</p>
+
+<p>If I were you I'd build an abstraction layer on top of this. Polling
+for SDL events is an app-wide thing, and you should be asking an input
+module (something like <code>Input::WasKeyReleasedThisFrame(SDLKey somekey);</code>) about the state of the keyboard. Keep a <code>std::map</code> that maps <code>SDLKey</code> values to some sort of <code>KeyState</code> value so you poll once every frame, then all the rest of your code just goes to this input module for this information.</p>
+
+<p>But however you do it, just provide some sort of sensible API for your state classes to use. Why keep it wrapped up inside this <code>SDL_Event</code> nonsense? You want INPUT dammit!</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://gamedev.stackexchange.com/a/35788" title="short permalink to this answer" class="short-link" id="link-post-35788">share</a><span class="lsep">|</span><a href="http://gamedev.stackexchange.com/posts/35788/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-09-10 05:38:58Z" class="relativetime">Sep 10 '12 at 5:38</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://gamedev.stackexchange.com/users/3656/michael-bartnett"><div class="gravatar-wrapper-32"><img src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/e5d380311cae7c512eac807dcc03e167.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://gamedev.stackexchange.com/users/3656/michael-bartnett">michael.bartnett</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">6,131</span><span title="20 silver badges"><span class="badge2"></span><span class="badgecount">20</span></span><span title="42 bronze badges"><span class="badge3"></span><span class="badgecount">42</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-35788" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-35788" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="35787"></a>
+<div id="answer-35787" class="answer" data-answerid="35787" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="35787" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Something like this should work:</p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="kwd">void</span><span class="pln"> </span><span class="typ">SplashScreenState</span><span class="pun">::</span><span class="pln">handleEvents</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    SDL_PollEvent</span><span class="pun">(</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">localEvent </span><span class="pun">);</span><span class="pln">
+
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> localEvent</span><span class="pun">.</span><span class="pln">type </span><span class="pun">==</span><span class="pln"> SDL_KEYDOWN </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pun">(!</span><span class="pln">keyIsAlreadyPressed</span><span class="pun">)</span><span class="com">//member variable--should be initialized to false</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> currentSplashImage </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> currentSplashImage </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+            </span><span class="pun">{</span><span class="pln"> currentSplashImage</span><span class="pun">++;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+        keyIsAlreadyPressed</span><span class="pun">=</span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> localEvent</span><span class="pun">.</span><span class="pln">type </span><span class="pun">==</span><span class="pln"> SDL_KEYUP </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+       keyIsAlreadyPressed</span><span class="pun">=</span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> localEvent</span><span class="pun">.</span><span class="pln">type </span><span class="pun">==</span><span class="pln"> SDL_QUIT </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        smgaEngine</span><span class="pun">.</span><span class="pln">setRunning</span><span class="pun">(</span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://gamedev.stackexchange.com/a/35787" title="short permalink to this answer" class="short-link" id="link-post-35787">share</a><span class="lsep">|</span><a href="http://gamedev.stackexchange.com/posts/35787/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-09-10 05:00:55Z" class="relativetime">Sep 10 '12 at 5:00</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://gamedev.stackexchange.com/users/18892/llonesmiz"><div class="gravatar-wrapper-32"><img src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/7acd17bc2ca7260e564ba389ec35fa5c.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://gamedev.stackexchange.com/users/18892/llonesmiz">llonesmiz</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">121</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-35787" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-60275" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">That
+seems like a way to work around this issue. But, is this the normal
+behavior for SDL_Events? I'm hoping to get to the bottom of this
+problem.</span>
+                –&nbsp;
+                    <a href="http://gamedev.stackexchange.com/users/18736/mrkatswordfish" title="145 reputation" class="comment-user owner">MrKatSwordfish</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment60275_35787"><span title="2012-09-10 05:07:18Z" class="relativetime-clean">Sep 10 '12 at 5:07</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-35787" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="35786"></a>
+<div id="answer-35786" class="answer" data-answerid="35786" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="35786" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You are witnessing the "Key Repeat" feature. It's common to repeat
+the key press if it is hold for a longer amount of time. You can
+disable it with <a href="http://www.libsdl.org/docs/html/sdlenablekeyrepeat.html" rel="nofollow">SDL_EnableKeyRepeat</a>.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://gamedev.stackexchange.com/a/35786" title="short permalink to this answer" class="short-link" id="link-post-35786">share</a><span class="lsep">|</span><a href="http://gamedev.stackexchange.com/posts/35786/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-09-10 04:12:38Z" class="relativetime">Sep 10 '12 at 4:12</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://gamedev.stackexchange.com/users/16700/api-beast"><div class="gravatar-wrapper-32"><img src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/c2ed1af911d9ff54687b1ba1e811f865.png" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://gamedev.stackexchange.com/users/16700/api-beast">API-Beast</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">5,019</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="13 silver badges"><span class="badge2"></span><span class="badgecount">13</span></span><span title="32 bronze badges"><span class="badge3"></span><span class="badgecount">32</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-35786" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-60274" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Unfortunately,
+that didn't seem to fix my issue. =( I tried setting the
+SDL_EnableKeyRepeat in both the initialization of the state, as well as
+just before the SDL_PollEvent. It still ran the event-specific code
+once per tick! :(</span>
+                –&nbsp;
+                    <a href="http://gamedev.stackexchange.com/users/18736/mrkatswordfish" title="145 reputation" class="comment-user owner">MrKatSwordfish</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment60274_35786"><span title="2012-09-10 04:24:29Z" class="relativetime-clean">Sep 10 '12 at 4:24</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-35786" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/35785/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="35785" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height: 24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="d313afe8cee3bf80df3db350c8dd001f" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://gamedev.stackexchange.com/users/login?returnurl=%2fquestions%2f35785%2fsdl-getting-a-single-keypress-event-instead-of-a-keystate%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display: none;" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f35785%2fsdl-getting-a-single-keypress-event-instead-of-a-keystate%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://gamedev.stackexchange.com/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged 'c++'" rel="tag">c++</a> <a href="http://gamedev.stackexchange.com/questions/tagged/architecture" class="post-tag" title="show questions tagged 'architecture'" rel="tag">architecture</a> <a href="http://gamedev.stackexchange.com/questions/tagged/sdl" class="post-tag" title="show questions tagged 'sdl'" rel="tag">sdl</a> <a href="http://gamedev.stackexchange.com/questions/tagged/events" class="post-tag" title="show questions tagged 'events'" rel="tag">events</a> <a href="http://gamedev.stackexchange.com/questions/tagged/keyboard" class="post-tag" title="show questions tagged 'keyboard'" rel="tag">keyboard</a>  or <a href="http://gamedev.stackexchange.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px;">
+			                    <p class="label-key" title="2012-09-10 04:05:25Z"><b>1 year ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px;">
+			                    <p class="label-key">
+			                        <b>1630 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px;">
+			                        <p class="label-key"><b><a href="http://gamedev.stackexchange.com/questions/35785/sdl-getting-a-single-keypress-event-instead-of-a-keystate?lastactivity" class="lastactivity-link" title="2012-09-11 12:00:03Z">1 year ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,0,"adzerk84432178",17).enableDynamicSiteSelection().setZone(56016) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk84432178"><div id="SE20-ad-container" style="height: 250px; width: 220px;">
+<style>
+#launched-ad { width: 220px; height: 250px; overflow: hidden; background: url(//cdn.sstatic.net/stackexchange/Img/launched-ads/tex.png) no-repeat bottom center; }
+#launched-ad-link { display: block; width: 220px; height: 250px; line-height: 1.2; color: #953838 !important; font-family: "Palatino Linotype",Palatino,"Hoefler Text","Book Antiqua",Georgia,serif; font-size: 18px; text-align: center; text-decoration: none; cursor: pointer; }
+#launched-ad-inner { width: 200px; margin: 73px 10px 0 10px;}
+</style>
+<a id="launched-ad-link" href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImNtIjo5NTU2MCwiY2giOjE2NTMxLCJjciI6MzE5NCwiZGkiOiIxMTQ0Y2ZkNGNmZTU0MjQ2OTg1MTE5MzFhZTU0MDUzYSIsImRtIjoxLCJmYyI6MzMwOTY3LCJmbCI6MTcxNzU3LCJpcCI6IjE0NS4yMzYuMTk3LjE4NiIsImt3IjoiYysrLGFyY2hpdGVjdHVyZSxzZGwsZXZlbnRzLGtleWJvYXJkLHgtY29tbXVuaXR5LHgtaG9zdC1nYW1lZGV2LnN0YWNrZXhjaGFuZ2UuY29tIiwibnciOjIyLCJwYyI6MCwicHIiOjU3MjIyLCJydCI6MSwicmYiOiJodHRwOi8vd3d3Lmdvb2dsZS5jb20vc2VhcmNoP3E9YysrK3NkbCtTRExfS0VZRE9XTitkb250K3dvcmsmb2U9dXRmLTgmcmxzPW9yZy5tb3ppbGxhOmh1LUhVOnVub2ZmaWNpYWwmY2xpZW50PWljZXdlYXNlbC1hJm9xPWMrKytzZGwrU0RMX0tFWURPV04rZG9udCt3b3JrJmdzX2w9aGVpcmxvb20tc2VycC4zLi4uMzkwMjIyLjM5NTc1OS4wLjM5NjQ2Mi4xNC4xLjAuMTMuMC4wLjE5MC4xOTAuMGoxLjEuMC4uLi4wLi4uMWFjLjEuMzQuaGVpcmxvb20tc2VycC4uMTQuMC4wLkxHSWQ3Y2N5dHNNIiwic3QiOjU2NzYzLCJ1ayI6ImRkZjI4NGUyOGI5MDQ2NzE5OTRjOWY4OTMxMzFlNDc5Iiwiem4iOjU2MDE2LCJ0cyI6MTQwODcxNjI4MDkwMSwidXIiOm51bGx9&amp;s=YFNMe-8hhBD66Ndw_eLw3LZOSxY&amp;url=http%3A%2F%2Ftex.stackexchange.com%2Fquestions%2F197420%2Fmove-a-tikz-node-somewhat-below-in-relative-positioning">
+    <div id="launched-ad">
+        <div id="launched-ad-inner">Move a tikz node somewhat below in relative positioning</div>
+    </div>
+</a>
+</div><script type="text/javascript">window._launchedAdUrl= "http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImNtIjo5NTU2MCwiY2giOjE2NTMxLCJjciI6MzE5NCwiZGkiOiIxMTQ0Y2ZkNGNmZTU0MjQ2OTg1MTE5MzFhZTU0MDUzYSIsImRtIjoxLCJmYyI6MzMwOTY3LCJmbCI6MTcxNzU3LCJpcCI6IjE0NS4yMzYuMTk3LjE4NiIsImt3IjoiYysrLGFyY2hpdGVjdHVyZSxzZGwsZXZlbnRzLGtleWJvYXJkLHgtY29tbXVuaXR5LHgtaG9zdC1nYW1lZGV2LnN0YWNrZXhjaGFuZ2UuY29tIiwibnciOjIyLCJwYyI6MCwicHIiOjU3MjIyLCJydCI6MSwicmYiOiJodHRwOi8vd3d3Lmdvb2dsZS5jb20vc2VhcmNoP3E9YysrK3NkbCtTRExfS0VZRE9XTitkb250K3dvcmsmb2U9dXRmLTgmcmxzPW9yZy5tb3ppbGxhOmh1LUhVOnVub2ZmaWNpYWwmY2xpZW50PWljZXdlYXNlbC1hJm9xPWMrKytzZGwrU0RMX0tFWURPV04rZG9udCt3b3JrJmdzX2w9aGVpcmxvb20tc2VycC4zLi4uMzkwMjIyLjM5NTc1OS4wLjM5NjQ2Mi4xNC4xLjAuMTMuMC4wLjE5MC4xOTAuMGoxLjEuMC4uLi4wLi4uMWFjLjEuMzQuaGVpcmxvb20tc2VycC4uMTQuMC4wLkxHSWQ3Y2N5dHNNIiwic3QiOjU2NzYzLCJ1ayI6ImRkZjI4NGUyOGI5MDQ2NzE5OTRjOWY4OTMxMzFlNDc5Iiwiem4iOjU2MDE2LCJ0cyI6MTQwODcxNjI4MDkwMSwidXIiOm51bGx9&s=YFNMe-8hhBD66Ndw_eLw3LZOSxY";</script><script src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/js" type="text/javascript"></script><img src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/i_003.gif" style="position: absolute;" height="0px" width="0px" border="0"></div>
+			  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://gamedev.stackexchange.com/q/3076?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">11
+    </div>
+</a><a href="http://gamedev.stackexchange.com/questions/3076/keyboard-input-system-handling?rq=1" class="question-hyperlink">Keyboard input system handling</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://gamedev.stackexchange.com/q/21713?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://gamedev.stackexchange.com/questions/21713/how-do-i-respond-to-keyboard-events-which-occur-between-polling?rq=1" class="question-hyperlink">How do I respond to keyboard events which occur between polling?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://gamedev.stackexchange.com/q/26459?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://gamedev.stackexchange.com/questions/26459/sdl-mouse-wheel-not-picking-up?rq=1" class="question-hyperlink">SDL mouse wheel not picking up</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://gamedev.stackexchange.com/q/34091?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">3
+    </div>
+</a><a href="http://gamedev.stackexchange.com/questions/34091/sdl-multiple-keyboard-support?rq=1" class="question-hyperlink">SDL Multiple keyboard support</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://gamedev.stackexchange.com/q/49573?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://gamedev.stackexchange.com/questions/49573/unable-to-detect-continuous-keypress-event-in-sdl?rq=1" class="question-hyperlink">Unable to detect continuous keypress event in SDL</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://gamedev.stackexchange.com/q/66170?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://gamedev.stackexchange.com/questions/66170/sdl-2-0-filtering-mouse-events?rq=1" class="question-hyperlink">SDL 2.0 filtering mouse events</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://gamedev.stackexchange.com/q/68647?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://gamedev.stackexchange.com/questions/68647/multiple-keys-being-pressed-some-being-ignored-sdl?rq=1" class="question-hyperlink">Multiple keys being pressed, some being ignored SDL</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://gamedev.stackexchange.com/q/70347?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://gamedev.stackexchange.com/questions/70347/why-does-this-code-to-filter-events-with-sdl-not-function-properly?rq=1" class="question-hyperlink">Why does this code to filter events with SDL not function properly?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://gamedev.stackexchange.com/q/71551?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://gamedev.stackexchange.com/questions/71551/events-management-using-sdl-2-0?rq=1" class="question-hyperlink">Events management using SDL 2.0</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://gamedev.stackexchange.com/q/73959?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://gamedev.stackexchange.com/questions/73959/multiple-keypresses-causing-wierd-results-in-sdl?rq=1" class="question-hyperlink">Multiple keypresses causing wierd results in SDL</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/63422/does-the-oxford-comma-increase-readability" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does the Oxford Comma increase readability?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/27377/why-does-research-cost-so-much-money" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does research cost so much money?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/27347/is-it-common-to-provide-digital-notes-slides-or-handwritten-for-students" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it common to provide digital notes (slides or handwritten) for students?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/112769/is-the-hybrid-between-fisher-and-neyman-pearson-approaches-to-statistical-test" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+Is the "hybrid" between Fisher and Neyman-Pearson approaches to
+statistical testing really an "incoherent mishmash"? </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-crypto" title="Cryptography Stack Exchange"></div><a href="http://crypto.stackexchange.com/questions/18774/is-it-secure-to-derive-an-aes-key-from-a-mac" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:281 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it secure to derive an AES key from a MAC?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/125990/why-do-resistors-still-use-color-coding" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do resistors still use color coding?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-japanese" title="Japanese Language Stack Exchange"></div><a href="http://japanese.stackexchange.com/questions/18345/what-does-this-lyric-mean" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:257 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does this lyric mean?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/35562/is-it-possible-to-downgrade-a-business-first-class-flight-to-economy-without-the" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it possible to downgrade a business/first class flight to economy without the ticket purchaser knowing?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/36298/life-retirement-hacks-why-arent-more-people-doing-it" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Life/retirement hacks - Why aren't more people doing it?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/46476/how-to-roleplay-languages-that-none-of-the-player-characters-know" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to roleplay languages that none of the player characters know?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/60596/better-way-to-code-these-deeply-nested-multiple-if-else-statements" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Better way to code these deeply nested / multiple if/else statements
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/27493/how-much-time-does-a-professor-have-to-do-research-on-his-own" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How much time does a professor have to do research on his own?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/57892/computing-10-dimensional-volume-of-a-9-sphere" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Computing 10-dimensional volume of a 9-sphere
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-apple" title="Ask Different"></div><a href="http://apple.stackexchange.com/questions/142834/creating-a-url-that-always-opens-in-chrome" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:118 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Creating a URL that always opens in Chrome
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/514513/how-to-switch-remotly-from-ubuntu-and-windows-7-and-viceversa" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to switch remotly from Ubuntu and Windows 7 and viceversa?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-salesforce" title="Salesforce Stack Exchange"></div><a href="http://salesforce.stackexchange.com/questions/47562/building-up-base64-conversion-using-ampscript" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Building up Base64 conversion using AMPscript
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-windowsphone" title="Windows Phone Stack Exchange"></div><a href="http://windowsphone.stackexchange.com/questions/5526/logic-behind-nokia-update-availability-for-country-variant-models" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:427 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Logic behind Nokia update availability for "Country variant" models
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/31971/term-for-someone-who-cannot-keep-something-to-themselves" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Term for someone who cannot keep something to themselves
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-music" title="Musical Practice &amp; Performance Stack Exchange"></div><a href="http://music.stackexchange.com/questions/23019/relationship-between-3-4-and-4-4" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Relationship between 3/4 and 4/4
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/905624/prove-that-the-25-people-can-be-seated-in-this-way" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Prove that the 25 people can be seated in this way
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/151463/how-to-determine-the-ip-address-of-who-logged-into-root" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to Determine the IP Address of who logged into Root?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/151479/how-to-synchronize-directories-in-two-different-external-hard-disks" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How To Synchronize Directories in two different external hard disks?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/25444328/what-does-the-smiley-face-mean-in-css" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does the smiley face ":)" mean in CSS?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="http://cooking.stackexchange.com/questions/46494/which-acid-is-the-most-effective-against-oxidation-of-avocados" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Which acid is the most effective against oxidation of avocados?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://gamedev.stackexchange.com/feeds/question/35785" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/35785/ivc/efd6');});
+</script>
+<noscript>
+    <div><img src="/posts/35785/ivc/efd6" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display: none;" id="prettify-lang">lang-c</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://gamedev.stackexchange.com/tour">tour</a>
+                    <a href="http://gamedev.stackexchange.com/help">help</a>
+                        <a href="http://gamedev.stackexchange.com/help/badges">badges</a>
+                    <a href="http://blog.stackexchange.com/?blb=1">blog</a>
+                        <a href="http://chat.stackexchange.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://gamedev.stackexchange.com/contact">contact us</a></b>
+                        <b><a href="http://meta.gamedev.stackexchange.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.8.21.1791
+            </div>
+            
+        </div>
+    <iframe id="global-auth-frame" style="display: none;" src="sdl-getting-a-single-keypress-event-instead-of-a-keystate_elemei/read.html"></iframe></div>
+    <noscript>
+<div id="noscript-warning">Game Development Stack Exchange works best
+with JavaScript enabled<img
+src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt=""
+class="dno"></div> </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('c%2b%2b,architecture,sdl,events,keyboard,x-community,x-host-gamedev.stackexchange.com');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-24', '.stackexchange.com');
+        
+        
+        ga('set', 'dimension2', '|c++|architecture|sdl|events|keyboard|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    </body></html>

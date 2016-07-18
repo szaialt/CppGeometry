@@ -1,0 +1,1 @@
+/**/twttr.receiveCount({"count":0,"url":"http:\/\/prog.hu\/tudastar\/19038\/SDL+opengl+c-hordozhato+screensaver.html\/"});

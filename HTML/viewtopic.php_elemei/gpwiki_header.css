@@ -1,0 +1,141 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.logoBox {
+	position:absolute;
+	z-index:2;
+	left:10px;
+	top:3px;
+	width:150px;
+	height:126px;
+}
+
+.logoText {
+	position:absolute;
+	z-index:2;
+	left:144px;
+	top:4px;
+}
+
+.NavBar
+{
+ position:static; 
+ margin-top:60px;
+ margin-bottom:35px;
+ margin-left: 0px;
+ margin-right:0px;
+ height:30px; 
+ width:100%;
+ z-index:1;
+ border-top: 1px solid #a0b0c2;
+ border-bottom: 1px solid #a0b0c2;
+ border-left: 0px;
+ border-right:0px;
+ background-color:#ececec;
+}
+
+.wiki_NavBar {
+ margin-bottom: 9px;
+}
+
+.NavPad {
+	float: left;
+	display: inline;
+	position: relative;
+	margin-top: 5px;
+	padding-right: 205px;
+	color:#ececec;
+	background-color:#ececec;
+	border-right: 1px solid #909090;
+	font-size:14px;
+}
+
+.NavBarContent
+{
+	float: left;
+	display: inline;
+	position: relative;
+	margin-top: 6px;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size:14px;
+	font-family: arial, sans-serif;
+	border-right: 1px solid #909090;
+}
+
+.NavBarRight {
+	float: right;
+	display: inline;
+	position: relative;
+	margin-top: 2px;
+	padding-right: 20px;
+	color:#ececec;
+	background-color:#ececec;
+	font-size:14px;
+	border: 0px;
+}
+
+a.TopNavLink
+{
+ color:#005784;
+ font-size:14px;
+ font-weight:bold;
+ font-family: arial, sans-serif;
+ text-decoration:none;
+}
+
+.headerSearchText
+{
+ border: 1px solid #90a0a0;
+ background: #000;
+ padding-left:10px;
+ padding-right:10px;
+ padding-top:1px;
+ padding-bottom:1px;
+ font-family:arial, sans-serif;
+ font-size:14px;
+}
+
+.headerSearchButton
+{
+ border: 1px solid #90a0a0;
+ background: #e0e0e0;
+ padding-left: 5px;
+ padding-right:5px;
+ padding-top:1px;
+ padding-bottom:1px;
+ font-family:arial, sans-serif;
+ font-size:14px;
+ font-weight:normal;
+ color: #333;
+}
+
+.headerSearchButton:hover
+{
+ background: #f0f0f0;
+}
+
+wiki_menubar {
+ position:relative; 
+ top: 60px;
+ height:29px; 
+ margin-bottom: 30px;
+ width:100%;
+ z-index:1;
+ border-top: 1px solid #a0b0c2;
+ border-bottom: 1px solid #a0b0c2;
+ border-left: 0px;
+ border-right:0px;
+ background-color:#ececec;
+}
+
+wiki_logobox {
+	position:absolute;
+	left:10px;
+	top:3px;
+	width:150px;
+	height:126px;
+}
+

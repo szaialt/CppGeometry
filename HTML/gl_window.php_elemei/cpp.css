@@ -1,0 +1,107 @@
+
+LI,UL,OL
+{
+	list-style-image: none;
+}
+H1, H2, H3, H4, H5, TH
+{
+	font-weight: bold;
+}
+H2, H3, H5
+{
+	color: #ff9900;
+}
+H1
+{
+	font-size: 16pt;
+}
+H2
+{
+	font-size: 13pt;
+}
+H3
+{
+	font-family: Arial, sans-serif;
+	font-size: 11pt;
+}
+H4
+{
+	font-size: 10pt;
+	margin-bottom: 2px;
+}
+H5
+{
+	font-size: 9pt;
+	margin-bottom: 2px;
+}
+H6
+{
+	color: #626262;
+	font-size: 65%;
+	font-weight: normal;
+}
+DD
+{
+	margin-left: 20px;
+}
+
+pre.cpp
+{
+	/*border-style: solid 1px;*/
+	/*border-color: #515151;*/
+	background-color: #FFFFFF; /*graywhite RAR*/
+	padding: 7pt;
+	/*background-image: url(/images/codebg.gif);*/
+	font: 9pt "Courier New", Courier, mono;
+	white-space: pre;
+	width: 575;
+	/*overflow: auto;*/
+}
+
+td.cpp
+{
+ color: #000000;
+}
+
+.source
+{
+ background-color: #ffffff; 
+ font-family: courier new;
+ font-size: 9pt;
+ color: #000000;
+}
+.comment
+{
+ COLOR: green; FONT-STYLE: italic;
+}
+.commblock
+{
+ color: #007f00;
+ background: #FFFFFF;
+ font-family: courier new;
+ font-size: 9pt;
+}
+.keyword
+{
+ color: #0000ff;
+ font-family: courier new;
+ font-size: 9pt;
+}
+.number
+{
+ color: #000000;
+ font-family: courier new;
+ font-size: 9pt;
+}
+.operator
+{
+ color: #000000;
+ font-family: courier new;
+ font-size: 9pt; 
+}
+.string
+{
+ color: #000000;
+ font-family: courier new;
+ font-size: 9pt;  
+}

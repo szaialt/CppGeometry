@@ -1,0 +1,40 @@
+
+
+
+
+
+/*
+     FILE ARCHIVED ON 21:25:57 May 1, 2012 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:17:27 May 24, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*  projection.css - MoinMoin Slide Styles
+
+Copyright (c) 2003 by Juergen Hermann
+*/
+
+@import url(screen.css);
+
+html { line-height: 1.8em; }
+
+body, b, em, a, span, div, p, td { font-size: 22pt; }
+
+h1 { font-size: 28pt; }
+h2 { font-size: 24pt; }
+h3 { font-size: 22pt; }
+h4 { font-size: 20pt; }
+h5 { font-size: 18pt; }
+h6 { font-size: 16pt; }
+
+tt,pre { font-size: 18pt; }
+sup, sub { font-size: 14pt; }
+
+.navigation {
+	font-size: 16pt;
+	padding-top: 8pt;
+	padding-bottom: 8pt;
+}
+

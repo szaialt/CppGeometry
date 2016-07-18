@@ -1,0 +1,123 @@
+#include <SDL2/SDL.h>
+
+#include <iostream>
+
+int main()
+{
+    SDL_Renderer* renderer;
+    SDL_Window* window;
+    SDL_Point points[4];
+    SDL_Point  startingPoint;
+    startingPoint.x = 50;
+    startingPoint.y = 50;
+    float scale = 1.0;
+
+    if ( SDL_Init( SDL_INIT_EVERYTHING ) != 0 )
+        std::cout << "Failed to init SDL : " << SDL_GetError();
+
+    window = SDL_CreateWindow( "Client", 50, 50, 500, 500, 0 );
+
+    if ( window == nullptr )
+        std::cout << "Failed to apply video mode : " << SDL_GetError();
+
+    renderer = SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED );
+
+    if ( renderer == nullptr )
+        std::cout << "Could not create renderer!";
+
+    SDL_RenderSetLogicalSize( renderer, 500, 500 );
+
+    // Clear background
+    SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
+    SDL_RenderClear( renderer );
+    SDL_SetRenderDrawColor( renderer, 255, 255, 255, 255 );
+    //int thickLineRGBA (SDL_Renderer *rd, Sint16 x1, Sint16 y1, Sint16 x2, Sint16 y2, Uint8 width, Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+    
+    /*
+    int thickLineRGBA   (       SDL_Surface *           dst,
+                Sint16          x1,
+                Sint16          y1,
+                Sint16          x2,
+                Sint16          y2,
+                Uint8   width,
+                Uint8   r,
+                Uint8   g,
+                Uint8   b,
+                Uint8   a 
+        )       
+    */
+    
+    
+    
+    
+    // Create first 4 points
+    points[0].x = startingPoint.x;
+    points[0].y = startingPoint.y;
+
+    points[1].x = startingPoint.x + 50;
+    points[1].y = startingPoint.y;
+
+    points[2].x = startingPoint.x;
+    points[2].y = startingPoint.y + 50;
+
+    points[3].x = startingPoint.x + 50;
+    points[3].y = startingPoint.y + 50;
+
+    SDL_RenderDrawPoints( renderer, points, 4 );
+
+    // Create seconds 4 points
+    startingPoint.x = 125;
+    scale = 2.0;
+
+    points[0].x = startingPoint.x;
+    points[0].y = startingPoint.y;
+
+    points[1].x = startingPoint.x + 50;
+    points[1].y = startingPoint.y;
+
+    points[2].x = startingPoint.x;
+    points[2].y = startingPoint.y + 50;
+
+    points[3].x = startingPoint.x + 50;
+    points[3].y = startingPoint.y + 50;
+
+    // Apply scale
+    for ( int i = 0; i < 4 ; ++i )
+    {
+        points[i].x /= scale;
+        points[i].y /= scale;
+    }
+
+    SDL_RenderSetScale( renderer, scale, scale );
+    SDL_RenderDrawPoints( renderer, points, 4 );
+
+    // Create third 4 points
+    startingPoint.x = 200;
+    scale = 3.0;
+
+    points[0].x = startingPoint.x;
+    points[0].y = startingPoint.y;
+
+    points[1].x = startingPoint.x + 50;
+    points[1].y = startingPoint.y;
+
+    points[2].x = startingPoint.x;
+    points[2].y = startingPoint.y + 50;
+
+    points[3].x = startingPoint.x + 50;
+    points[3].y = startingPoint.y + 50;
+
+    // Apply scale
+    for ( int i = 0; i < 4 ; ++i )
+    {
+        points[i].x /= scale;
+        points[i].y /= scale;
+    }
+
+    SDL_RenderSetScale( renderer, scale, scale );
+    SDL_RenderDrawPoints( renderer, points, 4 );
+
+    SDL_RenderPresent( renderer );
+
+    std::cin.ignore();
+}

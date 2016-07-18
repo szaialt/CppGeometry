@@ -1,0 +1,398 @@
+body
+{
+	padding : 0px;
+	margin : 0px;
+}
+
+table
+{
+	padding : 0px;
+	margin : 0px;
+}
+
+h2
+{
+	font-family : "Verdana", "Arial", sans-serif;
+	text-align : center;
+}
+
+h3
+{
+	font-family : "Verdana", "Tahoma", "Arial", sans-serif;
+	text-align : left;
+	padding-left : 3px;
+	margin-left : 3px;
+	text-decoration : underline;
+}
+
+h4
+{
+	padding-left : 15px;
+	padding-right : 15px;
+}
+
+p
+{
+	font-family : "Verdana", "Arial", sans-serif;
+	font-size : 14px;
+	padding-left : 20px;
+	margin-left : 3px;
+	padding-right : 20px;
+	margin-right : 3px;
+	line-height : 1.5;
+}
+
+.important { color : red; }
+.info { color : blue; }
+.include { color : blue; }
+.string { color : purple; }
+.type { color : blue; }
+.label { color : #1371F0; }
+.keyword { color : red; }
+.command { color : #000000; }
+.comment { color : #007700; }
+.macro { color : #DB8F1E; }
+.method { color : #009900; }
+
+a:link, a:visited, a:active { color : black; }
+a:hover { color : blue; }
+a.nounderline:visited, a.nounderline:link, a.nounderline:hover, a.nounderline:active { font-size : 1px; color : #EEEEEE; text-decoration : none; }
+
+pre
+{
+	font-family : "Verdana", "Arial", sans-serif;
+	font-size : 12px;
+	padding-left : 10px;
+}
+
+ul, ol
+{
+	padding-left : 60px;
+	padding-right : 60px;
+	font-family : "Arial", sans-serif;
+	font-size : 14px;
+}
+
+.code
+{
+	background : #DDDDDD;
+	margin : 5px;
+	padding-left : 30px;
+	padding-right : 30px;
+	padding-top : 10px;
+	padding-bottom : 10px;
+	border : 1px solid black;
+}
+
+.forumButton
+{
+	color : white;
+	font-family : "Verdana", "Arial", sans-serif;
+	font-size : 10px;
+	border : 1px solid black;
+	background : #7281A2;
+	font-weight : bold;
+}
+
+.forumHeading
+{
+	background : url('../forums/images/forumFill.jpg');
+	padding-left : 10px;
+	font-weight : bold;
+	font-size : 12px;
+	font-family : 'Verdana', 'Times New Roman', sans-serif;
+	color : white;
+	line-height : 0.8;
+	background-repeat : repeat-x;
+}
+
+.forumItem
+{
+	padding-left : 10px;
+	padding-right : 10px;
+	font-size : 14px;
+}
+
+.forumPost
+{
+	font-size : 14px;
+	border-bottom : 1px solid black;
+}
+
+.forumPostTable
+{
+	border-top : 1px solid black;
+	border-left : 1px solid black;
+	border-right : 1px solid black;
+	width : 85%;
+	margin : 0 auto;
+	text-align : left;
+}
+
+.forumTable
+{
+	border : 1px solid black;
+	width : 85%;
+	margin : 0 auto;
+	text-align : left;
+}
+
+.forumReply
+{
+	width : 85%;
+	margin : 0 auto;
+	text-align : left;
+}
+
+.frameHeader
+{
+	background : url('../images/contentfill.jpg'); 
+	background-repeat : repeat-x;
+	width : 100%;
+}
+
+.left { text-align : left; }
+.center { text-align : center; }
+.centerTable { margin : 0 auto; }
+.right { text-align : right; }
+
+.imgleft { float : left; margin-right : 10px; }
+.imgright { float : right; margin-left : 10px; }
+
+.loginStatus
+{
+	padding-right : 20px;
+	line-height : 1;
+	font-size : 12px;
+	font-family : 'Times New Roman', sans-serif;
+}
+
+.mainMenu
+{
+	font-family : "Tahoma", "Verdana", sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	padding : 10px;
+	line-height : 0.4;
+	background : url('../images/buttonfill.jpg');
+	border-left : 1px solid black;
+	border-right : 1px solid black;
+}
+
+.nextprev
+{
+	font-family : "Verdana", "Arial", sans-serif;
+	font-size : 10px;
+	background : #EEEEEE;
+	padding : 0px;
+	margin : 0px;
+	
+	padding-left : 10px;
+	padding-right : 10px;
+}
+
+.noBorder { border : 0px solid black; }
+.border { border : 1px solid black; }
+
+.postInfo
+{
+	font-family : "Verdana", sans-serif;
+	font-size : 10px;
+	border-right : 1px dashed black;
+	border-bottom : 1px solid black;
+	width : 75px;
+	vertical-align : top;
+}
+
+.subMenuHeading
+{
+	font-family : "Tahoma", "Verdana", sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	padding-top : 15px;
+	padding-bottom : 5px;
+	padding-left : 10px;
+	padding-right : 10px;
+	text-decoration : underline;
+}
+
+.subMenu
+{
+	font-family : "Tahoma", "Verdana", sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	padding : 15px;
+}
+
+.subMenuSmallText
+{
+	font-family : "Tahoma", "Verdana", sans-serif;
+	font-size : 9px;
+	font-weight : bold;
+	padding-top : 10px;
+	padding-bottom : 10px;
+	padding-left : 15px;
+}
+
+.smallText
+{
+	font-family : "Verdana", "Arial", sans-serif;
+	font-size : 10px;
+	background : #EEEEEE;
+	text-align : center;
+	line-height : 2;
+	padding : 0px;
+	margin : 0px;
+}
+
+.smallTextBox
+{
+	font-family : "Verdana", "Arial", sans-serif;
+	font-size : 10px;
+	background : #EEEEEE;
+	text-align : left;
+	line-height : 2;
+	padding : 2px;
+	margin : 0px;
+}
+
+.smallButton
+{
+	font-family : "Verdana", "Arial", sans-serif;
+	font-size : 10px;
+	border : 1px solid black;
+	background : #EEEEEE;
+}
+
+.sideBox
+{
+	font-family : "Verdana", sans-serif;
+	font-size : 10px;
+	padding : 10px;
+	text-align : center;
+}
+
+.sideDashedEntry
+{
+	padding-left : 5px; 
+	padding-right : 5px;
+	background : #DDDDDD; 
+	border-top : 1px dashed black; 
+	border-bottom : 1px dashed black;
+}
+
+.tutTable
+{
+	border-left : 1px solid black;
+	border-top : 1px solid black;
+	width : 85%;
+	margin : 0 auto;
+	text-align : left;
+}
+
+.tutHeading
+{
+	background : #1198EE;
+	padding-left : 10px;
+	border-right : 1px solid black;
+	border-bottom : 1px solid black;
+	font-weight : bold;
+}
+
+.tutItem
+{
+	padding-left : 10px;
+	padding-right : 10px;
+	border-right : 1px solid black;
+	border-bottom : 1px solid black;
+}
+
+.mainFrame
+{
+	border : 1px solid black;
+	padding : 0px;
+	vertical-align : top;
+	border : 1px solid black;
+	background : #EEEEEE;
+}
+
+.unread
+{
+	border : 1px solid black;
+	vertical-align : middle;
+}
+
+.voteButton
+{
+	font-size : 9px;
+	padding : 0px;
+	border : 1px solid black;
+	background : #EEEEEE;
+}
+
+.voteForm
+{
+	font-size : 10px;
+	font-family : "Times New Roman", sans-serif;
+	text-decoration : none;
+	text-align : left;
+}
+
+#content
+{
+	border-left : 1px solid black;
+	border-right : 1px solid black;
+	border-bottom : 1px solid black;
+	background-color : #EEEEEE;
+	padding : 5px;
+	margin : 0px;
+}
+
+#crumbs
+{
+	font-family : "Verdana", "Arial", sans-serif;
+	font-size : 10px;
+	background : #C4C4C4;
+	margin-bottom : 0px;
+}
+
+#forumCrumbs
+{
+	font-family : "Verdana", "Arial", sans-serif;
+	font-size : 10px;
+	margin-bottom : 0px;
+}
+
+#usersOnline
+{
+	color : #EEEEEE; 
+	vertical-align : bottom; 
+	font-size : 10px; 
+	font-family : "Verdana", sans-serif; 
+	line-height : 2;
+	background : url('../images/header.jpg'); 
+	width : 804px; 
+	height : 114px; 
+	background-repeat : no-repeat;
+}
+
+#viewSource
+{
+	font-family : "Verdana", "Arial", sans-serif;
+	font-size : 10px;
+	background : #EEEEEE;
+	text-align : right;
+	width : 99%;
+}
+
+table.b
+{
+	border-left : 1px solid black;
+	border-top : 1px solid black;
+}
+
+td.b
+{
+	border-right : 1px solid black;
+	border-bottom : 1px solid black;
+}

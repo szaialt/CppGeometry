@@ -1,0 +1,27 @@
+2005-01-25  Ivan Z. Ganza  <ivan_ganza@yahoo.com>
+
+	* SDLSurface.java (Repository): apply fix from Flavio
+	Chierichetti to mapRGBA method.
+
+	removed setPixelDataXXXX and getPixelDataXXXX methods.  They are
+	now repalced by getPixelData() method.
+
+2005-01-24  Ivan Z. Ganza  <ivan_ganza@yahoo.com>
+
+	* SDLSurface.java (Repository): set pixelData to null when
+	freeSurface() is called.
+
+	* SDLVideo.java (Repository): applied patch from Flavio
+	Chierichetti to mapRGBA method.
+
+2005-01-23  Ivan Z. Ganza  <ivan_ganza@yahoo.com>
+
+	* SDLSurface.java (Repository): added ByteBuffer getPixelData() method
+
+2005-01-22  Ivan Z. Ganza  <ivan_ganza@yahoo.com>
+
+	* SDLSurface.java (Repository): added mustLock() method
+
+2005-01-21  Ivan Z. Ganza  <ivan_ganza@yahoo.com>
+
+	* SDLSurface.java (Repository): added getGL() and glSwapBuffers() methods

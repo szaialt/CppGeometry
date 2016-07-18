@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en"><head>
+
+
+  
+    <title>ttmath.org / Samples</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="TTMath - a bignum library for C++">
+    <meta name="keywords" content="ttmath, bignum, library, c++">
+    <link rel="stylesheet" href="samples_elemei/styles.css" type="text/css">
+    <link rel="stylesheet" href="samples_elemei/winix.css" type="text/css">
+    <link rel="shortcut icon" href="http://static.ttmath.org/favicon.ico">
+    <!-- Statistics since: 2014 II 12, global: all: 138294, unique: 111130, Google: 6218, Yahoo: 1972, Bing: 15726, this page: all: 7272, Google: 138, Yahoo: 24, Bing: 387 --> 
+  </head><body>
+    <div id="winix_container">
+      <div id="winix_header">
+        <form id="winix_login" method="post" action="http://www.ttmath.org/samples/login">
+          <fieldset>
+            <legend>:</legend>
+            <input class="edit" name="login" type="text">
+            <input class="edit" name="password" type="password">
+            <input class="submit" value="Login" type="submit">
+            <p><label><input class="remember" name="rememberme" type="checkbox">Remember me</label></p>
+          </fieldset>
+        </form>
+        <a href="http://www.ttmath.org/" id="winix_logo">Home page</a>
+        <ul id="winix_current_dir">
+          <li><a href="http://www.ttmath.org/"> /&nbsp;</a></li>
+          <li><a href="http://www.ttmath.org/samples">samples</a></li>
+        </ul>
+      </div> <!-- winix_header --> 
+      <div id="winix_middle">
+        <div id="winix_contentleft">
+          <ul class="winix_menu">
+            <li><a href="http://www.ttmath.org/ttmath">ttmath</a></li>
+            <li><a href="http://www.ttmath.org/faq">faq</a></li>
+            <li><a href="http://www.ttmath.org/changelog">changelog</a></li>
+            <li><a href="http://www.ttmath.org/_download">download</a></li>
+            <li><a href="http://www.ttmath.org/samples">samples</a></li>
+            <li><a href="http://www.ttmath.org/online_calculator">online calculator</a></li>
+            <li><a href="http://www.ttmath.org/forum">forum</a></li>
+            <!--<li><a href="http://www.ttmath.org/issue">issue tracking</a></li>--> 
+          </ul>
+          <a href="http://sourceforge.net/projects/ttmath">
+            <img src="samples_elemei/sflogo.png" alt="SourceForge.net Logo" height="31" width="88">
+          </a>
+        </div> <!-- winix_contentleft --> 
+        <div id="winix_contentright">
+          <h1 class="withinfo">Samples</h1>
+          <p class="winix_iteminfo">
+            Added by: tomek, 2008 V 02, Last modified: 2009 XI 27 
+          </p>
+          <p>
+            The first listing presents how to use ttmath::UInt&lt;&gt;. It creates three objects with 2 words each. On 32bit 
+            platform the max value which can be held is 2^(32*2)-1. Notice that we can initialise variables with string or 
+            if the value is small by using standard 'unsigned int' type. 
+          </p>
+          <div class="code">
+            <pre>#include &lt;ttmath/ttmath.h&gt;
+#include &lt;iostream&gt;
+
+int main()
+{
+ttmath::UInt&lt;2&gt; a,b,c;
+
+    a = "1234";
+    b = 3456; 
+    c = a*b;
+
+    std::cout &lt;&lt; c &lt;&lt; std::endl;
+}</pre>
+            <p>Listing nr 1</p>
+          </div>
+          <p>
+            The second listing shows the ttmath::Int&lt;&gt; type. It is an integer type with a sign. The highest bit in the 
+            value tells us about the sign, if it is set the value is negative. The format of keeping values is the same as 
+            standard int type etc (two's complement). Values in this example can be from -2^(32*2-1) to 2^(32*2-1)-1 (on 32bit 
+            platform) 
+          </p>
+          <div class="code">
+            <pre>#include &lt;ttmath/ttmath.h&gt;
+#include &lt;iostream&gt;
+
+int main()
+{
+ttmath::Int&lt;2&gt; a,b,c;
+
+    a = "-1234";
+    b = 3456;
+    c = a*b;
+
+    std::cout &lt;&lt; c &lt;&lt; std::endl;
+}</pre>
+            <p>Listing nr 2</p>
+          </div>
+          <p>
+            The last type in this library is ttmath::Big&lt;&gt;. This type holds floating point numbers. 
+          </p>
+          <div class="code">
+            <pre>#include &lt;ttmath/ttmath.h&gt;
+#include &lt;iostream&gt;
+
+int main()
+{
+// Big&lt;exponent, mantissa&gt;
+ttmath::Big&lt;1,2&gt; a,b,c;
+
+    a = "1234.3323454";
+    b = "3456.1234534";
+    c = a*b;
+
+    std::cout &lt;&lt; c &lt;&lt; std::endl;
+}</pre>
+            <p>Listing nr 3</p>
+          </div>
+          <p>
+            Standard manipulators such as std::setprecision(...) or std::setbase(...) etc are not supported at the moment. 
+            If you want to print a value in a different format use ttmath::Big&lt;&gt;::ToString(...) method instead. 
+          </p>
+          <p>
+            With the library also goes a mathematical parser (listing nr 4). How does it work you can see on this website, 
+            the <a href="http://www.ttmath.org/online_calculator">
+              big online calculator
+            </a> uses it. 
+          </p>
+          <div class="code">
+            <pre>#include &lt;ttmath/ttmath.h&gt;
+#include &lt;iostream&gt;
+
+int main()
+{
+typedef ttmath::Big&lt;1,3&gt; MyBig;
+ttmath::Parser&lt;MyBig&gt; parser;
+
+    ttmath::ErrorCode err = parser.Parse(
+                       " 123 - 432 * (12 / 3) ^ 54.34 - 10*pi ");
+
+    if( err == ttmath::err_ok )
+        std::cout &lt;&lt; parser.stack[0].value &lt;&lt; std::endl;
+    else
+        std::cout &lt;&lt; "Error: "
+                  &lt;&lt; static_cast&lt;int&gt;(err)
+                  &lt;&lt; std::endl;
+}</pre>
+            <p>Listing nr 4</p>
+          </div>
+          <p>
+            If you're using GCC you can compile above programs in this way: 
+          </p>
+          <div class="code">
+            gcc -o program -I/path/to/ttmath program.cpp 
+          </div>
+          <p>
+            More samples you can find with the source code. 
+          </p>
+        </div> <!-- winix_contentright --> 
+      </div> <!-- winix_middle --> 
+      <div id="winix_footer">
+      </div> <!-- winix_footer --> 
+    </div> <!-- winix_container --> 
+  </body></html>

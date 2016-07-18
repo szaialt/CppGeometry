@@ -1,0 +1,1 @@
+;!function(n){{var d=window.jQuery;d("<img>").attr("src",n).appendTo(document).hide()}}.apply(null, ["//dd.stackexchange.com/j/i/2876-3432-2906-3016-3172-990/eyJsIjoxfQ"]);

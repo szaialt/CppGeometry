@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-2">
+
+  
+    <title>SDL Saver</title>
+  </head><body>
+    <h1>SDL Saver</h1>
+    
+    <p><a href="http://www.modeemi.fi/%7Eflux/software/">Other stuff</a> I've written.</p>
+
+    <p>SDL Saver is a patch for xscreensaver to provide a hack which
+    permits you to run mostly any SDL program as your screen saver. In
+    addition to providing the support for running SDL programs, you
+    may use any software that allows its X11 window id to be
+    defined. With SDL the mechanism used is the SDL_WINDOWID
+    environment variable.</p>
+
+    <h2>Download</h2>
+    <a href="http://www.modeemi.fi/%7Eflux/software/sdlsaver/xscreensaver-4.24-sdlsaver-ver2.patch">SDL Saver ver 2: patch against xscreensaver 4.24</a>
+
+    <h2>Installing to a Debian/Ubuntu system</h2>
+
+    <p>Here's how to install the patch to a Debian/Ubuntu system.</p>
+<pre>wget http://modeemi.cs.tut.fi/~flux/xscreensaver-4.24-sdlsaver-ver1.patch
+apt-get source xscreensaver
+sudo apt-get build-dep xscreensaver
+cd xscreensaver-4.24
+patch -p1 ../xscreen*.patch
+./configure
+make
+sudo install hacks/sdlsaver /usr/lib/xscreensaver/sdlsaver 
+sudo install -m 644 hacks/config/sdlsaver.xml /usr/share/xscreensaver/config/
+echo 'xscreensaver*programs: sdlsaver' | xrdb -merge
+xscreensaver &amp;
+</pre>
+    
+    <p>Not click settings open, or if you miss the opening dialog, run
+    xscreensaver-demo. Configure the saver with the appropriate
+    binary/shell script.</p>
+    
+    <p>Of course, you could just build the binary sdlsaver and copy it
+    with the configuration file sdlsaver.xml to the appropriate
+    directory.</p>
+
+    <h2>Usage</h2> 
+
+    <p>Use xscreesaver-demo to switch to SDL Saver. Configure the
+    program parameter. If you need to pass custom parameters to it
+    (the parameter entered is the binary name, nothing else), use a
+    shell script. Sorry, this is a crude one-evening hack.</p>
+
+    <p>You may use any program that can be fed the X11 window id as a
+    parameter. Simply write a shell script that takes the environment
+    variable SDL_WINDOWID and passes it down to the actual
+    program. See below for an example.</p>
+
+    <p><em>Note: in the script, it is important to handle SIGTERM
+    properly. Most often this is easily done by execing the final
+    program to run!</em></p>
+
+    <h2>Playing videos</h2>
+
+    <p>I personally run a shell script doing the following shell
+    script as my screensaver:</p>
+
+    <pre>#!/bin/sh
+exec /usr/bin/mplayer -loop 0 -fs -vo sdl ~/X/ombpes.mov &gt;/dev/null 2&gt;/dev/null &lt;/dev/null
+    </pre>
+
+    <p>At this point someone might notice "Hey, why did you make this
+    SDL-specific at all, why not just provide the display as an
+    argument to the shell script you're bound to write anyway" (or use
+    a format-string kind of approach), and rightly so. Reason: I
+    first hacked it to work with SDL and didn't want to redo it,
+    managing patches is a bother. It's a screensaver!</p>
+
+    <h2>Running any piece of software</h2>
+
+    <p>Here is a shell script I used to run custom programs as the
+    screen saver binary:</p>
+
+    <pre>#!/bin/sh
+trap 'kill $xpid' TERM
+Xephyr -noreset -once -ac -parent $SDL_WINDOWID :1 &amp;
+xpid=$!
+sleep 1
+export DISPLAY=:1
+xlock -geometry 512x384+0+0 -nolock -inwindow -mode ifs &amp;
+xlock -geometry 512x384+512+0 -nolock -inwindow -mode ifs &amp;
+xlock -geometry 512x384+0+384 -nolock -inwindow -mode ifs &amp;
+xlock -geometry 512x384+512+384 -nolock -inwindow -mode ifs &amp;
+wait
+    </pre>
+
+    <hr>
+    <address><a href="mailto:flux@modeemi.fi">Erkki Seppälä</a></address>
+<!-- Created: Sat Feb 16 23:21:05 EET 2008 -->
+<!-- hhmts start -->
+Last modified: Mon Feb 18 14:01:48 EET 2008
+<!-- hhmts end -->
+  </body></html>

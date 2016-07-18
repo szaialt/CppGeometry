@@ -1,0 +1,4 @@
+Pascal-tetraéder rétege:
+
+Az n. sorig terjedő Pascal-háromszög sorait rendre megszorozzuk
+a Pascal-háromszög n. sorának elemeivel.

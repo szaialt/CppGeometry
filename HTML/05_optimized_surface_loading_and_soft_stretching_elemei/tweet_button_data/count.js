@@ -1,0 +1,1 @@
+/**/twttr.receiveCount({"count":0,"url":"http:\/\/lazyfoo.net\/tutorials\/SDL\/05_optimized_surface_loading_and_soft_stretching\/index.php\/"});
